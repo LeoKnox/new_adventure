@@ -1,6 +1,6 @@
-import { dungeonData } from "./dungeData.js";
+import allRooms from "./dungeData.js";
 
 export default Build = () => {
-  console.log(JSON.stringify(dungeonData));
+  console.log(allRooms);
   return <p>build a dungeon</p>;
 };
