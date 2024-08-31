@@ -5,6 +5,7 @@ export const allRooms = () => {
 };
 
 export const changeRoom = (newData = "chiiro") => {
-  dungeonData[0]["name"] = newData;
+  dungeonData = [{ id: 1, name: "aka", width: 5, height: 5, x: 5, y: 5 }];
+  console.log(JSON.stringify(dungeonData));
   return dungeonData;
 };
