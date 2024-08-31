@@ -6,9 +6,9 @@ export default Build = () => {
   return (
     <>
       <p>build a dungeon</p>
-      {rooms.map((room) => {
-        <p>a {room.name}</p>;
-      })}
+      {rooms.map((room) => (
+        room.name
+      ))}
     </>
   );
 };
