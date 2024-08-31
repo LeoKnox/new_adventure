@@ -1,7 +1,8 @@
+import {useState} from "react";
 import { allRooms, changeRoom } from "./dungeonData.js";
 
 export default Build = () => {
-  const rooms = allRooms();
+  const [rooms, setRooms] = useState(allRooms());
   console.log(rooms);
   return (
     <>
