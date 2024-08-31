@@ -1,12 +1,13 @@
 import { allRooms } from "./dungeonData.js";
 
 export default Build = () => {
-  console.log(allRooms());
+  const rooms = allRooms();
+  console.log(rooms);
   return (
     <>
       <p>build a dungeon</p>
-      {allRooms().map((x) => {
-        <p>a {x.name}</p>;
+      {rooms.map((room) => {
+        <p>a {room.name}</p>;
       })}
     </>
   );
