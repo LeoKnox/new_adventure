@@ -1,4 +1,4 @@
-import { allRooms } from "./dungeonData.js";
+import { allRooms, changeRoom } from "./dungeonData.js";
 
 export default Build = () => {
   const rooms = allRooms();
@@ -6,7 +6,12 @@ export default Build = () => {
   return (
     <>
       <p>build a dungeon</p>
-      {rooms.map((room) => <tr><td>{room.name}</td></tr>)}
+      <button onClick={changeRoom}>click</button>
+      {rooms.map((room) => (
+        <tr>
+          <td>{room.name}</td>
+        </tr>
+      ))}
     </>
   );
 };
