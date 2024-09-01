@@ -7,10 +7,13 @@ export default Build = () => {
     setRooms(allRooms());
   }, []);
   console.log(rooms);
+  const run = () => {
+    setRooms(allRooms());
+  };
   return (
     <>
       <p>build a dungeon</p>
-      <button onClick={() => addRoom()}>click</button>
+      <button onClick={() => run()}>click</button>
       {rooms.map((room) => (
         <tr>
           <td>{room.name}</td>
