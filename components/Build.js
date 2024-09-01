@@ -8,6 +8,7 @@ export default Build = () => {
   }, []);
   console.log(rooms);
   const run = () => {
+    addRoom();
     setRooms(allRooms());
   };
   return (
