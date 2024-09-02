@@ -4,10 +4,10 @@ export const allRooms = () => {
   return dungeonData;
 };
 
-export const addRoom = () => {
+export const addRoom = (newRoom = "ao") => {
   dungeonData = [
     ...dungeonData,
-    { id: 2, name: "chiiro", width: 5, height: 5, x: 5, y: 5 },
+    { id: 2, name: { newRoom }, width: 5, height: 5, x: 5, y: 5 },
   ];
   return dungeonData;
 };
