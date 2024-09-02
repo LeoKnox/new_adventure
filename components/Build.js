@@ -5,7 +5,7 @@ import NewRoom from "./NewRoom.js";
 export default Build = () => {
   const [rooms, setRooms] = useState(allRooms());
   console.log(rooms);
-  const addRoom = () => {
+  const addRoom = (name) => {
     let x = addRoom("midori");
     setRooms(x);
   };
@@ -19,7 +19,7 @@ export default Build = () => {
         </tr>
       ))}
       <tr>
-        <NewRoom addRoom={addRoom} />
+        <NewRoom addRoom={() => addRoom()} />
       </tr>
     </>
   );
