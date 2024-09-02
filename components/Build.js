@@ -5,7 +5,8 @@ export default Build = () => {
   const [rooms, setRooms] = useState(allRooms());
   console.log(rooms);
   const run = () => {
-    setRooms(addRoom());
+    setRooms(changeRoom());
+    //setRooms(addRoom());
     //setRooms(allRooms());
   };
   return (
