@@ -1,19 +1,23 @@
-let dungeonData = [{ id: 1, name: "entry", width: 5, height: 5, x: 5, y: 5 }];
+import { useState, useEffect } from "react";
+import { allRooms, addRoom, changeRoom } from "./dungeonData.js";
 
-export const allRooms = () => {
-  return dungeonData;
-};
-
-export const addRoom = (
-  room = { id: 2, name: "chiiro", width: 5, height: 5, x: 5, y: 5 }
-) => {
-  dungeonData = {...dungeonData, { id: 2, name: "chiiro", width: 5, height: 5, x: 5, y: 5 }}
-  console.log(JSON.stringify(room));
-  return dungeonData;
-};
-
-export const changeRoom = (newData = "chiiro") => {
-  dungeonData = [{ id: 1, name: "aka", width: 5, height: 5, x: 5, y: 5 }];
-  console.log(JSON.stringify(dungeonData));
-  return dungeonData;
+export default Build = () => {
+  const [rooms, setRooms] = useState(allRooms());
+  console.log(rooms);
+  const run = () => {
+    //setRooms(changeRoom());
+    setRooms(addRoom());
+    //setRooms(allRooms());
+  };
+  return (
+    <>
+      <p>build a dungeon</p>
+      <button onClick={() => run()}>click</button>
+      {rooms.map((room) => (
+        <tr>
+          <td>{room.name}</td>
+        </tr>
+      ))}
+    </>
+  );
 };
