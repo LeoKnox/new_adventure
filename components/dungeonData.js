@@ -4,14 +4,11 @@ export const allRooms = () => {
   return dungeonData;
 };
 
-export const addRoom = (
-  room = { id: 2, name: "chiiro", width: 5, height: 5, x: 5, y: 5 }
-) => {
+export const addRoom = () => {
   dungeonData = [
     ...dungeonData,
     { id: 2, name: "chiiro", width: 5, height: 5, x: 5, y: 5 },
   ];
-  console.log(JSON.stringify(room));
   return dungeonData;
 };
 
