@@ -7,7 +7,10 @@ export const allRooms = () => {
 export const addRoom = (
   room = { id: 2, name: "chiiro", width: 5, height: 5, x: 5, y: 5 }
 ) => {
-  dungeonData.push({ id: 2, name: "chiiro", width: 5, height: 5, x: 5, y: 5 });
+  dungeonData = [
+    ...dungeonData,
+    { id: 2, name: "chiiro", width: 5, height: 5, x: 5, y: 5 },
+  ];
   console.log(JSON.stringify(room));
   return dungeonData;
 };
