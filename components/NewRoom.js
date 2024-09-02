@@ -1,7 +1,18 @@
+import { useState } from "react";
+
 export default NewRoom = () => {
+  const [name, setName] = useState("");
   return (
     <>
-      <td>Name:</td>
+      <td>
+        Name:{" "}
+        <input
+          type="text"
+          name="name"
+          value={name}
+          onChange={(e) => setName(e.target.name)}
+        />
+      </td>
     </>
   );
 };
