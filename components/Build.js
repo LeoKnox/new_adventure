@@ -5,7 +5,7 @@ export default Build = () => {
   const [rooms, setRooms] = useState(allRooms());
   console.log(rooms);
   const addRoom = () => {
-    setRooms(addRoom());
+    setRooms(addRoom(param));
   };
   return (
     <>
@@ -16,6 +16,7 @@ export default Build = () => {
           <td>{room.name}</td>
         </tr>
       ))}
+      <br/>
       <tr>
         <td>Name: </td>
       </tr>
