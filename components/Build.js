@@ -19,7 +19,7 @@ export default Build = () => {
         </tr>
       ))}
       <tr>
-        <NewRoom />
+        <NewRoom addRoom={addRoom} />
       </tr>
     </>
   );
