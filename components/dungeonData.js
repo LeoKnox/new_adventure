@@ -9,6 +9,7 @@ export const addRoom = (newRoom = "ao") => {
     ...dungeonData,
     { id: 2, name: { newRoom }, width: 5, height: 5, x: 5, y: 5 },
   ];
+  console.log(JSON.stringify(dungeonData));
   return dungeonData;
 };
 
