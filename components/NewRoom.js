@@ -4,9 +4,7 @@ import { useState } from "react";
 export default NewRoom = (addRoom) => {
   const [name, setName] = useState("");
   const submit = () => {
-    
-      addRoom();
-    
+    () => addRoom();
   };
   return (
     <>
