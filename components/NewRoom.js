@@ -1,10 +1,12 @@
 import { useState } from "react";
 //import { addRoom } from "./dungeonData.js";
 
-export default NewRoom = ({ addRoom }) => {
+export default NewRoom = (addRoom) => {
   const [name, setName] = useState("");
   const submit = () => {
-    addRoom(name);
+    
+      addRoom();
+    
   };
   return (
     <>
@@ -17,7 +19,7 @@ export default NewRoom = ({ addRoom }) => {
           onChange={(e) => setName(e.target.value)}
         />
       </td>
-      <button onClick={() => submit()}>submit</button>
+      <button onClick={submit}>submit</button>
     </>
   );
 };
