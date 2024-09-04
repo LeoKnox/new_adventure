@@ -4,7 +4,7 @@ import { useState } from "react";
 export default NewRoom = ({ submitRoom }) => {
   const [name, setName] = useState("");
   const submit = () => {
-    submitRoom("migi");
+    submitRoom(name);
   };
   return (
     <>
