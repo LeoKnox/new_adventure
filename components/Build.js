@@ -7,7 +7,8 @@ export default Build = () => {
   console.log(rooms);
   const submitRoom = (name) => {
     let x = addRoom("midori");
-    setRooms(name);
+    console.log(JSON.stringify(x));
+    setRooms(x);
   };
   return (
     <>
