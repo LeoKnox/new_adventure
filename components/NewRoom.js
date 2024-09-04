@@ -5,6 +5,7 @@ export default NewRoom = ({ submitRoom }) => {
   const [name, setName] = useState("");
   const submit = () => {
     submitRoom(name);
+    setName("");
   };
   return (
     <>
