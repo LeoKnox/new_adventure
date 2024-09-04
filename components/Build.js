@@ -20,7 +20,7 @@ export default Build = () => {
         </tr>
       ))}
       <tr>
-        <NewRoom submitRoom={() => submitRoom()} />
+        <NewRoom submitRoom={submitRoom} />
       </tr>
     </>
   );
