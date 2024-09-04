@@ -6,7 +6,7 @@ export default Build = () => {
   const [rooms, setRooms] = useState(allRooms());
   console.log(rooms);
   const submitRoom = (name) => {
-    let x = addRoom("midori");
+    let x = addRoom(name);
     console.log(JSON.stringify(x));
     setRooms(x);
   };
