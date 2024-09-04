@@ -1,10 +1,10 @@
 import { useState } from "react";
 //import { addRoom } from "./dungeonData.js";
 
-export default NewRoom = ({ addRoom }) => {
+export default NewRoom = ({ submitRoom }) => {
   const [name, setName] = useState("");
   const submit = () => {
-    addRoom("ao");
+    submitRoom("migi");
   };
   return (
     <>
