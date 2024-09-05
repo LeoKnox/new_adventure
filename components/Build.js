@@ -13,6 +13,7 @@ export default Build = () => {
       <p>build a dungeon</p>
       <table>
         <tr>
+          <th>id</th>
           <th>name</th>
           <th>width</th>
           <th>height</th>
@@ -21,6 +22,7 @@ export default Build = () => {
         </tr>
         {rooms.map((room) => (
           <tr>
+            <td>{room.id}</td>
             <td>{room.name}</td>
             <td>{room.width}</td>
             <td>{room.height}</td>
@@ -29,10 +31,11 @@ export default Build = () => {
           </tr>
         ))}
 
-        <tr>
-          <NewRoom submitRoom={submitRoom} />
-        </tr>
+
       </table>
+
+          <NewRoom submitRoom={submitRoom} />
+
     </>
   );
 };
