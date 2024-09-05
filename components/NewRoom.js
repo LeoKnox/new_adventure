@@ -8,11 +8,15 @@ export default NewRoom = ({ submitRoom }) => {
   const [x, setX] = useState(0);
   const [y, setY] = useState(0);
   const submit = () => {
-    submitRoom(name);
+    submitRoom(name, width, height, x, y);
     setName("");
+    setWidth(0);
+    setHeight(0);
+    setX(0);
+    setY(0);
   };
   return (
-    <>
+    <div>
       <td>
         Name:
         <input
@@ -59,6 +63,6 @@ export default NewRoom = ({ submitRoom }) => {
         />
       </td>
       <button onClick={submit}>submit</button>
-    </>
+    </div>
   );
 };
