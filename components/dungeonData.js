@@ -5,9 +5,11 @@ export const allRooms = () => {
 };
 
 export const addRoom = (name, width, height, x, y) => {
+  console.log(dungeonData[dungeonData.length - 1].id);
+  newId = dungeonData[dungeonData.length - 1].id + 1;
   dungeonData = [
     ...dungeonData,
-    { id: 2, name: name, width: width, height: height, x: x, y: y },
+    { id: newId, name: name, width: width, height: height, x: x, y: y },
   ];
   //console.log(JSON.stringify(dungeonData));
   return dungeonData;
