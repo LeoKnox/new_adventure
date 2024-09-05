@@ -4,10 +4,8 @@ import NewRoom from "./NewRoom.js";
 
 export default Build = () => {
   const [rooms, setRooms] = useState(allRooms());
-  console.log(rooms);
   const submitRoom = (name, width, height, x, y) => {
     let temp = addRoom(name, width, height, x, y);
-    console.log(JSON.stringify(temp));
     setRooms(temp);
   };
   return (
