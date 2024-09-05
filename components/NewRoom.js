@@ -36,7 +36,7 @@ export default NewRoom = ({ submitRoom }) => {
         <input
           type="number"
           name="height"
-          value={x}
+          value={height}
           onChange={(e) => setHeight(e.target.value)}
         />
       </td>
@@ -45,7 +45,7 @@ export default NewRoom = ({ submitRoom }) => {
         <input
           type="number"
           name="x"
-          value={y}
+          value={x}
           onChange={(e) => setX(e.target.value)}
         />
       </td>
@@ -54,7 +54,7 @@ export default NewRoom = ({ submitRoom }) => {
         <input
           type="number"
           name="y"
-          value={height}
+          value={y}
           onChange={(e) => setY(e.target.value)}
         />
       </td>
