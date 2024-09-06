@@ -20,3 +20,7 @@ export const changeRoom = (newData = "chiiro") => {
   //console.log(JSON.stringify(dungeonData));
   return dungeonData;
 };
+
+export const singleRoom = (id=1) => {
+    return dungeonData[id]
+}
