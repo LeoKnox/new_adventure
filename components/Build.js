@@ -24,7 +24,7 @@ export default Build = () => {
         {rooms.map((room) => (
           <tr>
             <td>
-              1<editRoom roomId={room.id} />
+              1<EditRoom roomId={room.id} />
             </td>
             <td>{room.name}</td>
             <td>{room.width}</td>
