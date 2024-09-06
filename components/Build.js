@@ -1,6 +1,7 @@
 import { useState, useEffect } from "react";
 import { allRooms, addRoom, changeRoom } from "./dungeonData.js";
 import NewRoom from "./NewRoom.js";
+import editRoom from "./editRoom.js";
 
 export default Build = () => {
   const [rooms, setRooms] = useState(allRooms());
@@ -22,7 +23,7 @@ export default Build = () => {
         </tr>
         {rooms.map((room) => (
           <tr>
-            <td>{room.id}</td>
+            <td><editRoom roomId={room.id} /></td>
             <td>{room.name}</td>
             <td>{room.width}</td>
             <td>{room.height}</td>
@@ -30,12 +31,9 @@ export default Build = () => {
             <td>{room.y}</td>
           </tr>
         ))}
-
-
       </table>
 
-          <NewRoom submitRoom={submitRoom} />
-
+      <NewRoom submitRoom={submitRoom} />
     </>
   );
 };
