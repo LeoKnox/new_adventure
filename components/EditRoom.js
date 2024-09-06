@@ -1,4 +1,4 @@
-export default EditRoom = (roomId) => {
+export default EditRoom = ({roomId}) => {
   console.log("RR" + roomId);
   return (
     <>
