@@ -5,6 +5,7 @@ export default EditRoom = ({ roomId = 1 }) => {
   return (
     <>
       <button>{roomId}</button>
+      <p>{() => singleRoom()}</p>
     </>
   );
 };
