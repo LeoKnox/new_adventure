@@ -13,7 +13,7 @@ export default AllRooms = ({ rooms, loadEdit }) => {
         {rooms.map((room) => (
           <tr>
             <td>
-              <button onClick={loadEdit}>{room.id}</button>
+              <button onClick={() => loadEdit(room.id)}>{room.id}</button>
             </td>
             <td>{room.name}</td>
             <td>{room.width}</td>
