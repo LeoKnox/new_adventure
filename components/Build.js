@@ -7,8 +7,8 @@ import EditRoom from "./EditRoom.js";
 export default Build = () => {
   const [isEdit, setIsEdit] = useState(true);
   const [rooms, setRooms] = useState(allRooms());
-  const loadEdit = () => {
-    alert("load");
+  const loadEdit = (roomId = 99) => {
+    alert("load " + roomId);
   };
   const submitRoom = (name, width, height, x, y) => {
     let temp = addRoom(name, width, height, x, y);
