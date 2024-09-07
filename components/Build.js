@@ -5,6 +5,7 @@ import NewRoom from "./NewRoom.js";
 import EditRoom from "./EditRoom.js";
 
 export default Build = () => {
+  const [isEdit, setIsEdit] = useState(true);
   const [rooms, setRooms] = useState(allRooms());
   const submitRoom = (name, width, height, x, y) => {
     let temp = addRoom(name, width, height, x, y);
@@ -13,8 +14,14 @@ export default Build = () => {
   return (
     <>
       <p>build a dungeon</p>
-      <AllRooms rooms={rooms} />
-      <NewRoom submitRoom={submitRoom} />
+      {isEdit ? (
+        <EditRoom />
+      ) : (
+        <>
+          <AllRooms rooms={rooms} />
+          <NewRoom submitRoom={submitRoom} />
+        </>
+      )}
     </>
   );
 };
