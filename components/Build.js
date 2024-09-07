@@ -7,6 +7,9 @@ import EditRoom from "./EditRoom.js";
 export default Build = () => {
   const [isEdit, setIsEdit] = useState(true);
   const [rooms, setRooms] = useState(allRooms());
+  const loadEdit = () => {
+    return <EditRoom />
+  }
   const submitRoom = (name, width, height, x, y) => {
     let temp = addRoom(name, width, height, x, y);
     setRooms(temp);
@@ -15,7 +18,7 @@ export default Build = () => {
     <>
       <p>build a dungeon</p>
       {isEdit ? (
-        <EditRoom />
+        loadEdit()
       ) : (
         <>
           <AllRooms rooms={rooms} />
