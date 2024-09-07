@@ -1,6 +1,7 @@
-export default AllRooms = (rooms) => {
-  return <div>
-    <table>
+export default AllRooms = ({ rooms, loadEdit }) => {
+  return (
+    <div>
+      <table>
         <tr>
           <th>id</th>
           <th>name</th>
@@ -12,7 +13,7 @@ export default AllRooms = (rooms) => {
         {rooms.map((room) => (
           <tr>
             <td>
-              <EditRoom roomId={room.id} />
+              <button onClick={loadEdit}>{room.id}</button>
             </td>
             <td>{room.name}</td>
             <td>{room.width}</td>
@@ -22,5 +23,6 @@ export default AllRooms = (rooms) => {
           </tr>
         ))}
       </table>
-  </div>;
+    </div>
+  );
 };
