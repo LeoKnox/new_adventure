@@ -1,10 +1,9 @@
 import { singleRoom } from "./dungeonData.js";
 
-export default EditRoom = ({ roomId = 1 }) => {
-  console.log({ singleRoom });
+export default EditRoom = ({ newId = 1 }) => {
   return (
     <>
-      <button>{roomId}</button>
+      <button>{newId}</button>
       <p>{() => singleRoom()}</p>
     </>
   );
