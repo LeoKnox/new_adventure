@@ -21,6 +21,7 @@ export const changeRoom = (newData = "chiiro") => {
   return dungeonData;
 };
 
-export const singleRoom = (id=1) => {
-    return dungeonData[id]
-}
+export const singleRoom = (id = 1) => {
+  console.log(dungeonData.map((room) => (room.id === 2 ? "true" : null)));
+  return dungeonData[id];
+};
