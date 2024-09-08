@@ -4,7 +4,7 @@ export default EditRoom = ({ newId = 1 }) => {
   return (
     <>
       <button>{newId}</button>
-      <p>{() => singleRoom()}</p>
+      <p>{() => singleRoom(newId).name}</p>
     </>
   );
 };
