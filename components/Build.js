@@ -5,12 +5,13 @@ import NewRoom from "./NewRoom.js";
 import EditRoom from "./EditRoom.js";
 
 export default Build = () => {
+  console.log("T" + singleRoom(1));
   const [isEdit, setIsEdit] = useState(true);
   const [rooms, setRooms] = useState(allRooms());
   const loadEdit = (roomId = 99) => {
-    console.log("T" + singleRoom(roomId));
     let temp = singleRoom(roomId);
-    alert("load " + singleRoom(temp));
+    setIsEdit(true);
+    //setRoomId(roomId);
   };
   const submitRoom = (name, width, height, x, y) => {
     let temp = addRoom(name, width, height, x, y);
