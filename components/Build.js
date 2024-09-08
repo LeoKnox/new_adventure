@@ -7,11 +7,12 @@ import EditRoom from "./EditRoom.js";
 export default Build = () => {
   console.log("T" + singleRoom(1));
   const [isEdit, setIsEdit] = useState(true);
+  const [newId, setNewId] = useState(0);
   const [rooms, setRooms] = useState(allRooms());
   const loadEdit = (roomId = 99) => {
     let temp = singleRoom(roomId);
     setIsEdit(true);
-    //setRoomId(roomId);
+    setNewId(roomId);
   };
   const submitRoom = (name, width, height, x, y) => {
     let temp = addRoom(name, width, height, x, y);
@@ -21,7 +22,7 @@ export default Build = () => {
     <>
       <p onClick={() => setIsEdit(!isEdit)}>build a dungeon</p>
       {isEdit ? (
-        <EditRoom />
+        <EditRoom newId={newId} />
       ) : (
         <>
           <AllRooms rooms={rooms} loadEdit={loadEdit} />
