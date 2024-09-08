@@ -6,7 +6,7 @@ import EditRoom from "./EditRoom.js";
 
 export default Build = () => {
   console.log("T" + singleRoom(1));
-  const [isEdit, setIsEdit] = useState(true);
+  const [isEdit, setIsEdit] = useState(false);
   const [newId, setNewId] = useState(0);
   const [rooms, setRooms] = useState(allRooms());
   const loadEdit = (roomId = 99) => {
