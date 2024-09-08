@@ -8,7 +8,9 @@ export default Build = () => {
   const [isEdit, setIsEdit] = useState(true);
   const [rooms, setRooms] = useState(allRooms());
   const loadEdit = (roomId = 99) => {
-    alert("load " + singleRoom(roomId));
+    console.log("T" + singleRoom(roomId));
+    let temp = singleRoom(roomId);
+    alert("load " + singleRoom(temp));
   };
   const submitRoom = (name, width, height, x, y) => {
     let temp = addRoom(name, width, height, x, y);
