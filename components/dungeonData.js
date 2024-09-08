@@ -23,5 +23,5 @@ export const changeRoom = (newData = "chiiro") => {
 
 export const singleRoom = (id = 1) => {
   console.log(dungeonData.find((room) => room.id === 2));
-  return dungeonData.find((room) => room.id === 2);
+  return dungeonData.find((room) => room.id == id);
 };
