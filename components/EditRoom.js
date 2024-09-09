@@ -16,7 +16,7 @@ export default EditRoom = ({ newId = 1 }) => {
       <input
         type="text"
         value={roomEdit.name}
-        onChange={(e) => changeRoom(e)}
+        onChange={(e) => setRoomEdit({ ...roomEdit, name: e.target.value })}
       />
     </>
   );
