@@ -13,7 +13,11 @@ export default EditRoom = ({ newId = 1 }) => {
     <>
       <button>{newId}</button>
       <p>{singleRoom(newId).name}</p>
-      <input type="text" value={roomName} onChange={(e) => changeRoom(e)} />
+      <input
+        type="text"
+        value={roomEdit.name}
+        onChange={(e) => changeRoom(e)}
+      />
     </>
   );
 };
