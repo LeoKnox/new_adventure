@@ -6,10 +6,10 @@ import EditRoom from "./EditRoom.js";
 
 export default Build = () => {
   console.log("T" + singleRoom(1));
-  const [isEdit, setIsEdit] = useState(false);
+  const [isEdit, setIsEdit] = useState(true);
   const [newId, setNewId] = useState(1);
   const [rooms, setRooms] = useState(allRooms());
-  const loadEdit = (roomId = 99) => {
+  const loadEdit = (roomId = 1) => {
     let temp = singleRoom(roomId);
     setNewId(roomId);
     setIsEdit(true);
@@ -22,7 +22,7 @@ export default Build = () => {
     <>
       <p onClick={() => setIsEdit(!isEdit)}>build a dungeon</p>
       {isEdit ? (
-        <EditRoom newId={newId} />
+        <EditRoom newId={newId} setRooms={setRooms} />
       ) : (
         <>
           <AllRooms rooms={rooms} loadEdit={loadEdit} />
