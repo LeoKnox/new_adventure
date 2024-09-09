@@ -13,7 +13,7 @@ export default EditRoom = ({ newId = 1 }) => {
       <input
         type="text"
         value={roomName}
-        onChange={(e) => setRoomName(e.target.value)}
+        onChange={(e) => setRoomEdit({ ...roomEdit, room: e.target.value })}
       />
     </>
   );
