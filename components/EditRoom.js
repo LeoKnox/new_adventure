@@ -3,11 +3,18 @@ import { singleRoom } from "./dungeonData.js";
 
 export default EditRoom = ({ newId = 1 }) => {
   const [roomEdit, setRoomEdit] = useState(singleRoom(newId));
+  const hold = singleRoom(newId);
+  const [roomName, setRoomName] = useState(hold.name);
   console.log(roomEdit);
   return (
     <>
       <button>{newId}</button>
-      <p>{roomEdit.name}</p>
+      <p>{singleRoom(newId).name}</p>
+      <input
+        type="text"
+        value={roomName}
+        onChange={(e) => setRoomName(e.target.value)}
+      />
     </>
   );
 };
