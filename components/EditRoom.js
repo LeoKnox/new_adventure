@@ -5,7 +5,8 @@ export default EditRoom = ({ newId = 1, setRooms, editFunc }) => {
   const [roomEdit, setRoomEdit] = useState(singleRoom(newId));
   const submitRoom = () => {
     const temp = changeRoom(roomEdit);
-    setRooms(temp);
+    //setRooms(temp);
+    editFunc(temp);
   };
   return (
     <>
@@ -51,7 +52,7 @@ export default EditRoom = ({ newId = 1, setRooms, editFunc }) => {
           onChange={(e) => setRoomEdit({ ...roomEdit, y: e.target.value })}
         />
       </p>
-      <button onClick={() => editFunc(roomEdit)}>Submit</button>
+      <button onClick={submitRoom}>Submit</button>
     </>
   );
 };
