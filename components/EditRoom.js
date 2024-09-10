@@ -1,10 +1,10 @@
 import { useState } from "react";
 import { singleRoom, changeRoom } from "./dungeonData.js";
 
-export default EditRoom = ({ newId = 1, setRooms }) => {
+export default EditRoom = ({ newId = 1, setRooms, editFunc }) => {
   const [roomEdit, setRoomEdit] = useState(singleRoom(newId));
   const submitRoom = () => {
-    temp = changeRoom(roomEdit);
+    const temp = changeRoom(roomEdit);
     setRooms(temp);
   };
   return (
@@ -51,7 +51,7 @@ export default EditRoom = ({ newId = 1, setRooms }) => {
           onChange={(e) => setRoomEdit({ ...roomEdit, y: e.target.value })}
         />
       </p>
-      <button onClick={submitRoom}>Submit</button>
+      <button onClick={editFunc(roomEdit)}>Submit</button>
     </>
   );
 };
