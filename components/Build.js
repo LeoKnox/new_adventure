@@ -9,6 +9,10 @@ export default Build = () => {
   const [isEdit, setIsEdit] = useState(true);
   const [newId, setNewId] = useState(1);
   const [rooms, setRooms] = useState(allRooms());
+  const editRoom = (roomEdit) => {
+    const temp = changeRoom(roomEdit);
+    setRooms(temp);
+  };
   const loadEdit = (roomId = 1) => {
     let temp = singleRoom(roomId);
     setNewId(roomId);
@@ -25,7 +29,7 @@ export default Build = () => {
         <EditRoom newId={newId} setRooms={setRooms} />
       ) : (
         <>
-          <AllRooms rooms={rooms} loadEdit={loadEdit} />
+          <AllRooms rooms={rooms} loadEdit={loadEdit} editRoom={editRoom} />
           <NewRoom submitRoom={submitRoom} />
         </>
       )}
