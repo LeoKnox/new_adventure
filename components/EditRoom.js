@@ -51,7 +51,7 @@ export default EditRoom = ({ newId = 1, setRooms, editFunc }) => {
           onChange={(e) => setRoomEdit({ ...roomEdit, y: e.target.value })}
         />
       </p>
-      <button onClick={editFunc(roomEdit)}>Submit</button>
+      <button onClick={() => editFunc(roomEdit)}>Submit</button>
     </>
   );
 };
