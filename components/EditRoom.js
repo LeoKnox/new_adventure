@@ -1,10 +1,11 @@
 import { useState } from "react";
 import { singleRoom, changeRoom } from "./dungeonData.js";
 
-export default EditRoom = ({ newId = 1 }, setRooms) => {
+export default EditRoom = ({ newId = 1, setRooms }) => {
   const [roomEdit, setRoomEdit] = useState(singleRoom(newId));
   const submitRoom = () => {
-    setRooms(changeRoom(roomEdit));
+    temp = changeRoom(roomEdit);
+    setRooms(temp);
   };
   return (
     <>
