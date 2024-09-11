@@ -1,4 +1,9 @@
+import { deleteRoom } from "./dungeonData.js";
+
 export default AllRooms = ({ rooms, loadEdit }) => {
+  const removeRoom = () => {
+    console.log(deleteRoom(1));
+  };
   return (
     <div>
       <table>
@@ -20,7 +25,11 @@ export default AllRooms = ({ rooms, loadEdit }) => {
             <td>{room.height}</td>
             <td>{room.x}</td>
             <td>{room.y}</td>
-            <td><button id={room.id}>delete</button></td>
+            <td>
+              <button id={room.id} onClick={removeRoom}>
+                delete
+              </button>
+            </td>
           </tr>
         ))}
       </table>
