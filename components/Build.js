@@ -9,9 +9,9 @@ export default Build = () => {
   const [isEdit, setIsEdit] = useState(true);
   const [newId, setNewId] = useState(1);
   const [rooms, setRooms] = useState(allRooms());
-  const editRoom = (roomEdit) => {
+  const editFunc = (roomEdit) => {
     const temp = changeRoom(roomEdit);
-    setRooms(temp);
+    setRooms(roomEdit);
   };
   const loadEdit = (roomId = 1) => {
     let temp = singleRoom(roomId);
@@ -26,10 +26,10 @@ export default Build = () => {
     <>
       <p onClick={() => setIsEdit(!isEdit)}>build a dungeon</p>
       {isEdit ? (
-        <EditRoom newId={newId} setRooms={setRooms} />
+        <EditRoom newId={newId} setRooms={setRooms} editFunc={editFunc} />
       ) : (
         <>
-          <AllRooms rooms={rooms} loadEdit={loadEdit} editRoom={editRoom} />
+          <AllRooms rooms={rooms} loadEdit={loadEdit} />
           <NewRoom submitRoom={submitRoom} />
         </>
       )}
