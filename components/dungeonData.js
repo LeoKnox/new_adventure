@@ -17,11 +17,14 @@ export const addRoom = (name, width, height, x, y) => {
 
 export const changeRoom = (newData = "chiiro") => {
   //dungeonData = [{ id: 1, name: "aka", width: 5, height: 5, x: 5, y: 5 }];
-  dungeonData = [dungeonData.map((room) => (room.id == 1 ? newData : room))];
+  dungeonData = dungeonData.map((room) => (room.id == 1 ? newData : room));
   console.log(JSON.stringify(dungeonData));
   return dungeonData;
 };
 
+export const deleteRoom = (id = 1) => {
+  return dungeonData;
+};
 export const singleRoom = (id = 1) => {
   console.log(dungeonData.find((room) => room.id === 2));
   return dungeonData.find((room) => room.id == id);
