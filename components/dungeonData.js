@@ -17,7 +17,7 @@ export const addRoom = (name, width, height, x, y) => {
 
 export const changeRoom = (newData = "chiiro") => {
   //dungeonData = [{ id: 1, name: "aka", width: 5, height: 5, x: 5, y: 5 }];
-  dungeonData = dungeonData.map((room) => (room.id == 1 ? newData : room));
+  dungeonData = [dungeonData.map((room) => (room.id == 1 ? newData : room))];
   console.log(JSON.stringify(dungeonData));
   return dungeonData;
 };
