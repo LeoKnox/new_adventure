@@ -1,9 +1,4 @@
-import { deleteRoom } from "./dungeonData.js";
-
-export default AllRooms = ({ rooms, loadEdit }) => {
-  const removeRoom = () => {
-    console.log(deleteRoom(1));
-  };
+export default AllRooms = ({ rooms, removeRoom, loadEdit }) => {
   return (
     <div>
       <table>
