@@ -20,6 +20,7 @@ export default AllRooms = ({ rooms, loadEdit }) => {
             <td>{room.height}</td>
             <td>{room.x}</td>
             <td>{room.y}</td>
+            <td><button id={room.id}>delete</button></td>
           </tr>
         ))}
       </table>
