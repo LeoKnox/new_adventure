@@ -12,11 +12,11 @@ export default Build = () => {
   const editFunc = (roomEdit) => {
     const temp = changeRoom(roomEdit);
     setRooms(roomEdit);
+    setIsEdit(false);
   };
   const loadEdit = (roomId = 1) => {
     let temp = singleRoom(roomId);
     setNewId(roomId);
-    setIsEdit(false);
   };
   const submitRoom = (name, width, height, x, y) => {
     let temp = addRoom(name, width, height, x, y);
