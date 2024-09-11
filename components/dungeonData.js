@@ -23,6 +23,7 @@ export const changeRoom = (newData = "chiiro") => {
 };
 
 export const deleteRoom = (id = 1) => {
+  dungeonData = dungeonData.filter(room => room.id != 1)
   return dungeonData;
 };
 export const singleRoom = (id = 1) => {
