@@ -5,8 +5,10 @@ export const allRooms = () => {
 };
 
 export const addRoom = (name, width, height, x, y) => {
-  console.log(dungeonData[dungeonData.length - 1].id);
-  newId = dungeonData[dungeonData.length - 1].id + 1;
+  //console.log(dungeonData[dungeonData.length - 1].id);
+  newId = dungeonData.length
+    ? dungeonData[dungeonData.length - 1].id + 1
+    : (newId = 1);
   dungeonData = [
     ...dungeonData,
     { id: newId, name: name, width: width, height: height, x: x, y: y },
