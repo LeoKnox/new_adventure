@@ -21,7 +21,7 @@ export default AllRooms = ({ rooms, removeRoom, loadEdit }) => {
             <td>{room.x}</td>
             <td>{room.y}</td>
             <td>
-              <button id={room.id} onClick={removeRoom}>
+              <button id={room.id} onClick={() => removeRoom(room.id)}>
                 delete
               </button>
             </td>
