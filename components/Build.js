@@ -20,7 +20,9 @@ export default Build = () => {
     setNewId(roomId);
   };
   const removeRoom = () => {
-    console.log(deleteRoom(1));
+    //console.log(deleteRoom(1));
+    let temp = deleteRoom(1);
+    setRooms(temp);
   };
   const submitRoom = (name, width, height, x, y) => {
     let temp = addRoom(name, width, height, x, y);
