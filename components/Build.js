@@ -16,12 +16,14 @@ export default Build = () => {
     setIsEdit(false);
   };
   const loadEdit = (roomId = 1) => {
+    console.log("room id " + roomId);
     let temp = singleRoom(roomId);
     setNewId(roomId);
+    setIsEdit(!isEdit);
   };
-  const removeRoom = () => {
+  const removeRoom = (deleteId) => {
     //console.log(deleteRoom(1));
-    let temp = deleteRoom(1);
+    let temp = deleteRoom(deleteId);
     setRooms(temp);
   };
   const submitRoom = (name, width, height, x, y) => {
