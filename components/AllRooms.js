@@ -3,7 +3,6 @@ export default AllRooms = ({ rooms, removeRoom, loadEdit }) => {
     <div>
       <table>
         <tr>
-          <th>id</th>
           <th>name</th>
           <th>width</th>
           <th>height</th>
@@ -12,9 +11,7 @@ export default AllRooms = ({ rooms, removeRoom, loadEdit }) => {
         </tr>
         {rooms.map((room) => (
           <tr>
-            <td>
-              <button onClick={() => loadEdit(room.id)}>{room.id}</button>
-            </td>
+            
             <td>{room.name}</td>
             <td>{room.width}</td>
             <td>{room.height}</td>
@@ -22,8 +19,11 @@ export default AllRooms = ({ rooms, removeRoom, loadEdit }) => {
             <td>{room.y}</td>
             <td>
               <button id={room.id} onClick={() => removeRoom(room.id)}>
-                delete
+                Delete
               </button>
+            </td>
+            <td>
+              <button onClick={() => loadEdit(room.id)}>Edit</button>
             </td>
           </tr>
         ))}
