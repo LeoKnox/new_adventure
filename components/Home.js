@@ -7,6 +7,8 @@ export default Home = () => {
   return (
     <div>
       <h1>Home Page</h1>
+      <button onClick={() => setPlay(true)}>Play</button>
+      <button onClick={() => setPlay(false)}>Build</button>
       {play ? <Play /> : <Build />}
     </div>
   );
