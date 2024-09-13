@@ -1,12 +1,13 @@
-import allCharacters from "./characterData.js";
+import { allCharacters } from "./characterData.js";
 
 export default Play = () => {
+let characters = allCharacters();
   return (
     <>
       <h2>Play game</h2>
-      {allCharacters.map((character) => {
-        <p>{character.name}</p>;
-      })}
+      {characters.map((character) => (
+        <p>{character.name}</p>
+      ))}
     </>
   );
 };
