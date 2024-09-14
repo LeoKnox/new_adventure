@@ -7,6 +7,7 @@ export const allCharacters = () => {
   return characterData;
 };
 
-export const singleRoom = (id = 1) => {
+export const singleCharacter = (id = 1) => {
   let temp = characterData.find((character) => character.id == id);
+  return temp;
 };
