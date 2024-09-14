@@ -29,7 +29,6 @@ export default Play = () => {
           </tr>
         ))}
       </table>
-      {characterId}
       {characterId == 0 || <View characterId={characterId} />}
     </>
   );
