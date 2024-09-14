@@ -5,7 +5,10 @@ export default View = ({ characterId }) => {
   return (
     <>
       <h3>Character</h3>
-      <p>{character.name}</p>
+      <p>Name: {character.name}</p>
+      <p>Lvl: {character.lvl}</p>
+      <p>Atk: {character.atk}</p>
+      <p>Def: {character.def}</p>
     </>
   );
 };
