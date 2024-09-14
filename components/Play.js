@@ -24,11 +24,12 @@ export default Play = () => {
             <td>{character.atk}</td>
             <td>{character.def}</td>
             <td>
-              <button onClick={() => setCharacterId(characterId)}>View</button>
+              <button onClick={() => setCharacterId(character.id)}>View</button>
             </td>
           </tr>
         ))}
       </table>
+      {characterId}
       {characterId == 0 || <View />}
     </>
   );
