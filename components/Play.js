@@ -5,6 +5,7 @@ import View from "./View.js";
 export default Play = () => {
   let characters = allCharacters();
   const [characterView, setCharacterView] = useState(true);
+  const [characterId, setCharacterId] = useState(0);
   return (
     <>
       <h2>Play game</h2>
@@ -23,14 +24,12 @@ export default Play = () => {
             <td>{character.atk}</td>
             <td>{character.def}</td>
             <td>
-              <button onClick={() => setCharacterView(!characterView)}>
-                View
-              </button>
+              <button onClick={() => setCharacterId(characterId)}>View</button>
             </td>
           </tr>
         ))}
       </table>
-      {characterView || <View />}
+      {characterId == 0 || <View />}
     </>
   );
 };
