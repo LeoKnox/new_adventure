@@ -1,13 +1,26 @@
 import { allCharacters } from "./characterData.js";
 
 export default Play = () => {
-let characters = allCharacters();
+  let characters = allCharacters();
   return (
     <>
       <h2>Play game</h2>
-      {characters.map((character) => (
-        <p>{character.name}</p>
-      ))}
+      <table>
+        <tr>
+          <th>Name</th>
+          <th>lvl</th>
+          <th>atk</th>
+          <th>def</th>
+        </tr>
+        {characters.map((character) => (
+            <tr>
+          <td>{character.name}</td>
+          <td>{character.lvl}</td>
+          <td>{character.atk}</td>
+            <td>{character.def}</td>
+          </tr>
+        ))}
+      </table>
     </>
   );
 };
