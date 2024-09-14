@@ -1,4 +1,5 @@
 import { allCharacters } from "./characterData.js";
+import View from "./View.js";
 
 export default Play = () => {
   let characters = allCharacters();
@@ -25,6 +26,7 @@ export default Play = () => {
           </tr>
         ))}
       </table>
+      <View />
     </>
   );
 };
