@@ -30,7 +30,7 @@ export default Play = () => {
         ))}
       </table>
       {characterId}
-      {characterId == 0 || <View />}
+      {characterId == 0 || <View characterId={characterId} />}
     </>
   );
 };
