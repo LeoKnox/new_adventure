@@ -1,8 +1,10 @@
+import { useState } from "react";
 import { allCharacters } from "./characterData.js";
 import View from "./View.js";
 
 export default Play = () => {
   let characters = allCharacters();
+  const [characterView, setCharacterView] = useState(true);
   return (
     <>
       <h2>Play game</h2>
@@ -21,12 +23,14 @@ export default Play = () => {
             <td>{character.atk}</td>
             <td>{character.def}</td>
             <td>
-              <button>View</button>
+              <button onClick={() => setCharacterView(!characterView)}>
+                View
+              </button>
             </td>
           </tr>
         ))}
       </table>
-      <View />
+      {characterView || <View />}
     </>
   );
 };
