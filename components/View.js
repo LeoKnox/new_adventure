@@ -1,10 +1,11 @@
 import { singleCharacter } from "./characterData.js";
 
 export default View = ({ characterId }) => {
-  console.log(JSON.stringify({ singleCharacter }));
+  const character = singleCharacter(characterId);
   return (
     <>
-      <h3>Character {characterId}</h3>
+      <h3>Character</h3>
+      <p>{character.name}</p>
     </>
   );
 };
