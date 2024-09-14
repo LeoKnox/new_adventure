@@ -1,3 +1,3 @@
-export default View = () => {
-  return <h3>Character</h3>;
+export default View = ({ characterId }) => {
+  return <h3>Character {characterId}</h3>;
 };
