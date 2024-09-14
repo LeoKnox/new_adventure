@@ -11,13 +11,17 @@ export default Play = () => {
           <th>lvl</th>
           <th>atk</th>
           <th>def</th>
+          <th>actions</th>
         </tr>
         {characters.map((character) => (
-            <tr>
-          <td>{character.name}</td>
-          <td>{character.lvl}</td>
-          <td>{character.atk}</td>
+          <tr>
+            <td>{character.name}</td>
+            <td>{character.lvl}</td>
+            <td>{character.atk}</td>
             <td>{character.def}</td>
+            <td>
+              <button>View</button>
+            </td>
           </tr>
         ))}
       </table>
