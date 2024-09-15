@@ -3,6 +3,11 @@ let characterData = [
   { id: 2, name: "aka", lvl: 1, atk: 12, def: 9, weapon: ["sword"] },
 ];
 
+export const addCharacter = (newCharacter) => {
+    let temp = [...characterData, newCharacter]
+    characterData = temp;
+}
+
 export const allCharacters = () => {
   return characterData;
 };
