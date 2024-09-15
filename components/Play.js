@@ -9,7 +9,7 @@ export default Play = () => {
   return (
     <>
       <h2>Play game</h2>
-      <button>Add Character</button>
+      
       <table>
         <tr>
           <th>Name</th>
@@ -29,6 +29,13 @@ export default Play = () => {
             </td>
           </tr>
         ))}
+        <tr>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td><button>Add Character</button></td>
+            </tr>
       </table>
       {characterId == 0 || <View characterId={characterId} />}
     </>
