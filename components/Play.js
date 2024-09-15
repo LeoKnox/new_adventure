@@ -1,5 +1,5 @@
 import { useState } from "react";
-import { allCharacters } from "./characterData.js";
+import { addCharacter, allCharacters } from "./characterData.js";
 import View from "./View.js";
 
 export default Play = () => {
@@ -9,6 +9,7 @@ export default Play = () => {
   return (
     <>
       <h2>Play game</h2>
+      <button>Add Character</button>
       <table>
         <tr>
           <th>Name</th>
