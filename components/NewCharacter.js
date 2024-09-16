@@ -25,14 +25,14 @@ export default NewCharacter = () => {
           <input
             type="number"
             value={atk}
-            onChange={(e) => setName(e.target.value)}
+            onChange={(e) => setAtk(e.target.value)}
           />
         </td>
         <td>
           <input
             type="number"
             value={def}
-            onChange={(e) => setName(e.target.value)}
+            onChange={(e) => setDef(e.target.value)}
           />
         </td>
         <td>
