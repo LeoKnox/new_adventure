@@ -14,21 +14,18 @@ export default NewCharacter = () => {
             value={name}
             onChange={(e) => setName(e.target.value)}
           />
-          </td>
-          <td>
-          <input
-            type="number"
-            value={lvl}
-          />
-          </td>
-          <td>
+        </td>
+        <td>
+          {lvl}
+        </td>
+        <td>
           <input
             type="number"
             value={atk}
             onChange={(e) => setName(e.target.value)}
           />
-          </td>
-          <td>
+        </td>
+        <td>
           <input
             type="number"
             value={def}
