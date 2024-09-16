@@ -4,7 +4,7 @@ import NewCharacter from "./NewCharacter.js";
 import View from "./View.js";
 
 export default Play = () => {
-  let characters = allCharacters();
+  const [characters, setCharacters] = useState(allCharacters());
   const [characterView, setCharacterView] = useState(true);
   const [characterId, setCharacterId] = useState(0);
   const [newRoom, setNewRoom] = useState({});
@@ -31,8 +31,8 @@ export default Play = () => {
             </td>
           </tr>
         ))}
-        
-          <NewCharacter />
+
+        <NewCharacter />
       </table>
       {characterId == 0 || <View characterId={characterId} />}
     </>
