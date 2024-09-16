@@ -1,10 +1,15 @@
 import { useState } from "react";
+import { addCharacter } from "./characterData.js";
 
 export default NewCharacter = () => {
   const [name, setName] = useState("");
   const [lvl, setLvl] = useState(1);
   const [atk, setAtk] = useState(10);
   const [def, setDef] = useState(10);
+  const makeCharacter = () => {
+    const temp = { name: name, lvl: lvl, atk: atk, def: def };
+    addCharacter(temp);
+  };
   return (
     <>
       <tr>
@@ -15,9 +20,7 @@ export default NewCharacter = () => {
             onChange={(e) => setName(e.target.value)}
           />
         </td>
-        <td>
-          {lvl}
-        </td>
+        <td>{lvl}</td>
         <td>
           <input
             type="number"
@@ -33,7 +36,7 @@ export default NewCharacter = () => {
           />
         </td>
         <td>
-          <button>AddCharacter</button>
+          <button onClick={makeCharacter}>Make Character</button>
         </td>
       </tr>
     </>
