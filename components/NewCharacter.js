@@ -1,7 +1,7 @@
 import { useState } from "react";
 import { addCharacter, allCharacters } from "./characterData.js";
 
-export default NewCharacter = () => {
+export default NewCharacter = ({ setCharacters }) => {
   const [name, setName] = useState("");
   const [lvl, setLvl] = useState(1);
   const [atk, setAtk] = useState(10);
