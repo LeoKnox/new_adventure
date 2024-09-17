@@ -1,7 +1,7 @@
 import { useState } from "react";
 import { addCharacter, allCharacters } from "./characterData.js";
 
-export default NewCharacter = ({ setCharacters }) => {
+export default NewCharacter = ({ submitCharacter }) => {
   const [name, setName] = useState("");
   const [lvl, setLvl] = useState(1);
   const [atk, setAtk] = useState(10);
@@ -9,7 +9,7 @@ export default NewCharacter = ({ setCharacters }) => {
   const makeCharacter = ({ setCharacters }) => {
     const temp = { name: name, lvl: lvl, atk: atk, def: def };
     addCharacter(temp);
-    setCharacters(allCharacters);
+    submitCharacter();
   };
   return (
     <>
