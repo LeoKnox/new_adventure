@@ -5,9 +5,9 @@ import View from "./View.js";
 
 export default Play = () => {
   const [characters, setCharacters] = useState(allCharacters());
-  const [characterView, setCharacterView] = useState(true);
+  //const [characterView, setCharacterView] = useState(true);
   const [characterId, setCharacterId] = useState(0);
-  const [newRoom, setNewRoom] = useState({});
+  //const [newRoom, setNewRoom] = useState({});
   return (
     <>
       <h2>Play game</h2>
