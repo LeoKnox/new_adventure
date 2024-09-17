@@ -6,9 +6,10 @@ export default NewCharacter = () => {
   const [lvl, setLvl] = useState(1);
   const [atk, setAtk] = useState(10);
   const [def, setDef] = useState(10);
-  const makeCharacter = () => {
+  const makeCharacter = ({ setCharacters }) => {
     const temp = { name: name, lvl: lvl, atk: atk, def: def };
     addCharacter(temp);
+    setCharacter(allCharacters);
   };
   return (
     <>
