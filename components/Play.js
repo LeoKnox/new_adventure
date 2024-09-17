@@ -5,9 +5,10 @@ import View from "./View.js";
 
 export default Play = () => {
   const [characters, setCharacters] = useState(allCharacters());
-  //const [characterView, setCharacterView] = useState(true);
   const [characterId, setCharacterId] = useState(0);
-  //const [newRoom, setNewRoom] = useState({});
+  const submitCharacter = () => {
+    setCharacters(allCharacters());
+  };
   return (
     <>
       <h2>Play game</h2>
@@ -32,7 +33,7 @@ export default Play = () => {
           </tr>
         ))}
 
-        <NewCharacter setCharacters={setCharacters} />
+        <NewCharacter submitCharacter={submitCharacter} />
       </table>
       {characterId == 0 || <View characterId={characterId} />}
     </>
