@@ -32,7 +32,7 @@ export default Play = () => {
           </tr>
         ))}
 
-        <NewCharacter />
+        <NewCharacter setCharacters={setCharacters} />
       </table>
       {characterId == 0 || <View characterId={characterId} />}
     </>
