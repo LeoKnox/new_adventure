@@ -1,5 +1,9 @@
 import { useState } from "react";
-import { addCharacter, allCharacters } from "./characterData.js";
+import {
+  addCharacter,
+  allCharacters,
+  deleteCharacter,
+} from "./characterData.js";
 import NewCharacter from "./NewCharacter.js";
 import View from "./View.js";
 
@@ -29,6 +33,7 @@ export default Play = () => {
             <td>{character.def}</td>
             <td>
               <button onClick={() => setCharacterId(character.id)}>View</button>
+              <button onClick={deleteCharacter}>Delete</button>
             </td>
           </tr>
         ))}
