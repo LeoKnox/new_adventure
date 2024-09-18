@@ -13,7 +13,7 @@ export const allCharacters = () => {
 };
 
 export const deleteCharacter = () => {
-  let temp = characterData.filter((character) => character != 1);
+  let temp = characterData.filter((character) => character.id != 1);
   characterData = temp;
 };
 
