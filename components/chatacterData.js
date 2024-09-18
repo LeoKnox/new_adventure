@@ -4,13 +4,17 @@ let characterData = [
 ];
 
 export const addCharacter = (newCharacter) => {
-    let temp = [...characterData, newCharacter]
-    characterData = temp;
-}
+  let temp = [...characterData, newCharacter];
+  characterData = temp;
+};
 
 export const allCharacters = () => {
   return characterData;
 };
+
+export const deleteCharacter = () => {
+    let temp = characterData.filter((character) => character !=1)
+}
 
 export const singleCharacter = (id = 1) => {
   let temp = characterData.find((character) => character.id == id);
