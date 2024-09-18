@@ -4,6 +4,7 @@ let characterData = [
 ];
 
 export const addCharacter = (newCharacter) => {
+  newCharacter.id = characterData[characterData.length - 1].id + 1;
   let temp = [...characterData, newCharacter];
   characterData = temp;
 };
