@@ -12,8 +12,8 @@ export const allCharacters = () => {
   return characterData;
 };
 
-export const deleteCharacter = () => {
-  let temp = characterData.filter((character) => character.id != 1);
+export const deleteCharacter = (deleteId) => {
+  let temp = characterData.filter((character) => character.id != deleteId);
   characterData = temp;
 };
 
