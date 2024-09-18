@@ -10,6 +10,9 @@ export default NewCharacter = ({ submitCharacter }) => {
     const temp = { name: name, lvl: lvl, atk: atk, def: def };
     addCharacter(temp);
     submitCharacter();
+    setName("");
+    setAtk(10);
+    setDef(10);
   };
   return (
     <>
