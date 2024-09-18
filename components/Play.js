@@ -4,7 +4,7 @@ import {
   allCharacters,
   deleteCharacter,
 } from "./characterData.js";
-import Delete from "./Delete.js"
+import Delete from "./Delete.js";
 import NewCharacter from "./NewCharacter.js";
 import View from "./View.js";
 
@@ -38,7 +38,6 @@ export default Play = () => {
             <td>{character.def}</td>
             <td>
               <button onClick={() => setCharacterId(character.id)}>View</button>
-              <Delete />
               <button onClick={() => removeCharacter(character.id)}>
                 Delete
               </button>
