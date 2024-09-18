@@ -13,8 +13,8 @@ export default Play = () => {
   const submitCharacter = () => {
     setCharacters(allCharacters());
   };
-  const removeCharacter = () => {
-    deleteCharacter();
+  const removeCharacter = (deleteId) => {
+    deleteCharacter(deleteId);
     setCharacters(allCharacters());
   };
   return (
@@ -37,7 +37,9 @@ export default Play = () => {
             <td>{character.def}</td>
             <td>
               <button onClick={() => setCharacterId(character.id)}>View</button>
-              <button onClick={removeCharacter}>Delete</button>
+              <button onClick={() => removeCharacter(character.id)}>
+                Delete
+              </button>
             </td>
           </tr>
         ))}
