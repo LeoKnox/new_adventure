@@ -54,8 +54,8 @@ export default Play = () => {
         </table>
       ) : (
         <>
-        <View characterId={characterId} />
-        <button>Back</button>
+          <View characterId={characterId} />
+          <button onClick={() => setCharacterId(0)}>Back</button>
         </>
       )}
     </>
