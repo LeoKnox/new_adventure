@@ -8,7 +8,7 @@ import Delete from "./Delete.js";
 import NewCharacter from "./NewCharacter.js";
 import View from "./View.js";
 
-export default Play = () => {
+export default Characters = () => {
   const [characters, setCharacters] = useState(allCharacters());
   const [characterId, setCharacterId] = useState(0);
   const showCharacter = (id) => {
@@ -23,7 +23,7 @@ export default Play = () => {
   };
   return (
     <>
-      <h2>Play game</h2>
+      <h2>Make Characters</h2>
       {characterId == 0 ? (
         <table>
           <tr>
