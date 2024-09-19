@@ -53,7 +53,10 @@ export default Play = () => {
           <NewCharacter submitCharacter={submitCharacter} />
         </table>
       ) : (
+        <>
         <View characterId={characterId} />
+        <button>Back</button>
+        </>
       )}
     </>
   );
