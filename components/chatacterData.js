@@ -4,11 +4,13 @@ let characterData = [
 ];
 
 export const addCharacter = (newCharacter) => {
-  characterData.length == 0
-    ? (characterData = newCharacter)
-    : ((newCharacter.id = characterData[characterData.length - 1].id + 1);
+  if (characterData.length == 0) {
+    characterData = newCharacter;
+  } else {
+    newCharacter.id = characterData[characterData.length - 1].id + 1;
     let temp = [...characterData, newCharacter];
-    characterData = temp;)
+    characterData = temp;
+  }
 };
 
 export const allCharacters = () => {
