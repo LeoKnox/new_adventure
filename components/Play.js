@@ -11,6 +11,9 @@ import View from "./View.js";
 export default Play = () => {
   const [characters, setCharacters] = useState(allCharacters());
   const [characterId, setCharacterId] = useState(0);
+  const showCharacter = (id) => {
+    setCharacterId(id);
+  };
   const submitCharacter = () => {
     setCharacters(allCharacters());
   };
@@ -37,7 +40,7 @@ export default Play = () => {
             <td>{character.atk}</td>
             <td>{character.def}</td>
             <td>
-              <button onClick={() => setCharacterId(character.id)}>View</button>
+              <button onClick={() => showCharacter(character.id)}>View</button>
               <button onClick={() => removeCharacter(character.id)}>
                 Delete
               </button>
