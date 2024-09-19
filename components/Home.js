@@ -12,7 +12,7 @@ export default Home = () => {
       {page}
       <button onClick={() => setPlay(true)}>Play</button>
       <button onClick={() => setPlay(false)}>Build</button>
-
+      <button onClick={() => setPage(<Build />)}>Change</button>
       {play ? <Characters /> : <Build />}
     </div>
   );
