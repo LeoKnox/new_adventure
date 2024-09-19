@@ -24,33 +24,37 @@ export default Play = () => {
   return (
     <>
       <h2>Play game</h2>
-
-      <table>
-        <tr>
-          <th>Name</th>
-          <th>lvl</th>
-          <th>atk</th>
-          <th>def</th>
-          <th>actions</th>
-        </tr>
-        {characters.map((character) => (
+      {characterId == 0 ? (
+        <table>
           <tr>
-            <td>{character.name}</td>
-            <td>{character.lvl}</td>
-            <td>{character.atk}</td>
-            <td>{character.def}</td>
-            <td>
-              <button onClick={() => showCharacter(character.id)}>View</button>
-              <button onClick={() => removeCharacter(character.id)}>
-                Delete
-              </button>
-            </td>
+            <th>Name</th>
+            <th>lvl</th>
+            <th>atk</th>
+            <th>def</th>
+            <th>actions</th>
           </tr>
-        ))}
+          {characters.map((character) => (
+            <tr>
+              <td>{character.name}</td>
+              <td>{character.lvl}</td>
+              <td>{character.atk}</td>
+              <td>{character.def}</td>
+              <td>
+                <button onClick={() => showCharacter(character.id)}>
+                  View
+                </button>
+                <button onClick={() => removeCharacter(character.id)}>
+                  Delete
+                </button>
+              </td>
+            </tr>
+          ))}
 
-        <NewCharacter submitCharacter={submitCharacter} />
-      </table>
-      {characterId == 0 || <View characterId={characterId} />}
+          <NewCharacter submitCharacter={submitCharacter} />
+        </table>
+      ) : (
+        <View characterId={characterId} />
+      )}
     </>
   );
 };
