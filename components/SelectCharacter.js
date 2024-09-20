@@ -1,15 +1,11 @@
-import { useState } from "react";
-import { allCharacters } from "./characterData.js";
-import SelectCharacter from "./SelectCharacter.js";
-import View from "./View.js";
+import {useState} from "react";
+import {allCharacters} from "./characterData.js";
 
-export default Play = () => {
-  const [playerId, setPlayerId] = useState(1);
+export default SelectCharacter = () => {
+    const [characterList, setCharacterList] = useState(allCharacters());
   return (
     <>
-      <h2>Play game</h2>
-      {playerId}
-      <SelectCharacter />
+      <p>select character</p>
     </>
   );
 };
