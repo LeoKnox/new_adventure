@@ -9,7 +9,7 @@ export default Play = () => {
     <>
       <h2>Play game</h2>
       {playerId}
-      <SelectCharacter />
+      <SelectCharacter setPlayerId={setPlayerId} />
     </>
   );
 };
