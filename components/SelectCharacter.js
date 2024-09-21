@@ -3,14 +3,14 @@ import { allCharacters } from "./characterData.js";
 
 export default SelectCharacter = ({ setPlayerId }) => {
   const [characterList, setCharacterList] = useState(allCharacters());
-  const [character, setCharacter] = useState("midori");
+  const [cr, setCharacter] = useState("midori");
   return (
     <>
       <p>select character</p>
-      <p>{character}</p>
-      <select onChange={(char) => setCharacter(char.id)}>
+      <p>{cr}</p>
+      <select onChange={(char) => setCharacter(char.value)}>
         {characterList.map((character) => (
-          <option id={character.id}>{character.name}</option>
+          <option value={character.name}>{character.name}</option>
         ))}
       </select>
     </>
