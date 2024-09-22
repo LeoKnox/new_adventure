@@ -9,6 +9,9 @@ export default SelectCharacter = ({ setPlayerId }) => {
       <p>select character</p>
       <p>{cr}</p>
       <select onChange={(e) => setCharacter(e.target.value)}>
+        <option disabled selected>
+          Select Character
+        </option>
         {characterList.map((character) => (
           <option value={character.id}>{character.name}</option>
         ))}
