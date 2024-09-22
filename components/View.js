@@ -1,4 +1,5 @@
 import { singleCharacter } from "./characterData.js";
+import AddWeapon from "./AddWeapon.js";
 
 export default View = ({ characterId }) => {
   const character = singleCharacter(characterId);
@@ -9,6 +10,7 @@ export default View = ({ characterId }) => {
       <p>Lvl: {character.lvl}</p>
       <p>Atk: {character.atk}</p>
       <p>Def: {character.def}</p>
+      <AddWeapon />
       <p>{character.weapon}</p>
     </>
   );
