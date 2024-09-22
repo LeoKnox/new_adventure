@@ -26,3 +26,8 @@ export const singleCharacter = (id = 1) => {
   let temp = characterData.find((character) => character.id == id);
   return temp;
 };
+
+export const addWeapon = (id = 1) => {
+  characterData[id] = characterData[id].weapon.push("bow");
+  console.log("add weapon");
+};
