@@ -4,12 +4,14 @@ import SelectCharacter from "./SelectCharacter.js";
 import View from "./View.js";
 
 export default Play = () => {
-  const [playerId, setPlayerId] = useState(1);
+  const [playerId, setPlayerId] = useState(0);
   return (
     <>
       <h2>Play game</h2>
       {playerId}
-      <SelectCharacter setPlayerId={setPlayerId} />
+      {playerId <= 0 ? <SelectCharacter setPlayerId={setPlayerId} /> :
+        <p>Game!</p>
+  }
     </>
   );
 };
