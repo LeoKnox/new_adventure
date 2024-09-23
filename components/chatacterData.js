@@ -31,7 +31,7 @@ export const addWeapon = (id = 1, newWeapon = "thing") => {
   //characterData[id] = characterData[id].weapon.push("bow");
   let temp = JSON.stringify({
     ...characterData[0],
-    weapon: [...weapon, newWeapon],
+    weapon: [...characterData[0].weapon, newWeapon],
   });
   console.log("add weapon" + temp);
 };
