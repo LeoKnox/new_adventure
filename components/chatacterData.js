@@ -33,5 +33,6 @@ export const addWeapon = (id = 1, newWeapon = "thing") => {
     ...characterData[0],
     weapon: [...characterData[0].weapon, newWeapon],
   });
-  console.log("add weapon" + temp);
+  characterData[1] = temp;
+  temp = console.log("add weapon" + JSON.stringify(characterData));
 };
