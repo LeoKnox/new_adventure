@@ -28,6 +28,7 @@ export const singleCharacter = (id = 1) => {
 };
 
 export const addWeapon = (id = 1) => {
-  characterData[id] = characterData[id].weapon.push("bow");
-  console.log("add weapon");
+  //characterData[id] = characterData[id].weapon.push("bow");
+  let temp = [...CharacterData[0]];
+  console.log("add weapon" + temp);
 };
