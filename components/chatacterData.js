@@ -30,6 +30,6 @@ export const singleCharacter = (id = 1) => {
 export const addWeapon = (characterId = 1, newWeapon = "thing") => {
   let tempa = characterData.find((character) => character.id == characterId);
 
-  tempa = tempa.weapon.push("gun");
+  tempa = [...tempa.weapon, "gun"];
   console.log(tempa);
 };
