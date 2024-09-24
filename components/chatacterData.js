@@ -34,9 +34,9 @@ export const addWeapon = (id = 1, newWeapon = "thing") => {
     weapon: [...characterData[0].weapon, newWeapon],
   };
   let tempa = characterData.find((character) => character.id == 0);
-  console.log(characterData);
+  //console.log(characterData);
   tempa = tempa.weapon.push("gun");
   characterData[1] = tempa;
   temp = characterData;
-  console.log(characterData);
+  console.log(temp);
 };
