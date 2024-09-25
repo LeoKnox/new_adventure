@@ -29,7 +29,7 @@ export const singleCharacter = (id = 1) => {
 
 export const addWeapon = (characterId = 1, newWeapon = "thing") => {
   let tempa = characterData.find((character) => character.id == characterId);
-  tempa.weapon.concat("cat");
+  tempa.weapon.push(newWeapon);
   //tempa = [...tempa, weapon.push("gun")];
   console.log(tempa);
 };
