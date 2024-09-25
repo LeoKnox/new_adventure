@@ -3,7 +3,7 @@ import { singleCharacter } from "./characterData.js";
 import AddWeapon from "./AddWeapon.js";
 
 export default View = ({ characterId }) => {
-  const [character, setCharacter] = useState({});
+  const [character, setCharacter] = useState(singleCharacter(characterId));
   useEffect(() => {
     setCharacter(singleCharacter(characterId));
   }, [character]);
