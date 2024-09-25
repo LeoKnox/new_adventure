@@ -1,8 +1,13 @@
+import { useState, useEffect } from "react";
 import { singleCharacter } from "./characterData.js";
 import AddWeapon from "./AddWeapon.js";
 
 export default View = ({ characterId }) => {
-  const character = singleCharacter(characterId);
+  const [character, setCharacter] = useState({});
+  useEffect(() => {
+    setCharacter(singleCharacter(characterId));
+  }, [character]);
+
   return (
     <>
       <h3>Character</h3>
