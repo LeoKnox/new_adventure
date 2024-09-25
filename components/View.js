@@ -15,7 +15,10 @@ export default View = ({ characterId }) => {
       <p>Lvl: {character.lvl}</p>
       <p>Atk: {character.atk}</p>
       <p>Def: {character.def}</p>
-      <AddWeapon characterId={characterId} />
+      <AddWeapon
+        characterId={characterId}
+        characterWeapons={character.weapon}
+      />
       <ul>
         {character.weapon.map((weapon) => (
           <li>{weapon}</li>
