@@ -6,7 +6,7 @@ export default View = ({ characterId }) => {
   const [character, setCharacter] = useState(singleCharacter(characterId));
   useEffect(() => {
     setCharacter(singleCharacter(characterId));
-  }, [character]);
+  }, [AddWeapon]);
 
   return (
     <>
