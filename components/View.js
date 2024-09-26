@@ -9,7 +9,7 @@ export default View = ({ characterId }) => {
     setCharacter(singleCharacter(characterId));
   }, [character]);
   const updateWeapon = () => {
-    addWeapon();
+    addWeapon(characterId);
     console.log("update weapon run");
   };
 
