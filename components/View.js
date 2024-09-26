@@ -1,5 +1,5 @@
 import { useState, useEffect } from "react";
-import { singleCharacter, updateWeapon } from "./characterData.js";
+import { singleCharacter, addWeapon } from "./characterData.js";
 import AddWeapon from "./AddWeapon.js";
 
 export default View = ({ characterId }) => {
@@ -9,7 +9,7 @@ export default View = ({ characterId }) => {
     setCharacter(singleCharacter(characterId));
   }, [character]);
   const updateWeapon = () => {
-    updateWeapon();
+    addWeapon();
   };
 
   return (
