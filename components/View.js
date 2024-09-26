@@ -1,12 +1,16 @@
 import { useState, useEffect } from "react";
-import { singleCharacter } from "./characterData.js";
+import { singleCharacter, updateWeapon } from "./characterData.js";
 import AddWeapon from "./AddWeapon.js";
 
 export default View = ({ characterId }) => {
+  // usecallback
   const [character, setCharacter] = useState(singleCharacter(characterId));
   useEffect(() => {
     setCharacter(singleCharacter(characterId));
   }, [character]);
+  const updateWeapon = () => {
+    updateWeapon();
+  };
 
   return (
     <>
@@ -17,6 +21,7 @@ export default View = ({ characterId }) => {
       <p>Def: {character.def}</p>
       <AddWeapon
         characterId={characterId}
+        updateWeapon={updateWeapon}
         characterWeapons={character.weapon}
       />
       <ul>
