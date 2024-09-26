@@ -10,6 +10,7 @@ export default View = ({ characterId }) => {
   }, [character]);
   const updateWeapon = () => {
     addWeapon();
+    console.log("update weapon run");
   };
 
   return (
