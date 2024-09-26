@@ -33,4 +33,5 @@ export const addWeapon = (characterId = 1, newWeapon = "thing") => {
   characterData = characterData.map((character) =>
     character.id == characterId ? temp : character
   );
+  console.log("added");
 };
