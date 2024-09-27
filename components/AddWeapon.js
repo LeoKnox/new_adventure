@@ -18,7 +18,7 @@ export default AddWeapon = ({
       </select>
       <br />
       <button onClick={() => characterWeapons.push("migi")}>right</button>
-      <button onClick={() => updateWeapon()}>Add Weapon</button>
+      <button onClick={() => updateWeapon(listWeapon)}>Add Weapon</button>
     </>
   );
 };
