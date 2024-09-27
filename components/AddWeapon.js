@@ -6,7 +6,8 @@ export default AddWeapon = ({
   updateWeapon,
   characterWeapons,
 }) => {
-  const [listWeapon, setListWeapon] = useState("");
+  const [listWeapon, setListWeapon] = useState("kama");
+  // will set state to first on weapon list
   return (
     <>
       {characterWeapons}
