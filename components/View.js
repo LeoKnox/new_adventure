@@ -6,7 +6,8 @@ export default View = ({ characterId }) => {
   // usecallback
   const [character, setCharacter] = useState();
   useEffect(() => {
-    return setCharacter(singleCharacter(characterId));
+    let temp = singleCharacterId(characterId);
+    setCharacter(temp);
     //return character;
     console.log("charactered");
   }, [character]);
