@@ -10,6 +10,7 @@ export default View = ({ characterId }) => {
   }, [character]);
   const updateWeapon = (newWeapon = "bat") => {
     addWeapon(characterId, newWeapon);
+    setCharacter(singleCharacter(characterId));
   };
 
   return (
