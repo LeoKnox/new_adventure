@@ -8,8 +8,8 @@ export default View = ({ characterId }) => {
   useEffect(() => {
     setCharacter(singleCharacter(characterId));
   }, [character]);
-  const updateWeapon = () => {
-    addWeapon(characterId);
+  const updateWeapon = (newWeapon = "bat") => {
+    addWeapon(characterId, newWeapon);
     console.log("update weapon run");
   };
 
