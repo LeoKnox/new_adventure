@@ -1,8 +1,6 @@
 import { useState } from "react";
-import { addWeapon } from "./characterData.js";
 
 export default AddWeapon = ({
-  characterId,
   updateWeapon,
   characterWeapons,
 }) => {
@@ -18,7 +16,6 @@ export default AddWeapon = ({
         <option>sai</option>
       </select>
       <br />
-      <button onClick={() => characterWeapons.push("migi")}>right</button>
       <button onClick={() => updateWeapon(listWeapon)}>Add Weapon</button>
     </>
   );
