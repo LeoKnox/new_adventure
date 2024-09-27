@@ -10,8 +10,9 @@ export default AddWeapon = ({
   return (
     <>
       {characterWeapons}
+      <p>Add {listWeapon}</p>
       <br />
-      <select>
+      <select onChange={(e) => setListWeapon(e.target.value)}>
         <option>kama</option>
         <option>sai</option>
       </select>
