@@ -6,7 +6,8 @@ export default View = ({ characterId }) => {
   // usecallback
   const [character, setCharacter] = useState(singleCharacter(characterId));
   useEffect(() => {
-    setCharacter(singleCharacter(characterId));
+    //setCharacter(singleCharacter(characterId));
+    console.log("charactered");
   }, [character]);
   const updateWeapon = (newWeapon = "bat") => {
     addWeapon(characterId, newWeapon);
