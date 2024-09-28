@@ -4,16 +4,16 @@ import AddWeapon from "./AddWeapon.js";
 
 export default View = ({ characterId }) => {
   // usecallback
-  const [character, setCharacter] = useState();
+  const [character, setCharacter] = useState(singleCharacter(characterId));
   useEffect(() => {
-    let temp = singleCharacterId(characterId);
+    let temp = singleCharacter(characterId);
     setCharacter(temp);
     //return character;
     console.log("charactered");
   }, [character]);
   const updateWeapon = (newWeapon = "bat") => {
-    addWeapon(characterId, newWeapon);
-    setCharacter(singleCharacter(characterId));
+    temp = addWeapon(characterId, newWeapon);
+    setCharacter(temp);
   };
 
   return (
