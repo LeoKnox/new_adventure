@@ -14,7 +14,7 @@ export default View = ({ characterId }) => {
     setCharacter(temp);
     //return character;
     console.log("charactered");
-  }, [character]);
+  }, [addWeapon]);
 
   return (
     <>
