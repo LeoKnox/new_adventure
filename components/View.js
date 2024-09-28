@@ -12,7 +12,7 @@ export default View = ({ characterId }) => {
     console.log("charactered");
   }, [character]);
   const updateWeapon = (newWeapon = "bat") => {
-    temp = addWeapon(characterId, newWeapon);
+    let temp = addWeapon(characterId, newWeapon);
     setCharacter(temp);
   };
 
