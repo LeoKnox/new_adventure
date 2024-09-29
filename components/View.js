@@ -11,9 +11,7 @@ export default View = ({ characterId }) => {
   };
   useEffect(() => {
     let temp = singleCharacter(characterId);
-    const tempInterval = setInterval(() => {
-      setCharacter(singleCharacter(characterId));
-    }, 1000);
+    setCharacter({singleCharacter(characterId)});
     //return character;
     console.log("charactered");
   }, []);
