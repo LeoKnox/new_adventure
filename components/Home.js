@@ -8,9 +8,11 @@ export default Home = () => {
   return (
     <div>
       <h1>Home Page</h1>
+      <div>
       <button onClick={() => setPage(<Play />)}>Play</button>
       <button onClick={() => setPage(<Characters />)}>Characters</button>
       <button onClick={() => setPage(<Build />)}>Build</button>
+      </div>
       {page}
     </div>
   );
