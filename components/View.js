@@ -3,7 +3,6 @@ import { singleCharacter, addWeapon } from "./characterData.js";
 import AddWeapon from "./AddWeapon.js";
 
 export default View = ({ characterId }) => {
-  // usecallback
   const [character, setCharacter] = useState({});
   const updateWeapon = (newWeapon = "bat") => {
     addWeapon(characterId, newWeapon);
