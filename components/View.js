@@ -30,7 +30,7 @@ export default View = ({ characterId }) => {
         updateWeapon={updateWeapon}
         characterWeapons={character.weapon}
       />
-      <ul>{character.weapon}</ul>
+      <ul>{typeof character.weapon}</ul>
     </>
   );
 };
