@@ -3,6 +3,7 @@ import { singleCharacter, addWeapon } from "./characterData.js";
 import AddWeapon from "./AddWeapon.js";
 
 export default View = ({ characterId }) => {
+  // usecallback
   const [character, setCharacter] = useState({});
   const updateWeapon = (newWeapon = "bat") => {
     addWeapon(characterId, newWeapon);
@@ -10,8 +11,9 @@ export default View = ({ characterId }) => {
   };
   useEffect(() => {
     let temp = singleCharacter(characterId);
-    setCharacter(temp);
-    console.log(character);
+    //setCharacter(temp);
+    setCharacter(singleCharacter(characterId));
+    console.log(temp);
     //return character;
     console.log("charactered");
   }, []);
@@ -28,11 +30,7 @@ export default View = ({ characterId }) => {
         updateWeapon={updateWeapon}
         characterWeapons={character.weapon}
       />
-      <ul>
-        {character.weapon.map((weapon) => (
-          <li>{weapon}</li>
-        ))}
-      </ul>
+      <ul>{character.weapon}</ul>
     </>
   );
 };
