@@ -11,10 +11,8 @@ export default View = ({ characterId }) => {
   };
   useEffect(() => {
     let temp = singleCharacter(characterId);
-    //setCharacter(temp);
     setCharacter(temp);
     console.log(temp);
-    //return character;
     console.log("charactered");
   }, []);
 
