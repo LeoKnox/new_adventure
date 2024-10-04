@@ -1,3 +1,3 @@
-export default DisplayWeapon = () => {
-  return <>weapon1</>;
+export default DisplayWeapon = ({ characterWeapon }) => {
+  return <>{characterWeapon}</>;
 };
