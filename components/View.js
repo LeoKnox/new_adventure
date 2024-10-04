@@ -5,7 +5,7 @@ import DisplayWeapon from "./DisplayWeapon.js";
 
 export default View = ({ characterId }) => {
   // usecallback
-  const [character, setCharacter] = useState(singleCharacter(characterId));
+  const [character, setCharacter] = useState({});
   const updateWeapon = (newWeapon = "bat") => {
     addWeapon(characterId, newWeapon);
     setCharacter(singleCharacter(characterId));
@@ -15,7 +15,7 @@ export default View = ({ characterId }) => {
     setCharacter(temp);
     console.log(temp);
     console.log("charactered");
-  }, []);
+  }, [character]);
 
   return (
     <>
