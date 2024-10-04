@@ -1,10 +1,11 @@
 import { useState, useEffect } from "react";
 import { singleCharacter, addWeapon } from "./characterData.js";
 import AddWeapon from "./AddWeapon.js";
+import DisplayWeapon from "./DisplayWeapon.js";
 
 export default View = ({ characterId }) => {
   // usecallback
-  const [character, setCharacter] = useState();
+  const [character, setCharacter] = useState(singleCharacter(characterId));
   const updateWeapon = (newWeapon = "bat") => {
     addWeapon(characterId, newWeapon);
     setCharacter(singleCharacter(characterId));
@@ -28,7 +29,7 @@ export default View = ({ characterId }) => {
         updateWeapon={updateWeapon}
         characterWeapons={character.weapon}
       />
-      <ul>{typeof character.weapon}</ul>
+      <DisplayWeapon />
     </>
   );
 };
