@@ -4,7 +4,7 @@ import AddWeapon from "./AddWeapon.js";
 
 export default View = ({ characterId }) => {
   // usecallback
-  const [character, setCharacter] = useState({});
+  const [character, setCharacter] = useState(singleCharacter(characterId));
   const updateWeapon = (newWeapon = "bat") => {
     addWeapon(characterId, newWeapon);
     setCharacter(singleCharacter(characterId));
@@ -30,7 +30,11 @@ export default View = ({ characterId }) => {
         updateWeapon={updateWeapon}
         characterWeapons={character.weapon}
       />
-      <ul>{typeof character.weapon}</ul>
+      <ul>
+        {character.weapon.map((param) => (
+          <li>{param}</li>
+        ))}
+      </ul>
     </>
   );
 };
