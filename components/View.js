@@ -21,6 +21,7 @@ export default View = ({ characterId }) => {
     <>
       <h3>Character</h3>
       <p>Name: {character.name}</p>
+      <p>{character.weapons}</p>
       <p>Lvl: {character.lvl}</p>
       <p>Atk: {character.atk}</p>
       <p>Def: {character.def}</p>
