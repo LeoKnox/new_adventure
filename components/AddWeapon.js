@@ -1,11 +1,11 @@
 import { useState } from "react";
 
-export default AddWeapon = ({
-  updateWeapon,
-  characterWeapons,
-}) => {
+export default AddWeapon = ({ updateWeapon, characterWeapons }) => {
   const [listWeapon, setListWeapon] = useState("kama");
   // will set state to first on weapon list
+  const addNewWeapon = () => {
+    updateWeapon(listWeapon);
+  };
   return (
     <>
       {characterWeapons}
@@ -16,7 +16,7 @@ export default AddWeapon = ({
         <option>sai</option>
       </select>
       <br />
-      <button onClick={() => updateWeapon(listWeapon)}>Add Weapon</button>
+      <button onClick={addNewWeapon}>Add Weapon</button>
     </>
   );
 };
