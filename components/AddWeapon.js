@@ -7,7 +7,7 @@ export default AddWeapon = ({ updateWeapon, characterWeapons }) => {
     updateWeapon(listWeapon);
   };
   return (
-    <>
+    <div>
       {characterWeapons}
       <p>Add {listWeapon}</p>
       <br />
@@ -17,6 +17,6 @@ export default AddWeapon = ({ updateWeapon, characterWeapons }) => {
       </select>
       <br />
       <button onClick={addNewWeapon}>Add Weapon</button>
-    </>
+    </div>
   );
 };
