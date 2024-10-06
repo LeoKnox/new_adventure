@@ -1,37 +1,22 @@
-import { useState, useEffect } from "react";
-import { singleCharacter, addWeapon } from "./characterData.js";
-import AddWeapon from "./AddWeapon.js";
-import DisplayWeapon from "./DisplayWeapon.js";
+import { useState } from "react";
 
-export default View = ({ characterId }) => {
-  // usecallback
-  const [character, setCharacter] = useState({});
-  const updateWeapon = (newWeapon = "bat") => {
-    addWeapon(characterId, newWeapon);
-    setCharacter(singleCharacter(characterId));
+export default AddWeapon = ({ updateWeapon, characterWeapons }) => {
+  const [listWeapon, setListWeapon] = useState("kama");
+  // will set state to first on weapon list
+  const addNewWeapon = () => {
+    updateWeapon(listWeapon);
   };
-  useEffect(() => {
-    let temp = {};
-    temp = setCharacter(singleCharacter(characterId));
-    setCharacter(temp);
-    console.log(temp);
-    console.log("charactered");
-  }, [updateWeapon]);
-
   return (
-    <>
-      <h3>Character</h3>
-      <p>Name: {character.name}</p>
-      <p>{character.weapons}</p>
-      <p>Lvl: {character.lvl}</p>
-      <p>Atk: {character.atk}</p>
-      <p>Def: {character.def}</p>
-      <AddWeapon
-        characterId={characterId}
-        updateWeapon={updateWeapon}
-        characterWeapons={character.weapon}
-      />
-      <DisplayWeapon characterWeapon={character.weapon} />
-    </>
+    <div>
+      {characterWeapons}
+      <p>Add {listWeapon}</p>
+      <br />
+      <select onChange={(e) => setListWeapon(e.target.value)}>
+        <option>kama</option>
+        <option>sai</option>
+      </select>
+      <br />
+      <button onClick={addNewWeapon}>Add Weapon</button>
+    </div>
   );
 };
