@@ -12,11 +12,11 @@ export default View = ({ characterId }) => {
   };
   useEffect(() => {
     let temp = {};
-    temp = setCharacter(singleCharacter(characterId));
+    temp = singleCharacter(characterId);
     setCharacter(temp);
     console.log(temp);
     console.log("charactered");
-  }, [updateWeapon]);
+  }, [updateWeapon, character]);
 
   return (
     <>
