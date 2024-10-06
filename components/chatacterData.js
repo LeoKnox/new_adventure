@@ -29,10 +29,8 @@ export const singleCharacter = (id = 1) => {
 
 export const addWeapon = (characterId = 1, newWeapon = "thing") => {
   let temp = characterData.find((character) => character.id == characterId);
-  //temp.weapon.push(newWeapon);
   temp = { ...temp, weapon: [...temp.weapon, newWeapon] };
   characterData = characterData.map((character) =>
     character.id == characterId ? temp : character
   );
-  console.log(characterData);
 };
