@@ -1,3 +1,13 @@
 export default DisplayWeapon = ({ characterWeapon }) => {
-  return <>{characterWeapon}</>;
+  return (
+    <div>
+      <ul>
+        {
+          (characterWeapon.map = (weapon) => {
+            <li>{weapon}</li>;
+          })
+        }
+      </ul>
+    </div>
+  );
 };
