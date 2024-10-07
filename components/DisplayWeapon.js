@@ -1,4 +1,4 @@
-export default DisplayWeapon = (characterWeapon) => {
+export default DisplayWeapon = ({ characterWeapon }) => {
   console.log(characterWeapon);
   return (
     <div>
