@@ -32,7 +32,9 @@ export const addWeapon = (characterId = 1, newWeapon = "thing") => {
   temp.weapon
     ? (temp = { ...temp, weapon: [...temp.weapon, newWeapon] })
     : (temp.weapon = [newWeapon]);
+  console.log(temp.weapon);
   characterData = characterData.map((character) =>
     character.id == characterId ? temp : character
   );
+  console.log(characterData);
 };
