@@ -7,7 +7,7 @@ export default NewCharacter = ({ submitCharacter }) => {
   const [atk, setAtk] = useState(10);
   const [def, setDef] = useState(10);
   const makeCharacter = ({ setCharacters }) => {
-    const temp = { name: name, lvl: lvl, atk: atk, def: def, weapon: [] };
+    const temp = { name: name, lvl: lvl, atk: atk, def: def };
     addCharacter(temp);
     submitCharacter();
     setName("");
