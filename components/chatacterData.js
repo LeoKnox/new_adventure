@@ -29,7 +29,7 @@ export const singleCharacter = (id = 1) => {
 
 export const addWeapon = (characterId = 1, newWeapon = "thing") => {
   let temp = characterData.find((character) => character.id == characterId);
-  temp.length > 0
+  temp.weapon.length
     ? (temp = { ...temp, weapon: [...temp.weapon, newWeapon] })
     : (temp.weapon = [newWeapon]);
   characterData = characterData.map((character) =>
