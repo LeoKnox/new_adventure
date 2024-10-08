@@ -4,6 +4,7 @@ let characterData = [
 ];
 
 export const addCharacter = (newCharacter) => {
+  newCharacter.weapon = [];
   if (characterData.length == 0) {
     characterData = newCharacter;
   } else {
