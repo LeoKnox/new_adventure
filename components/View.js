@@ -10,6 +10,9 @@ export default View = ({ characterId }) => {
     addWeapon(characterId, newWeapon);
     setCharacter(singleCharacter(characterId));
   };
+  const updateInventory = (type="armor", newItem="leather") => {
+    console.log("inventory");
+  }
   useEffect(() => {
     let temp = {};
     temp = singleCharacter(characterId);
@@ -30,7 +33,7 @@ export default View = ({ characterId }) => {
         characterWeapons={character.weapon}
       />
       <DisplayWeapon characterWeapon={character.weapon} />
-      <AddArmor />
+      <AddArmor updateInventory={updateInventory} />
     </>
   );
 };
