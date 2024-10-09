@@ -1,7 +1,13 @@
 export default AddArmor = () => {
   return (
     <>
-      <h3>Add armor</h3>
+      <select>
+        <option>Leather</option>
+        <option>Chainmail</option>
+      </select>
+      <br/>
+      <button>Add </button>
+      <br/>
     </>
   );
 };
