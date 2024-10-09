@@ -2,6 +2,9 @@ import { useState } from "react";
 
 export default AddArmor = () => {
   const [newArmor, setNewArmor] = useState("Leather");
+  const addArmor = () => {
+    console.log("AA armor");
+  };
   return (
     <>
       {newArmor}
@@ -10,7 +13,7 @@ export default AddArmor = () => {
         <option>Chainmail</option>
       </select>
       <br />
-      <button>Add </button>
+      <button onClick={addArmor}>Add </button>
       <br />
     </>
   );
