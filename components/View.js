@@ -1,5 +1,6 @@
 import { useState, useEffect } from "react";
 import { singleCharacter, addWeapon } from "./characterData.js";
+import AddArmor from "./AddArmor.js";
 import AddWeapon from "./AddWeapon.js";
 import DisplayWeapon from "./DisplayWeapon.js";
 
@@ -29,6 +30,7 @@ export default View = ({ characterId }) => {
         characterWeapons={character.weapon}
       />
       <DisplayWeapon characterWeapon={character.weapon} />
+      <AddArmor />
     </>
   );
 };
