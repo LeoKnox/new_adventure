@@ -5,6 +5,7 @@ let characterData = [
 
 export const addCharacter = (newCharacter) => {
   newCharacter.weapon = [];
+  newCharacter.armor = [];
   if (characterData.length == 0) {
     characterData = newCharacter;
   } else {
@@ -35,3 +36,7 @@ export const addWeapon = (characterId = 1, newWeapon = "thing") => {
     character.id == characterId ? temp : character
   );
 };
+
+export const addInventory = ( characterId=1, type="armor", item="scale") => {
+console.log("adding inventory")
+}
