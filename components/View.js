@@ -12,8 +12,8 @@ export default View = ({ characterId }) => {
     setCharacter(singleCharacter(characterId));
   };
   const updateInventory = (type = "armor", newItem = "leather") => {
-    console.log("inventory");
     addInventory();
+    setCharacter(singleCharacter(characterId));
   };
   useEffect(() => {
     let temp = {};
