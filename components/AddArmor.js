@@ -1,9 +1,9 @@
 import { useState } from "react";
 
-export default AddArmor = () => {
+export default AddArmor = ({ updateInventory }) => {
   const [newArmor, setNewArmor] = useState("Leather");
   const addArmor = () => {
-    console.log("AA armor");
+    updateInventory();
   };
   return (
     <>
