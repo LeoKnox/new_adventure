@@ -36,7 +36,7 @@ export default View = ({ characterId }) => {
       />
       <DisplayWeapon characterWeapon={character.weapon} />
       <AddArmor updateInventory={updateInventory} />
-      <DisplayArmor />
+      <DisplayArmor characterArmor={character.armor} />
     </>
   );
 };
