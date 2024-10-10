@@ -1,5 +1,5 @@
 import { useState, useEffect } from "react";
-import { singleCharacter, addWeapon } from "./characterData.js";
+import { singleCharacter, addWeapon, addInventory } from "./characterData.js";
 import AddArmor from "./AddArmor.js";
 import AddWeapon from "./AddWeapon.js";
 import DisplayWeapon from "./DisplayWeapon.js";
@@ -10,9 +10,10 @@ export default View = ({ characterId }) => {
     addWeapon(characterId, newWeapon);
     setCharacter(singleCharacter(characterId));
   };
-  const updateInventory = (type="armor", newItem="leather") => {
+  const updateInventory = (type = "armor", newItem = "leather") => {
     console.log("inventory");
-  }
+    addInventory();
+  };
   useEffect(() => {
     let temp = {};
     temp = singleCharacter(characterId);
