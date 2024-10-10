@@ -42,6 +42,7 @@ export const addInventory = (
   type = "armor",
   item = "scale"
 ) => {
+  console.log(item + "+");
   let temp = characterData.find((character) => character.id == characterId);
   temp = { ...temp, [type]: [...temp[type], item] };
   characterData = characterData.map((character) =>
