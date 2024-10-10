@@ -1,7 +1,7 @@
-export default DisplayArmor = () => {
+export default DisplayArmor = ({ characterArmor }) => {
   return (
     <>
-      <h3>list of armor</h3>
+      <h3>{characterArmor}</h3>
     </>
   );
 };
