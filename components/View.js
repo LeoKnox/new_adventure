@@ -11,8 +11,8 @@ export default View = ({ characterId }) => {
     addWeapon(characterId, newWeapon);
     setCharacter(singleCharacter(characterId));
   };
-  const updateInventory = (type = "armor", newItem = "leather") => {
-    addInventory();
+  const updateInventory = (type = "armor", item = "leather") => {
+    addInventory(type, item);
     setCharacter(singleCharacter(characterId));
   };
   useEffect(() => {
