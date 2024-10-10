@@ -43,7 +43,6 @@ export const addInventory = (
   item = "scale"
 ) => {
   let temp = characterData[characterId][type];
-  //characterData[characterId][type] = item;
-  characterData[1]["armor"] = ["shield"];
+  characterData[characterId][type] = [item];
   console.log(characterData);
 };
