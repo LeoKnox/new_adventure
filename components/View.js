@@ -2,6 +2,7 @@ import { useState, useEffect } from "react";
 import { singleCharacter, addWeapon, addInventory } from "./characterData.js";
 import AddArmor from "./AddArmor.js";
 import AddWeapon from "./AddWeapon.js";
+import DisplayArmor from "./DisplayArmor.js";
 import DisplayWeapon from "./DisplayWeapon.js";
 
 export default View = ({ characterId }) => {
@@ -35,6 +36,7 @@ export default View = ({ characterId }) => {
       />
       <DisplayWeapon characterWeapon={character.weapon} />
       <AddArmor updateInventory={updateInventory} />
+      <DisplayArmor />
     </>
   );
 };
