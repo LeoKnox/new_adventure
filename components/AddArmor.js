@@ -3,7 +3,7 @@ import { useState } from "react";
 export default AddArmor = ({ updateInventory }) => {
   const [newArmor, setNewArmor] = useState("Leather");
   const addArmor = () => {
-    updateInventory();
+    updateInventory("weapon", "thing");
   };
   return (
     <>
