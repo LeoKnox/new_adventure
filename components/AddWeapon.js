@@ -1,10 +1,13 @@
 import { useState } from "react";
 
-export default AddWeapon = ({ updateWeapon, characterWeapons }) => {
+export default AddWeapon = ({
+  updateInventory,
+  characterWeapons,
+}) => {
   const [listWeapon, setListWeapon] = useState("kama");
   // will set state to first on weapon list
   const addNewWeapon = () => {
-    updateWeapon(listWeapon);
+    updateInventory("weapon", listWeapon);
   };
   return (
     <div>
