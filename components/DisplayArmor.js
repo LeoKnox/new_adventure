@@ -3,7 +3,11 @@ export default DisplayArmor = ({ characterArmor }) => {
   console.log(characterArmor);
   return (
     <>
-      <h3>{characterArmor}</h3>
+      <ul>
+        {characterArmor?.map((armor) => (
+          <li>{armor}</li>
+        ))}
+      </ul>
     </>
   );
 };
