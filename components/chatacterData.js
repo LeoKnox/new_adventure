@@ -29,14 +29,6 @@ export const singleCharacter = (id = 1) => {
   return temp;
 };
 
-export const addWeapon = (characterId = 1, newWeapon = "thing") => {
-  let temp = characterData.find((character) => character.id == characterId);
-  temp = { ...temp, weapon: [...temp.weapon, newWeapon] };
-  characterData = characterData.map((character) =>
-    character.id == characterId ? temp : character
-  );
-};
-
 export const addInventory = (
   characterId = 1,
   type = "armor",
