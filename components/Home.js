@@ -15,7 +15,7 @@ export default Home = () => {
           setPage(
             <Characters
               characterId={characterId}
-              setCharacterID={setCharacterId}
+              setCharacterId={setCharacterId}
             />
           )
         }
