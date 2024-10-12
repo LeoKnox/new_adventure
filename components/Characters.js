@@ -1,14 +1,11 @@
 import { useState } from "react";
-import {
-  allCharacters,
-  deleteCharacter,
-} from "./characterData.js";
+import { allCharacters, deleteCharacter } from "./characterData.js";
 import NewCharacter from "./NewCharacter.js";
 import View from "./View.js";
 
-export default Characters = () => {
+export default Characters = ({ characterId, setCharacterId }) => {
   const [characters, setCharacters] = useState(allCharacters());
-  const [characterId, setCharacterId] = useState(0);
+  const [xcharacterId, xsetCharacterId] = useState(0);
   const showCharacter = (id) => {
     setCharacterId(id);
   };
