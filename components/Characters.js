@@ -19,7 +19,7 @@ export default Characters = ({ characterId, setCharacterId }) => {
   return (
     <>
       <h2>Make Characters</h2>
-      {characterId == 0 ? (
+      {characterId <= 0 ? (
         <table>
           <tr>
             <th>Name</th>
