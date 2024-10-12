@@ -7,10 +7,6 @@ import DisplayWeapon from "./DisplayWeapon.js";
 
 export default View = ({ characterId }) => {
   const [character, setCharacter] = useState({});
-  const updateWeapon = (newWeapon = "bat") => {
-    addWeapon(characterId, newWeapon);
-    setCharacter(singleCharacter(characterId));
-  };
   const updateInventory = (type = "armor", item = "leather") => {
     addInventory(characterId, type, item);
     setCharacter(singleCharacter(characterId));
