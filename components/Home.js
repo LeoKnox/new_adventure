@@ -5,14 +5,24 @@ import Play from "./Play.js";
 
 export default Home = () => {
   const [page, setPage] = useState(<Characters />);
+  const [characterId, setCharacterId] = useState(0);
   return (
     <div>
       <h1>Home Page</h1>
-      <div className="navBar">
       <button onClick={() => setPage(<Play />)}>Play</button>
-      <button onClick={() => setPage(<Characters />)}>Characters</button>
+      <button
+        onClick={() =>
+          setPage(
+            <Characters
+              characterId={characterId}
+              setCharacterID={setCharacterId}
+            />
+          )
+        }
+      >
+        Characters
+      </button>
       <button onClick={() => setPage(<Build />)}>Build</button>
-      </div>
       {page}
     </div>
   );
