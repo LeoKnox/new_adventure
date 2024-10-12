@@ -5,7 +5,10 @@ import Play from "./Play.js";
 
 export default Home = () => {
   const [page, setPage] = useState(<Characters />);
-  const [characterId, setCharacterId] = useState(0);
+  const [characterId, setCharacterId] = useState(-1);
+  const changeId = (newId) => {
+    setCharacterId(newId);
+  };
   return (
     <div>
       <h1>Home Page</h1>
