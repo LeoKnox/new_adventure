@@ -5,7 +5,7 @@ import Play from "./Play.js";
 
 export default Home = () => {
   const [page, setPage] = useState(<Characters />);
-  const [characterId, setCharacterId] = useState(-1);
+  const [characterId, setCharacterId] = useState(0);
   const changeId = (newId) => {
     setCharacterId(newId);
   };
@@ -18,7 +18,7 @@ export default Home = () => {
           setPage(
             <Characters
               characterId={characterId}
-              setCharacterId={setCharacterId}
+              setCharacterId={changeId}
             />
           )
         }
