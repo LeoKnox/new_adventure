@@ -7,7 +7,7 @@ export default Characters = ({ characterId = 0, setCharacterId }) => {
   const [characters, setCharacters] = useState(allCharacters());
   const [xcharacterId, xsetCharacterId] = useState(0);
   const showCharacter = (id) => {
-    setCharacterId(id);
+    this.setCharacterId(id);
   };
   const submitCharacter = () => {
     setCharacters(allCharacters());
