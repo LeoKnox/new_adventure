@@ -3,7 +3,7 @@ import { allCharacters, deleteCharacter } from "./characterData.js";
 import NewCharacter from "./NewCharacter.js";
 import View from "./View.js";
 
-export default Characters = ({ characterId, setCharacterId }) => {
+export default Characters = ({ characterId = 0, setCharacterId }) => {
   const [characters, setCharacters] = useState(allCharacters());
   const [xcharacterId, xsetCharacterId] = useState(0);
   const showCharacter = (id) => {
