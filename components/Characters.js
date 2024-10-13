@@ -4,10 +4,12 @@ import NewCharacter from "./NewCharacter.js";
 import View from "./View.js";
 
 export default Characters = ({ characterId = 0, setCharacterId }) => {
+  console.log("EEE");
+  console.log(setCharacterId);
   const [characters, setCharacters] = useState(allCharacters());
   const [xcharacterId, xsetCharacterId] = useState(0);
   const showCharacter = (id) => {
-    this.setCharacterId(id);
+    xsetCharacterId(id);
   };
   const submitCharacter = () => {
     setCharacters(allCharacters());
@@ -19,7 +21,7 @@ export default Characters = ({ characterId = 0, setCharacterId }) => {
   return (
     <>
       <h2>Make Characters</h2>
-      {characterId <= 0 ? (
+      {xcharacterId <= 0 ? (
         <table>
           <tr>
             <th>Name</th>
