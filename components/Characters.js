@@ -51,7 +51,7 @@ export default Characters = ({ characterId = 0, setCharacterId }) => {
         </table>
       ) : (
         <>
-          <View characterId={characterId} />
+          <View characterId={xcharacterId} />
           <button onClick={() => showCharacter(0)}>Back</button>
         </>
       )}
