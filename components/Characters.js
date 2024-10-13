@@ -5,11 +5,11 @@ import View from "./View.js";
 
 export default Characters = ({ characterId = 0, setCharacterId }) => {
   console.log("EEE");
-  console.log(setCharacterId);
+  console.log(() => setCharacterId(0));
   const [characters, setCharacters] = useState(allCharacters());
   const [xcharacterId, xsetCharacterId] = useState(0);
   const showCharacter = (id) => {
-    xsetCharacterId(id);
+    () => setCharacterId(id);
   };
   const submitCharacter = () => {
     setCharacters(allCharacters());
@@ -51,7 +51,7 @@ export default Characters = ({ characterId = 0, setCharacterId }) => {
         </table>
       ) : (
         <>
-          <View characterId={xcharacterId} />
+          <View characterId={characterId} />
           <button onClick={() => showCharacter(0)}>Back</button>
         </>
       )}
