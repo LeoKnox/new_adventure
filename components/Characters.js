@@ -9,7 +9,9 @@ export default Characters = ({ characterId = 0, setCharacterId }) => {
   const [characters, setCharacters] = useState(allCharacters());
   const [xcharacterId, xsetCharacterId] = useState(0);
   const showCharacter = (id) => {
-    () => setCharacterId(id);
+    {
+      setCharacterId(id);
+    }
   };
   const submitCharacter = () => {
     setCharacters(allCharacters());
@@ -21,7 +23,7 @@ export default Characters = ({ characterId = 0, setCharacterId }) => {
   return (
     <>
       <h2>Make Characters</h2>
-      {xcharacterId <= 0 ? (
+      {characterId <= 0 ? (
         <table>
           <tr>
             <th>Name</th>
