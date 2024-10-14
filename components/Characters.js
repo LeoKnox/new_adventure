@@ -9,9 +9,8 @@ export default Characters = ({ characterId = 0, setCharacterId }) => {
   const [characters, setCharacters] = useState(allCharacters());
   const [xcharacterId, xsetCharacterId] = useState(0);
   const showCharacter = (id) => {
-    {
-      setCharacterId(id);
-    }
+    xsetCharacterId(id);
+    setCharacterId(xcharacterId);
   };
   const submitCharacter = () => {
     setCharacters(allCharacters());
@@ -23,7 +22,7 @@ export default Characters = ({ characterId = 0, setCharacterId }) => {
   return (
     <>
       <h2>Make Characters</h2>
-      {characterId <= 0 ? (
+      {xcharacterId <= 0 ? (
         <table>
           <tr>
             <th>Name</th>
@@ -53,7 +52,7 @@ export default Characters = ({ characterId = 0, setCharacterId }) => {
         </table>
       ) : (
         <>
-          <View characterId={characterId} />
+          <View characterId={xcharacterId} />
           <button onClick={() => showCharacter(0)}>Back</button>
         </>
       )}
