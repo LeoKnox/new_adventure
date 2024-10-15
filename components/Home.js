@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useState, useCallback } from "react";
 import Build from "./Build.js";
 import Characters from "./Characters.js";
 import Play from "./Play.js";
@@ -6,9 +6,12 @@ import Play from "./Play.js";
 export default Home = () => {
   const [page, setPage] = useState(<Characters />);
   const [characterId, setCharacterId] = useState(0);
-  const changeId = (newId) => {
+  /*const changeId = (newId) => {
     setCharacterId(newId);
-  };
+  };*/
+  const changeId = useCallback(() => {
+    setCharacterId(characterId);
+  }, characterId);
   return (
     <div>
       <h1>Home Page</h1>
@@ -16,10 +19,7 @@ export default Home = () => {
       <button
         onClick={() =>
           setPage(
-            <Characters
-              characterId={characterId}
-              setCharacterId={() => setCharacterId()}
-            />
+            <Characters characterId={characterId} setCharacterId={changeId} />
           )
         }
       >
