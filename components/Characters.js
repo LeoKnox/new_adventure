@@ -1,37 +1,64 @@
-import { useState, useCallback } from "react";
-import Build from "./Build.js";
-import Characters from "./Characters.js";
-import Play from "./Play.js";
+import { useState, useEffect } from "react";
+import { allCharacters, deleteCharacter } from "./characterData.js";
+import NewCharacter from "./NewCharacter.js";
+import View from "./View.js";
 
-export default Home = () => {
-  const [page, setPage] = useState(<Characters />);
-  const [characterId, setCharacterId] = useState(0);
-  const changeId = (newId) => {
-    setCharacterId(newId);
+export default Characters = ({ characterId = 0, setCharacterId, changeId }) => {
+  const [characters, setCharacters] = useState(allCharacters());
+  const [xcharacterId, xsetCharacterId] = useState(0);
+  useEffect(() => {
+    console.log("EEE");
+    console.log(setCharacterId);
+    changeId(characterId);
+  }, [characterId]);
+  const showCharacter = (id) => {
+    xsetCharacterId(id);
+    //setCharacterId(characterId);
   };
-  /*const changeId = useCallback(() => {
-    setCharacterId(characterId);
-  }, characterId);*/
-  const x = <Characters characterId={characterId} setCharacterId={changeId} />;
+  const submitCharacter = () => {
+    setCharacters(allCharacters());
+  };
+  const removeCharacter = (deleteId) => {
+    deleteCharacter(deleteId);
+    setCharacters(allCharacters());
+  };
   return (
-    <div>
-      <h1>Home Page</h1>
-      <button onClick={() => setPage(<Play />)}>Play</button>
-      <button
-        onClick={() =>
-          setPage(
-            <Characters
-              characterId={characterId}
-              setCharacterId={setCharacterId}
-              changeId={changeId}
-            />
-          )
-        }
-      >
-        Characters
-      </button>
-      <button onClick={() => setPage(<Build />)}>Build</button>
-      {page}
-    </div>
+    <>
+      <h2>Make Characters</h2>
+      {xcharacterId <= 0 ? (
+        <table>
+          <tr>
+            <th>Name</th>
+            <th>lvl</th>
+            <th>atk</th>
+            <th>def</th>
+            <th>actions</th>
+          </tr>
+          {characters.map((character) => (
+            <tr>
+              <td>{character.name}</td>
+              <td>{character.lvl}</td>
+              <td>{character.atk}</td>
+              <td>{character.def}</td>
+              <td>
+                <button onClick={() => showCharacter(character.id)}>
+                  View
+                </button>
+                <button onClick={() => removeCharacter(character.id)}>
+                  Delete
+                </button>
+              </td>
+            </tr>
+          ))}
+
+          <NewCharacter submitCharacter={submitCharacter} />
+        </table>
+      ) : (
+        <>
+          <View characterId={xcharacterId} />
+          <button onClick={() => showCharacter(0)}>Back</button>
+        </>
+      )}
+    </>
   );
 };
