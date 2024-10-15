@@ -9,7 +9,9 @@ export default Characters = ({ characterId = 0, setCharacterId, changeId }) => {
   useEffect(() => {
     console.log("EEE");
     console.log(setCharacterId);
-    changeId(characterId);
+    setTimeout(() => {
+      changeId(characterId), 2000;
+    });
   }, [characterId]);
   const showCharacter = (id) => {
     xsetCharacterId(id);
