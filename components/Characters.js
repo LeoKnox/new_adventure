@@ -4,14 +4,12 @@ import NewCharacter from "./NewCharacter.js";
 import View from "./View.js";
 
 export default Characters = ({ characterId = 0, setCharacterId }) => {
-  console.log("EEE");
-  console.log(setCharacterId);
   const [characters, setCharacters] = useState(allCharacters());
   const [xcharacterId, xsetCharacterId] = useState(0);
   useEffect(() => {
     console.log("EEE");
     console.log(setCharacterId);
-    return setCharacterId(characterId);
+    setCharacterId(characterId);
   }, [characterId]);
   const showCharacter = (id) => {
     xsetCharacterId(id);
