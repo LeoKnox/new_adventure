@@ -10,8 +10,8 @@ export default Characters = ({ characterId = 0, setCharacterId, changeId }) => {
     console.log("EEE");
     console.log(setCharacterId);
     setTimeout(() => {
-      changeId(characterId), 2000;
-    });
+      changeId(characterId)
+    },2000);
   }, [characterId]);
   const showCharacter = (id) => {
     xsetCharacterId(id);
