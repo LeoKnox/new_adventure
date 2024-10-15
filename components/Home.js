@@ -12,6 +12,7 @@ export default Home = () => {
   const changeId = useCallback(() => {
     setCharacterId(characterId);
   }, characterId);
+  const x = <Characters characterId={characterId} setCharacterId={changeId} />
   return (
     <div>
       <h1>Home Page</h1>
@@ -19,7 +20,7 @@ export default Home = () => {
       <button
         onClick={() =>
           setPage(
-            <Characters characterId={characterId} setCharacterId={changeId} />
+            x
           )
         }
       >
