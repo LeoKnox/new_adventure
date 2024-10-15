@@ -11,7 +11,7 @@ export default Characters = ({ characterId = 0, setCharacterId }) => {
   useEffect(() => {
     console.log("EEE");
     console.log(setCharacterId);
-    setCharacterId(characterId);
+    return setCharacterId(characterId);
   }, [characterId]);
   const showCharacter = (id) => {
     xsetCharacterId(id);
