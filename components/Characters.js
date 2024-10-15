@@ -9,8 +9,10 @@ export default Characters = ({ characterId = 0, setCharacterId }) => {
   const [characters, setCharacters] = useState(allCharacters());
   const [xcharacterId, xsetCharacterId] = useState(0);
   useEffect(() => {
-    setCharacterId(characterId)
-  }, [characterId])
+    console.log("EEE");
+    console.log(setCharacterId);
+    setCharacterId(characterId);
+  }, [characterId]);
   const showCharacter = (id) => {
     xsetCharacterId(id);
     //setCharacterId(characterId);
