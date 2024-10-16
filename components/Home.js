@@ -6,12 +6,12 @@ import Play from "./Play.js";
 export default Home = () => {
   const [page, setPage] = useState(<Characters />);
   const [characterId, setCharacterId] = useState(0);
-  /*const changeId = (newId) => {
+  const changeId = (newId) => {
     setCharacterId(newId);
-  };*/
-  const changeId = useCallback(() => {
+  };
+  /*const changeId = useCallback(() => {
     setCharacterId(characterId);
-  }, characterId);
+  }, characterId);*/
   const x = <Characters characterId={characterId} setCharacterId={changeId} />;
   return (
     <div>
