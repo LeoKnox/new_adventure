@@ -7,6 +7,7 @@ import View from "./View.js";
 export default Play = () => {
   const [playerId, setPlayerId] = useState(1);
   let playerLocation = charLocation();
+  console.log(playerLocation);
   return (
     <>
       <h2>Play game</h2>
@@ -15,7 +16,7 @@ export default Play = () => {
         <SelectCharacter setPlayerId={setPlayerId} />
       ) : (
         <p>Game!</p>
-        {playerLocation}
+        {playerLocation.charX}
       )}
     </>
   );
