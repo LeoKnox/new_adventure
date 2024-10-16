@@ -3,17 +3,10 @@ import { allCharacters, deleteCharacter } from "./characterData.js";
 import NewCharacter from "./NewCharacter.js";
 import View from "./View.js";
 
-export default Characters = ({ characterId = 0, setCharacterId}, changeId) => {
+export default Characters = ({ characterId = 0, setCharacterId, changeId }) => {
   const [characters, setCharacters] = useState(allCharacters());
   const [xcharacterId, xsetCharacterId] = useState(0);
-  useEffect(() => {
-    console.log("EEE");
-    console.log(setCharacterId);
-    setTimeout(() => {
-      console.log(setCharacterId);
-      changeId(characterId);
-    }, 2000);
-  }, [characterId]);
+
   const showCharacter = (id) => {
     xsetCharacterId(id);
     //setCharacterId(characterId);
