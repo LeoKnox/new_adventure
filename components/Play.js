@@ -15,8 +15,10 @@ export default Play = () => {
       {playerId <= 0 ? (
         <SelectCharacter setPlayerId={setPlayerId} />
       ) : (
+        <>
         <p>Game!</p>
         {playerLocation.charX}
+        </>
       )}
     </>
   );
