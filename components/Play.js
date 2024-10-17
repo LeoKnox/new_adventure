@@ -1,6 +1,7 @@
 import { useState } from "react";
 import { allCharacters } from "./characterData.js";
 import { charLocation } from "./playData";
+import PlayMap from "./PlayMap.js";
 import SelectCharacter from "./SelectCharacter.js";
 import View from "./View.js";
 
@@ -16,8 +17,8 @@ export default Play = () => {
         <SelectCharacter setPlayerId={setPlayerId} />
       ) : (
         <>
-        <p>Game!</p>
-        {playerLocation.charX}
+          <p>Game!</p>
+          <PlayMap />
         </>
       )}
     </>
