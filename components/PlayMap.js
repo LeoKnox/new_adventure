@@ -6,7 +6,7 @@ export default PlayMap = () => {
     <>
       <p>Map</p>
       <tr>
-        <td style={{width:60}}>{floorSVG()}</td>
+        <td style={{ "width": "100%" }}>{floorSVG()}</td>
         <td>{wallSVG()}</td>
       </tr>
     </>
