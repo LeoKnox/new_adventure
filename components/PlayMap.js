@@ -13,7 +13,7 @@ export default PlayMap = () => {
               <td>{floorSVG()}</td>
             </>
           ))}
-          
+          <td> {wallSVG()}</td>
         </tr>
       ))}
     </>
