@@ -6,13 +6,18 @@ export default PlayMap = () => {
     <>
       <p>Map</p>
       <tr>
-      {[...Array(10)].map((y, i) =>(
-        <>
-    <td>{floorSVG()}</td>
-    <td> {wallSVG()}</td>
-    </>
-  ))}
-        
+        {[...Array(x)].map((y, i) => (
+          <>
+           <td> {wallSVG()}</td>
+            {[...Array(x)].map((z, i) => (
+          <>
+            <td>{floorSVG()}</td>
+
+            
+          </>
+        ))}
+          </>
+        ))}
       </tr>
     </>
   );
