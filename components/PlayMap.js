@@ -5,20 +5,17 @@ export default PlayMap = () => {
   return (
     <>
       <p>Map</p>
-      <tr>
-        {[...Array(x)].map((y, i) => (
-          <>
-           <td> {wallSVG()}</td>
-            {[...Array(x)].map((z, i) => (
-          <>
-            <td>{floorSVG()}</td>
-
-            
-          </>
-        ))}
-          </>
-        ))}
-      </tr>
+      {[...Array(x)].map((y, i) => (
+        <tr>
+          <td> {wallSVG()}</td>
+          {[...Array(x)].map((z, i) => (
+            <>
+              <td>{floorSVG()}</td>
+            </>
+          ))}
+          
+        </tr>
+      ))}
     </>
   );
 };
