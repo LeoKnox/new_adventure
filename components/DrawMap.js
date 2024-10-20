@@ -1,6 +1,6 @@
 import { floorSVG, wallSVG } from "./svgData";
 
-export default DrawMap = (x = 10) => {
+export default DrawMap = ({x = 10}) => {
   return (
     <>
       <tr>
