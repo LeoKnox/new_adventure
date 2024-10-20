@@ -6,7 +6,9 @@ export default PlayMap = () => {
   return (
     <>
       <p>Map</p>
+      <table>
       <DrawMap />
+      </table>
     </>
   );
 };
