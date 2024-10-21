@@ -1,19 +1,19 @@
 import { floorSVG, wallSVG } from "./svgData";
 
-export default DrawMap = ({x = 10}) => {
+export default DrawMap = ({ width, height, x = 10 }) => {
   return (
     <>
       <tr>
-        {[...Array(x + 2)].map((z, i) => (
+        {[...Array(width)].map((z, i) => (
           <>
             <td id={i}>{wallSVG()}</td>
           </>
         ))}
       </tr>
-      {[...Array(x)].map((y, i) => (
+      {[...Array(width)].map((y, i) => (
         <tr>
           <td> {wallSVG()}</td>
-          {[...Array(x)].map((z, i) => (
+          {[...Array(height)].map((z, i) => (
             <>
               <td>{floorSVG()}</td>
             </>
@@ -22,7 +22,7 @@ export default DrawMap = ({x = 10}) => {
         </tr>
       ))}
       <tr>
-        {[...Array(x + 2)].map((z, i) => (
+        {[...Array(width)].map((z, i) => (
           <>
             <td>{wallSVG()}</td>
           </>
