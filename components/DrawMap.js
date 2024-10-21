@@ -4,16 +4,16 @@ export default DrawMap = ({ width, height, x = 10 }) => {
   return (
     <>
       <tr>
-        {[...Array(width)].map((z, i) => (
+        {[...Array(width + 2)].map((z, i) => (
           <>
             <td id={i}>{wallSVG()}</td>
           </>
         ))}
       </tr>
-      {[...Array(width)].map((y, i) => (
+      {[...Array(height)].map((y, i) => (
         <tr>
           <td> {wallSVG()}</td>
-          {[...Array(height)].map((z, i) => (
+          {[...Array(width)].map((z, i) => (
             <>
               <td>{floorSVG()}</td>
             </>
@@ -22,7 +22,7 @@ export default DrawMap = ({ width, height, x = 10 }) => {
         </tr>
       ))}
       <tr>
-        {[...Array(width)].map((z, i) => (
+        {[...Array(width + 2)].map((z, i) => (
           <>
             <td>{wallSVG()}</td>
           </>
