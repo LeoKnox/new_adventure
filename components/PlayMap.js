@@ -2,12 +2,13 @@ import { floorSVG, wallSVG } from "./svgData";
 import DrawMap from "./DrawMap.js";
 
 export default PlayMap = () => {
-  let x = 10;
+  let width = 10;
+  let height = 8
   return (
     <>
       <p>Map</p>
       <table>
-      <DrawMap />
+        <DrawMap width={width} height={height} />
       </table>
     </>
   );
