@@ -15,7 +15,7 @@ export default DrawMap = ({ width, height, x = 10 }) => {
           <td> {wallSVG()}</td>
           {[...Array(width)].map((z, i) => (
             <>
-              <td>{floorSVG()}</td>
+              <td id={`${y}:${z}`}>{floorSVG()}</td>
             </>
           ))}
           <td> {wallSVG()}</td>
