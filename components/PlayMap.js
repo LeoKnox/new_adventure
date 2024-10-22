@@ -6,7 +6,7 @@ export default PlayMap = () => {
   let height = 6;
   const addCharacter = () => {
     // id="0:0"
-    document.getElementById("0:0").innerHTML = { wallSVG };
+    document.getElementById("0:0").innerHTML = wallSVG();
     console.log("added character");
   };
   return (
