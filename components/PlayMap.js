@@ -1,4 +1,5 @@
 import { floorSVG, wallSVG } from "./svgData";
+import DrawCharacer from "./DrawCharacter.js";
 import DrawMap from "./DrawMap.js";
 
 export default PlayMap = () => {
@@ -6,7 +7,7 @@ export default PlayMap = () => {
   let height = 6;
   const addCharacter = () => {
     // id="0:0"
-    document.getElementById("0:0").innerHTML = wallSVG().props;
+    document.getElementById("0:0").innerHTML = <DrawCharacter />;
     console.log("added character");
   };
   return (
