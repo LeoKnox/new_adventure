@@ -7,7 +7,7 @@ export default PlayMap = () => {
   let height = 6;
   const addCharacter = () => {
     // id="0:0"
-    document.getElementById("0:0").innerHTML = <DrawCharacter />;
+    document.getElementById("0:0").innerHTML = { DrawCharacter };
     console.log("added character");
   };
   return (
