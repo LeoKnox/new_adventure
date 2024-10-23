@@ -12,7 +12,7 @@ export default PlayMap = () => {
   };
   return (
     <>
-      <button onClick={addCharacter}>character</button>
+      <button onClick={addCharacter}>character{wallSVG()}</button>
       <table>
         <DrawMap width={width} height={height} />
       </table>
