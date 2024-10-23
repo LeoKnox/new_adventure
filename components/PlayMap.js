@@ -9,8 +9,11 @@ export default PlayMap = () => {
   const [test, setTest] = useState([wallSVG(), floorSVG()]);
   const addCharacter = () => {
     // id="0:0"
-    document.getElementById([0, 0]).innerHTML = <DrawCharacter />;
-    console.log("added character");
+    //document.getElementById([0, 0]).innerHTML = <DrawCharacter />;
+    let temp = test;
+    temp[1] = wallSVG();
+    setTest(temp);
+    console.log(temp);
   };
   return (
     <>
