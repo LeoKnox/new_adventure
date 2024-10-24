@@ -17,9 +17,10 @@ export default PlayMap = () => {
   const addCharacter = () => {
     // id="0:0"
     //document.getElementById([0, 0]).innerHTML = <DrawCharacter />;
-    let temp = [...test[1]];
-    let newtemp = [...temp];
-    temp[1] = "floorSVG()";
+    let temp = [...test];
+    let newtemp = [...test[1]];
+    newtemp[1] = "floorSVG()";
+    temp[1] = newtemp;
     setTest(temp);
     console.log(newtemp);
   };
