@@ -10,13 +10,18 @@ export default PlayMap = () => {
     [wallSVG(), wallSVG()],
     [wallSVG(), wallSVG()],
   ]);
+  const [x, setx] = useState([
+    ["x", "y"],
+    ["a", "b"],
+  ]);
   const addCharacter = () => {
     // id="0:0"
     //document.getElementById([0, 0]).innerHTML = <DrawCharacter />;
-    let temp = [...test];
-    temp[1][1] = floorSVG();
-    setTest(temp);
-    console.log(temp);
+    let temp = [...x];
+    let newtemp = [...temp];
+    newtemp[1][1] = "q";
+    setx(newtemp);
+    console.log(newtemp);
   };
   return (
     <>
