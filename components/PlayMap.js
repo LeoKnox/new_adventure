@@ -14,7 +14,7 @@ export default PlayMap = () => {
     ["x", "y"],
     ["a", "b"],
   ]);
-  const addCharacter = (row = "1", column = 0) => {
+  const addCharacter = (row = 1, column = 0) => {
     // id="0:0"
     //document.getElementById([0, 0]).innerHTML = <DrawCharacter />;
     let temp = [...test];
@@ -26,7 +26,7 @@ export default PlayMap = () => {
   };
   return (
     <>
-      <button onClick={addCharacter}>character</button>
+      <button onClick={() => addCharacter(1, 0)}>character</button>
       {test}
       <table>
         <DrawMap width={width} height={height} />
