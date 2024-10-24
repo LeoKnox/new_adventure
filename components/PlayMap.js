@@ -26,7 +26,7 @@ export default PlayMap = () => {
   };
   return (
     <>
-      <button onClick={() => addCharacter(1, 0)}>character</button>
+      <button onClick={() => addCharacter()}>character</button>
       {test}
       <table>
         <DrawMap width={width} height={height} />
