@@ -14,13 +14,13 @@ export default PlayMap = () => {
     ["x", "y"],
     ["a", "b"],
   ]);
-  const addCharacter = () => {
+  const addCharacter = (row = 1, column = 0) => {
     // id="0:0"
     //document.getElementById([0, 0]).innerHTML = <DrawCharacter />;
     let temp = [...test];
-    let newtemp = [...test[1]];
-    newtemp[1] = floorSVG();
-    temp[1] = newtemp;
+    let newtemp = [...test[row]];
+    newtemp[column] = floorSVG();
+    temp[row] = newtemp;
     setTest(temp);
     console.log(newtemp);
   };
