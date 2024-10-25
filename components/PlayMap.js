@@ -26,7 +26,7 @@ export default PlayMap = () => {
   };
   return (
     <>
-      {warriorSVG}
+      {warriorSVG()}
       <button onClick={() => addCharacter()}>character</button>
       {test}
       <table>
