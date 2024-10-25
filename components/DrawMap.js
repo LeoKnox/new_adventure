@@ -11,10 +11,17 @@ export default DrawMap = ({ width = 10, height, x = 10 }) => {
       </tr>
     ))
   );
-  console.log(mapState);
+  const addCharacter = (row = 1, column = 0) => {
+    let temp = [...mapState];
+    let newtemp = [...MapState[row]];
+    newtemp[column] = "^";
+    temp[row] = newtemp;
+    setMapState(temp);
+  };
   return (
     <>
       {mapState}
+      <button onClick={() => addCharacter}>cc</button>
       <tr>
         {[...Array(width + 2)].map((z, i) => (
           <>
