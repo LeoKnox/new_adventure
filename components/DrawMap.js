@@ -1,8 +1,11 @@
+import { useState } from "react";
 import { floorSVG, wallSVG } from "./svgData";
 
-export default DrawMap = ({ width, height, x = 10 }) => {
+export default DrawMap = ({ width = 10, height, x = 10 }) => {
+  const [mapState, setMapState] = useState([...Array(5), "*"]);
   return (
     <>
+      {mapState}
       <tr>
         {[...Array(width + 2)].map((z, i) => (
           <>
