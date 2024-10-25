@@ -1,5 +1,5 @@
 import { useState } from "react";
-import { floorSVG, wallSVG } from "./svgData";
+import { floorSVG, wallSVG, warriorSVG } from "./svgData";
 import DrawCharacer from "./DrawCharacter.js";
 import DrawMap from "./DrawMap.js";
 
@@ -26,6 +26,7 @@ export default PlayMap = () => {
   };
   return (
     <>
+      {warriorSVG}
       <button onClick={() => addCharacter()}>character</button>
       {test}
       <table>
