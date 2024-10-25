@@ -11,9 +11,9 @@ export default DrawMap = ({ width = 10, height, x = 10 }) => {
       </tr>
     ))
   );
-  const addCharacter = (row = 1, column = 0) => {
+  const addCharacter = (row, column) => {
     let temp = [...mapState];
-    let newtemp = [...mapState[row]];
+    let newtemp = [...mapState[1]];
     newtemp[column] = "^";
     temp[row] = newtemp;
     console.log("Ran:");
