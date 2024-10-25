@@ -13,15 +13,16 @@ export default DrawMap = ({ width = 10, height, x = 10 }) => {
   );
   const addCharacter = (row = 1, column = 0) => {
     let temp = [...mapState];
-    let newtemp = [...MapState[row]];
+    let newtemp = [...mapState[row]];
     newtemp[column] = "^";
     temp[row] = newtemp;
+    console.log("Ran:");
     setMapState(temp);
   };
   return (
     <>
       {mapState}
-      <button onClick={() => addCharacter}>cc</button>
+      <button onClick={() => addCharacter(2, 3)}>cc</button>
       <tr>
         {[...Array(width + 2)].map((z, i) => (
           <>
