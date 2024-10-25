@@ -1,5 +1,5 @@
-import { wallSVG } from "./svgData";
+import { warriorSVG } from "./svgData";
 
 export default DrawCharacter = () => {
-  return <td>{wallSVG()}</td>;
+  return <td>{warriorSVG()}</td>;
 };
