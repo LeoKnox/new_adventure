@@ -17,9 +17,7 @@ export default DrawMap = ({ width = 10, height, x = 10 }) => {
     let newtemp = [...mapState[1].props.children];
     newtemp[column] = (
       <td>
-        <div
-          style={{ position: "absolute", opacity: "60%", fillOpacity: "100%" }}
-        >
+        <div style={{ position: "absolute", opacity: "60%", fillOpacity: "1" }}>
           {floorSVG()}
         </div>
         <div style={{ position: "relative" }}>{warriorSVG()}</div>
