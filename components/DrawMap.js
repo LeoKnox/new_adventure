@@ -15,7 +15,7 @@ export default DrawMap = ({ width = 10, height, x = 10 }) => {
     let temp = [...mapState];
     console.log(temp);
     let newtemp = [...mapState[1].props.children];
-    newtemp[column] = warriorSVG();
+    newtemp[column] += warriorSVG();
     temp[row] = newtemp;
     console.log("Ran:");
     setMapState(temp);
