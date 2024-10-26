@@ -1,12 +1,12 @@
 import { useState } from "react";
-import { floorSVG, wallSVG } from "./svgData";
+import { floorSVG, wallSVG, warriorSVG } from "./svgData";
 
 export default DrawMap = ({ width = 10, height, x = 10 }) => {
   const [mapState, setMapState] = useState(
     [...Array(5)].map(() => (
       <tr>
         {[...Array(4)].map(() => (
-          <td>*</td>
+          <td>{floorSVG()}</td>
         ))}
       </tr>
     ))
@@ -15,7 +15,7 @@ export default DrawMap = ({ width = 10, height, x = 10 }) => {
     let temp = [...mapState];
     console.log(temp);
     let newtemp = [...mapState[1].props.children];
-    newtemp[column] = "^";
+    newtemp[column] = warriorSVG();
     temp[row] = newtemp;
     console.log("Ran:");
     setMapState(temp);
