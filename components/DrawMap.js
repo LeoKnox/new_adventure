@@ -5,7 +5,7 @@ export default DrawMap = ({ width = 10, height, x = 10 }) => {
   const [mapState, setMapState] = useState(
     [...Array(5)].map(() => (
       <>
-        <tr>{[...Array(6).map(() => <td>{wallSVG()}</td>)]}</tr>
+        <tr>{[...Array(6)].map(() => <td>+</td>)}</tr>
 
         <tr>
           {[...Array(4)].map(() => (
