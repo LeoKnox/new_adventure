@@ -4,11 +4,15 @@ import { floorSVG, wallSVG, warriorSVG } from "./svgData";
 export default DrawMap = ({ width = 10, height, x = 10 }) => {
   const [mapState, setMapState] = useState(
     [...Array(5)].map(() => (
-      <tr>
-        {[...Array(4)].map(() => (
-          <td>{floorSVG()}</td>
-        ))}
-      </tr>
+      <>
+        <tr>{[...Array(6).map(() => <td>{wallSVG()}</td>)]}</tr>
+
+        <tr>
+          {[...Array(4)].map(() => (
+            <td>{floorSVG()}</td>
+          ))}
+        </tr>
+      </>
     ))
   );
   const addCharacter = (row, column) => {
@@ -17,9 +21,7 @@ export default DrawMap = ({ width = 10, height, x = 10 }) => {
     let newtemp = [...mapState[1].props.children];
     newtemp[column] = (
       <td>
-        <div style={{ position: "absolute", opacity: "60%", fillOpacity: "1" }}>
-          {floorSVG()}
-        </div>
+        <div style={{ position: "absolute", opacity: "60%" }}>{floorSVG()}</div>
         <div style={{ position: "relative" }}>{warriorSVG()}</div>
       </td>
     );
