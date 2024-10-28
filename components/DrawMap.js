@@ -6,7 +6,7 @@ export default DrawMap = ({ width = 10, height, x = 10 }) => {
     <>
       <tr>
         {[...Array(6)].map(() => (
-          <td>+</td>
+          <td>{wallSVG()}</td>
         ))}
       </tr>
       {[...Array(5)].map(() => (
@@ -20,7 +20,7 @@ export default DrawMap = ({ width = 10, height, x = 10 }) => {
       ))}
       <tr>
         {[...Array(6)].map(() => (
-          <td>+</td>
+          <td>{wallSVG()}</td>
         ))}
       </tr>
     </>
