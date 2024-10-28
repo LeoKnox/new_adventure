@@ -27,7 +27,8 @@ export default DrawMap = ({ width = 10, height, x = 10 }) => {
   );
   console.log(mapState.props.children);
   const addCharacter = (row, column) => {
-    let temp = [...mapState.props.chilldren];
+    console.log(mapState.props.children);
+    let temp = [...mapState[1].props.chilldren];
     console.log(temp);
     let newtemp = [...mapState[1].props.children];
     newtemp[column] = (
