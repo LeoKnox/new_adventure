@@ -10,11 +10,13 @@ export default DrawMap = ({ width = 10, height, x = 10 }) => {
         ))}
       </tr>
       {[...Array(5)].map(() => (
-      <tr>
-        {[...Array(4)].map(() => (
-          <td>{floorSVG()}</td>
-        ))}
-      </tr>
+        <tr>
+                <td>{wallSVG()}</td>
+          {[...Array(4)].map(() => (
+            <td>{floorSVG()}</td>
+          ))}
+          <td>{wallSVG()}</td>
+        </tr>
       ))}
     </>
   );
