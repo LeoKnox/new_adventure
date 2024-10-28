@@ -17,12 +17,12 @@ export default DrawMap = ({ width = 10, height, x = 10 }) => {
           ))}
           <td>{wallSVG()}</td>
         </tr>
-      ))}
+      ))}.concat(
       <tr>
         {[...Array(6)].map(() => (
           <td>{wallSVG()}</td>
         ))}
-      </tr>
+      </tr>)
     </>
   );
   console.log(mapState.props.children);
