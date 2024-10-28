@@ -11,13 +11,18 @@ export default DrawMap = ({ width = 10, height, x = 10 }) => {
       </tr>
       {[...Array(5)].map(() => (
         <tr>
-                <td>{wallSVG()}</td>
+          <td>{wallSVG()}</td>
           {[...Array(4)].map(() => (
             <td>{floorSVG()}</td>
           ))}
           <td>{wallSVG()}</td>
         </tr>
       ))}
+      <tr>
+        {[...Array(6)].map(() => (
+          <td>+</td>
+        ))}
+      </tr>
     </>
   );
   const addCharacter = (row, column) => {
