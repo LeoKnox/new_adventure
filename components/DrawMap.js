@@ -3,17 +3,20 @@ import { floorSVG, wallSVG, warriorSVG } from "./svgData";
 
 export default DrawMap = ({ width = 10, height, x = 10 }) => {
   const [mapState, setMapState] = useState(
+    <>
+    <tr>
+          {[...Array(6)].map(() => (
+            <td>+</td>
+          ))}
+        </tr>
     [...Array(5)].map(() => (
-      <>
-        <tr>{[...Array(6)].map(() => <td>+</td>)}</tr>
-
         <tr>
           {[...Array(4)].map(() => (
             <td>{floorSVG()}</td>
           ))}
         </tr>
-      </>
     ))
+    </>
   );
   const addCharacter = (row, column) => {
     let temp = [...mapState];
