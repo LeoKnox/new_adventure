@@ -17,20 +17,19 @@ export default DrawMap = ({ width = 10, height, x = 10 }) => {
           ))}
           <td>{wallSVG()}</td>
         </tr>
-      ))}.concat(
+      ))}
       <tr>
         {[...Array(6)].map(() => (
           <td>{wallSVG()}</td>
         ))}
-      </tr>)
+      </tr>
     </>
   );
   console.log(mapState.props.children);
   const addCharacter = (row, column) => {
-    console.log(mapState.props.children);
-    let temp = [...mapState[1]];
+    let temp = [...mapState[0].props.children];
     console.log(temp);
-    let newtemp = [...mapState[1].props.children];
+    let newtemp = [...temp[1].props.children];
     newtemp[column] = (
       <td>
         <div style={{ position: "absolute", opacity: "60%" }}>{floorSVG()}</div>
