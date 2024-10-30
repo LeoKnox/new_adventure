@@ -56,7 +56,7 @@ export default DrawMap = ({ width = 10, height, x = 10 }) => {
         <div style={{ position: "relative" }}>{warriorSVG()}</div>
       </td>
     );
-    temp[row].props.children = newtemp;
+    //temp[row].props.children = newtemp;
     console.log("Ran:");
     setMapState(temp);
   };
