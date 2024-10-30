@@ -2,15 +2,17 @@ import { useState, useEffect } from "react";
 import { floorSVG, wallSVG, warriorSVG } from "./svgData";
 
 export default DrawMap = ({ width = 10, height, x = 10 }) => {
-  const [mapState, setMapState] = useState([]);
+  const [mapState, setMapState] = useState(
+    Array.from({ length: 7 }, () => Array.from({ length: 5 }, () => <td>+</td>))
+  );
   useEffect(() => {
     let temp = [];
 
-      for (let j = 0; j < 6; j++) {
-        temp[j] = (<td>+</td>)
-      }
+    for (let j = 0; j < 6; j++) {
+      temp[j] = <td>+</td>;
+    }
 
-    setMapState(temp);
+    //setMapState(temp);
     console.log(temp);
   });
   /*
