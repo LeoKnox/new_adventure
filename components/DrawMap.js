@@ -48,10 +48,9 @@ export default DrawMap = ({ width = 10, height, x = 10 }) => {
     console.log([...mapState]);
     let temp = mapState[2].props.children;
     //let temp = [...mapState[0].props.children];
-
     let newtemp = [...temp[1].props.children];
     console.log(newtemp);
-    temp[column] = (
+    newtemp[column][row] = (
       <td>
         <div style={{ position: "absolute", opacity: "60%" }}>{floorSVG()}</div>
         <div style={{ position: "relative" }}>{warriorSVG()}</div>
@@ -59,7 +58,7 @@ export default DrawMap = ({ width = 10, height, x = 10 }) => {
     );
     temp[row].props.children = newtemp;
     console.log("Ran:");
-    setMapState(temp);
+    setMapState(newtemp);
   };
   return (
     <>
