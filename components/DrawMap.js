@@ -3,7 +3,7 @@ import { floorSVG, wallSVG, warriorSVG } from "./svgData";
 
 export default DrawMap = ({ width = 10, height, x = 10 }) => {
   const [mapState, setMapState] = useState(
-    Array.from({ length: 7 }, () => Array.from({ length: 5 }, () => <td>+</td>))
+    Array.from(7, () => Array.from(5, () => <td>+</td>))
   );
   useEffect(() => {
     let temp = [];
