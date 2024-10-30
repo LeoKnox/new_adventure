@@ -1,14 +1,16 @@
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import { floorSVG, wallSVG, warriorSVG } from "./svgData";
 
 export default DrawMap = ({ width = 10, height, x = 10 }) => {
-  const [mapState, setMapState] = useState(
-    [
-    {for (let i=0; i<8;i++) {
-      <td>+</td>
-    }}
-  ]
-    /*
+  const [mapState, setMapState] = useState([]);
+  useEffect(() => {
+    let temp = [];
+    for (let i = 0; i < 8; i++) {
+      temp.push(<td>+</td>);
+    }
+    console.log(temp);
+  });
+  /*
     <>
       <tr>
         {[...Array(6)].map(() => (
@@ -30,7 +32,6 @@ export default DrawMap = ({ width = 10, height, x = 10 }) => {
         ))}
       </tr>
     </>*/
-  );
   //console.log(mapState.props.children);
   const addCharacter = (row, column) => {
     console.log([...mapState]);
