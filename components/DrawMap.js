@@ -57,6 +57,8 @@ export default DrawMap = ({ width = 10, height, x = 10 }) => {
         <div style={{ position: "relative" }}>{warriorSVG()}</div>
       </td>*/
       { children: <td>*</td> };
+    newtemp.map((x, i) => (i == 1 ? "^" : x));
+    console.log(newtemp[1].props);
     temp[row].props.children = newtemp;
     console.log(temp);
     console.log("Ran:");
