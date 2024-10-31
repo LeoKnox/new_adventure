@@ -1,4 +1,4 @@
-import { useState, useEffect } from "react";
+import { useState, useEffect, cloneElement } from "react";
 import { floorSVG, wallSVG, warriorSVG } from "./svgData";
 
 export default DrawMap = ({ width = 10, height, x = 10 }) => {
@@ -49,14 +49,14 @@ export default DrawMap = ({ width = 10, height, x = 10 }) => {
     let temp = mapState;
     //let temp = [...mapState[0].props.children];
     let newtemp = [...temp[1].props.children];
-    console.log(newtemp[1].props);
-    newtemp[1].props =
+    console.log(newtemp);
+    newtemp[1].props.element =
       /*
       <td>
         <div style={{ position: "absolute", opacity: "60%" }}>{floorSVG()}</div>
         <div style={{ position: "relative" }}>{warriorSVG()}</div>
       </td>*/
-      { children: <td>*</td> };
+      cloneElement(<td>^</td>);
     newtemp.map((x, i) => (i == 1 ? { children: <td>^</td> } : x));
     console.log(newtemp);
     temp[row].props.children = newtemp;
