@@ -51,10 +51,12 @@ export default DrawMap = ({ width = 10, height, x = 10 }) => {
     let newtemp = [...temp[1].props.children];
     //console.log(temp);
     temp[1].props.children[1].props.children = (
+      /*
       <td>
         <div style={{ position: "absolute", opacity: "60%" }}>{floorSVG()}</div>
         <div style={{ position: "relative" }}>{warriorSVG()}</div>
-      </td>
+      </td>*/
+      <td>*</td>
     );
     //temp[row].props.children = newtemp;
     console.log(temp);
