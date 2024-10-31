@@ -45,18 +45,19 @@ export default DrawMap = ({ width = 10, height, x = 10 }) => {
     </>*/
   //console.log(mapState.props.children);
   const addCharacter = (row, column) => {
-    console.log([...mapState]);
+    //console.log([...mapState]);
     let temp = mapState;
     //let temp = [...mapState[0].props.children];
     let newtemp = [...temp[1].props.children];
-    console.log(temp);
-    temp[column].props.children[row].props.children = (
+    //console.log(temp);
+    temp[1].props.children[1].props.children = (
       <td>
         <div style={{ position: "absolute", opacity: "60%" }}>{floorSVG()}</div>
         <div style={{ position: "relative" }}>{warriorSVG()}</div>
       </td>
     );
     //temp[row].props.children = newtemp;
+    console.log(temp);
     console.log("Ran:");
     setMapState(temp);
   };
