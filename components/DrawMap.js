@@ -26,9 +26,9 @@ export default DrawMap = ({ width = 10, height, x = 10 }) => {
   const addCharacter = (row, column) => {
     let temp = mapState;
     console.log(temp);
-    let newtemp = mapState[1];
+    let newtemp = mapState[1].props.children;
     console.log(newtemp);
-    newtemp[1].props.children = (
+    newtemp[1] = (
       /*
       <td>
         <div style={{ position: "absolute", opacity: "60%" }}>{floorSVG()}</div>
