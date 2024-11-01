@@ -13,13 +13,14 @@ export default DrawMap = ({ width = 10, height, x = 10 }) => {
   );
   useEffect(() => {
     let temp = [];
-
-    for (let j = 0; j < 6; j++) {
-      temp[j] = <td>+</td>;
+    for (let i = 0; i < 6; i++) {
+      let row = [];
+      for (let j = 0; j < 8; j++) {
+        row.push(<td>+</td>);
+      }
+      temp.push(row);
     }
-
-    //setMapState(temp);
-    console.log(temp);
+    setMapState(temp);
   });
   /*
     <>
