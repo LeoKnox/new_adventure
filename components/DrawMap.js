@@ -25,15 +25,17 @@ export default DrawMap = ({ width = 10, height, x = 10 }) => {
 
   const addCharacter = (row, column) => {
     let temp = mapState;
-    let newtemp = [...temp[1]];
+    console.log(temp);
+    let newtemp = mapState[1];
     console.log(newtemp);
-    newtemp[1] =
+    newtemp[1].props.children = (
       /*
       <td>
         <div style={{ position: "absolute", opacity: "60%" }}>{floorSVG()}</div>
         <div style={{ position: "relative" }}>{warriorSVG()}</div>
       </td>*/
-      cloneElement(<td>^</td>);
+      <td>^</td>
+    );
     newtemp.map((x, i) => (i == 1 ? { children: <td>^</td> } : x));
     console.log(newtemp);
     temp[row] = newtemp;
