@@ -18,37 +18,13 @@ export default DrawMap = ({ width = 10, height, x = 10 }) => {
       for (let j = 0; j < 8; j++) {
         row.push(<td>+</td>);
       }
-      temp.push(row);
+      temp.push(<tr>{row}</tr>);
     }
     setMapState(temp);
   });
-  /*
-    <>
-      <tr>
-        {[...Array(6)].map(() => (
-          <td>{wallSVG()}</td>
-        ))}
-      </tr>
-      {[...Array(5)].map(() => (
-        <tr>
-          <td>{wallSVG()}</td>
-          {[...Array(4)].map(() => (
-            <td>{floorSVG()}</td>
-          ))}
-          <td>{wallSVG()}</td>
-        </tr>
-      ))}
-      <tr>
-        {[...Array(6)].map(() => (
-          <td>{wallSVG()}</td>
-        ))}
-      </tr>
-    </>*/
-  //console.log(mapState.props.children);
+
   const addCharacter = (row, column) => {
-    //console.log([...mapState]);
     let temp = mapState;
-    //let temp = [...mapState[0].props.children];
     let newtemp = [...temp[1]];
     console.log(newtemp);
     newtemp[1] =
