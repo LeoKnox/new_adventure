@@ -3,13 +3,11 @@ import { floorSVG, wallSVG, warriorSVG } from "./svgData";
 
 export default DrawMap = ({ width = 10, height, x = 10 }) => {
   const [mapState, setMapState] = useState(
-    {for (let x=0; x<width; x++) {
-      <tr>
-       {for (let y=0; y<height) {
-        <td>*</td>
-       }}
-      </tr>
-    }}
+    for (let x=0; x<width; x++) {
+       for (let y=0; y<height) {
+        *
+       }
+    }
   );
 
 
