@@ -11,7 +11,7 @@ export default DrawMap = ({ width = 10, height, x = 10 }) => {
       </tr>
     ))
   );
-  useEffect(() => {
+  /*useEffect(() => {
     let temp = [];
     for (let i = 0; i < 6; i++) {
       let row = [];
@@ -21,7 +21,8 @@ export default DrawMap = ({ width = 10, height, x = 10 }) => {
       temp.push(<tr>{row}</tr>);
     }
     setMapState(temp);
-  }, []);
+    console.log("CC");
+  }, []);*/
 
   const addCharacter = (row, column) => {
     let temp = mapState[1].props.children;
