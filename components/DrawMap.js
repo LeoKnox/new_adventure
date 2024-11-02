@@ -2,14 +2,7 @@ import { useState, useEffect, cloneElement } from "react";
 import { floorSVG, wallSVG, warriorSVG } from "./svgData";
 
 export default DrawMap = ({ width = 10, height, x = 10 }) => {
-  const [mapState, setMapState] = useState(
-    for (let x=0; x<width; x++) {
-       for (let y=0; y<height) {
-        *
-       }
-    }
-  );
-
+  const [mapState, setMapState] = useState(Array(width, () => "+"));
 
   const addCharacter = (row, column) => {
     let temp = mapState[1].props.children;
