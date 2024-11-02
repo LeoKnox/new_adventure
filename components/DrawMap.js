@@ -3,45 +3,18 @@ import { floorSVG, wallSVG, warriorSVG } from "./svgData";
 
 export default DrawMap = ({ width = 10, height, x = 10 }) => {
   const [mapState, setMapState] = useState(
-    Array.from(Array(5), () => (
+    {for (let x=0; x<width; x++) {
       <tr>
-        {Array.from(Array(7), () => (
-          <td>+</td>
-        ))}
+       {for (let y=0; y<height) {
+        <td>*</td>
+       }}
       </tr>
-    ))
+    }}
   );
-  /*useEffect(() => {
-    let temp = [];
-    for (let i = 0; i < 6; i++) {
-      let row = [];
-      for (let j = 0; j < 8; j++) {
-        row.push(<td>+</td>);
-      }
-      temp.push(<tr>{row}</tr>);
-    }
-    setMapState(temp);
-    console.log("CC");
-  }, []);*/
+
 
   const addCharacter = (row, column) => {
     let temp = mapState[1].props.children;
-    console.log(temp);
-    let newtemp = mapState[1].props.children;
-    console.log(newtemp);
-    newtemp[1].props.children = (
-      /*
-      <td>
-        <div style={{ position: "absolute", opacity: "60%" }}>{floorSVG()}</div>
-        <div style={{ position: "relative" }}>{warriorSVG()}</div>
-      </td>*/
-      <td>^</td>
-    );
-    newtemp.map((x, i) => (i == 1 ? { children: <td>^</td> } : x));
-    console.log(newtemp);
-    temp[row] = newtemp;
-    console.log(temp);
-    console.log("Ran:");
     setMapState(temp);
   };
   return (
