@@ -25,7 +25,9 @@ export default DrawMap = ({ width = 10, height, x = 10 }) => {
   return (
     <>
       {mapState.map((row) => (
-        <tr>{row}</tr>
+        <tr>{row.map((tile) => (
+          <td>{tile}</td>
+        ))}</tr>
       ))}
       <button onClick={() => addCharacter(2, 3)}>cc</button>
       <tr>
