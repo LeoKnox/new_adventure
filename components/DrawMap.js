@@ -24,7 +24,11 @@ export default DrawMap = ({ width = 10, height, x = 10 }) => {
   };
   return (
     <>
-      {mapState.map((row) => {row})}
+      {mapState.map((row) => (
+<tr>
+          row
+    </tr>
+      ))}
       <button onClick={() => addCharacter(2, 3)}>cc</button>
       <tr>
         {[...Array(width + 2)].map((z, i) => (
