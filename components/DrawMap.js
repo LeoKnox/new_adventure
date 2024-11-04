@@ -7,6 +7,7 @@ export default DrawMap = ({ width = 10, height, x = 10 }) => {
     for (let x = 0; x < 6; x++) {
       tempRow.push("+");
     }
+    return tempRow
   });
 
   const addCharacter = (row, column) => {
