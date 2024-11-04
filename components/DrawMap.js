@@ -5,9 +5,11 @@ export default DrawMap = ({ width = 10, height, x = 10 }) => {
   const [mapState, setMapState] = useState(() => {
     let tempRow = [];
     for (let x = 0; x < 6; x++) {
-      tempRow.push("+");
+      for (let y=0; y<8;y++ ){
+        tempRow.push("+");
+      }
     }
-    return tempRow
+    return tempRow;
   });
 
   const addCharacter = (row, column) => {
