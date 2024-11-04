@@ -29,9 +29,9 @@ export default DrawMap = ({ width = 10, height, x = 10 }) => {
 
   const addCharacter = (row, column) => {
     let tempRow = [...mapState];
-    let temp = [...mapState[1]];
-    temp[1] = "^";
-    tempRow[1] = temp;
+    let temp = [...mapState[row]];
+    temp[column] = "^";
+    tempRow[row] = temp;
     console.log(tempRow);
     setMapState(tempRow);
   };
