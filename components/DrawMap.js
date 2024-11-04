@@ -6,10 +6,10 @@ export default DrawMap = ({ width = 10, height, x = 10 }) => {
     let temp = [];
     let tempRow = [];
     for (let x = 0; x < 10; x++) {
-      tempRow.push("*")
+      tempRow.push("*");
     }
     temp.push(tempRow);
-    tempRow=[];
+    tempRow = [];
     for (let x = 0; x < 6; x++) {
       tempRow.push("*");
       for (let y = 0; y < 8; y++) {
@@ -19,7 +19,13 @@ export default DrawMap = ({ width = 10, height, x = 10 }) => {
       temp.push(tempRow);
       tempRow = [];
     }
+    for (let x = 0; x < 10; x++) {
+      tempRow.push("*");
+    }
+    temp.push(tempRow);
+    tempRow = [];
     return temp;
+    
   });
 
   const addCharacter = (row, column) => {
