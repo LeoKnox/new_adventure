@@ -30,7 +30,12 @@ export default DrawMap = ({ width = 10, height, x = 10 }) => {
   const addCharacter = (row, column) => {
     let tempRow = [...mapState];
     let temp = [...mapState[row]];
-    temp[column] = warriorSVG();
+    temp[column] = (
+      <td>
+        <div style={{ position: "absolute", opacity: "60%" }}>{floorSVG()}</div>
+        <div style={{ position: "relative" }}>{warriorSVG()}</div>
+      </td>
+    );
     tempRow[row] = temp;
     console.log(tempRow);
     setMapState(tempRow);
