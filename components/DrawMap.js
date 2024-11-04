@@ -3,7 +3,7 @@ import { floorSVG, wallSVG, warriorSVG } from "./svgData";
 
 export default DrawMap = ({ width = 10, height, x = 10 }) => {
   const [mapState, setMapState] = useState(() => {
-    let temp =[]
+    let temp = [];
     let tempRow = [];
     for (let x = 0; x < 6; x++) {
       tempRow.push("*");
@@ -12,7 +12,7 @@ export default DrawMap = ({ width = 10, height, x = 10 }) => {
       }
       tempRow.push("*");
       temp.push(tempRow);
-      tempRow=[]
+      tempRow = [];
     }
     return temp;
   });
@@ -24,7 +24,7 @@ export default DrawMap = ({ width = 10, height, x = 10 }) => {
   };
   return (
     <>
-      {mapState}
+      {mapState.map((row) => {row})}
       <button onClick={() => addCharacter(2, 3)}>cc</button>
       <tr>
         {[...Array(width + 2)].map((z, i) => (
