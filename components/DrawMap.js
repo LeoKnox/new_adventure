@@ -31,6 +31,7 @@ export default DrawMap = ({ width = 10, height, x = 10 }) => {
     let tempRow = [...mapState];
     let temp = [...mapState[1]];
     temp[1] = "^";
+    tempRow[1] = temp;
     console.log(tempRow);
     setMapState(tempRow);
   };
