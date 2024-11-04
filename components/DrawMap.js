@@ -3,15 +3,18 @@ import { floorSVG, wallSVG, warriorSVG } from "./svgData";
 
 export default DrawMap = ({ width = 10, height, x = 10 }) => {
   const [mapState, setMapState] = useState(() => {
+    let temp =[]
     let tempRow = [];
     for (let x = 0; x < 6; x++) {
-      tempRow.push("*")
+      tempRow.push("*");
       for (let y = 0; y < 8; y++) {
         tempRow.push("+");
       }
-      tempRow.push("*")
+      tempRow.push("*");
+      temp.push(tempRow);
+      tempRow=[]
     }
-    return tempRow;
+    return temp;
   });
 
   const addCharacter = (row, column) => {
