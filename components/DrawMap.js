@@ -37,7 +37,6 @@ export default DrawMap = ({ width = 10, height, x = 10 }) => {
       </td>
     );
     tempRow[row] = temp;
-    console.log(tempRow);
     setMapState(tempRow);
   };
   return (
@@ -49,7 +48,7 @@ export default DrawMap = ({ width = 10, height, x = 10 }) => {
           ))}
         </tr>
       ))}
-      <button onClick={() => addCharacter(2, 3)}>cc</button>
+      <button onClick={() => addCharacter(width, height)}>cc</button>
     </>
   );
 };
