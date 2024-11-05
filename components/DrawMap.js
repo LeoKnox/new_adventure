@@ -1,7 +1,13 @@
 import { useState, useEffect, cloneElement } from "react";
 import { floorSVG, wallSVG, warriorSVG } from "./svgData";
 
-export default DrawMap = ({ width = 10, height = 10, x = 2, y = 3 }) => {
+export default DrawMap = ({
+  width = 10,
+  height = 10,
+  x = 2,
+  y = 3,
+  moveCharacter,
+}) => {
   const [mapState, setMapState] = useState(() => {
     let temp = [];
     let tempRow = [];
@@ -38,9 +44,6 @@ export default DrawMap = ({ width = 10, height = 10, x = 2, y = 3 }) => {
     );
     tempRow[x] = temp;
     setMapState(tempRow);
-  };
-  const moveCharacter = () => {
-    setx(x + 1);
   };
   return (
     <>
