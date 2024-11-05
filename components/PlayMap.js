@@ -10,10 +10,7 @@ export default PlayMap = () => {
     [wallSVG(), wallSVG()],
     [wallSVG(), wallSVG()],
   ]);
-  const [x, setx] = useState([
-    ["x", "y"],
-    ["a", "b"],
-  ]);
+  const [x, setx] = useState(1);
   const addCharacter = (row = 1, column = 0) => {
     // id="0:0"
     //document.getElementById([0, 0]).innerHTML = <DrawCharacter />;
@@ -27,7 +24,7 @@ export default PlayMap = () => {
   return (
     <>
       <table>
-        <DrawMap width={width} height={height} x={3} y={5} />
+        <DrawMap width={width} height={height} x={x} y={5} />
       </table>
     </>
   );
