@@ -26,11 +26,8 @@ export default PlayMap = () => {
   };
   return (
     <>
-      {warriorSVG()}
-      <button onClick={() => addCharacter()}>character</button>
-      {test}
       <table>
-        <DrawMap width={width} height={height} />
+        <DrawMap width={width} height={height} x={3} y={5} />
       </table>
     </>
   );
