@@ -27,7 +27,13 @@ export default PlayMap = () => {
   return (
     <>
       <table>
-        <DrawMap width={width} height={height} x={x} y={5} />
+        <DrawMap
+          width={width}
+          height={height}
+          x={x}
+          y={5}
+          moveCharacter={() => moveCharacter()}
+        />
       </table>
     </>
   );
