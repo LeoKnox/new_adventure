@@ -21,6 +21,9 @@ export default PlayMap = () => {
     setTest(temp);
     console.log(newtemp);
   };
+  const moveCharacter = () => {
+    setx(x + 1);
+  };
   return (
     <>
       <table>
