@@ -92,9 +92,9 @@ export default DrawMap = ({ width = 10, height = 10, x = 2, y = 3 }) => {
         <button onClick={() => addCharacter(x, y)}>cc</button>
       </td>
       <td>
-        <button onClick={moveCharacter}>move right</button>
+        <button onClick={moveCharacter}>right</button>
       </td>
-      <button onClick={moveCharacterRight}>move down</button>
+      <button onClick={moveCharacterRight}>down</button>
     </>
   );
 };
