@@ -32,7 +32,7 @@ export default PlayMap = () => {
           height={height}
           x={x}
           y={5}
-          moveCharacter={() => moveCharacter()}
+          moveCharacter={moveCharacter}
         />
       </table>
     </>
