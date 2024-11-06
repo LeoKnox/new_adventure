@@ -40,7 +40,16 @@ export default DrawMap = ({ width = 10, height = 10, x = 2, y = 3 }) => {
     setMapState(tempRow);
   };
   const moveCharacter = () => {
-    addCharacter(x, y);
+    let tempRow = [...mapState];
+    let temp = [...mapState[x]];
+    temp[y] = (
+      <td>
+        <div>{floorSVG()}</div>
+      </td>
+    );
+    tempRow[x] = temp;
+    setMapState(tempRow);
+    addCharacter(x + 1, y);
     console.log("move");
   };
   return (
