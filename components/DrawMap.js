@@ -48,8 +48,15 @@ export default DrawMap = ({ width = 10, height = 10, x = 2, y = 3 }) => {
       </td>
     );
     tempRow[x] = temp;
+    temp[y + 1] = (
+      <td>
+        <div style={{ position: "absolute", opacity: "60%" }}>{floorSVG()}</div>
+        <div style={{ position: "relative" }}>{warriorSVG()}</div>
+      </td>
+    );
+    tempRow[x] = temp;
     setMapState(tempRow);
-    addCharacter(x + 1, y);
+    //addCharacter(x + 1, y);
     console.log("move");
   };
   return (
