@@ -56,17 +56,12 @@ export default DrawMap = ({ width = 10, height = 10, x = 2, y = 3 }) => {
     );
     tempRow[x] = temp;
     setMapState(tempRow);
-    //addCharacter(x + 1, y);
     console.log("move");
   };
-  const moveCharacterRight = () => {
+  const moveCharacterDown = () => {
     let tempRow = [...mapState];
-    let temp = [...mapState[x]];
-    temp[y] = (
-      <td>
-        <div>{floorSVG()}</div>
-      </td>
-    );
+    let temp = [...mapState[x], floorSVG()];
+
     tempRow[x] = temp;
     temp[y] = (
       <td>
@@ -76,7 +71,6 @@ export default DrawMap = ({ width = 10, height = 10, x = 2, y = 3 }) => {
     );
     tempRow[x + 1] = temp;
     setMapState(tempRow);
-    //addCharacter(x + 1, y);
     console.log("move");
   };
   return (
@@ -94,7 +88,7 @@ export default DrawMap = ({ width = 10, height = 10, x = 2, y = 3 }) => {
       <td>
         <button onClick={moveCharacter}>right</button>
       </td>
-      <button onClick={moveCharacterRight}>down</button>
+      <button onClick={moveCharacterDown}>down</button>
     </>
   );
 };
