@@ -23,6 +23,7 @@ export default PlayMap = () => {
   };
   const moveCharacter = () => {
     setx(x + 1);
+    addCharacter(x, 5);
   };
   return (
     <>
