@@ -6,7 +6,6 @@ export default DrawMap = ({
   height = 10,
   x = 2,
   y = 3,
-  moveCharacter,
 }) => {
   const [mapState, setMapState] = useState(() => {
     let temp = [];
@@ -45,6 +44,9 @@ export default DrawMap = ({
     tempRow[x] = temp;
     setMapState(tempRow);
   };
+  const moveCharacter = () => {
+    console.log("move")
+  }
   return (
     <>
       {mapState.map((row) => (
