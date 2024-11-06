@@ -60,16 +60,14 @@ export default DrawMap = ({ width = 10, height = 10, x = 2, y = 3 }) => {
   };
   const moveCharacterDown = () => {
     let tempRow = [...mapState];
-    let temp = [...mapState[x], floorSVG()];
-
-    tempRow[x] = temp;
+    let temp = [...mapState[x]];
     temp[y] = (
       <td>
-        <div style={{ position: "absolute", opacity: "60%" }}>{floorSVG()}</div>
-        <div style={{ position: "relative" }}>{warriorSVG()}</div>
+        <div>{floorSVG()}</div>
       </td>
     );
-    tempRow[x + 1] = temp;
+    tempRow[x] = temp;
+
     setMapState(tempRow);
     console.log("move");
   };
