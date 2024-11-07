@@ -11,6 +11,7 @@ export default PlayMap = () => {
     [wallSVG(), wallSVG()],
   ]);
   const [x, setx] = useState(1);
+  const [y, sety] = useState(1);
   const addCharacter = (row = 1, column = 0) => {
     // id="0:0"
     //document.getElementById([0, 0]).innerHTML = <DrawCharacter />;
@@ -21,20 +22,10 @@ export default PlayMap = () => {
     setTest(temp);
     console.log(newtemp);
   };
-  const moveCharacter = () => {
-    setx(x + 1);
-    addCharacter(x + 1, 5);
-  };
   return (
     <>
       <table>
-        <DrawMap
-          width={width}
-          height={height}
-          x={x}
-          y={5}
-          moveCharacter={moveCharacter}
-        />
+        <DrawMap width={width} height={height} x={x} y={y} sety={sety} />
       </table>
     </>
   );
