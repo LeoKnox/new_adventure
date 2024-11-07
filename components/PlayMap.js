@@ -41,6 +41,7 @@ export default DrawMap = ({ width = 10, height = 10, x = 2, y = 3, sety }) => {
   };
   const moveCharacter = (e) => {
     console.log(e.target.value);
+    let newy = e.target.value + 1;
     let tempRow = [...mapState];
     let temp = [...mapState[x]];
     temp[y] = (
@@ -49,14 +50,14 @@ export default DrawMap = ({ width = 10, height = 10, x = 2, y = 3, sety }) => {
       </td>
     );
     tempRow[x] = temp;
-    temp[y + 1] = (
+    temp[newy] = (
       <td>
         <div style={{ position: "absolute", opacity: "60%" }}>{floorSVG()}</div>
         <div style={{ position: "relative" }}>{warriorSVG()}</div>
       </td>
     );
     tempRow[x] = temp;
-    sety(y + 1);
+    sety(newy);
     setMapState(tempRow);
     console.log("move");
   };
