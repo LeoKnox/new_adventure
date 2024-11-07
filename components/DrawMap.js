@@ -40,7 +40,7 @@ export default DrawMap = ({ width = 10, height = 10, x = 2, y = 3, sety }) => {
     setMapState(tempRow);
   };
   const moveCharacter = (e) => {
-    let newy = 1 + y;
+    let newy = (e.target.value = "right" ? y + 1 : y);
     console.log(newy);
     let tempRow = [...mapState];
     let temp = [...mapState[x]];
