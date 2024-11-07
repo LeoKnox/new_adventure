@@ -1,7 +1,7 @@
 import { useState, useEffect, cloneElement } from "react";
 import { floorSVG, wallSVG, warriorSVG } from "./svgData";
 
-export default DrawMap = ({ width = 10, height = 10, x = 2, y = 3 }) => {
+export default DrawMap = ({ width = 10, height = 10, x = 2, y = 3, sety }) => {
   const [mapState, setMapState] = useState(() => {
     let temp = [];
     let tempRow = [];
@@ -40,7 +40,8 @@ export default DrawMap = ({ width = 10, height = 10, x = 2, y = 3 }) => {
     setMapState(tempRow);
   };
   const moveCharacter = (e) => {
-    console.log(e.target.value);
+    let newy = 1 + y;
+    console.log(newy);
     let tempRow = [...mapState];
     let temp = [...mapState[x]];
     temp[y] = (
@@ -49,13 +50,14 @@ export default DrawMap = ({ width = 10, height = 10, x = 2, y = 3 }) => {
       </td>
     );
     tempRow[x] = temp;
-    temp[y + 1] = (
+    temp[newy] = (
       <td>
         <div style={{ position: "absolute", opacity: "60%" }}>{floorSVG()}</div>
         <div style={{ position: "relative" }}>{warriorSVG()}</div>
       </td>
     );
     tempRow[x] = temp;
+    sety(newy);
     setMapState(tempRow);
     console.log("move");
   };
