@@ -70,7 +70,7 @@ export default DrawMap = ({
         newx++;
         temp[y] = (
           <td>
-            <div>{floorSVG()}</div>
+            <div>{wallSVG()}</div>
           </td>
         );
         break;
