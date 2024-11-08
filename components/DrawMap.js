@@ -42,12 +42,16 @@ export default DrawMap = ({ width = 10, height = 10, x = 2, y = 3, sety }) => {
   const moveCharacter = (e) => {
     //let newy = (e.target.value = "right" ? y + 1 : y);
     let newy = y;
+    let newx = x;
     switch (e.target.value) {
       case "right":
         newy++;
         break;
       case "left":
         newy--;
+        break;
+      case "down":
+        newx++;
         break;
     }
     console.log(newy);
@@ -111,7 +115,9 @@ export default DrawMap = ({ width = 10, height = 10, x = 2, y = 3, sety }) => {
           left
         </button>
       </td>
-      <button onClick={moveCharacterDown}>down</button>
+      <button value="down" onClick={(e) => moveCharacterDown(e)}>
+        down
+      </button>
     </>
   );
 };
