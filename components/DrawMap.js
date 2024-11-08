@@ -69,7 +69,7 @@ export default DrawMap = ({ width = 10, height = 10, x = 2, y = 3, sety }) => {
         <div style={{ position: "relative" }}>{warriorSVG()}</div>
       </td>
     );
-    tempRow[x] = temp;
+    tempRow[newx] = temp;
     sety(newy);
     setMapState(tempRow);
     console.log("move");
