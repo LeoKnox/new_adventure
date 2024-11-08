@@ -25,7 +25,14 @@ export default PlayMap = () => {
   return (
     <>
       <table>
-        <DrawMap width={width} height={height} x={x} y={y} sety={sety} />
+        <DrawMap
+          width={width}
+          height={height}
+          x={x}
+          y={y}
+          sety={sety}
+          setx={setx}
+        />
       </table>
     </>
   );
