@@ -70,9 +70,10 @@ export default DrawMap = ({
         newx++;
         temp[y] = (
           <td>
-            <div>{wallSVG()}</div>
+            <div>{warriorSVG()}</div>
           </td>
         );
+        tempRow[x] = temp;
         break;
     }
     temp[newy] = (
