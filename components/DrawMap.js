@@ -88,7 +88,11 @@ export default DrawMap = ({
     setMapState(tempRow);
     console.log("move");
   };
-  const moveCharacterDown = () => {
+  /*
+  //let newy = (e.target.value = "right" ? y + 1 : y);
+    let newy = y;
+    let newx = x;
+    console.log(newy);
     let tempRow = [...mapState];
     let temp = [...mapState[x]];
     temp[y] = (
@@ -97,16 +101,23 @@ export default DrawMap = ({
       </td>
     );
     tempRow[x] = temp;
-    temp[y] = (
-      <td>
-        <div style={{ position: "absolute", opacity: "60%" }}>{floorSVG()}</div>
-        <div style={{ position: "relative" }}>{warriorSVG()}</div>
-      </td>
-    );
-    tempRow[x + 1] = temp;
-    setMapState(tempRow);
-    console.log("move");
-  };
+    switch (e.target.value) {
+      case "right":
+        newy++;
+        break;
+      case "left":
+        newy--;
+        break;
+      case "down":
+        newx++;
+        temp[y] = (
+          <td>
+            <div>{warriorSVG()}</div>
+          </td>
+        );
+        tempRow[x] = temp;
+        break;
+        */
   return (
     <>
       {mapState.map((row) => (
@@ -129,7 +140,7 @@ export default DrawMap = ({
           left
         </button>
       </td>
-      <button value="down" onClick={(e) => moveCharacterDown(e)}>
+      <button value="down" onClick={(e) => moveCharacter(e)}>
         down
       </button>
     </>
