@@ -67,13 +67,13 @@ export default DrawMap = ({
         newy--;
         break;
       case "down":
+        tempRow[x] = temp;
         newx++;
         temp[y] = (
           <td>
             <div>{warriorSVG()}</div>
           </td>
         );
-        tempRow[x] = temp;
         break;
     }
     temp[newy] = (
