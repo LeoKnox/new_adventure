@@ -41,9 +41,10 @@ export default DrawMap = ({ width = 10, height = 10, x = 2, y = 3, sety }) => {
   };
   const moveCharacter = (e) => {
     //let newy = (e.target.value = "right" ? y + 1 : y);
+    let newy = y;
     switch (e.target.value) {
       case "right":
-        const newy = y + 1;
+        newy++;
         break;
     }
     console.log(newy);
