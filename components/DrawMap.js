@@ -40,7 +40,12 @@ export default DrawMap = ({ width = 10, height = 10, x = 2, y = 3, sety }) => {
     setMapState(tempRow);
   };
   const moveCharacter = (e) => {
-    let newy = (e.target.value = "right" ? y + 1 : y);
+    //let newy = (e.target.value = "right" ? y + 1 : y);
+    switch (e.target.value) {
+      case "right":
+        const newy = y + 1;
+        break;
+    }
     console.log(newy);
     let tempRow = [...mapState];
     let temp = [...mapState[x]];
@@ -95,6 +100,11 @@ export default DrawMap = ({ width = 10, height = 10, x = 2, y = 3, sety }) => {
       <td>
         <button value="right" onClick={(e) => moveCharacter(e)}>
           right
+        </button>
+      </td>
+      <td>
+        <button value="left" onClick={(e) => moveCharacter(e)}>
+          left
         </button>
       </td>
       <button onClick={moveCharacterDown}>down</button>
