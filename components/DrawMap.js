@@ -71,6 +71,7 @@ export default DrawMap = ({ width = 10, height = 10, x = 2, y = 3, sety }) => {
     );
     tempRow[newx] = temp;
     sety(newy);
+    setx(newx);
     setMapState(tempRow);
     console.log("move");
   };
