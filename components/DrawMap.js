@@ -46,6 +46,9 @@ export default DrawMap = ({ width = 10, height = 10, x = 2, y = 3, sety }) => {
       case "right":
         newy++;
         break;
+      case "left":
+        newy--;
+        break;
     }
     console.log(newy);
     let tempRow = [...mapState];
