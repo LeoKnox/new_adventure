@@ -68,6 +68,11 @@ export default DrawMap = ({
         break;
       case "down":
         newx++;
+        temp[y] = (
+          <td>
+            <div>{floorSVG()}</div>
+          </td>
+        );
         break;
     }
     temp[newy] = (
