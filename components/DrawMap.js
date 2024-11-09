@@ -53,7 +53,7 @@ export default DrawMap = ({
     const characterMove = {
       down: moveDown(),
     };
-    return characterMove.down;
+    return characterMove[e.target.value];
   };
   /*
   //let newy = (e.target.value = "right" ? y + 1 : y);
