@@ -47,11 +47,21 @@ export default DrawMap = ({
     setMapState(tempRow);
   };
   const moveDown = () => {
+    let tempRow = [...mapState];
+    let temp = [...mapState[x]];
+    temp[5] = (
+      <td>
+        <div style={{ position: "absolute", opacity: "60%" }}>{floorSVG()}</div>
+        <div style={{ position: "relative" }}>{warriorSVG()}</div>
+      </td>
+    );
+    console.log(tempRow);
+    console.log(temp);
+    tempRow[x] = temp;
+    setMapState(tempRow);
     console.log("I've moved");
   };
   const moveCharacter = (e) => {
-    let tempRow = [...mapState];
-    console.log(tempRow);
     const characterMove = {
       down: moveDown(),
     };
