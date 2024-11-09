@@ -50,6 +50,8 @@ export default DrawMap = ({
     console.log("I've moved");
   };
   const moveCharacter = (e) => {
+    let tempRow = [...mapState];
+    console.log(tempRow);
     const characterMove = {
       down: moveDown(),
     };
