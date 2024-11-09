@@ -67,6 +67,7 @@ export default DrawMap = ({
     );
     tempRow[x + 1] = temp;
     setMapState(tempRow);
+    setx(x+1);
     console.log("I've moved");
   };
   const moveCharacter = (e) => {
