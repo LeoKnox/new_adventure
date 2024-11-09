@@ -57,6 +57,15 @@ export default DrawMap = ({
     console.log(tempRow);
     console.log(temp);
     tempRow[x] = temp;
+
+    temp = [...mapState[x + 1]];
+    temp[y] = (
+      <td>
+        <div style={{ position: "absolute", opacity: "60%" }}>{floorSVG()}</div>
+        <div style={{ position: "relative" }}>{warriorSVG()}</div>
+      </td>
+    );
+    tempRow[x + 1] = temp;
     setMapState(tempRow);
     console.log("I've moved");
   };
