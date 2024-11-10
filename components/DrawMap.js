@@ -47,7 +47,7 @@ export default DrawMap = ({
     setMapState(tempRow);
   };
   const moveDown = (direction) => {
-    let newx = direction == "down" ? 1 : -1;
+    let newx = direction == "down" ? x + 1 : x - 1;
     console.log(newx);
     let tempRow = [...mapState];
     let temp = [...mapState[x]];
