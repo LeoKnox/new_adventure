@@ -47,6 +47,7 @@ export default DrawMap = ({
     setMapState(tempRow);
   };
   const moveDown = () => {
+    let newx = x + 1;
     let tempRow = [...mapState];
     let temp = [...mapState[x]];
     temp[y] = (
@@ -58,7 +59,7 @@ export default DrawMap = ({
     console.log(temp);
     tempRow[x] = temp;
 
-    temp = [...mapState[x + 1]];
+    temp = [...mapState[newx]];
     temp[y] = (
       <td>
         <div style={{ position: "absolute", opacity: "60%" }}>{floorSVG()}</div>
@@ -67,7 +68,7 @@ export default DrawMap = ({
     );
     tempRow[x + 1] = temp;
     setMapState(tempRow);
-    setx(x+1);
+    setx(newx);
     console.log("I've moved");
   };
   const moveCharacter = (e) => {
