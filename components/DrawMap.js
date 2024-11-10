@@ -47,7 +47,8 @@ export default DrawMap = ({
     setMapState(tempRow);
   };
   const moveDown = (digit) => {
-    let newx = x + digit;
+    let newx = x + parseInt(digit);
+    console.log(newx);
     let tempRow = [...mapState];
     let temp = [...mapState[x]];
     temp[y] = (
@@ -66,7 +67,7 @@ export default DrawMap = ({
         <div style={{ position: "relative" }}>{warriorSVG()}</div>
       </td>
     );
-    tempRow[x + 1] = temp;
+    tempRow[newx] = temp;
     setMapState(tempRow);
     setx(newx);
     console.log("I've moved");
