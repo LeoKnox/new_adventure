@@ -95,6 +95,9 @@ export default DrawMap = ({
       case "right":
         moveSide(y + 1);
         break;
+      case "right":
+        moveSide(y - 1);
+        break;
     }
   };
   return (
