@@ -95,7 +95,7 @@ export default DrawMap = ({
       case "right":
         moveSide(y + 1);
         break;
-      case "right":
+      case "left":
         moveSide(y - 1);
         break;
     }
