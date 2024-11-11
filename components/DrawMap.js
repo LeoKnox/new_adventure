@@ -46,10 +46,7 @@ export default DrawMap = ({
     tempRow[x] = temp;
     setMapState(tempRow);
   };
-  const moveDown = (direction) => {
-    console.log(direction);
-    let newx = direction == "down" ? x + 1 : x - 1;
-    console.log(newx);
+  const moveDown = (newx, newy) => {
     let tempRow = [...mapState];
     let temp = [...mapState[x]];
     temp[y] = (
@@ -75,10 +72,10 @@ export default DrawMap = ({
   };
   const moveCharacter = (e) => {
     const characterMove = {
-      down: moveDown(1),
-      up: moveDown(-1),
+      down: moveDown(x + 1),
+      up: moveDown(x - 1),
     };
-    return moveDown(e.target.value);
+    return characterMove[e.target.value];
   };
   return (
     <>
