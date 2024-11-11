@@ -46,8 +46,7 @@ export default DrawMap = ({
     tempRow[x] = temp;
     setMapState(tempRow);
   };
-  const moveDown = (newx, newy) => {
-    console.log(x + " " + newx);
+  const moveDown = (newx) => {
     let tempRow = [...mapState];
     let temp = [...mapState[x]];
     temp[y] = (
@@ -55,10 +54,7 @@ export default DrawMap = ({
         <div>{floorSVG()}</div>
       </td>
     );
-    console.log(tempRow);
-    console.log(temp);
     tempRow[x] = temp;
-
     temp = [...mapState[newx]];
     temp[y] = (
       <td>
@@ -69,22 +65,37 @@ export default DrawMap = ({
     tempRow[newx] = temp;
     setMapState(tempRow);
     setx(newx);
-    console.log("I've moved");
+  };
+  moveSide = (newy) => {
+    let tempRow = [...mapState];
+    let temp = [...mapState[x]];
+    temp[y] = (
+      <td>
+        <div>{floorSVG()}</div>
+      </td>
+    );
+    temp[newy] = (
+      <td>
+        <div style={{ position: "absolute", opacity: "60%" }}>{floorSVG()}</div>
+        <div style={{ position: "relative" }}>{warriorSVG()}</div>
+      </td>
+    );
+    tempRow[x] = temp;
+    setMapState(tempRow);
+    sety(newy);
   };
   const moveCharacter = (e) => {
-    /*const characterMove = {
-      down: () => moveDown(x + 1, y),
-      up: moveDown(x - 1, y),
-    };*/
     switch (e.target.value) {
       case "up":
-        moveDown(x - 1, y);
+        moveDown(x - 1);
         break;
       case "down":
-        moveDown(x + 1, y);
+        moveDown(x + 1);
+        break;
+      case "right":
+        moveDown(y + 1);
         break;
     }
-    //return characterMove[e.target.value];
   };
   return (
     <>
