@@ -73,7 +73,7 @@ export default DrawMap = ({
   };
   const moveCharacter = (e) => {
     const characterMove = {
-      down: moveDown(parseInt(x + 1), y),
+      down: () => moveDown(x + 1, y),
       up: moveDown(x - 1, y),
     };
     return characterMove[e.target.value];
