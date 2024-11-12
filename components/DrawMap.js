@@ -34,7 +34,8 @@ export default DrawMap = ({
     return temp;
   });
 
-  const addCharacter = (x, y) => {
+  const addCharacter = (x, y) => {};
+  useEffect(() => {
     let tempRow = [...mapState];
     let temp = [...mapState[x]];
     temp[y] = (
@@ -45,7 +46,7 @@ export default DrawMap = ({
     );
     tempRow[x] = temp;
     setMapState(tempRow);
-  };
+  }, []);
   const moveVert = (newx) => {
     let tempRow = [...mapState];
     let temp = [...mapState[x]];
