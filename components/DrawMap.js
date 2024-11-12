@@ -46,7 +46,7 @@ export default DrawMap = ({
     tempRow[x] = temp;
     setMapState(tempRow);
   };
-  const moveDown = (newx) => {
+  const moveVert = (newx) => {
     let tempRow = [...mapState];
     let temp = [...mapState[x]];
     temp[y] = (
@@ -87,10 +87,10 @@ export default DrawMap = ({
   const moveCharacter = (e) => {
     switch (e.target.value) {
       case "up":
-        moveDown(x - 1);
+        moveVert(x - 1);
         break;
       case "down":
-        moveDown(x + 1);
+        moveVert(x + 1);
         break;
       case "right":
         moveSide(y + 1);
