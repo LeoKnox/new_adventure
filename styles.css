@@ -18,4 +18,6 @@ input {
 
 .buttons {
   color: blue;
+  background-color:lightsteelblue;
+  border:1px solid darkblue;
 }
