@@ -34,7 +34,6 @@ export default DrawMap = ({
     return temp;
   });
 
-  const addCharacter = (x, y) => {};
   useEffect(() => {
     let tempRow = [...mapState];
     let temp = [...mapState[x]];
@@ -48,7 +47,7 @@ export default DrawMap = ({
     setMapState(tempRow);
     const onKeyDown = (e) => {
       if (e.key === "w") {
-        console.log("presed");
+        moveCharacter("up");
       }
     };
 
@@ -94,9 +93,9 @@ export default DrawMap = ({
     sety(newy);
   };
   const moveCharacter = (e) => {
-    console.log("pressed" + e.target.key);
+    console.log("pressed");
     switch (e.target.value) {
-      case "up" || "w":
+      case "up":
         moveVert(x - 1);
         break;
       case "down":
