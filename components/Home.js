@@ -19,7 +19,7 @@ export default Home = () => {
       <button className="buttons" onClick={() => setPage(<Play />)}>
         Play
       </button>
-      <button
+      <button className="buttons"
         onClick={() =>
           setPage(
             <Characters
@@ -32,7 +32,7 @@ export default Home = () => {
       >
         Characters
       </button>
-      <button onClick={() => setPage(<Build />)}>Build</button>
+      <button className="buttons" onClick={() => setPage(<Build />)}>Build</button>
       {page}
     </div>
   );
