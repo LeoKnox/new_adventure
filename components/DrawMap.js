@@ -46,6 +46,14 @@ export default DrawMap = ({
     );
     tempRow[x] = temp;
     setMapState(tempRow);
+    const onKeyDown = (e) => {
+      if (e.key === "w") {
+        console.log("presed");
+      }
+    };
+
+    window.addEventListener("keydown", onKeyDown);
+    return () => window.removeEventListener("keydown", onKeyDown);
   }, []);
   const moveVert = (newx) => {
     let tempRow = [...mapState];
@@ -86,8 +94,9 @@ export default DrawMap = ({
     sety(newy);
   };
   const moveCharacter = (e) => {
+    console.log("pressed");
     switch (e.target.value) {
-      case "up":
+      case "up" || "w":
         moveVert(x - 1);
         break;
       case "down":
@@ -102,7 +111,7 @@ export default DrawMap = ({
     }
   };
   return (
-    <>
+    <div onKeyPress={() => moveCharacter(e)}>
       {mapState.map((row) => (
         <tr>
           {row.map((tile) => (
@@ -128,6 +137,6 @@ export default DrawMap = ({
       <button value="up" onClick={(e) => moveCharacter(e)}>
         up
       </button>
-    </>
+    </div>
   );
 };
