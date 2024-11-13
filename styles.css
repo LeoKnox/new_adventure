@@ -10,6 +10,7 @@ body {
 
 .App td {
   padding: 0;
+  border: 1px solid black;
 }
 
 input {
@@ -18,6 +19,6 @@ input {
 
 .buttons {
   color: blue;
-  background-color:lightsteelblue;
-  border:1px solid darkblue;
+  background-color: lightsteelblue;
+  border: 1px solid darkblue;
 }
