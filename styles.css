@@ -1,12 +1,11 @@
 body {
-  background-color:slategray;
+  background-color: slategray;
 }
 
 .App {
   font-family: sans-serif;
   text-align: center;
   width: 9;
-  
 }
 
 .App td {
@@ -15,4 +14,8 @@ body {
 
 input {
   width: 60%;
+}
+
+.buttons {
+  color: blue;
 }
