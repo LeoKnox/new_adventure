@@ -1,0 +1,18 @@
+body {
+  background-color:slategray;
+}
+
+.App {
+  font-family: sans-serif;
+  text-align: center;
+  width: 9;
+  
+}
+
+.App td {
+  padding: 0;
+}
+
+input {
+  width: 60%;
+}
