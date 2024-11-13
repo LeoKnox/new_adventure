@@ -111,9 +111,6 @@ export default DrawMap = ({
         </tr>
       ))}
       <td>
-        <button onClick={() => addCharacter(x, y)}>cc</button>
-      </td>
-      <td>
         <button value="right" onClick={(e) => moveCharacter(e)}>
           right
         </button>
