@@ -94,8 +94,8 @@ export default DrawMap = ({
     sety(newy);
   };
   const moveCharacter = (e) => {
-    console.log("pressed");
-    switch (e.target.value || e.key) {
+    console.log("pressed" + e.target.key);
+    switch (e.target.value) {
       case "up" || "w":
         moveVert(x - 1);
         break;
