@@ -52,6 +52,8 @@ export default DrawMap = ({
         moveCharacter("down");
       } else if (e.key === "d") {
         moveCharacter("right");
+      } else if (e.key === "a") {
+        moveCharacter("left");
       }
     };
 
@@ -101,7 +103,7 @@ export default DrawMap = ({
   const moveCharacter = (e) => {
     //let t = e != "up" ? e.target.value : "up";
     let t = null;
-    if (e == "up" || "down" || "right") {
+    if (e == "up" || "down" || "right" || "left") {
       console.log(e);
       t = e;
     } else {
