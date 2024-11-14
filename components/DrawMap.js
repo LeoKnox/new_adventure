@@ -103,6 +103,8 @@ export default DrawMap = ({
     if (e == "up" || "down") {
       console.log(e);
       t = e;
+    } else {
+      t = e.target.value;
     }
     switch (t) {
       case "up":
@@ -120,7 +122,7 @@ export default DrawMap = ({
     }
   };
   return (
-    <div onKeyPress={() => moveCharacter(e)}>
+    <div onKeyPress={() => moveCharacter()}>
       {mapState.map((row) => (
         <tr>
           {row.map((tile) => (
