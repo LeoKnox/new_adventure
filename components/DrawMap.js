@@ -57,6 +57,7 @@ export default DrawMap = ({
   const moveVert = (newx) => {
     let tempRow = [...mapState];
     console.log(newx);
+    console.log("red");
     let temp = [...mapState[x]];
     temp[y] = (
       <td>
@@ -96,7 +97,8 @@ export default DrawMap = ({
   const moveCharacter = (e) => {
     console.log("pressed");
     let x = e != "up" ? e.target.value : "up";
-    switch (x) {
+    console.log(x);
+    switch (e.target.value) {
       case "up":
         moveVert(x - 1);
         break;
