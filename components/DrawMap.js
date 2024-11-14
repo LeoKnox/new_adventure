@@ -105,6 +105,7 @@ export default DrawMap = ({
     } else {
       t = e.target.value;
     }
+    console.log(t);
     switch (t) {
       case "up":
         moveVert(x - 1);
