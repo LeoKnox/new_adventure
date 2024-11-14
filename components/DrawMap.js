@@ -49,6 +49,9 @@ export default DrawMap = ({
       if (e.key === "w") {
         moveCharacter("up");
       }
+      if (e.key === "s") {
+        moveCharacter("down");
+      }
     };
 
     window.addEventListener("keydown", onKeyDown);
