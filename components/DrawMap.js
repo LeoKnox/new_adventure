@@ -56,6 +56,7 @@ export default DrawMap = ({
   }, []);
   const moveVert = (newx) => {
     let tempRow = [...mapState];
+    console.log(newx);
     let temp = [...mapState[x]];
     temp[y] = (
       <td>
