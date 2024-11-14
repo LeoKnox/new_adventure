@@ -55,7 +55,7 @@ export default DrawMap = ({
 
     window.addEventListener("keydown", onKeyDown);
     return () => window.removeEventListener("keydown", onKeyDown);
-  }, []);
+  }, [x]);
   const moveVert = (newx) => {
     let tempRow = [...mapState];
     console.log(newx);
