@@ -48,8 +48,7 @@ export default DrawMap = ({
     const onKeyDown = (e) => {
       if (e.key === "w") {
         moveCharacter("up");
-      }
-      if (e.key === "s") {
+      } else if (e.key === "s") {
         moveCharacter("down");
       }
     };
