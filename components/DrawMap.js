@@ -50,12 +50,14 @@ export default DrawMap = ({
         moveCharacter("up");
       } else if (e.key === "s") {
         moveCharacter("down");
+      } else if (e.key === "d") {
+        moveCharacter("right");
       }
     };
 
     window.addEventListener("keydown", onKeyDown);
     return () => window.removeEventListener("keydown", onKeyDown);
-  }, [x]);
+  }, [x, y]);
   const moveVert = (newx) => {
     let tempRow = [...mapState];
     console.log(newx);
@@ -99,7 +101,7 @@ export default DrawMap = ({
   const moveCharacter = (e) => {
     //let t = e != "up" ? e.target.value : "up";
     let t = null;
-    if (e == "up" || "down") {
+    if (e == "up" || "down" || "right") {
       console.log(e);
       t = e;
     } else {
