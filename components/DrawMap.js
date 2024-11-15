@@ -101,13 +101,11 @@ export default DrawMap = ({
     sety(newy);
   };
   const moveCharacter = (e) => {
-    let t = e.target.value;
+    let t = null;
     if (e == "up" || "down" || "right" || "left") {
       t = e;
-    } else {
-      t = t.target.value;
     }
-    console.log(t.target.value);
+    console.log(t || e.target.value);
     switch (t) {
       case "up":
         moveVert(x - 1);
