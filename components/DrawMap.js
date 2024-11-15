@@ -101,10 +101,8 @@ export default DrawMap = ({
     sety(newy);
   };
   const moveCharacter = (e) => {
-    //let t = e != "up" ? e.target.value : "up";
     let t = null;
     if (e == "up" || "down" || "right" || "left") {
-      console.log(e);
       t = e;
     } else {
       t = e.target.value;
