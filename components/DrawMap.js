@@ -106,7 +106,7 @@ export default DrawMap = ({
       t = e;
     }
     console.log(t);
-    switch (t || e.target.value) {
+    switch (t) {
       case "up":
         moveVert(x - 1);
         break;
@@ -121,7 +121,7 @@ export default DrawMap = ({
         moveSide(y - 1);
         break;
       default:
-        console.log(JSON.stringify(t) + "tt" + String(e.target.value));
+        console.log(t);
     }
   };
   return (
@@ -134,7 +134,7 @@ export default DrawMap = ({
         </tr>
       ))}
       <td>
-        <button value="right" onClick={(e) => moveCharacter(e)}>
+        <button value="right" onClick={() => moveCharacter("right")}>
           right
         </button>
       </td>
