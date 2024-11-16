@@ -125,7 +125,7 @@ export default DrawMap = ({
     }
   };
   return (
-    <div onKeyPress={() => moveCharacter()}>
+    <div onKeyDown={() => moveCharacter()}>
       {mapState.map((row) => (
         <tr>
           {row.map((tile) => (
