@@ -12,21 +12,21 @@ export default DrawMap = ({
   const [mapState, setMapState] = useState(() => {
     let temp = [];
     let tempRow = [];
-    for (let x = 0; x < 10; x++) {
+    for (let x = 0; x < width+2; x++) {
       tempRow.push(wallSVG());
     }
     temp.push(tempRow);
     tempRow = [];
-    for (let x = 0; x < 6; x++) {
+    for (let x = 0; x < height; x++) {
       tempRow.push(wallSVG());
-      for (let y = 0; y < 8; y++) {
+      for (let y = 0; y < width; y++) {
         tempRow.push(floorSVG());
       }
       tempRow.push(wallSVG());
       temp.push(tempRow);
       tempRow = [];
     }
-    for (let x = 0; x < 10; x++) {
+    for (let x = 0; x < width+2; x++) {
       tempRow.push(wallSVG());
     }
     temp.push(tempRow);
@@ -131,24 +131,16 @@ export default DrawMap = ({
         </tr>
       ))}
       <td>
-        <button onClick={() => moveCharacter("right")}>
-          right
-        </button>
+        <button onClick={() => moveCharacter("right")}>right</button>
       </td>
       <td>
-        <button onClick={() => moveCharacter("left")}>
-          left
-        </button>
+        <button onClick={() => moveCharacter("left")}>left</button>
       </td>
       <td>
-        <button onClick={() => moveCharacter("down")}>
-          down
-        </button>
+        <button onClick={() => moveCharacter("down")}>down</button>
       </td>
       <td>
-        <button onClick={() => moveCharacter("up")}>
-          up
-        </button>
+        <button onClick={() => moveCharacter("up")}>up</button>
       </td>
     </div>
   );
