@@ -105,7 +105,7 @@ export default DrawMap = ({
     if (e == "up" || "down" || "right" || "left") {
       t = e;
     }
-    console.log(e.target.value);
+    //console.log(e.target.value);
     switch (t || e.target.value) {
       case "up":
         moveVert(x - 1);
@@ -119,6 +119,8 @@ export default DrawMap = ({
       case "left":
         moveSide(y - 1);
         break;
+      default:
+        console.log("tt" + e.target.value);
     }
   };
   return (
