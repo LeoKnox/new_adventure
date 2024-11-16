@@ -101,7 +101,7 @@ export default DrawMap = ({
     sety(newy);
   };
   const moveCharacter = (e) => {
-    let t = false;
+    let t = null;
     if (e == "up" || "down" || "right" || "left") {
       t = e;
     }
@@ -121,7 +121,7 @@ export default DrawMap = ({
         moveSide(y - 1);
         break;
       default:
-        console.log("tt" + e.target.value);
+        console.log(t + "tt" + e.target.value);
     }
   };
   return (
