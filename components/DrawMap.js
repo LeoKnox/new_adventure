@@ -139,17 +139,17 @@ export default DrawMap = ({
         </button>
       </td>
       <td>
-        <button value="left" onClick={(e) => moveCharacter(e)}>
+        <button value="left" onClick={() => moveCharacter("left")}>
           left
         </button>
       </td>
       <td>
-        <button value="down" onClick={(e) => moveCharacter(e)}>
+        <button value="down" onClick={() => moveCharacter("down")}>
           down
         </button>
       </td>
       <td>
-        <button value="up" onClick={(e) => moveCharacter(e)}>
+        <button value="up" onClick={() => moveCharacter("up")}>
           up
         </button>
       </td>
