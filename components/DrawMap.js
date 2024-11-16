@@ -112,7 +112,6 @@ export default DrawMap = ({
         break;
       case "down":
         moveVert(x + 1);
-        console.log("GG" + t);
         break;
       case "right":
         moveSide(y + 1);
@@ -120,8 +119,6 @@ export default DrawMap = ({
       case "left":
         moveSide(y - 1);
         break;
-      default:
-        console.log(t);
     }
   };
   return (
@@ -134,22 +131,22 @@ export default DrawMap = ({
         </tr>
       ))}
       <td>
-        <button value="right" onClick={() => moveCharacter("right")}>
+        <button onClick={() => moveCharacter("right")}>
           right
         </button>
       </td>
       <td>
-        <button value="left" onClick={() => moveCharacter("left")}>
+        <button onClick={() => moveCharacter("left")}>
           left
         </button>
       </td>
       <td>
-        <button value="down" onClick={() => moveCharacter("down")}>
+        <button onClick={() => moveCharacter("down")}>
           down
         </button>
       </td>
       <td>
-        <button value="up" onClick={() => moveCharacter("up")}>
+        <button onClick={() => moveCharacter("up")}>
           up
         </button>
       </td>
