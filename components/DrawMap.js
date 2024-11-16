@@ -112,6 +112,7 @@ export default DrawMap = ({
         break;
       case "down":
         moveVert(x + 1);
+        console.log("GG" + t);
         break;
       case "right":
         moveSide(y + 1);
