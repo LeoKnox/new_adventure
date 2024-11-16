@@ -106,7 +106,7 @@ export default DrawMap = ({
       t = e;
     }
     console.log(t);
-    switch (t || String(e.target.value)) {
+    switch (t || e.target.value) {
       case "up":
         moveVert(x - 1);
         break;
@@ -121,7 +121,7 @@ export default DrawMap = ({
         moveSide(y - 1);
         break;
       default:
-        console.log(t + "tt" + e.target.value);
+        console.log(JSON.stringify(t) + "tt" + String(e.target.value));
     }
   };
   return (
