@@ -1,5 +1,6 @@
 import { useState, useEffect, cloneElement } from "react";
 import { floorSVG, wallSVG, warriorSVG } from "./svgData";
+import DrawMonster from "./DrawMonster.js";
 
 export default DrawMap = ({
   width = 10,
@@ -12,7 +13,7 @@ export default DrawMap = ({
   const [mapState, setMapState] = useState(() => {
     let temp = [];
     let tempRow = [];
-    for (let x = 0; x < width+2; x++) {
+    for (let x = 0; x < width + 2; x++) {
       tempRow.push(wallSVG());
     }
     temp.push(tempRow);
@@ -26,7 +27,7 @@ export default DrawMap = ({
       temp.push(tempRow);
       tempRow = [];
     }
-    for (let x = 0; x < width+2; x++) {
+    for (let x = 0; x < width + 2; x++) {
       tempRow.push(wallSVG());
     }
     temp.push(tempRow);
@@ -142,6 +143,7 @@ export default DrawMap = ({
       <td>
         <button onClick={() => moveCharacter("up")}>up</button>
       </td>
+      <DrawMonster />
     </div>
   );
 };
