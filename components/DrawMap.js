@@ -143,7 +143,7 @@ export default DrawMap = ({
       <td>
         <button onClick={() => moveCharacter("up")}>up</button>
       </td>
-      <DrawMonster />
+      <DrawMonster background={floorSVG()} />
     </div>
   );
 };
