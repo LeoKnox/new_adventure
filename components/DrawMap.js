@@ -64,9 +64,9 @@ export default DrawMap = ({
   const modifyTable = () => {
     console.log("modify");
     let tempRow = [...mapState];
-    let temp = [...mapState[8]];
+    let temp = [...mapState[4]];
     temp[8] = "x";
-    tempRow[8] = temp;
+    tempRow[4] = temp;
     setMapState(tempRow);
   };
   const moveVert = (newx) => {
