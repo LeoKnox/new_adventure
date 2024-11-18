@@ -61,6 +61,9 @@ export default DrawMap = ({
     window.addEventListener("keydown", onKeyDown);
     return () => window.removeEventListener("keydown", onKeyDown);
   }, [x, y]);
+  const modifyTable = () => {
+    console.log("modify");
+  };
   const moveVert = (newx) => {
     let tempRow = [...mapState];
     console.log(newx);
@@ -142,6 +145,9 @@ export default DrawMap = ({
       </td>
       <td>
         <button onClick={() => moveCharacter("up")}>up</button>
+      </td>
+      <td>
+        <button onClick={modifyTable}>change</button>
       </td>
       <DrawMonster background={floorSVG()} />
     </div>
