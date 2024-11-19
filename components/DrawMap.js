@@ -45,6 +45,9 @@ export default DrawMap = ({
       </td>
     );
     tempRow[x] = temp;
+    temp = [...mapState[4]];
+    temp[8] = <DrawMonster background={floorSVG()} />;
+    tempRow[4] = temp;
     setMapState(tempRow);
     const onKeyDown = (e) => {
       if (e.key === "w") {
@@ -57,22 +60,19 @@ export default DrawMap = ({
         moveCharacter("left");
       }
     };
-
     window.addEventListener("keydown", onKeyDown);
     return () => window.removeEventListener("keydown", onKeyDown);
   }, [x, y]);
+
   const modifyTable = ({ y = 4, x = 8, newx = 7 }) => {
     console.log("modify" + y);
     let tempRow = [...mapState];
     let temp = [...mapState[y]];
     temp[x] = <DrawMonster background={floorSVG()} />;
     if (newx != x) {
-      temp[x] = (
+      temp[newx] = (
         <td>
-          <div style={{ position: "absolute", opacity: "60%" }}>
-            {floorSVG()}
-          </div>
-          <div style={{ position: "relative" }}>{warriorSVG()}</div>
+          <div>{wallSVG()}</div>
         </td>
       );
     }
