@@ -164,7 +164,6 @@ export default DrawMap = ({
       <td>
         <button onClick={modifyTable}>change</button>
       </td>
-      <DrawMonster background={floorSVG()} />
     </div>
   );
 };
