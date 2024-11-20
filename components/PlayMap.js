@@ -12,16 +12,7 @@ export default PlayMap = () => {
   ]);
   const [x, setx] = useState(1);
   const [y, sety] = useState(1);
-  const addCharacter = (row = 1, column = 0) => {
-    // id="0:0"
-    //document.getElementById([0, 0]).innerHTML = <DrawCharacter />;
-    let temp = [...test];
-    let newtemp = [...test[row]];
-    newtemp[column] = floorSVG();
-    temp[row] = newtemp;
-    setTest(temp);
-    console.log(newtemp);
-  };
+  
   return (
     <>
       <table>
