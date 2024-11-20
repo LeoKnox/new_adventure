@@ -76,7 +76,7 @@ export default DrawMap = ({
       );
       tempRow[y] = temp;
       temp = [...mapState[newy]];
-      temp[x] = <DrawMonster background={floorSVG()} />;
+      temp[newx] = <DrawMonster background={floorSVG()} />;
     }
     if (newx != x) {
       temp[x] = (
