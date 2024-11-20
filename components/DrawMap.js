@@ -65,10 +65,10 @@ export default DrawMap = ({
   }, [x, y]);
 
   const modifyTable = ({ y = 4, x = 8, newx = 8, newy = 3 }) => {
-    console.log("modify" + y);
     let tempRow = [...mapState];
     let temp = [...mapState[y]];
     if (newy != y) {
+      console.log("modify y");
       temp[x] = (
         <td>
           <div>{floorSVG()}</div>
