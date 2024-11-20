@@ -86,7 +86,7 @@ export default DrawMap = ({
       );
       temp[newx] = <DrawMonster background={floorSVG()} />;
     }
-    tempRow[y] = temp;
+    tempRow[newy] = temp;
     setMapState(tempRow);
   };
   const moveVert = (newx) => {
