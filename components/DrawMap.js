@@ -64,10 +64,20 @@ export default DrawMap = ({
     return () => window.removeEventListener("keydown", onKeyDown);
   }, [x, y]);
 
-  const modifyTable = ({ y = 4, x = 8, newx = 8 }) => {
+  const modifyTable = ({ y = 4, x = 8, newx = 8, newy = 3 }) => {
     console.log("modify" + y);
     let tempRow = [...mapState];
     let temp = [...mapState[y]];
+    if (newy != y) {
+      temp[x] = (
+        <td>
+          <div>{floorSVG()}</div>
+        </td>
+      );
+      tempRow[y] = temp;
+      temp = [...mapState[newy]];
+      temp[x] = <DrawMonster background={floorSVG()} />;
+    }
     if (newx != x) {
       temp[x] = (
         <td>
