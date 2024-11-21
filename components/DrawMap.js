@@ -10,6 +10,7 @@ export default DrawMap = ({
   sety,
   setx,
 }) => {
+  let mobs = [{ icon: "demon", x: 8, y: 3 }];
   const [mapState, setMapState] = useState(() => {
     let temp = [];
     let tempRow = [];
@@ -45,9 +46,9 @@ export default DrawMap = ({
       </td>
     );
     tempRow[x] = temp;
-    temp = [...mapState[4]];
-    temp[8] = <DrawMonster background={floorSVG()} />;
-    tempRow[4] = temp;
+    temp = [...mapState[mobs[0].y]];
+    temp[mobs[0].x] = <DrawMonster background={floorSVG()} />;
+    tempRow[mobs[0].y] = temp;
     setMapState(tempRow);
     const onKeyDown = (e) => {
       if (e.key === "w") {
@@ -111,9 +112,7 @@ export default DrawMap = ({
     setMapState(tempRow);
     setx(newx);
   };
-  moveSide = (newy, newx) => {
-    modifyTable(y, x, newy, newx);
-    /*
+  moveSide = (newy) => {
     let tempRow = [...mapState];
     let temp = [...mapState[x]];
     temp[y] = (
@@ -129,7 +128,7 @@ export default DrawMap = ({
     );
     tempRow[x] = temp;
     setMapState(tempRow);
-    sety(newy);*/
+    sety(newy);
   };
   const moveCharacter = (e) => {
     let t = null;
@@ -145,7 +144,7 @@ export default DrawMap = ({
         moveVert(x + 1);
         break;
       case "right":
-        moveSide(y + 1, x);
+        moveSide(y + 1);
         break;
       case "left":
         moveSide(y - 1);
