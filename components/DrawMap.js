@@ -1,5 +1,6 @@
 import { useState, useEffect, cloneElement } from "react";
 import { floorSVG, wallSVG, warriorSVG } from "./svgData";
+import { updateMonster } from "./playData.js";
 import DrawMonster from "./DrawMonster.js";
 
 export default DrawMap = ({
@@ -66,6 +67,7 @@ export default DrawMap = ({
   }, [x, y]);
 
   const modifyTable = ({ y = 4, x = 8, newx = 8, newy = 3 }) => {
+    updateMonster();
     let tempRow = [...mapState];
     let temp = [...mapState[y]];
     if (newy != y) {
