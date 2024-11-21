@@ -111,7 +111,9 @@ export default DrawMap = ({
     setMapState(tempRow);
     setx(newx);
   };
-  moveSide = (newy) => {
+  moveSide = (newy, newx) => {
+    modifyTable(y, x, newy, newx);
+    /*
     let tempRow = [...mapState];
     let temp = [...mapState[x]];
     temp[y] = (
@@ -127,7 +129,7 @@ export default DrawMap = ({
     );
     tempRow[x] = temp;
     setMapState(tempRow);
-    sety(newy);
+    sety(newy);*/
   };
   const moveCharacter = (e) => {
     let t = null;
@@ -143,7 +145,7 @@ export default DrawMap = ({
         moveVert(x + 1);
         break;
       case "right":
-        moveSide(y + 1);
+        moveSide(y + 1, x);
         break;
       case "left":
         moveSide(y - 1);
@@ -172,7 +174,7 @@ export default DrawMap = ({
         <button onClick={() => moveCharacter("up")}>up</button>
       </td>
       <td>
-        <button onClick={modifyTable}>change</button>
+        <button onClick={modifyTable}>mob</button>
       </td>
     </div>
   );
