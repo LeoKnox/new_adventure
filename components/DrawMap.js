@@ -1,6 +1,5 @@
 import { useState, useEffect, cloneElement } from "react";
 import { floorSVG, wallSVG, warriorSVG } from "./svgData";
-import { singleRoom } from "./dungeonData.js";
 import DrawMonster from "./DrawMonster.js";
 
 export default DrawMap = ({
@@ -11,7 +10,6 @@ export default DrawMap = ({
   sety,
   setx,
 }) => {
-  console.log(singleRoom(1));
   const [mapState, setMapState] = useState(() => {
     let temp = [];
     let tempRow = [];
