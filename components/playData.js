@@ -1,5 +1,5 @@
-let playData = [{ charId: 1, x: 1, y: 1 }];
+let playData = {character:{ charId: 1, x: 1, y: 1 }, monster: [{ icon: "demon", x: 8, y: 3 }]};
 
-export const charLocation = (id=1) => {
-    return {charX: playData[0].x, charY: playData[0].y}
-}
+export const charLocation = (id = 1) => {
+  return { charX: playData.character.x, charY: playData.character.y };
+};
