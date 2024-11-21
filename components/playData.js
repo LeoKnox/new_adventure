@@ -9,4 +9,8 @@ export const charLocation = (id = 1) => {
 
 export const updateMonster = () => {
   playData.monster[0].x = 7;
+};
+
+export const singleMonster = () => {
+  return monster[0]
 }
