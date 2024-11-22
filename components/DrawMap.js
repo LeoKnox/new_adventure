@@ -48,7 +48,7 @@ export default DrawMap = ({
       </td>
     );
     tempRow[x] = temp;
-    temp = [...mapState[y]];
+    temp = [...mapState[mobs.y]];
     temp[mobs.x] = <DrawMonster background={floorSVG()} />;
     tempRow[mobs.y] = temp;
     setMapState(tempRow);
