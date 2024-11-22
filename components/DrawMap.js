@@ -1,6 +1,6 @@
 import { useState, useEffect, cloneElement } from "react";
 import { floorSVG, wallSVG, warriorSVG } from "./svgData";
-import { updateMonster } from "./playData.js";
+import { updateMonster, singleMonster } from "./playData.js";
 import DrawMonster from "./DrawMonster.js";
 
 export default DrawMap = ({
@@ -11,7 +11,7 @@ export default DrawMap = ({
   sety,
   setx,
 }) => {
-  let mobs = [{ icon: "demon", x: 8, y: 3 }];
+  let mobs = singleMonster;
   const [mapState, setMapState] = useState(() => {
     let temp = [];
     let tempRow = [];
@@ -40,6 +40,7 @@ export default DrawMap = ({
   useEffect(() => {
     let tempRow = [...mapState];
     let temp = [...mapState[x]];
+    console.log("ue" + mobs.y);
     temp[y] = (
       <td>
         <div style={{ position: "absolute", opacity: "60%" }}>{floorSVG()}</div>
@@ -47,9 +48,9 @@ export default DrawMap = ({
       </td>
     );
     tempRow[x] = temp;
-    temp = [...mapState[mobs[0].y]];
-    temp[mobs[0].x] = <DrawMonster background={floorSVG()} />;
-    tempRow[mobs[0].y] = temp;
+    temp = [...mapState[y]];
+    temp[mobs.x] = <DrawMonster background={floorSVG()} />;
+    tempRow[mobs.y] = temp;
     setMapState(tempRow);
     const onKeyDown = (e) => {
       if (e.key === "w") {
