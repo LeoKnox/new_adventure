@@ -12,5 +12,5 @@ export const updateMonster = () => {
 };
 
 export const singleMonster = () => {
-  return monster[0]
-}
+  return playData.monster[0];
+};
