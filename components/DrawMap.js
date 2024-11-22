@@ -11,7 +11,7 @@ export default DrawMap = ({
   sety,
   setx,
 }) => {
-  let mobs = singleMonster;
+  let mobs = singleMonster();
   const [mapState, setMapState] = useState(() => {
     let temp = [];
     let tempRow = [];
@@ -40,7 +40,7 @@ export default DrawMap = ({
   useEffect(() => {
     let tempRow = [...mapState];
     let temp = [...mapState[x]];
-    console.log("ue" + mobs.y);
+    console.log("ue" + mobs.y + ":" + mobs.x);
     temp[y] = (
       <td>
         <div style={{ position: "absolute", opacity: "60%" }}>{floorSVG()}</div>
