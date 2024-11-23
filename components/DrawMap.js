@@ -75,7 +75,7 @@ export default DrawMap = ({
     let temp = [...mapState[y]];
     if (newy != y) {
       console.log("modify y");
-      temp[mobs.x] = (
+      temp[x] = (
         <td>
           <div>{floorSVG()}</div>
         </td>
