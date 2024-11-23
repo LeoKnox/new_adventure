@@ -68,7 +68,8 @@ export default DrawMap = ({
   }, [x, y]);
 
   const modifyTable = ({ y = 4, x = 8, newx = 8, newy = 3 }) => {
-    let newmob = updateMonster();
+    updateMonster();
+    mobs = singleMonster();
     console.log(singleMonster());
     let tempRow = [...mapState];
     let temp = [...mapState[y]];
