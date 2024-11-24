@@ -67,7 +67,7 @@ export default DrawMap = ({
     return () => window.removeEventListener("keydown", onKeyDown);
   }, [x, y]);
 
-  const modifyTable = ({ y = 4, x = 8, newx = 8, newy = 3 }) => {
+  const modifyTable = ({ newx = 8, newy = 3 }) => {
     updateMonster();
     mobs = singleMonster();
     console.log(mobs);
@@ -85,6 +85,7 @@ export default DrawMap = ({
       temp[newx] = <DrawMonster background={floorSVG()} />;
     }
     if (mobs.x != x) {
+      console.log("modify x");
       temp[x] = (
         <td>
           <div>{floorSVG()}</div>
