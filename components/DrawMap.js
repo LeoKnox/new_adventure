@@ -70,7 +70,6 @@ export default DrawMap = ({
   const modifyTable = ({ newx = 8, newy = 3 }) => {
     updateMonster();
     mobs = singleMonster();
-    console.log(mobs);
     let tempRow = [...mapState];
     let temp = [...mapState[y]];
     if (mobs.y != newy) {
@@ -93,6 +92,8 @@ export default DrawMap = ({
       );
       temp[newx] = <DrawMonster background={floorSVG()} />;
     }
+    console.log(mobs.x + "x" + newx);
+    console.log(mobs.y + "y" + newy);
     tempRow[newy] = temp;
     setMapState(tempRow);
   };
