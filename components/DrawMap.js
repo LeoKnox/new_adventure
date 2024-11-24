@@ -73,20 +73,20 @@ export default DrawMap = ({
     console.log(mobs);
     let tempRow = [...mapState];
     let temp = [...mapState[y]];
-    if (mobs.y != y) {
+    if (mobs.y != newy) {
       console.log("modify y");
       temp[x] = (
         <td>
           <div>{floorSVG()}</div>
         </td>
       );
-      tempRow[y] = temp;
+      tempRow[newy] = temp;
       temp = [...mapState[newy]];
       temp[mobs.x] = <DrawMonster background={floorSVG()} />;
     }
-    if (mobs.x != x) {
+    if (mobs.x != newx) {
       console.log("modify x");
-      temp[x] = (
+      temp[newx] = (
         <td>
           <div>{floorSVG()}</div>
         </td>
