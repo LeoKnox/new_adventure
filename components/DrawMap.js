@@ -67,14 +67,14 @@ export default DrawMap = ({
     return () => window.removeEventListener("keydown", onKeyDown);
   }, [x, y]);
 
-  const modifyTable = ({ newx = 8, newy = 3 }) => {
+  const modifyTable = ({ newx = 7, newy = 2 }) => {
     updateMonster();
     mobs = singleMonster();
     let tempRow = [...mapState];
     let temp = [...mapState[y]];
     if (mobs.y != newy) {
       console.log("modify y");
-      temp[x] = (
+      temp[mobs.x] = (
         <td>
           <div>{wallSVG()}</div>
         </td>
