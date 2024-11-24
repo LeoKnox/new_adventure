@@ -74,7 +74,7 @@ export default DrawMap = ({
     let temp = [...mapState[y]];
     if (mobs.y != newy) {
       console.log("modify y");
-      temp[mobs.x] = (
+      temp[mobs.y] = (
         <td>
           <div>{wallSVG()}</div>
         </td>
