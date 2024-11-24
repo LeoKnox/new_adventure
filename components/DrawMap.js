@@ -85,9 +85,9 @@ export default DrawMap = ({
     }
     if (mobs.x != newx) {
       console.log("modify x");
-      temp[newx] = (
+      temp[mobs.x] = (
         <td>
-          <div>{wallSVG()}</div>
+          <div>{floorSVG()}</div>
         </td>
       );
       temp[newx] = <DrawMonster background={floorSVG()} />;
