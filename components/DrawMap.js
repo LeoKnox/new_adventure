@@ -82,7 +82,7 @@ export default DrawMap = ({
       );
       tempRow[y] = temp;
       temp = [...mapState[newy]];
-      temp[newx] = <DrawMonster background={floorSVG()} />;
+      temp[mobs.x] = <DrawMonster background={floorSVG()} />;
     }
     if (mobs.x != x) {
       console.log("modify x");
