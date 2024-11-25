@@ -40,7 +40,6 @@ export default DrawMap = ({
   useEffect(() => {
     let tempRow = [...mapState];
     let temp = [...mapState[x]];
-    console.log("ue" + mobs.y + ":" + mobs.x);
     temp[y] = (
       <td>
         <div style={{ position: "absolute", opacity: "60%" }}>{floorSVG()}</div>
@@ -90,6 +89,7 @@ export default DrawMap = ({
           <div>{floorSVG()}</div>
         </td>
       );
+      updateMonaster();
       temp[newx] = <DrawMonster background={floorSVG()} />;
     }
     console.log(mobs.x + "x" + newx);
