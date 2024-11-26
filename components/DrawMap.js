@@ -66,7 +66,7 @@ export default DrawMap = ({
     return () => window.removeEventListener("keydown", onKeyDown);
   }, [x, y]);
 
-  const modifyTable = ({ newx = 9, newy = 2 }) => {
+  const modifyTable = ({ newx = 7, newy = 2 }) => {
     mobs = singleMonster();
     updateMonster(mobs.x);
     console.log(singleMonster());
