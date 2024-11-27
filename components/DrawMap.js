@@ -12,6 +12,7 @@ export default DrawMap = ({
   setx,
 }) => {
   let mobs = singleMonster();
+  const [mobGroup, setMobGroup] = useState([]);
   const [mapState, setMapState] = useState(() => {
     let temp = [];
     let tempRow = [];
@@ -37,6 +38,11 @@ export default DrawMap = ({
     return temp;
   });
 
+  useEffect(() => {
+    let temp = singleMonster();
+    console.log(temp);
+    setMobGroup([{x:temp.x, y:temp.y}])
+  },[])
   useEffect(() => {
     let tempRow = [...mapState];
     let temp = [...mapState[x]];
@@ -66,7 +72,7 @@ export default DrawMap = ({
     return () => window.removeEventListener("keydown", onKeyDown);
   }, [x, y]);
 
-  const modifyTable = ({ newx = 8, newy = 2 }) => {
+  const modifyTable = ({ newx, newy = 2 }) => {
     mobs = singleMonster();
     console.log(singleMonster());
     let tempRow = [...mapState];
