@@ -98,7 +98,7 @@ export default DrawMap = ({
           <div>{floorSVG()}</div>
         </td>
       );
-      temp[newx] = <DrawMonster background={floorSVG()} />;
+      temp[mobGroup[0].x] = <DrawMonster background={floorSVG()} />;
     }
     console.log(mobs.x + "x" + newx);
     console.log(mobs.y + "y" + newy);
