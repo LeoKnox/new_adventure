@@ -44,6 +44,7 @@ export default DrawMap = ({
     setMobGroup([{ x: temp.x, y: temp.y }]);
     console.log("moblist update");
   }, [mapState]);
+
   useEffect(() => {
     let tempRow = [...mapState];
     let temp = [...mapState[x]];
@@ -74,6 +75,7 @@ export default DrawMap = ({
   }, [x, y]);
 
   const modifyTable = ({ newx = 8, newy = 2 }) => {
+    updateMonster(newy);
     mobs = singleMonster();
     console.log(singleMonster());
     let tempRow = [...mapState];
@@ -100,7 +102,6 @@ export default DrawMap = ({
     }
     console.log(mobs.x + "x" + newx);
     console.log(mobs.y + "y" + newy);
-    updateMonster(newy);
     tempRow[newy] = temp;
     setMapState(tempRow);
   };
