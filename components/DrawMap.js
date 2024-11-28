@@ -75,7 +75,6 @@ export default DrawMap = ({
   }, [x, y]);
 
   const modifyTable = ({ newx = 8, newy = 2 }) => {
-    updateMonster(newy);
     mobs = singleMonster();
     console.log(singleMonster());
     let tempRow = [...mapState];
@@ -104,6 +103,7 @@ export default DrawMap = ({
     console.log(mobs.y + "y" + newy);
     tempRow[mobGroup[0].y] = temp;
     setMapState(tempRow);
+    updateMonster(newy);
   };
   const moveVert = (newx) => {
     let tempRow = [...mapState];
