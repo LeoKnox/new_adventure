@@ -102,7 +102,7 @@ export default DrawMap = ({
     }
     console.log(mobs.x + "x" + newx);
     console.log(mobs.y + "y" + newy);
-    tempRow[newy] = temp;
+    tempRow[mobGroup[0].y] = temp;
     setMapState(tempRow);
   };
   const moveVert = (newx) => {
