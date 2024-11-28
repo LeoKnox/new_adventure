@@ -72,7 +72,7 @@ export default DrawMap = ({
     };
     window.addEventListener("keydown", onKeyDown);
     return () => window.removeEventListener("keydown", onKeyDown);
-  }, [x, y, modifyTable]);
+  }, [x, y]);
 
   const modifyTable = ({ newx = 8, newy = 2 }) => {
     mobs = singleMonster();
