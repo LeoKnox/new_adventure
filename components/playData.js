@@ -8,7 +8,7 @@ export const charLocation = (id = 1) => {
 };
 
 export const updateMonster = (newNum) => {
-  playData.monster[0].y = newNum - 1;
+  playData.monster[0].y = playData.monster[0].y - 1;
 };
 
 export const singleMonster = () => {
