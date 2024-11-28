@@ -43,7 +43,7 @@ export default DrawMap = ({
     console.log(temp);
     setMobGroup([{ x: temp.x, y: temp.y }]);
     console.log("moblist update");
-  }, []);
+  }, [mapState]);
 
   useEffect(() => {
     let tempRow = [...mapState];
