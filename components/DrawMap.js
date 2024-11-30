@@ -72,14 +72,15 @@ export default DrawMap = ({
     return () => window.removeEventListener("keydown", onKeyDown);
   }, [x, y]);
 
+  const tempTest = () => {
+    return <DrawMonster background={floorSVG()} />;
+  };
+
   const modifyTable = ({ newx = 8, newy = 2 }) => {
     console.log("modify table");
     let temp = [];
-    temp = [
-      ...temp,
-      { x: 8, y: 2, mob: <DrawMonster background={floorSVG()} /> },
-    ];
-    console.log(temp);
+    temp = [...temp, { x: 8, y: 2, mob: {() => tempTest() } }];
+    console.log(temp.mob);
     let tempMap = [...mapState];
     let tempRow = [...mapState[2]];
     tempRow[8] = temp.mob;
