@@ -81,8 +81,10 @@ export default DrawMap = ({
     ];
     console.log(temp);
     let tempMap = [...mapState];
-    let tempRow = [...mapState(2)];
+    let tempRow = [...mapState[2]];
     tempRow[8] = temp.mob;
+    tempMap[2] = tempRow;
+    setMapState(tempMap);
   };
   const moveVert = (newx) => {
     console.log("move vertically");
