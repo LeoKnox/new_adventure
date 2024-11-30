@@ -80,6 +80,9 @@ export default DrawMap = ({
       { x: 8, y: 2, mob: <DrawMonster background={floorSVG()} /> },
     ];
     console.log(temp);
+    let tempMap = [...mapState];
+    let tempRow = [...mapState(2)];
+    tempRow[8] = temp.mob;
   };
   const moveVert = (newx) => {
     console.log("move vertically");
