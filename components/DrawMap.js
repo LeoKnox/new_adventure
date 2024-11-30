@@ -73,7 +73,11 @@ export default DrawMap = ({
   }, [x, y]);
 
   const tempTest = () => {
-    return <DrawMonster background={floorSVG()} />;
+    return (
+      <>
+        <DrawMonster background={floorSVG()} />
+      </>
+    );
   };
 
   const modifyTable = ({ newx = 8, newy = 2 }) => {
