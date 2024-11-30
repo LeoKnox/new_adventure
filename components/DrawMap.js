@@ -43,7 +43,7 @@ export default DrawMap = ({
     console.log(temp);
     setMobGroup([{ x: temp.x, y: temp.y }]);
     console.log("moblist update");
-  }, [mapState]);
+  }, [mapState, updateMonster]);
 
   useEffect(() => {
     let tempRow = [...mapState];
@@ -72,7 +72,7 @@ export default DrawMap = ({
     };
     window.addEventListener("keydown", onKeyDown);
     return () => window.removeEventListener("keydown", onKeyDown);
-  }, [x, y, setMobGroup]);
+  }, [x, y]);
 
   const modifyTable = ({ newx = 8, newy = 2 }) => {
     mobs = singleMonster();
