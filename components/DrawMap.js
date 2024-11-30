@@ -79,7 +79,7 @@ export default DrawMap = ({
   const modifyTable = ({ newx = 8, newy = 2 }) => {
     console.log("modify table");
     let temp = [];
-    temp = [...temp, { x: 8, y: 2, mob: {() => tempTest() } }];
+    temp = [...temp, { x: 8, y: 2, mob: { tempTest } }];
     console.log(temp.mob);
     let tempMap = [...mapState];
     let tempRow = [...mapState[2]];
