@@ -13,6 +13,7 @@ export default DrawMap = ({
 }) => {
   let mobs = singleMonster();
   const [mobGroup, setMobGroup] = useState([]);
+  const [character, setCharacter] = useState({})
   const [mapState, setMapState] = useState(() => {
     let temp = [];
     let tempRow = [];
@@ -39,11 +40,8 @@ export default DrawMap = ({
   });
 
   useEffect(() => {
-    let temp = singleMonster();
-    console.log(temp);
-    setMobGroup([{ x: temp.x, y: temp.y }]);
     console.log("moblist update");
-  }, [mapState, updateMonster]);
+  }, []);
 
   useEffect(() => {
     let tempRow = [...mapState];
@@ -75,96 +73,16 @@ export default DrawMap = ({
   }, [x, y]);
 
   const modifyTable = ({ newx = 8, newy = 2 }) => {
-    mobs = singleMonster();
-    console.log(singleMonster());
-    let tempRow = [...mapState];
-    let temp = [...mapState[mobs.y]];
-    if (mobs.y != mobGroup[0].y) {
-      console.log("modify y");
-      temp[mobs.x] = (
-        <td>
-          <div>{floorSVG()}</div>
-        </td>
-      );
-      tempRow[mobs.y] = temp;
-      temp = [...mapState[mobs.y]];
-      temp[mobGroup[0].x] = <DrawMonster background={floorSVG()} />;
-    }
-    if (mobs.x != newx) {
-      console.log("modify x");
-      temp[mobs.x] = (
-        <td>
-          <div>{floorSVG()}</div>
-        </td>
-      );
-      temp[mobGroup[0].x] = <DrawMonster background={floorSVG()} />;
-    }
-    console.log(mobs.x + "x" + newx);
-    console.log(mobs.y + "y" + newy);
-    tempRow[mobGroup[0].y] = temp;
-    setMapState(tempRow);
-    updateMonster(newy);
+    console.log("modify table");
   };
   const moveVert = (newx) => {
-    let tempRow = [...mapState];
-    console.log(newx);
-    console.log("red");
-    let temp = [...mapState[x]];
-    temp[y] = (
-      <td>
-        <div>{floorSVG()}</div>
-      </td>
-    );
-    tempRow[x] = temp;
-    temp = [...mapState[newx]];
-    temp[y] = (
-      <td>
-        <div style={{ position: "absolute", opacity: "60%" }}>{floorSVG()}</div>
-        <div style={{ position: "relative" }}>{warriorSVG()}</div>
-      </td>
-    );
-    tempRow[newx] = temp;
-    setMapState(tempRow);
-    setx(newx);
+    console.log("move vertically");
   };
   moveSide = (newy) => {
-    let tempRow = [...mapState];
-    let temp = [...mapState[x]];
-    temp[y] = (
-      <td>
-        <div>{floorSVG()}</div>
-      </td>
-    );
-    temp[newy] = (
-      <td>
-        <div style={{ position: "absolute", opacity: "60%" }}>{floorSVG()}</div>
-        <div style={{ position: "relative" }}>{warriorSVG()}</div>
-      </td>
-    );
-    tempRow[x] = temp;
-    setMapState(tempRow);
-    sety(newy);
+    console.log("move sideways");
   };
   const moveCharacter = (e) => {
-    let t = null;
-    if (e == "up" || "down" || "right" || "left") {
-      t = e;
-    }
-    console.log(t);
-    switch (t) {
-      case "up":
-        moveVert(x - 1);
-        break;
-      case "down":
-        moveVert(x + 1);
-        break;
-      case "right":
-        moveSide(y + 1);
-        break;
-      case "left":
-        moveSide(y - 1);
-        break;
-    }
+    console.log("move character");
   };
   return (
     <div onKeyDown={() => moveCharacter()}>
