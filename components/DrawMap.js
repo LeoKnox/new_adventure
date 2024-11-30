@@ -13,7 +13,7 @@ export default DrawMap = ({
 }) => {
   let mobs = singleMonster();
   const [mobGroup, setMobGroup] = useState([]);
-  const [character, setCharacter] = useState({})
+  const [character, setCharacter] = useState({});
   const [mapState, setMapState] = useState(() => {
     let temp = [];
     let tempRow = [];
@@ -74,6 +74,9 @@ export default DrawMap = ({
 
   const modifyTable = ({ newx = 8, newy = 2 }) => {
     console.log("modify table");
+    let temp = [];
+    temp.push({ x: 8, y: 2, mob: <DrawMonster background={floorSVG()} /> });
+    console.log(temp);
   };
   const moveVert = (newx) => {
     console.log("move vertically");
