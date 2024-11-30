@@ -75,7 +75,10 @@ export default DrawMap = ({
   const modifyTable = ({ newx = 8, newy = 2 }) => {
     console.log("modify table");
     let temp = [];
-    temp.push({ x: 8, y: 2, mob: <DrawMonster background={floorSVG()} /> });
+    temp = [
+      ...temp,
+      { x: 8, y: 2, mob: <DrawMonster background={floorSVG()} /> },
+    ];
     console.log(temp);
   };
   const moveVert = (newx) => {
