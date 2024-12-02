@@ -104,9 +104,9 @@ export default DrawMap = ({
     temp[i] = { ...temp, [j]: <DrawMonster background={floorSVG()} /> };
     console.log(temp);
     let tempMap = [...mapState];
-    let tempRow = [...mapState[2]];
-    tempRow[8] = temp[i].mob;
-    tempMap[2] = tempRow;
+    let tempRow = [...mapState[i]];
+    tempRow[j] = temp[i].mob;
+    tempMap[i] = tempRow;
     setMapState(tempMap);
   };
   return (
@@ -136,4 +136,3 @@ export default DrawMap = ({
     </div>
   );
 };
-
