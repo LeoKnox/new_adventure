@@ -105,7 +105,7 @@ export default DrawMap = ({
     console.log(temp);
     let tempMap = [...mapState];
     let tempRow = [...mapState[i]];
-    tempRow[j] = temp[i].mob;
+    tempRow[j] = temp[i][j];
     tempMap[i] = tempRow;
     setMapState(tempMap);
   };
