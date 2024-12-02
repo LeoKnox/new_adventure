@@ -101,7 +101,7 @@ export default DrawMap = ({
     let temp = {};
     let i = 2;
     let j = 8;
-    temp[i] = { j: <DrawMonster background={floorSVG()} /> };
+    temp[i][j] = <DrawMonster background={floorSVG()} />;
     console.log(temp);
     let tempMap = [...mapState];
     let tempRow = [...mapState[2]];
