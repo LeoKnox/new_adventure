@@ -100,7 +100,9 @@ export default DrawMap = ({
     console.log("move character");
     let temp = {};
     let i = 2;
-    temp[i] = { x: 8, mob: <DrawMonster background={floorSVG()} /> };
+    let j = 8;
+    temp[i] = { j: <DrawMonster background={floorSVG()} /> };
+    console.log(temp);
     let tempMap = [...mapState];
     let tempRow = [...mapState[2]];
     tempRow[8] = temp[i].mob;
