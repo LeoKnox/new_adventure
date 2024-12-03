@@ -78,26 +78,6 @@ export default DrawMap = ({
 
   const modifyTable = ({ newx = 8, newy = 2 }) => {
     console.log("modify table");
-    let temp = [];
-    temp = [
-      ...temp,
-      { x: 8, y: 2, mob: <DrawMonster background={floorSVG()} /> },
-    ];
-    console.log(temp.mob);
-    let tempMap = [...mapState];
-    let tempRow = [...mapState[2]];
-    tempRow[8] = temp[0].mob;
-    tempMap[2] = tempRow;
-    setMapState(tempMap);
-  };
-  const moveVert = (newx) => {
-    console.log("move vertically");
-  };
-  moveSide = (newy) => {
-    console.log("move sideways");
-  };
-  const moveCharacter = (e) => {
-    console.log("move character");
     let temp = {};
     let i = 2;
     let j = 8;
@@ -108,6 +88,15 @@ export default DrawMap = ({
     tempRow[j] = temp[i][j];
     tempMap[i] = tempRow;
     setMapState(tempMap);
+  };
+  const moveVert = (newx) => {
+    console.log("move vertically");
+  };
+  moveSide = (newy) => {
+    console.log("move sideways");
+  };
+  const moveCharacter = (e) => {
+    console.log("move character");
   };
   return (
     <div onKeyDown={() => moveCharacter()}>
@@ -131,7 +120,7 @@ export default DrawMap = ({
         <button onClick={() => moveCharacter("up")}>up</button>
       </td>
       <td>
-        <button onClick={moveCharacter}>mob</button>
+        <button onClick={modifyTable}>mob</button>
       </td>
     </div>
   );
