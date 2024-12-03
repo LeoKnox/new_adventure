@@ -79,14 +79,14 @@ export default DrawMap = ({
   const modifyTable = ({ newx = 8, newy = 2 }) => {
     console.log("modify table");
     let temp = {};
-    let i = 2;
+    let i = 3;
     let j = 8;
-    temp[i] = { ...temp, [j]: <DrawMonster background={floorSVG()} /> };
+    temp[newy] = { ...temp, [newx]: <DrawMonster background={floorSVG()} /> };
     console.log(temp);
     let tempMap = [...mapState];
-    let tempRow = [...mapState[i]];
-    tempRow[j] = temp[i][j];
-    tempMap[i] = tempRow;
+    let tempRow = [...mapState[newy]];
+    tempRow[newx] = temp[newy][newx];
+    tempMap[newy] = tempRow;
     setMapState(tempMap);
   };
   const moveVert = (newx) => {
