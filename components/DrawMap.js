@@ -83,7 +83,8 @@ export default DrawMap = ({
     let j = 8;
     temp[newy] = { ...temp, [newx]: <DrawMonster background={floorSVG()} /> };
     temp[i] = { ...temp, [j]: floorSVG() };
-    temp[i] = { ...temp, 9: floorSVG() };
+    temp[i] = { ...temp, 9: [floorSVG()] };
+    temp[i][j].append(wallSVG());
     console.log(temp);
     let tempMap = [...mapState];
     let tempRow = [...mapState[newy]];
