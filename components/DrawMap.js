@@ -88,11 +88,11 @@ export default DrawMap = ({
     //temp[i][k].push(wallSVG());
     console.log(temp);
     Object.keys(temp).forEach((data, id) => {
-      data.forEach((dataTwo, idTwo) => {
+      Object.keys(data).forEach((dataTwo, idTwo) => {
         let tempMap = [...mapState];
-        let tempRow = [...mapState[newy]];
-        tempRow[newx] = temp[newy][newx];
-        tempMap[newy] = tempRow;
+        let tempRow = [...mapState[id]];
+        tempRow[idTwo] = temp[id][idTwo];
+        tempMap[id] = tempRow;
         setMapState(tempMap);
       });
     });
