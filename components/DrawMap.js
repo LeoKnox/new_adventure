@@ -88,12 +88,14 @@ export default DrawMap = ({
     //temp[i][k].push(wallSVG());
     console.log(temp);
     temp.map((data, id) => {
-    let tempMap = [...mapState];
-    let tempRow = [...mapState[newy]];
-    tempRow[newx] = temp[newy][newx];
-    tempMap[newy] = tempRow;
-    setMapState(tempMap);
-    })
+      data.mep((dataTwo, idTwo) => {
+        let tempMap = [...mapState];
+        let tempRow = [...mapState[newy]];
+        tempRow[newx] = temp[newy][newx];
+        tempMap[newy] = tempRow;
+        setMapState(tempMap);
+      });
+    });
   };
   const moveVert = (newx) => {
     console.log("move vertically");
