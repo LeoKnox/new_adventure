@@ -83,15 +83,17 @@ export default DrawMap = ({
     let j = 8;
     //let k = 9;
     temp[newy] = { ...temp, [newx]: <DrawMonster background={floorSVG()} /> };
-    temp[i] = { ...temp, [j]: floorSVG() };
-    temp[i] = { ...temp, 9: [floorSVG()] };
+    temp[i] = { ...temp, [j]: wallSVG() };
+    temp[i] = { ...temp, 9: wallSVG() };
     //temp[i][k].push(wallSVG());
     console.log(temp);
+    temp.map((data, id) => {
     let tempMap = [...mapState];
     let tempRow = [...mapState[newy]];
     tempRow[newx] = temp[newy][newx];
     tempMap[newy] = tempRow;
     setMapState(tempMap);
+    })
   };
   const moveVert = (newx) => {
     console.log("move vertically");
