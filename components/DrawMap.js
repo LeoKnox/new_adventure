@@ -87,8 +87,8 @@ export default DrawMap = ({
     temp[i] = { ...temp, 9: wallSVG() };
     //temp[i][k].push(wallSVG());
     console.log(temp);
-    temp.map((data, id) => {
-      data.mep((dataTwo, idTwo) => {
+    temp.forEach((data, id) => {
+      data.forEach((dataTwo, idTwo) => {
         let tempMap = [...mapState];
         let tempRow = [...mapState[newy]];
         tempRow[newx] = temp[newy][newx];
