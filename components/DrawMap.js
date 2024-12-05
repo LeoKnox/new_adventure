@@ -82,6 +82,7 @@ export default DrawMap = ({
     let i = 3;
     let j = 8;
     let newMapState = mapState;
+    let newMapRow = [];
     //let k = 9;
     temp[newy] = { ...temp, [newx]: <DrawMonster background={floorSVG()} /> };
     temp[i] = { ...temp, [j]: wallSVG() };
@@ -91,13 +92,12 @@ export default DrawMap = ({
     Object.keys(temp).forEach((id, data) => {
       Object.keys(data).forEach((idTwo, dataTwo) => {
         console.log("map " + id + idTwo);
-        let tempMap = [...mapState];
-        let tempRow = [...mapState[id]];
-        tempRow[idTwo] = temp[idTwo];
-        tempMap[id] = tempRow;
+        newMapRow = [...newMapState[id]];
+        newMapRow[idTwo] = dataTwo;
       });
+      newMapState[id] = newMapRow;
     });
-    console.log(temp);
+    console.log(newMapState);
     setMapState(temp);
   };
   const moveVert = (newx) => {
