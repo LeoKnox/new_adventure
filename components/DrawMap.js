@@ -92,10 +92,11 @@ export default DrawMap = ({
     Object.keys(temp).forEach((id, data) => {
       Object.keys(data).forEach((idTwo, dataTwo) => {
         console.log("map " + id + idTwo);
-        newMapRow = [...newMapState[id], dataTwo];
-        //newMapRow[idTwo] = dataTwo;
+        newMapRow = [...newMapState[id]];
+        newMapRow[idTwo] = dataTwo;
+        console.log(newMapRow);
       });
-      console.log(newMapRow);
+
       newMapState[id] = newMapRow;
     });
     console.log(newMapState);
