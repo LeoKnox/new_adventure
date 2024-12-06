@@ -82,7 +82,7 @@ export default DrawMap = ({
     let temp = {};
     let i = 3;
     let j = 8;
-    let newMapState = mapState;
+    let newMapState = [...mapState];
     let newMapRow = [];
     //let k = 9;
     temp[newy] = { ...temp, [newx]: <DrawMonster background={floorSVG()} /> };
