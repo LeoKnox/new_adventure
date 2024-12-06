@@ -94,7 +94,7 @@ export default DrawMap = ({
       Object.keys(data).forEach((idTwo, dataTwo) => {
         console.log("map " + id + idTwo);
         newMapRow = [...newMapState[id]];
-        newMapRow[idTwo] = dataTwo;
+        newMapRow[idTwo] = wallSVG();
         console.log(newMapRow);
       });
 
