@@ -40,6 +40,7 @@ export default DrawMap = ({
   });
 
   useEffect(() => {
+    console.log(mapState);
     console.log("moblist update");
   }, []);
 
