@@ -74,7 +74,7 @@ export default DrawMap = ({
   }, [x, y]);
 
   const tempTest = () => {
-    return <DrawMonster background={floorSVG()} />;
+    return <DrawMonster background={wallSVG()} />;
   };
 
   const modifyTable = ({ newx = 8, newy = 2 }) => {
@@ -95,7 +95,7 @@ export default DrawMap = ({
       Object.keys(data).forEach((idTwo, dataTwo) => {
         console.log("map " + id + idTwo);
 
-        idTwo ? wallSVG() : dataTwo;
+        idTwo ? tempTest() : dataTwo;
         console.log(newMapRow);
       });
 
