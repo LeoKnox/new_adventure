@@ -95,7 +95,7 @@ export default DrawMap = ({
       Object.keys(data).forEach((idTwo, dataTwo) => {
         console.log("map " + id + idTwo);
 
-        idTwo ? tempTest() : dataTwo;
+        idTwo ? <DrawMonster background={floorSVG()} /> : dataTwo;
         console.log(newMapRow);
       });
 
