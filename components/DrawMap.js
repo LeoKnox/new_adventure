@@ -94,7 +94,7 @@ export default DrawMap = ({
       newMapRow = [...newMapState[id]];
       newMapRow.map((nmrData, index) => {
         console.log(index);
-        index == 8 ? <>o</> : nmrData;
+        index == 8 ? <div>wallSVG()</div> : nmrData;
       });
       newMapState[id] = newMapRow;
     });
