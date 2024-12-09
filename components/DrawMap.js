@@ -88,13 +88,14 @@ export default DrawMap = ({
     temp[newy] = { ...temp, [newx]: <DrawMonster background={floorSVG()} /> };
     temp[i] = { ...temp, [j]: wallSVG() };
     temp[i] = { ...temp, 9: wallSVG() };
+    let tempData = <DrawMonster background={floorSVG()} />;
     //temp[i][k].push(wallSVG());
     console.log(temp);
     Object.keys(temp).forEach((id, data) => {
       newMapRow = [...newMapState[id]];
       newMapRow.map((nmrData, index) => {
         console.log(index);
-        index == 8 ? <DrawMonster background={floorSVG()} /> : nmrData;
+        index == 8 ? tempData : nmrData;
       });
       newMapState[id] = newMapRow;
     });
