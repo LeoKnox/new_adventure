@@ -92,14 +92,9 @@ export default DrawMap = ({
     console.log(temp);
     Object.keys(temp).forEach((id, data) => {
       newMapRow = [...newMapState[id]];
-      /*Object.keys(data).forEach((idTwo, dataTwo) => {
-        console.log("map " + id + idTwo);
-
-        idTwo ? <DrawMonster background={floorSVG()} /> : dataTwo;
-        console.log(newMapRow);
-      });*/
       newMapRow.map((nmrData, index) => {
-        index == 8 ? <>wallSVG()</> : nmrData;
+        console.log(index);
+        index == 8 ? <>o</> : nmrData;
       });
       newMapState[id] = newMapRow;
     });
