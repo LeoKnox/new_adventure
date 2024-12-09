@@ -95,7 +95,7 @@ export default DrawMap = ({
       newMapRow = [...newMapState[id]];
       newMapRow.map((nmrData, index) => {
         console.log(index);
-        index == 8 ? tempData : nmrData;
+        index == 8 ? { tempData } : nmrData;
       });
       newMapState[id] = newMapRow;
     });
