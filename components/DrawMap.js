@@ -79,25 +79,10 @@ export default DrawMap = ({
 
   const modifyTable = ({ newx = 8, newy = 2 }) => {
     console.log("modify table");
-    let temp = {};
-    let i = 3;
-    let j = 8;
-    let newMapState = [...mapState];
-    let newMapRow = [];
-    //let k = 9;
-    //temp[newy] = { ...temp, [newx]: <DrawMonster background={floorSVG()} /> };
-    //temp[i] = { ...temp, [j]: wallSVG() };
-    //temp[i] = { ...temp, 9: wallSVG() };
-    let tempData = <DrawMonster background={floorSVG()} />;
-    //temp[i][k].push(wallSVG());
-    console.log(temp);
-    Object.keys(temp).forEach((id, data) => {
-      newMapRow = [...newMapState[id]];
-      newMapRow[3] = tempData;
-      temp[id] = newMapRow;
-    });
-    console.log(newMapState);
-    setMapState(temp);
+    let newGrid = mapState;
+    let newRow = mapState[3];
+    newRow[8] = wallSVG();
+    console.log(newRow);
   };
   const moveVert = (newx) => {
     console.log("move vertically");
