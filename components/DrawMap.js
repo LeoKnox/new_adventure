@@ -85,9 +85,9 @@ export default DrawMap = ({
     let newMapState = [...mapState];
     let newMapRow = [];
     //let k = 9;
-    temp[newy] = { ...temp, [newx]: <DrawMonster background={floorSVG()} /> };
-    temp[i] = { ...temp, [j]: wallSVG() };
-    temp[i] = { ...temp, 9: wallSVG() };
+    //temp[newy] = { ...temp, [newx]: <DrawMonster background={floorSVG()} /> };
+    //temp[i] = { ...temp, [j]: wallSVG() };
+    //temp[i] = { ...temp, 9: wallSVG() };
     let tempData = <DrawMonster background={floorSVG()} />;
     //temp[i][k].push(wallSVG());
     console.log(temp);
