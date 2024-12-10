@@ -91,9 +91,10 @@ export default DrawMap = ({
     let tempData = <DrawMonster background={floorSVG()} />;
     //temp[i][k].push(wallSVG());
     console.log(temp);
-    Object.keys(tempData).forEach((id, data) => {
+    Object.keys(temp).forEach((id, data) => {
       newMapRow = [...newMapState[id]];
       newMapRow[6] = wallSVG();
+      temp[id] = newMapRow;
     });
     console.log(newMapState);
     setMapState(temp);
