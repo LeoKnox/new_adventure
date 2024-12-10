@@ -82,7 +82,8 @@ export default DrawMap = ({
     let newGrid = mapState;
     let newRow = mapState[3];
     newRow[8] = wallSVG();
-    console.log(newRow);
+    newGrid[3] = newRow;
+    console.log(newGrid);
   };
   const moveVert = (newx) => {
     console.log("move vertically");
