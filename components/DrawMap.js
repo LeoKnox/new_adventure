@@ -85,7 +85,7 @@ export default DrawMap = ({
     newRow.map((item, index) =>
       index == 8 ? <DrawMonster background={floorSVG()} /> : item
     );
-    newGrid[2] = newRow;
+    newGrid.map((item, index) => (index == 2 ? newRow : item));
     console.log(newGrid);
     setMapState(newGrid);
   };
