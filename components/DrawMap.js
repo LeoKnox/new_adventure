@@ -81,7 +81,10 @@ export default DrawMap = ({
     console.log("modify table");
     let newGrid = mapState;
     let newRow = mapState[3];
-    newRow[8] = <DrawMonster background={floorSVG()} />;
+    //newRow[8] = <DrawMonster background={floorSVG()} />;
+    newRow.map((item, index) =>
+      index == 8 ? <DrawMonster background={floorSVG()} /> : item
+    );
     newGrid[2] = newRow;
     console.log(newGrid);
     setMapState(newGrid);
