@@ -81,20 +81,20 @@ export default DrawMap = ({
     console.log("modify table");
     let newGrid = mapState;
     let newRow = [...mapState[x]];
-    newRow[y] = (
+    newGrid[8] = (
       <td>
         <div>{floorSVG()}</div>
       </td>
     );
-    tempRow[3] = temp;
-    newRow = [...mapState[newx]];
+    newGrid[3] = newGrid;
+    newRow = [...mapState[3]];
     newRow[2] = (
       <td>
         <div style={{ position: "absolute", opacity: "60%" }}>{floorSVG()}</div>
         <div style={{ position: "relative" }}>{warriorSVG()}</div>
       </td>
     );
-    newRow[7] = temp;
+    newRow[7] = newRow;
     setMapState(newGrid);
   };
   const moveVert = (newx) => {
