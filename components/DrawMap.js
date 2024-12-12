@@ -45,6 +45,7 @@ export default DrawMap = ({
   }, []);
 
   useEffect(() => {
+    console.log("use effect");
     let tempRow = [...mapState];
     let temp = [...mapState[x]];
     temp[y] = (
