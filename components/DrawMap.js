@@ -94,7 +94,8 @@ export default DrawMap = ({
         <div style={{ position: "relative" }}>{warriorSVG()}</div>
       </td>
     );
-    newRow[7] = newRow;
+    newGrid[7] = newRow;
+    console.log(newGrid)
     setMapState(newGrid);
   };
   const moveVert = (newx) => {
