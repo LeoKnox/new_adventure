@@ -81,15 +81,15 @@ export default DrawMap = ({
     console.log("modify table");
     let newGrid = [...mapState];
     let newRow = [...mapState[3]];
-    newRow[7] = (
+    newRow[2] = (
       <td>
         <div>{wallSVG()}</div>
       </td>
     );
     //newGrid[3] = newGrid;
     newRow = [...mapState[3]];
-    newRow[2] = <DrawMonster background={wallSVG()} />;
-    newGrid[7] = newRow;
+    newRow[7] = <DrawMonster background={wallSVG()} />;
+    newGrid[2] = newRow;
     console.log(newGrid);
     setMapState(newGrid);
   };
