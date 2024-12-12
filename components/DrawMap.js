@@ -88,12 +88,7 @@ export default DrawMap = ({
     );
     //newGrid[3] = newGrid;
     newRow = [...mapState[3]];
-    newRow[2] = (
-      <td>
-        <div style={{ position: "absolute", opacity: "60%" }}>{floorSVG()}</div>
-        <div style={{ position: "relative" }}>{warriorSVG()}</div>
-      </td>
-    );
+    newRow[2] = <DrawMonster background={wallSVG()} />;
     newGrid[7] = newRow;
     console.log(newGrid);
     setMapState(newGrid);
