@@ -79,11 +79,11 @@ export default DrawMap = ({
 
   const modifyTable = ({ newx = 8, newy = 2 }) => {
     console.log("modify table");
-    let newGrid = mapState;
+    let newGrid = [...mapState];
     let newRow = [...mapState[3]];
     newRow[7] = (
       <td>
-        <div>{floorSVG()}</div>
+        <div>{wallSVG()}</div>
       </td>
     );
     //newGrid[3] = newGrid;
