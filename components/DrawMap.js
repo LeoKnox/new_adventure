@@ -80,8 +80,8 @@ export default DrawMap = ({
   const modifyTable = ({ newx = 8, newy = 2 }) => {
     console.log("modify table");
     let newGrid = mapState;
-    let newRow = [...mapState[5]];
-    newGrid[5] = (
+    let newRow = [...mapState[4]];
+    newRow[5] = (
       <td>
         <div>{floorSVG()}</div>
       </td>
