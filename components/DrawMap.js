@@ -80,13 +80,21 @@ export default DrawMap = ({
   const modifyTable = ({ newx = 8, newy = 2 }) => {
     console.log("modify table");
     let newGrid = mapState;
-    let newRow = mapState[3];
-    //newRow[8] = <DrawMonster background={floorSVG()} />;
-    newRow.map((item, index) =>
-      index == 8 ? <DrawMonster background={floorSVG()} /> : item
+    let newRow = [...mapState[x]];
+    newRow[y] = (
+      <td>
+        <div>{floorSVG()}</div>
+      </td>
     );
-    newGrid.map((item, index) => (index == 2 ? newRow : item));
-    console.log(newGrid);
+    tempRow[3] = temp;
+    newRow = [...mapState[newx]];
+    newRow[2] = (
+      <td>
+        <div style={{ position: "absolute", opacity: "60%" }}>{floorSVG()}</div>
+        <div style={{ position: "relative" }}>{warriorSVG()}</div>
+      </td>
+    );
+    newRow[7] = temp;
     setMapState(newGrid);
   };
   const moveVert = (newx) => {
