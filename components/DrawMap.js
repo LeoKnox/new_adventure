@@ -75,6 +75,7 @@ export default DrawMap = ({
   }, [x, y]);
 
   const drawRow = (modifyRow) => {
+    console.log(modifyRow);
     modifyRow[8] = <DrawMonster background={wallSVG()} />;
     return modifyRow;
   };
@@ -89,7 +90,7 @@ export default DrawMap = ({
     newRow = [...mapState[newy]];
     //newRow[newx] = <DrawMonster background={floorSVG()} />;
     //newRow[newx] = drawRow([...mapState[newy]]);
-    newGrid[newy] = drawRow();
+    newGrid[newy] = drawRow(...mapState[newy]);
     setMapState(newGrid);
   };
   const moveVert = (newx) => {
