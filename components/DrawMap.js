@@ -88,9 +88,9 @@ export default DrawMap = ({
     newRow[newx] = floorSVG();
     newGrid[3] = newRow;
     newRow = [...mapState[newy]];
-    //newRow[newx] = <DrawMonster background={floorSVG()} />;
+    newRow[newx] = <DrawMonster background={floorSVG()} />;
     //newRow[newx] = drawRow([...mapState[newy]]);
-    newGrid[newy] = drawRow(newRow);
+    newGrid[newy] = newRow;
     setMapState(newGrid);
   };
   const moveVert = (newx) => {
