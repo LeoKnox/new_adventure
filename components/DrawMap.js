@@ -83,11 +83,11 @@ export default DrawMap = ({
     let newGrid = [...mapState];
     let newRow = [...mapState[3]];
     newRow = [...mapState[3]];
-    newRow[8] = floorSVG();
+    newRow[newx] = floorSVG();
     newGrid[3] = newRow;
     newRow = [...mapState[2]];
-    newRow[8] = <DrawMonster background={floorSVG()} />;
-    newGrid[2] = newRow;
+    newRow[newx] = <DrawMonster background={floorSVG()} />;
+    newGrid[newy] = newRow;
     console.log(newGrid);
     setMapState(newGrid);
   };
