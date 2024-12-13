@@ -74,7 +74,7 @@ export default DrawMap = ({
     return () => window.removeEventListener("keydown", onKeyDown);
   }, [x, y]);
 
-  const drawRow = (modifyRow) => {
+  const drawRow = ({ modifyRow }) => {
     console.log(modifyRow);
     modifyRow[8] = <DrawMonster background={wallSVG()} />;
     return modifyRow;
