@@ -74,8 +74,9 @@ export default DrawMap = ({
     return () => window.removeEventListener("keydown", onKeyDown);
   }, [x, y]);
 
-  const drawRow = () => {
-    return <DrawMonster background={wallSVG()} />;
+  const drawRow = (modifyRow) => {
+    modifyRow[8] = <DrawMonster background={wallSVG()} />;
+    return modifyRow;
   };
 
   const modifyTable = ({ newx = 8, newy = 2 }) => {
@@ -87,8 +88,8 @@ export default DrawMap = ({
     newGrid[3] = newRow;
     newRow = [...mapState[newy]];
     //newRow[newx] = <DrawMonster background={floorSVG()} />;
-    newRow[newx] = drawRow();
-    newGrid[newy] = newRow;
+    //newRow[newx] = drawRow([...mapState[newy]]);
+    newGrid[newy] = drawRow();
     setMapState(newGrid);
   };
   const moveVert = (newx) => {
