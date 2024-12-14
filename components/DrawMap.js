@@ -80,7 +80,11 @@ export default DrawMap = ({
     return modifyRow;
   };
 
-  const modifyTable = ({ newx = 8, newy = 2 }) => {
+  const modifyTable = ({
+    newx = 8,
+    newy = 2,
+    tile = <DrawMonster background={floorSVG()} />,
+  }) => {
     console.log("modify table");
     let newGrid = [...mapState];
     let newRow = [...mapState[3]];
@@ -88,7 +92,7 @@ export default DrawMap = ({
     newRow[newx] = floorSVG();
     newGrid[3] = newRow;
     newRow = [...mapState[newy]];
-    newRow[newx] = <DrawMonster background={floorSVG()} />;
+    newRow[newx] = tile;
     //newRow[newx] = drawRow([...mapState[newy]]);
     newGrid[newy] = newRow;
     setMapState(newGrid);
