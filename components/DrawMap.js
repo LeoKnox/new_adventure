@@ -91,6 +91,13 @@ export default DrawMap = ({
         newy: 2,
         tile: <DrawMonster background={floorSVG()} />,
       },
+      {
+        oldx: 8,
+        oldy: 3,
+        newx: 6,
+        newy: 3,
+        tile: <DrawMonster background={floorSVG()} />,
+      },
     ],
     tile = <DrawMonster background={floorSVG()} />,
   }) => {
