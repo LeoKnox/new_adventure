@@ -97,17 +97,15 @@ export default DrawMap = ({
     console.log("modify table");
     let newGrid = [...mapState];
     let newRow = [...mapState[3]];
-    newRow = [...mapState[3]];
-    newRow[newx[0]] = floorSVG();
-    newGrid[3] = newRow;
-
-    newRow = [...mapState[newy]];
-
     mobMove.map((item) => {
+      newRow = [...mapState[item.oldy]];
+      newRow[item.newx] = floorSVG();
+      newGrid[item.oldy] = newRow;
+      newRow = [...mapState[item.newy]];
       newRow[item.newx] = item.tile;
+      //newRow[newx] = drawRow([...mapState[newy]]);
+      newGrid[item.newy] = newRow;
     });
-    //newRow[newx] = drawRow([...mapState[newy]]);
-    newGrid[newy] = newRow;
     setMapState(newGrid);
   };
   const moveVert = (newx) => {
