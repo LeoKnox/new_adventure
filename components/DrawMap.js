@@ -81,7 +81,7 @@ export default DrawMap = ({
   };
 
   const modifyTable = ({
-    newx = 8,
+    newx = [8, 6],
     newy = 2,
     tile = <DrawMonster background={floorSVG()} />,
   }) => {
@@ -91,8 +91,12 @@ export default DrawMap = ({
     newRow = [...mapState[3]];
     newRow[newx] = floorSVG();
     newGrid[3] = newRow;
+
     newRow = [...mapState[newy]];
-    newRow[newx] = tile;
+
+    newx.map((item) => {
+      newRow[item] = tile;
+    });
     //newRow[newx] = drawRow([...mapState[newy]]);
     newGrid[newy] = newRow;
     setMapState(newGrid);
