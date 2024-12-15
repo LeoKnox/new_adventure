@@ -104,7 +104,7 @@ export default DrawMap = ({
     newRow = [...mapState[newy]];
 
     mobMove.map((item) => {
-      newRow[item.newx] = tile;
+      newRow[item.newx] = item.tile;
     });
     //newRow[newx] = drawRow([...mapState[newy]]);
     newGrid[newy] = newRow;
