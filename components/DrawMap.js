@@ -89,7 +89,7 @@ export default DrawMap = ({
     let newGrid = [...mapState];
     let newRow = [...mapState[3]];
     newRow = [...mapState[3]];
-    newRow[newx] = floorSVG();
+    newRow[newx[0]] = floorSVG();
     newGrid[3] = newRow;
 
     newRow = [...mapState[newy]];
