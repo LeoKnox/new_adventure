@@ -83,6 +83,7 @@ export default DrawMap = ({
   const modifyTable = ({
     newx = [8, 6],
     newy = 2,
+    mobMove = [{oldx:8,oldy:3, newx:8, newy:2, tile:<DrawMonster background={floorSVG()} />}],
     tile = <DrawMonster background={floorSVG()} />,
   }) => {
     console.log("modify table");
