@@ -81,8 +81,9 @@ export default DrawMap = ({
   };
 
   const modifyTable = ({
-    newx = [8, 6],
-    newy = 2,
+    objMove = {
+      3: { oldx: 8, newx: 7, tile: <DrawMonster background={floorSVG()} /> },
+    },
     mobMove = [
       {
         oldx: 8,
@@ -91,20 +92,13 @@ export default DrawMap = ({
         newy: 2,
         tile: <DrawMonster background={floorSVG()} />,
       },
-      {
-        oldx: 8,
-        oldy: 3,
-        newx: 6,
-        newy: 3,
-        tile: <DrawMonster background={floorSVG()} />,
-      },
     ],
     tile = <DrawMonster background={floorSVG()} />,
   }) => {
     console.log("modify table");
     let newGrid = [...mapState];
     let newRow = [...mapState[3]];
-    mobMove.map((item) => {
+    objMove.map((item, key) => {
       newRow = [...mapState[item.oldy]];
       newRow[item.newx] = floorSVG();
       newGrid[item.oldy] = newRow;
