@@ -101,6 +101,7 @@ export default DrawMap = ({
     for (index in objMove) {
       console.log("tt");
       console.log(index);
+      console.log(objMove[3].newx);
     }
     Object.entries(objMove).map((item, key) => {
       newRow = [...mapState[item[0]]];
