@@ -101,7 +101,6 @@ export default DrawMap = ({
     for (index in objMove) {
       newRow = [...mapState[index]];
       newRow[objMove[index].oldx] = floorSVG();
-      newGrid[index] = newRow;
       newRow = [...mapState[index]];
       newRow[objMove[index].newx] = objMove[index].tile;
       newGrid[index] = newRow;
