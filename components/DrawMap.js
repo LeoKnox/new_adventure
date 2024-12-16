@@ -98,8 +98,11 @@ export default DrawMap = ({
     console.log("modify table");
     let newGrid = [...mapState];
     let newRow = [...mapState[3]];
+    for (index in objMove) {
+      console.log("tt");
+      console.log(index);
+    }
     Object.entries(objMove).map((item, key) => {
-      console.log(item[0]);
       newRow = [...mapState[item[0]]];
       newRow[item[1].oldx] = floorSVG();
       //newRow[item[1].oldx] = floorSVG();
