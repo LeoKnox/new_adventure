@@ -104,7 +104,7 @@ export default DrawMap = ({
       newRow[item[1].oldx] = floorSVG();
       newGrid[item[0]] = newRow;
       newRow = [...mapState[item[0]]];
-      newRow[item[1].newx] = item.tile;
+      newRow[item[1].newx] = item[1].tile;
       //newRow[newx] = drawRow([...mapState[newy]]);
       newGrid[item.newy] = newRow;
     });
