@@ -101,7 +101,8 @@ export default DrawMap = ({
     Object.entries(objMove).map((item, key) => {
       console.log(item[0]);
       newRow = [...mapState[item[0]]];
-      newRow[item[1].oldx] = floorSVG();
+      newRow[item[1].oldx - 1] = item[1].tile;
+      //newRow[item[1].oldx] = floorSVG();
       newGrid[item[0]] = newRow;
       newRow = [...mapState[item[0]]];
       newRow[item[1].newx] = item[1].tile;
