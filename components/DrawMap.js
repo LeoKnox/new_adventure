@@ -99,20 +99,13 @@ export default DrawMap = ({
     let newGrid = [...mapState];
     let newRow = [...mapState[3]];
     for (index in objMove) {
-      console.log("tt");
-      console.log(index);
-      console.log(objMove[3].newx);
+      newRow = [...mapState[index]];
+      newRow[objMove[index].oldx] = floorSVG();
+      newGrid[index] = newRow;
+      newRow = [...mapState[index]];
+      newRow[objMove[index].newx] = objMove[index].tile;
+      newGrid[index] = newRow;
     }
-    Object.entries(objMove).map((item, key) => {
-      newRow = [...mapState[item[0]]];
-      newRow[item[1].oldx] = floorSVG();
-      //newRow[item[1].oldx] = floorSVG();
-      newGrid[item[0]] = newRow;
-      newRow = [...mapState[item[0]]];
-      newRow[item[1].newx] = item[1].tile;
-      //newRow[newx] = drawRow([...mapState[newy]]);
-      newGrid[item[0]] = newRow;
-    });
     setMapState(newGrid);
   };
   const moveVert = (newx) => {
