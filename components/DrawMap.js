@@ -80,12 +80,7 @@ export default DrawMap = ({
     return modifyRow;
   };
 
-  const modifyTable = (
-    objMove = {
-      3: { oldx: 8, newx: 7, tile: <DrawMonster background={floorSVG()} /> },
-      2: { oldx: 8, newx: 8, tile: <DrawMonster background={floorSVG()} /> },
-    }
-  ) => {
+  const modifyTable = (objMove) => {
     console.log("modify table");
     console.log(objMove);
     let newGrid = [...mapState];
@@ -107,7 +102,7 @@ export default DrawMap = ({
   const moveCharacter = (e) => {
     console.log("move character");
     moveVert("red herring");
-    modifyTable({
+    let temp = {
       1: {
         oldx: 1,
         newx: 1,
@@ -120,7 +115,8 @@ export default DrawMap = ({
           </td>
         ),
       },
-    });
+    };
+    modifyTable({ temp });
   };
   return (
     <div onKeyDown={() => moveCharacter()}>
