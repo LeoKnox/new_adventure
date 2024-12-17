@@ -80,13 +80,14 @@ export default DrawMap = ({
     return modifyRow;
   };
 
-  const modifyTable = ({
+  const modifyTable = (
     objMove = {
       3: { oldx: 8, newx: 7, tile: <DrawMonster background={floorSVG()} /> },
       2: { oldx: 8, newx: 8, tile: <DrawMonster background={floorSVG()} /> },
-    },
-  }) => {
+    }
+  ) => {
     console.log("modify table");
+    console.log(objMove);
     let newGrid = [...mapState];
     let newRow = [...mapState[3]];
     for (index in objMove) {
@@ -97,30 +98,29 @@ export default DrawMap = ({
     }
     setMapState(newGrid);
   };
-  const moveVert = (newx) => {
-    console.log("move vertically");
+  const moveVert = ({ newx }) => {
+    console.log(newx);
   };
   moveSide = (newy) => {
     console.log("move sideways");
   };
   const moveCharacter = (e) => {
     console.log("move character");
-    modifyTable(
-      (objMove = {
-        1: {
-          oldx: 1,
-          newx: 1,
-          tile: (
-            <td>
-              <div style={{ position: "absolute", opacity: "60%" }}>
-                {floorSVG()}
-              </div>
-              <div style={{ position: "relative" }}>{warriorSVG()}</div>
-            </td>
-          ),
-        },
-      })
-    );
+    moveVert("red herring");
+    modifyTable({
+      1: {
+        oldx: 1,
+        newx: 1,
+        tile: (
+          <td>
+            <div style={{ position: "absolute", opacity: "60%" }}>
+              {floorSVG()}
+            </div>
+            <div style={{ position: "relative" }}>{warriorSVG()}</div>
+          </td>
+        ),
+      },
+    });
   };
   return (
     <div onKeyDown={() => moveCharacter()}>
