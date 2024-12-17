@@ -85,16 +85,6 @@ export default DrawMap = ({
       3: { oldx: 8, newx: 7, tile: <DrawMonster background={floorSVG()} /> },
       2: { oldx: 8, newx: 8, tile: <DrawMonster background={floorSVG()} /> },
     },
-    mobMove = [
-      {
-        oldx: 8,
-        oldy: 3,
-        newx: 8,
-        newy: 2,
-        tile: <DrawMonster background={floorSVG()} />,
-      },
-    ],
-    tile = <DrawMonster background={floorSVG()} />,
   }) => {
     console.log("modify table");
     let newGrid = [...mapState];
@@ -115,6 +105,20 @@ export default DrawMap = ({
   };
   const moveCharacter = (e) => {
     console.log("move character");
+    modifyTable({
+      1: {
+        oldx: 1,
+        newx: 1,
+        tile: (
+          <td>
+            <div style={{ position: "absolute", opacity: "60%" }}>
+              {floorSVG()}
+            </div>
+            <div style={{ position: "relative" }}>{warriorSVG()}</div>
+          </td>
+        ),
+      },
+    });
   };
   return (
     <div onKeyDown={() => moveCharacter()}>
