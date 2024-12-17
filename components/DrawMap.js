@@ -78,9 +78,13 @@ export default DrawMap = ({
     console.log(modifyRow);
     modifyRow[8] = <DrawMonster background={wallSVG()} />;
     return modifyRow;
+    /*  = {
+      3: { oldx: 8, newx: 7, tile: <DrawMonster background={floorSVG()} /> },
+      2: { oldx: 8, newx: 8, tile: <DrawMonster background={floorSVG()} /> },
+    }, */
   };
 
-  const modifyTable = (objMove) => {
+  const modifyTable = ({ objMove }) => {
     console.log("modify table");
     console.log(objMove);
     let newGrid = [...mapState];
@@ -101,22 +105,10 @@ export default DrawMap = ({
   };
   const moveCharacter = (e) => {
     console.log("move character");
-    moveVert("red herring");
     let temp = {
-      1: {
-        oldx: 1,
-        newx: 1,
-        tile: (
-          <td>
-            <div style={{ position: "absolute", opacity: "60%" }}>
-              {floorSVG()}
-            </div>
-            <div style={{ position: "relative" }}>{warriorSVG()}</div>
-          </td>
-        ),
-      },
+      2: { oldx: 6, newx: 6, tile: <DrawMonster background={floorSVG()} /> },
     };
-    modifyTable({ temp });
+    modifyTable(temp);
   };
   return (
     <div onKeyDown={() => moveCharacter()}>
