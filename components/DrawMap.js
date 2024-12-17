@@ -105,20 +105,22 @@ export default DrawMap = ({
   };
   const moveCharacter = (e) => {
     console.log("move character");
-    modifyTable({
-      1: {
-        oldx: 1,
-        newx: 1,
-        tile: (
-          <td>
-            <div style={{ position: "absolute", opacity: "60%" }}>
-              {floorSVG()}
-            </div>
-            <div style={{ position: "relative" }}>{warriorSVG()}</div>
-          </td>
-        ),
-      },
-    });
+    modifyTable(
+      (objMove = {
+        1: {
+          oldx: 1,
+          newx: 1,
+          tile: (
+            <td>
+              <div style={{ position: "absolute", opacity: "60%" }}>
+                {floorSVG()}
+              </div>
+              <div style={{ position: "relative" }}>{warriorSVG()}</div>
+            </td>
+          ),
+        },
+      })
+    );
   };
   return (
     <div onKeyDown={() => moveCharacter()}>
