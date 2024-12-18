@@ -65,7 +65,7 @@ export default DrawMap = ({
       } else if (e.key === "s") {
         moveCharacter("down");
       } else if (e.key === "d") {
-        modifyTable({
+        let temp = {
           1: {
             oldx: 1,
             newx: 2,
@@ -78,7 +78,8 @@ export default DrawMap = ({
               </td>
             ),
           },
-        });
+        };
+        modifyTable(temp);
       } else if (e.key === "a") {
         moveCharacter("left");
       }
