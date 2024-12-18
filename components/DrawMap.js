@@ -106,8 +106,8 @@ export default DrawMap = ({
     console.log("move character");
     let temp = {
       2: {
-        oldx: 1,
-        newx: 2,
+        oldx: 0,
+        newx: 1,
         tile: (
           <td>
             <div style={{ position: "absolute", opacity: "60%" }}>
