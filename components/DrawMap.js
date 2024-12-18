@@ -98,11 +98,7 @@ export default DrawMap = ({
     }, */
   };
 
-  const modifyTable = (
-    objMove = {
-      3: { oldx: 8, newx: 7, tile: <DrawMonster background={floorSVG()} /> },
-    }
-  ) => {
+  const modifyTable = (objMove) => {
     console.log("modify table");
     console.log(objMove);
     let newGrid = [...mapState];
