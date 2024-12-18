@@ -86,7 +86,6 @@ export default DrawMap = ({
 
   const modifyTable = (objMove) => {
     console.log("modify table");
-    console.log(objMove);
     let newGrid = [...mapState];
     let newRow = [...mapState[3]];
     for (index in objMove) {
@@ -106,7 +105,18 @@ export default DrawMap = ({
   const moveCharacter = (e) => {
     console.log("move character");
     let temp = {
-      2: { oldx: 6, newx: 6, tile: <DrawMonster background={floorSVG()} /> },
+      2: {
+        oldx: 1,
+        newx: 2,
+        tile: (
+          <td>
+            <div style={{ position: "absolute", opacity: "60%" }}>
+              {floorSVG()}
+            </div>
+            <div style={{ position: "relative" }}>{warriorSVG()}</div>
+          </td>
+        ),
+      },
     };
     modifyTable(temp);
   };
