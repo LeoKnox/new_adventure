@@ -91,6 +91,7 @@ export default DrawMap = ({
     }
   ) => {
     console.log("modify table");
+    console.log(objMove);
     let newGrid = [...mapState];
     let newRow = [...mapState[3]];
     for (index in objMove) {
@@ -147,7 +148,7 @@ export default DrawMap = ({
         <button onClick={() => moveCharacter("up")}>up</button>
       </td>
       <td>
-        <button onClick={modifyTable}>mob</button>
+        <button onClick={() => modifyTable()}>mob</button>
       </td>
     </div>
   );
