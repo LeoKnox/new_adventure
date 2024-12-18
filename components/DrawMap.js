@@ -61,9 +61,9 @@ export default DrawMap = ({
     setMapState(tempRow);
     const onKeyDown = (e) => {
       if (e.key === "w") {
-        moveCharacter("up");
+        //moveCharacter("up");
       } else if (e.key === "s") {
-        moveCharacter("down");
+        //moveCharacter("down");
       } else if (e.key === "d") {
         let temp = {
           1: {
@@ -81,7 +81,7 @@ export default DrawMap = ({
         };
         modifyTable(temp);
       } else if (e.key === "a") {
-        moveCharacter("left");
+        //moveCharacter("left");
       }
     };
     window.addEventListener("keydown", onKeyDown);
