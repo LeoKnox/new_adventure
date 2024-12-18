@@ -87,7 +87,6 @@ export default DrawMap = ({
   const modifyTable = (
     objMove = {
       3: { oldx: 8, newx: 7, tile: <DrawMonster background={floorSVG()} /> },
-      2: { oldx: 8, newx: 8, tile: <DrawMonster background={floorSVG()} /> },
     }
   ) => {
     console.log("modify table");
@@ -111,9 +110,9 @@ export default DrawMap = ({
   const moveCharacter = (e) => {
     console.log("move character");
     let temp = {
-      2: {
-        oldx: 0,
-        newx: 1,
+      1: {
+        oldx: 1,
+        newx: 2,
         tile: (
           <td>
             <div style={{ position: "absolute", opacity: "60%" }}>
