@@ -84,7 +84,7 @@ export default DrawMap = ({
     }, */
   };
 
-  const modifyTable = ({ objMove }) => {
+  const modifyTable = (objMove) => {
     console.log("modify table");
     console.log(objMove);
     let newGrid = [...mapState];
