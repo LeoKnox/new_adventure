@@ -65,7 +65,7 @@ export default DrawMap = ({
       } else if (e.key === "s") {
         //moveCharacter("down");
       } else if (e.key === "d") {
-        let temp = {
+        let tempChar = {
           1: {
             oldx: 1,
             newx: 2,
@@ -79,7 +79,7 @@ export default DrawMap = ({
             ),
           },
         };
-        modifyTable(temp);
+        modifyTable(tempChar);
       } else if (e.key === "a") {
         //moveCharacter("left");
       }
@@ -98,7 +98,11 @@ export default DrawMap = ({
     }, */
   };
 
-  const modifyTable = (objMove) => {
+  const modifyTable = (
+    objMove = {
+      3: { oldx: 8, newx: 7, tile: <DrawMonster background={floorSVG()} /> },
+    }
+  ) => {
     console.log("modify table");
     console.log(objMove);
     let newGrid = [...mapState];
