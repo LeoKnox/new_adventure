@@ -40,25 +40,6 @@ export default DrawMap = ({
   });
 
   useEffect(() => {
-    console.log(mapState);
-    console.log("moblist update");
-  }, []);
-
-  useEffect(() => {
-    console.log("use effect");
-    let tempRow = [...mapState];
-    let temp = [...mapState[x]];
-    temp[y] = (
-      <td>
-        <div style={{ position: "absolute", opacity: "60%" }}>{floorSVG()}</div>
-        <div style={{ position: "relative" }}>{warriorSVG()}</div>
-      </td>
-    );
-    tempRow[x] = temp;
-    temp = [...mapState[mobs.y]];
-    temp[mobs.x] = <DrawMonster background={floorSVG()} />;
-    tempRow[mobs.y] = temp;
-    setMapState(tempRow);
     const onKeyDown = (e) => {
       if (e.key === "w") {
         //moveCharacter("up");
@@ -86,6 +67,23 @@ export default DrawMap = ({
     };
     window.addEventListener("keydown", onKeyDown);
     return () => window.removeEventListener("keydown", onKeyDown);
+  }, []);
+
+  useEffect(() => {
+    console.log("use effect");
+    let tempRow = [...mapState];
+    let temp = [...mapState[x]];
+    temp[y] = (
+      <td>
+        <div style={{ position: "absolute", opacity: "60%" }}>{floorSVG()}</div>
+        <div style={{ position: "relative" }}>{warriorSVG()}</div>
+      </td>
+    );
+    tempRow[x] = temp;
+    temp = [...mapState[mobs.y]];
+    temp[mobs.x] = <DrawMonster background={floorSVG()} />;
+    tempRow[mobs.y] = temp;
+    setMapState(tempRow);
   }, [x, y]);
 
   const drawRow = (modifyRow) => {
