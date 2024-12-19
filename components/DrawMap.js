@@ -138,7 +138,7 @@ export default DrawMap = ({
     modifyTable(temp);
   };
   return (
-    <div onKeyDown={() => moveCharacter()}>
+    <div onKeyDown={null}>
       {mapState.map((row) => (
         <tr>
           {row.map((tile) => (
