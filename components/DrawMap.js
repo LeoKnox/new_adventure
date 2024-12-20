@@ -98,7 +98,7 @@ export default DrawMap = ({
   };
   const modifyTable = (
     objMove = {
-      3: { oldx: 8, newx: 7, tile: <DrawMonster background={floorSVG()} /> },
+      3: [{ oldx: 8, newx: 7, tile: <DrawMonster background={floorSVG()} /> }],
     }
   ) => {
     console.log("modify table");
@@ -106,10 +106,12 @@ export default DrawMap = ({
     let newGrid = [...mapState];
     let newRow = [...mapState[3]];
     for (index in objMove) {
-      newRow = [...mapState[index]];
-      newRow[objMove[index].oldx] = floorSVG();
-      newRow[objMove[index].newx] = objMove[index].tile;
-      newGrid[index] = newRow;
+      index.map(() => {
+        newRow = [...mapState[index]];
+        newRow[objMove[index].oldx] = floorSVG();
+        newRow[objMove[index].newx] = objMove[index].tile;
+        newGrid[index] = newRow;
+      });
     }
     setMapState(newGrid);
   };
