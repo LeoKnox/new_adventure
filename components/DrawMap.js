@@ -47,21 +47,7 @@ export default DrawMap = ({
       } else if (e.key === "s") {
         //moveCharacter("down");
       } else if (e.key === "d") {
-        let tempChar = {
-          1: {
-            oldx: 1,
-            newx: 2,
-            tile: (
-              <td>
-                <div style={{ position: "absolute", opacity: "60%" }}>
-                  {floorSVG()}
-                </div>
-                <div style={{ position: "relative" }}>{warriorSVG()}</div>
-              </td>
-            ),
-          },
-        };
-        modifyTable(tempChar);
+        moveCharacter("right");
       } else if (e.key === "a") {
         //moveCharacter("left");
       }
