@@ -47,7 +47,21 @@ export default DrawMap = ({
       } else if (e.key === "s") {
         //moveCharacter("down");
       } else if (e.key === "d") {
-        moveCharacter("right");
+        let temp = {
+          1: {
+            oldx: 1,
+            newx: 2,
+            tile: (
+              <td>
+                <div style={{ position: "absolute", opacity: "60%" }}>
+                  {floorSVG()}
+                </div>
+                <div style={{ position: "relative" }}>{warriorSVG()}</div>
+              </td>
+            ),
+          },
+        };
+        modifyTable(temp);
       } else if (e.key === "a") {
         //moveCharacter("left");
       }
@@ -71,7 +85,7 @@ export default DrawMap = ({
     temp[mobs.x] = <DrawMonster background={floorSVG()} />;
     tempRow[mobs.y] = temp;
     setMapState(tempRow);
-  }, [x, y]);
+  }, []);
 
   const drawRow = (modifyRow) => {
     console.log(modifyRow);
