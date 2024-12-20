@@ -40,6 +40,7 @@ export default DrawMap = ({
   });
 
   useEffect(() => {
+    console.log("ue keydown");
     const onKeyDown = (e) => {
       if (e.key === "w") {
         //moveCharacter("up");
@@ -95,7 +96,6 @@ export default DrawMap = ({
       2: { oldx: 8, newx: 8, tile: <DrawMonster background={floorSVG()} /> },
     }, */
   };
-
   const modifyTable = (
     objMove = {
       3: { oldx: 8, newx: 7, tile: <DrawMonster background={floorSVG()} /> },
@@ -112,12 +112,6 @@ export default DrawMap = ({
       newGrid[index] = newRow;
     }
     setMapState(newGrid);
-  };
-  const moveVert = ({ newx }) => {
-    console.log(newx);
-  };
-  moveSide = (newy) => {
-    console.log("move sideways");
   };
   const moveCharacter = (e) => {
     console.log("move character");
@@ -138,7 +132,7 @@ export default DrawMap = ({
     modifyTable(temp);
   };
   return (
-    <div onKeyDown={null}>
+    <div>
       {mapState.map((row) => (
         <tr>
           {row.map((tile) => (
