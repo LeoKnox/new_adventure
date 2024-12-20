@@ -48,18 +48,20 @@ export default DrawMap = ({
         //moveCharacter("down");
       } else if (e.key === "d") {
         let temp = {
-          1: {
-            oldx: 1,
-            newx: 2,
-            tile: (
-              <td>
-                <div style={{ position: "absolute", opacity: "60%" }}>
-                  {floorSVG()}
-                </div>
-                <div style={{ position: "relative" }}>{warriorSVG()}</div>
-              </td>
-            ),
-          },
+          1: [
+            {
+              oldx: 1,
+              newx: 2,
+              tile: (
+                <td>
+                  <div style={{ position: "absolute", opacity: "60%" }}>
+                    {floorSVG()}
+                  </div>
+                  <div style={{ position: "relative" }}>{warriorSVG()}</div>
+                </td>
+              ),
+            },
+          ],
         };
         modifyTable(temp);
       } else if (e.key === "a") {
@@ -123,18 +125,20 @@ export default DrawMap = ({
   const moveCharacter = (e) => {
     console.log("move character");
     let temp = {
-      1: {
-        oldx: 1,
-        newx: 2,
-        tile: (
-          <td>
-            <div style={{ position: "absolute", opacity: "60%" }}>
-              {floorSVG()}
-            </div>
-            <div style={{ position: "relative" }}>{warriorSVG()}</div>
-          </td>
-        ),
-      },
+      1: [
+        {
+          oldx: 1,
+          newx: 2,
+          tile: (
+            <td>
+              <div style={{ position: "absolute", opacity: "60%" }}>
+                {floorSVG()}
+              </div>
+              <div style={{ position: "relative" }}>{warriorSVG()}</div>
+            </td>
+          ),
+        },
+      ],
     };
     modifyTable(temp);
   };
