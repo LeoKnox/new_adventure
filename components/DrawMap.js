@@ -12,8 +12,6 @@ export default DrawMap = ({
   setx,
 }) => {
   let mobs = singleMonster();
-  const [mobGroup, setMobGroup] = useState([]);
-  const [character, setCharacter] = useState({});
   const [mapState, setMapState] = useState(() => {
     let temp = [];
     let tempRow = [];
@@ -93,10 +91,6 @@ export default DrawMap = ({
     console.log(modifyRow);
     modifyRow[8] = <DrawMonster background={wallSVG()} />;
     return modifyRow;
-    /*  = {
-      3: { oldx: 8, newx: 7, tile: <DrawMonster background={floorSVG()} /> },
-      2: { oldx: 8, newx: 8, tile: <DrawMonster background={floorSVG()} /> },
-    }, */
   };
   const modifyTable = (
     objMove = {
@@ -104,7 +98,6 @@ export default DrawMap = ({
     }
   ) => {
     console.log("modify table");
-    console.log(objMove);
     let newGrid = [...mapState];
     let newRow = [...mapState[3]];
     for (index in objMove) {
@@ -114,10 +107,6 @@ export default DrawMap = ({
         newRow[child.oldx] = floorSVG();
         newRow[child.newx] = child.tile;
         newGrid[index] = newRow;
-        /*newRow = [...mapState[index]];
-        newRow[objMove[index].oldx] = floorSVG();
-        newRow[objMove[index].newx] = objMove[index].tile;
-        newGrid[index] = newRow;*/
       });
     }
     setMapState(newGrid);
