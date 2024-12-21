@@ -134,7 +134,7 @@ export default DrawMap = ({
     }
     if (direction == "down") {
       temp = {
-        1: [
+        2: [
           {
             oldx: 1,
             newx: 1,
@@ -148,7 +148,7 @@ export default DrawMap = ({
             ),
           },
         ],
-        2: [
+        1: [
           {
             oldx: 1,
             newx: 1,
