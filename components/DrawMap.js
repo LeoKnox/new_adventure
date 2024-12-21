@@ -152,7 +152,7 @@ export default DrawMap = ({
           {
             oldx: 1,
             newx: 1,
-            tile: <td>{floorSVG}</td>,
+            tile: <>{floorSVG}</>,
           },
         ],
       };
