@@ -113,22 +113,24 @@ export default DrawMap = ({
   };
   const moveCharacter = (e) => {
     console.log("move character");
-    let temp = {
-      1: [
-        {
-          oldx: 1,
-          newx: 2,
-          tile: (
-            <td>
-              <div style={{ position: "absolute", opacity: "60%" }}>
-                {floorSVG()}
-              </div>
-              <div style={{ position: "relative" }}>{warriorSVG()}</div>
-            </td>
-          ),
-        },
-      ],
-    };
+    if (e == "right") {
+      let temp = {
+        1: [
+          {
+            oldx: 1,
+            newx: 2,
+            tile: (
+              <td>
+                <div style={{ position: "absolute", opacity: "60%" }}>
+                  {floorSVG()}
+                </div>
+                <div style={{ position: "relative" }}>{warriorSVG()}</div>
+              </td>
+            ),
+          },
+        ],
+      };
+    }
     modifyTable(temp);
   };
   return (
