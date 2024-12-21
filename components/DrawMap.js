@@ -113,8 +113,9 @@ export default DrawMap = ({
   };
   const moveCharacter = (e) => {
     console.log("move character");
+    let temp = {};
     if (e == "right") {
-      let temp = {
+      temp = {
         1: [
           {
             oldx: 1,
