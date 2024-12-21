@@ -111,10 +111,10 @@ export default DrawMap = ({
     }
     setMapState(newGrid);
   };
-  const moveCharacter = (e) => {
+  const moveCharacter = (direction) => {
     console.log("move character");
     let temp = {};
-    if (e == "right") {
+    if (direction == "right") {
       temp = {
         1: [
           {
@@ -128,6 +128,31 @@ export default DrawMap = ({
                 <div style={{ position: "relative" }}>{warriorSVG()}</div>
               </td>
             ),
+          },
+        ],
+      };
+    }
+    if (direction == "down") {
+      temp = {
+        1: [
+          {
+            oldx: 1,
+            newx: 1,
+            tile: (
+              <td>
+                <div style={{ position: "absolute", opacity: "60%" }}>
+                  {floorSVG()}
+                </div>
+                <div style={{ position: "relative" }}>{warriorSVG()}</div>
+              </td>
+            ),
+          },
+        ],
+        2: [
+          {
+            oldx: 1,
+            newx: 1,
+            tile: { floorSVG },
           },
         ],
       };
