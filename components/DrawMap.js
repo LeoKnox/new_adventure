@@ -102,7 +102,7 @@ export default DrawMap = ({
     let newRow = [...mapState[3]];
     for (index in objMove) {
       objMove[index].map((child) => {
-        console.log(child);
+        //console.log(child);
         newRow = [...mapState[index]];
         newRow[child.oldx] = floorSVG();
         newRow[child.newx] = child.tile;
@@ -164,6 +164,7 @@ export default DrawMap = ({
         tile: <DrawMonster background={wallSVG()} />,
       });
     }
+    console.log(temp);
     modifyTable(temp);
   };
   return (
