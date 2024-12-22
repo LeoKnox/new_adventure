@@ -102,7 +102,7 @@ export default DrawMap = ({
     let newRow = [...mapState[3]];
     for (index in objMove) {
       objMove[index].map((child) => {
-        //console.log(child);
+        console.log(child);
         newRow = [...mapState[index]];
         newRow[child.oldx] = floorSVG();
         newRow[child.newx] = child.tile;
@@ -141,12 +141,12 @@ export default DrawMap = ({
             oldx: 1,
             newx: 1,
             tile: (
-              <td>
+              <>
                 <div style={{ position: "absolute", opacity: "60%" }}>
                   {floorSVG()}
                 </div>
                 <div style={{ position: "relative" }}>{warriorSVG()}</div>
-              </td>
+              </>
             ),
           },
         ],
@@ -161,7 +161,7 @@ export default DrawMap = ({
       temp[2].push({
         oldx: 8,
         newx: 7,
-        tile: <DrawMonster background={wallSVG()} />,
+        tile: <DrawMonster background={floorSVG()} />,
       });
     }
     console.log(temp);
