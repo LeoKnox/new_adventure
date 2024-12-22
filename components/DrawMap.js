@@ -99,8 +99,9 @@ export default DrawMap = ({
   ) => {
     console.log("modify table");
     let newGrid = [...mapState];
-    let newRow = [...mapState[3]];
+    let newRow = [];
     for (index in objMove) {
+      newRow = [...mapState[index]];
       objMove[index].map((child) => {
         console.log(child);
         newRow = [...mapState[index]];
