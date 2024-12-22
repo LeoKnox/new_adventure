@@ -136,6 +136,13 @@ export default DrawMap = ({
     if (direction == "down") {
       console.log("down");
       temp = {
+        1: [
+          {
+            oldx: 1,
+            newx: 1,
+            tile: <>{floorSVG()}</>,
+          },
+        ],
         2: [
           {
             oldx: 1,
@@ -148,13 +155,6 @@ export default DrawMap = ({
                 <div style={{ position: "relative" }}>{warriorSVG()}</div>
               </>
             ),
-          },
-        ],
-        1: [
-          {
-            oldx: 1,
-            newx: 1,
-            tile: <>{floorSVG()}</>,
           },
         ],
       };
