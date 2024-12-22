@@ -104,7 +104,7 @@ export default DrawMap = ({
       newRow = [...mapState[index]];
       objMove[index].map((child) => {
         console.log(child);
-        newRow = [...mapState[index]];
+        //newRow = [...mapState[index]];
         newRow[child.oldx] = floorSVG();
         newRow[child.newx] = child.tile;
         newGrid[index] = newRow;
