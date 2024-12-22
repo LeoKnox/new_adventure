@@ -115,6 +115,7 @@ export default DrawMap = ({
     console.log("move character");
     let temp = {};
     if (direction == "right") {
+      console.log("Right");
       temp = {
         1: [
           {
@@ -133,6 +134,7 @@ export default DrawMap = ({
       };
     }
     if (direction == "down") {
+      console.log("down");
       temp = {
         2: [
           {
@@ -157,8 +159,8 @@ export default DrawMap = ({
         ],
       };
       temp[2].push({
-        oldx: 7,
-        newx: 8,
+        oldx: 8,
+        newx: 7,
         tile: <DrawMonster background={wallSVG()} />,
       });
     }
