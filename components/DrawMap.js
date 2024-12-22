@@ -156,6 +156,11 @@ export default DrawMap = ({
           },
         ],
       };
+      temp[2].push({
+        oldx: 7,
+        newx: 8,
+        tile: <DrawMonster background={wallSVG()} />,
+      });
     }
     modifyTable(temp);
   };
