@@ -1,6 +1,18 @@
+import { floorSVG, wallSVG, warriorSVG } from "./svgData";
+import DrawMonster from "./DrawMonster.js";
+
 let playData = {
   character: { charId: 1, x: 1, y: 1 },
-  monster: [{ icon: "demon", x: 8, y: 3 }],
+  /*monster: [{ icon: "demon", x: 8, y: 3 }],*/
+  moster: {
+    1: [
+      {
+        oldx: 1,
+        newx: 1,
+        tile: <DrawMonster background={floorSVG()} />,
+      },
+    ],
+  },
 };
 
 export const charLocation = (id = 1) => {
@@ -12,5 +24,5 @@ export const updateMonster = (newNum) => {
 };
 
 export const singleMonster = () => {
-  return playData.monster[0];
+  return playData.monster;
 };
