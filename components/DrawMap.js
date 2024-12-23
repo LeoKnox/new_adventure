@@ -103,8 +103,6 @@ export default DrawMap = ({
     for (index in objMove) {
       newRow = [...mapState[index]];
       objMove[index].map((child) => {
-        console.log(child);
-        //newRow = [...mapState[index]];
         newRow[child.oldx] = floorSVG();
         newRow[child.newx] = child.tile;
         newGrid[index] = newRow;
@@ -158,6 +156,13 @@ export default DrawMap = ({
             ),
           },
         ],
+        3: [
+          {
+            oldx: 8,
+            newx: 8,
+            tile: <>{floorSVG()}</>,
+          },
+        ],
       };
       temp[2].push({
         oldx: 8,
@@ -165,7 +170,6 @@ export default DrawMap = ({
         tile: <DrawMonster background={floorSVG()} />,
       });
     }
-    console.log(temp);
     modifyTable(temp);
   };
   return (
