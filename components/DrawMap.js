@@ -81,7 +81,8 @@ export default DrawMap = ({
       </td>
     );
     tempRow[x] = temp;
-    modifyTable(mobs);
+    console.log(mobs);
+    modifyTable();
     /*
     temp = [...mapState[mobs.y]];
     temp[mobs.x] = <DrawMonster background={floorSVG()} />;
