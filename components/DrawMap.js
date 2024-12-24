@@ -116,7 +116,9 @@ export default DrawMap = ({
         newRow[child.oldx] = floorSVG();
         //newRow[child.newx] = child.tile;
         //newRow[child.newx] = child.tile.props.background;
-        (newRow = [...newRow.slice(0, 7)), child.tile.props.background, ...newRow.slice(8)]
+        newRow = newRow.map((ite, ind) =>
+          ind != 7 ? child.tile.props.background : ite
+        );
         console.log(newRow);
         newGrid[index] = newRow;
       });
