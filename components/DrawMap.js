@@ -109,7 +109,7 @@ export default DrawMap = ({
       objMove[index].map((child) => {
         newRow[child.oldx] = floorSVG();
         //newRow[child.newx] = child.tile;
-        newRow[child.newx] = <DrawMonster background={wallSVG()} />;
+        newRow[child.newx] = child.tile.props.background;
         console.log(newRow);
         newGrid[index] = newRow;
       });
