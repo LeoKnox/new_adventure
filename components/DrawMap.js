@@ -97,7 +97,17 @@ export default DrawMap = ({
   };
   const modifyTable = (
     objMove = {
-      3: [{ oldx: 8, newx: 7, tile: <DrawMonster background={floorSVG()} /> }],
+      3: [
+        {
+          oldx: 8,
+          newx: 7,
+          tile: (
+            <svg>
+              <DrawMonster background={floorSVG()} />
+            </svg>
+          ),
+        },
+      ],
     }
   ) => {
     console.log("modify table");
