@@ -110,6 +110,7 @@ export default DrawMap = ({
         newRow[child.oldx] = floorSVG();
         //newRow[child.newx] = child.tile;
         newRow[child.newx] = <DrawMonster background={wallSVG()} />;
+        console.log(newRow);
         newGrid[index] = newRow;
       });
     }
