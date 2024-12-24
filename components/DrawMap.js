@@ -103,13 +103,13 @@ export default DrawMap = ({
     console.log("modify table");
     let newGrid = [...mapState];
     let newRow = [];
-    let tempTile = wallSVG()
+    let tempTile = wallSVG();
     for (index in objMove) {
       newRow = [...mapState[index]];
       objMove[index].map((child) => {
         newRow[child.oldx] = floorSVG();
         //newRow[child.newx] = child.tile;
-        newRow[child.newx] = <DrawMonster background={tempTile} />;
+        newRow[child.newx] = <DrawMonster background={wallSVG()} />;
         newGrid[index] = newRow;
       });
     }
