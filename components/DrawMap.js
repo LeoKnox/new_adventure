@@ -81,6 +81,22 @@ export default DrawMap = ({
       </>
     );
     tempRow[x] = temp;
+    modifyTable({
+      2: [
+        {
+          oldx: 2,
+          newx: 2,
+          tile: (
+            <>
+              <div style={{ position: "absolute", opacity: "60%" }}>
+                {floorSVG()}
+              </div>
+              <div style={{ position: "relative" }}>{warriorSVG()}</div>
+            </>
+          ),
+        },
+      ],
+    });
     console.log(tempRow);
     setMapState(tempRow);
     modifyTable(mobs);
@@ -116,9 +132,6 @@ export default DrawMap = ({
       objMove[index].map((child) => {
         newRow[child.oldx] = floorSVG();
         newRow[child.newx] = child.tile;
-        //newRow[child.newx] = child.tile.props.background;
-        //newRow = newRow.map((ite, ind) => (ind != 7 ? <p>t</p> : ite));
-        console.log(newRow);
         newGrid[index] = newRow;
       });
     }
