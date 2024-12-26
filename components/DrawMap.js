@@ -75,10 +75,10 @@ export default DrawMap = ({
     let tempRow = [...mapState];
     let temp = [...mapState[x]];
     temp[y] = (
-      <td>
+      <>
         <div style={{ position: "absolute", opacity: "60%" }}>{floorSVG()}</div>
         <div style={{ position: "relative" }}>{warriorSVG()}</div>
-      </td>
+      </>
     );
     tempRow[x] = temp;
     console.log(tempRow);
