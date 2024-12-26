@@ -81,10 +81,10 @@ export default DrawMap = ({
       </>
     );
     tempRow[x] = temp;
-    mobs[2] =[
+    (mobs[1] = [
       {
-        oldx: 2,
-        newx: 2,
+        oldx: 1,
+        newx: 1,
         tile: (
           <>
             <div style={{ position: "absolute", opacity: "60%" }}>
@@ -94,31 +94,8 @@ export default DrawMap = ({
           </>
         ),
       },
-    ],
-      /*modifyTable({
-      2: [
-        {
-          oldx: 2,
-          newx: 2,
-          tile: (
-            <>
-              <div style={{ position: "absolute", opacity: "60%" }}>
-                {floorSVG()}
-              </div>
-              <div style={{ position: "relative" }}>{warriorSVG()}</div>
-            </>
-          ),
-        },
-      ],
-    });*/
-      console.log(tempRow);
-    setMapState(tempRow);
-    modifyTable(mobs);
-    /*
-    temp = [...mapState[mobs.y]];
-    temp[mobs.x] = <DrawMonster background={floorSVG()} />;
-    tempRow[mobs.y] = temp;*/
-    //setMapState(tempRow);
+    ]),
+      modifyTable(mobs);
   }, []);
 
   const drawRow = (modifyRow) => {
