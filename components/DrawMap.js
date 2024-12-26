@@ -81,7 +81,7 @@ export default DrawMap = ({
       </td>
     );
     tempRow[x] = temp;
-    console.log(mobs[3][0].newx);
+    console.log(tempRow);
     setMapState(tempRow);
     modifyTable(mobs);
     /*
