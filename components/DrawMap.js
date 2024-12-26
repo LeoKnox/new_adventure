@@ -87,7 +87,7 @@ export default DrawMap = ({
     temp = [...mapState[mobs.y]];
     temp[mobs.x] = <DrawMonster background={floorSVG()} />;
     tempRow[mobs.y] = temp;*/
-    setMapState(tempRow);
+    //setMapState(tempRow);
   }, []);
 
   const drawRow = (modifyRow) => {
