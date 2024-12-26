@@ -81,7 +81,21 @@ export default DrawMap = ({
       </>
     );
     tempRow[x] = temp;
-    modifyTable({
+    mobs[2] =[
+      {
+        oldx: 2,
+        newx: 2,
+        tile: (
+          <>
+            <div style={{ position: "absolute", opacity: "60%" }}>
+              {floorSVG()}
+            </div>
+            <div style={{ position: "relative" }}>{warriorSVG()}</div>
+          </>
+        ),
+      },
+    ],
+      /*modifyTable({
       2: [
         {
           oldx: 2,
@@ -96,8 +110,8 @@ export default DrawMap = ({
           ),
         },
       ],
-    });
-    console.log(tempRow);
+    });*/
+      console.log(tempRow);
     setMapState(tempRow);
     modifyTable(mobs);
     /*
