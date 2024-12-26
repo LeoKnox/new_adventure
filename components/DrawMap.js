@@ -114,9 +114,9 @@ export default DrawMap = ({
       newRow = [...mapState[index]];
       objMove[index].map((child) => {
         newRow[child.oldx] = floorSVG();
-        //newRow[child.newx] = child.tile;
+        newRow[child.newx] = child.tile;
         //newRow[child.newx] = child.tile.props.background;
-        newRow = newRow.map((ite, ind) => (ind != 7 ? <p>t</p> : ite));
+        //newRow = newRow.map((ite, ind) => (ind != 7 ? <p>t</p> : ite));
         console.log(newRow);
         newGrid[index] = newRow;
       });
