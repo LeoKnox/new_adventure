@@ -5,13 +5,7 @@ let playData = {
   character: { charId: 1, x: 1, y: 1 },
   /*monster: [{ icon: "demon", x: 8, y: 3 }],*/
   monster: {
-    1: [
-      {
-        oldx: 1,
-        newx: 1,
-        tile: <DrawMonster background={floorSVG()} />,
-      },
-    ],
+    3: [{ oldx: 8, newx: 7, tile: <DrawMonster background={floorSVG()} /> }],
   },
 };
 
@@ -20,7 +14,7 @@ export const charLocation = (id = 1) => {
 };
 
 export const updateMonster = (newNum) => {
-  playData.monster[0].y = playData.monster[0].y - 1;
+  playData.monster[0].newy = playData.monster[0].oldy - 1;
 };
 
 export const singleMonster = () => {
