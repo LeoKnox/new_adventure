@@ -98,10 +98,10 @@ export default DrawMap = ({
       modifyTable(mobs);
   }, []);
 
-  const drawRow = (modifyRow) => {
-    console.log(modifyRow);
-    modifyRow[8] = <DrawMonster background={wallSVG()} />;
-    return modifyRow;
+  const moveMob = () => {
+    console.log("move mob");
+    updateMonster();
+    setMapState(singleMonster());
   };
   const modifyTable = (
     objMove = {
@@ -212,7 +212,7 @@ export default DrawMap = ({
         <button onClick={() => moveCharacter("up")}>up</button>
       </td>
       <td>
-        <button onClick={() => modifyTable()}>mob</button>
+        <button onClick={() => moveMob()}>mob</button>
       </td>
     </div>
   );
