@@ -17,7 +17,7 @@ export const charLocation = (id = 1) => {
 };
 
 export const updateMonster = (newNum) => {
-  playData.monster[3][0].newx = playData.monster[3][0].oldx - 1;
+  playData[3][0].newx = playData.monster[3][0].oldx - 1;
 };
 
 export const singleMonster = () => {
