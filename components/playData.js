@@ -24,7 +24,7 @@ export const updateMonster = (newNum) => {
     3: [{ oldx: 7, newx: 6, tile: <DrawMonster background={floorSVG()} /> }],
   };*/
   temp = {
-    ...temp,
+    ...temp[3],
     oldx: 7,
     newx: 6,
     tile: <DrawMonster background={floorSVG()} />,
