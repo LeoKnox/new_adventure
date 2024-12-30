@@ -17,6 +17,8 @@ export const charLocation = (id = 1) => {
 };
 
 export const updateMonster = (newNum) => {
+  console.log(mobData);
+  console.log(mobData[3][0].newx);
   mobData[3][0].newx = mobData[3][0].oldx - 1;
   console.log("update monster");
   console.log(mobData);
