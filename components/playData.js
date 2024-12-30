@@ -20,9 +20,10 @@ export const updateMonster = (newNum) => {
   let temp = {};
   console.log(mobData);
   console.log(mobData[3][0]);
-  temp = {
+  /*temp = {
     3: [{ oldx: 7, newx: 6, tile: <DrawMonster background={floorSVG()} /> }],
-  };
+  };*/
+  temp = { ...temp, tile: <DrawMonster background={floorSVG()} /> };
   mobData = temp;
   console.log("update monster");
   console.log(mobData);
