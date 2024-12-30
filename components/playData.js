@@ -19,8 +19,10 @@ export const charLocation = (id = 1) => {
 export const updateMonster = (newNum) => {
   let temp = {};
   console.log(mobData);
-  console.log(mobData[3][0].newx);
-  temp[3][0].newx = temp[3][0].oldx - 1;
+  console.log(mobData[3][0]);
+  temp = {
+    3: [{ oldx: 7, newx: 6, tile: <DrawMonster background={floorSVG()} /> }],
+  };
   mobData = temp;
   console.log("update monster");
   console.log(mobData);
