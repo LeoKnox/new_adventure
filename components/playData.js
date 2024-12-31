@@ -39,6 +39,7 @@ export const updateMonster = (direction = "up") => {
         },
       ],
     };
+    mobData = tempData;
   }
 };
 
