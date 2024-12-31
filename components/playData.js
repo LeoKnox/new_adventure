@@ -16,17 +16,19 @@ export const charLocation = (id = 1) => {
   return { charX: playData.character.x, charY: playData.character.y };
 };
 
-export const updateMonster = (direction) => {
+export const updateMonster = (direction = "left") => {
   let temp = {};
-  mobData = {
-    3: [
-      {
-        oldx: mobData[3][0].newx,
-        newx: mobData[3][0].newx - 1,
-        tile: <DrawMonster background={floorSVG()} />,
-      },
-    ],
-  };
+  if (direction === "left") {
+    mobData = {
+      3: [
+        {
+          oldx: mobData[3][0].newx,
+          newx: mobData[3][0].newx - 1,
+          tile: <DrawMonster background={floorSVG()} />,
+        },
+      ],
+    };
+  }
 };
 
 export const singleMonster = () => {
