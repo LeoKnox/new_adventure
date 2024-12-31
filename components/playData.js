@@ -31,13 +31,6 @@ export const updateMonster = (direction = "up") => {
   }
   if (direction === "up") {
     tempData = {
-      3: [
-        {
-          oldx: mobData[3][0].newx,
-          newx: mobData[3][0].newy,
-          tile: floorSVG(),
-        },
-      ],
       2: [
         {
           oldx: mobData[3][0].newx,
