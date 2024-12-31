@@ -16,7 +16,7 @@ export const charLocation = (id = 1) => {
   return { charX: playData.character.x, charY: playData.character.y };
 };
 
-export const updateMonster = (newNum) => {
+export const updateMonster = (direction) => {
   let temp = {};
   mobData = {
     3: [
