@@ -19,7 +19,13 @@ export const charLocation = (id = 1) => {
 export const updateMonster = (newNum) => {
   let temp = {};
   mobData = {
-    3: [{ oldx: 7, newx: 6, tile: <DrawMonster background={floorSVG()} /> }],
+    3: [
+      {
+        oldx: mobData[3][0].newx,
+        newx: mobData[3][0].newx - 1,
+        tile: <DrawMonster background={floorSVG()} />,
+      },
+    ],
   };
 };
 
