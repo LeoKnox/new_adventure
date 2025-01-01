@@ -38,6 +38,7 @@ export const updateMonster = (direction = "up") => {
           tile: <DrawMonster background={floorSVG()} />,
         },
       ],
+      
     };
     mobData = tempData;
   }
