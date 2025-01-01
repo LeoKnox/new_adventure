@@ -47,7 +47,7 @@ export const updateMonster = (direction = "up") => {
       ],
     };
     console.log("up");
-    console.log(tempData);
+    console.log(Object.keys(tempData));
     mobData = tempData;
   }
 };
