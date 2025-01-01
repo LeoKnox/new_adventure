@@ -33,12 +33,18 @@ export const updateMonster = (direction = "up") => {
     tempData = {
       2: [
         {
-          oldx: mobData[3][0].newx,
-          newx: mobData[3][0].newy,
+          oldx: 6,
+          newx: 6,
           tile: <DrawMonster background={floorSVG()} />,
         },
       ],
-      
+      3: [
+        {
+          oldx: mobData[3][0].newx,
+          newx: mobData[3][0].newy,
+          tile: floorSVG(),
+        },
+      ],
     };
     mobData = tempData;
   }
