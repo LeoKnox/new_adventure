@@ -117,11 +117,8 @@ export default DrawMap = ({
       ],
     }
   ) => {
-    console.log("modify table");
-    console.log(JSON.stringify(objMove));
     let newGrid = [...mapState];
     let newRow = [];
-    let tempTile = wallSVG();
     for (index in objMove) {
       newRow = [...mapState[index]];
       objMove[index].map((child) => {
