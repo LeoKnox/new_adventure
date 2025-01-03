@@ -30,7 +30,8 @@ export const updateMonster = (direction = "up") => {
     };
   }
   if (direction === "up") {
-    let mobKey = mobData[Object.keys(mobData[1])];
+    let mobKey = Object.keys(mobData);
+    mobKey = mobKey[1];
     console.log("up");
     console.log(mobKey);
     tempData = {
