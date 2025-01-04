@@ -30,11 +30,7 @@ export const updateMonster = (direction = "up") => {
     };
   }
   if (direction === "up") {
-    let mobKey = Object.keys(mobData);
-    newData = mobData[mobKey];
-    console.log("up");
-    console.log(mobKey);
-    tempData = {
+    /*tempData = {
       2: [
         {
           oldx: mobData[3][0].newx,
@@ -42,10 +38,22 @@ export const updateMonster = (direction = "up") => {
           tile: <DrawMonster background={floorSVG()} />,
         },
       ],
-    };
-    tempData[mobKey] = newData;
-    console.log(mobKey);
-    mobData = tempData;
+      3: [
+        {
+          oldx: mobData[3][0].newx,
+          newx: mobData[3][0].newx,
+          tile: floorSVG(),
+        },
+      ],
+    };*/
+    (tempData[2] = [
+      {
+        oldx: mobData[3][0].newx,
+        newx: mobData[3][0].newx,
+        tile: <DrawMonster background={floorSVG()} />,
+      },
+    ]),
+      (mobData = tempData);
   }
 };
 
