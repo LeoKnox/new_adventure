@@ -46,7 +46,8 @@ export const updateMonster = (direction = "up") => {
         },
       ],
     };*/
-    (tempData[2] = [
+    let a = 2;
+    (tempData[a] = [
       {
         oldx: mobData[3][0].newx,
         newx: mobData[3][0].newx,
