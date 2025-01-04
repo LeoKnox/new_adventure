@@ -56,5 +56,7 @@ export const updateMonster = (direction = "up") => {
 };
 
 export const singleMonster = () => {
+  console.log("mob data");
+  console.log(mobData);
   return mobData;
 };
