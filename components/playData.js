@@ -31,7 +31,8 @@ export const updateMonster = (direction = "up") => {
   }
   if (direction === "up") {
     let mobKey = Object.keys(mobData);
-    mobKey = mobData[mobKey];
+    newData = mobData[mobKey];
+    mobData[mobKey] = newData;
     console.log("up");
     console.log(mobKey);
     tempData = {
