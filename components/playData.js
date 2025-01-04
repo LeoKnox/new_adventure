@@ -17,7 +17,7 @@ export const charLocation = (id = 1) => {
 };
 
 const updateMonster = (direction = "up") => {
-  let temp = {};
+  let tempData = {};
   if (direction === "left") {
     mobData = {
       3: [
