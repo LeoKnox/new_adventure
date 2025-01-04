@@ -51,7 +51,7 @@ export const updateMonster = (direction = "up") => {
       {
         oldx: mobData[3][0].newx,
         newx: mobData[3][0].newx,
-        tile: <DrawMonster background={floorSVG()} />,
+        tile: floorSVG(),
       },
     ]),
       (mobData = tempData);
