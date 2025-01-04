@@ -16,7 +16,7 @@ export const charLocation = (id = 1) => {
   return { charX: playData.character.x, charY: playData.character.y };
 };
 
-export const updateMonster = (direction = "up") => {
+const updateMonster = (direction = "up") => {
   let temp = {};
   if (direction === "left") {
     mobData = {
