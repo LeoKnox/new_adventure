@@ -1,30 +1,92 @@
-×
-←→1 of 2 errors on the page
-TypeError
-mapState[index] is not iterable
-modifyTable
-/src/components/DrawMap.js:123:28
-  120 | let newGrid = [...mapState];
-  121 | let newRow = [];
-  122 | for (index in objMove) {
-> 123 |   newRow = [...mapState[index]];
-      |                        ^
-  124 |   objMove[index].map((child) => {
-  125 |     newRow[child.oldx] = floorSVG();
-  126 |     newRow[child.newx] = child.tile;
-View compiled
-eval
-/src/components/DrawMap.js:98:6
-   95 |        ),
-   96 |      },
-   97 |    ]),
->  98 |      modifyTable(mobs);
-      |     ^
-   99 |  }, []);
-  100 | 
-  101 |  const moveMob = () => {
-View compiled
-▶ 11 stack frames were collapsed.
-This screen is visible only in development. It will not appear if the app crashes in production.
-Open your browser’s developer console to further inspect this error.
-This error overlay is powered by `react-error-overlay` used in `create-react-app`.
+import { floorSVG, wallSVG, warriorSVG } from "./svgData";
+import DrawMonster from "./DrawMonster.js";
+
+let playData = {
+  character: { charId: 1, x: 1, y: 1 },
+  /*monster: [{ icon: "demon", x: 8, y: 3 }],*/
+  monster: {
+    3: [{ oldx: 8, newx: 7, tile: <DrawMonster background={floorSVG()} /> }],
+  },
+};
+let mobData = {
+  3: [{ oldx: 8, newx: 8, tile: <DrawMonster background={floorSVG()} /> }],
+};
+
+export const charLocation = (id = 1) => {
+  return { charX: playData.character.x, charY: playData.character.y };
+};
+
+export const updateMonster = (direction = "up") => {
+  let tempData = {};
+  if (direction === "left") {
+    tempData = {
+      3: [
+        {
+          oldx: mobData[3][0].newx,
+          newx: mobData[3][0].newx - 1,
+          tile: <DrawMonster background={floorSVG()} />,
+        },
+      ],
+    };
+  }
+  if (direction === "up") {
+    let a = Object.keys(mobData)[1];
+    (tempData[a] = [
+      {
+        oldx: mobData[3][0].newx,
+        newx: mobData[3][0].newx,
+        tile: floorSVG(),
+      },
+    ]),
+      (tempData[a - 1] = [
+        {
+          oldx: mobData[3][0].newx,
+          newx: mobData[3][0].newx,
+          tile: <DrawMonster background={floorSVG()} />,
+        },
+      ]),
+      (mobData = tempData);
+  }
+};
+
+const change = () => {
+  let tempData = {};
+  if (direction === "left") {
+    mobData = {
+      3: [
+        {
+          oldx: mobData[3][0].newx,
+          newx: mobData[3][0].newx - 1,
+          tile: <DrawMonster background={floorSVG()} />,
+        },
+      ],
+    };
+  }
+  if (direction === "up") {
+    let a = Object.keys(mobData)[1];
+    (tempData[a] = [
+      {
+        oldx: mobData[3][0].newx,
+        newx: mobData[3][0].newx,
+        tile: floorSVG(),
+      },
+    ]),
+      (tempData[a - 1] = [
+        {
+          oldx: mobData[3][0].newx,
+          newx: mobData[3][0].newx,
+          tile: <DrawMonster background={floorSVG()} />,
+        },
+      ]),
+      (mobData = tempData);
+  }
+};
+
+export const singleMonster = () => {
+  console.log("mob data");
+
+  //change();
+  //updateMonster();
+  console.log(mobData);
+  return mobData;
+};
