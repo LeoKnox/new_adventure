@@ -11,7 +11,11 @@ let playData = {
 let mobData = {
   3: [{ oldx: 8, newx: 8, tile: <DrawMonster background={floorSVG()} /> }],
 };
-let mobs = { time: () => console.log("red") };
+let mobs = {
+  time: function () {
+    console.log("red");
+  },
+};
 
 export const charLocation = (id = 1) => {
   return { charX: playData.character.x, charY: playData.character.y };
