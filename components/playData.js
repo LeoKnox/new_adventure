@@ -51,41 +51,28 @@ export const updateMonster = (direction = "up") => {
 
 const change = () => {
   let tempData = {};
-  if (direction === "left") {
-    mobData = {
-      3: [
-        {
-          oldx: mobData[3][0].newx,
-          newx: mobData[3][0].newx - 1,
-          tile: <DrawMonster background={floorSVG()} />,
-        },
-      ],
-    };
-  }
-  if (direction === "up") {
-    let a = Object.keys(mobData)[1];
-    (tempData[a] = [
+  let a = Object.keys(mobData)[1];
+  (tempData[a] = [
+    {
+      oldx: mobData[3][0].newx,
+      newx: mobData[3][0].newx,
+      tile: floorSVG(),
+    },
+  ]),
+    (tempData[a - 1] = [
       {
         oldx: mobData[3][0].newx,
         newx: mobData[3][0].newx,
-        tile: floorSVG(),
+        tile: <DrawMonster background={floorSVG()} />,
       },
     ]),
-      (tempData[a - 1] = [
-        {
-          oldx: mobData[3][0].newx,
-          newx: mobData[3][0].newx,
-          tile: <DrawMonster background={floorSVG()} />,
-        },
-      ]),
-      (mobData = tempData);
-  }
+    (mobData = tempData);
 };
 
 export const singleMonster = () => {
   console.log("mob data");
 
-  //change();
+  change();
   //updateMonster();
   console.log(mobData);
   return mobData;
