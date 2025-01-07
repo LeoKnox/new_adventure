@@ -28,8 +28,8 @@ export const updateMonster = (direction = "up") => {
     tempData = {
       3: [
         {
-          oldx: mobData[3][0].newx,
-          newx: mobData[3][0].newx - 1,
+          oldx: playData.monster[3][0].newx,
+          newx: playData.monster[3][0].newx - 1,
           tile: <DrawMonster background={floorSVG()} />,
         },
       ],
@@ -39,8 +39,8 @@ export const updateMonster = (direction = "up") => {
     let a = Object.keys(mobData)[1];
     (tempData[a] = [
       {
-        oldx: mobData[3][0].newx,
-        newx: mobData[3][0].newx,
+        oldx: playData.monster[3][0].newx,
+        newx: playData.monster[3][0].newx,
         tile: floorSVG(),
       },
     ]),
