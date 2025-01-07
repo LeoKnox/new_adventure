@@ -36,7 +36,8 @@ export const updateMonster = (direction = "up") => {
     };
   }
   if (direction === "up") {
-    let a = Object.keys(mobData)[1];
+    let a = Object.keys(playData.monster);
+    console.log(a);
     (tempData[a] = [
       {
         oldx: playData.monster[3][0].newx,
@@ -58,6 +59,7 @@ export const updateMonster = (direction = "up") => {
 export const change = () => {
   console.log("change");
   delete playData.monster[3];
+  console.log();
 };
 
 export const singleMonster = () => {
