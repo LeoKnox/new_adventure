@@ -25,7 +25,6 @@ export const updateMonster = (direction = "up") => {
   console.log("....");
 
   if (direction === "left") {
-    let a = Object.keys(mobData)[1];
     tempData = {
       3: [
         {
@@ -37,13 +36,16 @@ export const updateMonster = (direction = "up") => {
     };
   }
   if (direction === "up") {
-    (tempData[a] = [
-      {
-        oldx: playData.monster[3][0].newx,
-        newx: playData.monster[3][0].newx,
-        tile: floorSVG(),
-      },
-    ]),
+    let a = Object.keys(playData.monster);
+    console.log(a)(
+      (tempData[a] = [
+        {
+          oldx: playData.monster[3][0].newx,
+          newx: playData.monster[3][0].newx,
+          tile: floorSVG(),
+        },
+      ])
+    ),
       (tempData[a - 1] = [
         {
           oldx: playData.monster[3][0].newx,
