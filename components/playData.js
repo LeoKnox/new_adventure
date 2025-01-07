@@ -8,7 +8,8 @@ let playData = {
     3: [{ oldx: 8, newx: 8, tile: <DrawMonster background={floorSVG()} /> }],
   },
 };
-let mobData = {
+let mobData = {};
+mobData = {
   3: [{ oldx: 8, newx: 8, tile: <DrawMonster background={floorSVG()} /> }],
 };
 
