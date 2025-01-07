@@ -2,14 +2,14 @@ import { floorSVG, wallSVG, warriorSVG } from "./svgData";
 import DrawMonster from "./DrawMonster.js";
 
 let playData = {
-  character: { charId: 1, x: 1, y: 1 },
+  character: { charId: 1, x: 2, y: 2 },
   /*monster: [{ icon: "demon", x: 8, y: 3 }],*/
   monster: {
     3: [{ oldx: 8, newx: 8, tile: <DrawMonster background={floorSVG()} /> }],
   },
 };
 let mobData = {
-  ...playData.monster,
+  3: [{ oldx: 8, newx: 8, tile: <DrawMonster background={floorSVG()} /> }],
 };
 
 export const charLocation = (id = 1) => {
