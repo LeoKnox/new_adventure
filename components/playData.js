@@ -9,7 +9,7 @@ let playData = {
   },
 };
 let mobData = {
-  3: [{ oldx: 8, newx: 8, tile: <DrawMonster background={floorSVG()} /> }],
+  ...playData.monster,
 };
 
 export const charLocation = (id = 1) => {
@@ -17,7 +17,10 @@ export const charLocation = (id = 1) => {
 };
 
 export const updateMonster = (direction = "up") => {
-  mobData === playData.monster ? "true" : "false";
+  console.log("....");
+  console.log(mobData);
+  console.log(playData.monster);
+  console.log("....");
   let tempData = {};
   if (direction === "left") {
     tempData = {
