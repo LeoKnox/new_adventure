@@ -58,7 +58,8 @@ export const updateMonster = (direction = "up") => {
 
 export const change = () => {
   console.log("change");
-  delete playData.monster[3];
+  let a = Object.keys(playData.monster);
+  delete playData.monster[a];
   console.log();
 };
 
