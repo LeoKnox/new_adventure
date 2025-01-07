@@ -102,8 +102,9 @@ export default DrawMap = ({
     console.log("move mob");
     updateMonster();
     let t = singleMonster();
-    change();
+
     modifyTable(t);
+    change();
     //setMapState(t);
   };
 
