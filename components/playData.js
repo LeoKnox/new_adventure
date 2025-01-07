@@ -46,8 +46,8 @@ export const updateMonster = (direction = "up") => {
     ]),
       (tempData[a - 1] = [
         {
-          oldx: mobData[3][0].newx,
-          newx: mobData[3][0].newx,
+          oldx: playData.monster[3][0].newx,
+          newx: playData.monster[3][0].newx,
           tile: <DrawMonster background={floorSVG()} />,
         },
       ]),
@@ -55,25 +55,9 @@ export const updateMonster = (direction = "up") => {
   }
 };
 
-const change = () => {
+export const change = () => {
   console.log("change");
-  let tempData = {};
-  let a = Object.keys(mobData)[1];
-  (tempData[a] = [
-    {
-      oldx: mobData[3][0].newx,
-      newx: mobData[3][0].newx,
-      tile: floorSVG(),
-    },
-  ]),
-    (tempData[a - 1] = [
-      {
-        oldx: mobData[3][0].newx,
-        newx: mobData[3][0].newx,
-        tile: <DrawMonster background={floorSVG()} />,
-      },
-    ]),
-    (mobData = tempData);
+  delete playData.monster[3];
 };
 
 export const singleMonster = () => {
