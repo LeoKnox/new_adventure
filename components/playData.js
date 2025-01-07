@@ -18,11 +18,12 @@ export const charLocation = (id = 1) => {
 };
 
 export const updateMonster = (direction = "up") => {
+  let tempData = playData.monster;
   console.log("....");
-  console.log(mobData);
+  console.log(tempData);
   console.log(playData.monster);
   console.log("....");
-  let tempData = {};
+
   if (direction === "left") {
     tempData = {
       3: [
