@@ -1,6 +1,6 @@
 import { warriorSVG } from "./svgData";
 
-export default DrawCharacter = () => {
+export default DrawCharacter = (background) => {
   return (
     <td>
       <div style={{ position: "absolute", opacity: "60%" }}>{background}</div>
