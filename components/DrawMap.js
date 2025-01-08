@@ -2,6 +2,7 @@ import { useState, useEffect, cloneElement } from "react";
 import { floorSVG, wallSVG, warriorSVG } from "./svgData";
 import { updateMonster, singleMonster, change } from "./playData.js";
 import DrawMonster from "./DrawMonster.js";
+import DrawCharacter from "./DrawCharacter.js";
 
 export default DrawMap = ({
   width = 10,
@@ -81,7 +82,20 @@ export default DrawMap = ({
       </>
     );
     tempRow[x] = temp;
-
+    /*(mobs[1] = [
+      {
+        oldx: 1,
+        newx: 1,
+        tile: (
+          <>
+            <div style={{ position: "absolute", opacity: "60%" }}>
+              {floorSVG()}
+            </div>
+            <div style={{ position: "relative" }}>{warriorSVG()}</div>
+          </>
+        ),
+      },
+    ]),*/
     modifyTable(mobs);
   }, []);
 
@@ -128,14 +142,7 @@ export default DrawMap = ({
           {
             oldx: 1,
             newx: 2,
-            tile: (
-              <td>
-                <div style={{ position: "absolute", opacity: "60%" }}>
-                  {floorSVG()}
-                </div>
-                <div style={{ position: "relative" }}>{warriorSVG()}</div>
-              </td>
-            ),
+            tile: <DrawCharacter />,
           },
         ],
       };
