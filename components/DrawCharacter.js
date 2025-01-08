@@ -4,7 +4,7 @@ export default DrawCharacter = (background) => {
   return (
     <td>
       <div style={{ position: "absolute", opacity: "60%" }}>{background}</div>
-      <div style={{ position: "relative" }}>{demonSVG()}</div>
+      <div style={{ position: "relative" }}>{warriorSVG()}</div>
     </td>
   );
 };
