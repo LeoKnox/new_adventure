@@ -1,6 +1,11 @@
 import { useState, useEffect, cloneElement } from "react";
 import { floorSVG, wallSVG, warriorSVG } from "./svgData";
-import { updateMonster, singleMonster, change } from "./playData.js";
+import {
+  characterLocation,
+  updateMonster,
+  singleMonster,
+  change,
+} from "./playData.js";
 import DrawMonster from "./DrawMonster.js";
 import DrawCharacter from "./DrawCharacter.js";
 
@@ -82,6 +87,7 @@ export default DrawMap = ({
       </>
     );
     tempRow[x] = temp;
+    modifyTable(characterLocation());
     /*(mobs[1] = [
       {
         oldx: 1,
