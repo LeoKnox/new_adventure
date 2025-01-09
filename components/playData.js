@@ -1,8 +1,10 @@
 import { floorSVG, wallSVG, warriorSVG } from "./svgData";
 import DrawMonster from "./DrawMonster.js";
+import DrawCharacter from "./DrawCharacter.js";
 
 let playData = {
-  character: { charId: 1, x: 2, y: 2 },
+  character: {1: [{oldx:1, newx:1, tile:<DrawCharacter background={floorSVG()} /> }]},
+  //character: { charId: 1, x: 2, y: 2 },
   /*monster: [{ icon: "demon", x: 8, y: 3 }],*/
   monster: {
     3: [{ oldx: 8, newx: 8, tile: <DrawMonster background={floorSVG()} /> }],
