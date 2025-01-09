@@ -3,7 +3,9 @@ import DrawMonster from "./DrawMonster.js";
 import DrawCharacter from "./DrawCharacter.js";
 
 let playData = {
-  character: {1: [{oldx:1, newx:1, tile:<DrawCharacter background={floorSVG()} /> }]},
+  character: {
+    1: [{ oldx: 1, newx: 1, tile: <DrawCharacter background={floorSVG()} /> }],
+  },
   //character: { charId: 1, x: 2, y: 2 },
   /*monster: [{ icon: "demon", x: 8, y: 3 }],*/
   monster: {
@@ -16,7 +18,7 @@ mobData = {
 };
 
 export const charLocation = (id = 1) => {
-  return { charX: playData.character.x, charY: playData.character.y };
+  return playData["character"];
 };
 
 export const updateMonster = (direction = "up") => {
