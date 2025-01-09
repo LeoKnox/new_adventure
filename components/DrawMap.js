@@ -1,7 +1,7 @@
 import { useState, useEffect, cloneElement } from "react";
 import { floorSVG, wallSVG, warriorSVG } from "./svgData";
 import {
-  characterLocation,
+  charLocation,
   updateMonster,
   singleMonster,
   change,
@@ -87,7 +87,8 @@ export default DrawMap = ({
       </>
     );
     tempRow[x] = temp;
-    modifyTable(characterLocation());
+    console.log(charLocation());
+    modifyTable(charLocation())
     /*(mobs[1] = [
       {
         oldx: 1,
