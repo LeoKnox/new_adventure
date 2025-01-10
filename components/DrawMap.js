@@ -90,11 +90,6 @@ export default DrawMap = ({
     console.log("CR");
     console.log(charLocation());
     let chartemp = charLocation();
-    modifyTable({
-      1: [
-        { oldx: 1, newx: 1, tile: <DrawCharacter background={floorSVG()} /> },
-      ],
-    });
     mobs[1] = [
       { oldx: 1, newx: 1, tile: <DrawCharacter background={floorSVG()} /> },
     ];
