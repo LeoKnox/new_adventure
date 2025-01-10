@@ -87,8 +87,10 @@ export default DrawMap = ({
       </>
     );
     tempRow[x] = temp;
+    console.log("CR");
     console.log(charLocation());
-    modifyTable(charLocation())
+    let chartemp = charLocation();
+    modifyTable(chartemp);
     /*(mobs[1] = [
       {
         oldx: 1,
