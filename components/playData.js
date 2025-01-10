@@ -6,8 +6,6 @@ let playData = {
   character: {
     1: [{ oldx: 1, newx: 1, tile: <DrawCharacter background={floorSVG()} /> }],
   },
-  //character: { charId: 1, x: 2, y: 2 },
-  /*monster: [{ icon: "demon", x: 8, y: 3 }],*/
   monster: {
     3: [{ oldx: 8, newx: 8, tile: <DrawMonster background={floorSVG()} /> }],
   },
@@ -41,7 +39,6 @@ export const updateMonster = (direction = "up") => {
   }
   if (direction === "up") {
     let a = Object.keys(playData.monster);
-    console.log(a);
     (tempData[a] = [
       {
         oldx: playData.monster[3].newx,
@@ -63,16 +60,10 @@ export const updateMonster = (direction = "up") => {
 export const change = () => {
   console.log("change");
   let a = Object.keys(playData.monster)[1];
-  console.log(a);
   delete playData.monster[a];
-  console.log(playData.monster);
 };
 
 export const singleMonster = () => {
-  console.log("mob data");
-
-  //change();
-  //updateMonster();
-  console.log(mobData);
+  console.log("mob data");;
   return mobData;
 };
