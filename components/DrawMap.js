@@ -94,7 +94,7 @@ export default DrawMap = ({
       { oldx: 1, newx: 1, tile: <DrawCharacter background={floorSVG()} /> },
     ];*/
     for (let ct in chartemp) {
-      console.log(chartemp[ct]);
+      mobs[ct] = chartemp[ct];
     }
     /*(mobs[1] = [
       {
