@@ -90,9 +90,12 @@ export default DrawMap = ({
     console.log("CR");
     console.log(charLocation());
     let chartemp = charLocation();
-    mobs[1] = [
+    /*mobs[1] = [
       { oldx: 1, newx: 1, tile: <DrawCharacter background={floorSVG()} /> },
-    ];
+    ];*/
+    for (let ct in chartemp) {
+      console.log(ct);
+    }
     /*(mobs[1] = [
       {
         oldx: 1,
