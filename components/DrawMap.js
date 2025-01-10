@@ -87,29 +87,10 @@ export default DrawMap = ({
       </>
     );
     tempRow[x] = temp;
-    console.log("CR");
-    console.log(charLocation());
     let chartemp = charLocation();
-    /*mobs[1] = [
-      { oldx: 1, newx: 1, tile: <DrawCharacter background={floorSVG()} /> },
-    ];*/
     for (let ct in chartemp) {
       mobs[ct] = chartemp[ct];
     }
-    /*(mobs[1] = [
-      {
-        oldx: 1,
-        newx: 1,
-        tile: (
-          <>
-            <div style={{ position: "absolute", opacity: "60%" }}>
-              {floorSVG()}
-            </div>
-            <div style={{ position: "relative" }}>{warriorSVG()}</div>
-          </>
-        ),
-      },
-    ]),*/
     modifyTable(mobs);
   }, []);
 
