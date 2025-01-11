@@ -39,6 +39,7 @@ export const updateMonster = (direction = "up") => {
   }
   if (direction === "up") {
     let a = Object.keys(playData.monster);
+    console.log(a);
     (tempData[a] = [
       {
         oldx: playData.monster[3].newx,
