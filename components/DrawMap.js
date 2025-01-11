@@ -101,6 +101,7 @@ export default DrawMap = ({
     console.table(t);
     modifyTable(t);
     change();
+    console.table(t);
     //setMapState(t);
   };
 
