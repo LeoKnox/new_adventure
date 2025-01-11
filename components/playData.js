@@ -61,9 +61,10 @@ export const change = () => {
   console.log("change");
   let a = Object.keys(playData.monster)[1];
   delete playData.monster[a];
+  console.log(a);
 };
 
 export const singleMonster = () => {
-  console.log("mob data");;
+  console.log("mob data");
   return mobData;
 };
