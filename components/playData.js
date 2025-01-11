@@ -38,15 +38,15 @@ export const updateMonster = (direction = "up") => {
     console.log(a);
     (tempData[a] = [
       {
-        oldx: playData.monster[3].newx,
-        newx: playData.monster[3].newx,
+        oldx: playData.monster[a].newx,
+        newx: playData.monster[a].newx,
         tile: floorSVG(),
       },
     ]),
       (tempData[a - 1] = [
         {
-          oldx: playData.monster[3].newx,
-          newx: playData.monster[3].newx,
+          oldx: playData.monster[a].newx,
+          newx: playData.monster[a].newx,
           tile: <DrawMonster background={floorSVG()} />,
         },
       ]),
