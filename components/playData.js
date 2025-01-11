@@ -21,10 +21,6 @@ export const charLocation = (id = 1) => {
 
 export const updateMonster = (direction = "up") => {
   let tempData = playData.monster;
-  console.log("....");
-  console.log(tempData);
-  console.log(playData.monster);
-  console.log("....");
 
   if (direction === "left") {
     tempData = {
@@ -56,6 +52,10 @@ export const updateMonster = (direction = "up") => {
       ]),
       (mobData = tempData);
   }
+  console.log("....");
+  console.log(tempData);
+  console.log(playData.monster);
+  console.log("....");
 };
 
 export const change = () => {
