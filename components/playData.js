@@ -15,9 +15,12 @@ mobData = {
   3: [{ oldx: 8, newx: 8, tile: <DrawMonster background={floorSVG()} /> }],
 };
 
-export const charUpdate = () => {
-console.log("charUpdate");
-}
+export const charUpdate = (newChar = {
+  1: [{ oldx: 2, newx: 2, tile: <DrawCharacter background={floorSVG()} /> }],
+}) => {
+  console.log("charUpdate");
+  playData.character = newChar;
+};
 
 export const charLocation = (id = 1) => {
   return playData["character"];
