@@ -15,9 +15,11 @@ mobData = {
   3: [{ oldx: 8, newx: 8, tile: <DrawMonster background={floorSVG()} /> }],
 };
 
-export const charUpdate = (newChar = {
-  1: [{ oldx: 2, newx: 2, tile: <DrawCharacter background={floorSVG()} /> }],
-}) => {
+export const charUpdate = (
+  newChar = {
+    1: [{ oldx: 2, newx: 2, tile: <DrawCharacter background={floorSVG()} /> }],
+  }
+) => {
   console.log("charUpdate");
   playData.character = newChar;
 };
@@ -28,10 +30,6 @@ export const charLocation = (id = 1) => {
 
 export const updateMonster = (direction = "up") => {
   let tempData = playData.monster;
-  console.log("....");
-  console.log(tempData);
-  console.log(playData.monster);
-  console.log("....");
   if (direction === "left") {
     tempData = {
       3: [
@@ -46,7 +44,6 @@ export const updateMonster = (direction = "up") => {
   if (direction === "up") {
     let a = Object.keys(playData.monster)[0];
     console.log("up");
-    console.log(playData.monster[a]);
     (tempData[a] = [
       {
         oldx: playData.monster[a][0].newx,
@@ -69,7 +66,6 @@ export const change = () => {
   console.log("change");
   let a = Object.keys(playData.monster)[1];
   delete playData.monster[a];
-  console.log(a);
 };
 
 export const singleMonster = () => {
