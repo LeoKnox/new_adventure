@@ -115,7 +115,7 @@ export default DrawMap = ({
     }
   ) => {
     console.log("modify table");
-    console.table(objMove);
+    console.log(JSON.stringify(objMove));
     let newGrid = [...mapState];
     let newRow = [];
     for (index in objMove) {
