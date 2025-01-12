@@ -132,6 +132,9 @@ export default DrawMap = ({
   const moveCharacter = (direction) => {
     console.log("move character");
     let temp = {};
+    if (direction == "left") {
+      console.log("left");
+    }
     if (direction == "right") {
       console.log("Right");
       temp = {
