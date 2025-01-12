@@ -21,7 +21,10 @@ export const charLocation = (id = 1) => {
 
 export const updateMonster = (direction = "up") => {
   let tempData = playData.monster;
-
+  console.log("....");
+  console.log(tempData);
+  console.log(playData.monster);
+  console.log("....");
   if (direction === "left") {
     tempData = {
       3: [
@@ -35,27 +38,24 @@ export const updateMonster = (direction = "up") => {
   }
   if (direction === "up") {
     let a = Object.keys(playData.monster)[0];
-    console.log(a);
+    console.log("up");
+    console.log(playData.monster[a]);
     (tempData[a] = [
       {
-        oldx: playData.monster[a].newx,
-        newx: playData.monster[a].newx,
+        oldx: playData.monster[a][0].newx,
+        newx: playData.monster[a][0].newx,
         tile: floorSVG(),
       },
     ]),
       (tempData[a - 1] = [
         {
-          oldx: playData.monster[a].newx,
-          newx: playData.monster[a].newx,
+          oldx: playData.monster[a][0].newx,
+          newx: playData.monster[a][0].newx,
           tile: <DrawMonster background={floorSVG()} />,
         },
       ]),
       (mobData = tempData);
   }
-  console.log("....");
-  console.log(tempData);
-  console.log(playData.monster);
-  console.log("....");
 };
 
 export const change = () => {
