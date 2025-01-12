@@ -88,15 +88,6 @@ export default DrawMap = ({
       </>
     );
     tempRow[x] = temp;
-    charUpdate({
-      1: [
-        {
-          oldx: 3,
-          newx: 3,
-          tile: <DrawCharacter background={floorSVG()} />,
-        },
-      ],
-    });
     let chartemp = charLocation();
     for (let ct in chartemp) {
       mobs[ct] = chartemp[ct];
@@ -125,7 +116,6 @@ export default DrawMap = ({
     }
   ) => {
     console.log("modify table");
-    console.log(objMove);
     let newGrid = [...mapState];
     let newRow = [];
     for (index in objMove) {
