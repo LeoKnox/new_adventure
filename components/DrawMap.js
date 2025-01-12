@@ -42,15 +42,15 @@ export const updateMonster = (direction = "up") => {
     console.log(playData.monster[a]);
     (tempData[a] = [
       {
-        oldx: playData.monster[0][a].newx,
-        newx: playData.monster[0][a].newx,
+        oldx: playData.monster[a][0].newx,
+        newx: playData.monster[a][0].newx,
         tile: floorSVG(),
       },
     ]),
       (tempData[a - 1] = [
         {
-          oldx: playData.monster[0][a].newx,
-          newx: playData.monster[0][a].newx,
+          oldx: playData.monster[a][0].newx,
+          newx: playData.monster[a][0].newx,
           tile: <DrawMonster background={floorSVG()} />,
         },
       ]),
