@@ -98,10 +98,8 @@ export default DrawMap = ({
     console.log("move mob");
     updateMonster();
     let t = singleMonster();
-    console.table(t);
     modifyTable(t);
     change();
-    console.table(singleMonster());
     //setMapState(t);
   };
 
@@ -116,6 +114,8 @@ export default DrawMap = ({
       ],
     }
   ) => {
+    console.log("modify table");
+    console.table(objMove);
     let newGrid = [...mapState];
     let newRow = [];
     for (index in objMove) {
