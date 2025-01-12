@@ -88,7 +88,15 @@ export default DrawMap = ({
       </>
     );
     tempRow[x] = temp;
-    charUpdate();
+    charUpdate({
+      1: [
+        {
+          oldx: 3,
+          newx: 3,
+          tile: <DrawCharacter background={floorSVG()} />,
+        },
+      ],
+    });
     let chartemp = charLocation();
     for (let ct in chartemp) {
       mobs[ct] = chartemp[ct];
