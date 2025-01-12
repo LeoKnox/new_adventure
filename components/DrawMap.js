@@ -127,7 +127,6 @@ export default DrawMap = ({
       });
     }
     setMapState(newGrid);
-    console.log(Object.keys(objMove));
   };
   const moveCharacter = (direction) => {
     console.log("move character");
