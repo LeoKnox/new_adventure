@@ -1,6 +1,7 @@
 import { useState, useEffect, cloneElement } from "react";
 import { floorSVG, wallSVG, warriorSVG } from "./svgData";
 import {
+  charUpdate,
   charLocation,
   updateMonster,
   singleMonster,
@@ -87,6 +88,7 @@ export default DrawMap = ({
       </>
     );
     tempRow[x] = temp;
+    charUpdate();
     let chartemp = charLocation();
     for (let ct in chartemp) {
       mobs[ct] = chartemp[ct];
