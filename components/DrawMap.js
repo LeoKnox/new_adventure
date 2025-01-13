@@ -133,6 +133,17 @@ export default DrawMap = ({
     let temp = {};
     if (direction == "left") {
       console.log("left");
+      charUpdate();
+      let t = singleMonster({
+        1: [
+          {
+            oldx: 1,
+            newx: 2,
+            tile: <DrawCharacter background={floorSVG()} />,
+          },
+        ],
+      });
+      modifyTable(t);
     }
     if (direction == "right") {
       console.log("Right");
