@@ -4,7 +4,7 @@ import DrawCharacter from "./DrawCharacter.js";
 
 let playData = {
   character: {
-    1: [{ oldx: 1, newx: 1, tile: <DrawCharacter background={floorSVG()} /> }],
+    1: [{ oldx: 1, newx: 3, tile: <DrawCharacter background={floorSVG()} /> }],
   },
   monster: {
     3: [{ oldx: 8, newx: 8, tile: <DrawMonster background={floorSVG()} /> }],
