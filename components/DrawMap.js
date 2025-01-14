@@ -137,7 +137,7 @@ export default DrawMap = ({
       let t = singleMonster({
         1: [
           {
-            oldx: 1,
+            oldx: 3,
             newx: 2,
             tile: <DrawCharacter background={floorSVG()} />,
           },
