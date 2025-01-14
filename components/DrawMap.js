@@ -137,13 +137,14 @@ export default DrawMap = ({
       charUpdate({
         1: [
           {
-            oldx: 3,
-            newx: 2,
+            oldx: 2,
+            newx: 1,
             tile: <DrawCharacter background={floorSVG()} />,
           },
         ],
       });
       let t = charLocation();
+      console.log(t);
       modifyTable(t);
     }
     if (direction == "right") {
