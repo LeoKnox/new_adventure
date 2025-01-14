@@ -133,8 +133,8 @@ export default DrawMap = ({
     let temp = {};
     if (direction == "left") {
       console.log("left");
-      charUpdate();
-      let t = singleMonster({
+      //charUpdate();
+      charUpdate({
         1: [
           {
             oldx: 3,
@@ -143,6 +143,7 @@ export default DrawMap = ({
           },
         ],
       });
+      let t = charLocation();
       modifyTable(t);
     }
     if (direction == "right") {
