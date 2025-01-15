@@ -43,6 +43,7 @@ export default DrawMap = ({
     tempRow = [];
     return temp;
   });
+  const [data, setData] = useState(charLocation());
 
   useEffect(() => {
     console.log("ue keydown");
@@ -134,7 +135,7 @@ export default DrawMap = ({
     if (direction == "left") {
       console.log("left");
       charUpdate({
-        2: [
+        1: [
           {
             oldx: 2,
             newx: 1,
@@ -142,6 +143,7 @@ export default DrawMap = ({
           },
         ],
       });
+      setData(charLocation());
       let t = charLocation();
       console.log(t);
       modifyTable(t);
@@ -200,6 +202,7 @@ export default DrawMap = ({
   };
   return (
     <div>
+      <p>{JSON.stringify(data)}</p>
       {mapState.map((row) => (
         <tr>
           {row.map((tile) => (
