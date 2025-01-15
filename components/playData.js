@@ -17,7 +17,7 @@ mobData = {
 
 export const charUpdate = (
   newChar = {
-    1: [{ oldx: 2, newx: 2, tile: <DrawCharacter background={floorSVG()} /> }],
+    1: [{ oldx: 2, newx: 1, tile: <DrawCharacter background={floorSVG()} /> }],
   }
 ) => {
   console.log("charUpdate");
