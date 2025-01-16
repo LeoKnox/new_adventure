@@ -134,12 +134,12 @@ export default DrawMap = ({
     let temp = {};
     if (direction == "left") {
       console.log("left");
-      console.log(t[3].newx);
+      console.log(t[1][0].newx);
       charUpdate({
         1: [
           {
-            oldx: t[0].newx,
-            newx: t[0].newx - 1,
+            oldx: t[1][0].newx,
+            newx: t[1][0].newx - 1,
             tile: <DrawCharacter background={floorSVG()} />,
           },
         ],
