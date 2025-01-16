@@ -70,6 +70,7 @@ export default DrawMap = ({
         };
         modifyTable(temp);
       } else if (e.key === "a") {
+        //moveCharacter("left");
         charUpdate({
           1: [
             {
@@ -79,11 +80,9 @@ export default DrawMap = ({
             },
           ],
         });
-        setData(charLocation());
         let t = charLocation();
         console.log(t);
         modifyTable(t);
-        //moveCharacter("left");
       }
     };
     window.addEventListener("keydown", onKeyDown);
@@ -155,7 +154,6 @@ export default DrawMap = ({
           },
         ],
       });
-      setData(charLocation());
       let t = charLocation();
       console.log(t);
       modifyTable(t);
