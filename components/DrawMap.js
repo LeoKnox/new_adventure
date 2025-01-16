@@ -70,6 +70,19 @@ export default DrawMap = ({
         };
         modifyTable(temp);
       } else if (e.key === "a") {
+        charUpdate({
+          1: [
+            {
+              oldx: 2,
+              newx: 1,
+              tile: <DrawCharacter background={floorSVG()} />,
+            },
+          ],
+        });
+        setData(charLocation());
+        let t = charLocation();
+        console.log(t);
+        modifyTable(t);
         //moveCharacter("left");
       }
     };
