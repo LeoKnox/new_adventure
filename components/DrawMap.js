@@ -138,8 +138,8 @@ export default DrawMap = ({
       charUpdate({
         1: [
           {
-            oldx: t[0].newx - 1,
-            newx: t[0].newx,
+            oldx: t[0].newx,
+            newx: t[0].newx-1,
             tile: <DrawCharacter background={floorSVG()} />,
           },
         ],
