@@ -71,18 +71,6 @@ export default DrawMap = ({
         modifyTable(temp);
       } else if (e.key === "a") {
         //moveCharacter("left");
-        charUpdate({
-          1: [
-            {
-              oldx: 2,
-              newx: 1,
-              tile: <DrawCharacter background={floorSVG()} />,
-            },
-          ],
-        });
-        let t = charLocation();
-        console.log(t);
-        modifyTable(t);
       }
     };
     window.addEventListener("keydown", onKeyDown);
@@ -142,19 +130,18 @@ export default DrawMap = ({
   };
   const moveCharacter = (direction) => {
     console.log("move character");
-    let temp = {};
+    let t = charLocation();
     if (direction == "left") {
       console.log("left");
       charUpdate({
         1: [
           {
-            oldx: 2,
-            newx: 1,
+            oldx: t[0].newx - 1,
+            newx: t[0].newx,
             tile: <DrawCharacter background={floorSVG()} />,
           },
         ],
       });
-      let t = charLocation();
       console.log(t);
       modifyTable(t);
     }
