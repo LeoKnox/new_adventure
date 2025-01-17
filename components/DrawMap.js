@@ -130,7 +130,6 @@ export default DrawMap = ({
   };
   const moveCharacter = (direction) => {
     console.log("move character");
-    let t = charLocation();
     let temp = {};
     if (direction == "left") {
       console.log("left");
@@ -139,12 +138,14 @@ export default DrawMap = ({
         1: [
           {
             oldx: t[1][0].newx,
-            newx: 1,
-            //newx: t[1][0].newx - 1,
+            //newx: 1,
+            newx: t[1][0].newx - 1,
             tile: <DrawCharacter background={floorSVG()} />,
           },
         ],
       });
+      let t = charLocation();
+
       console.log(t);
       modifyTable(t);
     }
