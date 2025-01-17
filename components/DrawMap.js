@@ -139,7 +139,8 @@ export default DrawMap = ({
         1: [
           {
             oldx: t[1][0].newx,
-            newx: t[1][0].newx - 1,
+            newx: 1,
+            //newx: t[1][0].newx - 1,
             tile: <DrawCharacter background={floorSVG()} />,
           },
         ],
