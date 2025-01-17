@@ -135,8 +135,9 @@ export default DrawMap = ({
       console.log("left");
       let t = charLocation();
 
-      console.log(t[1][0].newx);
-      charUpdate({
+      //console.log(t[1][0].newx);
+      charUpdate();
+      /*charUpdate({
         1: [
           {
             oldx: t[1][0].newx,
@@ -145,7 +146,7 @@ export default DrawMap = ({
             tile: <DrawCharacter background={floorSVG()} />,
           },
         ],
-      });
+      });*/
       //console.log(t);
       t = charLocation();
       modifyTable(t);
