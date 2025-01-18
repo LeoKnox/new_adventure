@@ -104,7 +104,7 @@ export default DrawMap = ({
     let t = singleMonster();
     //modifyTable(t);
     change();
-    setMapState(t);
+    //setMapState(t);
     char = t;
   };
 
