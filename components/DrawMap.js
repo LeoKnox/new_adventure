@@ -154,7 +154,8 @@ export default DrawMap = ({
       });*/
       //console.log(t);
       t = charLocation();
-      modifyTable(t);
+      //modifyTable(t);
+      char = t;
     }
     if (direction == "right") {
       console.log("Right");
