@@ -100,13 +100,13 @@ export default DrawMap = ({
 
   const moveMob = () => {
     console.log("move mob");
-    updateMonster();
-    change();
 
     let t = singleMonster();
+    t[1][0].newx = t[1][0].oldx - 1;
     //modifyTable(t);
     //setMapState(t);
-    char = t;
+    char = updateMonster(t);
+    //change();
   };
 
   const modifyTable = (
