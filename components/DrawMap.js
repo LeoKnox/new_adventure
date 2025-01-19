@@ -19,7 +19,7 @@ export default DrawMap = ({
   setx,
 }) => {
   let mobs = singleMonster();
-  let char = charLocation();
+  const [char, setChar] = useState(charLocation());
   const [mapState, setMapState] = useState(() => {
     let temp = [];
     let tempRow = [];
@@ -96,7 +96,7 @@ export default DrawMap = ({
       mobs[ct] = chartemp[ct];
     }
     modifyTable(mobs);
-  }, [moveCharacter]);
+  }, [char]);
 
   const moveMob = () => {
     console.log("move mob");
@@ -156,7 +156,7 @@ export default DrawMap = ({
       //console.log(t);
       //t = charLocation();
       //modifyTable(t);
-      char = t;
+      setChar(t);
     }
     if (direction == "right") {
       console.log("Right");
