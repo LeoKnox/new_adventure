@@ -139,6 +139,7 @@ export default DrawMap = ({
     if (direction == "left") {
       console.log("left");
       let t = charLocation();
+      console.log(t[1][0].oldx);
       t[1][0].newx = t[1][0].oldx - 1;
       console.log(t);
       charUpdate(t);
