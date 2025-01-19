@@ -96,7 +96,7 @@ export default DrawMap = ({
       mobs[ct] = chartemp[ct];
     }
     modifyTable(mobs);
-  }, [char]);
+  }, [moveCharacter]);
 
   const moveMob = () => {
     console.log("move mob");
