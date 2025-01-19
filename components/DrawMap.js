@@ -79,7 +79,7 @@ export default DrawMap = ({
   }, []);
 
   useEffect(() => {
-    console.log("use effect");
+    console.log("draw character");
     let tempRow = [...mapState];
     let temp = [...mapState[x]];
     temp[y] = char;
