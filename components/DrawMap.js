@@ -140,7 +140,7 @@ export default DrawMap = ({
       console.log("left");
       let t = charLocation();
       t[1][0].newx = t[1][0].oldx - 1;
-      //console.log(t[1][0].newx);
+      console.log(t);
       charUpdate(t);
       /*charUpdate({
         1: [
@@ -153,7 +153,7 @@ export default DrawMap = ({
         ],
       });*/
       //console.log(t);
-      t = charLocation();
+      //t = charLocation();
       //modifyTable(t);
       char = t;
     }
