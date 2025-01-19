@@ -102,11 +102,11 @@ export default DrawMap = ({
     console.log("move mob");
 
     let t = singleMonster();
-    t[1][0].newx = t[1][0].oldx - 1;
-    //modifyTable(t);
-    //setMapState(t);
-    char = updateMonster(t);
-    //change();
+
+    modifyTable(t);
+    setMapState(t);
+    //char = updateMonster(t);
+    change();
   };
 
   const modifyTable = (
@@ -139,9 +139,9 @@ export default DrawMap = ({
     if (direction == "left") {
       console.log("left");
       let t = charLocation();
-
+      t[1][0].newx = t[1][0].oldx - 1;
       //console.log(t[1][0].newx);
-      charUpdate();
+      charUpdate(t);
       /*charUpdate({
         1: [
           {
