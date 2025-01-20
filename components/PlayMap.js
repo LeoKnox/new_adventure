@@ -1,72 +1,30 @@
+import { useState } from "react";
 import { floorSVG, wallSVG, warriorSVG } from "./svgData";
-import DrawMonster from "./DrawMonster.js";
+import { singleRoom } from "./dungeonData.js";
+import DrawCharacer from "./DrawCharacter.js";
+import DrawMap from "./DrawMap.js";
 
-let playData = {
-  character: { charId: 1, x: 1, y: 1 },
-  /*monster: [{ icon: "demon", x: 8, y: 3 }],*/
-  monster: {
-    3: [{ oldx: 8, newx: 7, tile: <DrawMonster background={floorSVG()} /> }],
-  },
-};
-let mobData = {
-  3: [{ oldx: 8, newx: 8, tile: <DrawMonster background={floorSVG()} /> }],
-};
+export default PlayMap = () => {
+  let newMap = singleRoom(1);
+  const [test, setTest] = useState([
+    [wallSVG(), wallSVG()],
+    [wallSVG(), wallSVG()],
+  ]);
+  const [x, setx] = useState(1);
+  const [y, sety] = useState(1);
 
-export const charLocation = (id = 1) => {
-  return { charX: playData.character.x, charY: playData.character.y };
-};
-
-export const updateMonster = (direction = "up") => {
-  let tempData = {};
-  if (direction === "left") {
-    mobData = {
-      3: [
-        {
-          oldx: mobData[3][0].newx,
-          newx: mobData[3][0].newx - 1,
-          tile: <DrawMonster background={floorSVG()} />,
-        },
-      ],
-    };
-  }
-  if (direction === "up") {
-    /*tempData = {
-      2: [
-        {
-          oldx: mobData[3][0].newx,
-          newx: mobData[3][0].newx,
-          tile: <DrawMonster background={floorSVG()} />,
-        },
-      ],
-      3: [
-        {
-          oldx: mobData[3][0].newx,
-          newx: mobData[3][0].newx,
-          tile: floorSVG(),
-        },
-      ],
-    };*/
-    let a = Object.keys(mobData)[1];
-    (tempData[a] = [
-      {
-        oldx: mobData[3][0].newx,
-        newx: mobData[3][0].newx,
-        tile: floorSVG(),
-      },
-    ]),
-      (tempData[a - 1] = [
-        {
-          oldx: mobData[3][0].newx,
-          newx: mobData[3][0].newx,
-          tile: <DrawMonster background={floorSVG()} />,
-        },
-      ]),
-      (mobData = tempData);
-  }
-};
-
-export const singleMonster = () => {
-  console.log("mob data");
-  console.log(mobData);
-  return mobData;
+  return (
+    <>
+      <table>
+        <DrawMap
+          width={newMap.width}
+          height={newMap.height}
+          x={x}
+          y={y}
+          sety={sety}
+          setx={setx}
+        />
+      </table>
+    </>
+  );
 };
