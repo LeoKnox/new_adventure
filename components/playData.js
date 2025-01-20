@@ -21,6 +21,7 @@ export const charUpdate = (
   }
 ) => {
   console.log("charUpdate");
+  console.log(newChar);
   playData.character = newChar;
 };
 
