@@ -1,7 +1,7 @@
 import { useState, useEffect, cloneElement } from "react";
 import { floorSVG, wallSVG, warriorSVG } from "./svgData";
 import {
-  changeLet,
+  changeLeft,
   charUpdate,
   charLocation,
   updateMonster,
