@@ -1,6 +1,7 @@
 import { useState, useEffect, cloneElement } from "react";
 import { floorSVG, wallSVG, warriorSVG } from "./svgData";
 import {
+  changeLet,
   charUpdate,
   charLocation,
   updateMonster,
@@ -83,13 +84,6 @@ export default DrawMap = ({
     let tempRow = [...mapState];
     let temp = [...mapState[x]];
     temp[y] = char;
-    /*
-    temp[y] = (
-      <>
-        <div style={{ position: "absolute", opacity: "60%" }}>{floorSVG()}</div>
-        <div style={{ position: "relative" }}>{warriorSVG()}</div>
-      </>
-    );*/
     tempRow[x] = temp;
     let chartemp = charLocation();
     for (let ct in chartemp) {
@@ -143,20 +137,7 @@ export default DrawMap = ({
       t[1][0].newx = t[1][0].oldx - 1;
       console.log(t);
       charUpdate(t);
-      /*charUpdate({
-        1: [
-          {
-            oldx: t[1][0].newx,
-            //newx: 1,
-            newx: t[1][0].newx - 1,
-            tile: <DrawCharacter background={floorSVG()} />,
-          },
-        ],
-      });*/
-      //console.log(t);
-      //t = charLocation();
       modifyTable(t);
-      //setChar(t);
     }
     if (direction == "right") {
       console.log("Right");
@@ -229,7 +210,7 @@ export default DrawMap = ({
         <button onClick={() => moveCharacter("down")}>down</button>
       </td>
       <td>
-        <button onClick={() => moveCharacter("up")}>up</button>
+        <button onClick={() => changeLeft()}>up</button>
       </td>
       <td>
         <button onClick={() => moveMob()}>mob</button>
