@@ -34,7 +34,7 @@ export const charLocation = (id = 1) => {
 export const changeLeft = () => {
   console.log("change left");
   let t = playData["character"];
-  t[0].newx = t[0].oldx + 1;
+  t[1][0].newx = t[1][0].oldx + 1;
   playData["character"] = t;
   charLocation();
   console.log(playData);
