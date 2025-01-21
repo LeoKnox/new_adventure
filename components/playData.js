@@ -36,7 +36,7 @@ export const changeLeft = () => {
   let t = playData["character"];
   t[1][0].newx = t[1][0].oldx + 1;
   playData["character"] = t;
-  charLocation();
+  return playData["character"];
   console.log(playData);
 };
 
