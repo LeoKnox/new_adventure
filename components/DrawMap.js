@@ -152,7 +152,7 @@ export default DrawMap = ({
       };
     }
     if (direction == "down") {
-      console.log("down");
+      //console.log("down");
       temp = {
         1: [
           {
@@ -191,6 +191,9 @@ export default DrawMap = ({
     }
     modifyTable(temp);
   };
+  const newChange = () => {
+    modifyTable(moveMob());
+  };
   return (
     <div>
       {mapState.map((row) => (
@@ -213,7 +216,7 @@ export default DrawMap = ({
         <button onClick={() => changeLeft()}>up</button>
       </td>
       <td>
-        <button onClick={() => moveMob()}>mob</button>
+        <button onClick={() => newChange()}>mob</button>
       </td>
     </div>
   );
