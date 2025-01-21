@@ -193,6 +193,7 @@ export default DrawMap = ({
   };
   const newChange = () => {
     modifyTable(changeLeft());
+    setChar(char);
   };
   return (
     <div>
