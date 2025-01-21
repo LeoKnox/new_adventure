@@ -77,7 +77,7 @@ export default DrawMap = ({
     };
     window.addEventListener("keydown", onKeyDown);
     return () => window.removeEventListener("keydown", onKeyDown);
-  }, []);
+  }, [char, changeLeft()]);
 
   useEffect(() => {
     console.log("draw character");
@@ -90,7 +90,7 @@ export default DrawMap = ({
       mobs[ct] = chartemp[ct];
     }
     modifyTable(mobs);
-  }, [char, changeLeft()]);
+  }, []);
 
   const moveMob = () => {
     console.log("move mob");
