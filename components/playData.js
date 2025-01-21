@@ -33,11 +33,12 @@ export const charLocation = (id = 1) => {
 };
 export const changeLeft = () => {
   console.log("change left");
-  let t=playData["character"]
-  t[0].newx = t[0].oldx+1;
+  let t = playData["character"];
+  t[0].newx = t[0].oldx + 1;
   playData["character"] = t;
+  charLocation();
   console.log(playData);
-}
+};
 
 export const updateMonster = (direction = "up") => {
   let tempData = playData.monster;
