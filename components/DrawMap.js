@@ -203,8 +203,8 @@ export default DrawMap = ({
     });*/
     console.log(changeLeft());
     console.log("tt");
-    await let tt = changeLeft();
-    modifyTable(changeLeft());
+    let tt = await changeLeft();
+    modifyTable(tt);
     //setChar(changeLeft());
   };
   return (
