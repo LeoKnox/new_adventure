@@ -201,7 +201,8 @@ export default DrawMap = ({
         },
       ],
     });
-    console.log(changeLeft);
+    console.log(changeLeft());
+    console.log("tt");
     //modifyTable(changeLeft());
     //setChar(changeLeft());
   };
