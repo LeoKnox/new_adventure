@@ -223,7 +223,21 @@ export default DrawMap = ({
         <button onClick={() => moveCharacter("down")}>down</button>
       </td>
       <td>
-        <button onClick={() => modifyTable(changeLeft())}>up</button>
+        <button
+          onClick={() =>
+            modifyTable({
+              1: [
+                {
+                  oldx: 3,
+                  newx: 2,
+                  tile: <DrawCharacter background={wallSVG()} />,
+                },
+              ],
+            })
+          }
+        >
+          up
+        </button>
       </td>
       <td>
         <button onClick={() => newChange()}>mob</button>
