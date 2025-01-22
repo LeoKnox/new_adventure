@@ -197,7 +197,7 @@ export default DrawMap = ({
         {
           oldx: 3,
           newx: 2,
-          tile: <DrawCharacter background={floorSVG()} />,
+          tile: <DrawCharacter background={wallSVG()} />,
         },
       ],
     });
