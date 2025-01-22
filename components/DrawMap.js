@@ -191,8 +191,8 @@ export default DrawMap = ({
     }
     modifyTable(temp);
   };
-  const newChange = () => {
-    modifyTable({
+  const newChange = async () => {
+    await modifyTable({
       1: [
         {
           oldx: 3,
