@@ -192,8 +192,17 @@ export default DrawMap = ({
     modifyTable(temp);
   };
   const newChange = () => {
+    modifyTable({
+      1: [
+        {
+          oldx: 3,
+          newx: 2,
+          tile: <DrawCharacter background={floorSVG()} />,
+        },
+      ],
+    });
     //modifyTable(changeLeft());
-    setChar(changeLeft());
+    //setChar(changeLeft());
   };
   return (
     <div>
