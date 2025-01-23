@@ -191,7 +191,7 @@ export default DrawMap = ({
     }
     modifyTable(temp);
   };
-  const newChange = async () => {
+  const newChange = () => {
     /*modifyTable({
       1: [
         {
@@ -202,22 +202,11 @@ export default DrawMap = ({
       ],
     });*/
     console.log(changeLeft());
-    if (
-      {
-        1: [
-          {
-            oldx: 3,
-            newx: 2,
-            tile: <DrawCharacter background={floorSVG()} />,
-          },
-        ],
-      } == changeLeft()
-    ) {
-      console.log("tt");
-    }
-    console.log("tt");
-    let tt = await changeLeft();
-    modifyTable(await changeLeft());
+    let tt = changeLeft();
+    tt.map((data) => {
+      console.log(data);
+    });
+    modifyTable(changeLeft());
     //setChar(changeLeft());
   };
   return (
