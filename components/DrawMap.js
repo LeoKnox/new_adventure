@@ -203,9 +203,21 @@ export default DrawMap = ({
     });*/
     console.log(changeLeft());
     let tt = changeLeft();
-    tt.map((data) => {
-      console.log(data);
-    });
+    console.log(tt[1]);
+    if (
+      tt[1] ==
+      [
+        {
+          oldx: 3,
+          newx: 2,
+          tile: <DrawCharacter background={wallSVG()} />,
+        },
+      ]
+    ) {
+      console.log("true true");
+    } else {
+      console.log("false");
+    }
     modifyTable(changeLeft());
     //setChar(changeLeft());
   };
