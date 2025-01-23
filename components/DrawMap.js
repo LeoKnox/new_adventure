@@ -192,7 +192,7 @@ export default DrawMap = ({
     modifyTable(temp);
   };
   const newChange = async () => {
-    modifyTable({
+    /*modifyTable({
       1: [
         {
           oldx: 3,
@@ -200,7 +200,7 @@ export default DrawMap = ({
           tile: <DrawCharacter background={wallSVG()} />,
         },
       ],
-    });
+    });*/
     console.log(changeLeft());
     if (
       {
@@ -217,7 +217,7 @@ export default DrawMap = ({
     }
     console.log("tt");
     let tt = await changeLeft();
-    //modifyTable(tt);
+    modifyTable(await changeLeft());
     //setChar(changeLeft());
   };
   return (
