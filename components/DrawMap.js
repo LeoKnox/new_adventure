@@ -215,8 +215,9 @@ export default DrawMap = ({
     ) {
       console.log("tt");
     }
+    console.log("tt");
     let tt = await changeLeft();
-    modifyTable({ tt });
+    //modifyTable(tt);
     //setChar(changeLeft());
   };
   return (
