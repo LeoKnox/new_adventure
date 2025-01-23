@@ -204,16 +204,7 @@ export default DrawMap = ({
     console.log(changeLeft());
     let tt = changeLeft();
     console.log(tt[1]);
-    if (
-      tt[1] ==
-      [
-        {
-          oldx: 3,
-          newx: 2,
-          tile: <DrawCharacter background={floorSVG()} />,
-        },
-      ]
-    ) {
+    if (tt[1][0].oldx == 3) {
       console.log("true true");
     } else {
       console.log("false");
