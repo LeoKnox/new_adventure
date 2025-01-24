@@ -210,7 +210,7 @@ export default DrawMap = ({
     } else {
       console.log("false");
     }
-    modifyTable(changeLeft());
+    modifyTable(changeLeft()[1]);
     setpagetest(tt[1][0].tile);
     //setChar(changeLeft());
   };
