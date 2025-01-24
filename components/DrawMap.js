@@ -204,7 +204,7 @@ export default DrawMap = ({
     console.log(changeLeft());
     let tt = changeLeft();
     console.log(tt[1]);
-    if (tt[1][0].oldx == 3) {
+    if (tt[1][0].tile == wallSVG()) {
       console.log("true true");
     } else {
       console.log("false");
