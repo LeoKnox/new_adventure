@@ -20,6 +20,7 @@ export default DrawMap = ({
   setx,
 }) => {
   let mobs = singleMonster();
+  const [pagetest, setpagetest] = useState(warriorSVG());
   const [char, setChar] = useState(charLocation());
   const [mapState, setMapState] = useState(() => {
     let temp = [];
@@ -210,6 +211,7 @@ export default DrawMap = ({
       console.log("false");
     }
     modifyTable(changeLeft());
+    setpagetest(tt[1][0].tile);
     //setChar(changeLeft());
   };
   return (
@@ -236,6 +238,7 @@ export default DrawMap = ({
       <td>
         <button onClick={() => newChange()}>mob</button>
       </td>
+      {pagetest}
     </div>
   );
 };
