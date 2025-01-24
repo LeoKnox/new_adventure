@@ -203,16 +203,11 @@ export default DrawMap = ({
       ],
     });*/
     console.log(changeLeft());
-    let tt = changeLeft();
-    console.log(tt[1]);
-    if (tt[1][0].tile == wallSVG()) {
-      console.log("true true");
-    } else {
-      console.log("false");
-    }
-    modifyTable(changeLeft()[1]);
-    setpagetest(tt[1][0].tile);
-    //setChar(changeLeft());
+    //let tt = changeLeft();
+    //console.log(tt[1]);
+    //modifyTable(changeLeft());
+    changeLeft();
+    setChar(charLocation);
   };
   return (
     <div>
