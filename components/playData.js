@@ -29,7 +29,16 @@ export const charUpdate = (
 export const charLocation = (id = 1) => {
   console.log("char loc");
   console.log(playData["character"]);
-  return playData["character"];
+  return {
+    1: [
+      {
+        oldx: 3,
+        newx: 2,
+        tile: <DrawCharacter background={wallSVG()} />,
+      },
+    ],
+  };
+  //return playData["character"];
 };
 export const changeLeft = () => {
   console.log("change left");
