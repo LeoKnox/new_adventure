@@ -21,16 +21,7 @@ export const charUpdate = (
   }
 ) => {
   console.log("charUpdate");
-  playData.character = {
-    1: [
-      {
-        oldx: 3,
-        newx: 2,
-        tile: <DrawCharacter background={wallSVG()} />,
-      },
-    ],
-  };
-  //playData.character = newChar;
+  playData.character = newChar;
   newChar[1][0].oldx = newChar[1][0].newx;
   console.log(newChar);
 };
@@ -44,8 +35,16 @@ export const changeLeft = () => {
   console.log("change left");
   let t = playData["character"];
   t[1][0].newx = t[1][0].oldx + 1;
-  playData["character"] = t;
-  return playData["character"];
+  playData["character"] = {
+    1: [
+      {
+        oldx: 3,
+        newx: 2,
+        tile: <DrawCharacter background={wallSVG()} />,
+      },
+    ],
+  };
+  //return playData["character"];
   console.log(playData);
 };
 
