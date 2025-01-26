@@ -121,7 +121,7 @@ export default DrawMap = ({
     for (index in objMove) {
       newRow = [...mapState[index]];
       objMove[parseInt(index)].map((child) => {
-        newRow[child.oldx] = floorSVG();
+        newRow[child.oldx] = wallSVG();
         newRow[child.newx] = child.tile;
         newGrid[index] = newRow;
       });
@@ -137,7 +137,7 @@ export default DrawMap = ({
       temp[1][0].newx = temp[1][0].oldx - 1;
       charUpdate(temp);
       modifyTable(temp);
-      change();
+      //change();
       //setMapState(temp);
     }
     if (direction == "right") {
