@@ -139,6 +139,7 @@ export default DrawMap = ({
       console.log(t);
       charUpdate(t);
       modifyTable(t);
+      setMapState(t);
     }
     if (direction == "right") {
       console.log("Right");
