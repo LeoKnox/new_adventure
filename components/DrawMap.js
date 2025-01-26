@@ -137,6 +137,7 @@ export default DrawMap = ({
       temp[1][0].newx = temp[1][0].oldx - 1;
       charUpdate(temp);
       modifyTable(temp);
+      change();
       //setMapState(temp);
     }
     if (direction == "right") {
