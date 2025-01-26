@@ -135,7 +135,7 @@ export default DrawMap = ({
       console.log("left");
       temp = charLocation();
       console.log(temp[1][0].oldx);
-      temp[1][0].newx = temp[1][0].oldx - 1;
+      //temp[1][0].newx = temp[1][0].oldx - 1;
       console.log(temp);
       charUpdate(temp);
       modifyTable(temp);
