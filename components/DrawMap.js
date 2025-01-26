@@ -134,12 +134,10 @@ export default DrawMap = ({
     if (direction == "left") {
       console.log("left");
       temp = charLocation();
-      console.log(temp[1][0].oldx);
-      //temp[1][0].newx = temp[1][0].oldx - 1;
-      console.log(temp);
-      charUpdate(temp);
+      temp[1][0].newx = temp[1][0].oldx - 1;
       modifyTable(temp);
       setMapState(temp);
+      charUpdate(temp);
     }
     if (direction == "right") {
       console.log("Right");
