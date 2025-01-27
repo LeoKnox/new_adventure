@@ -102,8 +102,6 @@ export default DrawMap = ({
     modifyTable(t);
     setMapState(t);
     //char = updateMonster(t);
-    let newt = (t[1][0].oldx = t[1][0].newx);
-    updateCharacter(newt);
   };
 
   const modifyTable = (
@@ -197,6 +195,8 @@ export default DrawMap = ({
     let tt = charLocation();
     modifyTable(tt);
     setChar(tt);
+    let newt = (tt[1][0].oldx = tt[1][0].newx);
+    updateCharacter(newt);
   };
   return (
     <div>
