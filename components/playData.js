@@ -26,7 +26,9 @@ export const charUpdate = (
 };
 
 export const updateCharacter = (newData) => {
+  console.log("update character");
   playData["character"] = newData;
+  console.log(playData["character"]);
 };
 export const charLocation = (id = 1) => {
   console.log("char loc");
