@@ -90,7 +90,7 @@ export default DrawMap = ({
     for (let ct in chartemp) {
       mobs[ct] = chartemp[ct];
     }
-    modifyTable(mobs);
+    //modifyTable(mobs);
   }, []);
 
   const moveMob = () => {
@@ -231,7 +231,7 @@ export default DrawMap = ({
         <button onClick={() => newChange()}>up</button>
       </td>
       <td>
-        <button onClick={() => newChange()}>mob</button>
+        <button onClick={() => moveMob()}>mob</button>
       </td>
       {pagetest}
     </div>
