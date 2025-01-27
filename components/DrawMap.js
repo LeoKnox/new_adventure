@@ -7,6 +7,7 @@ import {
   updateMonster,
   singleMonster,
   change,
+  updateCharacter,
 } from "./playData.js";
 import DrawMonster from "./DrawMonster.js";
 import DrawCharacter from "./DrawCharacter.js";
@@ -101,7 +102,8 @@ export default DrawMap = ({
     modifyTable(t);
     setMapState(t);
     //char = updateMonster(t);
-    change();
+    let newt = (t[1][0].oldx = t[1][0].newx);
+    updateCharacter(newt);
   };
 
   const modifyTable = (
@@ -137,8 +139,6 @@ export default DrawMap = ({
       temp[1][0].newx = temp[1][0].oldx - 1;
       charUpdate(temp);
       modifyTable(temp);
-      //change();
-      //setMapState(temp);
     }
     if (direction == "right") {
       console.log("Right");
