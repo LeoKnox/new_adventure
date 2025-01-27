@@ -121,7 +121,7 @@ export default DrawMap = ({
     for (index in objMove) {
       newRow = [...mapState[index]];
       objMove[parseInt(index)].map((child) => {
-        newRow[child.oldx] = wallSVG();
+        newRow[child.oldx] = floorSVG();
         newRow[child.newx] = child.tile;
         newGrid[index] = newRow;
       });
