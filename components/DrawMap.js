@@ -193,19 +193,8 @@ export default DrawMap = ({
     modifyTable(temp);
   };
   const newChange = () => {
-    /*modifyTable({
-      1: [
-        {
-          oldx: 3,
-          newx: 2,
-          tile: <DrawCharacter background={wallSVG()} />,
-        },
-      ],
-    });*/
-    console.log(changeLeft());
     changeLeft();
     let tt = charLocation();
-    //console.log(tt[1]);
     modifyTable(tt);
     setChar(tt);
   };
