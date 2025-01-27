@@ -90,7 +90,7 @@ export default DrawMap = ({
     for (let ct in chartemp) {
       mobs[ct] = chartemp[ct];
     }
-    //modifyTable(mobs);
+    modifyTable(mobs);
   }, []);
 
   const moveMob = () => {
@@ -203,11 +203,11 @@ export default DrawMap = ({
       ],
     });*/
     console.log(changeLeft());
-    //let tt = changeLeft();
+    let tt = charLocation();
     //console.log(tt[1]);
     //modifyTable(changeLeft());
     changeLeft();
-    setChar(charLocation);
+    setChar(tt);
   };
   return (
     <div>
