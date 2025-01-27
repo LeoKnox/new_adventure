@@ -203,10 +203,10 @@ export default DrawMap = ({
       ],
     });*/
     console.log(changeLeft());
+    changeLeft();
     let tt = charLocation();
     //console.log(tt[1]);
     modifyTable(tt);
-    changeLeft();
     setChar(tt);
   };
   return (
