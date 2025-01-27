@@ -205,7 +205,7 @@ export default DrawMap = ({
     console.log(changeLeft());
     let tt = charLocation();
     //console.log(tt[1]);
-    //modifyTable(changeLeft());
+    modifyTable(tt);
     changeLeft();
     setChar(tt);
   };
