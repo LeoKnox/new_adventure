@@ -22,7 +22,9 @@ export const charUpdate = (
 ) => {
   console.log("charUpdate");
   playData.character = newChar;
-  newChar[1][0].oldx = newChar[1][0].newx;
+  let temp = newChar;
+  temp[1][0].oldx = temp[1][0].newx;
+  newChar = temp;
 };
 
 export const updateCharacter = (newData) => {
