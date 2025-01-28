@@ -195,8 +195,8 @@ export default DrawMap = ({
     let tt = charLocation();
     modifyTable(tt);
     setChar(tt);
-    let newt = (tt[1][0].oldx = tt[1][0].newx);
-    updateCharacter(newt);
+    tt[1][0].oldx = tt[1][0].newx;
+    updateCharacter(tt);
   };
   return (
     <div>
