@@ -191,10 +191,10 @@ export default DrawMap = ({
     modifyTable(temp);
   };
   const newChange = () => {
-    //changeLeft();
     let tt = charLocation();
     modifyTable(tt);
     setChar(tt);
+    changeLeft();
     tt[1][0].oldx = tt[1][0].newx;
     console.log("newchange");
     console.log(tt);
