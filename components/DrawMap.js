@@ -2,6 +2,7 @@ import { useState, useEffect, cloneElement } from "react";
 import { floorSVG, wallSVG, warriorSVG } from "./svgData";
 import {
   changeLeft,
+  changeRight,
   charUpdate,
   charLocation,
   updateMonster,
@@ -213,7 +214,7 @@ export default DrawMap = ({
         </tr>
       ))}
       <td>
-        <button onClick={() => moveCharacter("right")}>right</button>
+        <button onClick={() => newChange(changeRight())}>right</button>
       </td>
       <td>
         <button onClick={() => newChange(changeLeft())}>left</button>
