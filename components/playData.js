@@ -42,6 +42,12 @@ export const changeLeft = () => {
   t[1][0].newx = t[1][0].oldx - 1;
   playData["character"] = t;
 };
+export const changeRight = () => {
+  console.log("change right");
+  let t = playData["character"];
+  t[1][0].newx = t[1][0].oldx + 1;
+  playData["character"] = t;
+};
 
 export const updateMonster = (direction = "up") => {
   let tempData = playData.monster;
