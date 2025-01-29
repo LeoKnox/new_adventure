@@ -200,7 +200,7 @@ export default DrawMap = ({
     tt[1][0].oldx = tt[1][0].newx;
     console.log("newchange");
     console.log(tt);
-    updateCharacter(tt);
+    //updateCharacter(tt);
   };
   return (
     <div>
