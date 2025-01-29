@@ -194,7 +194,7 @@ export default DrawMap = ({
     console.log("direction " + direction);
     let tt = charLocation();
     {
-      `change${direction}()`;
+      direction;
     }
     modifyTable(tt);
     tt[1][0].oldx = tt[1][0].newx;
@@ -216,7 +216,7 @@ export default DrawMap = ({
         <button onClick={() => moveCharacter("right")}>right</button>
       </td>
       <td>
-        <button onClick={() => newChange("Left")}>left</button>
+        <button onClick={() => newChange(changeLeft())}>left</button>
       </td>
       <td>
         <button onClick={() => moveCharacter("down")}>down</button>
