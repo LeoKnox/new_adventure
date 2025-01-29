@@ -193,7 +193,9 @@ export default DrawMap = ({
   const newChange = (direction) => {
     console.log("direction " + direction);
     let tt = charLocation();
-    `change${direction}()`;
+    {
+      `change${direction}()`;
+    }
     modifyTable(tt);
     tt[1][0].oldx = tt[1][0].newx;
     setChar(tt);
