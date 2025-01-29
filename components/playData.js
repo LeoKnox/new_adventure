@@ -30,7 +30,7 @@ export const charUpdate = (
 export const updateCharacter = (newData) => {
   console.log("update character");
   playData["character"] = newData;
-  console.log(playData["character"]);
+  console.log(newData);
 };
 export const charLocation = (id = 1) => {
   console.log("char loc");
@@ -39,7 +39,7 @@ export const charLocation = (id = 1) => {
 export const changeLeft = () => {
   console.log("change left");
   let t = playData["character"];
-  t[1][0].newx = t[1][0].oldx + 1;
+  t[1][0].newx = t[1][0].oldx - 1;
   playData["character"] = t;
 };
 
