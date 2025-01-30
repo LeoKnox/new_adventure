@@ -40,6 +40,7 @@ export const changeDown = () => {
   console.log("change down");
   let t = playData["character"];
   t[2] = t[1];
+  delete t[1][0];
 };
 export const changeLeft = () => {
   console.log("change left");
