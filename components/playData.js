@@ -39,12 +39,13 @@ export const charLocation = (id = 1) => {
 export const changeDown = () => {
   console.log("change down");
   let t = playData["character"];
+  t[1][0].newx = t[1][0].oldx - 1;
+  t[2] = t[1];
 };
 export const changeLeft = () => {
   console.log("change left");
   let t = playData["character"];
   t[1][0].newx = t[1][0].oldx - 1;
-  t[2] = t[1];
   playData["character"] = t;
 };
 export const changeRight = () => {
