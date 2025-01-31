@@ -41,6 +41,7 @@ export const changeDown = () => {
   let t = playData["character"];
   t[2] = t[1];
   t[1][0].tile = wallSVG();
+  playData["character"] = t;
   //delete t[1][0];
 };
 export const changeLeft = () => {
