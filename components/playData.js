@@ -38,10 +38,16 @@ export const charLocation = (id = 1) => {
 };
 export const changeDown = () => {
   console.log("change down");
+  playData["character"][2].push({
+    oldx: playData["character"][1][0].oldx,
+    newx: playData["character"][1][0].newx,
+    tile: <DrawCharacter background={floorSVG()} />,
+  });
+  /*
   let t = playData["character"];
   t[2][0] = { ...t[1][0] };
   t[1][0].tile = wallSVG();
-  console.log(t);
+  console.log(t);*/
   //delete t[1][0];
 };
 export const changeLeft = () => {
