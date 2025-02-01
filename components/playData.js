@@ -39,9 +39,10 @@ export const charLocation = (id = 1) => {
 export const changeDown = () => {
   console.log("change down");
   let t = playData["character"];
-  Object.copy.t[2] = t[1];
+  t[2] = t[1];
   t[1][0].tile = wallSVG();
   playData["character"] = t;
+  console.log(t);
   //delete t[1][0];
 };
 export const changeLeft = () => {
