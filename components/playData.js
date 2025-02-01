@@ -39,8 +39,8 @@ export const charLocation = (id = 1) => {
 export const changeDown = () => {
   console.log("change down");
   let t = playData["character"];
-  t[2] = { ...t[1] };
-  t[1][0].tile = { ...t[1], tile: wallSVG() };
+  t[2] = JSON.parse(JSON.stringify(t[1]));
+  t[1][0].tile = wallSVG();
   playData["character"] = t;
   console.log(t);
   //delete t[1][0];
