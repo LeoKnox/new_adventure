@@ -38,11 +38,13 @@ export const charLocation = (id = 1) => {
 };
 export const changeDown = () => {
   console.log("change down");
-  playData["character"][2][0] = {
+  let t = playData["character"];
+  t[2][0] = {
     oldx: playData["character"][1][0].oldx,
     newx: playData["character"][1][0].newx,
     tile: <DrawCharacter background={floorSVG()} />,
   };
+  playData["character"];
   /*
   let t = playData["character"];
   t[2][0] = { ...t[1][0] };
