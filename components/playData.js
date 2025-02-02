@@ -24,7 +24,6 @@ export const charUpdate = (
   playData.character = newChar;
   let temp = newChar;
   playData.character[1][0].oldx = playData.char[1][0].newx;
-  //newChar = temp;
 };
 
 export const updateCharacter = (newData) => {
@@ -39,7 +38,6 @@ export const charLocation = (id = 1) => {
 export const changeDown = () => {
   console.log("change down");
   let charKey = parseInt(Object.keys(playData["character"]));
-  console.log(charKey);
   let t = {
     ...playData["character"],
     [charKey + 1]: [
@@ -50,9 +48,7 @@ export const changeDown = () => {
       },
     ],
   };
-
   t[charKey][0].tile = floorSVG();
-  console.log(t);
   playData["character"] = t;
 };
 export const changeLeft = () => {
