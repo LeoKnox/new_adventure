@@ -42,7 +42,7 @@ export const changeDown = () => {
     ...playData["character"],
     2: [{ oldx: 3, newx: 3, tile: <DrawCharacter background={floorSVG()} /> }],
   };
-
+  t[1][0].tile = floorSVG();
   playData["character"] = t;
   /*
   let t = playData["character"];
