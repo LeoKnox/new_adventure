@@ -39,11 +39,7 @@ export const charLocation = (id = 1) => {
 export const changeDown = () => {
   console.log("change down");
   let t = playData["character"];
-  t[2][0] = {
-    oldx: playData["character"][1][0].oldx,
-    newx: playData["character"][1][0].newx,
-    tile: <DrawCharacter background={floorSVG()} />,
-  };
+  t = {...playData, {2: [{ oldx: 3, newx: 2, tile: <DrawCharacter background={floorSVG()} /> }]}}
   playData["character"];
   /*
   let t = playData["character"];
