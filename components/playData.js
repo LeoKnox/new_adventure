@@ -38,10 +38,10 @@ export const charLocation = (id = 1) => {
 };
 export const changeDown = () => {
   console.log("change down");
-
+  let charKey = Object.keys(playData["character"]) +1;
   let t = {
     ...playData["character"],
-    2: [
+    charKey: [
       {
         oldx: playData["character"][1][0].oldx,
         newx: playData["character"][1][0].newx,
@@ -49,7 +49,7 @@ export const changeDown = () => {
       },
     ],
   };
-  console.log(Object.keys(t));
+
   t[1][0].tile = floorSVG();
   playData["character"] = t;
 };
