@@ -42,7 +42,7 @@ export const changeDown = () => {
   console.log(charKey);
   let t = {
     ...playData["character"],
-    charKey: [
+    [charKey]: [
       {
         oldx: playData["character"][1][0].oldx,
         newx: playData["character"][1][0].newx,
@@ -52,6 +52,7 @@ export const changeDown = () => {
   };
 
   t[1][0].tile = floorSVG();
+  console.log(t);
   playData["character"] = t;
 };
 export const changeLeft = () => {
