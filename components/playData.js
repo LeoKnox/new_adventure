@@ -40,7 +40,7 @@ export const changeDown = () => {
   console.log("change down");
   let t = {
     ...playData["character"],
-    2: [{ oldx: 3, newx: 2, tile: <DrawCharacter background={floorSVG()} /> }],
+    2: [{ oldx: 3, newx: 3, tile: <DrawCharacter background={floorSVG()} /> }],
   };
 
   playData["character"];
