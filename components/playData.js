@@ -55,7 +55,8 @@ export const changeLeft = () => {
   console.log("change left");
   let t = playData["character"];
   t[1][0].newx = t[1][0].oldx - 1;
-  playData["character"] = t;
+  return t;
+  //playData["character"] = t;
 };
 export const changeRight = () => {
   console.log("change right");
