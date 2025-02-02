@@ -38,11 +38,11 @@ export const charLocation = (id = 1) => {
 };
 export const changeDown = () => {
   console.log("change down");
-  let charKey = 1 + parseInt(Object.keys(playData["character"]));
+  let charKey = parseInt(Object.keys(playData["character"]));
   console.log(charKey);
   let t = {
     ...playData["character"],
-    [charKey]: [
+    [charKey + 1]: [
       {
         oldx: playData["character"][1][0].oldx,
         newx: playData["character"][1][0].newx,
@@ -51,7 +51,7 @@ export const changeDown = () => {
     ],
   };
 
-  t[1][0].tile = floorSVG();
+  t[charKey][0].tile = floorSVG();
   console.log(t);
   playData["character"] = t;
 };
