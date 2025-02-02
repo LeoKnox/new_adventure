@@ -44,12 +44,6 @@ export const changeDown = () => {
   };
   t[1][0].tile = floorSVG();
   playData["character"] = t;
-  /*
-  let t = playData["character"];
-  t[2][0] = { ...t[1][0] };
-  t[1][0].tile = wallSVG();
-  console.log(t);*/
-  //delete t[1][0];
 };
 export const changeLeft = () => {
   console.log("change left");
