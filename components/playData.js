@@ -38,7 +38,8 @@ export const charLocation = (id = 1) => {
 };
 export const changeDown = () => {
   console.log("change down");
-  let charKey = Object.keys(playData["character"]) +1;
+  let charKey = 1 + parseInt(Object.keys(playData["character"]));
+  console.log(charKey);
   let t = {
     ...playData["character"],
     charKey: [
