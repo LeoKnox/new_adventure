@@ -50,6 +50,7 @@ export const changeDown = () => {
   };
   t[charKey][0].tile = floorSVG();
   playData["character"] = t;
+  delete t[charKey];
 };
 export const changeLeft = () => {
   console.log("change left");
