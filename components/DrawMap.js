@@ -200,7 +200,7 @@ export default DrawMap = ({
       direction,
     });
     modifyTable(tt);
-    tt[1][0].oldx = tt[1][0].newx;
+    //tt[1][0].oldx = tt[1][0].newx;
     deleteDown();
     //setChar(tt);
     console.log("newchange");
