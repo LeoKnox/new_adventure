@@ -53,8 +53,10 @@ export const changeDown = () => {
   //delete t[charKey];
 };
 export const deleteDown = () => {
+  console.log("delete down");
   let charKey = parseInt(Object.keys(playData["character"]));
   delete playData["character"][charKey];
+  console.log(playData["character"]);
 };
 export const changeLeft = () => {
   console.log("change left");
