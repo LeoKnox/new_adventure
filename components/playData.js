@@ -37,13 +37,14 @@ export const charLocation = (id = 1) => {
 };
 export const changeDown = () => {
   console.log("change down");
+  console.log(playData["character"]);
   let charKey = parseInt(Object.keys(playData["character"]));
   let t = {
     ...playData["character"],
     [charKey + 1]: [
       {
-        oldx: playData["character"][1][0].oldx,
-        newx: playData["character"][1][0].newx,
+        oldx: playData["character"][charKey][0].oldx,
+        newx: playData["character"][charKey][0].newx,
         tile: <DrawCharacter background={floorSVG()} />,
       },
     ],
