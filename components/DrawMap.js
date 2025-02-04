@@ -6,6 +6,7 @@ import {
   changeRight,
   charUpdate,
   charLocation,
+  deleteDown,
   updateMonster,
   singleMonster,
   change,
@@ -200,6 +201,7 @@ export default DrawMap = ({
     });
     modifyTable(tt);
     tt[1][0].oldx = tt[1][0].newx;
+    deleteDown();
     //setChar(tt);
     console.log("newchange");
     console.log(tt);
