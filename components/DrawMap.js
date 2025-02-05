@@ -204,7 +204,7 @@ export default DrawMap = ({
     if ({ direction } == changeDown()) {
       alert("DD");
     }
-    deleteDown();
+    //deleteDown();
     //setChar(tt);
     console.log("newchange");
     console.log(tt);
@@ -226,7 +226,9 @@ export default DrawMap = ({
         <button onClick={() => newChange(changeLeft())}>left</button>
       </td>
       <td>
-        <button onClick={() => newChange(test: changeDown())}>down</button>
+        <button onClick={() => newChange(changeDown(deleteDown()))}>
+          down
+        </button>
       </td>
       <td>
         <button onClick={() => newChange("up")}>up</button>
