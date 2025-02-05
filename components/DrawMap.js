@@ -227,7 +227,7 @@ export default DrawMap = ({
         <button onClick={() => newChange(changeDown())}>down</button>
       </td>
       <td>
-        <button onClick={() => newChange("up")}>up</button>
+        <button onClick={() => newChange(changeDown(-1))}>up</button>
       </td>
       <td>
         <button onClick={() => moveMob()}>mob</button>
