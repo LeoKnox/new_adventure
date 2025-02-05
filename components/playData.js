@@ -61,6 +61,7 @@ export const deleteDown = () => {
 };
 export const changeLeft = () => {
   console.log("change left");
+  console.log(playData["character"]);
   let charKey = parseInt(Object.keys(playData["character"]));
   let t = playData["character"];
   t[charKey][0].newx = t[charKey][0].oldx - 1;
