@@ -35,13 +35,13 @@ export const charLocation = (id = 1) => {
   console.log("char loc");
   return playData["character"];
 };
-export const changeDown = () => {
+export const changeDown = (direction = 1) => {
   console.log("change down");
   console.log(playData["character"]);
   let charKey = parseInt(Object.keys(playData["character"]));
   let t = {
     ...playData["character"],
-    [charKey + 1]: [
+    [charKey + direction]: [
       {
         oldx: playData["character"][charKey][0].oldx,
         newx: playData["character"][charKey][0].newx,
