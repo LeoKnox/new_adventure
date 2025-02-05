@@ -201,6 +201,9 @@ export default DrawMap = ({
     });
     modifyTable(tt);
     //tt[1][0].oldx = tt[1][0].newx;
+    if ({ direction } == changeDown()) {
+      alert("DD");
+    }
     deleteDown();
     //setChar(tt);
     console.log("newchange");
