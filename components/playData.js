@@ -69,8 +69,9 @@ export const changeLeft = () => {
 };
 export const changeRight = () => {
   console.log("change right");
+  let charKey = parseInt(Object.keys(playData["character"]));
   let t = playData["character"];
-  t[1][0].newx = t[1][0].oldx + 1;
+  t[charKey][0].newx = t[charKey][0].oldx + 1;
   playData["character"] = t;
 };
 
