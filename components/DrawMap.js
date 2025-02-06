@@ -227,7 +227,7 @@ export default DrawMap = ({
         <button onClick={() => newChange(changeLeft())}>left</button>
       </td>
       <td>
-        <button onClick={() => newChange(changeDown(), deleteDown())}>
+        <button onClick={() => newChange(changeDown(1), deleteDown())}>
           down
         </button>
       </td>
