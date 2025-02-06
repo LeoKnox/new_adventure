@@ -199,7 +199,7 @@ export default DrawMap = ({
     setChar({
       direction,
     });
-    modifyTable(tt);
+    modifyTable(char);
     {
       remove;
     }
@@ -209,9 +209,6 @@ export default DrawMap = ({
     //setChar(tt);
     console.log("newchange");
     console.log(tt);
-    {
-      remove;
-    }
     //updateCharacter(tt);
   };
   return (
