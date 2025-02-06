@@ -201,13 +201,14 @@ export default DrawMap = ({
     });
     modifyTable(tt);
     //tt[1][0].oldx = tt[1][0].newx;
-    {
-      remove;
-    }
     //deleteDown();
+
     //setChar(tt);
     console.log("newchange");
     console.log(tt);
+    {
+      remove;
+    }
     //updateCharacter(tt);
   };
   return (
