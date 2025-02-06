@@ -200,6 +200,9 @@ export default DrawMap = ({
       direction,
     });
     modifyTable(tt);
+    {
+      remove;
+    }
     //tt[1][0].oldx = tt[1][0].newx;
     //deleteDown();
 
