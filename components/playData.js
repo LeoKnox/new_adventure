@@ -53,9 +53,9 @@ export const changeDown = (direction = 1) => {
   playData["character"] = t;
   //delete t[charKey];
 };
-export const deleteDown = () => {
+export const deleteDown = (offSet=1) => {
   console.log("delete down");
-  let charKey = parseInt(Object.keys(playData["character"]));
+  let charKey = parseInt(Object.keys(playData["character"])+offSet);
   delete playData["character"][charKey];
   console.log(playData["character"]);
 };
