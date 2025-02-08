@@ -197,8 +197,8 @@ export default DrawMap = ({
     console.log("new change");
     changeDown();
     temp = charLocation();
-
     modifyTable(temp);
+    deleteDown();
   };
   return (
     <div>
