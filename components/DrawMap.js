@@ -195,29 +195,9 @@ export default DrawMap = ({
   };
   const newChange = () => {
     console.log("new change");
-    temp = {
-      1: [
-        {
-          oldx: 1,
-          newx: 1,
-          tile: <>{floorSVG()}</>,
-        },
-      ],
-      2: [
-        {
-          oldx: 1,
-          newx: 1,
-          tile: (
-            <>
-              <div style={{ position: "absolute", opacity: "60%" }}>
-                {floorSVG()}
-              </div>
-              <div style={{ position: "relative" }}>{warriorSVG()}</div>
-            </>
-          ),
-        },
-      ],
-    };
+    changeDown();
+    temp = charLocation();
+
     modifyTable(temp);
   };
   return (
