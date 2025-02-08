@@ -112,8 +112,10 @@ export const updateMonster = (direction = "up") => {
 
 export const change = () => {
   console.log("change");
-  let a = Object.keys(playData.monster)[1];
-  delete playData.monster[a];
+  return ({
+    3: [{ oldx: 8, newx: 8, tile: <DrawMonster background={floorSVG()} /> }],
+    1: [{ oldx: 2, newx: 2, tile: <DrawCharacter background={floorSVG()} /> }],
+  })
 };
 
 export const singleMonster = () => {
