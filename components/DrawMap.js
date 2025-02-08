@@ -200,9 +200,11 @@ export default DrawMap = ({
       direction,
     });
     modifyTable(char);
+    console.log(charLocation());
     {
       remove;
     }
+    modifyTable(char);
     console.log(charLocation());
     //tt[1][0].oldx = tt[1][0].newx;
     //deleteDown();
