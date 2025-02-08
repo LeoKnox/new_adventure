@@ -205,7 +205,7 @@ export default DrawMap = ({
     {
       remove;
     }
-    modifyTable(charLocation());
+    //modifyTable(charLocation());
     console.log(charLocation());
     //tt[1][0].oldx = tt[1][0].newx;
     //deleteDown();
