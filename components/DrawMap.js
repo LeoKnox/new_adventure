@@ -208,7 +208,7 @@ export default DrawMap = ({
     console.log(charLocation());
     //tt[1][0].oldx = tt[1][0].newx;
     //deleteDown();
-
+    setChar(charLocation());
     //setChar(tt);
     console.log("newchange");
     console.log(tt);
