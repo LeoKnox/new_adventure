@@ -193,28 +193,32 @@ export default DrawMap = ({
     }
     modifyTable(temp);
   };
-  const newChange = (direction, remove) => {
-    console.log("direction " + JSON.stringify({ direction }));
-    let tt = charLocation();
-    setChar({
-      direction,
-    });
-    setChar(charLocation());
-    modifyTable(char);
-
-    console.log(charLocation());
-    {
-      remove;
-    }
-    //modifyTable(charLocation());
-    console.log(charLocation());
-    //tt[1][0].oldx = tt[1][0].newx;
-    //deleteDown();
-    //setChar(charLocation());
-    //setChar(tt);
-    console.log("newchange");
-    console.log(tt);
-    //updateCharacter(tt);
+  const newChange = () => {
+    console.log("new change");
+    temp = {
+      1: [
+        {
+          oldx: 1,
+          newx: 1,
+          tile: <>{floorSVG()}</>,
+        },
+      ],
+      2: [
+        {
+          oldx: 1,
+          newx: 1,
+          tile: (
+            <>
+              <div style={{ position: "absolute", opacity: "60%" }}>
+                {floorSVG()}
+              </div>
+              <div style={{ position: "relative" }}>{warriorSVG()}</div>
+            </>
+          ),
+        },
+      ],
+    };
+    modifyTable(temp);
   };
   return (
     <div>
@@ -226,20 +230,16 @@ export default DrawMap = ({
         </tr>
       ))}
       <td>
-        <button onClick={() => newChange(changeRight())}>right</button>
+        <button onClick={console.log("button")}>right</button>
       </td>
       <td>
-        <button onClick={() => newChange(changeLeft())}>left</button>
+        <button onClick={console.log("button")}>left</button>
       </td>
       <td>
-        <button onClick={() => newChange(changeDown(1), deleteDown(1))}>
-          down
-        </button>
+        <button onClick={() => newChange()}>down</button>
       </td>
       <td>
-        <button onClick={() => (newChange(changeDown(-1)), deleteDown())}>
-          up
-        </button>
+        <button onClick={console.log("button")}>up</button>
       </td>
       <td>
         <button onClick={() => moveMob()}>mob</button>
