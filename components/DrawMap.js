@@ -131,74 +131,13 @@ export default DrawMap = ({
     }
     setMapState(newGrid);
   };
-  const moveCharacter = (direction) => {
-    console.log("move character");
-    let temp = {};
-    if (direction == "left") {
-      console.log("left");
-      temp = charLocation();
-      temp[1][0].newx = temp[1][0].oldx - 1;
-      charUpdate(temp);
-      modifyTable(temp);
-    }
-    if (direction == "right") {
-      console.log("Right");
-      temp = {
-        1: [
-          {
-            oldx: 1,
-            newx: 2,
-            tile: <DrawCharacter background={floorSVG()} />,
-          },
-        ],
-      };
-    }
-    if (direction == "down") {
-      //console.log("down");
-      temp = {
-        1: [
-          {
-            oldx: 1,
-            newx: 1,
-            tile: <>{floorSVG()}</>,
-          },
-        ],
-        2: [
-          {
-            oldx: 1,
-            newx: 1,
-            tile: (
-              <>
-                <div style={{ position: "absolute", opacity: "60%" }}>
-                  {floorSVG()}
-                </div>
-                <div style={{ position: "relative" }}>{warriorSVG()}</div>
-              </>
-            ),
-          },
-        ],
-        3: [
-          {
-            oldx: 8,
-            newx: 8,
-            tile: <>{floorSVG()}</>,
-          },
-        ],
-      };
-      temp[2].push({
-        oldx: 8,
-        newx: 7,
-        tile: <DrawMonster background={floorSVG()} />,
-      });
-    }
-    modifyTable(temp);
-  };
+
   const newChange = () => {
     console.log("new change");
     changeDown();
     temp = charLocation();
     //modifyTable(temp);
-    setChar(temp);
+    setMapState(temp);
     deleteDown();
   };
   return (
