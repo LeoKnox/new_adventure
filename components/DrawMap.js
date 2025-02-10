@@ -1,169 +1,93 @@
-import { useState, useEffect, cloneElement } from "react";
 import { floorSVG, wallSVG, warriorSVG } from "./svgData";
-import {
-  changeDown,
-  changeLeft,
-  changeRight,
-  charUpdate,
-  charLocation,
-  deleteDown,
-  updateMonster,
-  singleMonster,
-  change,
-  updateCharacter,
-} from "./playData.js";
 import DrawMonster from "./DrawMonster.js";
 import DrawCharacter from "./DrawCharacter.js";
 
-export default DrawMap = ({
-  width = 10,
-  height = 10,
-  x = 2,
-  y = 3,
-  sety,
-  setx,
-}) => {
-  let mobs = singleMonster();
-  const [pagetest, setpagetest] = useState(warriorSVG());
-  const [char, setChar] = useState(charLocation());
-  const [mapState, setMapState] = useState(() => {
-    let temp = [];
-    let tempRow = [];
-    for (let x = 0; x < width + 2; x++) {
-      tempRow.push(wallSVG());
-    }
-    temp.push(tempRow);
-    tempRow = [];
-    for (let x = 0; x < height; x++) {
-      tempRow.push(wallSVG());
-      for (let y = 0; y < width; y++) {
-        tempRow.push(floorSVG());
-      }
-      tempRow.push(wallSVG());
-      temp.push(tempRow);
-      tempRow = [];
-    }
-    for (let x = 0; x < width + 2; x++) {
-      tempRow.push(wallSVG());
-    }
-    temp.push(tempRow);
-    tempRow = [];
-    return temp;
-  });
+let playData = {
+  character: {
+    1: [{ oldx: 3, newx: 3, tile: <DrawCharacter background={floorSVG()} /> }],
+  },
+  monster: {
+    3: [{ oldx: 8, newx: 8, tile: <DrawMonster background={floorSVG()} /> }],
+  },
+};
+let mobData = {};
+mobData = {
+  3: [{ oldx: 8, newx: 8, tile: <DrawMonster background={floorSVG()} /> }],
+};
 
-  useEffect(() => {
-    console.log("ue keydown");
-    const onKeyDown = (e) => {
-      if (e.key === "w") {
-        //moveCharacter("up");
-      } else if (e.key === "s") {
-        //moveCharacter("down");
-      } else if (e.key === "d") {
-        let temp = {
-          1: [
-            {
-              oldx: 1,
-              newx: 2,
-              tile: (
-                <td>
-                  <div style={{ position: "absolute", opacity: "60%" }}>
-                    {floorSVG()}
-                  </div>
-                  <div style={{ position: "relative" }}>{warriorSVG()}</div>
-                </td>
-              ),
-            },
-          ],
-        };
-        modifyTable(temp);
-      } else if (e.key === "a") {
-        //moveCharacter("left");
-      }
-    };
-    window.addEventListener("keydown", onKeyDown);
-    return () => window.removeEventListener("keydown", onKeyDown);
-  }, []);
+export const charUpdate = (
+  newChar = {
+    1: [{ oldx: 3, newx: 2, tile: <DrawCharacter background={floorSVG()} /> }],
+  }
+) => {
+  console.log("charUpdate");
+  playData.character = newChar;
+  let temp = newChar;
+  playData.character[1][0].oldx = playData.char[1][0].newx;
+};
 
-  useEffect(() => {
-    console.log("draw character");
-    let tempRow = [...mapState];
-    let temp = [...mapState[x]];
-    temp[y] = char;
-    tempRow[x] = temp;
-    let chartemp = charLocation();
-    for (let ct in chartemp) {
-      mobs[ct] = chartemp[ct];
-    }
-    modifyTable(mobs);
-  }, []);
-
-  const moveMob = () => {
-    console.log("move mob");
-
-    let t = singleMonster();
-
-    modifyTable(t);
-    setMapState(t);
-    //char = updateMonster(t);
+export const updateCharacter = (newData) => {
+  console.log("update character");
+  playData["character"] = newData;
+  console.log(newData);
+};
+export const charLocation = (id = 1) => {
+  console.log("char loc");
+  return playData["character"];
+};
+export const changeDown = (direction = 1) => {
+  console.log("change down");
+  console.log(playData["character"]);
+  let charKey = parseInt(Object.keys(playData["character"]));
+  let t = {
+    ...playData["character"],
+    [charKey + direction]: [
+      {
+        oldx: playData["character"][charKey][0].oldx,
+        newx: playData["character"][charKey][0].newx,
+        tile: <DrawCharacter background={floorSVG()} />,
+      },
+    ],
   };
+  t[charKey][0].tile = floorSVG();
+  playData["character"] = t;
+  //delete t[charKey];
+};
+export const deleteDown = (offSet = 1) => {
+  console.log("delete down");
+  let charKey = parseInt(Object.keys(playData["character"]) + offSet);
+  delete playData["character"][charKey];
+  console.log(playData["character"]);
+};
+export const changeLeft = () => {
+  console.log("change left");
+  console.log(playData["monster"]);
+  let charKey = parseInt(Object.keys(playData["monster"]));
+  let t = playData["monster"];
+  t[charKey][0].newx = t[charKey][0].oldx - 1;
+  playData["monster"] = t;
+  //playData["character"] = t;
+};
+export const changeRight = () => {
+  console.log("change right");
+  let charKey = parseInt(Object.keys(playData["character"]));
+  let t = playData["character"];
+  t[charKey][0].newx = t[charKey][0].oldx + 1;
+  playData["character"] = t;
+};
 
-  const modifyTable = (
-    objMove = {
-      3: [
-        {
-          oldx: 8,
-          newx: 7,
-          tile: <DrawMonster background={wallSVG()} />,
-        },
-      ],
-    }
-  ) => {
-    console.log("modify table");
-    let newGrid = [...mapState];
-    let newRow = [];
-    for (index in objMove) {
-      newRow = [...mapState[index]];
-      objMove[parseInt(index)].map((child) => {
-        newRow[child.oldx] = floorSVG();
-        newRow[child.newx] = child.tile;
-        newGrid[index] = newRow;
-      });
-    }
-    setMapState(newGrid);
-  };
+export const updateMonster = (dirx = -1, diry = 0) => {
+  console.log("update monster");
+  dirx && changeLeft();
+};
 
-  const newChange = () => {
-    console.log("new change");
-    changeDown();
-    temp = charLocation();
-    modifyTable(change());
-    deleteDown();
-  };
-  return (
-    <div>
-      {mapState.map((row) => (
-        <tr>
-          {row.map((tile) => (
-            <td>{tile}</td>
-          ))}
-        </tr>
-      ))}
-      <td>
-        <button onClick={console.log("button")}>right</button>
-      </td>
-      <td>
-        <button onClick={console.log("button")}>left</button>
-      </td>
-      <td>
-        <button onClick={() => newChange()}>down</button>
-      </td>
-      <td>
-        <button onClick={console.log("button")}>up</button>
-      </td>
-      <td>
-        <button onClick={() => updateMonster()}>mob</button>
-      </td>
-      {pagetest}
-    </div>
-  );
+export const change = () => {
+  console.log("change");
+  console.log(playData["character"]);
+  return playData["character"];
+};
+
+export const singleMonster = () => {
+  console.log("mob data");
+  return mobData;
 };
