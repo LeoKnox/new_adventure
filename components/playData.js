@@ -53,9 +53,9 @@ export const changeDown = (direction = 1) => {
   playData["character"] = t;
   //delete t[charKey];
 };
-export const deleteDown = (offSet=1) => {
+export const deleteDown = (offSet = 1) => {
   console.log("delete down");
-  let charKey = parseInt(Object.keys(playData["character"])+offSet);
+  let charKey = parseInt(Object.keys(playData["character"]) + offSet);
   delete playData["character"][charKey];
   console.log(playData["character"]);
 };
@@ -112,10 +112,13 @@ export const updateMonster = (direction = "up") => {
 
 export const change = () => {
   console.log("change");
-  return ({
-    3: [{ oldx: 8, newx: 8, tile: <DrawMonster background={floorSVG()} /> }],
-    1: [{ oldx: 2, newx: 2, tile: <DrawCharacter background={floorSVG()} /> }],
-  })
+  return {
+    3: [
+      { oldx: 8, newx: 7, tile: <DrawMonster background={floorSVG()} /> },
+      { oldx: 6, newx: 5, tile: <DrawMonster background={floorSVG()} /> },
+    ],
+    1: [{ oldx: 3, newx: 2, tile: <DrawCharacter background={floorSVG()} /> }],
+  };
 };
 
 export const singleMonster = () => {
