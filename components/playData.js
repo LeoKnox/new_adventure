@@ -79,6 +79,7 @@ export const changeRight = () => {
 export const updateMonster = (dirx = -1, diry = 0) => {
   console.log("update monster");
   dirx && changeLeft();
+  return playData["monster"];
 };
 
 export const change = () => {
