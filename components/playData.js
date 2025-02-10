@@ -112,13 +112,7 @@ export const updateMonster = (direction = "up") => {
 
 export const change = () => {
   console.log("change");
-  return {
-    3: [
-      { oldx: 8, newx: 7, tile: <DrawMonster background={floorSVG()} /> },
-      { oldx: 6, newx: 5, tile: <DrawMonster background={floorSVG()} /> },
-    ],
-    1: [{ oldx: 3, newx: 2, tile: <DrawCharacter background={floorSVG()} /> }],
-  };
+  return playData["character"];
 };
 
 export const singleMonster = () => {
