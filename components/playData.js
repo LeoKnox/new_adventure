@@ -112,6 +112,7 @@ export const updateMonster = (direction = "up") => {
 
 export const change = () => {
   console.log("change");
+  console.log(playData["character"]);
   return playData["character"];
 };
 
