@@ -61,21 +61,17 @@ export const deleteDown = (offSet = 1) => {
 };
 export const changeLeft = (mod) => {
   console.log("change left");
-
+  return({
+  3: [{ oldx: 0, newx: 8, tile: <DrawMonster background={floorSVG()} /> }],
+})
+};
+export const changeRight = () => {
   let charKey = parseInt(Object.keys(playData["monster"]));
   let t = playData["monster"];
   t[charKey][0].newx = t[charKey][0].oldx + mod;
-  t[charKey][0].oldx = t[charKey][0].oldx + mod;
   console.log(playData["monster"]);
   playData["monster"] = t;
   //playData["character"] = t;
-};
-export const changeRight = () => {
-  console.log("change right");
-  let charKey = parseInt(Object.keys(playData["character"]));
-  let t = playData["character"];
-  t[charKey][0].newx = t[charKey][0].oldx + 1;
-  playData["character"] = t;
 };
 
 export const updateMonster = (dirx = -1, diry = 0) => {
