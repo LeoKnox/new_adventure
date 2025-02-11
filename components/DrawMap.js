@@ -97,9 +97,10 @@ export default DrawMap = ({
     modifyTable(mobs);
   }, []);
 
-  const moveMob = () => {
+  const moveMob = (xval=-1) => {
     console.log("move mob");
     let change = changeLeft();
+    change[3][0].newx = change[3][0].newx+xval;
     modifyTable(change);
     //modifyTable(updateMonster());
   };
