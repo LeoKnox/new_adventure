@@ -64,10 +64,10 @@ export const changeLeft = (mod) => {
   let test = {
     3: [{ oldx: 0, newx: 8, tile: <DrawMonster background={floorSVG()} /> }],
   };
-  test[3][0].oldx = 8;
-  test[3][0].newx = test[3][0].oldx+mod;
-  console.log(test);
-  return test;
+  playData["monster"][3][0].oldx = playData["monster"][3][0].newx;
+  playData["monster"][3][0].newx = playData["monster"][3][0].newx+mod;
+  console.log(playData["monster"]);
+  return playData["monster"];
 };
 export const changeRight = () => {
   let charKey = parseInt(Object.keys(playData["monster"]));
