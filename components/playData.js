@@ -60,10 +60,7 @@ export const deleteDown = (offSet = 1) => {
   console.log(playData["character"]);
 };
 export const changeLeft = (mod) => {
-  console.log("change left");
-  let test = {
-    3: [{ oldx: 0, newx: 8, tile: <DrawMonster background={floorSVG()} /> }],
-  };
+  let charKey = +Object.keys(playData["monster"][0])
   playData["monster"][3][0].oldx = playData["monster"][3][0].newx;
   playData["monster"][3][0].newx = playData["monster"][3][0].newx+mod;
   console.log(playData["monster"]);
