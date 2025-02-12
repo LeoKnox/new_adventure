@@ -60,14 +60,13 @@ export const deleteDown = (offSet = 1) => {
   console.log(playData["character"]);
 };
 export const changeLeft = (mod) => {
-  let charKey = parseInt(Object.keys(playData["monster"])[0])
-  playData["monster"][3][0].oldx = playData["monster"][3][0].newx;
-  playData["monster"][3][0].newx = playData["monster"][3][0].newx+mod;
-  console.log(playData["monster"]);
+  let charKey = +(Object.keys(playData["monster"])[0])
+  playData["monster"][charKey][0].oldx = playData["monster"][charKey][0].newx;
+  playData["monster"][charKey][0].newx = playData["monster"][charKey][0].newx+mod;
   return playData["monster"];
 };
 export const changeRight = () => {
-  let charKey = parseInt(Object.keys(playData["monster"]));
+  let charKey = +(Object.keys(playData["monster"]));
   let t = playData["monster"];
   t[charKey][0].newx = t[charKey][0].oldx + mod;
   console.log(playData["monster"]);
