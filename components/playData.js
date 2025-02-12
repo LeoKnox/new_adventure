@@ -65,7 +65,7 @@ export const changeLeft = (mod) => {
     3: [{ oldx: 0, newx: 8, tile: <DrawMonster background={floorSVG()} /> }],
   };
   test[3][0].oldx = 8;
-  test[3][0].newx = 6;
+  test[3][0].newx = test[3][0].oldx+mod;
   console.log(test);
   return test;
 };
