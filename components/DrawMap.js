@@ -3,7 +3,7 @@ import { floorSVG, wallSVG, warriorSVG } from "./svgData";
 import {
   changeDown,
   changeLeft,
-  changeRight,
+  mobDown,
   charUpdate,
   charLocation,
   deleteDown,
@@ -99,7 +99,7 @@ export default DrawMap = ({
 
   const moveMob = (xval = -1) => {
     console.log("move mob");
-    let change = updateMonster(-1);
+    let change = updateMonster(0,-1);
     //change[3][0].newx = 8;
     console.log(change);
     modifyTable(change);
