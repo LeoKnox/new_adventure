@@ -66,11 +66,15 @@ export const changeLeft = (mod) => {
     playData["monster"][charKey][0].newx + mod;
   return playData["monster"];
 };
-export const mobDown = () => {
+export const mobDown = (mod) => {
   console.log("mobDown");
+  let charKey = +Object.keys(playData["monster"])[0];
+  playData["monster"][charKey + mod][0] = playData["monster"][charKey][0];
+  playData["monster"][charKey][0].tile = floorSVG();
+  return playData["monster"];
 };
 
-export const updateMonster = (dirx, diry) => {
+export const updateMonster = (dirx, diry = -1) => {
   console.log("update monster");
   dirx && changeLeft(dirx);
   diry && mobDown(diry);
