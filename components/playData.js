@@ -70,8 +70,9 @@ export const mobDown = (mod) => {
   console.log("mobDown");
   let charKey = +Object.keys(playData["monster"])[0];
   console.log("md " + (charKey + mod));
-  let newTile = playData["monster"][mod][0]
-  playData["monster"][mod + charKey] = newTile
+  let newTile = [playData["monster"][charKey][0]];
+  console.log(newTile);
+  playData["monster"][mod + charKey] = newTile;
   playData["monster"][charKey][0].tile = floorSVG();
   return playData["monster"];
 };
