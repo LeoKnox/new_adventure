@@ -69,7 +69,7 @@ export const changeLeft = (mod) => {
 export const mobDown = (mod) => {
   console.log("mobDown");
   let charKey = +Object.keys(playData["monster"])[0];
-  playData["monster"][charKey + mod][0] = playData["monster"][charKey][0];
+  //playData["monster"][charKey + mod][0] = playData["monster"][charKey][0];
   playData["monster"][charKey][0].tile = floorSVG();
   return playData["monster"];
 };
