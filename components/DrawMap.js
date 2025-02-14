@@ -99,7 +99,7 @@ export default DrawMap = ({
 
   const moveMob = (xval = -1) => {
     console.log("move mob");
-    let change = updateMonster(0,-1);
+    let change = updateMonster(0, -1);
     //change[3][0].newx = 8;
     console.log(change);
     modifyTable(change);
@@ -120,6 +120,7 @@ export default DrawMap = ({
     console.log("modify table");
     let newGrid = [...mapState];
     let newRow = [];
+    console.log(objMove);
     for (index in objMove) {
       newRow = [...mapState[index]];
       objMove[parseInt(index)].map((child) => {
