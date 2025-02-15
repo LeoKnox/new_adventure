@@ -70,11 +70,17 @@ export const mobDown = (mod) => {
   console.log("mobDown");
   let charKey = +Object.keys(playData["monster"])[0];
   console.log("md " + (charKey + mod));
-  let newTile = JSON.parse(JSON.stringify(playData["monster"][charKey][0]));
+  let newTile = [JSON.parse(JSON.stringify(playData["monster"][charKey][0]))];
   console.log(newTile);
-  playData["monster"][mod + charKey] = wallSVG();
+  playData["monster"][mod + charKey] = newTile;
   playData["monster"][charKey][0].tile = wallSVG();
-  return playData["monster"];
+  //return playData["monster"];
+  let gg = {
+    3: [{ oldx: 8, newx: 8, tile: <DrawMonster background={floorSVG()} /> }],
+
+    2: [{ oldx: 8, newx: 8, tile: 0 }],
+  };
+  gg[2][0].tile = wallSVG();
 };
 
 export const updateMonster = (dirx, diry = -1) => {
