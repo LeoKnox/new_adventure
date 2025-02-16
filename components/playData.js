@@ -75,12 +75,14 @@ export const mobDown = (mod) => {
   playData["monster"][mod + charKey] = newTile;
   playData["monster"][charKey][0].tile = wallSVG();
   //return playData["monster"];
+  let blank = wallSVG();
   let gg = {
-    3: [{ oldx: 8, newx: 8, tile: <DrawMonster background={floorSVG()} /> }],
+    3: [{ oldx: 8, newx: 8, tile: [blank] }],
 
-    2: [{ oldx: 8, newx: 8, tile: 0 }],
+    2: [{ oldx: 8, newx: 8, tile: <DrawMonster background={floorSVG()} /> }],
   };
-  gg[2][0].tile = wallSVG();
+  //gg[2][0].tile = wallSVG();
+  return gg;
 };
 
 export const updateMonster = (dirx, diry = -1) => {
