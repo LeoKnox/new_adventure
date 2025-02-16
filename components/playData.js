@@ -82,7 +82,7 @@ export const mobDown = (mod) => {
     2: [{ oldx: 8, newx: 8, tile: [blank] }],
   };
   gg[2][0].tile = wallSVG();
-  return gg;
+  playData["monste"] = gg;
 };
 
 export const updateMonster = (dirx, diry = -1) => {
