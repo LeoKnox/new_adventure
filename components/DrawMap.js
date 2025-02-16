@@ -103,7 +103,7 @@ export default DrawMap = ({
     //change[3][0].newx = 8;
     console.log(change);
     //modifyTable(change);
-    modifyTable(updateMonster());
+    modifyTable([updateMonster()]);
     /*modifyTable({
       3: [{ oldx: 8, newx: 8, tile: [v] }],
 
