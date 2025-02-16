@@ -104,11 +104,11 @@ export default DrawMap = ({
     console.log(change);
     //modifyTable(change);
     //modifyTable(updateMonster());
-    let v = floorSVG();
+    let v = [floorSVG()];
     modifyTable({
       3: [{ oldx: 8, newx: 7, tile: <DrawMonster background={floorSVG()} /> }],
 
-      2: [{ oldx: 8, newx: 7, tile: {{v}} }],
+      2: [{ oldx: 8, newx: 7, tile: [v] }],
     });
   };
 
