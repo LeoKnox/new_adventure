@@ -74,7 +74,8 @@ export const mobDown = (mod) => {
   console.log(newTile);
   playData["monster"][mod + charKey] = newTile;
   playData["monster"][charKey][0].tile = wallSVG();
-  //return playData["monster"];
+  console.log(playData["monster"]);
+  return playData["monster"];
   /*let blank = wallSVG();
   let gg = {
     3: [{ oldx: 8, newx: 8, tile: <DrawMonster background={floorSVG()} /> }],
