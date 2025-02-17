@@ -40,7 +40,7 @@ export const changeDown = (direction = 1) => {
   console.log(playData["character"]);
   let charKey = parseInt(Object.keys(playData["character"]));
   let t = {
-    ...playData["character"],
+    ...playData["monster"],
     [charKey + direction]: [
       {
         oldx: playData["character"][charKey][0].oldx,
