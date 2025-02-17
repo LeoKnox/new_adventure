@@ -101,9 +101,13 @@ export default DrawMap = ({
     console.log("move mob");
     let change = updateMonster(0, -1);
     //change[3][0].newx = 8;
-    console.log(change);
+
+    //console.log(change);
     //modifyTable(change);
-    modifyTable([updateMonster()]);
+    let vv = [updateMonster(0, -1)];
+    console.log("TT");
+    console.log(vv);
+    modifyTable(vv);
     /*modifyTable({
       3: [{ oldx: 8, newx: 8, tile: [v] }],
 
