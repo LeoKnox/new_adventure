@@ -50,7 +50,7 @@ export const changeDown = (direction = 1) => {
     ],
   };
   t[charKey][0]["tile"] = floorSVG();
-  playData["character"] = t;
+  playData["monster"] = t;
   //delete t[charKey];
 };
 export const deleteDown = (offSet = 1) => {
