@@ -70,7 +70,10 @@ export const mobDown = (mod) => {
   console.log("mobDown");
   let charKey = +Object.keys(playData["monster"])[0];
   console.log("md " + (charKey + mod));
-  let newTile[charKey][0] = [JSON.parse(JSON.stringify(playData["monster"][charKey][0]))];
+  let newTile = {};
+  newTile[charKey + mod][0] = [
+    JSON.parse(JSON.stringify(playData["monster"][charKey][0])),
+  ];
   console.log(newTile);
   playData["monster"][mod + charKey] = newTile;
   playData["monster"][charKey][0].tile = wallSVG();
