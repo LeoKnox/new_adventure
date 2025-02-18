@@ -72,7 +72,7 @@ export const mobDown = (mod) => {
   console.log("md " + (charKey + mod));
   let newTile = {};
   newTile[charKey + mod] = [
-    JSON.parse(JSON.stringify(playData["monster"][charKey][0])),
+    JSON.parse(JSON.stringify(playData["monster"][charKey])),
   ];
   console.log(newTile);
   playData["monster"][mod + charKey] = newTile;
