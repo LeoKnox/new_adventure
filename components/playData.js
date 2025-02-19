@@ -71,9 +71,7 @@ export const mobDown = (mod) => {
   let charKey = +Object.keys(playData["monster"])[0];
   console.log("md " + (charKey + mod));
   let temp = {};
-  playData["monster"].map((val, key) => {
-    temp[key] = val;
-  });
+  temp = { ...playData["moster"] };
   temp[charKey + mod] = temp[charKey];
   temp[charKey][0].tile = wallSVG();
   playData["monster"] = temp;
