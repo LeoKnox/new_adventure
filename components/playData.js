@@ -70,7 +70,7 @@ export const mobDown = (mod) => {
   console.log("mobDown");
   let charKey = +Object.keys(playData["monster"]);
   //console.log("md " + (charKey + mod));
-  let temp = { ...playData["monster"] };
+  let temp = { ...playData["monster"][charKey] };
   console.log(playData["monster"]);
   temp[charKey + mod] = temp[charKey];
   console.log(temp);
