@@ -69,13 +69,13 @@ export const changeLeft = (mod) => {
 export const mobDown = (mod) => {
   console.log("mobDown");
   let charKey = +Object.keys(playData["monster"]);
-  console.log("md " + (charKey + mod));
-  let temp = { ...playData["monster"][charKey] };
-  console.log(playData["monster"][charKey]);
-  temp[charKey + mod] = temp;
+  //console.log("md " + (charKey + mod));
+  let temp = { ...playData["monster"] };
+  console.log(playData["monster"]);
+  temp[charKey + mod] = temp[charKey];
   temp[charKey][0].tile = wallSVG();
   playData["monster"][charKey] = temp;
-
+  console.log(playData["monster"]);
   return playData["monster"];
   /*let blank = wallSVG();
   let gg = {
