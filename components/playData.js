@@ -68,7 +68,7 @@ export const changeLeft = (mod) => {
 };
 export const mobDown = (mod) => {
   console.log("mobDown");
-  let charKey = +Object.keys(playData["monster"])[0];
+  let charKey = +Object.keys(playData["monster"]);
   console.log("md " + (charKey + mod));
   let temp = { ...playData["monster"][charKey] };
   console.log(playData["monster"][charKey]);
