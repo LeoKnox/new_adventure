@@ -107,7 +107,7 @@ export default DrawMap = ({
     let vv = [updateMonster(0, -1)];
     console.log("TT");
     console.log(vv);
-    modifyTable(vv);
+    modifyTable(change);
     /*modifyTable({
       3: [{ oldx: 8, newx: 8, tile: [v] }],
 
