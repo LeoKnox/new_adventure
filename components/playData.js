@@ -75,7 +75,7 @@ export const mobDown = (mod) => {
   console.log(temp);
   temp[charKey + mod] = temp[charKey];
   console.log(temp);
-  //temp[charKey][0].tile = wallSVG();
+  temp[charKey][0].tile = wallSVG();
   temp[charKey] = temp;
   console.log(playData["monster"]);
   playData["monster"] = temp;
