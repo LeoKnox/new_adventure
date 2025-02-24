@@ -104,7 +104,7 @@ export default DrawMap = ({
 
     //console.log(change);
     //modifyTable(change);
-    let vv = [updateMonster(0, -1)];
+    //let vv = [updateMonster(0, -1)];
     console.log("TT");
     console.log(change);
     modifyTable(change);
