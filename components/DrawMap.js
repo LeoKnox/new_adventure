@@ -100,19 +100,7 @@ export default DrawMap = ({
   const moveMob = (xval = -1) => {
     console.log("move mob");
     let change = updateMonster(0, -1);
-    //change[3][0].newx = 8;
-
-    //console.log(change);
-    //modifyTable(change);
-    //let vv = [updateMonster(0, -1)];
-    console.log("TT");
-    console.log(change);
     modifyTable(change);
-    /*modifyTable({
-      3: [{ oldx: 8, newx: 8, tile: [v] }],
-
-      2: [{ oldx: 8, newx: 8, tile: <DrawMonster background={floorSVG()} /> }],
-    });*/
   };
 
   const modifyTable = (
