@@ -68,28 +68,11 @@ export const changeLeft = (mod) => {
 };
 export const mobDown = (mod) => {
   console.log("mobDown");
-  console.log(playData["monster"]);
   let charKey = Object.keys(playData["monster"])[0];
-  //console.log("md " + (charKey + mod));
   let temp = playData["monster"];
-  console.log(temp);
-  temp[+charKey + +mod] = playData["monster"][charKey];
-  console.log(+mod + +charKey);
-  console.log(temp);
+  temp[parseInt(charKey) + parseInt(mod)] = playData["monster"][charKey];
   temp[charKey][0].tile = wallSVG();
-  //temp[charKey] = temp;
-  console.log(playData["monster"]);
   playData["monster"] = temp;
-  //return playData["monster"];
-  /*let blank = wallSVG();
-  let gg = {
-    3: [{ oldx: 8, newx: 8, tile: <DrawMonster background={floorSVG()} /> }],
-
-    2: [{ oldx: 8, newx: 8, tile: [blank] }],
-  };
-  gg[2][0].tile = wallSVG();
-  playData["monster"] = gg;*/
-  //console.log("gg");
   console.log(playData["monster"]);
 };
 
