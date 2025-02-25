@@ -1,5 +1,5 @@
 import { useState, useEffect, cloneElement } from "react";
-import { floorSVG, wallSVG, warriorSVG } from "./svgData";
+import { floorSVG, wallSVG, warriorSVG, warr } from "./svgData";
 import {
   changeDown,
   changeLeft,
@@ -160,7 +160,7 @@ export default DrawMap = ({
       <td>
         <button onClick={() => moveMob()}>mob</button>
       </td>
-      {pagetest}
+      {warr}
     </div>
   );
 };
