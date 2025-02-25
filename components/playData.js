@@ -73,6 +73,7 @@ export const mobDown = (mod) => {
   let temp = Object.entries(playData["monster"]).forEach(([key, value]) => {
     key: value;
   });
+  console.log(temp);
   temp[parseInt(charKey) + parseInt(mod)] = playData["monster"][charKey];
   temp[charKey][0].tile = wallSVG();
   playData["monster"] = temp;
