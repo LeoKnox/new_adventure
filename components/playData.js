@@ -70,8 +70,8 @@ export const mobDown = (mod) => {
   console.log("mobDown");
   let charKey = Object.keys(playData["monster"])[0];
   //let temp = structuredClone(playData["monster"]);
-  let temp = const Object.entries(playData["monster"]).forEach(([key, value]) => {
-    ${key}:${value}
+  let temp = Object.entries(playData["monster"]).forEach(([key, value]) => {
+    key: value;
   });
   temp[parseInt(charKey) + parseInt(mod)] = playData["monster"][charKey];
   temp[charKey][0].tile = wallSVG();
