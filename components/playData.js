@@ -70,7 +70,7 @@ export const mobDown = (mod) => {
   console.log("mobDown");
   let charKey = Object.keys(playData["monster"])[0];
   //let temp = structuredClone(playData["monster"]);
-  let temp = Object.entries(playData["monster"].forEach(key, value) {
+  let temp = Object.entries(playData["monster"].forEach([key, value]) => {
     key == charKey ? {2: value}:{key:value}
   });
   temp[parseInt(charKey) + parseInt(mod)] = playData["monster"][charKey];
