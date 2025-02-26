@@ -42,6 +42,7 @@ export const changeDown = (direction = 1) => {
   let charKey = parseInt(Object.keys(playData["character"]));
   let t = deepCopy(playData["monster"]);
   t[charKey][0]["tile"] = floorSVG();
+  console.log(t);
   playData["monster"] = t;
   //delete t[charKey];
 };
@@ -62,11 +63,7 @@ export const mobDown = (mod) => {
   console.log("mobDown");
   let charKey = Object.keys(playData["monster"])[0];
   //let temp = structuredClone(playData["monster"]);
-  let temp = Object.entries(playData["monster"][charKey]).forEach(
-    ([key, value]) => {
-      key: value;
-    }
-  );
+  let temp = deepClone(playData["monster"][charKey]);
   console.log(temp);
   temp[parseInt(charKey) + parseInt(mod)] = playData["monster"][charKey];
   temp[charKey][0].tile = wallSVG();
