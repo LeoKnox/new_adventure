@@ -1,4 +1,4 @@
-import { floorSVG, wallSVG, warriorSVG } from "./svgData";
+import { floorSVG, wallSVG, warriorSVG, warr } from "./svgData";
 import DrawMonster from "./DrawMonster.js";
 import DrawCharacter from "./DrawCharacter.js";
 
@@ -12,7 +12,8 @@ let playData = {
 };
 let mobData = {};
 mobData = {
-  3: [{ oldx: 8, newx: 8, tile: <DrawMonster background={floorSVG()} /> }],
+  3: [{ oldx: 8, newx: 8, tile: warr }],
+  //3: [{ oldx: 8, newx: 8, tile: <DrawMonster background={floorSVG()} /> }],
 };
 
 export const charUpdate = (
