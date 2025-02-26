@@ -66,7 +66,7 @@ export const mobDown = (mod) => {
   let temp = structuredClone(playData["monster"][charKey]);
   console.log(temp);
   temp[parseInt(charKey) + parseInt(mod)] = playData["monster"][charKey];
-  temp[charKey][0].tile = wallSVG();
+  temp[charKey][0].tile = {warr};
   playData["monster"] = temp;
   console.log(playData["monster"]);
 };
