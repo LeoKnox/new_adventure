@@ -63,7 +63,7 @@ export const mobDown = (mod) => {
   console.log("mobDown");
   let charKey = Object.keys(playData["monster"])[0];
   //let temp = structuredClone(playData["monster"]);
-  let temp = playData["monster"][charKey];
+  let temp = playData["monster"][charKey][0];
   console.log(temp);
   temp[parseInt(charKey) + parseInt(mod)] = structuredClone(
     playData["monster"][charKey]
