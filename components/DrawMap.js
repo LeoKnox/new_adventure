@@ -131,7 +131,7 @@ export default DrawMap = ({
       {warr}
       {mapData.map((i) => (
         <>
-          <label>{i}</label>{`\n`}
+          <tr>{i}</tr>
         </>
       ))}
     </div>
