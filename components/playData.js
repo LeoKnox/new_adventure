@@ -11,15 +11,16 @@ let playData = {
   },
 };
 let mobData = {};
+let currMap = [
+  [floorSVG(), floorSVG()],
+  [floorSVG(), floorSVG()],
+];
 mobData = {
   3: [{ oldx: 8, newx: 8, tile: warr }],
   //3: [{ oldx: 8, newx: 8, tile: <DrawMonster background={floorSVG()} /> }],
 };
 
-export const mapData = [
-  [floorSVG(), floorSVG()],
-  [floorSVG(), floorSVG()],
-  ]
+export const mapData = currMap;
 
 export const charUpdate = (
   newChar = {
