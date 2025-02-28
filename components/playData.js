@@ -130,7 +130,7 @@ export default DrawMap = ({
       </td>
       {warr}
       {mapData.map((i) => (
-        <p>i</p>
+        <p>{i}</p>
       ))}
     </div>
   );
