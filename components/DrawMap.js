@@ -130,7 +130,9 @@ export default DrawMap = ({
       </td>
       {warr}
       {mapData.map((i) => (
-        <><label>{i}</label><br/></>
+        <>
+          <label>{i}</label>{`\n`}
+        </>
       ))}
     </div>
   );
