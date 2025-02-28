@@ -17,7 +17,7 @@ mobData = {
 };
 
 export const mapData = (
-   return [{floorSVG()}, {floorSVG()}]
+[floorSVG(), floorSVG()]
 )
 
 export const charUpdate = (
