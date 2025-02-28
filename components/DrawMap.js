@@ -105,6 +105,9 @@ export default DrawMap = ({
     modifyTable(change());
     deleteDown();
   };
+  const newMove = () => {
+    move();
+  }
   return (
     <div>
       {mapState.map((row) => (
