@@ -1,5 +1,5 @@
 import { useState, useEffect, cloneElement } from "react";
-import { floorSVG, wallSVG, warriorSVG, warr, mapData } from "./svgData";
+import { floorSVG, wallSVG, warriorSVG, warr } from "./svgData";
 import {
   changeDown,
   changeLeft,
@@ -11,6 +11,7 @@ import {
   singleMonster,
   change,
   updateCharacter,
+  mapData,
 } from "./playData.js";
 import DrawMonster from "./DrawMonster.js";
 import DrawCharacter from "./DrawCharacter.js";
@@ -127,7 +128,10 @@ export default DrawMap = ({
       <td>
         <button onClick={() => moveMob()}>mob</button>
       </td>
-      {warr}{mapData}
+      {warr}
+      {mapData.map((i) => (
+        <p>i</p>
+      ))}
     </div>
   );
 };
