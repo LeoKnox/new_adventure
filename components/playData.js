@@ -16,6 +16,10 @@ mobData = {
   //3: [{ oldx: 8, newx: 8, tile: <DrawMonster background={floorSVG()} /> }],
 };
 
+export const mapData = (
+   return [{floorSVG()}, {floorSVG()}]
+)
+
 export const charUpdate = (
   newChar = {
     1: [{ oldx: 3, newx: 2, tile: <DrawCharacter background={floorSVG()} /> }],
