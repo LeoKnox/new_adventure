@@ -129,9 +129,7 @@ export default DrawMap = ({
         <button onClick={() => moveMob()}>mob</button>
       </td>
       {warr}
-      {mapData.map((i) => (
-        <p>{i}</p>
-      ))}
+      {mapData}
     </div>
   );
 };
