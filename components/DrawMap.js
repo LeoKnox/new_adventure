@@ -11,6 +11,7 @@ import {
   singleMonster,
   change,
   updateCharacter,
+  mapData,
 } from "./playData.js";
 import DrawMonster from "./DrawMonster.js";
 import DrawCharacter from "./DrawCharacter.js";
@@ -50,39 +51,6 @@ export default DrawMap = ({
     tempRow = [];
     return temp;
   });
-
-  useEffect(() => {
-    console.log("ue keydown");
-    const onKeyDown = (e) => {
-      if (e.key === "w") {
-        //moveCharacter("up");
-      } else if (e.key === "s") {
-        //moveCharacter("down");
-      } else if (e.key === "d") {
-        let temp = {
-          1: [
-            {
-              oldx: 1,
-              newx: 2,
-              tile: (
-                <td>
-                  <div style={{ position: "absolute", opacity: "60%" }}>
-                    {floorSVG()}
-                  </div>
-                  <div style={{ position: "relative" }}>{warriorSVG()}</div>
-                </td>
-              ),
-            },
-          ],
-        };
-        modifyTable(temp);
-      } else if (e.key === "a") {
-        //moveCharacter("left");
-      }
-    };
-    window.addEventListener("keydown", onKeyDown);
-    return () => window.removeEventListener("keydown", onKeyDown);
-  }, []);
 
   useEffect(() => {
     console.log("draw character");
@@ -161,6 +129,9 @@ export default DrawMap = ({
         <button onClick={() => moveMob()}>mob</button>
       </td>
       {warr}
+      {mapData.map((i) => (
+        <p>{i}</p>
+      ))}
     </div>
   );
 };
