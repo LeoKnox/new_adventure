@@ -12,6 +12,7 @@ import {
   change,
   updateCharacter,
   mapData,
+  move,
 } from "./playData.js";
 import DrawMonster from "./DrawMonster.js";
 import DrawCharacter from "./DrawCharacter.js";
@@ -123,7 +124,7 @@ export default DrawMap = ({
         <button onClick={() => newChange()}>down</button>
       </td>
       <td>
-        <button onClick={console.log("button")}>up</button>
+        <button onClick={() => move()}>up</button>
       </td>
       <td>
         <button onClick={() => moveMob()}>mob</button>
