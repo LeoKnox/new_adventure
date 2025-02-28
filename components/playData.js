@@ -16,8 +16,6 @@ let currMap = [
   [floorSVG(), floorSVG()],
 ];
 
-
-
 mobData = {
   3: [{ oldx: 8, newx: 8, tile: warr }],
   //3: [{ oldx: 8, newx: 8, tile: <DrawMonster background={floorSVG()} /> }],
@@ -26,8 +24,9 @@ mobData = {
 export const mapData = currMap;
 
 export const move = () => {
-  currMap[1][0] = wallSVG();
-}
+  currMap[1][0] = "wallSVG()";
+  console.log(currMap);
+};
 
 export const charUpdate = (
   newChar = {
