@@ -24,7 +24,7 @@ mobData = {
 export const mapData = currMap;
 
 export const move = () => {
-  currMap[1][0] = "wallSVG()";
+  currMap[1][0] = wallSVG();
   return currMap;
   console.log(currMap);
 };
