@@ -21,12 +21,11 @@ mobData = {
   //3: [{ oldx: 8, newx: 8, tile: <DrawMonster background={floorSVG()} /> }],
 };
 
-export const mapData = () => {
-  return currMap;
-};
+export const mapData = currMap;
 
 export const move = () => {
   currMap[1][0] = "wallSVG()";
+  return currMap;
   console.log(currMap);
 };
 
