@@ -23,10 +23,14 @@ mobData = {
 
 export const mapData = currMap;
 
+export const addChar = () => {
+  currMap[0][0] = warriorSVG();
+  return currMap;
+};
+
 export const move = () => {
   currMap[1][0] = wallSVG();
   return currMap;
-  console.log(currMap);
 };
 
 export const charUpdate = (
