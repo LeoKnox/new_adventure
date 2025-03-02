@@ -26,7 +26,7 @@ export default DrawMap = ({
   setx,
 }) => {
   let mobs = singleMonster();
-  const [dataMove, setDataMove] = useState({ mapData() });
+  const [dataMove, setDataMove] = useState({ mapData });
   const [pagetest, setpagetest] = useState(warriorSVG());
   const [char, setChar] = useState(charLocation());
   const [mapState, setMapState] = useState(() => {
@@ -107,8 +107,9 @@ export default DrawMap = ({
     deleteDown();
   };
   const newMove = () => {
-    move();
-    setDataMove({ mapData });
+    //move();
+    //setDataMove({ mapData });
+    setDataMove(move());
   };
   return (
     <div>
