@@ -23,9 +23,9 @@ mobData = {
 
 export const mapData = currMap;
 
-export const addChar = () => {
+export const addChar = (i = 0) => {
   let temp = currMap;
-  temp[0][0] = warriorSVG();
+  temp[i][0] = warriorSVG();
   return temp;
 };
 
