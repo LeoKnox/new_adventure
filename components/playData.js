@@ -25,7 +25,7 @@ mobData = {
 const newMap = () => {
   let x = [];
   let y = [];
-  for (let i = 0; i < ourX; i++) {
+  for (let i = 0; i < playData.character[1][0].oldx; i++) {
     x.push([floorSVG(), floorSVG()]);
   }
   return x;
