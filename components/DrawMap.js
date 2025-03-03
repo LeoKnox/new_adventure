@@ -28,6 +28,9 @@ export default DrawMap = ({
 }) => {
   let mobs = singleMonster();
   const [dataMove, setDataMove] = useState(addChar());
+  useEffect(() => {
+    setDataMove(addChar());
+  }, []);
   const [pagetest, setpagetest] = useState(warriorSVG());
   const [char, setChar] = useState(charLocation());
   const [mapState, setMapState] = useState(() => {
