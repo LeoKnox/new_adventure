@@ -42,7 +42,7 @@ export const addChar = (i = 0) => {
 };
 
 export const move = () => {
-  let temp = currMap;
+  let temp = mapData;
   temp[1][0] = warriorSVG();
   console.log("move");
   console.log(temp);
