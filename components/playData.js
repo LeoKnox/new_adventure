@@ -25,7 +25,7 @@ mobData = {
 const newMap = () => {
   let x = [];
   let y = [];
-  for (let i = 0; i < { ourX }; i++) {
+  for (let i = 0; i < ourX; i++) {
     x.push(i);
   }
   return x;
