@@ -43,7 +43,9 @@ export const addChar = (i = 0) => {
 
 export const move = () => {
   let temp = currMap;
-  temp[1][0] = wallSVG();
+  temp[1][0] = warriorSVG();
+  console.log("move");
+  console.log(temp);
   return temp;
 };
 
