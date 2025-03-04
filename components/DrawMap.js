@@ -113,7 +113,7 @@ export default DrawMap = ({
   const newMove = () => {
     //move();
     //setDataMove({ mapData });
-    setDataMove(move());
+    setDataMove(addChar(1));
     console.log("red");
   };
   return (
@@ -135,7 +135,7 @@ export default DrawMap = ({
         <button onClick={() => newChange()}>down</button>
       </td>
       <td>
-        <button onClick={() => setDataMove(addChar(1))}>up</button>
+        <button onClick={() => newMove()}>up</button>
       </td>
       <td>
         <button onClick={() => moveMob()}>mob</button>
