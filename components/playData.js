@@ -34,7 +34,7 @@ const newMap = () => {
 export const mapData = newMap();
 
 export const addChar = (i = 0) => {
-  console.log("map data");
+  console.log("map data" + i);
   console.log(mapData);
   let temp = mapData;
   temp[i][0] = warriorSVG();
