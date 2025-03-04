@@ -135,16 +135,7 @@ export default DrawMap = ({
         <button onClick={() => newChange()}>down</button>
       </td>
       <td>
-        <button
-          onClick={() =>
-            setDataMove([
-              [floorSVG(), floorSVG()],
-              [floorSVG(), floorSVG()],
-            ])
-          }
-        >
-          up
-        </button>
+        <button onClick={() => setDataMove(addChar(1))}>up</button>
       </td>
       <td>
         <button onClick={() => moveMob()}>mob</button>
