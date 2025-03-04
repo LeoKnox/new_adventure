@@ -110,8 +110,8 @@ export default DrawMap = ({
   };
   const newMove = () => {
     //move();
-    //setDataMove({ mapData });
-    setDataMove(addChar(1));
+    setDataMove(move());
+    //setDataMove(addChar(1));
     console.log("red");
     console.log(dataMove);
   };
