@@ -33,11 +33,11 @@ const newMap = () => {
 
 export const mapData = newMap();
 
-export const addChar = (i = 0) => {
+export const addChar = (i) => {
   console.log("map data" + i);
   console.log(mapData);
   let temp = mapData;
-  temp[i][0] = warriorSVG();
+  temp[i][0] = "warriorSVG()";
   return temp;
 };
 
