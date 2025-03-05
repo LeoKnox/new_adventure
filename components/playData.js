@@ -36,7 +36,7 @@ export const mapData = newMap();
 export const addChar = (i) => {
   console.log("map data" + i);
   console.table(mapData);
-  let temp = [...mapData];
+  let temp = structuredClone(mapData);
   temp[i][0] = "warriorSVG()";
   return temp;
 };
