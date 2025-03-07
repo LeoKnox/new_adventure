@@ -22,12 +22,14 @@ mobData = {
   //3: [{ oldx: 8, newx: 8, tile: <DrawMonster background={floorSVG()} /> }],
 };
 
-const newMap = () => {
+export const newMap = () => {
   let x = [];
   let y = [];
   for (let i = 0; i < playData.character[1][0].oldx; i++) {
     x.push([floorSVG(), floorSVG()]);
   }
+  console.log("x");
+  console.log(x);
   return x;
 };
 
@@ -36,7 +38,7 @@ export const mapData = newMap();
 export const addChar = (i) => {
   console.log("map data" + i);
   console.table(mapData);
-  let temp = new Array(mapData);
+  let temp = [...mapData];
   temp[i][0] = "warriorSVG()";
   return temp;
 };
