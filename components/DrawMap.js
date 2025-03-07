@@ -57,6 +57,12 @@ export default DrawMap = ({
   });
 
   useEffect(() => {
+    let temp = dataMove;
+    temp[0][0] = warriorSVG();
+    setDataMove(temp)
+  },[])
+
+  useEffect(() => {
     console.log("draw character");
     let tempRow = [...mapState];
     let temp = [...mapState[x]];
