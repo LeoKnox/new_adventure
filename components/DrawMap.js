@@ -27,7 +27,7 @@ export default DrawMap = ({
   setx,
 }) => {
   let mobs = singleMonster();
-  const currMap = mapData;
+  const currMap = new Array(rows).fill(null).map(() => Array(columns).fill(0))
   const [dataMove, setDataMove] = useState(currMap);
   const [locations, setLocations] = useState([0, 0]);
   const [pagetest, setpagetest] = useState(warriorSVG());
