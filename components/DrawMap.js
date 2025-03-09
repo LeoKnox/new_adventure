@@ -111,13 +111,6 @@ export default DrawMap = ({
     setMapState(newGrid);
   };
 
-  const newChange = () => {
-    console.log("new change");
-    changeDown();
-    temp = charLocation();
-    modifyTable(change());
-    deleteDown();
-  };
   const newMove = () => {
     //move();
     //setDataMove(move());
@@ -143,7 +136,7 @@ export default DrawMap = ({
         <button onClick={console.log("button")}>left</button>
       </td>
       <td>
-        <button onClick={() => newChange()}>down</button>
+        <button onClick={console.log("down")}>down</button>
       </td>
       <td>
         <button onClick={() => newMove()}>up</button>
