@@ -123,7 +123,7 @@ export default DrawMap = ({
     //setDataMove(move());
     //let temp = addChar(1);
     // setDataMove(addChar(1));
-    setLocations([1, 0]);
+    setLocations([mapData.x, mapData.y]);
     console.log("red");
     console.log(dataMove);
   };
