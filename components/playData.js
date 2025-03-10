@@ -33,7 +33,7 @@ export const newMap = () => {
   return x;
 };
 
-export const mapData = { x: 0, y: 1 };
+export const mapData = { x: 0, y: 0 };
 
 export const addChar = (i) => {
   console.log("map data" + i);
