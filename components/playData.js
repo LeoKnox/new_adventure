@@ -45,7 +45,10 @@ export const addChar = (i) => {
 
 export const move = () => {
   console.log("move");
-  mapData.y = mapData.y++;
+  temp = mapData;
+  temp.y = temp.y++;
+  mapData = temp;
+  console.log(mapData);
 };
 
 export const charUpdate = (
@@ -97,9 +100,7 @@ export const mobDown = (mod) => {
   //let temp = structuredClone(playData["monster"]);
   let temp = playData["monster"][charKey][0];
   console.log(temp);
-  temp[parseInt(charKey) + parseInt(mod)] = structuredClone(
-    playData["monster"][charKey]
-  );
+  temp[parseInt(charKey) + parseInt(mod)] = playData["monster"][charKey];
   temp[charKey][0].tile = { warr };
   playData["monster"] = temp;
   console.log(playData["monster"]);
