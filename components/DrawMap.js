@@ -62,7 +62,7 @@ export default DrawMap = ({
     let temp = currMap;
     console.log("locations");
     console.table(currMap);
-    temp[locations[y]][locations[x]] = warriorSVG();
+    temp[locations[1]][locations[0]] = warriorSVG();
     setDataMove(temp);
   }, [locations]);
 
