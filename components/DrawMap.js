@@ -59,11 +59,11 @@ export default DrawMap = ({
 
   useEffect(() => {
     console.log(locations);
-    let temp = dataMove;
+    let temp = currMap;
     console.log("locations");
     console.table(currMap);
     temp[locations.y][locations.x] = warriorSVG();
-    setDataMove(temp);
+    setDataMove([...temp]);
   }, [locations]);
 
   useEffect(() => {
@@ -113,8 +113,6 @@ export default DrawMap = ({
 
   const newMove = () => {
     let temp = locations;
-    console.log("new locations");
-    console.log(locations);
     temp.y = temp.y + 1;
     setLocations(temp);
     console.log("red");
