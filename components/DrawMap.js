@@ -63,7 +63,8 @@ export default DrawMap = ({
     console.log("locations");
     console.table(currMap);
     temp[locations.y][locations.x] = warriorSVG();
-    setDataMove([...temp]);
+    setDataMove(temp);
+    console.log("set");
   }, [locations]);
 
   useEffect(() => {
