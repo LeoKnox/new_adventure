@@ -137,7 +137,7 @@ export default DrawMap = ({
         <button onClick={() => newMove(1, 0)}>right</button>
       </td>
       <td>
-        <button onClick={console.log("button")}>left</button>
+        <button onClick={() => newMove(-1, 0)}>left</button>
       </td>
       <td>
         <button onClick={() => newMove(0, -1)}>down</button>
