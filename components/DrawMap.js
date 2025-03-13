@@ -12,6 +12,7 @@ import {
   change,
   updateCharacter,
   mapData,
+  roomData,
   move,
   addChar,
 } from "./playData.js";
@@ -27,7 +28,8 @@ export default DrawMap = ({
   setx,
 }) => {
   let mobs = singleMonster();
-  const currMap = new Array(3).fill().map(() => Array(2).fill(floorSVG()));
+  const currMap = roomData;
+  //const currMap = new Array(3).fill().map(() => Array(2).fill(floorSVG()));
   const [dataMove, setDataMove] = useState(currMap);
   const [locations, setLocations] = useState(mapData);
   const [pagetest, setpagetest] = useState(warriorSVG());
@@ -59,10 +61,10 @@ export default DrawMap = ({
 
   useEffect(() => {
     console.log(locations);
-    //let temp = currMap;
-    let temp = new Array(3).fill().map(() => Array(2).fill(floorSVG()));
-    temp.push(new Array(2).fill(wallSVG()));
-    temp = mapState;
+    let temp = currMap;
+    //let temp = new Array(3).fill().map(() => Array(2).fill(floorSVG()));
+    //temp.push(new Array(2).fill(wallSVG()));
+    //temp = mapState;
     console.log("locations");
     console.table(currMap);
     temp[locations.y][0] = warriorSVG();
