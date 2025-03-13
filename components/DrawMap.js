@@ -60,8 +60,8 @@ export default DrawMap = ({
   useEffect(() => {
     console.log(locations);
     //let temp = currMap;
-    let temp = new Array(3).fill().map(() => Array(2).fill(floorSVG()));
-    temp.push(new Array(2).fill(wallSVG()))
+    let temp = new Array(3).fill().map(() => Array(2).fill(floorSVG())+wallSVG());
+    temp.push(new Array(2).fill(wallSVG()));
     console.log("locations");
     console.table(currMap);
     temp[locations.y][locations.x] = warriorSVG();
