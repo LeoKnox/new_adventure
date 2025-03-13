@@ -111,9 +111,9 @@ export default DrawMap = ({
     setMapState(newGrid);
   };
 
-  const newMove = () => {
+  const newMove = (x, y) => {
     let temp = locations;
-    temp.y = temp.y + 1;
+    temp.y = temp.y + y;
     setLocations({ ...temp });
     console.log("red");
     console.log(dataMove);
@@ -137,7 +137,7 @@ export default DrawMap = ({
         <button onClick={console.log("down")}>down</button>
       </td>
       <td>
-        <button onClick={() => newMove()}>up</button>
+        <button onClick={() => newMove(0, 1)}>up</button>
       </td>
       <td>
         <button onClick={() => moveMob()}>mob</button>
