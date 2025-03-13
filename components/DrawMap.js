@@ -142,12 +142,13 @@ export default DrawMap = ({
       <td>
         <button onClick={() => moveMob()}>mob</button>
       </td>
-      {warr}
-      {dataMove.map((i) => (
-        <>
-          <tr>{i}</tr>
-        </>
-      ))}
+      <table>
+        {dataMove.map((i) => (
+          <>
+            <tr>{i}</tr>
+          </>
+        ))}
+      </table>
     </div>
   );
 };
