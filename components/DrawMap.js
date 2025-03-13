@@ -28,8 +28,8 @@ export default DrawMap = ({
   setx,
 }) => {
   let mobs = singleMonster();
-  const currMap = roomData;
-  //const currMap = new Array(3).fill().map(() => Array(2).fill(floorSVG()));
+  //const currMap = roomData;
+  const currMap = new Array(3).fill().map(() => Array(2).fill(floorSVG()));
   const [dataMove, setDataMove] = useState(currMap);
   const [locations, setLocations] = useState(mapData);
   const [pagetest, setpagetest] = useState(warriorSVG());
@@ -66,8 +66,8 @@ export default DrawMap = ({
     //temp.push(new Array(2).fill(wallSVG()));
     //temp = mapState;
     console.log("locations");
-    console.table(currMap);
-    temp[locations.y][0] = warriorSVG();
+    //console.table(currMap);
+    temp[locations.y][locations.x] = warriorSVG();
     setDataMove(temp);
   }, [locations]);
 
@@ -119,6 +119,7 @@ export default DrawMap = ({
   const newMove = (x, y) => {
     let temp = locations;
     temp.y = temp.y + y;
+    temp.x = temp.x + x;
     setLocations({ ...temp });
     console.log("red");
     console.log(dataMove);
@@ -133,7 +134,7 @@ export default DrawMap = ({
         </tr>
       ))}
       <td>
-        <button onClick={console.log("button")}>right</button>
+        <button onClick={() => newMove(1, 0)}>right</button>
       </td>
       <td>
         <button onClick={console.log("button")}>left</button>
