@@ -12,7 +12,6 @@ import {
   change,
   updateCharacter,
   mapData,
-  roomData,
   move,
   addChar,
 } from "./playData.js";
@@ -28,7 +27,6 @@ export default DrawMap = ({
   setx,
 }) => {
   let mobs = singleMonster();
-  //const currMap = roomData;
   const currMap = new Array(3).fill().map(() => Array(2).fill(floorSVG()));
   const [dataMove, setDataMove] = useState(currMap);
   const [locations, setLocations] = useState(mapData);
@@ -62,11 +60,8 @@ export default DrawMap = ({
   useEffect(() => {
     console.log(locations);
     let temp = currMap;
-    //let temp = new Array(3).fill().map(() => Array(2).fill(floorSVG()));
-    //temp.push(new Array(2).fill(wallSVG()));
-    //temp = mapState;
     console.log("locations");
-    //console.table(currMap);
+    console.table(currMap);
     temp[locations.y][locations.x] = warriorSVG();
     setDataMove(temp);
   }, [locations]);
@@ -140,21 +135,20 @@ export default DrawMap = ({
         <button onClick={() => newMove(-1, 0)}>left</button>
       </td>
       <td>
-        <button onClick={() => newMove(0, -1)}>down</button>
+        <button onClick={() => newMove(0, 1)}>down</button>
       </td>
       <td>
-        <button onClick={() => newMove(0, 1)}>up</button>
+        <button onClick={() => newMove(0, -1)}>up</button>
       </td>
       <td>
         <button onClick={() => moveMob()}>mob</button>
       </td>
-      <table>
-        {dataMove.map((i) => (
-          <>
-            <tr>{i}</tr>
-          </>
-        ))}
-      </table>
+      {warr}
+      {dataMove.map((i) => (
+        <>
+          <tr>{i}</tr>
+        </>
+      ))}
     </div>
   );
 };
