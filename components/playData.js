@@ -33,8 +33,8 @@ export const newMap = () => {
   return x;
 };
 
-export const mapData = { x: 0, y: 0 };
-export const roomData = new Array(3).fill().map(() => Array(2).fill(floorSVG()));
+//export const mapData = { x: 0, y: 0 };
+export const mapData = { player: { x: 0, y: 0 } };
 
 export const addChar = (i) => {
   console.log("map data" + i);
