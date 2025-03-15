@@ -63,7 +63,9 @@ export default DrawMap = ({
     console.log("locations");
     console.table(currMap);
     temp[locations["player"].y][locations["player"].x] = warriorSVG();
-    locations["monster"].map((mon) => (temp[mon.y][mon.x] = demonSVG()));
+    locations["monster"].map(
+      (mon) => (temp[mon.y][mon.x] = <DrawMonster background={wallSVG()} />)
+    );
     setDataMove(temp);
   }, [locations]);
 
