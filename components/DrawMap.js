@@ -1,5 +1,5 @@
 import { useState, useEffect, cloneElement } from "react";
-import { floorSVG, wallSVG, warriorSVG, warr } from "./svgData";
+import { demonSVG, floorSVG, wallSVG, warriorSVG, warr } from "./svgData";
 import {
   changeDown,
   changeLeft,
@@ -63,6 +63,7 @@ export default DrawMap = ({
     console.log("locations");
     console.table(currMap);
     temp[locations["player"].y][locations["player"].x] = warriorSVG();
+    temp[locations["monster"].y][locations["monster"].x] = demonSVG();
     setDataMove(temp);
   }, [locations]);
 
