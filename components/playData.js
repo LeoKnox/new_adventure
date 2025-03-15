@@ -114,8 +114,8 @@ export default DrawMap = ({
 
   const newMove = (x, y) => {
     let temp = locations;
-    temp.y = temp["player"].y + y;
-    temp.x = temp["player"].x + x;
+    temp["player"].y = temp["player"].y + y;
+    temp["player"].x = temp["player"].x + x;
     setLocations({ ...temp });
     console.log("red");
     console.log(dataMove);
