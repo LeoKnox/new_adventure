@@ -34,7 +34,7 @@ export const newMap = () => {
 };
 
 //export const mapData = { x: 0, y: 0 };
-export const mapData = { player: { x: 0, y: 0 }, monster: [{ x: 1, y: 1 }] };
+export const mapData = { player: { x: 0, y: 0 }, monster: [{ x: 1, y: 1 }, {x:1, y:2}] };
 
 export const addChar = (i) => {
   console.log("map data" + i);
