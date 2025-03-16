@@ -125,7 +125,7 @@ export default DrawMap = ({
   };
   return (
     <div>
-      {mapState.map((row) => (
+      {dataMove.map((row) => (
         <tr>
           {row.map((tile) => (
             <td>{tile}</td>
