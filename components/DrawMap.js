@@ -59,8 +59,8 @@ export default DrawMap = ({
 
   useEffect(() => {
     console.log(locations);
-    //let temp = [...currMap];
-    let temp = [...mapState];
+    let temp = [...currMap];
+    //let temp = [...mapState];
     console.log("locations");
     console.table(temp);
     temp[locations["player"].y][locations["player"].x] = warriorSVG();
@@ -70,49 +70,10 @@ export default DrawMap = ({
     setDataMove(temp);
   }, [locations]);
 
-  useEffect(() => {
-    console.log("draw character");
-    /*let tempRow = [...mapState];
-    let temp = [...mapState[x]];
-    temp[y] = char;
-    tempRow[x] = temp;
-    let chartemp = charLocation();
-    for (let ct in chartemp) {
-      mobs[ct] = chartemp[ct];
-    }*/
-    //modifyTable(mobs);
-  }, []);
-
   const moveMob = (xval = -1) => {
     console.log("move mob");
     let change = updateMonster(0, -1);
     modifyTable(change);
-  };
-
-  const modifyTable = (
-    objMove = {
-      3: [
-        {
-          oldx: 8,
-          newx: 7,
-          tile: <DrawMonster background={wallSVG()} />,
-        },
-      ],
-    }
-  ) => {
-    console.log("modify table");
-    let newGrid = [...mapState];
-    let newRow = [];
-    console.log(objMove);
-    for (index in objMove) {
-      newRow = [...mapState[index]];
-      objMove[parseInt(index)].map((child) => {
-        newRow[child.oldx] = floorSVG();
-        newRow[child.newx] = child.tile;
-        newGrid[index] = newRow;
-      });
-    }
-    setMapState(newGrid);
   };
 
   const newMove = (x, y) => {
