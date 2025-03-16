@@ -59,11 +59,14 @@ export default DrawMap = ({
 
   useEffect(() => {
     console.log(locations);
-    let temp = currMap;
+    //let temp = currMap;
+    let temp = mapState;
     console.log("locations");
     console.table(currMap);
     temp[locations["player"].y][locations["player"].x] = warriorSVG();
-    locations["monster"].map((mon) => (temp[mon.y][mon.x] = demonSVG()));
+    locations["monster"].map(
+      (mon) => (temp[mon.y][mon.x] = <DrawMonster background={wallSVG()} />)
+    );
     setDataMove(temp);
   }, [locations]);
 
@@ -114,8 +117,8 @@ export default DrawMap = ({
 
   const newMove = (x, y) => {
     let temp = locations;
-    temp.y = temp.y + y;
-    temp.x = temp.x + x;
+    temp["player"].y = temp["player"].y + y;
+    temp["player"].x = temp["player"].x + x;
     setLocations({ ...temp });
     console.log("red");
     console.log(dataMove);
