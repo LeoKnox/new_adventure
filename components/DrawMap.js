@@ -72,14 +72,14 @@ export default DrawMap = ({
 
   useEffect(() => {
     console.log("draw character");
-    let tempRow = [...mapState];
+    /*let tempRow = [...mapState];
     let temp = [...mapState[x]];
     temp[y] = char;
     tempRow[x] = temp;
     let chartemp = charLocation();
     for (let ct in chartemp) {
       mobs[ct] = chartemp[ct];
-    }
+    }*/
     //modifyTable(mobs);
   }, []);
 
