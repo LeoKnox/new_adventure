@@ -70,7 +70,7 @@ export default DrawMap = ({
     setDataMove(temp);
   }, [locations]);
 
-  /*useEffect(() => {
+  useEffect(() => {
     console.log("draw character");
     let tempRow = [...mapState];
     let temp = [...mapState[x]];
@@ -80,8 +80,8 @@ export default DrawMap = ({
     for (let ct in chartemp) {
       mobs[ct] = chartemp[ct];
     }
-    modifyTable(mobs);
-  }, []);*/
+    //modifyTable(mobs);
+  }, []);
 
   const moveMob = (xval = -1) => {
     console.log("move mob");
