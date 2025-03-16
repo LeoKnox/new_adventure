@@ -62,7 +62,7 @@ export default DrawMap = ({
     //let temp = currMap;
     let temp = mapState;
     console.log("locations");
-    console.table(currMap);
+    console.table(temp);
     temp[locations["player"].y][locations["player"].x] = warriorSVG();
     locations["monster"].map(
       (mon) => (temp[mon.y][mon.x] = <DrawMonster background={wallSVG()} />)
