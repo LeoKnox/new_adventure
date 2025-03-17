@@ -60,8 +60,8 @@ export default DrawMap = ({
 
   useEffect(() => {
     console.log("locations");
-    console.log(newMap);
-    let temp = [...newMap];
+    console.log(currMap);
+    let temp = [...currMap];
     //let temp = [...mapState];
     console.log("locations");
     console.table(temp);
