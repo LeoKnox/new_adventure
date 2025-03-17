@@ -28,6 +28,7 @@ export default DrawMap = ({
 }) => {
   let mobs = singleMonster();
   const currMap = new Array(3).fill().map(() => Array(2).fill(floorSVG()));
+  const newMap = currMap.push([wallSVG(),wallSVG()])
   const [dataMove, setDataMove] = useState(currMap);
   const [locations, setLocations] = useState(mapData);
   const [pagetest, setpagetest] = useState(warriorSVG());
@@ -59,7 +60,7 @@ export default DrawMap = ({
 
   useEffect(() => {
     console.log(locations);
-    let temp = [...currMap];
+    let temp = [...newMap];
     //let temp = [...mapState];
     console.log("locations");
     console.table(temp);
