@@ -28,7 +28,9 @@ export default DrawMap = ({
   setx,
 }) => {
   let mobs = singleMonster();
-  const currMap = new Array(singleRoom().x).fill().map(() => Array(singleRoom().y).fill(floorSVG()));
+  const currMap = new Array(singleRoom().x)
+    .fill()
+    .map(() => Array(singleRoom().y).fill(floorSVG()));
   let newMap = currMap.push([wallSVG(), wallSVG()]);
   newMap = currMap.unshift([wallSVG(), wallSVG()]);
   const [dataMove, setDataMove] = useState(currMap);
@@ -68,9 +70,7 @@ export default DrawMap = ({
     console.log("locations");
     console.table(temp);
     temp[locations["player"].y][locations["player"].x] = warriorSVG();
-    locations["monster"].map(
-      (mon) => (temp[mon.y][mon.x] = <DrawMonster background={wallSVG()} />)
-    );
+    locations["monster"].map((mon) => (temp[mon.y][mon.x] = demonSVG()));
     setDataMove(temp);
   }, [locations]);
 
