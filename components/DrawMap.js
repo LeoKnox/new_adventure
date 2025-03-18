@@ -77,29 +77,21 @@ export default DrawMap = ({
   };
   return (
     <div>
-      {mapState.map((row) => (
-        <tr>
-          {row.map((tile) => (
-            <td>{tile}</td>
-          ))}
-        </tr>
-      ))}
-      <td>
+      <label>
         <button onClick={() => newMove(1, 0)}>right</button>
-      </td>
-      <td>
+      </label>
+      <label>
         <button onClick={() => newMove(-1, 0)}>left</button>
-      </td>
-      <td>
+      </label>
+      <label>
         <button onClick={() => newMove(0, 1)}>down</button>
-      </td>
-      <td>
+      </label>
+      <label>
         <button onClick={() => newMove(0, -1)}>up</button>
-      </td>
-      <td>
+      </label>
+      <label>
         <button onClick={() => moveMob()}>mob</button>
-      </td>
-      {warr}
+      </label>
       {dataMove.map((i) => (
         <>
           <tr>{i}</tr>
