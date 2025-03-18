@@ -1,5 +1,6 @@
 import { useState, useEffect, cloneElement } from "react";
 import { demonSVG, floorSVG, wallSVG, warriorSVG, warr } from "./svgData";
+import { singleRoom } from "./dungeonData.js";
 import {
   changeDown,
   changeLeft,
@@ -27,9 +28,7 @@ export default DrawMap = ({
   setx,
 }) => {
   let mobs = singleMonster();
-  const currMap = new Array(3)
-    .fill()
-    .map(() => wallSVG() + Array(2).fill(floorSVG()));
+  const currMap = new Array(singleRoom().x).fill().map(() => Array(singleRoom().y).fill(floorSVG()));
   let newMap = currMap.push([wallSVG(), wallSVG()]);
   newMap = currMap.unshift([wallSVG(), wallSVG()]);
   const [dataMove, setDataMove] = useState(currMap);
