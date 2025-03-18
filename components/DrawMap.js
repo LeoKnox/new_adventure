@@ -2,19 +2,10 @@ import { useState, useEffect, cloneElement } from "react";
 import { demonSVG, floorSVG, wallSVG, warriorSVG, warr } from "./svgData";
 import { singleRoom } from "./dungeonData.js";
 import {
-  changeDown,
-  changeLeft,
-  mobDown,
-  charUpdate,
   charLocation,
-  deleteDown,
   updateMonster,
   singleMonster,
-  change,
-  updateCharacter,
   mapData,
-  move,
-  addChar,
 } from "./playData.js";
 import DrawMonster from "./DrawMonster.js";
 import DrawCharacter from "./DrawCharacter.js";
@@ -27,13 +18,11 @@ export default DrawMap = ({
   sety,
   setx,
 }) => {
-  let mobs = singleMonster();
   const currMap = new Array(singleRoom().x)
     .fill()
     .map(() => Array(singleRoom().y).fill(floorSVG()));
   const [dataMove, setDataMove] = useState(currMap);
   const [locations, setLocations] = useState(mapData);
-  const [pagetest, setpagetest] = useState(warriorSVG());
   const [char, setChar] = useState(charLocation());
   const [mapState, setMapState] = useState(() => {
     let temp = [];
