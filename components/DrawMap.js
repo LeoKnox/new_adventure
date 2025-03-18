@@ -31,8 +31,6 @@ export default DrawMap = ({
   const currMap = new Array(singleRoom().x)
     .fill()
     .map(() => Array(singleRoom().y).fill(floorSVG()));
-  let newMap = currMap.push([wallSVG(), wallSVG()]);
-  newMap = currMap.unshift([wallSVG(), wallSVG()]);
   const [dataMove, setDataMove] = useState(currMap);
   const [locations, setLocations] = useState(mapData);
   const [pagetest, setpagetest] = useState(warriorSVG());
