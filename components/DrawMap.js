@@ -94,7 +94,7 @@ export default DrawMap = ({
       </label>
       {dataMove.map((i) => (
         <>
-          <tr>{i}</tr>
+          <tr><td>{wallSVG()}</td>{i}<td>{wallSVG()}</td></tr>
         </>
       ))}
     </div>
