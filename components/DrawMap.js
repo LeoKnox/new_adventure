@@ -79,6 +79,7 @@ export default DrawMap = ({
     const elements = [];
     elements.push(Array(singleRoom().y).fill(wallSVG()));
     elements.push(dataMove);
+    elements.push(Array(singleRoom().y).fill(wallSVG()));
     return elements;
   };
 
