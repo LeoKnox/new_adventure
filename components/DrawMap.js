@@ -75,10 +75,10 @@ export default DrawMap = ({
     console.log("red");
     console.log(dataMove);
   };
-  const createWalls = (count) => {
+  const createWalls = () => {
     const elements = [];
-    const rowTemp = [];
-    elements.push(Array(singleRoom().y).fill(wallSVG()))
+    elements.push(Array(singleRoom().y).fill(wallSVG()));
+    elements.push(dataMove);
     return elements;
   };
 
@@ -100,7 +100,7 @@ export default DrawMap = ({
         <button onClick={() => moveMob()}>mob</button>
       </label>
       <table>
-        {createWalls(5)}
+        {createWalls()}
         {dataMove.map((i) => (
           <>
             <tr>{i}</tr>
