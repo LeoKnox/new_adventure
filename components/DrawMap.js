@@ -78,7 +78,7 @@ export default DrawMap = ({
   const createWalls = (count) => {
     const elements = [];
     for (let i = 0; i < count; i++) {
-      elements.push(<tr>{wallSVG()}</tr>);
+      elements.push(<td>{wallSVG()}</td>);
     }
     return elements;
   };
@@ -101,7 +101,7 @@ export default DrawMap = ({
         <button onClick={() => moveMob()}>mob</button>
       </label>
       <table>
-      {createWalls(5)}
+        {createWalls(5)}
         {dataMove.map((i) => (
           <>
             <tr>{i}</tr>
