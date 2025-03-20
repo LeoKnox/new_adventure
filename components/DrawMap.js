@@ -77,6 +77,7 @@ export default DrawMap = ({
   };
   const createWalls = () => {
     const elements = [...currMap];
+    elements[1][1] = warriorSVG();
     /*
     elements.push(<tr>{Array(singleRoom().y).fill(<td>{wallSVG()}</td>)}</tr>);
     const newElements = [<td>{wallSVG()}</td>];
@@ -104,9 +105,7 @@ export default DrawMap = ({
       <label>
         <button onClick={() => moveMob()}>mob</button>
       </label>
-      <table>
-        {createWalls()}
-      </table>
+      <table>{createWalls()}</table>
     </div>
   );
 };
