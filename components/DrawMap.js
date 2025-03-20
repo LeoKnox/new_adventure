@@ -20,7 +20,7 @@ export default DrawMap = ({
 }) => {
   const currMap = new Array(singleRoom().x)
     .fill()
-    .map(() => Array(singleRoom().y).fill(<td>{floorSVG()}</td>));
+    .map(() => <tr>{Array(singleRoom().y).fill(<td>{floorSVG()}</td>)}</tr>);
   const [dataMove, setDataMove] = useState(currMap);
   const [locations, setLocations] = useState(mapData);
   const [char, setChar] = useState(charLocation());
