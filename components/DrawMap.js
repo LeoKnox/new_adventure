@@ -76,8 +76,7 @@ export default DrawMap = ({
     console.log(dataMove);
   };
   const createWalls = () => {
-    const elements = [...dataMove];
-    () => newMove(0,0);
+    const elements = [...currMap];
     /*
     elements.push(<tr>{Array(singleRoom().y).fill(<td>{wallSVG()}</td>)}</tr>);
     const newElements = [<td>{wallSVG()}</td>];
@@ -107,11 +106,6 @@ export default DrawMap = ({
       </label>
       <table>
         {createWalls()}
-        {dataMove.map((i) => (
-          <>
-            <tr>{i}</tr>
-          </>
-        ))}
       </table>
     </div>
   );
