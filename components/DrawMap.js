@@ -76,8 +76,9 @@ export default DrawMap = ({
     console.log(dataMove);
   };
   const createWalls = () => {
-    const elements = [...currMap];
+    const elements = [...dataMove];
     elements[1][1] = warriorSVG();
+
     /*
     elements.push(<tr>{Array(singleRoom().y).fill(<td>{wallSVG()}</td>)}</tr>);
     const newElements = [<td>{wallSVG()}</td>];
