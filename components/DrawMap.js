@@ -76,12 +76,15 @@ export default DrawMap = ({
     console.log(dataMove);
   };
   const createWalls = () => {
-    const elements = [];
+    const elements = [...dataMove];
+    () => newMove(0,0);
+    /*
     elements.push(<tr>{Array(singleRoom().y).fill(<td>{wallSVG()}</td>)}</tr>);
     const newElements = [<td>{wallSVG()}</td>];
-    newElements.push(<tr>{[...dataMove, <td>{wallSVG()}</td>]}</tr>);
+    newElements.push([...dataMove, <td>{wallSVG()}</td>]);
     elements.push(newElements);
     elements.push(<tr>{Array(singleRoom().y).fill(<td>{wallSVG()}</td>)}</tr>);
+    */
     return elements;
   };
 
