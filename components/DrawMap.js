@@ -79,8 +79,8 @@ export default DrawMap = ({
     console.log("create walls");
     let z = 1;
     let elements = dataMove.map((s, t) => (t == z ? 
-        s.map((u,v) => (v==z ? <td>{warriorSVG()}</td>: u)
-       : s)))
+        (s.map((u,v) => (v==z ? <td>{warriorSVG()}</td>: u)
+       : s))))
     elements[1][1] = <td id="*">{warriorSVG()}</td>;
     console.log(elements);
     /*
