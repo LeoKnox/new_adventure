@@ -77,8 +77,9 @@ export default DrawMap = ({
   };
   const createWalls = () => {
     console.log("create walls");
-    let elements = [...dataMove];
-    elements[1][1] = <td>{warriorSVG()}</td>;
+    let z = 1;
+    let elements = dataMove.map((s,t) => t==z? "t" : s);
+    elements[1][1] = <td id="*">{warriorSVG()}</td>;
     console.log(elements);
     /*
     elements.push(<tr>{Array(singleRoom().y).fill(<td>{wallSVG()}</td>)}</tr>);
