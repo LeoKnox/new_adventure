@@ -77,12 +77,12 @@ export default DrawMap = ({
   };
   const createWalls = (loc) => {
     console.log("create walls");
-    console.log("cw " + loc.y);
+    console.log("cw " + dataMove?.y);
     let cw = {};
     //locations.x && cw = locations;
     let z = 1;
     let elements = dataMove.map((s, t) =>
-      t == dataMove.y
+      t == dataMove?.y
         ? s.props.children.map((u, v) => (v == z ? warriorSVG() : u))
         : s
     );
