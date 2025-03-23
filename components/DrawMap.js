@@ -81,15 +81,7 @@ export default DrawMap = ({
     let elements = dataMove.map((s, t) =>
       t == z ? s.props.children.map((u, v) => (v == z ? warriorSVG() : u)) : s
     );
-    //elements[1][1] = <td id="*">{warriorSVG()}</td>;
     console.log(elements);
-    /*
-    elements.push(<tr>{Array(singleRoom().y).fill(<td>{wallSVG()}</td>)}</tr>);
-    const newElements = [<td>{wallSVG()}</td>];
-    newElements.push([...dataMove, <td>{wallSVG()}</td>]);
-    elements.push(newElements);
-    elements.push(<tr>{Array(singleRoom().y).fill(<td>{wallSVG()}</td>)}</tr>);
-    */
     return elements;
   };
 
