@@ -75,12 +75,12 @@ export default DrawMap = ({
     console.log("red");
     console.log(dataMove);
   };
-  const createWalls = () => {
+  const createWalls = (loc) => {
     console.log("create walls");
-    console.log("cw " + locations.y);
+    console.log("cw " + loc.y);
     let z = 1;
     let elements = dataMove.map((s, t) =>
-      t == locations.y
+      t == loc.y
         ? s.props.children.map((u, v) => (v == z ? warriorSVG() : u))
         : s
     );
@@ -105,7 +105,7 @@ export default DrawMap = ({
       <label>
         <button onClick={() => moveMob()}>mob</button>
       </label>
-      <table>{createWalls()}</table>
+      <table>{createWalls(locations)}</table>
     </div>
   );
 };
