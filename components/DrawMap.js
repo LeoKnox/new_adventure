@@ -75,14 +75,15 @@ export default DrawMap = ({
     console.log("red");
     console.log(dataMove);
   };
-  const createWalls = (loc) => {
+  const createWalls = async (loc) => {
     console.log("create walls");
 
-    let cw = locations && locations.y;
-    console.log("cw " + cw);
+    //let cw = locations && locations.y;
+    //console.log("cw " + cw);
     //locations.x && cw = locations;
     let z = 1;
-    let elements = dataMove.map((s, t) =>
+    let elements = {};
+    await elements = dataMove.map((s, t) =>
       t == locations?.y
         ? s.props.children.map((u, v) => (v == z ? warriorSVG() : u))
         : s
