@@ -77,8 +77,9 @@ export default DrawMap = ({
   };
   const createWalls = (loc) => {
     console.log("create walls");
-    console.log("cw " + locations?.y);
-    let cw = {};
+
+    let cw = locations && locations.y;
+    console.log("cw " + cw);
     //locations.x && cw = locations;
     let z = 1;
     let elements = dataMove.map((s, t) =>
