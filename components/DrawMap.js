@@ -51,11 +51,7 @@ export default DrawMap = ({
 
   useEffect(() => {
     console.log("locations");
-    console.log(currMap);
     let temp = [...currMap];
-    //let temp = [...mapState];
-    console.log("locations");
-    console.table(temp);
     temp[locations["player"].y][locations["player"].x] = warriorSVG();
     locations["monster"].map((mon) => (temp[mon.y][mon.x] = demonSVG()));
     setDataMove(temp);
