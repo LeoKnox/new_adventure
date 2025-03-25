@@ -1,12 +1,7 @@
 import { useState, useEffect, cloneElement } from "react";
 import { demonSVG, floorSVG, wallSVG, warriorSVG, warr } from "./svgData";
 import { singleRoom } from "./dungeonData.js";
-import {
-  charLocation,
-  updateMonster,
-  mobData,
-  mapData,
-} from "./playData.js";
+import { charLocation, updateMonster, mobData, mapData } from "./playData.js";
 import DrawMonster from "./DrawMonster.js";
 import DrawCharacter from "./DrawCharacter.js";
 
@@ -79,11 +74,7 @@ export default DrawMap = ({
         ? s.props.children.map((u, v) => (v == cw.player.x ? warriorSVG() : u))
         : s
     );
-    elements = dataMove.map((s, t) =>
-      t == mobData[1].y
-        ? s.props.children.map((u, v) => (v == mobData[1].x ? warriorSVG() : u))
-        : s
-    );
+    elements[mobData[1].y][mobData[1].x] = demonSVG();
     return elements;
   };
 
