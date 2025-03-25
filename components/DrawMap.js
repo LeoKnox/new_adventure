@@ -107,7 +107,7 @@ export default DrawMap = ({
         <button onClick={() => newMove(0, -1)}>up</button>
       </label>
       <label>
-        <button onClick={() => moveMob()}>mob</button>
+        <button onClick={() => setLocations({ x: 1, y: 1 })}>mob</button>
       </label>
       <table>{createWalls()}</table>
     </div>
