@@ -4,7 +4,7 @@ import { singleRoom } from "./dungeonData.js";
 import {
   charLocation,
   updateMonster,
-  singleMonster,
+  mobData,
   mapData,
 } from "./playData.js";
 import DrawMonster from "./DrawMonster.js";
@@ -77,6 +77,11 @@ export default DrawMap = ({
     let elements = dataMove.map((s, t) =>
       t == cw.player.y
         ? s.props.children.map((u, v) => (v == cw.player.x ? warriorSVG() : u))
+        : s
+    );
+    elements = dataMove.map((s, t) =>
+      t == mobData[1].y
+        ? s.props.children.map((u, v) => (v == mobData[1].x ? warriorSVG() : u))
         : s
     );
     return elements;
