@@ -78,8 +78,8 @@ export default DrawMap = ({
   const createWalls = (loc) => {
     console.log("create walls");
 
-    let cw = locations || locations.y;
-    console.log({ cw });
+    let cw = locations;
+    console.log(cw.character[0].x);
     //locations.x && cw = locations;
     let z = 1;
     let elements = {};
