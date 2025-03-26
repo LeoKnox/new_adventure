@@ -67,8 +67,8 @@ export default DrawMap = ({
     console.log(dataMove);
   };
   const confirm = () => {
-    return true
-    }
+    return v && cw.player.x;
+  };
   const createWalls = () => {
     console.log("create walls");
     let cw = locations;
@@ -78,7 +78,9 @@ export default DrawMap = ({
         : s
     );
     elements = dataMove.map((s, t) =>
-      confirm() ? s.props.children.map((u, v) => (v == 1 ? warriorSVG() : u)) : s
+      t == 1
+        ? s.props.children.map((u, v) => (confirm(v) ? warriorSVG() : u))
+        : s
     );
     return elements;
   };
