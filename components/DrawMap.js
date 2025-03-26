@@ -66,8 +66,8 @@ export default DrawMap = ({
     console.log("red");
     console.log(dataMove);
   };
-  const confirm = () => {
-    return v && cw.player.x;
+  const confirm = (v) => {
+    return v == locations.x;
   };
   const createWalls = () => {
     console.log("create walls");
