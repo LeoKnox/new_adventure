@@ -74,7 +74,13 @@ export default DrawMap = ({
         ? s.props.children.map((u, v) => (v == cw.player.x ? warriorSVG() : u))
         : s
     );
-    elements[1][1] = demonSVG();
+    elements.map(([...row]) => {
+      row.map((col) => {
+        if (col === 1) {
+          return [...row, [...col, demonSVG()]];
+        }
+      });
+    })
     return elements;
   };
 
