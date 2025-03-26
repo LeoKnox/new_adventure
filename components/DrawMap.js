@@ -78,9 +78,7 @@ export default DrawMap = ({
         : s
     );
     elements = dataMove.map((s, t) =>
-      t == 1
-        ? s.props.children.map((u, v) => (confirm(v) ? warriorSVG() : u))
-        : s
+      t == 1 ? s.foreach(() => wallSVG()) : s
     );
     return elements;
   };
