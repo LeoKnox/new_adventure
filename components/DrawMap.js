@@ -67,7 +67,8 @@ export default DrawMap = ({
     console.log(dataMove);
   };
   const confirm = (v) => {
-    return wallSVG();
+    let mmm = [...v, wallSVG()];
+    return mmm;
   };
   const createWalls = () => {
     console.log("create walls");
