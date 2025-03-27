@@ -67,7 +67,7 @@ export default DrawMap = ({
     console.log(dataMove);
   };
   const confirm = (v) => {
-    return v
+    return v;
   };
   const createWalls = () => {
     console.log("create walls");
@@ -78,7 +78,7 @@ export default DrawMap = ({
         : s
     );
     elements = dataMove.map((s, t) =>
-      t == 1 ? s.props.children.forEach(confirm(s)) : s
+      t == 1 ? s.props.children.forEach(() => console.log(s)) : s
     );
     return elements;
   };
