@@ -78,7 +78,7 @@ export default DrawMap = ({
         : s
     );
     elements = dataMove.map((s, t) =>
-      t == 1 ? s.props.children.forEach(() => console.log(s)) : s
+      t == 1 ? s.props.children.forEach(() => confirm(s)) : s
     );
     return elements;
   };
