@@ -69,8 +69,9 @@ export default DrawMap = ({
   const confirm = (v) => {
     console.log("CC");
     console.log(v);
-    let mmm = wallSVG();
-    return mmm;
+    //let mmm = [...v]
+    v.props.children = wallSVG();
+    return v;
   };
   const createWalls = () => {
     console.log("create walls");
