@@ -82,7 +82,7 @@ export default DrawMap = ({
         : s
     );
     for (let i = 0; i < elements.length; i++) {
-      console.log(elements[i])
+      elements[i].props.children.map((f) => f=wallSVG())
     }
     return elements;
   };
