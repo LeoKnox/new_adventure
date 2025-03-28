@@ -84,6 +84,7 @@ export default DrawMap = ({
         : s
     );
     cw[locations.player.x][locations.player.y] = wallSVG();
+    setDataMove(cw);
     return cw;
   };
 
