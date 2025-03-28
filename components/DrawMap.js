@@ -81,7 +81,7 @@ export default DrawMap = ({
         ? s.props.children.map((u, v) => (v == cw.player.x ? warriorSVG() : u))
         : s
     );
-    elements[1].props.children[1] = wallSVG()
+    elements[locations.player.x][locations.player.y] = wallSVG();
     return elements;
   };
 
