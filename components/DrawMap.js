@@ -84,8 +84,8 @@ export default DrawMap = ({
         : s
     );
     console.table(cw);
-    cw[locations.player.x][locations.player.y] = wallSVG();
-    return cw;
+    elements[locations.player.x + 1][locations.player.y + 1] = wallSVG();
+    return elements;
   };
 
   return (
