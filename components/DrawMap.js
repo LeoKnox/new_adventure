@@ -70,14 +70,18 @@ export default DrawMap = ({
     console.log("CC");
     console.log(v);
     //let mmm = [...v]
-    v.props.children = wallSVG();
-    return v;
+    //v.props.children = wallSVG();
+    return demonSVG();
   };
   const createWalls = () => {
     console.log("create walls");
-    let cw = dataMove.map((s, t) =>
-      <tr>{s.props.children.map((u, v) => <td>{wallSVG()}</td>)}</tr>
-    );
+    let cw = dataMove.map((s, t) => (
+      <tr>
+        {s.props.children.map((u, v) => (
+          <td>{confirm(t,v)}</td>
+        ))}
+      </tr>
+    ));
     let elements = dataMove.map((s, t) =>
       t == locations.player.y
         ? s.props.children.map((u, v) =>
