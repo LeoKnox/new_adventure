@@ -66,19 +66,20 @@ export default DrawMap = ({
     console.log("red");
     console.log(dataMove);
   };
-  const confirm = (v) => {
+  const confirm = (t,v) => {
     console.log("CC");
     console.log(v);
     //let mmm = [...v]
     //v.props.children = wallSVG();
-    return demonSVG();
+    //return demonSVG();
+    return false;
   };
   const createWalls = () => {
     console.log("create walls");
     let cw = dataMove.map((s, t) => (
       <tr>
         {s.props.children.map((u, v) => (
-          <td>{confirm(t,v)}</td>
+          <td>{confirm(t, v) || wallSVG()}</td>
         ))}
       </tr>
     ));
