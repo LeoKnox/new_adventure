@@ -73,7 +73,12 @@ export default DrawMap = ({
     //v.props.children = wallSVG();
     //return demonSVG();
     console.log("RRRR");
-    console.log(mobData[t][v]);
+    //console.log(mobData[t][v]);
+    if (!mobData[t][v] === undefined) {
+      return false;
+    } else {
+      return mobData[t][v];
+    }
     return mobData[t][v] || false;
   };
   const createWalls = () => {
