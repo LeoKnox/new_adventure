@@ -74,7 +74,7 @@ export default DrawMap = ({
     //return demonSVG();
     console.log("RRRR");
     //console.log(mobData[t][v]);
-    if (!mobData[t][v] === undefined) {
+    if (mobData[t][v] === undefined) {
       return false;
     } else {
       return mobData[t][v];
