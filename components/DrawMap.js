@@ -75,10 +75,10 @@ export default DrawMap = ({
     console.log("RRRR");
     console.table(mobData);
     console.log(t + ":" + v);
-    if (!mobData.hasOwnProperty(t) && !mobData[t].hasOwnProperty(v)) {
-      return false;
-    } else {
+    if (mobData.hasOwnProperty(t) && mobData[t].hasOwnProperty(v)) {
       return mobData[t][v];
+    } else {
+      return false;
     }
     //return mobData[t][v] || false;
   };
