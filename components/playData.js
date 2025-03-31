@@ -37,8 +37,10 @@ export const mapData = {
 };
 
 export const mobData = {
-  3: {4: demonSVG()}
-}
+  0: {0: warriorSVG()},
+  3: { 4: demonSVG() },
+  4: { 4: demonSVG() },
+};
 export const mob2Data = [
   { x: 3, y: 4 },
   { x: 4, y: 2 },
