@@ -67,20 +67,12 @@ export default DrawMap = ({
     console.log(dataMove);
   };
   const confirm = (t, v) => {
-    console.log("CC");
-
-    //let mmm = [...v]
-    //v.props.children = wallSVG();
-    //return demonSVG();
-    console.log("RRRR");
-    console.table(mobData);
-    console.log(t + ":" + v);
+    console.log("confirm");
     if (mabData.hasOwnProperty(t) && mabData[t].hasOwnProperty(v)) {
       return mabData[t][v];
     } else {
       return false;
     }
-    //return mobData[t][v] || false;
   };
   const createWalls = () => {
     console.log("create walls");
@@ -91,15 +83,6 @@ export default DrawMap = ({
         ))}
       </tr>
     ));
-    let elements = dataMove.map((s, t) =>
-      t == locations.player.y
-        ? s.props.children.map((u, v) =>
-            v == locations.player.x ? warriorSVG() : u
-          )
-        : s
-    );
-    console.table(cw);
-    elements[locations.player.x + 1][locations.player.y + 1] = wallSVG();
     return cw;
   };
 
