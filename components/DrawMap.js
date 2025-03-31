@@ -1,4 +1,4 @@
-import { useState, useEffect, cloneElement } from "react";
+import { useState, useEffect, useCallback, cloneElement } from "react";
 import { demonSVG, floorSVG, wallSVG, warriorSVG, warr } from "./svgData";
 import { singleRoom } from "./dungeonData.js";
 import { charLocation, updateMonster, mobData, mapData } from "./playData.js";
@@ -74,7 +74,7 @@ export default DrawMap = ({
       return false;
     }
   };
-  const createWalls = () => {
+  const createWalls = useCallback (() => {
     console.log("create walls");
     let cw = dataMove.map((s, t) => (
       <tr>
@@ -84,7 +84,7 @@ export default DrawMap = ({
       </tr>
     ));
     return cw;
-  };
+  }, [locations]);
 
   return (
     <div>
