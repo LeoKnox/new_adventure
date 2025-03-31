@@ -59,10 +59,12 @@ export default DrawMap = ({
   };
 
   const newMove = (x, y) => {
-    let temp = locations;
+    /*let temp = locations;
     temp["player"].y = temp["player"].y + y;
     temp["player"].x = temp["player"].x + x;
-    setLocations({ ...temp });
+    setLocations({ ...temp });*/
+    let temp = currMap;
+    currMap[0][1] = wallSVG();
     console.log("red");
     console.log(dataMove);
   };
@@ -74,7 +76,7 @@ export default DrawMap = ({
       return false;
     }
   };
-  const createWalls = useCallback (() => {
+  const createWalls = useCallback(() => {
     console.log("create walls");
     let cw = dataMove.map((s, t) => (
       <tr>
