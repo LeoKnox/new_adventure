@@ -37,7 +37,7 @@ export const mapData = {
 };
 
 export const mobData = {
-  0: {0: warriorSVG()},
+  0: { 1: warriorSVG() },
   3: { 4: demonSVG() },
   4: { 4: demonSVG() },
 };
@@ -45,6 +45,13 @@ export const mob2Data = [
   { x: 3, y: 4 },
   { x: 4, y: 2 },
 ];
+
+export const move = () => {
+  console.log("move");
+  let temp = mobData;
+  temp[3] = {3: wallSVG()}
+  return temp;
+};
 
 export const addChar = (i) => {
   console.log("map data" + i);
@@ -54,13 +61,6 @@ export const addChar = (i) => {
   return temp;
 };
 
-export const move = () => {
-  console.log("move");
-  temp = mapData;
-  temp.y = temp.y++;
-  mapData = temp;
-  console.log(mapData);
-};
 
 export const charUpdate = (
   newChar = {
