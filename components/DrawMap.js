@@ -58,18 +58,6 @@ export default DrawMap = ({
     modifyTable(change);
   };
 
-  const newMove = (x, y) => {
-    let temp = locations;
-    temp["player"].y = temp["player"].y + y;
-    temp["player"].x = temp["player"].x + x;
-    setLocations({ ...temp });
-    //let temp = currMap;
-    currMap[0][1] = wallSVG();
-    //console.log("red");
-    setDataMove(currMap);
-    //setLocations(locations);
-    console.log(dataMove);
-  };
   const confirm = (t, v) => {
     console.log("confirm");
     if (mabData.hasOwnProperty(t) && mabData[t].hasOwnProperty(v)) {
@@ -77,6 +65,18 @@ export default DrawMap = ({
     } else {
       return false;
     }
+  };
+  const newMove = (x, y) => {
+    let cw = dataMove.map((s, t) => (
+      <tr>
+        {s.props.children.map((u, v) => (
+          <td>{confirm(t + 1, v + 1) || u}</td>
+        ))}
+      </tr>
+    ));
+    setDataMove(cw);
+    //setLocations(locations);
+    console.log(dataMove);
   };
   const createWalls = useCallback(() => {
     console.log("create walls");
