@@ -48,11 +48,11 @@ export const mob2Data = [
 
 export const move = (x = 1, y = 0) => {
   console.log("move");
-  let temp = {...mobData};
+  /*let temp = {...mobData};
   let loc = Object.keys(mobData)[0];
   console.log(loc);
   temp[0] = { [+loc+x]: warriorSVG() };
-  console.log(temp);
+  console.log(temp);*/
   return mobData;
 };
 
