@@ -53,7 +53,7 @@ export const move = (x = 1, y = 0) => {
   console.log(loc);
   temp[0] = { [+loc+x]: warriorSVG() };
   console.log(temp);
-  return temp;
+  return mobData;
 };
 
 export const addChar = (i) => {
