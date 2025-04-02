@@ -1,7 +1,13 @@
 import { useState, useEffect, useCallback, cloneElement } from "react";
 import { demonSVG, floorSVG, wallSVG, warriorSVG, warr } from "./svgData";
 import { singleRoom } from "./dungeonData.js";
-import { charLocation, updateMonster, mobData, mapData } from "./playData.js";
+import {
+  charLocation,
+  updateMonster,
+  mobData,
+  mapData,
+  move,
+} from "./playData.js";
 import DrawMonster from "./DrawMonster.js";
 import DrawCharacter from "./DrawCharacter.js";
 
@@ -74,9 +80,10 @@ export default DrawMap = ({
         ))}
       </tr>
     ));
-    setDataMove(cw);
+    setDataMove(move());
     //setLocations(locations);
     console.log(dataMove);
+    console.log("dm2");
   };
   const createWalls = useCallback(() => {
     console.log("create walls");
