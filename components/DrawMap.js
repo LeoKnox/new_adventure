@@ -82,7 +82,7 @@ export default DrawMap = ({
     ));
     setMabData(move());
     //setLocations(locations);
-    console.log(dataMove);
+    console.log(mabData);
     console.log("dm2");
   };
   const createWalls = useCallback(() => {
