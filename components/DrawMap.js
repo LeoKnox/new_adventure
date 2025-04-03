@@ -80,7 +80,7 @@ export default DrawMap = ({
         ))}
       </tr>
     ));
-    setDataMove(move());
+    setMabData(move());
     //setLocations(locations);
     console.log(dataMove);
     console.log("dm2");
