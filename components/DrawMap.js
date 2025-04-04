@@ -73,14 +73,7 @@ export default DrawMap = ({
     }
   };
   const newMove = (x, y) => {
-    let cw = dataMove.map((s, t) => (
-      <tr>
-        {s.props.children.map((u, v) => (
-          <td>{confirm(t + 1, v + 1) || u}</td>
-        ))}
-      </tr>
-    ));
-    setMabData(move());
+    setMabData(move(x, y));
   };
   const createWalls = useCallback(() => {
     console.log("create walls");
