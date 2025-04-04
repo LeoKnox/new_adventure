@@ -49,7 +49,9 @@ export const mob2Data = [
 export const move = (x = 1, y = 0) => {
   console.log("move");
   let temp = { ...mobData };
-  let loc = Object.keys(Object.keys(mobData)[0])[0];
+  let loc = Object.keys(mobData)[0];
+  console.log(loc);
+  loc = Object.keys(loc);
   console.log(loc);
   temp[0] = { [+loc + x]: warriorSVG() };
   console.log(temp);
