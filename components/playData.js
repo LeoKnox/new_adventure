@@ -53,13 +53,11 @@ export const move = (x = 1, y = 0) => {
   console.log(loc);
   temp[0] = { [+loc + x]: warriorSVG() };
   console.log(temp);
-  return [
-    {
-      0: { 2: warriorSVG() },
-      3: { 4: demonSVG() },
-      4: { 4: demonSVG() },
-    },
-  ];
+  return {
+    0: { 2: warriorSVG() },
+    3: { 4: demonSVG() },
+    4: { 4: demonSVG() },
+  };
 };
 
 export const addChar = (i) => {
