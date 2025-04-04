@@ -81,9 +81,6 @@ export default DrawMap = ({
       </tr>
     ));
     setMabData(move());
-    //setLocations(locations);
-    console.log(move());
-    console.log("dm2");
   };
   const createWalls = useCallback(() => {
     console.log("create walls");
