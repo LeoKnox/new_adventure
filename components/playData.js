@@ -52,7 +52,8 @@ export const move = (x = 1, y = 0, currData) => {
   let loc = Object.keys(currData)[0];
   console.log(loc);
   if (temp[loc] != 0) {
-    console.log("red");
+    temp[+loc + y] = temp[loc];
+    delete temp[loc];
   }
   loc = +Object.keys(currData[loc])[0];
   if (temp[loc] != 0) {
