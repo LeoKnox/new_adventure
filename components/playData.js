@@ -51,11 +51,11 @@ export const move = (x = 1, y = 0, currData) => {
   let temp = { ...currData };
   let loc = Object.keys(currData)[0];
   console.log(loc);
-  if (loc != 0) {
+  if (temp[loc] != 0) {
     console.log("red");
   }
   loc = +Object.keys(currData[loc])[0];
-  if (loc != 0) {
+  if (temp[loc] != 0) {
     temp[0] = { [+loc + x]: warriorSVG() };
   }
   return temp;
