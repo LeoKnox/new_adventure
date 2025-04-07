@@ -73,16 +73,13 @@ export default DrawMap = ({
     }
   };
   const newMove = (x, y) => {
-    let temp = {
-      ...mabData,
-    };
-    Object.keys(temp).forEach((key, index) => {
-      temp[1] = temp[0];
-      delete temp[0];
-    });
-
-    setMabData(temp);
     //setMabData(move(x, y, mabData));
+    Object.keys(mabData).forEach(function (data, index) {
+      if (index != 0) {
+        data[1] = data[0];
+        delete data[0];
+      }
+    });
   };
   const createWalls = useCallback(() => {
     console.log("create walls");
