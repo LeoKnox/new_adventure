@@ -76,14 +76,11 @@ export default DrawMap = ({
     let temp = {
       ...mabData,
     };
-    temp.map((data, x) => {
-      if ((x = 1)) {
-        temp[1] = temp[0];
-        delete temp[0];
-      } else {
-        x;
-      }
+    Object.keys(temp).forEach((key, index) => {
+      temp[1] = temp[0];
+      delete temp[0];
     });
+
     setMabData(temp);
     //setMabData(move(x, y, mabData));
   };
