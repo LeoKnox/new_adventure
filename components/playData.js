@@ -74,9 +74,7 @@ export default DrawMap = ({
   };
   const newMove = (x, y) => {
     let temp = {
-      0: { 2: warriorSVG() },
-      3: { 4: demonSVG() },
-      4: { 4: demonSVG() },
+      ...mabData,
     };
     temp[1] = temp[0];
     delete temp[0];
