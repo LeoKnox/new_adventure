@@ -78,6 +78,8 @@ export default DrawMap = ({
       3: { 4: demonSVG() },
       4: { 4: demonSVG() },
     };
+    temp[1] = temp[0];
+    delete temp[0];
     setMabData(temp);
     //setMabData(move(x, y, mabData));
   };
