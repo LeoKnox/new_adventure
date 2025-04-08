@@ -81,7 +81,7 @@ export default DrawMap = ({
         delete data[0];
         console.log(data[key]);
       } else {
-        data[index];
+        console.log(data[index]);
       }
     });
     //console.log(temp);
