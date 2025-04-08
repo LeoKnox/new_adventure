@@ -79,11 +79,12 @@ export default DrawMap = ({
       if (index != 0) {
         data[1] = data[0];
         delete data[0];
+        console.log(data[key]);
       } else {
         data[index];
       }
     });
-    console.log(temp);
+    //console.log(temp);
     setMabData(temp);
   };
   const createWalls = useCallback(() => {
