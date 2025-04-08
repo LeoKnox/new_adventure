@@ -10,6 +10,7 @@ import {
 } from "./playData.js";
 import DrawMonster from "./DrawMonster.js";
 import DrawCharacter from "./DrawCharacter.js";
+import { textSpanOverlap } from "typescript";
 
 export default DrawMap = ({
   width = 10,
@@ -75,13 +76,12 @@ export default DrawMap = ({
   const newMove = (x, y) => {
     console.log("newmove");
     //setMabData(move(x, y, mabData));
-    let temp = Object.keys(mabData).forEach(function (data, index) {
+    let temp = { ...mabData };
+    Object.keys(temp).forEach(function (data, index) {
       if (index != 0) {
         data[1] = data[0];
         delete data[0];
         console.log(data[key]);
-      } else {
-        console.log(data[index]);
       }
     });
     //console.log(temp);
