@@ -78,7 +78,7 @@ export default DrawMap = ({
     //setMabData(move(x, y, mabData));
     let temp = { ...mabData };
     Object.keys(temp).forEach(function (data, index) {
-      console.log(data);
+      console.log(temp[0][1]);
       console.log(index);
     });
     //console.log(temp);
