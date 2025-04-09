@@ -50,13 +50,13 @@ export const move = (x = 1, y = 0, currData) => {
   console.log("move");
   let temp = { ...currData };
   let loc = Object.keys(currData)[0];
-  console.log(loc);
+  console.log(loc + ":" + y);
   if (temp[loc] != 0) {
     temp[+loc + y] = temp[loc];
     delete temp[loc];
   }
   console.log(temp);
-  loc = +Object.keys(currData[loc])[0];
+  loc = Object.keys(currData[loc])[0];
   if (temp[loc] != 0) {
     temp[0] = { [+loc + x]: warriorSVG() };
   }
