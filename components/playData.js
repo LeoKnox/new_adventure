@@ -52,7 +52,8 @@ export const move = (x = 1, y = 0, currData) => {
   let loc = Object.keys(currData)[0];
   console.log(loc + ":" + y);
   if (temp[loc] != 0) {
-    temp[+loc + y] = temp[loc];
+    console.log("row");
+    temp[+loc + y] = temp[temp[loc]];
     delete temp[loc];
   }
   console.log(temp);
