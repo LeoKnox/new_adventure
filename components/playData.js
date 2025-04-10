@@ -48,21 +48,21 @@ export const mob2Data = [
 
 export const move = (x = 1, y = 0, currData) => {
   console.log("move");
-  let temp = { ...currData };
+  //let temp = { ...currData };
   let loc = Object.keys(currData)[0];
   console.log(loc + ":" + y);
-  console.log(temp[loc]);
-  if (temp[loc] != 0) {
+  console.log(currData[loc]);
+  if (currData[loc] != 0) {
     console.log("row");
-    temp[+loc + y] = temp[loc];
-    delete temp[0];
+    currData[+loc + y] = currData[loc];
+    delete currData[0];
   }
-  console.log(temp);
+  console.log(currData);
   loc = Object.keys(currData[loc])[0];
-  if (temp[loc] != 0) {
-    temp[0] = { [+loc + x]: warriorSVG() };
+  if (currData[loc] != 0) {
+    currData[0] = { [+loc + x]: warriorSVG() };
   }
-  return temp;
+  return currData;
 };
 
 export const addChar = (i) => {
