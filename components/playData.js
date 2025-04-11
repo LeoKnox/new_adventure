@@ -60,8 +60,8 @@ export const move = (x = 1, y = 0, currData) => {
   console.log(currData);
   loc = Object.keys(currData[y]);
   console.log("next move");
-  console.log(loc);
-  if (currData[loc] != 0) {
+  console.log(+loc[0]);
+  if (currData[loc[0]] != 0) {
     currData[0] = { [+loc[0] + x]: warriorSVG() };
   }
   return currData;
