@@ -59,6 +59,8 @@ export const move = (x = 1, y = 0, currData) => {
   }
   console.log(currData);
   loc = Object.keys(currData[y]);
+  console.log("next move");
+  console.log(loc);
   if (currData[loc] != 0) {
     currData[0] = { [+loc + x]: warriorSVG() };
   }
