@@ -58,6 +58,7 @@ export const move = (x = 1, y = 0, currData) => {
     delete currData[0];
   }
   console.log(currData);
+  console.log(currData[y]);
   loc = Object.keys(currData[y]);
   console.log("next move");
   console.log(+loc[0]);
