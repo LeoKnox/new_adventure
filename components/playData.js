@@ -55,7 +55,7 @@ export const move = (x = 1, y = 0, currData) => {
   if (currData[loc] != 0) {
     console.log("row");
     currData[+loc + y] = currData[loc];
-    delete currData[0];
+    delete currData[loc];
   }
   console.log(currData);
   console.log(currData[y]);
