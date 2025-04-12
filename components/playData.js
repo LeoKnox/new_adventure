@@ -65,6 +65,8 @@ export const move = (x = 1, y = 0, currData) => {
   if (currData[loc[0]] != 0) {
     currData[+loc[0] + x] = { [+loc[0]]: warriorSVG() };
   }
+  console.log("end");
+  console.log(currData);
   return currData;
 };
 
