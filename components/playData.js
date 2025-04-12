@@ -67,6 +67,7 @@ export const move = (x = 1, y = 0, currData) => {
   }
   console.log("end");
   console.log(currData);
+  mobData = currData;
   return currData;
 };
 
