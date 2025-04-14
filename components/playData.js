@@ -46,29 +46,29 @@ export const mob2Data = [
   { x: 4, y: 2 },
 ];
 
-export const move = (x = 1, y = 0, currData) => {
+export const move = (x = 1, y = 0, { currData }) => {
   console.log("move");
-  let temp = { ...currData };
-  let loc = Object.keys(temp)[0];
+  //let temp = { ...currData };
+  let loc = Object.keys(currData)[0];
   console.log(loc + ":" + y);
-  console.log(temp[loc]);
+  console.log(currData[loc]);
   if (currData[loc] != 0) {
     console.log("row");
     currData[+loc + y] = temp[loc];
-    delete temp[loc];
+    delete currData[loc];
   }
-  console.log(temp);
-  console.log(temp[y]);
-  loc = Object.keys(temp[y]);
+  console.log(currData);
+  console.log(currData[y]);
+  loc = Object.keys(currData[y]);
   console.log("next move");
   //console.log(loc[0]);
-  if (temp[loc[0]] != Object.values(temp)[0]) {
-    temp[+loc[0] + x] = { [+loc[0]]: warriorSVG() };
+  if (currData[loc[0]] != Object.values(currData)[0]) {
+    currData[+loc[0] + x] = { [+loc[0]]: warriorSVG() };
   }
   console.log("end");
   console.log(currData);
   //mobData = currData;
-  return temp;
+  return currData;
 };
 
 export const addChar = (i) => {
