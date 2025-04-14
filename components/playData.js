@@ -46,7 +46,7 @@ export const mob2Data = [
   { x: 4, y: 2 },
 ];
 
-export const move = (x = 1, y = 0, { currData }) => {
+export const move = (x = 1, y = 0, currData) => {
   console.log("move");
   //let temp = { ...currData };
   let loc = Object.keys(currData)[0];
@@ -54,12 +54,12 @@ export const move = (x = 1, y = 0, { currData }) => {
   console.log(currData[loc]);
   if (currData[loc] != 0) {
     console.log("row");
-    currData[+loc + y] = temp[loc];
+    currData[+loc + y] = currData[loc];
     delete currData[loc];
   }
   console.log(currData);
-  console.log(currData[y]);
-  loc = Object.keys(currData[y]);
+  console.log(currData[loc]);
+  loc = Object.keys(currData[loc]);
   console.log("next move");
   //console.log(loc[0]);
   if (currData[loc[0]] != Object.values(currData)[0]) {
