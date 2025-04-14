@@ -59,7 +59,7 @@ export const move = (x = 1, y = 0, currData) => {
   }
   console.log(currData);
   console.log(currData[loc]);
-  loc = Object.keys(currData[loc]);
+  loc = Object.keys(currData[loc])[0];
   console.log("next move");
   //console.log(loc[0]);
   if (currData[loc[0]] != Object.values(currData)[0]) {
