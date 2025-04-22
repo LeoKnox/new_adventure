@@ -118,6 +118,26 @@ export default DrawMap = ({
         <button onClick={() => newMove(0, 0)}>mob</button>
       </label>
       <table>{createWalls()}</table>
+      <table className="tableTwo">
+        <tr>
+          <td>|</td>
+          <td>|</td>
+        </tr>
+        <tr>
+          <td>|</td>
+          <td>|</td>
+        </tr>
+      </table>
+      <table className="tableOne">
+        <tr>
+          <td>-</td>
+          <td>-</td>
+        </tr>
+        <tr>
+        <td>-</td>
+        <td>-</td>
+        </tr>
+      </table>
     </div>
   );
 };
