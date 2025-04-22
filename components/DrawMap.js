@@ -10,7 +10,6 @@ import {
 } from "./playData.js";
 import DrawMonster from "./DrawMonster.js";
 import DrawCharacter from "./DrawCharacter.js";
-import { textSpanOverlap } from "typescript";
 
 export default DrawMap = ({
   width = 10,
@@ -99,6 +98,16 @@ export default DrawMap = ({
     ));
     return cw;
   }, [dataMove, mabData]);
+  const bottomLayer = useCallback(
+    (rows = 4, columns = 4, defaultValue = "*") => {
+      console.log("bottom layer");
+      const blTemp = Array.from({ length: rows }, () =>
+        Array.from({ length: columns }, () => defaultValue)
+      );
+      return blTemp;
+    },
+    []
+  );
 
   return (
     <div>
@@ -118,26 +127,19 @@ export default DrawMap = ({
         <button onClick={() => newMove(0, 0)}>mob</button>
       </label>
       <table>{createWalls()}</table>
-      <table className="tableTwo">
-        <tr>
-          <td>|</td>
-          <td>|</td>
-        </tr>
-        <tr>
-          <td>|</td>
-          <td>|</td>
-        </tr>
-      </table>
-      <table className="tableOne">
-        <tr>
-          <td>-</td>
-          <td>-</td>
-        </tr>
-        <tr>
-        <td>-</td>
-        <td>-</td>
-        </tr>
-      </table>
+      <div className="outer">
+        <table className="tableTwo">
+          <tr>
+            <td>|</td>
+            <td>|</td>
+          </tr>
+          <tr>
+            <td>|</td>
+            <td>|</td>
+          </tr>
+        </table>
+        <table className="tableTwo">{bottomLayer()}</table>
+      </div>
     </div>
   );
 };
