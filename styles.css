@@ -24,9 +24,15 @@ input {
 }
 
 .tableOne {
+  width:50px;
   position: absolute;
 }
 
 .tableTwo {
-  position: relative;
+  width:50px;
+  position: absolute;
+}
+
+.outer {
+  position: realtive;
 }
