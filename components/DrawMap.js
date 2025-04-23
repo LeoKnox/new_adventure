@@ -102,7 +102,7 @@ export default DrawMap = ({
     (rows = 4, columns = 4, defaultValue = "*") => {
       console.log("bottom layer");
       const blTemp = Array.from({ length: rows }, () =>
-        Array.from({ length: columns }, () => defaultValue)
+        Array.from({ length: columns }, () => <td>{defaultValue}</td>)
       );
       return blTemp;
     },
