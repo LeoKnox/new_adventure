@@ -27,11 +27,13 @@ input {
   width: 50px;
   position: absolute;
   z-index: 5;
+  background-color: yellow;
 }
 
 .tableTwo {
   width: 50px;
   position: absolute;
+  backgroud-color: red;
 }
 
 .outer {
