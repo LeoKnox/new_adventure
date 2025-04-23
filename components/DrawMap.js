@@ -101,13 +101,28 @@ export default DrawMap = ({
   const bottomLayer = useCallback(
     (rows = 4, columns = 4, defaultValue = "*") => {
       console.log("bottom layer");
-      const blTemp = Array.from({ length: rows }, () =>
-        <tr>{Array.from({ length: columns }, () => <td>{defaultValue}</td>)}</tr>
-      );
+      const blTemp = Array.from({ length: rows }, () => (
+        <tr>
+          {Array.from({ length: columns }, () => (
+            <td>{defaultValue}</td>
+          ))}
+        </tr>
+      ));
       return blTemp;
     },
     []
   );
+  const topLayer = useCallback((rows = 4, columns = 4, defaultValue = "_") => {
+    console.log("bottom layer");
+    const blTemp = Array.from({ length: rows }, () => (
+      <tr>
+        {Array.from({ length: columns }, () => (
+          <td>{defaultValue}</td>
+        ))}
+      </tr>
+    ));
+    return blTemp;
+  }, []);
 
   return (
     <div>
@@ -129,14 +144,7 @@ export default DrawMap = ({
       <table>{createWalls()}</table>
       <div className="outer">
         <table className="tableTwo">
-          <tr>
-            <td>|</td>
-            <td>|</td>
-          </tr>
-          <tr>
-            <td>|</td>
-            <td>|</td>
-          </tr>
+          <table>{topLayer()}</table>
         </table>
         <table className="tableTwo">{bottomLayer()}</table>
       </div>
