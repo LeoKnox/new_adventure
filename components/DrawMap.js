@@ -113,7 +113,9 @@ export default DrawMap = ({
     []
   );
   const findPos = (x = 0, y = 0) => {
-    let tempMap = [{x:2, y:3}]
+    let tempKey = `${x}:${y}`;
+    console.log(tempKey);
+    let tempMap = [{ tempKey: demonSVG() }];
     if (x == tempMap[0].x && y == tempMap[0].y) {
       return true;
     }
