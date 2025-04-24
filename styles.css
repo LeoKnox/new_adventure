@@ -30,7 +30,6 @@ input {
 
 .tableTwo {
   position: absolute;
-  
 }
 
 .outer {
@@ -40,4 +39,5 @@ input {
 
 .outer td {
   width: 50px;
+  height: 50px;
 }
