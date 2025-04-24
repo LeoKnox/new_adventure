@@ -143,10 +143,8 @@ export default DrawMap = ({
       </label>
       <table>{createWalls()}</table>
       <div className="outer">
-        <table className="tableTwo">
-          <table>{topLayer()}</table>
-        </table>
-        <table className="tableTwo">{bottomLayer()}</table>
+        <table className="tableTwo">{topLayer()}</table>
+        <table className="tableOne">{bottomLayer()}</table>
       </div>
     </div>
   );
