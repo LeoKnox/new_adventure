@@ -112,18 +112,19 @@ export default DrawMap = ({
     },
     []
   );
-  const findPos = (x=0, y=0) => {
-    if((x==3) && (y==2)) {
+  const findPos = (x = 0, y = 0) => {
+    let tempMap = [{x:2, y:3}]
+    if (x == tempMap[0].x && y == tempMap[0].y) {
       return true;
     }
-  }
+  };
   const topLayer = useCallback(
     (rows = 4, columns = 4, defaultValue = demonSVG()) => {
       console.log("bottom layer");
       const blTemp = Array.from({ length: rows }, (t, i) => (
         <tr>
           {Array.from({ length: columns }, (u, j) =>
-            findPos(i,j) ? <td>{defaultValue}</td> : <td></td>
+            findPos(i, j) ? <td>{defaultValue}</td> : <td></td>
           )}
         </tr>
       ));
