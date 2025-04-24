@@ -29,6 +29,7 @@ input {
 
 .tableTwo {
   position: absolute;
+  opacity: 50%
 }
 
 .outer {
