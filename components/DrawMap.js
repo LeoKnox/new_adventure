@@ -99,7 +99,7 @@ export default DrawMap = ({
     return cw;
   }, [dataMove, mabData]);
   const bottomLayer = useCallback(
-    (rows = 4, columns = 4, defaultValue = demonSVG()) => {
+    (rows = 4, columns = 4, defaultValue = floorSVG()) => {
       console.log("bottom layer");
       const blTemp = Array.from({ length: rows }, () => (
         <tr>
@@ -112,17 +112,20 @@ export default DrawMap = ({
     },
     []
   );
-  const topLayer = useCallback((rows = 4, columns = 4, defaultValue = floorSVG()) => {
-    console.log("bottom layer");
-    const blTemp = Array.from({ length: rows }, () => (
-      <tr>
-        {Array.from({ length: columns }, () => (
-          <td>{defaultValue}</td>
-        ))}
-      </tr>
-    ));
-    return blTemp;
-  }, []);
+  const topLayer = useCallback(
+    (rows = 4, columns = 4, defaultValue = demonSVG()) => {
+      console.log("bottom layer");
+      const blTemp = Array.from({ length: rows }, (t, i) => (
+        <tr>
+          {Array.from({ length: columns }, (u, j) =>
+            j == 3 ? <td>{defaultValue}</td> : <td>{demonSVG()}</td>
+          )}
+        </tr>
+      ));
+      return blTemp;
+    },
+    []
+  );
 
   return (
     <div>
