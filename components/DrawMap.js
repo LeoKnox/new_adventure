@@ -118,7 +118,7 @@ export default DrawMap = ({
       const blTemp = Array.from({ length: rows }, (t, i) => (
         <tr>
           {Array.from({ length: columns }, (u, j) =>
-            j == 3 ? <td>{defaultValue}</td> : <td>{demonSVG()}</td>
+            j == 3 ? <td>{defaultValue}</td> : <td></td>
           )}
         </tr>
       ));
