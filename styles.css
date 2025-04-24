@@ -25,11 +25,12 @@ input {
 
 .tableOne {
   position: absolute;
+  opacity: 50%;
 }
 
 .tableTwo {
   position: absolute;
-  opacity: 50%
+  
 }
 
 .outer {
