@@ -23,12 +23,12 @@ input {
   border: 1px solid darkgoldenrod;
 }
 
-.tableOne {
+.tableOne td {
   width: 50px;
   position: absolute;
 }
 
-.tableTwo {
+.tableTwo td {
   width: 50px;
   position: absolute;
 }
