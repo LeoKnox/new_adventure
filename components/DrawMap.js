@@ -131,7 +131,7 @@ export default DrawMap = ({
       ));
       return blTemp;
     },
-    []
+    [findPos()]
   );
 
   return (
@@ -149,7 +149,7 @@ export default DrawMap = ({
         <button onClick={() => newMove(0, -1)}>up</button>
       </label>
       <label>
-        <button onClick={() => newMove(0, 0)}>mob</button>
+        <button onClick={() => findPos(1, 1)}>mob</button>
       </label>
       <table>{createWalls()}</table>
       <div className="outer">
