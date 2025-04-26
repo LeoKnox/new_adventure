@@ -116,7 +116,7 @@ export default DrawMap = ({
     console.log("find pos");
     let tempKey = `i${x}${y}`;
     console.log(tempKey);
-    let tempMap = [{ i00: demonSVG() }];
+    let tempMap = [{ [tempKey]: demonSVG() }];
     console.log(tempMap[0][tempKey]);
     return tempMap[0][tempKey] ? true : false;
     //return tempMap[0][tempKey].props.children && false;
