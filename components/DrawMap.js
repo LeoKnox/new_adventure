@@ -131,7 +131,7 @@ export default DrawMap = ({
       ));
       return blTemp;
     },
-    [findPos()]
+    [findPos]
   );
 
   return (
