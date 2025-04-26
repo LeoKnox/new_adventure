@@ -113,9 +113,11 @@ export default DrawMap = ({
     []
   );
   const findPos = (x = 0, y = 0) => {
+    console.log("find pos");
     let tempKey = `${x}:${y}`;
-    console.log(tempKey);
+
     let tempMap = [{ "0:0": demonSVG() }];
+    console.log(tempMap[tempKey]);
     return tempMap[tempKey] && false;
   };
   const topLayer = useCallback(
@@ -131,7 +133,7 @@ export default DrawMap = ({
       ));
       return blTemp;
     },
-    [{ findPos }]
+    []
   );
 
   return (
