@@ -128,7 +128,7 @@ export default DrawMap = ({
       const blTemp = Array.from({ length: rows }, (t, i) => (
         <tr>
           {Array.from({ length: columns }, (u, j) =>
-            findPos(u, j) ? <td>{defaultValue}</td> : <td></td>
+            findPos(i, j) ? <td>{defaultValue}</td> : <td></td>
           )}
         </tr>
       ));
