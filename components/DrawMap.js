@@ -118,7 +118,8 @@ export default DrawMap = ({
     console.log(tempKey);
     let tempMap = [{ i00: demonSVG() }];
     console.log(tempMap[0][tempKey]);
-    return tempMap[0][tempKey].props.children && false;
+    tempMap[0][tempKey] ? true : false;
+    //return tempMap[0][tempKey].props.children && false;
   };
   const topLayer = useCallback(
     (rows = 4, columns = 4, defaultValue = demonSVG()) => {
