@@ -114,9 +114,9 @@ export default DrawMap = ({
   );
   const findPos = (x = 0, y = 0) => {
     console.log("find pos");
-    let tempKey = `${x}:${y}`;
-
-    let tempMap = [{ "0:0": demonSVG() }];
+    let tempKey = `i${x}${y}`;
+    console.log(tempKey);
+    let tempMap = [{ i00: demonSVG() }];
     console.log(tempMap[tempKey]);
     return tempMap[tempKey] && false;
   };
