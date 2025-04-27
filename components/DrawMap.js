@@ -115,7 +115,8 @@ export default DrawMap = ({
   const [charPos, setCharPos] = useState("i11");
   const findPos = (x = 0, y = 0) => {
     console.log("find pos");
-    let tempKey = `i${x}${y}`;
+    let tempKey = "i"+x+y;
+    //let tempKey = `i${x}${y}`;
     console.log(tempKey);
     let tempMap = [{ charPos: demonSVG() }];
     console.log(tempMap[0][tempKey]);
