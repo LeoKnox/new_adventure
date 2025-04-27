@@ -116,7 +116,7 @@ export default DrawMap = ({
     console.log("find pos");
     let tempKey = `i${x}${y}`;
     console.log(tempKey);
-    let tempMap = [{ [tempKey]: demonSVG() }];
+    let tempMap = [{ i11: demonSVG() }];
     console.log(tempMap[0][tempKey]);
     return tempMap[0][tempKey] ? true : false;
     //return tempMap[0][tempKey].props.children && false;
@@ -152,7 +152,7 @@ export default DrawMap = ({
         <button onClick={() => newMove(0, -1)}>up</button>
       </label>
       <label>
-        <button onClick={() => findPos(1, 1)}>mob</button>
+        <button onClick={() => topLayer(1, 1, demonSVG())}>mob</button>
       </label>
       <table>{createWalls()}</table>
       <div className="outer">
