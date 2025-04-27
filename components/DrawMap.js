@@ -112,6 +112,7 @@ export default DrawMap = ({
     },
     []
   );
+  const [charPos, setCharPos] = useState("i11")
   const findPos = (x = 0, y = 0) => {
     console.log("find pos");
     let tempKey = `i${x}${y}`;
@@ -152,7 +153,7 @@ export default DrawMap = ({
         <button onClick={() => newMove(0, -1)}>up</button>
       </label>
       <label>
-        <button onClick={() => topLayer(1, 1, demonSVG())}>mob</button>
+        <button onClick={() => setCharPos(i22)}>mob</button>
       </label>
       <table>{createWalls()}</table>
       <div className="outer">
