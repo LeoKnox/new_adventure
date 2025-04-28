@@ -24,7 +24,7 @@ export default DrawMap = ({
     .map(() => <tr>{Array(singleRoom().y).fill(<td>{floorSVG()}</td>)}</tr>);
 
   const bottomLayer = useCallback(
-    (rows = x, columns = y, defaultValue = floorSVG()) => {
+    (rows = width, columns = height, defaultValue = floorSVG()) => {
       console.log("bottom layer");
       const blTemp = Array.from({ length: rows }, () => (
         <tr>
