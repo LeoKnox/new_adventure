@@ -117,7 +117,7 @@ export default DrawMap = ({
     console.log("find pos");
     let tempKey = String(x + ":" + y);
     //let tempKey = `i${x}${y}`;
-    console.log(tempKey);
+    //console.log(tempKey);
     let tempMap = [charPos.x + ":" + charPos.y];
     console.log(tempMap[0][tempKey]);
     return tempMap[0][tempKey] ? true : false;
