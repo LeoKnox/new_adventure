@@ -40,18 +40,12 @@ export default DrawMap = ({
   const [charPos, setCharPos] = useState({ x: 1, y: 1 });
   const findPos = (x = 0, y = 0) => {
     console.log("find pos");
-    let tempKey = String(x + ":" + y);
-    //let tempKey = `i${x}${y}`;
-    console.log(tempKey);
-    let tempMap = [x + ":" + y];
-    console.log(tempMap[0][tempKey]);
+    let tempKey = x + ":" + y;
     return tempKey == charPos.x + ":" + charPos.y ? true : false;
-    //return tempMap[0][tempKey].props.children && false;
   };
   const topLayer = useCallback(
     (rows = height, columns = width, defaultValue = demonSVG()) => {
       console.log("bottom layer");
-      console.log(findPos());
       const blTemp = Array.from({ length: rows }, (t, i) => (
         <tr>
           {Array.from({ length: columns }, (u, j) =>
