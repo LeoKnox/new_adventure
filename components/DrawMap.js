@@ -117,10 +117,10 @@ export default DrawMap = ({
     console.log("find pos");
     let tempKey = String(x + ":" + y);
     //let tempKey = `i${x}${y}`;
-    //console.log(tempKey);
+    console.log(tempKey);
     let tempMap = [charPos.x + ":" + charPos.y];
     console.log(tempMap[0][tempKey]);
-    return tempMap[0][tempKey] ? true : false;
+    return tempKey == "1:1" ? true : false;
     //return tempMap[0][tempKey].props.children && false;
   };
   const topLayer = useCallback(
