@@ -24,7 +24,7 @@ export default DrawMap = ({
     .map(() => <tr>{Array(singleRoom().y).fill(<td>{floorSVG()}</td>)}</tr>);
 
   const bottomLayer = useCallback(
-    (rows = width, columns = height, defaultValue = floorSVG()) => {
+    (rows = height, columns = width, defaultValue = floorSVG()) => {
       console.log("bottom layer");
       const blTemp = Array.from({ length: rows }, () => (
         <tr>
@@ -49,7 +49,7 @@ export default DrawMap = ({
     //return tempMap[0][tempKey].props.children && false;
   };
   const topLayer = useCallback(
-    (rows = 4, columns = 4, defaultValue = demonSVG()) => {
+    (rows = height, columns = width, defaultValue = demonSVG()) => {
       console.log("bottom layer");
       console.log(findPos());
       const blTemp = Array.from({ length: rows }, (t, i) => (
@@ -91,7 +91,6 @@ export default DrawMap = ({
           mob
         </button>
       </label>
-
       <div className="outer">
         <table className="tableTwo">{topLayer()}</table>
         <table className="tableOne">{bottomLayer()}</table>
