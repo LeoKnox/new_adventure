@@ -154,7 +154,9 @@ export default DrawMap = ({
         <button onClick={() => newMove(0, -1)}>up</button>
       </label>
       <label>
-        <button onClick={() => setCharPos({ x: 0, y: 0 })}>mob</button>
+        <button onClick={() => setCharPos({ x: charPos.x + 1, y: charPos.y })}>
+          mob
+        </button>
       </label>
       <table>{createWalls()}</table>
       <div className="outer">
