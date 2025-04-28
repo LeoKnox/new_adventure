@@ -142,16 +142,24 @@ export default DrawMap = ({
   return (
     <div>
       <label>
-        <button onClick={() => newMove(1, 0)}>right</button>
+        <button onClick={() => setCharPos({ x: charPos.x, y: charPos.y + 1 })}>
+          right
+        </button>
       </label>
       <label>
-        <button onClick={() => newMove(-1, 0)}>left</button>
+        <button onClick={() => setCharPos({ x: charPos.x, y: charPos.y - 1 })}>
+          left
+        </button>
       </label>
       <label>
-        <button onClick={() => newMove(0, 1)}>down</button>
+        <button onClick={() => setCharPos({ x: charPos.x + 1, y: charPos.y })}>
+          down
+        </button>
       </label>
       <label>
-        <button onClick={() => newMove(0, -1)}>up</button>
+        <button onClick={() => setCharPos({ x: charPos.x - 1, y: charPos.y })}>
+          up
+        </button>
       </label>
       <label>
         <button onClick={() => setCharPos({ x: charPos.x + 1, y: charPos.y })}>
