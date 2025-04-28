@@ -112,13 +112,13 @@ export default DrawMap = ({
     },
     []
   );
-  const [charPos, setCharPos] = useState("i11");
+  const [charPos, setCharPos] = useState({ x: 1, y: 1 });
   const findPos = (x = 0, y = 0) => {
     console.log("find pos");
-    let tempKey = String("i" + x + y);
+    let tempKey = String(x + ":" + y);
     //let tempKey = `i${x}${y}`;
     console.log(tempKey);
-    let tempMap = [{ charPos: demonSVG() }];
+    let tempMap = [charPos.x + ":" + charPos.y];
     console.log(tempMap[0][tempKey]);
     return tempMap[0][tempKey] ? true : false;
     //return tempMap[0][tempKey].props.children && false;
@@ -154,7 +154,7 @@ export default DrawMap = ({
         <button onClick={() => newMove(0, -1)}>up</button>
       </label>
       <label>
-        <button onClick={() => setCharPos("i22")}>mob</button>
+        <button onClick={() => setCharPos("2:2")}>mob</button>
       </label>
       <table>{createWalls()}</table>
       <div className="outer">
