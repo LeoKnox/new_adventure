@@ -12,8 +12,8 @@ import DrawMonster from "./DrawMonster.js";
 import DrawCharacter from "./DrawCharacter.js";
 
 export default DrawMap = ({
-  width = 10,
   height = 10,
+  width = 10,
   x = 2,
   y = 3,
   sety,
