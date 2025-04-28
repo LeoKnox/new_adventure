@@ -22,82 +22,7 @@ export default DrawMap = ({
   const currMap = new Array(singleRoom().x)
     .fill()
     .map(() => <tr>{Array(singleRoom().y).fill(<td>{floorSVG()}</td>)}</tr>);
-  const [dataMove, setDataMove] = useState(currMap);
-  const [locations, setLocations] = useState(mapData);
-  const [mabData, setMabData] = useState(mobData);
-  const [mapState, setMapState] = useState(() => {
-    let temp = [];
-    let tempRow = [];
-    for (let x = 0; x < width + 2; x++) {
-      tempRow.push(wallSVG());
-    }
-    temp.push(tempRow);
-    tempRow = [];
-    for (let x = 0; x < height; x++) {
-      tempRow.push(wallSVG());
-      for (let y = 0; y < width; y++) {
-        tempRow.push(floorSVG());
-      }
-      tempRow.push(wallSVG());
-      temp.push(tempRow);
-      tempRow = [];
-    }
-    for (let x = 0; x < width + 2; x++) {
-      tempRow.push(wallSVG());
-    }
-    temp.push(tempRow);
-    tempRow = [];
-    return temp;
-  });
 
-  useEffect(() => {
-    console.log("locations");
-    let temp = [...currMap];
-    temp[locations["player"].y][locations["player"].x] = warriorSVG();
-    locations["monster"].map((mon) => (temp[mon.y][mon.x] = demonSVG()));
-    setDataMove(temp);
-  }, [locations]);
-
-  const moveMob = (xval = -1) => {
-    console.log("move mob");
-    let change = updateMonster(0, -1);
-    modifyTable(change);
-  };
-
-  const confirm = (t, v) => {
-    console.log("confirm");
-    if (mabData.hasOwnProperty(t) && mabData[t].hasOwnProperty(v)) {
-      return mabData[t][v];
-    } else {
-      return false;
-    }
-  };
-  const newMove = (x, y) => {
-    console.log("newmove");
-    //let temp = move(x, y, mabData);
-    console.log("temp");
-    console.log(move(x, y, mabData));
-    setMabData(move(x, y, mabData));
-    /*let temp = { ...mabData };
-    Object.keys(temp).forEach(function (data, index) {
-      console.log(data);
-      console.log(temp[index]);
-      console.log(temp[index][data]);
-    });*/
-    //console.log(temp);
-    //setMabData(temp);
-  };
-  const createWalls = useCallback(() => {
-    console.log("create walls");
-    let cw = dataMove.map((s, t) => (
-      <tr>
-        {s.props.children.map((u, v) => (
-          <td>{confirm(t, v) || u}</td>
-        ))}
-      </tr>
-    ));
-    return cw;
-  }, [dataMove, mabData]);
   const bottomLayer = useCallback(
     (rows = 4, columns = 4, defaultValue = floorSVG()) => {
       console.log("bottom layer");
@@ -166,7 +91,7 @@ export default DrawMap = ({
           mob
         </button>
       </label>
-      <table>{createWalls()}</table>
+
       <div className="outer">
         <table className="tableTwo">{topLayer()}</table>
         <table className="tableOne">{bottomLayer()}</table>
