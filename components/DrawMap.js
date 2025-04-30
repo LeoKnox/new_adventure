@@ -45,7 +45,9 @@ export default DrawMap = ({
     console.log(temp);
     console.log(charPos);
     let tempKey = x + ":" + y;
-    return charPos[0][temp];
+    if (typeof (charPos[0] !== undefined)) {
+      return charPos[0][temp];
+    }
     return tempKey == charPos.x + ":" + charPos.y ? true : false;
   };
   const topLayer = useCallback(
