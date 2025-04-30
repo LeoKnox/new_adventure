@@ -45,7 +45,7 @@ export default DrawMap = ({
     //console.log(temp);
     //console.log(charPos);
     let tempKey = x + ":" + y;
-    return charPos[0] ? (true) : (false);
+    return charPos[0] ? charPos[0][temp] : false;
     if (charPos[0][temp]) {
       console.log(charPos[0][temp]);
       return charPos[0][temp];
