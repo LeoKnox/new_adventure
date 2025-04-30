@@ -42,10 +42,11 @@ export default DrawMap = ({
   const findPos = (x = 0, y = 0) => {
     console.log("find pos");
     let temp = [{ [`${x}:${y}`]: true }];
-    console.log(temp);
-    console.log(charPos);
+    //console.log(temp);
+    //console.log(charPos);
     let tempKey = x + ":" + y;
     if (typeof charPos[0] !== "undefined") {
+      console.log(charPos[0][temp]);
       return charPos[0][temp];
     }
     //return tempKey == charPos.x + ":" + charPos.y ? true : false;
