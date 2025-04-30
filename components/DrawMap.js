@@ -43,8 +43,9 @@ export default DrawMap = ({
     console.log("find pos");
     let temp = [{ [`${x}:${y}`]: true }];
     console.log(temp);
+    console.log(charPos);
     let tempKey = x + ":" + y;
-    return charPos[temp];
+    return charPos[0][temp];
     return tempKey == charPos.x + ":" + charPos.y ? true : false;
   };
   const topLayer = useCallback(
