@@ -40,7 +40,8 @@ export default DrawMap = ({
   const [charPos, setCharPos] = useState({ x: 1, y: 1 });
   const findPos = (x = 0, y = 0) => {
     console.log("find pos");
-    let temp = [{`${x}:${y}`:true}];
+    let temp = [{ [`${x}:${y}`]: true }];
+    console.log(temp);
     let tempKey = x + ":" + y;
     return tempKey == charPos.x + ":" + charPos.y ? true : false;
   };
