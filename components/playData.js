@@ -97,7 +97,8 @@ export const updateCharacter = (newData) => {
 };
 export const charLocation = (newPos) => {
   console.log("char loc");
-  console.log(newPos)
+  let oldPos = newPos;
+  console.log(Object.keys(newPos));
   return { [`2:2`]: true };
   //return playData["character"];
 };
