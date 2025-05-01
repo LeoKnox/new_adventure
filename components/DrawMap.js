@@ -81,9 +81,7 @@ export default DrawMap = ({
         </button>
       </label>
       <label>
-        <button onClick={() => setCharPos({ x: charPos.x + 1, y: charPos.y })}>
-          mob
-        </button>
+        <button onClick={() => setCharPos(charLocation())}>mob</button>
       </label>
       <div className="outer">
         <table className="tableTwo">{topLayer()}</table>
