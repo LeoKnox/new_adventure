@@ -97,7 +97,8 @@ export const updateCharacter = (newData) => {
 };
 export const charLocation = (id = 1) => {
   console.log("char loc");
-  return playData["character"];
+  return { [`2:2`]: true };
+  //return playData["character"];
 };
 export const changeDown = (direction = 1) => {
   console.log("change down");
