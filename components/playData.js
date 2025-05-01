@@ -95,9 +95,9 @@ export const updateCharacter = (newData) => {
   playData["character"] = newData;
   console.log(newData);
 };
-export const charLocation = (id = 1) => {
+export const charLocation = (x = 2, y = 2) => {
   console.log("char loc");
-  return { [`2:2`]: true };
+  return { [`${x}:${y}`]: true };
   //return playData["character"];
 };
 export const changeDown = (direction = 1) => {
