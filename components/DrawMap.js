@@ -1,13 +1,7 @@
 import { useState, useEffect, useCallback, cloneElement } from "react";
 import { demonSVG, floorSVG, wallSVG, warriorSVG, warr } from "./svgData";
 import { singleRoom } from "./dungeonData.js";
-import {
-  charLocation,
-  updateMonster,
-  mobData,
-  mapData,
-  move,
-} from "./playData.js";
+import { change, updateMonster, mobData, mapData, move } from "./playData.js";
 import DrawMonster from "./DrawMonster.js";
 import DrawCharacter from "./DrawCharacter.js";
 
@@ -81,7 +75,7 @@ export default DrawMap = ({
         </button>
       </label>
       <label>
-        <button onClick={() => setCharPos(charLocation())}>mob</button>
+        <button onClick={() => setCharPos(change())}>mob</button>
       </label>
       <div className="outer">
         <table className="tableTwo">{topLayer()}</table>
