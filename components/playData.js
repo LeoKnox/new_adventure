@@ -144,10 +144,13 @@ export const updateMonster = (dirx, diry = -1) => {
   return playData["monster"];
 };
 
+const mapPos = [{ [`2:2`]: true }];
+
 export const change = () => {
   console.log("change");
-  console.log(playData["character"]);
-  return playData["character"];
+
+  return mapPos[0];
+  //return playData["character"];
 };
 
 export const singleMonster = () => {
