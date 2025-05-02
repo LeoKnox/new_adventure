@@ -35,7 +35,7 @@ export default DrawMap = ({
   const [charPos, setCharPos] = useState({ [`1:1`]: true });
   const findPos = (x = 0, y = 0) => {
     console.log("find pos");
-    return charPos[`${x}:${y}`];
+    return charPos?[`${x}:${y}`] : {};
   };
   const topLayer = useCallback(
     (rows = height, columns = width, defaultValue = demonSVG()) => {
