@@ -144,7 +144,7 @@ export const updateMonster = (dirx, diry = -1) => {
   return playData["monster"];
 };
 
-const mapPos = [{ [`2:2`]: true }];
+const mapPos = { [`2:2`]: true };
 
 export const change = () => {
   console.log("change");
