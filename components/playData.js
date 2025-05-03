@@ -149,7 +149,7 @@ const mapPos = { [`2:2`]: true };
 export const change = () => {
   console.log("change");
 
-  return mapPos[0];
+  return mapPos;
   //return playData["character"];
 };
 
