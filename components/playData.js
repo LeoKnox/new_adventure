@@ -151,6 +151,8 @@ export const change = (charPos, x, y) => {
   let tempKeys = Object.keys(charPos)[0];
   console.log(tempKeys);
   let temp = charPos[tempKeys];
+  temp = temp.split(":");
+  console.log(temp);
   return mapPos;
   //return playData["character"];
 };
