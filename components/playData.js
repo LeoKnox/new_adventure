@@ -146,9 +146,9 @@ export const updateMonster = (dirx, diry = -1) => {
 
 const mapPos = { [`2:2`]: true };
 
-export const change = () => {
+export const change = (charPos, x, y) => {
   console.log("change");
-
+  console.log(Object.keys(charPos));
   return mapPos;
   //return playData["character"];
 };
