@@ -152,8 +152,9 @@ export const change = (charPos, x, y) => {
   //console.log(tempKeys);
   let temp = charPos[tempKeys];
   tempKeys = tempKeys.split(":");
-  console.log(tempKeys);
+  //console.log(tempKeys);
   let d = `${tempKeys[0] + 1}:${tempKeys[1] + 1}`;
+  console.log({ [d]: true });
   return { [d]: true };
   //return playData["character"];
 };
