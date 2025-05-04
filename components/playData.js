@@ -149,9 +149,9 @@ const mapPos = { [`2:2`]: true };
 export const change = (charPos, x, y) => {
   console.log("change");
   let tempKeys = Object.keys(charPos)[0];
-  console.log(tempKeys);
+  console.log(typeof tempKeys);
   let temp = charPos[tempKeys];
-  temp = temp.split(":");
+  tempKeys = tempKeys.split(":");
   console.log(temp);
   return mapPos;
   //return playData["character"];
