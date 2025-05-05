@@ -32,7 +32,7 @@ export default DrawMap = ({
     []
   );
   //const [charPos, setCharPos] = useState({ x: 1, y: 1 });
-  const [charPos, setCharPos] = useState({ [`1:1`]: true });
+  const [charPos, setCharPos] = useState({ [`1:1`]: warriorSVG() });
   const findPos = (x = 0, y = 0) => {
     console.log("find pos");
     return charPos[`${x}:${y}`] ? charPos[`${x}:${y}`] : false;
@@ -42,9 +42,9 @@ export default DrawMap = ({
       console.log("bottom layer");
       const blTemp = Array.from({ length: rows }, (t, i) => (
         <tr>
-          {Array.from({ length: columns }, (u, j) =>
-            findPos(i, j) ? <td>{defaultValue}</td> : <td></td>
-          )}
+          {Array.from({ length: columns }, (u, j) => (
+            <td>{findPos(i, j)}</td>
+          ))}
         </tr>
       ));
       return blTemp;
