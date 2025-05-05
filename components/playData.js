@@ -149,15 +149,9 @@ const mapPos = { [`2:2`]: true };
 export const change = (charPos, x, y) => {
   console.log("change");
   let tempKeys = Object.keys(charPos)[0];
-  //console.log(tempKeys);
-  let temp = charPos[tempKeys];
   tempKeys = tempKeys.split(":");
-  //console.log(tempKeys);
   let d = `${x + +tempKeys[0]}:${y + +tempKeys[1]}`;
-  console.log({ [d]: true });
-  console.log(mapPos);
   return { [d]: warriorSVG() };
-  //return playData["character"];
 };
 
 export const singleMonster = () => {
