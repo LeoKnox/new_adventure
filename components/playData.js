@@ -144,7 +144,7 @@ export const updateMonster = (dirx, diry = -1) => {
   return playData["monster"];
 };
 
-const mapPos = { [`2:2`]: true };
+const mapPos = { [`2:2`]: warriorSVG(), [`3:3`]: demonSVG() };
 
 export const change = (charPos, x, y) => {
   console.log("change");
