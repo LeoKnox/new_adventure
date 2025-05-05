@@ -1,4 +1,4 @@
-import { useState, useEffect, useCallback, cloneElement } from "react";
+import { useState, useEffect, useCallback } from "react";
 import { demonSVG, floorSVG, wallSVG, warriorSVG, warr } from "./svgData";
 import { singleRoom } from "./dungeonData.js";
 import { change, updateMonster, mobData, mapData, move } from "./playData.js";
@@ -38,7 +38,7 @@ export default DrawMap = ({
     return charPos[`${x}:${y}`] ? charPos[`${x}:${y}`] : false;
   };
   const topLayer = useCallback(
-    (rows = height, columns = width, defaultValue = demonSVG()) => {
+    (rows = height, columns = width, defaultValue = warriorSVG()) => {
       console.log("bottom layer");
       const blTemp = Array.from({ length: rows }, (t, i) => (
         <tr>
@@ -55,19 +55,13 @@ export default DrawMap = ({
   return (
     <div>
       <label>
-        <button onClick={() => setCharPos({ x: charPos.x, y: charPos.y + 1 })}>
-          right
-        </button>
+        <button onClick={() => setCharPos(change(charPos, 0, 1))}>right</button>
       </label>
       <label>
-        <button onClick={() => setCharPos({ x: charPos.x, y: charPos.y - 1 })}>
-          left
-        </button>
+        <button onClick={() => setCharPos(change(charPos, 0, -1))}>left</button>
       </label>
       <label>
-        <button onClick={() => setCharPos({ x: charPos.x + 1, y: charPos.y })}>
-          down
-        </button>
+        <button onClick={() => setCharPos(change(charPos, 1, 0))}>down</button>
       </label>
       <label>
         <button onClick={() => setCharPos(change(charPos, -1, 0))}>up</button>
