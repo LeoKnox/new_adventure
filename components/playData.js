@@ -146,13 +146,12 @@ export const updateMonster = (dirx, diry = -1) => {
 
 const mapPos = { [`2:2`]: warriorSVG(), [`3:3`]: demonSVG() };
 
-export const change = (charPos, x, y, mobPos) => {
+export const change = (charPos, x, y) => {
   console.log("change");
   let tempKeys = Object.keys(charPos)[0];
   tempKeys = tempKeys.split(":");
-  charPos = `${x + +tempKeys[0]}:${y + +tempKeys[1]}`;
-  console.log(mobPos);
-  mobPos = { [`2:3`]: demonSVG() };
+  charPos[0] = `${x + +tempKeys[0]}:${y + +tempKeys[1]}`;
+  charPos[1] = { [`2:3`]: demonSVG() };
   return { [charPos]: warriorSVG() };
 };
 
