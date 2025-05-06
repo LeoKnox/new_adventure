@@ -152,7 +152,7 @@ export const change = (charPos, x, y) => {
   tempKeys = tempKeys.split(":");
   charPos[0] = `${x + +tempKeys[0]}:${y + +tempKeys[1]}`;
   charPos[1] = { [`2:3`]: demonSVG() };
-  return { charPos };
+  return { [`2:2`]: warriorSVG(), [`3:3`]: demonSVG() };
 };
 
 export const singleMonster = () => {
