@@ -32,10 +32,13 @@ export default DrawMap = ({
     []
   );
   //const [charPos, setCharPos] = useState({ x: 1, y: 1 });
-  const [charPos, setCharPos] = useState({ [`1:1`]: warriorSVG(), [`4:4`]: demonSVG() });
+  const [charPos, setCharPos] = useState({
+    [`1:1`]: warriorSVG(),
+    [`4:4`]: demonSVG(),
+  });
   const findPos = (x = 0, y = 0) => {
     console.log("find pos");
-    return charPos[`${x}:${y}`] ? charPos[`${x}:${y}`] : false;
+    return charPos[`${x}:${y}`] ?? false;
   };
   const topLayer = useCallback(
     (rows = height, columns = width, defaultValue = warriorSVG()) => {
