@@ -154,8 +154,7 @@ export const change = (charPos, x, y) => {
   let temp = { [`${x + +tempKeys[0]}:${y + +tempKeys[1]}`]: warriorSVG() };
   tempKeys = Object.keys(charPos)[1];
   tempKeys = tempKeys.split(":");
-  let t = `${+tempKeys[0] - x}:${+tempKeys[1] - y}`;
-  temp[t] = demonSVG();
+  temp[`${+tempKeys[0] - x}:${+tempKeys[1] - y}`] = demonSVG();
   //charPos = { {...charPos}, [`2:3`]: demonSVG() };
   console.log(temp);
   return temp;
