@@ -150,10 +150,10 @@ export const change = (charPos, x, y) => {
   console.log("change");
   let tempKeys = Object.keys(charPos)[0];
   tempKeys = tempKeys.split(":");
-  charPos[0] = `${x + +tempKeys[0]}:${y + +tempKeys[1]}`;
-  charPos[1] = { [`2:3`]: demonSVG() };
+  charPos = `${x + +tempKeys[0]}:${y + +tempKeys[1]}`;
+  charPos = { ...charPos, [`2:3`]: demonSVG() };
   console.log(charPos);
-  return { [`2:2`]: warriorSVG(), [`3:3`]: demonSVG() };
+  return charPos;
 };
 
 export const singleMonster = () => {
