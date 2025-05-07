@@ -151,10 +151,10 @@ export const change = (charPos, x, y) => {
   console.log(charPos);
   let tempKeys = Object.keys(charPos)[0];
   tempKeys = tempKeys.split(":");
-  charPos[`${x + +tempKeys[0]}:${y + +tempKeys[1]}`] = warriorSVG();
+  let temp = { [`${x + +tempKeys[0]}:${y + +tempKeys[1]}`]: warriorSVG() };
   //charPos = { {...charPos}, [`2:3`]: demonSVG() };
   console.log(charPos);
-  return charPos;
+  return temp;
 };
 
 export const singleMonster = () => {
