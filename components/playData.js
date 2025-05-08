@@ -148,7 +148,7 @@ const mapPos = { [`2:2`]: warriorSVG(), [`3:3`]: demonSVG() };
 
 const changeMob = () => {
   console.log("change mob");
-  return { [`2:3`]: demonSVG() };
+  return { [`3:5`]: demonSVG() };
 };
 
 export const change = (charPos, x, y) => {
@@ -162,6 +162,7 @@ export const change = (charPos, x, y) => {
   let u = changeMob();
   console.log(u);
   temp = { ...temp, u };
+  console.log(temp);
   return temp;
 };
 
