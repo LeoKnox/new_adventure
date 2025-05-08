@@ -160,6 +160,7 @@ export const change = (charPos, x, y) => {
   tempKeys = tempKeys.split(":");
   //temp = { ...temp, [`${+tempKeys[0] - x}:${+tempKeys[1] - y}`]: demonSVG() };
   let u = changeMob();
+  console.log(u);
   temp = { ...temp, u };
   return temp;
 };
