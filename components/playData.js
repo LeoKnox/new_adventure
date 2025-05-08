@@ -148,6 +148,7 @@ const mapPos = { [`2:2`]: warriorSVG(), [`3:3`]: demonSVG() };
 
 const changeMob = () => {
   console.log("change mob");
+  return { [`2:3`]: demonSVG() };
 };
 
 export const change = (charPos, x, y) => {
@@ -157,8 +158,8 @@ export const change = (charPos, x, y) => {
   let temp = { [`${x + +tempKeys[0]}:${y + +tempKeys[1]}`]: warriorSVG() };
   tempKeys = Object.keys(charPos)[1];
   tempKeys = tempKeys.split(":");
-  temp = { ...temp, [`${+tempKeys[0] - x}:${+tempKeys[1] - y}`]: demonSVG() };
-  changeMob();
+  //temp = { ...temp, [`${+tempKeys[0] - x}:${+tempKeys[1] - y}`]: demonSVG() };
+  temp = {...temp, changeMob()};
   return temp;
 };
 
