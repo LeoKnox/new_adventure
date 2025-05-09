@@ -158,11 +158,9 @@ export const change = (charPos, x, y) => {
   let temp = { [`${x + +tempKeys[0]}:${y + +tempKeys[1]}`]: warriorSVG() };
   tempKeys = Object.keys(charPos)[1];
   tempKeys = tempKeys.split(":");
+  charPos.foreach(console.log());
   //temp = { ...temp, [`${+tempKeys[0] - x}:${+tempKeys[1] - y}`]: demonSVG() };
-  let u = changeMob();
-  console.log(u);
   temp = { ...temp, ...changeMob() };
-  console.log(temp);
   return temp;
 };
 
