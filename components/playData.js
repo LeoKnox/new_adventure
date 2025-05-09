@@ -158,7 +158,11 @@ export const change = (charPos, x, y) => {
   let temp = { [`${x + +tempKeys[0]}:${y + +tempKeys[1]}`]: warriorSVG() };
   tempKeys = Object.keys(charPos)[1];
   tempKeys = tempKeys.split(":");
-  charPos.foreach(console.log());
+  for (var key in charPos) {
+    if (charPos.hasOwnProperty(key)) {
+      console.log(key + " - " + charPos[key]);
+    }
+  }
   //temp = { ...temp, [`${+tempKeys[0] - x}:${+tempKeys[1] - y}`]: demonSVG() };
   temp = { ...temp, ...changeMob() };
   return temp;
