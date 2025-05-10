@@ -145,10 +145,11 @@ export const updateMonster = (dirx, diry = -1) => {
 };
 
 const mapPos = { [`2:2`]: warriorSVG(), [`3:3`]: demonSVG() };
+const charFunc = { 1: demonSVG() };
 
 const changeMob = () => {
   console.log("change mob");
-  return { [`3:5`]: demonSVG() };
+  return { [`3:5`]: charFunc[1]() };
 };
 
 export const change = (charPos, x, y) => {
