@@ -164,7 +164,9 @@ export const change = (charPos, x, y) => {
       console.log(key + " - " + charPos[key]);
     }
   }
-  //temp = { ...temp, [`${+tempKeys[0] - x}:${+tempKeys[1] - y}`]: demonSVG() };
+  for (x in charPos) {
+    console.log(x + ":");
+  }
   temp = { ...temp, ...changeMob() };
   return temp;
 };
