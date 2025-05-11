@@ -1,7 +1,7 @@
 import { useState, useEffect, useCallback } from "react";
 import { demonSVG, floorSVG, wallSVG, warriorSVG, warr } from "./svgData";
 import { singleRoom } from "./dungeonData.js";
-import { change, mapPos, playerPos, mobPos } from "./playData.js";
+import { change, changeMob, mapPos, playerPos, mobPos } from "./playData.js";
 import DrawMonster from "./DrawMonster.js";
 import DrawCharacter from "./DrawCharacter.js";
 
@@ -34,7 +34,7 @@ export default DrawMap = ({
   //const [charPos, setCharPos] = useState({ x: 1, y: 1 });
   console.log("T");
   console.log(mapPos);
-  const [charPos, setCharPos] = useState({ ...playerPos, ...mobPos });
+  const [charPos, setCharPos] = useState({ playerPos });
   const [evilPos, setEvilPos] = useState({ mobPos });
   //const [charPos, setCharPos] = useState(mapPos);
   const findPos = (x = 0, y = 0) => {
@@ -58,6 +58,7 @@ export default DrawMap = ({
 
   const changeMap = (tempPos, x, y) => {
     setCharPos(change(charPos, x, y));
+    setEvilPos(changeMob(evilPos));
   };
 
   return (
@@ -75,7 +76,7 @@ export default DrawMap = ({
         <button onClick={() => setCharPos(change(charPos, -1, 0))}>up</button>
       </label>
       <label>
-        <button onClick={() => changeMap(charPos, 1, 1)}>mob</button>
+        <button onClick={() => changeMap(1, 1)}>mob</button>
       </label>
       <div className="outer">
         <table className="tableTwo">{topLayer()}</table>
