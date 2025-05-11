@@ -41,10 +41,7 @@ export default DrawMap = ({
   //const [charPos, setCharPos] = useState({ x: 1, y: 1 });
   console.log("T");
   console.log(mapPos);
-  const [charPos, setCharPos] = useState({
-    [`1:1`]: warriorSVG(),
-    [`4:4`]: demonSVG(),
-  });
+  const [charPos, setCharPos] = useState(mapPos);
   const findPos = (x = 0, y = 0) => {
     //console.log("find pos");
     return charPos[`${x}:${y}`] ?? false;
