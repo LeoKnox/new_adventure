@@ -35,6 +35,7 @@ export default DrawMap = ({
   console.log("T");
   console.log(mapPos);
   const [charPos, setCharPos] = useState({ ...playerPos, ...mobPos });
+  const [evilPos, setEvilPos] = useState({ mobPos });
   //const [charPos, setCharPos] = useState(mapPos);
   const findPos = (x = 0, y = 0) => {
     //console.log("find pos");
@@ -55,6 +56,10 @@ export default DrawMap = ({
     [charPos]
   );
 
+  const changeMap = (tempPos, x, y) => {
+    setCharPos(change(charPos, x, y));
+  };
+
   return (
     <div>
       <label>
@@ -70,7 +75,7 @@ export default DrawMap = ({
         <button onClick={() => setCharPos(change(charPos, -1, 0))}>up</button>
       </label>
       <label>
-        <button onClick={() => setCharPos(change(charPos, 1, 1))}>mob</button>
+        <button onClick={() => changeMap(charPos, 1, 1)}>mob</button>
       </label>
       <div className="outer">
         <table className="tableTwo">{topLayer()}</table>
