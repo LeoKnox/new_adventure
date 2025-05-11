@@ -1,14 +1,7 @@
 import { useState, useEffect, useCallback } from "react";
 import { demonSVG, floorSVG, wallSVG, warriorSVG, warr } from "./svgData";
 import { singleRoom } from "./dungeonData.js";
-import {
-  change,
-  updateMonster,
-  mobData,
-  mapData,
-  mapPos,
-  move,
-} from "./playData.js";
+import { change, mapPos, charPos, mobPos } from "./playData.js";
 import DrawMonster from "./DrawMonster.js";
 import DrawCharacter from "./DrawCharacter.js";
 
@@ -41,7 +34,8 @@ export default DrawMap = ({
   //const [charPos, setCharPos] = useState({ x: 1, y: 1 });
   console.log("T");
   console.log(mapPos);
-  const [charPos, setCharPos] = useState(mapPos);
+  const [charPos, setCharPos] = useState({ ...charPos, ...mapPos });
+  //const [charPos, setCharPos] = useState(mapPos);
   const findPos = (x = 0, y = 0) => {
     //console.log("find pos");
     return charPos[`${x}:${y}`] ?? false;
