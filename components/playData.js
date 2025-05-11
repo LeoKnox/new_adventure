@@ -149,7 +149,7 @@ export const mapPos = { [`1:1`]: charFunc[0], [`4:4`]: charFunc[1] };
 export const playerPos = { [`1:1`]: charFunc[0] };
 export const mobPos = { [`4:4`]: charFunc[1] };
 
-const changeMob = () => {
+export const changeMob = () => {
   console.log("change mob");
   return { [`3:5`]: charFunc[1] };
 };
