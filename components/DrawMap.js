@@ -1,7 +1,7 @@
 import { useState, useEffect, useCallback } from "react";
 import { demonSVG, floorSVG, wallSVG, warriorSVG, warr } from "./svgData";
 import { singleRoom } from "./dungeonData.js";
-import { change, changeMob, mapPos, playerPos, mobPos } from "./playData.js";
+import { change, changeMob, changePlayer, mapPos, playerPos, mobPos } from "./playData.js";
 import DrawMonster from "./DrawMonster.js";
 import DrawCharacter from "./DrawCharacter.js";
 
@@ -57,7 +57,7 @@ export default DrawMap = ({
   );
 
   const changeMap = (tempPos, x, y) => {
-    setCharPos(change(charPos, x, y));
+    setCharPos(changePlayer(charPos, x, y));
     setEvilPos(changeMob(evilPos));
   };
 
