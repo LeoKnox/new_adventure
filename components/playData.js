@@ -146,7 +146,7 @@ export const updateMonster = (dirx, diry = -1) => {
 
 const charFunc = { 0: warriorSVG(), 1: demonSVG() };
 export const mapPos = { [`1:1`]: charFunc[0], [`4:4`]: charFunc[1] };
-export const charPos = { [`1:1`]: charFunc[0] };
+export const playerPos = { [`1:1`]: charFunc[0] };
 export const mobPos = { [`4:4`]: charFunc[1] };
 
 const changeMob = () => {
