@@ -41,7 +41,7 @@ export default DrawMap = ({
   //const [charPos, setCharPos] = useState({ x: 1, y: 1 });
   console.log("T");
   console.log(mapPos);
-  const [charPos, setCharPos] = useState({ playerPos });
+  const [charPos, setCharPos] = useState(playerPos);
   const [evilPos, setEvilPos] = useState({ mobPos });
   //const [charPos, setCharPos] = useState(mapPos);
   const findPos = (x = 0, y = 0) => {
