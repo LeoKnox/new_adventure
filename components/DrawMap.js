@@ -42,11 +42,11 @@ export default DrawMap = ({
   console.log("T");
   console.log(mapPos);
   const [charPos, setCharPos] = useState(playerPos);
-  const [evilPos, setEvilPos] = useState({ mobPos });
+  const [evilPos, setEvilPos] = useState(mobPos);
   //const [charPos, setCharPos] = useState(mapPos);
   const findPos = (x = 0, y = 0) => {
     //console.log("find pos");
-    return charPos[`${x}:${y}`] ?? false;
+    return (charPos[`${x}:${y}`] || evilPos[`${x}:${y}`]) ?? false;
   };
   const topLayer = useCallback(
     (rows = height, columns = width, defaultValue = warriorSVG()) => {
