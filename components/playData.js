@@ -154,6 +154,11 @@ export const changeMob = () => {
   return { [`3:5`]: charFunc[1] };
 };
 
+export const changePlayer = () => {
+  console.log("change Player");
+  return { [`2:2`]: charFunc[0] };
+};
+
 export const change = (charPos, x, y) => {
   console.log("change");
   let tempKeys = Object.keys(charPos)[0];
