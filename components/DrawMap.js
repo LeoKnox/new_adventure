@@ -1,7 +1,14 @@
 import { useState, useEffect, useCallback } from "react";
 import { demonSVG, floorSVG, wallSVG, warriorSVG, warr } from "./svgData";
 import { singleRoom } from "./dungeonData.js";
-import { change, changeMob, changePlayer, mapPos, playerPos, mobPos } from "./playData.js";
+import {
+  change,
+  changeMob,
+  changePlayer,
+  mapPos,
+  playerPos,
+  mobPos,
+} from "./playData.js";
 import DrawMonster from "./DrawMonster.js";
 import DrawCharacter from "./DrawCharacter.js";
 
@@ -44,6 +51,8 @@ export default DrawMap = ({
   const topLayer = useCallback(
     (rows = height, columns = width, defaultValue = warriorSVG()) => {
       //console.log("bottom layer");
+      console.log("top layer");
+      console.log(charPos);
       const blTemp = Array.from({ length: rows }, (t, i) => (
         <tr>
           {Array.from({ length: columns }, (u, j) => (
