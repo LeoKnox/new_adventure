@@ -161,7 +161,8 @@ export const changePlayer = (charPos, x, y) => {
     let tempKeys = zee.split(":");
     temp = { [`${x + +tempKeys[0]}:${y + +tempKeys[1]}`]: charFunc[0] };
   }
-  return { temp };
+
+  return temp;
 };
 
 export const change = (charPos, x, y) => {
