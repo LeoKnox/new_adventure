@@ -154,8 +154,13 @@ export const changeMob = () => {
   return { [`3:5`]: charFunc[1] };
 };
 
-export const changePlayer = () => {
+export const changePlayer = (charPos, x, y) => {
   console.log("change Player");
+  for (zee in charPos) {
+    let tempKeys = Object.keys(charPos)[0];
+    tempKeys = tempKeys.split(":");
+    let temp = { [`${x + +tempKeys[0]}:${y + +tempKeys[1]}`]: charFunc[0] };
+  }
   return { [`2:2`]: charFunc[0] };
 };
 
