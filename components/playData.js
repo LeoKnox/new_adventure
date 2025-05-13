@@ -158,7 +158,7 @@ export const changePlayer = (charPos, x, y) => {
   console.log("change Player");
   //console.log(charPos);
   let temp = {};
-  Object.entries((key) => {
+  Object.entries(charPos).map(([key]) => {
     console.log(key);
   });
   //console.log(temp);
