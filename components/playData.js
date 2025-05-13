@@ -156,16 +156,12 @@ export const changeMob = () => {
 
 export const changePlayer = (charPos, x, y) => {
   console.log("change Player");
-  console.log(charPos);
+  //console.log(charPos);
   let temp = {};
-  for (zee in charPos) {
-    console.log(zee);
-    let tempKeys = zee.split(":");
-
-    console.log(`${x + +tempKeys[0]}:${y + +tempKeys[1]}`);
-    temp = { [`${x + +tempKeys[0]}:${y + +tempKeys[1]}`]: charFunc[0] };
-  }
-  console.log(temp);
+  Object.entries((key) => {
+    console.log(key);
+  });
+  //console.log(temp);
   return temp;
 };
 
