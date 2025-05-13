@@ -156,6 +156,7 @@ export const changeMob = () => {
 
 export const changePlayer = (charPos, x, y) => {
   console.log("change Player");
+  console.log(charPos);
   let temp = {};
   for (zee in charPos) {
     console.log(zee);
