@@ -160,7 +160,7 @@ export const changePlayer = (charPos, x, y) => {
   let temp = {};
   Object.entries(charPos).map(([key]) => {
     let tempKeys = key.split(":");
-    let temp = { [`${x + +tempKeys[0]}:${y + +tempKeys[1]}`]: charFunc[0] };
+    temp = { [`${x + +tempKeys[0]}:${y + +tempKeys[1]}`]: charFunc[0] };
   });
   console.log(temp);
   return temp;
