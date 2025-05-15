@@ -1,96 +1,198 @@
-import { useState, useEffect, useCallback } from "react";
-import { demonSVG, floorSVG, wallSVG, warriorSVG, warr } from "./svgData";
-import { singleRoom } from "./dungeonData.js";
-import {
-  change,
-  changeMob,
-  changePlayer,
-  mapPos,
-  playerPos,
-  mobPos,
-} from "./playData.js";
+import { floorSVG, wallSVG, warriorSVG, demonSVG, warr } from "./svgData";
 import DrawMonster from "./DrawMonster.js";
 import DrawCharacter from "./DrawCharacter.js";
 
-export default DrawMap = ({
-  height = 10,
-  width = 10,
-  x = 2,
-  y = 3,
-  sety,
-  setx,
-}) => {
-  const currMap = new Array(singleRoom().x)
-    .fill()
-    .map(() => <tr>{Array(singleRoom().y).fill(<td>{floorSVG()}</td>)}</tr>);
+let playData = {
+  character: {
+    1: [{ oldx: 3, newx: 3, tile: <DrawCharacter background={floorSVG()} /> }],
+  },
+  monster: {
+    3: [{ oldx: 8, newx: 8, tile: <DrawMonster background={floorSVG()} /> }],
+  },
+};
+let ourX = 3;
+let currMap = [
+  [floorSVG(), floorSVG()],
+  [floorSVG(), floorSVG()],
+];
 
-  const bottomLayer = useCallback(
-    (rows = height, columns = width, defaultValue = floorSVG()) => {
-      console.log("bottom layer");
-      const blTemp = Array.from({ length: rows }, () => (
-        <tr>
-          {Array.from({ length: columns }, () => (
-            <td>{defaultValue}</td>
-          ))}
-        </tr>
-      ));
-      return blTemp;
-    },
-    []
-  );
-  //const [charPos, setCharPos] = useState({ x: 1, y: 1 });
-  console.log("T");
-  console.log(mapPos);
-  const [charPos, setCharPos] = useState(playerPos);
-  const [evilPos, setEvilPos] = useState(mobPos);
-  //const [charPos, setCharPos] = useState(mapPos);
-  const findPos = (x = 0, y = 0) => {
-    //console.log("find pos");
-    return (charPos[`${x}:${y}`] || evilPos[`${x}:${y}`]) ?? false;
-  };
-  const topLayer = useCallback(
-    (rows = height, columns = width, defaultValue = warriorSVG()) => {
-      //console.log("bottom layer");
-      console.log("top layer");
-      console.log(charPos);
-      const blTemp = Array.from({ length: rows }, (t, i) => (
-        <tr>
-          {Array.from({ length: columns }, (u, j) => (
-            <td>{findPos(i, j)}</td>
-          ))}
-        </tr>
-      ));
-      return blTemp;
-    },
-    [charPos]
-  );
+export const newMap = () => {
+  let x = [];
+  let y = [];
+  for (let i = 0; i < playData.character[1][0].oldx; i++) {
+    x.push([floorSVG(), floorSVG()]);
+  }
+  console.log("x");
+  console.log(x);
+  return x;
+};
 
-  const changeMap = (tempPos, x, y) => {
-    setCharPos(changePlayer(charPos, x, y));
-    setEvilPos(changeMob(evilPos));
-  };
+//export const mapData = { x: 0, y: 0 };
+export const mapData = {
+  player: { x: 0, y: 0 },
+  monster: [
+    { x: 3, y: 4 },
+    { x: 2, y: 3 },
+  ],
+};
 
-  return (
-    <div>
-      <label>
-        <button onClick={() => changeMap(charPos, 0, 1)}>right</button>
-      </label>
-      <label>
-        <button onClick={() => changeMap(charPos, 0, -1)}>left</button>
-      </label>
-      <label>
-        <button onClick={() => changeMap(charPos, 1, 0)}>down</button>
-      </label>
-      <label>
-        <button onClick={() => changeMap(charPos, -1, 0)}>up</button>
-      </label>
-      <label>
-        <button onClick={() => changeMap(charPos, 1, 1, evilPos)}>mob</button>
-      </label>
-      <div className="outer">
-        <table className="tableTwo">{topLayer()}</table>
-        <table className="tableOne">{bottomLayer()}</table>
-      </div>
-    </div>
-  );
+export const mobData = {
+  0: { 1: warriorSVG() },
+  3: { 4: demonSVG() },
+  4: { 4: demonSVG() },
+};
+export const mob2Data = [
+  { x: 3, y: 4 },
+  { x: 4, y: 2 },
+];
+
+export const move = (x = 1, y = 0, currData) => {
+  console.log("move");
+  //let temp = { ...currData };
+  let loc = Object.keys(currData)[0];
+  console.log(loc + ":" + y);
+  console.log(currData[loc]);
+  if (currData[loc] != 0) {
+    console.log("row");
+    currData[+loc + y] = currData[loc];
+    delete currData[loc];
+  }
+  console.log(currData);
+  console.log(currData[loc]);
+  loc = Object.keys(currData[loc])[0];
+  console.log("next move");
+  //console.log(loc[0]);
+  if (currData[loc[0]] != Object.values(currData)[0]) {
+    currData[+loc[0] + x] = { [+loc[0]]: warriorSVG() };
+  }
+  console.log("end");
+  console.log(currData);
+  //mobData = currData;
+  return currData;
+};
+
+export const addChar = (i) => {
+  console.log("map data" + i);
+  console.table(mapData);
+  let temp = [...mapData];
+  temp[i][0] = "warriorSVG()";
+  return temp;
+};
+
+export const charUpdate = (
+  newChar = {
+    1: [{ oldx: 3, newx: 2, tile: <DrawCharacter background={floorSVG()} /> }],
+  }
+) => {
+  console.log("charUpdate");
+  playData.character = newChar;
+  let temp = newChar;
+  playData.character[1][0].oldx = playData.char[1][0].newx;
+};
+
+export const updateCharacter = (newData) => {
+  console.log("update character");
+  playData["character"] = newData;
+  console.log(newData);
+};
+export const charLocation = (newPos) => {
+  console.log("char loc");
+  let oldPos = Object.keys(newPos ?? {});
+  console.log(oldPos);
+  return { [`2:2`]: true };
+  //return playData["character"];
+};
+export const changeDown = (direction = 1) => {
+  console.log("change down");
+  console.log(playData["character"]);
+  let charKey = parseInt(Object.keys(playData["character"]));
+  let t = deepCopy(playData["monster"]);
+  t[charKey][0]["tile"] = floorSVG();
+  console.log(t);
+  playData["monster"] = t;
+  //delete t[charKey];
+};
+export const deleteDown = (offSet = 1) => {
+  console.log("delete down");
+  let charKey = parseInt(Object.keys(playData["character"]) + offSet);
+  delete playData["character"][charKey];
+  console.log(playData["character"]);
+};
+export const changeLeft = (mod) => {
+  let charKey = +Object.keys(playData["monster"])[0];
+  playData["monster"][charKey][0].oldx = playData["monster"][charKey][0].newx;
+  playData["monster"][charKey][0].newx =
+    playData["monster"][charKey][0].newx + mod;
+  return playData["monster"];
+};
+export const mobDown = (mod) => {
+  console.log("mobDown");
+  let charKey = Object.keys(playData["monster"])[0];
+  //let temp = structuredClone(playData["monster"]);
+  let temp = playData["monster"][charKey][0];
+  console.log(temp);
+  temp[parseInt(charKey) + parseInt(mod)] = playData["monster"][charKey];
+  temp[charKey][0].tile = { warr };
+  playData["monster"] = temp;
+  console.log(playData["monster"]);
+};
+
+export const updateMonster = (dirx, diry = -1) => {
+  console.log("update monster");
+  dirx && changeLeft(dirx);
+  diry && mobDown(diry);
+  return playData["monster"];
+};
+
+const charFunc = { 0: warriorSVG(), 1: demonSVG() };
+export const mapPos = { [`1:1`]: charFunc[0], [`4:4`]: charFunc[1] };
+export const playerPos = { [`1:1`]: charFunc[0] };
+export const mobPos = { [`4:4`]: charFunc[1], ["4:5"]: charFunc[1] };
+
+export const changeMob = (mobPos, x, y) => {
+  console.log("change mob");
+  mobPos.map(() => {
+    Object.entries(mobPos).map(([key]) => {
+      console.log(key);
+      let tempKeys = key.split(":");
+      console.log(y);
+      temp = { [`${x + +tempKeys[0]}:${+tempKeys[1] + y}`]: charFunc[0] };
+    });
+  });
+  console.log(temp);
+  return temp;
+};
+
+export const changePlayer = (charPos, x, y, mobPos) => {
+  console.log("change Player");
+  //console.log(charPos);
+  let temp = {};
+  Object.entries(charPos).map(([key]) => {
+    console.log(key);
+    let tempKeys = key.split(":");
+    console.log(y);
+    temp = { [`${x + +tempKeys[0]}:${+tempKeys[1] + y}`]: charFunc[0] };
+  });
+  console.log(temp);
+  changeMob(mobPos, x, y);
+  return temp;
+};
+
+export const change = (charPos, x, y) => {
+  console.log("change");
+  let tempKeys = Object.keys(charPos)[0];
+  tempKeys = tempKeys.split(":");
+  let temp = { [`${x + +tempKeys[0]}:${y + +tempKeys[1]}`]: charFunc[0] };
+  tempKeys = Object.keys(charPos)[1];
+  tempKeys = tempKeys.split(":");
+  for (x in charPos) {
+    console.log(x + ":");
+  }
+  temp = { ...temp, ...changeMob() };
+  return temp;
+};
+
+export const singleMonster = () => {
+  console.log("mob data");
+  return mobData;
 };
