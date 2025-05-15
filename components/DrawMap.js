@@ -159,7 +159,7 @@ export const changeMob = (mobPos, x, y) => {
   return temp;
 };
 
-export const changePlayer = (charPos, x, y, mobPos) => {
+export const changePlayer = (charPos, x, y, mobPos = {}) => {
   console.log("change Player");
   console.log(mobPos);
   let temp = {};
