@@ -158,12 +158,12 @@ export const changeMob = (mobPos, x, y) => {
     let tempKeys = key.split(":");
     temp = { [`${x + +tempKeys[0]}:${+tempKeys[1] + y}`]: charFunc[0] };
   });
+  console.log(temp);
   return temp;
 };
 
 export const changePlayer = (charPos, x, y, mobPos) => {
   console.log("change Player");
-  console.log(mobPos);
   let temp = {};
   Object.entries(charPos).map(([key]) => {
     let tempKeys = key.split(":");
