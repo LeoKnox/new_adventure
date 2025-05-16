@@ -65,7 +65,7 @@ export default DrawMap = ({
     [charPos]
   );
 
-  const changeMap = (tempPos, x, y) => {
+  const changeMap = (x, y) => {
     setCharPos(changePlayer(charPos, x, y, evilPos));
     setEvilPos(changeMob(evilPos));
   };
@@ -73,19 +73,19 @@ export default DrawMap = ({
   return (
     <div>
       <label>
-        <button onClick={() => changeMap(charPos, 0, 1)}>right</button>
+        <button onClick={() => changeMap(0, 1)}>right</button>
       </label>
       <label>
-        <button onClick={() => changeMap(charPos, 0, -1)}>left</button>
+        <button onClick={() => changeMap(0, -1)}>left</button>
       </label>
       <label>
-        <button onClick={() => changeMap(charPos, 1, 0)}>down</button>
+        <button onClick={() => changeMap(1, 0)}>down</button>
       </label>
       <label>
-        <button onClick={() => changeMap(charPos, -1, 0)}>up</button>
+        <button onClick={() => changeMap(-1, 0)}>up</button>
       </label>
       <label>
-        <button onClick={() => changeMap(charPos, 1, 1)}>mob</button>
+        <button onClick={() => changeMap(1, 1)}>mob</button>
       </label>
       <div className="outer">
         <table className="tableTwo">{topLayer()}</table>
