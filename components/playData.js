@@ -156,7 +156,9 @@ export const changeMob = (mobPos, x, y) => {
   Object.entries(mobPos).map(([key]) => {
     console.log(key);
     let tempKeys = key.split(":");
+    console.log(tempKeys);
     temp = { [`${x + +tempKeys[0]}:${+tempKeys[1] + y}`]: charFunc[0] };
+    console.log(temp);
   });
   console.log(temp);
   return temp;
