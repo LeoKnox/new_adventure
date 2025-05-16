@@ -66,8 +66,8 @@ export default DrawMap = ({
   );
 
   const changeMap = (x, y) => {
-    setCharPos(changePlayer(charPos, x, y, evilPos));
-    setEvilPos(changeMob(evilPos));
+    setCharPos(changePlayer(charPos, x, y));
+    setEvilPos(changeMob(evilPos, x, y));
   };
 
   return (
