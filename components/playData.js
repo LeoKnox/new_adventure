@@ -27,7 +27,6 @@ export const newMap = () => {
   return x;
 };
 
-//export const mapData = { x: 0, y: 0 };
 export const mapData = {
   player: { x: 0, y: 0 },
   monster: [
@@ -170,23 +169,4 @@ export const changePlayer = (charPos, x, y) => {
     temp = { [`${x + +tempKeys[0]}:${+tempKeys[1] + y}`]: charFunc[0] };
   });
   return temp;
-};
-
-export const change = (charPos, x, y) => {
-  console.log("change");
-  let tempKeys = Object.keys(charPos)[0];
-  tempKeys = tempKeys.split(":");
-  let temp = { [`${x + +tempKeys[0]}:${y + +tempKeys[1]}`]: charFunc[0] };
-  tempKeys = Object.keys(charPos)[1];
-  tempKeys = tempKeys.split(":");
-  for (x in charPos) {
-    console.log(x + ":");
-  }
-  temp = { ...temp, ...changeMob() };
-  return temp;
-};
-
-export const singleMonster = () => {
-  console.log("mob data");
-  return mobData;
 };
