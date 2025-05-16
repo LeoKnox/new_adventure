@@ -151,27 +151,22 @@ export const mobPos = { [`4:4`]: charFunc[1], ["4:5"]: charFunc[1] };
 
 export const changeMob = (mobPos, x, y) => {
   console.log("change mob");
+  console.log(mobPos);
   Object.entries(mobPos).map(([key]) => {
-    console.log(key);
     let tempKeys = key.split(":");
-    console.log(y);
     temp = { [`${x + +tempKeys[0]}:${+tempKeys[1] + y}`]: charFunc[0] };
   });
-  console.log(temp);
   return temp;
 };
 
 export const changePlayer = (charPos, x, y, mobPos) => {
   console.log("change Player");
-  //console.log(charPos);
+  console.log(mobPos);
   let temp = {};
   Object.entries(charPos).map(([key]) => {
-    console.log(key);
     let tempKeys = key.split(":");
-    console.log(y);
     temp = { [`${x + +tempKeys[0]}:${+tempKeys[1] + y}`]: charFunc[0] };
   });
-  console.log(temp);
   changeMob(mobPos, x, y);
   return temp;
 };
