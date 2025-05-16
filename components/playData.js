@@ -157,7 +157,10 @@ export const changeMob = (mobPos, x, y) => {
     console.log(key);
     let tempKeys = key.split(":");
     console.log(tempKeys);
-    temp = { [`${x + +tempKeys[0]}:${+tempKeys[1] + y}`]: charFunc[0] };
+    temp = {
+      ...temp,
+      [`${x + +tempKeys[0]}:${+tempKeys[1] + y}`]: charFunc[1],
+    };
     console.log(temp);
   });
   console.log(temp);
