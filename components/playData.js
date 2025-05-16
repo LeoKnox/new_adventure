@@ -145,36 +145,30 @@ export const updateMonster = (dirx, diry = -1) => {
 };
 
 const charFunc = { 0: warriorSVG(), 1: demonSVG() };
-export const mapPos = { [`1:1`]: charFunc[0], [`4:4`]: charFunc[1] };
 export const playerPos = { [`1:1`]: charFunc[0] };
 export const mobPos = { [`3:4`]: charFunc[1], ["3:5"]: charFunc[1] };
 
 export const changeMob = (mobPos, x, y) => {
   console.log("change mob");
-  console.log(mobPos);
   let temp = {};
   Object.entries(mobPos).map(([key]) => {
-    console.log(key);
     let tempKeys = key.split(":");
     console.log(tempKeys);
     temp = {
       ...temp,
       [`${x + +tempKeys[0]}:${+tempKeys[1] + y}`]: charFunc[1],
     };
-    console.log(temp);
   });
-  console.log(temp);
   return temp;
 };
 
-export const changePlayer = (charPos, x, y, mobPos) => {
+export const changePlayer = (charPos, x, y) => {
   console.log("change Player");
   let temp = {};
   Object.entries(charPos).map(([key]) => {
     let tempKeys = key.split(":");
     temp = { [`${x + +tempKeys[0]}:${+tempKeys[1] + y}`]: charFunc[0] };
   });
-  //changeMob(mobPos, x, y);
   return temp;
 };
 
