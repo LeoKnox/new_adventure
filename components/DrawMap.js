@@ -45,14 +45,11 @@ export default DrawMap = ({
   const [evilPos, setEvilPos] = useState(mobPos);
   //const [charPos, setCharPos] = useState(mapPos);
   const findPos = (x = 0, y = 0) => {
-    //console.log("find pos");
     return (charPos[`${x}:${y}`] || evilPos[`${x}:${y}`]) ?? false;
   };
   const topLayer = useCallback(
-    (rows = height, columns = width, defaultValue = warriorSVG()) => {
-      //console.log("bottom layer");
+    (rows = height, columns = width) => {
       console.log("top layer");
-      console.log(charPos);
       const blTemp = Array.from({ length: rows }, (t, i) => (
         <tr>
           {Array.from({ length: columns }, (u, j) => (
