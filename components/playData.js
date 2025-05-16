@@ -152,7 +152,9 @@ export const mobPos = { [`4:4`]: charFunc[1], ["4:5"]: charFunc[1] };
 export const changeMob = (mobPos, x, y) => {
   console.log("change mob");
   console.log(mobPos);
+  let temp = {};
   Object.entries(mobPos).map(([key]) => {
+    console.log(key);
     let tempKeys = key.split(":");
     temp = { [`${x + +tempKeys[0]}:${+tempKeys[1] + y}`]: charFunc[0] };
   });
