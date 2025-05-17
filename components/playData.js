@@ -25,47 +25,6 @@ export const charLocation = (newPos) => {
   return { [`2:2`]: true };
   //return playData["character"];
 };
-export const changeDown = (direction = 1) => {
-  console.log("change down");
-  console.log(playData["character"]);
-  let charKey = parseInt(Object.keys(playData["character"]));
-  let t = deepCopy(playData["monster"]);
-  t[charKey][0]["tile"] = floorSVG();
-  console.log(t);
-  playData["monster"] = t;
-  //delete t[charKey];
-};
-export const deleteDown = (offSet = 1) => {
-  console.log("delete down");
-  let charKey = parseInt(Object.keys(playData["character"]) + offSet);
-  delete playData["character"][charKey];
-  console.log(playData["character"]);
-};
-export const changeLeft = (mod) => {
-  let charKey = +Object.keys(playData["monster"])[0];
-  playData["monster"][charKey][0].oldx = playData["monster"][charKey][0].newx;
-  playData["monster"][charKey][0].newx =
-    playData["monster"][charKey][0].newx + mod;
-  return playData["monster"];
-};
-export const mobDown = (mod) => {
-  console.log("mobDown");
-  let charKey = Object.keys(playData["monster"])[0];
-  //let temp = structuredClone(playData["monster"]);
-  let temp = playData["monster"][charKey][0];
-  console.log(temp);
-  temp[parseInt(charKey) + parseInt(mod)] = playData["monster"][charKey];
-  temp[charKey][0].tile = { warr };
-  playData["monster"] = temp;
-  console.log(playData["monster"]);
-};
-
-export const updateMonster = (dirx, diry = -1) => {
-  console.log("update monster");
-  dirx && changeLeft(dirx);
-  diry && mobDown(diry);
-  return playData["monster"];
-};
 
 const charFunc = { 0: warriorSVG(), 1: demonSVG() };
 export const playerPos = { [`1:1`]: charFunc[0] };
