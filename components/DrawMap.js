@@ -1,22 +1,10 @@
 import { useState, useEffect, useCallback } from "react";
 import { demonSVG, floorSVG, wallSVG, warriorSVG, warr } from "./svgData";
-import {
-  changeMob,
-  changePlayer,
-  playerPos,
-  mobPos,
-} from "./playData.js";
+import { changeMob, changePlayer, playerPos, mobPos } from "./playData.js";
 import DrawMonster from "./DrawMonster.js";
 import DrawCharacter from "./DrawCharacter.js";
 
-export default DrawMap = ({
-  height = 10,
-  width = 10,
-  x = 2,
-  y = 3,
-  sety,
-  setx,
-}) => {
+export default DrawMap = ({ height = 10, width = 10 }) => {
   const [charPos, setCharPos] = useState(playerPos);
   const [evilPos, setEvilPos] = useState(mobPos);
   const bottomLayer = useCallback(
