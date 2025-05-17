@@ -12,20 +12,6 @@ export const charUpdate = (
   let temp = newChar;
   playData.character[1][0].oldx = playData.char[1][0].newx;
 };
-
-export const updateCharacter = (newData) => {
-  console.log("update character");
-  playData["character"] = newData;
-  console.log(newData);
-};
-export const charLocation = (newPos) => {
-  console.log("char loc");
-  let oldPos = Object.keys(newPos ?? {});
-  console.log(oldPos);
-  return { [`2:2`]: true };
-  //return playData["character"];
-};
-
 const charFunc = { 0: warriorSVG(), 1: demonSVG() };
 export const playerPos = { [`1:1`]: charFunc[0] };
 export const mobPos = { [`3:4`]: charFunc[1], ["3:5"]: charFunc[1] };
