@@ -1,11 +1,8 @@
 import { useState, useEffect, useCallback } from "react";
 import { demonSVG, floorSVG, wallSVG, warriorSVG, warr } from "./svgData";
-import { singleRoom } from "./dungeonData.js";
 import {
-  change,
   changeMob,
   changePlayer,
-  mapPos,
   playerPos,
   mobPos,
 } from "./playData.js";
@@ -20,10 +17,8 @@ export default DrawMap = ({
   sety,
   setx,
 }) => {
-  const currMap = new Array(singleRoom().x)
-    .fill()
-    .map(() => <tr>{Array(singleRoom().y).fill(<td>{floorSVG()}</td>)}</tr>);
-
+  const [charPos, setCharPos] = useState(playerPos);
+  const [evilPos, setEvilPos] = useState(mobPos);
   const bottomLayer = useCallback(
     (rows = height, columns = width, defaultValue = floorSVG()) => {
       console.log("bottom layer");
@@ -38,12 +33,7 @@ export default DrawMap = ({
     },
     []
   );
-  //const [charPos, setCharPos] = useState({ x: 1, y: 1 });
-  console.log("T");
-  console.log(mapPos);
-  const [charPos, setCharPos] = useState(playerPos);
-  const [evilPos, setEvilPos] = useState(mobPos);
-  //const [charPos, setCharPos] = useState(mapPos);
+
   const findPos = (x = 0, y = 0) => {
     return (charPos[`${x}:${y}`] || evilPos[`${x}:${y}`]) ?? false;
   };
