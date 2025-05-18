@@ -38,6 +38,9 @@ export const changeMob2 = (mobPos, x, y, charPos) => {
   Object.entries(mobPos).map(([key]) => {
     let tempKeys = key.split(":");
     let z = Math.round(Math.random());
+    if (tempKeys[0] >= charChange[0]) {
+      z = -1;
+    }
     temp = {
       ...temp,
       [`${x * z + +tempKeys[0]}:${+tempKeys[1] + y * z}`]: charFunc[1],
