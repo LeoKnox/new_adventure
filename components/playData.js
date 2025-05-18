@@ -30,9 +30,19 @@ export const changeMob = (mobPos, x, y) => {
   return temp;
 };
 
-export const changeMob2 = () => {
+export const changeMob2 = (mobPos, x, y, charPos) => {
   console.log("change mob 2");
-  return { [`3:4`]: charFunc[1], ["3:5"]: charFunc[1] };
+  let temp = {};
+  Object.entries(mobPos).map(([key]) => {
+    let z = Math.round(Math.random());
+    let tempKeys = key.split(":");
+    console.log(tempKeys);
+    temp = {
+      ...temp,
+      [`${x * z + +tempKeys[0]}:${+tempKeys[1] + y * z}`]: charFunc[1],
+    };
+  });
+  return temp;
 };
 
 export const changePlayer = (charPos, x, y) => {
