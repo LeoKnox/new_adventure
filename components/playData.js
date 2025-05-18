@@ -33,10 +33,11 @@ export const changeMob = (mobPos, x, y) => {
 export const changeMob2 = (mobPos, x, y, charPos) => {
   console.log("change mob 2");
   let temp = {};
+  let charChange = Object.keys(charPos)[0].split(":");
+  console.log(charChange);
   Object.entries(mobPos).map(([key]) => {
-    let z = Math.round(Math.random());
     let tempKeys = key.split(":");
-    console.log(tempKeys);
+    let z = Math.round(Math.random());
     temp = {
       ...temp,
       [`${x * z + +tempKeys[0]}:${+tempKeys[1] + y * z}`]: charFunc[1],
