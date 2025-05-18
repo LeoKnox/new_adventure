@@ -30,6 +30,11 @@ export const changeMob = (mobPos, x, y) => {
   return temp;
 };
 
+export const changeMob2 = () => {
+  console.log("change mob 2");
+  return { [`3:4`]: charFunc[1], ["3:5"]: charFunc[1] };
+};
+
 export const changePlayer = (charPos, x, y) => {
   console.log("change Player");
   let temp = {};
