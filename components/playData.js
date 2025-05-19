@@ -37,7 +37,7 @@ export const changeMob2 = (mobPos, x, y, charPos) => {
   Object.entries(mobPos).map(([key]) => {
     let tempKeys = key.split(":");
     let z = Math.round(Math.random());
-    console.log(tempKeys[1] + ":" + charChange[1]);
+    console.log(tempKeys[1] + ":" + charChange[0]);
     if (tempKeys[1] == charChange[1]) {
       z = -1;
       console.log("CM2");
