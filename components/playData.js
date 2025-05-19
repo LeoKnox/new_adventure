@@ -39,6 +39,7 @@ export const changeMob2 = (mobPos, x, y, charPos) => {
     let z = Math.round(Math.random());
     if (tempKeys[1] == charChange[1]) {
       z = -1;
+      console.log("CM2");
     }
     temp = {
       ...temp,
