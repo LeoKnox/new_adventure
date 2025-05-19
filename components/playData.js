@@ -32,6 +32,7 @@ export const changeMob = (mobPos, x, y) => {
 
 export const changeMob2 = (evilPos, x, y, charPos) => {
   console.log("change mob 2");
+  console.log(evilPos);
   let temp = {};
   let charChange = Object.keys(charPos)[0].split(":");
   Object.entries(evilPos).map(([key]) => {
