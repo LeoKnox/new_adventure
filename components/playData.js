@@ -38,13 +38,17 @@ export const changeMob2 = (evilPos, x, y, charPos) => {
     let tempKeys = key.split(":");
     let z = Math.round(Math.random());
     let newY = 0;
+    let newX = 0;
     console.log(tempKeys[0] + "::" + charChange[0]);
     if (tempKeys[0] == charChange[0]) {
       newY = -1;
     }
+    if (tempKeys[1] == charChange[1]) {
+      newX = -1;
+    }
     temp = {
       ...temp,
-      [`${x * z + +tempKeys[0]}:${+tempKeys[1] + (newY || y * z)}`]:
+      [`${+tempKeys[0] + (newX || x * z)}:${+tempKeys[1] + (newY || y * z)}`]:
         charFunc[1],
     };
   });
