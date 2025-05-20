@@ -32,20 +32,15 @@ export const changeMob = (mobPos, x, y) => {
 
 export const changeMob2 = (evilPos, x, y, charPos) => {
   console.log("change mob 2");
-  //console.log(evilPos);
   let temp = {};
   let charChange = Object.keys(charPos)[0].split(":");
-  //console.log(charChange);
-  //console.log(charPos);
   Object.entries(evilPos).map(([key]) => {
     let tempKeys = key.split(":");
-    console.log(tempKeys);
     let z = Math.round(Math.random());
     let newY = 0;
     console.log(tempKeys[0] + "::" + charChange[0]);
     if (tempKeys[0] == charChange[0]) {
       newY = -1;
-      console.log("CM2");
     }
     temp = {
       ...temp,
