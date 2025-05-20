@@ -49,7 +49,8 @@ export const changeMob2 = (evilPos, x, y, charPos) => {
     }
     temp = {
       ...temp,
-      [`${x * z + +tempKeys[0]}:${newY || +tempKeys[1] + y * z}`]: charFunc[1],
+      [`${x * z + +tempKeys[0]}:${+tempKeys[1] + (newY || y * z)}`]:
+        charFunc[1],
     };
   });
   console.log(temp);
