@@ -27,7 +27,7 @@ export const changeMob = (evilPos, x, y, charPos) => {
     let newX = 0;
     console.log(key);
     console.log(tempKeys[0] + "::" + charChange[0]);
-    if (tempKeys[0] == charChange[0] || tempKeys[1] > charChange[1]) {
+    if (tempKeys[0] == charChange[0] && tempKeys[1] > charChange[1]) {
       newY = -1;
     }
     if (tempKeys[1] == charChange[1]) {
