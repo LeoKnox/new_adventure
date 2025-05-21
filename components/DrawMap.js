@@ -47,6 +47,8 @@ export default DrawMap = ({ height = 10, width = 10 }) => {
 
   return (
     <div>
+      {Object.keys(charPos)}::{Object.keys(evilPos)}
+      <br />
       <label>
         <button onClick={() => changeMap(0, 1)}>right</button>
       </label>
