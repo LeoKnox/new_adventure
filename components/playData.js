@@ -16,21 +16,7 @@ const charFunc = { 0: warriorSVG(), 1: demonSVG() };
 export const playerPos = { [`1:1`]: charFunc[0] };
 export const mobPos = { [`3:4`]: charFunc[1], ["3:5"]: charFunc[1] };
 
-export const changeMob = (mobPos, x, y) => {
-  console.log("change mob");
-  let temp = {};
-  Object.entries(mobPos).map(([key]) => {
-    let tempKeys = key.split(":");
-    console.log(tempKeys);
-    temp = {
-      ...temp,
-      [`${x + +tempKeys[0]}:${+tempKeys[1] + y}`]: charFunc[1],
-    };
-  });
-  return temp;
-};
-
-export const changeMob2 = (evilPos, x, y, charPos) => {
+export const changeMob = (evilPos, x, y, charPos) => {
   console.log("change mob 2");
   let temp = {};
   let charChange = Object.keys(charPos)[0].split(":");
