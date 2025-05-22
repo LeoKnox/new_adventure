@@ -27,28 +27,68 @@ export const changeMob = (evilPos, x, y, charPos) => {
     let newX = 0;
     console.log(key);
     console.log(tempKeys[0] + "::" + charChange[0]);
-    if (tempKeys[0] == charChange[0] && tempKeys[1] > charChange[1]) {
+    if (
+      !newX &&
+      !newY &&
+      tempKeys[0] == charChange[0] &&
+      tempKeys[1] > charChange[1]
+    ) {
       newY = -1;
     }
-    if (tempKeys[0] == charChange[0] && tempKeys[1] < charChange[1]) {
+    if (
+      !newX &&
+      !newY &&
+      tempKeys[0] == charChange[0] &&
+      tempKeys[1] < charChange[1]
+    ) {
       newY = 1;
     }
-    if (tempKeys[1] == charChange[1] && tempKeys[0] < charChange[0]) {
+    if (
+      !newX &&
+      !newY &&
+      tempKeys[1] == charChange[1] &&
+      tempKeys[0] < charChange[0]
+    ) {
       newX = -1;
     }
-    if (tempKeys[1] == charChange[1] && tempKeys[0] > charChange[0]) {
+    if (
+      !newX &&
+      !newY &&
+      tempKeys[1] == charChange[1] &&
+      tempKeys[0] > charChange[0]
+    ) {
       newX = 1;
     }
-    if (tempKeys[0] > charChange[0] && tempKeys[1] > charChange[1]) {
+    if (
+      !newX &&
+      !newY &&
+      tempKeys[0] > charChange[0] &&
+      tempKeys[1] > charChange[1]
+    ) {
       Math.round(Math.random()) ? (newY = -1) : (newX = -1);
     }
-    if (tempKeys[0] < charChange[0] && tempKeys[1] < charChange[1]) {
+    if (
+      !newX &&
+      !newY &&
+      tempKeys[0] < charChange[0] &&
+      tempKeys[1] < charChange[1]
+    ) {
       Math.round(Math.random()) ? (newY = 1) : (newX = 1);
     }
-    if (tempKeys[0] > charChange[0] && tempKeys[1] < charChange[1]) {
+    if (
+      !newX &&
+      !newY &&
+      tempKeys[0] > charChange[0] &&
+      tempKeys[1] < charChange[1]
+    ) {
       Math.round(Math.random()) ? (newY = 1) : (newX = -1);
     }
-    if (tempKeys[0] > charChange[0] && tempKeys[1] < charChange[1]) {
+    if (
+      !newX &&
+      !newY &&
+      tempKeys[0] > charChange[0] &&
+      tempKeys[1] < charChange[1]
+    ) {
       Math.round(Math.random()) ? (newY = 1) : (newX = 1);
     }
     temp = {
