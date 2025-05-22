@@ -40,10 +40,10 @@ export const changeMob = (evilPos, x, y, charPos) => {
       newX = 1;
     }
     if (tempKeys[0] > charChange[0] && tempKeys[1] > charChange[1]) {
-      newY = Math.round(Math.random()) * -1;
+      Math.round(Math.random()) ? (newY = -1) : (newX = -1);
     }
     if (tempKeys[0] < charChange[0] && tempKeys[1] < charChange[1]) {
-      newY = Math.round(Math.random()) * 1;
+      Math.round(Math.random()) ? (newY = 1) : (newX = 1);
     }
     temp = {
       ...temp,
