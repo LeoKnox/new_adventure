@@ -17,7 +17,7 @@ export const playerPos = { [`1:1`]: charFunc[0] };
 export const mobPos = { [`3:4`]: charFunc[1], ["3:5"]: charFunc[1] };
 
 export const changeMob = (evilPos, x, y, charPos) => {
-  console.log("change mob 2");
+  console.log("change mob");
   let temp = {};
   let charChange = Object.keys(charPos)[0].split(":");
   Object.entries(evilPos).map(([key]) => {
@@ -70,7 +70,7 @@ export const changeMob = (evilPos, x, y, charPos) => {
       tempKeys[1] > charChange[1]
     ) {
       console.log("e");
-      Math.round(Math.random()) ? (newY = -1) : (newX = -1);
+      Math.round(Math.random()) ? (newY = 1) : (newX = 1);
     }
     if (
       !newX &&
@@ -79,7 +79,7 @@ export const changeMob = (evilPos, x, y, charPos) => {
       tempKeys[1] < charChange[1]
     ) {
       console.log("f");
-      Math.round(Math.random()) ? (newY = 1) : (newX = 1);
+      Math.round(Math.random()) ? (newY = -1) : (newX = -1);
     }
     if (
       !newX &&
