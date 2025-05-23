@@ -33,6 +33,7 @@ export const changeMob = (evilPos, x, y, charPos) => {
       tempKeys[0] == charChange[0] &&
       tempKeys[1] > charChange[1]
     ) {
+      console.log("a");
       newY = -1;
     }
     if (
@@ -41,6 +42,7 @@ export const changeMob = (evilPos, x, y, charPos) => {
       tempKeys[0] == charChange[0] &&
       tempKeys[1] < charChange[1]
     ) {
+      console.log("b");
       newY = 1;
     }
     if (
@@ -49,6 +51,7 @@ export const changeMob = (evilPos, x, y, charPos) => {
       tempKeys[1] == charChange[1] &&
       tempKeys[0] < charChange[0]
     ) {
+      console.log("c");
       newX = -1;
     }
     if (
@@ -57,6 +60,7 @@ export const changeMob = (evilPos, x, y, charPos) => {
       tempKeys[1] == charChange[1] &&
       tempKeys[0] > charChange[0]
     ) {
+      console.log("d");
       newX = 1;
     }
     if (
@@ -65,6 +69,7 @@ export const changeMob = (evilPos, x, y, charPos) => {
       tempKeys[0] > charChange[0] &&
       tempKeys[1] > charChange[1]
     ) {
+      console.log("e");
       Math.round(Math.random()) ? (newY = -1) : (newX = -1);
     }
     if (
@@ -73,6 +78,7 @@ export const changeMob = (evilPos, x, y, charPos) => {
       tempKeys[0] < charChange[0] &&
       tempKeys[1] < charChange[1]
     ) {
+      console.log("f");
       Math.round(Math.random()) ? (newY = 1) : (newX = 1);
     }
     if (
@@ -81,6 +87,7 @@ export const changeMob = (evilPos, x, y, charPos) => {
       tempKeys[0] > charChange[0] &&
       tempKeys[1] < charChange[1]
     ) {
+      console.log("g");
       Math.round(Math.random()) ? (newY = 1) : (newX = -1);
     }
     if (
@@ -89,6 +96,7 @@ export const changeMob = (evilPos, x, y, charPos) => {
       tempKeys[0] > charChange[0] &&
       tempKeys[1] < charChange[1]
     ) {
+      console.log("h");
       Math.round(Math.random()) ? (newY = 1) : (newX = 1);
     }
     temp = {
