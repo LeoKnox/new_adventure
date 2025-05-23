@@ -93,8 +93,8 @@ export const changeMob = (evilPos, x, y, charPos) => {
     if (
       !newX &&
       !newY &&
-      tempKeys[0] > charChange[0] &&
-      tempKeys[1] < charChange[1]
+      tempKeys[0] < charChange[0] &&
+      tempKeys[1] > charChange[1]
     ) {
       console.log("h");
       Math.round(Math.random()) ? (newY = 1) : (newX = 1);
