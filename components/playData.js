@@ -13,8 +13,8 @@ export const charUpdate = (
   playData.character[1][0].oldx = playData.char[1][0].newx;
 };
 const charFunc = { 0: warriorSVG(), 1: demonSVG() };
-export const playerPos = { [`1:1`]: charFunc[0] };
-export const mobPos = { [`3:4`]: charFunc[1], ["3:5"]: charFunc[1] };
+export const playerPos = { [`3:1`]: charFunc[0] };
+export const mobPos = { [`1:4`]: charFunc[1], ["1:5"]: charFunc[1] };
 
 export const changeMob = (evilPos, x, y, charPos) => {
   console.log("change mob");
