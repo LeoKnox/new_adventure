@@ -16,12 +16,12 @@ const charFunc = { 0: warriorSVG(), 1: demonSVG() };
 export const playerPos = { [`3:1`]: charFunc[0] };
 export const mobPos = { [`1:4`]: charFunc[1], ["1:5"]: charFunc[1] };
 
-const mobDirection = (key) => {
+const mobDirection = (key, charChange) => {
   console.log(key);
   let tempKeys = key.split(":");
   let newY = 0;
   let newX = 0;
-  console.log(key);
+  console.log(tempKeys);
   if (
     !newX &&
     !newY &&
@@ -107,7 +107,7 @@ export const changeMob = (evilPos, x, y, charPos) => {
   let charChange = Object.keys(charPos)[0].split(":");
   Object.entries(evilPos).map(([key]) => {
     console.log("a" + key);
-    const temp = mobDirection(key);
+    const temp = mobDirection(key, charChange);
     /*
     let tempKeys = key.split(":");
     let newY = 0;
