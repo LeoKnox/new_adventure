@@ -21,10 +21,7 @@ const mobDirection = (key) => {
   let tempKeys = key.split(":");
   let newY = 0;
   let newX = 0;
-  const [tempx, tempy] = mobDirection();
   console.log(key);
-  //console.log(tempKeys[1] + "::" + charChange[1]);
-  console.log(tempy + "::" + tempx);
   if (
     !newX &&
     !newY &&
@@ -109,6 +106,7 @@ export const changeMob = (evilPos, x, y, charPos) => {
   let temp = {};
   let charChange = Object.keys(charPos)[0].split(":");
   Object.entries(evilPos).map(([key]) => {
+    console.log("a" + key);
     const temp = mobDirection(key);
     /*
     let tempKeys = key.split(":");
