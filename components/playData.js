@@ -26,7 +26,6 @@ export const changeMob = (evilPos, x, y, charPos) => {
   let charChange = Object.keys(charPos)[0].split(":");
   Object.entries(evilPos).map(([key]) => {
     let tempKeys = key.split(":");
-    let z = Math.round(Math.random());
     let newY = 0;
     let newX = 0;
     const [tempx, tempy] = mobDirection();
