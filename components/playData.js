@@ -16,6 +16,10 @@ const charFunc = { 0: warriorSVG(), 1: demonSVG() };
 export const playerPos = { [`3:1`]: charFunc[0] };
 export const mobPos = { [`1:4`]: charFunc[1], ["1:5"]: charFunc[1] };
 
+const mobDirection = () => {
+  return [9, 9];
+};
+
 export const changeMob = (evilPos, x, y, charPos) => {
   console.log("change mob");
   let temp = {};
@@ -25,8 +29,10 @@ export const changeMob = (evilPos, x, y, charPos) => {
     let z = Math.round(Math.random());
     let newY = 0;
     let newX = 0;
+    const [tempx, tempy] = mobDirection();
     console.log(key);
-    console.log(tempKeys[1] + "::" + charChange[1]);
+    //console.log(tempKeys[1] + "::" + charChange[1]);
+    console.log(tempy + "::" + tempx);
     if (
       !newX &&
       !newY &&
