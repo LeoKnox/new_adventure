@@ -99,8 +99,7 @@ const mobDirection = (key, charChange) => {
     ...temp,
     [`${+tempKeys[0] + newX}:${+tempKeys[1] + newY}`]: charFunc[1],
   };
-  console.log("aaa");
-  console.log(temp);
+
   return temp;
 };
 
@@ -111,6 +110,8 @@ export const changeMob = (evilPos, x, y, charPos) => {
   Object.entries(evilPos).map(([key]) => {
     console.log("a" + key);
     const temp = mobDirection(key, charChange);
+    console.log("aaa");
+    console.log(temp);
     /*
     let tempKeys = key.split(":");
     let newY = 0;
