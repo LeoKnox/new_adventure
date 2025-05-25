@@ -109,7 +109,7 @@ export const changeMob = (evilPos, x, y, charPos) => {
   let charChange = Object.keys(charPos)[0].split(":");
   Object.entries(evilPos).map(([key]) => {
     console.log("a" + key);
-    const temp = [...temp, mobDirection(key, charChange)];
+    temp = [...temp, mobDirection(key, charChange)];
     console.log("aaa");
     console.log(temp);
     /*
