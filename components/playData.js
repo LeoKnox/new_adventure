@@ -21,6 +21,7 @@ const mobDirection = (key, charChange) => {
   let tempKeys = key.split(":");
   let newY = 0;
   let newX = 0;
+  
   console.log(tempKeys);
   if (
     !newX &&
@@ -98,6 +99,8 @@ const mobDirection = (key, charChange) => {
     ...temp,
     [`${+tempKeys[0] + newX}:${+tempKeys[1] + newY}`]: charFunc[1],
   };
+  console.log("aaa");
+  console.log(temp);
   return temp;
 };
 
