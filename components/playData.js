@@ -21,7 +21,7 @@ const mobDirection = (key, charChange) => {
   let tempKeys = key.split(":");
   let newY = 0;
   let newX = 0;
-  
+  let temp = {};
   console.log(tempKeys);
   if (
     !newX &&
