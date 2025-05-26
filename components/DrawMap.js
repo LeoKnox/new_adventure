@@ -41,7 +41,8 @@ export default DrawMap = ({ height = 10, width = 10 }) => {
   );
 
   const changeMap = (x, y) => {
-    setCharPos(changePlayer(charPos, x, y));
+    let temp = changePlayer(charPos, x, y);
+    setCharPos(temp);
     setEvilPos(changeMob(evilPos, x, y, charPos));
   };
 
@@ -50,10 +51,10 @@ export default DrawMap = ({ height = 10, width = 10 }) => {
       {Object.keys(charPos)}
       <br />
       {Object.entries(evilPos).map(([key, value]) => (
-            <p key={key}>
-            {key}: {value}
-            </p>
-        ))}
+        <p key={key}>
+          {key}: {value}
+        </p>
+      ))}
       <label>
         <button onClick={() => changeMap(0, 1)}>right</button>
       </label>
