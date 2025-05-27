@@ -1,4 +1,21 @@
-let dungeonData = [{ id: 1, name: "entry", width: 9, height: 5, x: 5, y: 5, monster:[{icon:"demon", x:8, y:3} ]}];
+let dungeonData = [
+  {
+    id: 1,
+    name: "entry",
+    width: 9,
+    height: 5,
+    x: 5,
+    y: 5,
+  },
+  {
+    id: 2,
+    name: "entry",
+    width: 7,
+    height: 8,
+    x: 6,
+    y: 6,
+  },
+];
 
 export const allRooms = () => {
   return dungeonData;
