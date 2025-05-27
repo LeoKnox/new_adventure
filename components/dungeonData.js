@@ -1,81 +1,46 @@
-import { useState, useEffect, useCallback } from "react";
-import { demonSVG, floorSVG, wallSVG, warriorSVG, warr } from "./svgData";
-import { changeMob, changePlayer, playerPos, mobPos } from "./playData.js";
-import { signleRoom } from "./dungeonData.js";
-import DrawMonster from "./DrawMonster.js";
-import DrawCharacter from "./DrawCharacter.js";
+let dungeonData = [
+  {
+    id: 1,
+    name: "entry",
+    width: 9,
+    height: 5,
+    x: 5,
+    y: 5,
+  },
+  {
+    id: 2,
+    name: "entry",
+    width: 7,
+    height: 8,
+    x: 6,
+    y: 6,
+  },
+];
 
-export default DrawMap = ({ height = 10, width = 10 }) => {
-  const [charPos, setCharPos] = useState(playerPos);
-  const [evilPos, setEvilPos] = useState(mobPos);
-  height = singleRoom(2).height;
-  const bottomLayer = useCallback(
-    (rows = height, columns = width, defaultValue = floorSVG()) => {
-      console.log("bottom layer");
-      const blTemp = Array.from({ length: rows }, () => (
-        <tr>
-          {Array.from({ length: columns }, () => (
-            <td>{defaultValue}</td>
-          ))}
-        </tr>
-      ));
-      return blTemp;
-    },
-    []
-  );
+export const allRooms = () => {
+  return dungeonData;
+};
 
-  const findPos = (x = 0, y = 0) => {
-    return (charPos[`${x}:${y}`] || evilPos[`${x}:${y}`]) ?? false;
-  };
-  const topLayer = useCallback(
-    (rows = height, columns = width) => {
-      console.log("top layer");
-      const blTemp = Array.from({ length: rows }, (t, i) => (
-        <tr>
-          {Array.from({ length: columns }, (u, j) => (
-            <td>{findPos(i, j)}</td>
-          ))}
-        </tr>
-      ));
-      return blTemp;
-    },
-    [charPos]
-  );
+export const addRoom = (name, width, height, x, y) => {
+  newId = dungeonData.length
+    ? dungeonData[dungeonData.length - 1].id + 1
+    : (newId = 1);
+  dungeonData = [
+    ...dungeonData,
+    { id: newId, name: name, width: width, height: height, x: x, y: y },
+  ];
+  return dungeonData;
+};
 
-  const changeMap = (x, y) => {
-    let temp = changePlayer(charPos, x, y);
-    evilPos[Object.keys(temp)[0]] ? alert("true") : setCharPos(temp);
-    setEvilPos(changeMob(evilPos, x, y, charPos));
-  };
+export const changeRoom = (newData = "chiiro") => {
+  dungeonData = dungeonData.map((room) => (room.id == 1 ? newData : room));
+  return dungeonData;
+};
 
-  return (
-    <div>
-      {Object.keys(charPos)}
-      <br />
-      {Object.entries(evilPos).map(([key, value]) => (
-        <p key={key}>
-          {key}: {value}
-        </p>
-      ))}
-      <label>
-        <button onClick={() => changeMap(0, 1)}>right</button>
-      </label>
-      <label>
-        <button onClick={() => changeMap(0, -1)}>left</button>
-      </label>
-      <label>
-        <button onClick={() => changeMap(1, 0)}>down</button>
-      </label>
-      <label>
-        <button onClick={() => changeMap(-1, 0)}>up</button>
-      </label>
-      <label>
-        <button onClick={() => changeMap(1, 1)}>mob</button>
-      </label>
-      <div className="outer">
-        <table className="tableTwo">{topLayer()}</table>
-        <table className="tableOne">{bottomLayer()}</table>
-      </div>
-    </div>
-  );
+export const deleteRoom = (id = 1) => {
+  dungeonData = dungeonData.filter((room) => room.id != id);
+  return dungeonData;
+};
+export const singleRoom = (id = 1) => {
+  return dungeonData.find((room) => room.id == id);
 };
