@@ -1,12 +1,14 @@
 import { useState, useEffect, useCallback } from "react";
 import { demonSVG, floorSVG, wallSVG, warriorSVG, warr } from "./svgData";
 import { changeMob, changePlayer, playerPos, mobPos } from "./playData.js";
+import { singleRoom } from "./dungeonData.js";
 import DrawMonster from "./DrawMonster.js";
 import DrawCharacter from "./DrawCharacter.js";
 
 export default DrawMap = ({ height = 10, width = 10 }) => {
   const [charPos, setCharPos] = useState(playerPos);
   const [evilPos, setEvilPos] = useState(mobPos);
+  height = singleRoom(2).height;
   const bottomLayer = useCallback(
     (rows = height, columns = width, defaultValue = floorSVG()) => {
       console.log("bottom layer");
