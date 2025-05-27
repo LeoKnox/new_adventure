@@ -72,7 +72,7 @@ export default DrawMap = ({ height = 10, width = 10 }) => {
         <button onClick={() => changeMap(-1, 0)}>up</button>
       </label>
       <label>
-        <button onClick={() => changeMap(1, 1)}>mob</button>
+        <button onClick={() => setCurrRoom(2)}>mob</button>
       </label>
       <div className="outer">
         <table className="tableTwo">{topLayer()}</table>
