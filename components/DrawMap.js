@@ -42,8 +42,7 @@ export default DrawMap = ({ height = 10, width = 10 }) => {
 
   const changeMap = (x, y) => {
     let temp = changePlayer(charPos, x, y);
-    evilPos[Object.keys(temp)[0]] ? alert("true") : null;
-    setCharPos(temp);
+    evilPos[Object.keys(temp)[0]] ? alert("true") : setCharPos(temp);
     setEvilPos(changeMob(evilPos, x, y, charPos));
   };
 
