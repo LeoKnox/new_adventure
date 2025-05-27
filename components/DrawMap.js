@@ -23,7 +23,7 @@ export default DrawMap = ({ height = 10, width = 10 }) => {
       ));
       return blTemp;
     },
-    []
+    [currRoom]
   );
 
   const findPos = (x = 0, y = 0) => {
