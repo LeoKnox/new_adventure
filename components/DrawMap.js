@@ -41,7 +41,7 @@ export default DrawMap = ({ height = 10, width = 10 }) => {
       ));
       return blTemp;
     },
-    [charPos]
+    [charPos, currRoom]
   );
 
   const changeMap = (x, y) => {
