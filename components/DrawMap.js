@@ -59,6 +59,7 @@ export default DrawMap = ({ height = 10, width = 10 }) => {
           {key}: {value}
         </p>
       ))}
+      <p>{currRoom}</p>
       <label>
         <button onClick={() => changeMap(0, 1)}>right</button>
       </label>
@@ -72,7 +73,7 @@ export default DrawMap = ({ height = 10, width = 10 }) => {
         <button onClick={() => changeMap(-1, 0)}>up</button>
       </label>
       <label>
-        <button onClick={() => setCurrRoom(0)}>mob</button>
+        <button onClick={() => setCurrRoom(2)}>mob</button>
       </label>
       <div className="outer">
         <table className="tableTwo">{topLayer()}</table>
