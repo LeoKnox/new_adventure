@@ -13,7 +13,8 @@ export default EditRoom = ({ newId = 1, setIsEdit, setRooms, editFunc }) => {
     let [x, y] = key.split(":");
     return (
       <label>
-        x:{x} y:{y}
+        x:
+        <input type="number" value={x} />
       </label>
     );
   };
