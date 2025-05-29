@@ -10,7 +10,12 @@ export default EditRoom = ({ newId = 1, setIsEdit, setRooms, editFunc }) => {
   };
   console.log("edit room");
   const splitXY = (key) => {
-    return key.split(":");
+    let [x, y] = key.split(":");
+    return (
+      <label>
+        x:{x} y:{y}
+      </label>
+    );
   };
   return (
     <>
