@@ -61,7 +61,9 @@ export default EditRoom = ({
         />
       </p>
       {Object.keys(roomMob).map((value, key) => (
-        <p>{value}</p>
+        <p>
+          {value}:{key}
+        </p>
       ))}
       <button onClick={() => editFunc(roomEdit)}>Submit</button>
       <button onClick={() => setIsEdit(false)}>Back</button>
