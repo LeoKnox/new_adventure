@@ -12,10 +12,16 @@ export default EditRoom = ({ newId = 1, setIsEdit, setRooms, editFunc }) => {
   const splitXY = (key) => {
     let [x, y] = key.split(":");
     return (
-      <label>
-        x:
-        <input type="number" value={x} />
-      </label>
+      <>
+        <label>
+          monster x:
+          <input type="number" value={x} />
+        </label>
+        <label>
+          monster y:
+          <input type="number" value={y} />
+        </label>
+      </>
     );
   };
   return (
