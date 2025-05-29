@@ -6,6 +6,10 @@ let dungeonData = [
     height: 5,
     x: 5,
     y: 5,
+    monsters: {
+      [`2:4`]: 1,
+      [`3:5`]: 1,
+    },
   },
   {
     id: 2,
