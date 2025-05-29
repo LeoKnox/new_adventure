@@ -53,9 +53,9 @@ export default EditRoom = ({ newId = 1, setIsEdit, setRooms, editFunc }) => {
           onChange={(e) => setRoomEdit({ ...roomEdit, y: e.target.value })}
         />
       </p>
-      {Object.keys(roomEdit.monsters).map((value, key) => (
+      {Object.keys(roomEdit.monsters).map((key, value) => (
         <p>
-          {value}:{key}
+          {value.id}:{value.x}:{value.y}
         </p>
       ))}
       <button onClick={() => editFunc(roomEdit)}>Submit</button>
