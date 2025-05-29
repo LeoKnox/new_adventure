@@ -9,6 +9,9 @@ export default EditRoom = ({ newId = 1, setIsEdit, setRooms, editFunc }) => {
     editFunc(temp);
   };
   console.log("edit room");
+  const splitXY = (key) => {
+    return key.split(":");
+  };
   return (
     <>
       <button>{newId}</button>
@@ -54,9 +57,7 @@ export default EditRoom = ({ newId = 1, setIsEdit, setRooms, editFunc }) => {
         />
       </p>
       {Object.keys(roomEdit.monsters).map((key, value) => (
-        <p>
-          {value.id}:{value.x}:{value.y}
-        </p>
+        <p>{splitXY(key)}</p>
       ))}
       <button onClick={() => editFunc(roomEdit)}>Submit</button>
       <button onClick={() => setIsEdit(false)}>Back</button>
