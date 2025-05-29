@@ -14,6 +14,8 @@ export default EditRoom = ({
     //setRooms(temp);
     editFunc(temp);
   };
+  console.log("edit room");
+  console.log(roomMob);
   return (
     <>
       <button>{newId}</button>
@@ -58,9 +60,9 @@ export default EditRoom = ({
           onChange={(e) => setRoomEdit({ ...roomEdit, y: e.target.value })}
         />
       </p>
-      {roomMob.map((value) => (
-        <p>value</p>
-      ))}
+      {Object.keys(roomMob).map(value, key) => (
+        <p>{value}</p>
+      )}
       <button onClick={() => editFunc(roomEdit)}>Submit</button>
       <button onClick={() => setIsEdit(false)}>Back</button>
     </>
