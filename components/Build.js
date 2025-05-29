@@ -42,7 +42,7 @@ export default Build = () => {
           setIsEdit={setIsEdit}
           setRooms={setRooms}
           editFunc={editFunc}
-          roomMob={roomMob}
+          roomMob={rooms.monsters}
         />
       ) : (
         <>
