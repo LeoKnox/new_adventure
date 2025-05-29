@@ -6,7 +6,8 @@ import NewRoom from "./NewRoom.js";
 import EditRoom from "./EditRoom.js";
 
 export default Build = () => {
-  console.log("T" + singleRoom(1));
+  console.log("build.js");
+  console.log(singleRoom(1).monsters);
   const [isEdit, setIsEdit] = useState(false);
   const [newId, setNewId] = useState(1);
   const [rooms, setRooms] = useState(allRooms());
