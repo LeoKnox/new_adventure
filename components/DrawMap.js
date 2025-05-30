@@ -11,6 +11,9 @@ export default DrawMap = ({ height = 10, width = 10 }) => {
   const [currRoom, setCurrRoom] = useState(1);
   height = singleRoom(currRoom).height;
   width = singleRoom(currRoom).width;
+  let [monsters] = singleRoom(currRoom);
+  console.log("monsters");
+  console.log(monsters);
   const bottomLayer = useCallback(
     (rows = height, columns = width, defaultValue = floorSVG()) => {
       console.log("bottom layer");
