@@ -1,6 +1,7 @@
 import { floorSVG, wallSVG, warriorSVG, demonSVG, warr } from "./svgData";
 import DrawMonster from "./DrawMonster.js";
 import DrawCharacter from "./DrawCharacter.js";
+import { singleRoom } from "./dungeonData.js";
 
 export const charUpdate = (
   newChar = {
@@ -14,7 +15,8 @@ export const charUpdate = (
 };
 const charFunc = { 0: warriorSVG(), 1: demonSVG() };
 export const playerPos = { [`3:1`]: charFunc[0] };
-export const mobPos = { [`1:4`]: charFunc[1], [`1:5`]: charFunc[1] };
+export const { monsers: mobPos } = singleRoom(1);
+//export const mobPos = { [`1:4`]: charFunc[1], [`1:5`]: charFunc[1] };
 
 const mobDirection = (key, charChange) => {
   console.log(key);
