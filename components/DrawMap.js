@@ -7,13 +7,12 @@ import DrawCharacter from "./DrawCharacter.js";
 
 export default DrawMap = ({ height = 10, width = 10 }) => {
   const [charPos, setCharPos] = useState(playerPos);
-  const [evilPos, setEvilPos] = useState(mobPos);
+
   const [currRoom, setCurrRoom] = useState(1);
   height = singleRoom(currRoom).height;
   width = singleRoom(currRoom).width;
   let { monsters } = singleRoom(currRoom);
-  console.log("monsters");
-  console.log(monsters);
+  const [evilPos, setEvilPos] = useState(monsters);
   const bottomLayer = useCallback(
     (rows = height, columns = width, defaultValue = floorSVG()) => {
       console.log("bottom layer");
