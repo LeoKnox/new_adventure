@@ -1,86 +1,129 @@
-import { useState, useEffect, useCallback } from "react";
-import { demonSVG, floorSVG, wallSVG, warriorSVG, warr } from "./svgData";
-import { changeMob, changePlayer, playerPos, mobPos } from "./playData.js";
-import { singleRoom } from "./dungeonData.js";
+import { floorSVG, wallSVG, warriorSVG, demonSVG, warr } from "./svgData";
 import DrawMonster from "./DrawMonster.js";
 import DrawCharacter from "./DrawCharacter.js";
+import singleRoom from "./dungeonData.js";
 
-export default DrawMap = ({ height = 10, width = 10 }) => {
-  const [charPos, setCharPos] = useState(playerPos);
+export const charUpdate = (
+  newChar = {
+    1: [{ oldx: 3, newx: 2, tile: <DrawCharacter background={floorSVG()} /> }],
+  }
+) => {
+  console.log("charUpdate");
+  playData.character = newChar;
+  let temp = newChar;
+  playData.character[1][0].oldx = playData.char[1][0].newx;
+};
+const charFunc = { 0: warriorSVG(), 1: demonSVG() };
+export const playerPos = { [`3:1`]: charFunc[0] };
+export const { monsers: mobPos } = singleRoom(1);
+//export const mobPos = { [`1:4`]: charFunc[1], [`1:5`]: charFunc[1] };
 
-  const [currRoom, setCurrRoom] = useState(1);
-  height = singleRoom(currRoom).height;
-  width = singleRoom(currRoom).width;
-  let { monsters } = singleRoom(currRoom);
-  const [evilPos, setEvilPos] = useState(monsters);
-  const bottomLayer = useCallback(
-    (rows = height, columns = width, defaultValue = floorSVG()) => {
-      console.log("bottom layer");
-      const blTemp = Array.from({ length: rows }, () => (
-        <tr>
-          {Array.from({ length: columns }, () => (
-            <td>{defaultValue}</td>
-          ))}
-        </tr>
-      ));
-      return blTemp;
-    },
-    [currRoom]
-  );
-
-  const findPos = (x = 0, y = 0) => {
-    return (charPos[`${x}:${y}`] || evilPos[`${x}:${y}`]) ?? false;
+const mobDirection = (key, charChange) => {
+  console.log(key);
+  let tempKeys = key.split(":");
+  let newY = 0;
+  let newX = 0;
+  let temp = {};
+  console.log(tempKeys);
+  if (
+    !newX &&
+    !newY &&
+    tempKeys[0] == charChange[0] &&
+    tempKeys[1] > charChange[1]
+  ) {
+    console.log("a");
+    newY = -1;
+  }
+  if (
+    !newX &&
+    !newY &&
+    tempKeys[0] == charChange[0] &&
+    tempKeys[1] < charChange[1]
+  ) {
+    console.log("b");
+    newY = 1;
+  }
+  if (
+    !newX &&
+    !newY &&
+    tempKeys[1] == charChange[1] &&
+    tempKeys[0] < charChange[0]
+  ) {
+    console.log("c");
+    newX = -1;
+  }
+  if (
+    !newX &&
+    !newY &&
+    tempKeys[1] == charChange[1] &&
+    tempKeys[0] > charChange[0]
+  ) {
+    console.log("d");
+    newX = 1;
+  }
+  if (
+    !newX &&
+    !newY &&
+    tempKeys[0] > charChange[0] &&
+    tempKeys[1] > charChange[1]
+  ) {
+    console.log("e");
+    Math.round(Math.random()) ? (newY = 1) : (newX = 1);
+  }
+  if (
+    !newX &&
+    !newY &&
+    tempKeys[0] < charChange[0] &&
+    tempKeys[1] < charChange[1]
+  ) {
+    console.log("f");
+    Math.round(Math.random()) ? (newY = -1) : (newX = -1);
+  }
+  if (
+    !newX &&
+    !newY &&
+    tempKeys[0] > charChange[0] &&
+    tempKeys[1] < charChange[1]
+  ) {
+    console.log("g");
+    Math.round(Math.random()) ? (newY = 1) : (newX = -1);
+  }
+  if (
+    !newX &&
+    !newY &&
+    tempKeys[0] < charChange[0] &&
+    tempKeys[1] > charChange[1]
+  ) {
+    console.log("h");
+    Math.round(Math.random()) ? (newY = -1) : (newX = 1);
+  }
+  temp = {
+    ...temp,
+    [`${+tempKeys[0] + newX}:${+tempKeys[1] + newY}`]: charFunc[1],
   };
-  const topLayer = useCallback(
-    (rows = height, columns = width) => {
-      console.log("top layer");
-      const blTemp = Array.from({ length: rows }, (t, i) => (
-        <tr>
-          {Array.from({ length: columns }, (u, j) => (
-            <td>{findPos(i, j)}</td>
-          ))}
-        </tr>
-      ));
-      return blTemp;
-    },
-    [charPos, currRoom]
-  );
 
-  const changeMap = (x, y) => {
-    let temp = changePlayer(charPos, x, y);
-    evilPos[Object.keys(temp)[0]] ? alert("true") : setCharPos(temp);
-    setEvilPos(changeMob(evilPos, x, y, charPos));
-  };
+  return temp;
+};
 
-  return (
-    <div>
-      {Object.keys(charPos)}
-      <br />
-      {Object.entries(evilPos).map(([key, value]) => (
-        <p key={key}>
-          {key}: {value}
-        </p>
-      ))}
-      <p>{currRoom}</p>
-      <label>
-        <button onClick={() => changeMap(0, 1)}>right</button>
-      </label>
-      <label>
-        <button onClick={() => changeMap(0, -1)}>left</button>
-      </label>
-      <label>
-        <button onClick={() => changeMap(1, 0)}>down</button>
-      </label>
-      <label>
-        <button onClick={() => changeMap(-1, 0)}>up</button>
-      </label>
-      <label>
-        <button onClick={() => setCurrRoom(2)}>mob</button>
-      </label>
-      <div className="outer">
-        <table className="tableTwo">{topLayer()}</table>
-        <table className="tableOne">{bottomLayer()}</table>
-      </div>
-    </div>
-  );
+export const changeMob = (evilPos, x, y, charPos) => {
+  console.log("change mob");
+  let temp = {};
+  let charChange = Object.keys(charPos)[0].split(":");
+  Object.entries(evilPos).map(([key]) => {
+    tempx = mobDirection(key, charChange);
+    tempx
+      ? (temp = { ...temp, ...mobDirection(key, charChange) })
+      : (temp[key] = charFunc[1]);
+  });
+  return temp;
+};
+
+export const changePlayer = (charPos, x, y) => {
+  console.log("change Player");
+  let temp = {};
+  Object.entries(charPos).map(([key]) => {
+    let tempKeys = key.split(":");
+    temp = { [`${x + +tempKeys[0]}:${+tempKeys[1] + y}`]: charFunc[0] };
+  });
+  return temp;
 };
