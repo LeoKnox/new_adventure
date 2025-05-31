@@ -1,3 +1,5 @@
+import { DemonSVG } from "./svgData";
+
 let dungeonData = [
   {
     id: 1,
@@ -19,7 +21,7 @@ let dungeonData = [
     x: 6,
     y: 6,
     monsters: {
-      [`1:4`]: 1,
+      [`1:4`]: demonSVG(),
       [`1:5`]: 1,
     },
   },
