@@ -1,6 +1,24 @@
 let characterData = [
-  { id: 1, name: "ao", lvl: 1, atk: 10, def: 10, weapon: ["spear"], armor: [] },
-  { id: 2, name: "aka", lvl: 1, atk: 12, def: 9, weapon: ["sword"], armor: [] },
+  {
+    id: 1,
+    name: "ao",
+    icon: 1,
+    lvl: 1,
+    atk: 10,
+    def: 10,
+    weapon: ["spear"],
+    armor: [],
+  },
+  {
+    id: 2,
+    name: "aka",
+    icon: 1,
+    lvl: 1,
+    atk: 12,
+    def: 9,
+    weapon: ["sword"],
+    armor: [],
+  },
 ];
 
 export const addCharacter = (newCharacter) => {
