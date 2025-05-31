@@ -32,7 +32,10 @@ export default DrawMap = ({ height = 10, width = 10 }) => {
   );
 
   const findPos = (x = 0, y = 0) => {
-    return (charPos[`${x}:${y}`] || charFunc[evilPos[`${x}:${y}`]]) ?? false;
+    return (
+      (charFunc[charPos[`${x}:${y}`]] || charFunc[evilPos[`${x}:${y}`]]) ??
+      false
+    );
   };
   const topLayer = useCallback(
     (rows = height, columns = width) => {
