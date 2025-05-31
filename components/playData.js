@@ -15,7 +15,7 @@ export const charUpdate = (
 };
 const charFunc = { 0: warriorSVG(), 1: demonSVG() };
 export const playerPos = { [`3:1`]: charFunc[0] };
-export const { monsers: mobPos } = singleRoom(1);
+export const { monsters: mobPos } = singleRoom(1);
 //export const mobPos = { [`1:4`]: charFunc[1], [`1:5`]: charFunc[1] };
 
 const mobDirection = (key, charChange) => {
