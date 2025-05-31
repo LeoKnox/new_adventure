@@ -114,7 +114,7 @@ export const changeMob = (evilPos, x, y, charPos) => {
     tempx = mobDirection(key, charChange);
     tempx
       ? (temp = { ...temp, ...mobDirection(key, charChange) })
-      : (temp[key] = charFunc[1]);
+      : (temp[key] = 1);
   });
   return temp;
 };
