@@ -10,13 +10,11 @@ export const charUpdate = (
 ) => {
   console.log("charUpdate");
   playData.character = newChar;
-  let temp = newChar;
   playData.character[1][0].oldx = playData.char[1][0].newx;
 };
 const charFunc = { 0: warriorSVG(), 1: demonSVG() };
 export const playerPos = { [`3:1`]: charFunc[singleCharacter(1).icon] };
 export const { monsters: mobPos } = singleRoom(1);
-//export const mobPos = { [`1:4`]: charFunc[1], [`1:5`]: charFunc[1] };
 
 const mobDirection = (key, charChange) => {
   console.log(key);
@@ -24,7 +22,6 @@ const mobDirection = (key, charChange) => {
   let newY = 0;
   let newX = 0;
   let temp = {};
-  console.log(tempKeys);
   if (
     !newX &&
     !newY &&
@@ -107,7 +104,6 @@ const mobDirection = (key, charChange) => {
 
 export const changeMob = (evilPos, x, y, charPos) => {
   console.log("change mob");
-  console.log(evilPos);
   let temp = {};
   let charChange = Object.keys(charPos)[0].split(":");
   Object.entries(evilPos).map(([key]) => {
