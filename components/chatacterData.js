@@ -2,7 +2,7 @@ let characterData = [
   {
     id: 1,
     name: "ao",
-    icon: 1,
+    icon: 0,
     lvl: 1,
     atk: 10,
     def: 10,
@@ -12,7 +12,7 @@ let characterData = [
   {
     id: 2,
     name: "aka",
-    icon: 1,
+    icon: 0,
     lvl: 1,
     atk: 12,
     def: 9,
