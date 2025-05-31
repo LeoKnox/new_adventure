@@ -11,10 +11,7 @@ export default DrawMap = ({ height = 10, width = 10 }) => {
   const [currRoom, setCurrRoom] = useState(1);
   height = singleRoom(currRoom).height;
   width = singleRoom(currRoom).width;
-  let { monsters: mobPos } = singleRoom(currRoom);
-  console.log("monsters");
-  console.log(mobPos);
-  const [evilPos, setEvilPos] = useState(mobPos);
+  const [evilPos, setEvilPos] = useState(singleRoom(currRoom).monsters);
   const charFunc = { 0: warriorSVG(), 1: demonSVG() };
   const bottomLayer = useCallback(
     (rows = height, columns = width, defaultValue = floorSVG()) => {
@@ -32,10 +29,7 @@ export default DrawMap = ({ height = 10, width = 10 }) => {
   );
 
   const findPos = (x = 0, y = 0) => {
-    return (
-      (charFunc[charPos[`${x}:${y}`]] || charFunc[evilPos[`${x}:${y}`]]) ??
-      false
-    );
+    return (charPos[`${x}:${y}`] || charFunc[evilPos[`${x}:${y}`]]) ?? false;
   };
   const topLayer = useCallback(
     (rows = height, columns = width) => {
