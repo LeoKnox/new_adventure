@@ -88,17 +88,18 @@ const mobDirection = (key, charChange) => {
   if (
     !newX &&
     !newY &&
-    !Object.keys(temp) &&
     tempKeys[0] < charChange[0] &&
     tempKeys[1] > charChange[1]
   ) {
     console.log("h");
     Math.round(Math.random()) ? (newY = -1) : (newX = 1);
   }
-  temp = {
-    ...temp,
-    [`${+tempKeys[0] + newX}:${+tempKeys[1] + newY}`]: 1,
-  };
+  Object.Keys(temp)
+    ? (temp = {
+        ...temp,
+        [`${+tempKeys[0] + newX}:${+tempKeys[1] + newY}`]: 1,
+      })
+    : null;
   console.log(temp);
   return temp;
 };
