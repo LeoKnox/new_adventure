@@ -94,7 +94,7 @@ const mobDirection = (key, charChange) => {
     console.log("h");
     Math.round(Math.random()) ? (newY = -1) : (newX = 1);
   }
-  Object.Keys(temp)
+  Object.Keys(temp[`${+tempKeys[0] + newX}:${+tempKeys[1] + newY}`])
     ? (temp = {
         ...temp,
         [`${+tempKeys[0] + newX}:${+tempKeys[1] + newY}`]: 1,
