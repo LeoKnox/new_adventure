@@ -88,6 +88,7 @@ const mobDirection = (key, charChange) => {
   if (
     !newX &&
     !newY &&
+    !Object.keys(temp) &&
     tempKeys[0] < charChange[0] &&
     tempKeys[1] > charChange[1]
   ) {
