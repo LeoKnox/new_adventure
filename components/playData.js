@@ -96,7 +96,6 @@ const mobDirection = (key, charChange) => {
   }
   temp[`${+tempKeys[0] + newX}:${+tempKeys[1] + newY}`] ||
     (temp = {
-      ...temp,
       [`${+tempKeys[0] + newX}:${+tempKeys[1] + newY}`]: 1,
     });
   console.log(temp);
