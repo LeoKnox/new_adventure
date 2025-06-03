@@ -113,7 +113,7 @@ export const changeMob = (evilPos, x, y, charPos) => {
     tempx = mobDirection(key, charChange);
     tempx
       ? (temp = { ...temp, ...mobDirection(key, charChange) })
-      : (temp[key] = 1);
+      : (temp[key] = singleRoom.monsters[0]);
   });
   return temp;
 };
