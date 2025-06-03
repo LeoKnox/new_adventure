@@ -8,7 +8,7 @@ import DrawCharacter from "./DrawCharacter.js";
 export default DrawMap = ({ height = 10, width = 10 }) => {
   const [charPos, setCharPos] = useState(playerPos);
 
-  const [currRoom, setCurrRoom] = useState(2);
+  const [currRoom, setCurrRoom] = useState(1);
   height = singleRoom(currRoom).height;
   width = singleRoom(currRoom).width;
   const [evilPos, setEvilPos] = useState(singleRoom(currRoom).monsters);
@@ -35,6 +35,7 @@ export default DrawMap = ({ height = 10, width = 10 }) => {
     (rows = height, columns = width) => {
       console.log("top layer");
       const blTemp = Array.from({ length: rows }, (t, i) => (
+        console.log("t"+t+" i"+i);
         <tr>
           {Array.from({ length: columns }, (u, j) => (
             <td>{findPos(i, j)}</td>
