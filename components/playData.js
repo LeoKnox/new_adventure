@@ -109,11 +109,11 @@ export const changeMob = (evilPos, x, y, charPos) => {
   console.log("change mob");
   let temp = {};
   let charChange = Object.keys(charPos)[0].split(":");
-  Object.entries(evilPos).map(([key]) => {
+  Object.entries(evilPos).map(([key, findPos]) => {
     tempx = mobDirection(key, charChange);
     tempx
       ? (temp = { ...temp, ...mobDirection(key, charChange) })
-      : (temp[key] = singleRoom.monsters[0]);
+      : (temp[key] = singleRoom.monsters[pos]);
   });
   return temp;
 };
