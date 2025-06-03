@@ -29,6 +29,7 @@ export default DrawMap = ({ height = 10, width = 10 }) => {
   );
 
   const findPos = (x = 0, y = 0) => {
+    () => setEvilPos(singleRoom(currRoom).monsters);
     return (charPos[`${x}:${y}`] || charFunc[evilPos[`${x}:${y}`]]) ?? false;
   };
   const topLayer = useCallback(
