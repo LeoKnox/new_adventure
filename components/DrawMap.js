@@ -8,7 +8,7 @@ import DrawCharacter from "./DrawCharacter.js";
 export default DrawMap = ({ height = 10, width = 10 }) => {
   const [charPos, setCharPos] = useState(playerPos);
 
-  const [currRoom, setCurrRoom] = useState(1);
+  const [currRoom, setCurrRoom] = useState(2);
   height = singleRoom(currRoom).height;
   width = singleRoom(currRoom).width;
   const [evilPos, setEvilPos] = useState(singleRoom(currRoom).monsters);
