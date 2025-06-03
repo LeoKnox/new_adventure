@@ -35,7 +35,8 @@ export default DrawMap = ({ height = 10, width = 10 }) => {
     (rows = height, columns = width) => {
       console.log("top layer");
       const blTemp = Array.from({ length: rows }, (t, i) => (
-        console.log("t"+t+" i"+i);
+        console.log({t});
+        console.log({i});
         <tr>
           {Array.from({ length: columns }, (u, j) => (
             <td>{findPos(i, j)}</td>
