@@ -34,6 +34,7 @@ export default DrawMap = ({ height = 10, width = 10 }) => {
   const topLayer = useCallback(
     (rows = height, columns = width) => {
       console.log("top layer");
+      () => setEvilPos(singleRoom(2).montsers);
       const blTemp = Array.from({ length: rows }, (t, i) => (
         <tr>
           {Array.from({ length: columns }, (u, j) => (
@@ -42,7 +43,7 @@ export default DrawMap = ({ height = 10, width = 10 }) => {
         </tr>
       ));
       console.log("RED");
-      () => setEvilPos(singleRoom(2).montsers);
+
       return blTemp;
     },
     [charPos, currRoom]
