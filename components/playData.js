@@ -47,7 +47,7 @@ const mobDirection = (key, charChange) => {
     tempKeys[0] < charChange[0]
   ) {
     console.log("c");
-    newX = -1;
+    newX = 1;
   }
   if (
     !newX &&
@@ -56,7 +56,7 @@ const mobDirection = (key, charChange) => {
     tempKeys[0] > charChange[0]
   ) {
     console.log("d");
-    newX = 1;
+    newX = -1;
   }
   if (
     !newX &&
