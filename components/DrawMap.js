@@ -41,7 +41,7 @@ export default DrawMap = ({ height = 10, width = 10 }) => {
           ))}
         </tr>
       ));
-      () => setEvilPos(singleRoom(currRoom).monsters);
+      () => setEvilPos({ [`1:4`]: 1 });
       return blTemp;
     },
     [charPos, currRoom]
