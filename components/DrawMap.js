@@ -29,12 +29,13 @@ export default DrawMap = ({ height = 10, width = 10 }) => {
   );
 
   const findPos = (x = 0, y = 0) => {
+    console.log(evilPos);
     return (charPos[`${x}:${y}`] || charFunc[evilPos[`${x}:${y}`]]) ?? false;
   };
   const topLayer = useCallback(
     (rows = height, columns = width) => {
       console.log("top layer");
-
+      () => setEvilPos(singleRoom(2).monsters);
       const blTemp = Array.from({ length: rows }, (t, i) => (
         <tr>
           {Array.from({ length: columns }, (u, j) => (
@@ -51,7 +52,7 @@ export default DrawMap = ({ height = 10, width = 10 }) => {
 
   const changeMap = (x, y) => {
     let temp = changePlayer(charPos, x, y);
-    setEvilPos(singleRoom(2).montsers);
+
     evilPos[Object.keys(temp)[0]] ? alert("true") : setCharPos(temp);
     setEvilPos(changeMob(evilPos, x, y, charPos));
   };
