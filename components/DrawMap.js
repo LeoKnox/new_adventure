@@ -56,6 +56,11 @@ export default DrawMap = ({ height = 10, width = 10 }) => {
     evilPos[Object.keys(temp)[0]] ? alert("true") : setCharPos(temp);
     setEvilPos(changeMob(evilPos, x, y, charPos));
   };
+  const changeRoom = () => {
+    console.log("change room");
+    setCurrRoom(2);
+    setEvilPos(singleRoom(2).monsters);
+  };
 
   return (
     <div>
@@ -80,7 +85,7 @@ export default DrawMap = ({ height = 10, width = 10 }) => {
         <button onClick={() => changeMap(-1, 0)}>up</button>
       </label>
       <label>
-        <button onClick={() => setCurrRoom(2)}>mob</button>
+        <button onClick={() => changeRoom()}>mob</button>
       </label>
       <div className="outer">
         <table className="tableTwo">{topLayer()}</table>
