@@ -41,6 +41,7 @@ export default DrawMap = ({ height = 10, width = 10 }) => {
           ))}
         </tr>
       ));
+      console.log("RED");
       () => setEvilPos(singleRoom(2).montsers);
       return blTemp;
     },
