@@ -41,7 +41,7 @@ export default DrawMap = ({ height = 10, width = 10 }) => {
           ))}
         </tr>
       ));
-      () => setEvilPos({ [`1:4`]: 1 });
+      () => setEvilPos(singleRoom(2).montsers);
       return blTemp;
     },
     [charPos, currRoom]
