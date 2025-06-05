@@ -7,7 +7,7 @@ import EditRoom from "./EditRoom.js";
 
 export default Build = () => {
   console.log("build.js");
-  console.log(singleRoom(1).monsters);
+  //console.log(singleRoom(1).monsters);
   const [isEdit, setIsEdit] = useState(false);
   const [newId, setNewId] = useState(1);
   const [rooms, setRooms] = useState(allRooms());
@@ -16,6 +16,8 @@ export default Build = () => {
     [`1:5`]: 1,
   });
   const editFunc = (roomEdit) => {
+    console.log("edit func");
+    console.log(roomEdit);
     const temp = changeRoom(roomEdit);
     setRooms(temp);
     setIsEdit(false);
@@ -43,7 +45,6 @@ export default Build = () => {
           setIsEdit={setIsEdit}
           setRooms={setRooms}
           editFunc={editFunc}
-          roomMob={rooms.monsters}
         />
       ) : (
         <>
