@@ -19,7 +19,7 @@ export default Build = () => {
     console.log("edit func");
     console.log(roomEdit);
     const temp = changeRoom(roomEdit);
-    temp.monsters[`2:3`] = 1;
+    temp.monsters = { ...temp.monsters, [`2:3`]: 1 };
     setRooms(temp);
     setIsEdit(false);
   };
