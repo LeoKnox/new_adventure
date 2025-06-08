@@ -21,8 +21,7 @@ export default Build = () => {
     let temp = changeRoom(roomEdit);
     let tempMob = temp.monsters;
     console.log(tempMob);
-
-    tempMob[`2:3`] = 1;
+    tempMob = { ...tempMob, [`2:3`]: 1 };
     console.log(tempMob);
     setRooms(temp);
     setIsEdit(false);
