@@ -1,59 +1,79 @@
-import { useState, useEffect } from "react";
-import { allRooms, addRoom, changeRoom, singleRoom } from "./dungeonData.js";
-import AllRooms from "./AllRooms.js";
-import { deleteRoom } from "./dungeonData.js";
-import NewRoom from "./NewRoom.js";
-import EditRoom from "./EditRoom.js";
+import { useState } from "react";
+import { singleRoom, changeRoom } from "./dungeonData.js";
 
-export default Build = () => {
-  console.log("build.js");
-  //console.log(singleRoom(1).monsters);
-  const [isEdit, setIsEdit] = useState(false);
-  const [newId, setNewId] = useState(1);
-  const [rooms, setRooms] = useState(allRooms());
-  const [roomMob, setRoomMob] = useState({
-    [`1:4`]: 1,
-    [`1:5`]: 1,
-  });
-  const editFunc = (roomEdit) => {
-    console.log("edit func");
-    console.log(roomEdit);
-    roomEdit.monsters[`2:3`] = 1;
-    console.log(roomEdit);
-    setRooms(roomEdit);
-    console.log("2:3");
-    //setIsEdit(false);
+export default EditRoom = ({ newId = 1, setIsEdit, setRooms, editFunc }) => {
+  const [roomEdit, setRoomEdit] = useState(singleRoom(newId));
+  const submitRoom = () => {
+    const temp = changeRoom(roomEdit);
+    //setRooms(temp);
+    editFunc(temp);
   };
-  const loadEdit = (roomId = 1) => {
-    let temp = singleRoom(roomId);
-    setNewId(roomId);
-    setIsEdit(!isEdit);
-  };
-  const removeRoom = (deleteId) => {
-    console.log(deleteRoom(1));
-    let temp = deleteRoom(deleteId);
-    setRooms(temp);
-  };
-  const submitRoom = (name, width, height, x, y) => {
-    let temp = addRoom(name, width, height, x, y);
-    setRooms(temp);
+  console.log("edit room");
+  const splitXY = (key) => {
+    let [x, y] = key.split(":");
+    return (
+      <>
+        <label>
+          monster x:
+          <input type="number" value={x} />
+        </label>
+        <label>
+          monster y:
+          <input type="number" value={y} />
+        </label>
+        <button>X</button>
+      </>
+    );
   };
   return (
     <>
-      <p onClick={() => setIsEdit(!isEdit)}>build a dungeon</p>
-      {isEdit ? (
-        <EditRoom
-          newId={newId}
-          setIsEdit={setIsEdit}
-          setRooms={setRooms}
-          editFunc={editFunc}
+      <button>{newId}</button>
+      <p>{singleRoom(newId).name}</p>
+      <p>
+        Name:
+        <input
+          type="text"
+          value={roomEdit.name}
+          onChange={(e) => setRoomEdit({ ...roomEdit, name: e.target.value })}
         />
-      ) : (
-        <>
-          <AllRooms rooms={rooms} removeRoom={removeRoom} loadEdit={loadEdit} />
-          <NewRoom submitRoom={submitRoom} />
-        </>
-      )}
+      </p>
+      <p>
+        Width:
+        <input
+          type="number"
+          value={roomEdit.width}
+          onChange={(e) => setRoomEdit({ ...roomEdit, width: e.target.value })}
+        />
+      </p>
+      <p>
+        Height:
+        <input
+          type="number"
+          value={roomEdit.height}
+          onChange={(e) => setRoomEdit({ ...roomEdit, height: e.target.value })}
+        />
+      </p>
+      <p>
+        X:
+        <input
+          type="number"
+          value={roomEdit.x}
+          onChange={(e) => setRoomEdit({ ...roomEdit, x: e.target.value })}
+        />
+      </p>
+      <p>
+        Y:
+        <input
+          type="number"
+          value={roomEdit.y}
+          onChange={(e) => setRoomEdit({ ...roomEdit, y: e.target.value })}
+        />
+      </p>
+      {Object.keys(roomEdit.monsters).map((key, value) => (
+        <p className="mobInput">{splitXY(key)}</p>
+      ))}
+      <button onClick={() => editFunc(roomEdit)}>Submit</button>
+      <button onClick={() => setIsEdit(false)}>Back</button>
     </>
   );
 };
