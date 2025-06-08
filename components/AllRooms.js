@@ -8,10 +8,10 @@ export default AllRooms = ({ rooms, removeRoom, loadEdit }) => {
           <th>height</th>
           <th>x</th>
           <th>y</th>
+          <th>actions</th>
         </tr>
-        {rooms.map((room) => (
+        {() => rooms.map((room) => (
           <tr>
-            
             <td>{room.name}</td>
             <td>{room.width}</td>
             <td>{room.height}</td>
