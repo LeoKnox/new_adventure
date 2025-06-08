@@ -70,7 +70,9 @@ export default EditRoom = ({ newId = 1, setIsEdit, setRooms, editFunc }) => {
         />
       </p>
       {Object.keys(roomEdit.monsters).map((key, value) => (
-        <p className="mobInput">{splitXY(key)}</p>
+        <p className="mobInput">
+          {splitXY(key)}:{value}
+        </p>
       ))}
       <button onClick={() => editFunc(roomEdit)}>Submit</button>
       <button onClick={() => setIsEdit(false)}>Back</button>
