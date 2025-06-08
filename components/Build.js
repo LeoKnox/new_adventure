@@ -22,7 +22,7 @@ export default Build = () => {
     console.log(roomEdit);
     setRooms(roomEdit);
     console.log("2:3");
-    setIsEdit(false);
+    //setIsEdit(false);
   };
   const loadEdit = (roomId = 1) => {
     let temp = singleRoom(roomId);
@@ -30,7 +30,7 @@ export default Build = () => {
     setIsEdit(!isEdit);
   };
   const removeRoom = (deleteId) => {
-    //console.log(deleteRoom(1));
+    console.log(deleteRoom(1));
     let temp = deleteRoom(deleteId);
     setRooms(temp);
   };
@@ -42,7 +42,12 @@ export default Build = () => {
     <>
       <p onClick={() => setIsEdit(!isEdit)}>build a dungeon</p>
       {isEdit ? (
-        <EditRoom newId={newId} setIsEdit={setIsEdit} setRooms={setRooms} />
+        <EditRoom
+          newId={newId}
+          setIsEdit={setIsEdit}
+          setRooms={setRooms}
+          editFunc={editFunc}
+        />
       ) : (
         <>
           <AllRooms rooms={rooms} removeRoom={removeRoom} loadEdit={loadEdit} />
