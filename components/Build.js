@@ -17,7 +17,7 @@ export default Build = () => {
   });
   const editFunc = (roomEdit) => {
     console.log("edit func");
-
+    console.log(roomEdit);
     roomEdit.monsters[`2:3`] = 1;
     console.log(roomEdit);
     setRooms(roomEdit);
