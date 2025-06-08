@@ -20,8 +20,10 @@ export default Build = () => {
     console.log(roomEdit);
     let temp = changeRoom(roomEdit);
     let tempMob = temp.monsters;
+    console.log(tempMob);
+
     tempMob[`2:3`] = 1;
-    console.log(temp);
+    console.log(tempMob);
     setRooms(temp);
     setIsEdit(false);
   };
