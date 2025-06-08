@@ -74,6 +74,13 @@ export default EditRoom = ({ newId = 1, setIsEdit, setRooms, editFunc }) => {
           {splitXY(key)}:{value}
         </p>
       ))}
+      <label>
+        New Mob X<input type="number" />
+      </label>
+      <label>
+        New Mob X<input type="number" />
+      </label>
+      <p>create</p>
       <button onClick={() => editFunc(roomEdit)}>Submit</button>
       <button onClick={() => setIsEdit(false)}>Back</button>
     </>
