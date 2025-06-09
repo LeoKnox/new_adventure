@@ -3,6 +3,7 @@ import { singleRoom, changeRoom } from "./dungeonData.js";
 
 export default EditRoom = ({ newId = 1, setIsEdit, setRooms, editFunc }) => {
   const [roomEdit, setRoomEdit] = useState(singleRoom(newId));
+  const [newMob, setNewMob] = useState({ x: 0, y: 0 });
   const submitRoom = () => {
     const temp = changeRoom(roomEdit);
     //setRooms(temp);
@@ -21,6 +22,7 @@ export default EditRoom = ({ newId = 1, setIsEdit, setRooms, editFunc }) => {
           monster y:
           <input type="number" value={y} />
         </label>
+        <button>X</button>
       </>
     );
   };
@@ -69,9 +71,32 @@ export default EditRoom = ({ newId = 1, setIsEdit, setRooms, editFunc }) => {
         />
       </p>
       {Object.keys(roomEdit.monsters).map((key, value) => (
-        <p className="mobInput">{splitXY(key)}</p>
+        <p className="mobInput">
+          {splitXY(key)}:{value}
+        </p>
       ))}
-      <button onClick={() => editFunc(roomEdit)}>Submit</button>
+      <p>
+        <label>
+          New Mob X
+          <input
+            type="number"
+            className="mobInput"
+            value={newMob.x}
+            onChange={(e) => setNewMob({ x: e.target.value })}
+          />
+        </label>
+        <label>
+          New Mob Y
+          <input
+            type="number"
+            className="mobInput"
+            value={newMob.y}
+            onChange={(e) => setNewMob({ Y: e.target.value })}
+          />
+        </label>
+        <button onClick={() => editFunc(roomEdit)}>create</button>
+      </p>
+      <button>Submit</button>
       <button onClick={() => setIsEdit(false)}>Back</button>
     </>
   );
