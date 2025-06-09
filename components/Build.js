@@ -3,6 +3,7 @@ import { singleRoom, changeRoom } from "./dungeonData.js";
 
 export default EditRoom = ({ newId = 1, setIsEdit, setRooms, editFunc }) => {
   const [roomEdit, setRoomEdit] = useState(singleRoom(newId));
+  const [newMob, setNewMob] = useState({ x: 0, y: 0 });
   const submitRoom = () => {
     const temp = changeRoom(roomEdit);
     //setRooms(temp);
@@ -76,10 +77,16 @@ export default EditRoom = ({ newId = 1, setIsEdit, setRooms, editFunc }) => {
       ))}
       <p>
         <label>
-          New Mob X<input name="newMobX" type="number" className="mobInput" />
+          New Mob X
+          <input
+            type="number"
+            className="mobInput"
+            value={newMob}
+            onChange={(e) => setNewMob({ x: e.target.value })}
+          />
         </label>
         <label>
-          New Mob X<input name="newMobY" type="number" className="mobInput" />
+          New Mob X<input type="number" className="mobInput" />
         </label>
         <button onClick={() => editFunc(roomEdit)}>create</button>
       </p>
