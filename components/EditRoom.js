@@ -94,7 +94,7 @@ export default EditRoom = ({ newId = 1, setIsEdit, setRooms, editFunc }) => {
             onChange={(e) => setNewMob({ Y: e.target.value })}
           />
         </label>
-        <button onClick={(() => editFunc(roomEdit), newRoom)}>create</button>
+        <button onClick={(() => editFunc(roomEdit), newMob)}>create</button>
       </p>
       <button>Submit</button>
       <button onClick={() => setIsEdit(false)}>Back</button>
