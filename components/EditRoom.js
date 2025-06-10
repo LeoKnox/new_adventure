@@ -82,7 +82,7 @@ export default EditRoom = ({ newId = 1, setIsEdit, setRooms, editFunc }) => {
             type="number"
             className="mobInput"
             value={newMob.x}
-            onChange={(e) => setNewMob({ x: e.target.value })}
+            onChange={(e) => setNewMob({ ...newMob, x: e.target.value })}
           />
         </label>
         <label>
