@@ -31,7 +31,7 @@ export default Build = () => {
     let temp = deleteRoom(deleteId);
     setRooms(temp);
   };
-  const submitRoom = (name, width, height, x, y) => {
+  const submitRoom = ({ name, width, height, x, y }) => {
     let temp = addRoom(name, width, height, x, y);
     setRooms(temp);
   };
