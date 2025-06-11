@@ -77,7 +77,7 @@ export default EditRoom = ({ newId = 1, setIsEdit, setRooms, editFunc }) => {
       ))}
       <p>
         <label>
-          New Mob X
+          New Mob Xm
           <input
             type="number"
             className="mobInput"
@@ -97,7 +97,7 @@ export default EditRoom = ({ newId = 1, setIsEdit, setRooms, editFunc }) => {
         <button onClick={() => editFunc(roomEdit, newMob)}>create</button>
       </p>
       <button onClick={() => submitRoom(newMob)}>Submit</button>
-      <button onClick={() => setIsEdit(false)}>Back</button>
+      <button onClick={() => submitRoom()}>Back</button>
     </>
   );
 };
