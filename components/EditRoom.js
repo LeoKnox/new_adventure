@@ -6,7 +6,7 @@ export default EditRoom = ({ newId = 1, setIsEdit, setRooms, editFunc }) => {
   const [newMob, setNewMob] = useState({ x: 0, y: 0 });
   const submitRoom = () => {
     const temp = changeRoom(roomEdit);
-    //setRooms(temp);
+    setRooms(temp);
     editFunc(temp);
   };
   console.log("edit room");
