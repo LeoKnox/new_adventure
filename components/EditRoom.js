@@ -96,7 +96,7 @@ export default EditRoom = ({ newId = 1, setIsEdit, setRooms, editFunc }) => {
         </label>
         <button onClick={() => editFunc(roomEdit, newMob)}>create</button>
       </p>
-      <button onClick={() => setRooms(newMob)}>Submit</button>
+      <button onClick={() => submitRoom()}>Submit</button>
       <button onClick={() => setIsEdit(false)}>Back</button>
     </>
   );
