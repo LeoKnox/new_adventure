@@ -19,7 +19,7 @@ export default EditRoom = ({ newId = 1, setIsEdit, setRooms, editFunc }) => {
           <input type="number" value={x} />
         </label>
         <label>
-          monster y:
+          monster yy:
           <input type="number" value={y} />
         </label>
         <button>X</button>
@@ -96,7 +96,7 @@ export default EditRoom = ({ newId = 1, setIsEdit, setRooms, editFunc }) => {
         </label>
         <button onClick={() => editFunc(roomEdit, newMob)}>create</button>
       </p>
-      <button>Submit</button>
+      <button onClick={() => setRooms(newMob)}>Submit</button>
       <button onClick={() => setIsEdit(false)}>Back</button>
     </>
   );
