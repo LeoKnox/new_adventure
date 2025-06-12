@@ -12,7 +12,7 @@ export default EditRoom = ({
   const [newMob, setNewMob] = useState({ x: 0, y: 0 });
   const submitRoom = () => {
     rooms[newId] = roomEdit;
-    setRooms(temp);
+    setRooms(rooms);
     //setRooms(temp);
     //editFunc(temp);
   };
