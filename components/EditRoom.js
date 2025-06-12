@@ -1,11 +1,16 @@
 import { useState } from "react";
 import { singleRoom, changeRoom, allRooms } from "./dungeonData.js";
 
-export default EditRoom = ({ newId = 1, setIsEdit, setRooms, editFunc }) => {
+export default EditRoom = ({
+  newId = 1,
+  setIsEdit,
+  rooms,
+  setRooms,
+  editFunc,
+}) => {
   const [roomEdit, setRoomEdit] = useState(singleRoom(newId));
   const [newMob, setNewMob] = useState({ x: 0, y: 0 });
   const submitRoom = () => {
-    const temp = changeRoom(roomEdit);
     setRooms(allRooms);
     //setRooms(temp);
     //editFunc(temp);
@@ -20,7 +25,7 @@ export default EditRoom = ({ newId = 1, setIsEdit, setRooms, editFunc }) => {
           <input type="number" value={x} />
         </label>
         <label>
-          monster yy:
+          monster y:
           <input type="number" value={y} />
         </label>
         <button>X</button>
@@ -97,7 +102,7 @@ export default EditRoom = ({ newId = 1, setIsEdit, setRooms, editFunc }) => {
         </label>
         <button onClick={() => editFunc(roomEdit, newMob)}>create</button>
       </p>
-      <button onClick={() => submitRoom(newMob)}>Submit</button>
+      <button onClick={() => submitRoom()}>Submit</button>
       <button onClick={() => setIsEdit(false)}>Back</button>
     </>
   );
