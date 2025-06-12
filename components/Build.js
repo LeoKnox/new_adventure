@@ -33,6 +33,7 @@ export default Build = () => {
   };
   const submitRoom = (name, width, height, x, y) => {
     console.log("submit room");
+    cosnole.log(name);
     console.log(name + ":" + x + ":" + y);
     let temp = addRoom(name, width, height, x, y);
     setRooms(temp);
@@ -46,6 +47,7 @@ export default Build = () => {
           setIsEdit={setIsEdit}
           setRooms={setRooms}
           editFunc={editFunc}
+          rooms={rooms}
         />
       ) : (
         <>
