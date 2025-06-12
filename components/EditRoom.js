@@ -8,7 +8,7 @@ export default EditRoom = ({ newId = 1, setIsEdit, setRooms, editFunc }) => {
     const temp = changeRoom(roomEdit);
     setRooms(allRooms);
     //setRooms(temp);
-    editFunc(temp);
+    //editFunc(temp);
   };
   console.log("edit room");
   const splitXY = (key) => {
@@ -98,7 +98,7 @@ export default EditRoom = ({ newId = 1, setIsEdit, setRooms, editFunc }) => {
         <button onClick={() => editFunc(roomEdit, newMob)}>create</button>
       </p>
       <button onClick={() => submitRoom(newMob)}>Submit</button>
-      <button onClick={() => submitRoom()}>Back</button>
+      <button onClick={() => setIsEdit(false)}>Back</button>
     </>
   );
 };
