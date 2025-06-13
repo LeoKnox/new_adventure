@@ -13,7 +13,8 @@ export default EditRoom = ({
   const submitRoom = () => {
     console.log("submit room");
     rooms[newId] = roomEdit;
-    let temp = rooms.find(({ roomsID }) => roomsID === newId);
+    let temp = rooms.find(({ rooms }) => rooms.id === newId);
+    console.log(temp);
     if (temp) temp = roomEdit;
     //console.log(array);
     console.log(temp);
