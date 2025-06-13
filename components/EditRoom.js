@@ -15,9 +15,9 @@ export default EditRoom = ({
     console.log("submit rooms");
     console.log(newId);
     console.log(rooms);
-    let temp = rooms.find(({ roomsID }) => roomsID === neweId);
+    let temp = rooms.find(({ roomsID }) => roomsID === newId);
     if (temp) temp = roomEdit;
-    console.log(array);
+    //console.log(array);
     setRooms(temp);
     //setRooms(temp);
     //editFunc(temp);
