@@ -13,6 +13,7 @@ export default EditRoom = ({
   const submitRoom = () => {
     rooms[newId] = roomEdit;
     console.log("submit rooms");
+    console.log(newId);
     console.log(rooms);
     setRooms(rooms);
     //setRooms(temp);
