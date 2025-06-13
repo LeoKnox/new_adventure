@@ -11,13 +11,12 @@ export default EditRoom = ({
   const [roomEdit, setRoomEdit] = useState(singleRoom(newId));
   const [newMob, setNewMob] = useState({ x: 0, y: 0 });
   const submitRoom = () => {
+    console.log("submit room");
     rooms[newId] = roomEdit;
-    console.log("submit rooms");
-    console.log(newId);
-    console.log(rooms);
     let temp = rooms.find(({ roomsID }) => roomsID === newId);
     if (temp) temp = roomEdit;
     //console.log(array);
+    console.log(temp);
     setRooms(temp);
     //setRooms(temp);
     //editFunc(temp);
