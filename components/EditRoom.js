@@ -12,7 +12,7 @@ export default EditRoom = ({
   const [newMob, setNewMob] = useState({ x: 0, y: 0 });
   const submitRoom = () => {
     console.log("submit room");
-    rooms[newId] = roomEdit;
+    //rooms[newId] = roomEdit;
     let temp = rooms.findIndex((room) => room.id === newId);
 
     //let temp = rooms.findIndex(({ room }) => room.id === newId);
