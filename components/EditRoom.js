@@ -8,6 +8,7 @@ export default EditRoom = ({
   setRooms,
   editFunc,
 }) => {
+  console.log("edit room");
   const [roomEdit, setRoomEdit] = useState(singleRoom(newId));
   const [newMob, setNewMob] = useState({ x: 0, y: 0 });
   const submitRoom = () => {
@@ -17,7 +18,10 @@ export default EditRoom = ({
     setRooms(rooms);
     setIsEdit(false);
   };
-  console.log("edit room");
+  const deleteMob = () => {
+    console.log("delete mob");
+  };
+
   const splitXY = (key) => {
     let [x, y] = key.split(":");
     return (
@@ -30,7 +34,7 @@ export default EditRoom = ({
           monster y:
           <input type="number" value={y} />
         </label>
-        <button>X</button>
+        <button onClick={() => deleteMob()}>X</button>
       </>
     );
   };
@@ -85,7 +89,7 @@ export default EditRoom = ({
       ))}
       <p>
         <label>
-          New Mob Xm
+          New Mob X
           <input
             type="number"
             className="mobInput"
