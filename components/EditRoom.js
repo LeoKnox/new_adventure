@@ -20,6 +20,7 @@ export default EditRoom = ({
   };
   const deleteMob = () => {
     console.log("delete mob");
+    console.log(key);
   };
 
   const splitXY = (key) => {
@@ -34,7 +35,7 @@ export default EditRoom = ({
           monster y:
           <input type="number" value={y} />
         </label>
-        <button onClick={() => deleteMob()}>X</button>
+        <button onClick={() => deleteMob(key)}>X</button>
       </>
     );
   };
