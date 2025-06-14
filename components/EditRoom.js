@@ -16,6 +16,7 @@ export default EditRoom = ({
     console.log(rooms[temp]);
     temp >= 0 ? (rooms[temp] = roomEdit) : null;
     setRooms(rooms);
+    setIsEdit(false);
   };
   console.log("edit room");
   const splitXY = (key) => {
