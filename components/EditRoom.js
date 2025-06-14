@@ -19,8 +19,8 @@ export default EditRoom = ({
     console.log(temp);
     if (temp) rooms[temp] = roomEdit;
     //console.log(array);
-    console.log(temp);
-    setRooms(temp);
+    //console.log(temp);
+    setRooms(rooms);
     //setRooms(temp);
     //editFunc(temp);
   };
