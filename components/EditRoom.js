@@ -14,7 +14,7 @@ export default EditRoom = ({
     console.log("submit room");
     let temp = rooms.findIndex((room) => room.id === newId);
     console.log(rooms[temp]);
-    temp >= 0 ? (rooms[temp] = roomEdit) : null;
+    temp >= 0 && (rooms[temp] = roomEdit);
     setRooms(rooms);
     setIsEdit(false);
   };
