@@ -16,7 +16,7 @@ export default EditRoom = ({
     let temp = rooms.findIndex((room) => room.id === newId);
 
     //let temp = rooms.findIndex(({ room }) => room.id === newId);
-    console.log(temp);
+    console.log(rooms[temp]);
     if (temp) rooms[temp] = roomEdit;
     //console.log(array);
     //console.log(temp);
