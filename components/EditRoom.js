@@ -12,18 +12,10 @@ export default EditRoom = ({
   const [newMob, setNewMob] = useState({ x: 0, y: 0 });
   const submitRoom = () => {
     console.log("submit room");
-    //rooms[newId] = roomEdit;
     let temp = rooms.findIndex((room) => room.id === newId);
-
-    //let temp = rooms.findIndex(({ room }) => room.id === newId);
     console.log(rooms[temp]);
     temp >= 0 ? (rooms[temp] = roomEdit) : null;
-    //console.log(array);
-    console.log(temp);
-    console.log(rooms);
     setRooms(rooms);
-    //setRooms(temp);
-    //editFunc(temp);
   };
   console.log("edit room");
   const splitXY = (key) => {
