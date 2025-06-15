@@ -24,6 +24,8 @@ export default EditRoom = ({
   };
 
   const splitXY = (key, index) => {
+    console.log("split xy");
+    console.log(index);
     let [x, y] = key.split(":");
     return (
       <>
@@ -35,7 +37,7 @@ export default EditRoom = ({
           monster y:
           <input type="number" value={y} />
         </label>
-        <button onClick={() => deleteMob(key)}>X</button>
+        <button onClick={() => deleteMob(key,index)}>X</button>
       </>
     );
   };
