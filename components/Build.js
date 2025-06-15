@@ -39,7 +39,9 @@ export default Build = () => {
     setRooms(temp);
   };
   const removeMob = (key) => {
-    rooms.monsters = rooms.monsters.pop();
+    let temp = rooms;
+    temp.monsters = temp.monsters.pop();
+    setRooms(monsters);
   };
   return (
     <>
