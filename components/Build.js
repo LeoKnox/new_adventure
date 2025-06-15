@@ -39,8 +39,8 @@ export default Build = () => {
     setRooms(temp);
   };
   const removeMob = (key) => {
-    roomEdit.monsters = (roomEdit.monsters.pop())
-  }
+    rooms.monsters = rooms.monsters.pop();
+  };
   return (
     <>
       <p onClick={() => setIsEdit(!isEdit)}>build a dungeon</p>
