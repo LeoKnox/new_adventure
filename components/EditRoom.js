@@ -20,10 +20,10 @@ export default EditRoom = ({
   };
   const deleteMob = () => {
     console.log("delete mob");
-    console.log(key);
+    console.log(index);
   };
 
-  const splitXY = (key) => {
+  const splitXY = (key, index) => {
     let [x, y] = key.split(":");
     return (
       <>
@@ -83,9 +83,9 @@ export default EditRoom = ({
           onChange={(e) => setRoomEdit({ ...roomEdit, y: e.target.value })}
         />
       </p>
-      {Object.keys(roomEdit.monsters).map((key, value) => (
+      {Object.keys(roomEdit.monsters).map((key, index) => (
         <p className="mobInput">
-          {splitXY(key)}:{value}
+          {splitXY(key, index)}:{index}
         </p>
       ))}
       <p>
