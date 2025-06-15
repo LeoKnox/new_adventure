@@ -39,7 +39,12 @@ export default Build = () => {
     setRooms(temp);
   };
   const removeMob = (key) => {
-    delete rooms.monsters[key];
+    console.log("remove mob");
+    console.log(key);
+    let temp = rooms;
+    console.log(temp);
+    delete temp[1].monsters[key];
+    console.log(temp);
   };
   return (
     <>
