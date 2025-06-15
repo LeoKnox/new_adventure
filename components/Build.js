@@ -43,8 +43,8 @@ export default Build = () => {
     console.log(key);
     let temp = rooms;
     console.log(temp);
-    delete temp[1].monsters[key];
-    console.log(temp);
+    delete temp[newId].monsters[key];
+    setRooms(temp);
   };
   return (
     <>
