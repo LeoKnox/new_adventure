@@ -38,6 +38,9 @@ export default Build = () => {
     let temp = addRoom(name, width, height, x, y);
     setRooms(temp);
   };
+  const removeMob = (key) => {
+    roomEdit.monsters = (roomEdit.monsters.pop())
+  }
   return (
     <>
       <p onClick={() => setIsEdit(!isEdit)}>build a dungeon</p>
@@ -48,6 +51,7 @@ export default Build = () => {
           setRooms={setRooms}
           editFunc={editFunc}
           rooms={rooms}
+          removeMob={removeMob}
         />
       ) : (
         <>
