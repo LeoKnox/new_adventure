@@ -7,6 +7,7 @@ export default EditRoom = ({
   rooms,
   setRooms,
   editFunc,
+  removeMob,
 }) => {
   console.log("edit room");
   const [roomEdit, setRoomEdit] = useState(singleRoom(newId));
@@ -37,7 +38,7 @@ export default EditRoom = ({
           monster y:
           <input type="number" value={y} />
         </label>
-        <button onClick={() => deleteMob(index)}>X</button>
+        <button onClick={() => removeMob(index)}>X</button>
       </>
     );
   };
