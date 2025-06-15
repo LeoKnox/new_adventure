@@ -18,7 +18,7 @@ export default EditRoom = ({
     setRooms(rooms);
     setIsEdit(false);
   };
-  const deleteMob = () => {
+  const deleteMob = (index) => {
     console.log("delete mob");
     console.log(index);
   };
@@ -37,7 +37,7 @@ export default EditRoom = ({
           monster y:
           <input type="number" value={y} />
         </label>
-        <button onClick={() => deleteMob(key,index)}>X</button>
+        <button onClick={() => deleteMob(index)}>X</button>
       </>
     );
   };
