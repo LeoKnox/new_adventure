@@ -43,7 +43,9 @@ export default Build = () => {
     console.log(newId);
     let temp = rooms;
     console.log(temp[newId].monsters[key]);
-    temp = { [key], ...rest }
+    temp = Object.fromEntries(
+      Object.entries(rooms.monsters).filter(([newkey]) => newkey !== key)
+    );
     setRooms(temp);
   };
   return (
