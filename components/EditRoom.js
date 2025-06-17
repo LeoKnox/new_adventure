@@ -26,7 +26,8 @@ export default EditRoom = ({
     console.log(temp);
     delete temp[index];
     console.log(temp);
-    setRoomEdit(temp);
+    //setRoomEdit(temp);
+    editFunc(roomEdit, temp);
   };
 
   const splitXY = (key, index) => {
