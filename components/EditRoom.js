@@ -22,6 +22,7 @@ export default EditRoom = ({
   const deleteMob = (index) => {
     console.log("delete mob");
     console.log(index);
+    delete roomEdit.monsters[index];
   };
 
   const splitXY = (key, index) => {
