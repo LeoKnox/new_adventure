@@ -91,7 +91,7 @@ export default EditRoom = ({
       </p>
       {Object.keys(roomEdit.monsters).map((key, index) => (
         <p className="mobInput">
-          {splitXY(key, index)}:{index}
+          {splitXY(key, index)}:{key}
         </p>
       ))}
       <p>
