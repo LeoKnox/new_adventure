@@ -38,7 +38,7 @@ export default EditRoom = ({
           monster y:
           <input type="number" value={y} />
         </label>
-        <button onClick={() => removeMob(key)}>X</button>
+        <button onClick={() => deleteMob(index)}>X</button>
       </>
     );
   };
