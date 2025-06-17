@@ -42,7 +42,7 @@ export default Build = () => {
     console.log("remove mob");
     console.log(newId);
     let temp = rooms[newId];
-    //console.log(temp[newId].monsters[key]);
+    console.log(temp);
     let temptwo = rooms.monsters;
     delete temptwo[key];
     setRooms(temp);
