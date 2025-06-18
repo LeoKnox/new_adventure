@@ -50,6 +50,9 @@ export default EditRoom = ({
     },
     [roomEdit]
   );
+  const listMobs = () => {
+    return <p>mobs</p>;
+  };
   return (
     <>
       <button>{newId}</button>
@@ -94,14 +97,12 @@ export default EditRoom = ({
           onChange={(e) => setRoomEdit({ ...roomEdit, y: e.target.value })}
         />
       </p>
-      {Object.keys(roomEdit.monsters).map(
-        (key, index) => (
-          <p className="mobInput">
-            {splitXY(key, index)}:{key}
-          </p>
-        ),
-        [roomEdit]
-      )}
+      {listMobs}
+      {/*Object.keys(roomEdit.monsters).map((key, index) => (
+        <p className="mobInput">
+          {splitXY(key, index)}:{key}
+        </p>
+      ))*/}
       <p>
         <label>
           New Mob X
