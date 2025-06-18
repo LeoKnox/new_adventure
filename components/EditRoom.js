@@ -22,12 +22,11 @@ export default EditRoom = ({
   const deleteMob = (index) => {
     console.log("delete mob");
     console.log(index);
-    let temp = roomEdit.monsters;
+    let temp = roomEdit;
     console.log(temp);
-    delete temp[index];
+    delete temp.monsters[index];
     console.log(temp);
-    //setRoomEdit(temp);
-    editFunc(roomEdit, temp);
+    setRoomEdit(temp);
   };
 
   const splitXY = (key, index) => {
@@ -44,7 +43,7 @@ export default EditRoom = ({
           monster y:
           <input type="number" value={y} />
         </label>
-        <button onClick={() => removeMob(key)}>X</button>
+        <button onClick={() => deleteMob(key)}>X</button>
       </>
     );
   };
