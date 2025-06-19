@@ -52,12 +52,14 @@ export default EditRoom = ({
   );
   const listMobs = useCallback(() => {
     let temp = [];
-    temp.push(Object.keys(roomEdit.monsters).map((key, index) => (
-      <p className="mobInput">
-        {splitXY(key, index)}:{key}
-      </p>
-    )))
-    return temp
+      Object.keys(roomEdit.monsters).map((key, index) => (
+        temp.push(<p className="mobInput">
+          {splitXY(key, index)}:{key}
+        </p>)
+      )
+    );
+    console.log(temp);
+    return temp;
   });
   return (
     <>
