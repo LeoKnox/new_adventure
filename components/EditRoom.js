@@ -50,9 +50,11 @@ export default EditRoom = ({
     },
     [roomEdit]
   );
-  const listMobs = () => {
-    return <p>mobs</p>;
-  };
+  const listMobs = useCallback(() => {
+    for (let i = 0; i < 3; i++) {
+      return <p>mobs {i}</p>;
+    }
+  });
   return (
     <>
       <button>{newId}</button>
