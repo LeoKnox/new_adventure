@@ -51,9 +51,11 @@ export default EditRoom = ({
     [roomEdit]
   );
   const listMobs = useCallback(() => {
+    let zz = [];
     for (let i = 0; i < 3; i++) {
-      return <p>mobs {i}</p>;
+      zz.push(<p>mobs {i}</p>);
     }
+    return zz
   });
   return (
     <>
