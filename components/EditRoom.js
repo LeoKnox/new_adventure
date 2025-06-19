@@ -29,27 +29,24 @@ export default EditRoom = ({
     setRoomEdit(temp);
   };
 
-  const splitXY = useCallback(
-    (key, index) => {
-      console.log("split xy");
-      console.log(index);
-      let [x, y] = key.split(":");
-      return (
-        <>
-          <label>
-            monster x:
-            <input type="number" value={x} />
-          </label>
-          <label>
-            monster y:
-            <input type="number" value={y} />
-          </label>
-          <button onClick={() => deleteMob(key)}>X</button>
-        </>
-      );
-    },
-    [roomEdit]
-  );
+  const splitXY = useCallback((key, index) => {
+    console.log("split xy");
+    console.log(index);
+    let [x, y] = key.split(":");
+    return (
+      <>
+        <label>
+          monster x:
+          <input type="number" value={x} />
+        </label>
+        <label>
+          monster y:
+          <input type="number" value={y} />
+        </label>
+        <button onClick={() => deleteMob(key)}>X</button>
+      </>
+    );
+  }, []);
   const listMobs = useCallback(() => {
     let temp = [];
     Object.keys(roomEdit.monsters).map((key, index) =>
