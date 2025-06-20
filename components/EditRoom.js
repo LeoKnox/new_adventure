@@ -45,7 +45,7 @@ export default EditRoom = ({
         </label>
         <button onClick={() => {
               setRoomEdit(
-                roomEdit.monsters.filter(mob =>mob !== key) // Filter out the artist with the matching ID
+                roomEdit.filter(mob =>mob.monsters !== key) // Filter out the artist with the matching ID
               );
             }}>X</button>
       </>
