@@ -54,7 +54,7 @@ export default EditRoom = ({
         </>
       );
     },
-    [roomEdit]
+    [roomEdit, deleteMob]
   );
   const listMobs = useCallback(() => {
     let temp = [];
@@ -67,7 +67,7 @@ export default EditRoom = ({
     );
     console.log(temp);
     return temp;
-  }, [roomEdit, roomEdit.monsters]);
+  }, [roomEdit, deleteMob]);
   return (
     <>
       <button>{newId}</button>
