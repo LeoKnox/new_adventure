@@ -58,7 +58,7 @@ export default EditRoom = ({
     );
     console.log(temp);
     return temp;
-  }, [roomEdit]);
+  }, [roomEdit, roomEdit.monsters]);
   return (
     <>
       <button>{newId}</button>
