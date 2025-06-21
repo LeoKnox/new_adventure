@@ -1,4 +1,5 @@
 import { useState, useCallback } from "react";
+import RoomMonsters from "./RoomMonsters.js";
 import { singleRoom, changeRoom, allRooms } from "./dungeonData.js";
 
 export default EditRoom = ({
@@ -112,7 +113,7 @@ export default EditRoom = ({
           onChange={(e) => setRoomEdit({ ...roomEdit, y: e.target.value })}
         />
       </p>
-      {listMobs()}
+      <RoomMonsters />
       {/*Object.keys(roomEdit.monsters).map((key, index) => (
         <p className="mobInput">
           {splitXY(key, index)}:{key}
