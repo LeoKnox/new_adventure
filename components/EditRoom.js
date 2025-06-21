@@ -113,7 +113,22 @@ export default EditRoom = ({
           onChange={(e) => setRoomEdit({ ...roomEdit, y: e.target.value })}
         />
       </p>
-      <RoomMonsters />
+      <RoomMonsters
+        roomEdit={roomEdit}
+        setRoomEdit={setRoomEdit}
+        room={{
+          id: 2,
+          name: "entry",
+          width: 7,
+          height: 8,
+          x: 6,
+          y: 6,
+          monsters: {
+            [`1:4`]: 1,
+            [`1:5`]: 1,
+          },
+        }}
+      />
       {/*Object.keys(roomEdit.monsters).map((key, index) => (
         <p className="mobInput">
           {splitXY(key, index)}:{key}
