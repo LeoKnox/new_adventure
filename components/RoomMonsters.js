@@ -4,7 +4,10 @@ export default RoomMonsters = ({ room, roomEdit, setRoomEdit }) => {
   return (
     <>
       <p>room monsters</p>
-      {room}
+      <button onClick={() => setRoomEdit(delete roomEdit.monsters[`1:4`])}>
+        update
+      </button>
+      {JSON.stringify(roomEdit)}
     </>
   );
 };
