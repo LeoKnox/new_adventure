@@ -3,9 +3,7 @@ export default RoomMonsters = ({ room, roomEdit, setRoomEdit }) => {
   console.table(room);
   const deleteMonster = () => {
     let temp = roomEdit;
-    if (delete temp.monsters[`1:4`]) {
-      setRoomEdit(temp);
-    }
+    setRoomEdit(...temp, delete monsters[`1:4`]);
   };
   return (
     <>
