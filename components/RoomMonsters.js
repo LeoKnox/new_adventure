@@ -9,7 +9,7 @@ export default RoomMonsters = ({ room, roomEdit, setRoomEdit }) => {
   return (
     <>
       <p>room monsters</p>
-      <button onClick={deleteMonster()}>update</button>
+      <button onClick={() => deleteMonster()}>update</button>
       {JSON.stringify(roomEdit)}
     </>
   );
