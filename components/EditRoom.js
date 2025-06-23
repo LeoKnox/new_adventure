@@ -142,7 +142,6 @@ export default EditRoom = ({
       </p>
       <button onClick={() => submitRoom()}>Submit</button>
       <button onClick={() => setIsEdit(false)}>Back</button>
-      <p>{JSON.stringify(roomEdit)}</p>
     </>
   );
 };
