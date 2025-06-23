@@ -13,7 +13,13 @@ export default RoomMonsters = ({ room, roomEdit, setRoomEdit }) => {
       <p>room monsters</p>
       <button onClick={() => deleteMonster()}>update</button>
       {JSON.stringify(roomEdit)}
-      {(roomEdit.monsters.map = (key) => <p>{key}*</p>)}
+      {
+        (roomEdit.monsters.map = (key, value) => {
+          <p>
+            {key}*{value}
+          </p>;
+        })
+      }
     </>
   );
 };
