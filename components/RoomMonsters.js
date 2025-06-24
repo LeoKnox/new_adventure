@@ -15,7 +15,7 @@ export default RoomMonsters = ({ room, roomEdit, setRoomEdit }) => {
       {JSON.stringify(roomEdit)}
       {Object.entries(roomEdit["monsters"]).map(([key, value]) => (
         <p>
-          {key}*{value}
+          {key.split(":")[0]}*{key.split(":")[1]}*{value}
         </p>
       ))}
     </>
