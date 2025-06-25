@@ -2,7 +2,7 @@ import {useState} from "react"
 
 export default RoomMonsters = ({ room, roomEdit, setRoomEdit }) => {
   console.log("room");
-  const [mobValues, setMobValues] = useState(Object.entries([roomEdit.monsters]))
+  const [mobValues, setMobValues] = useState(Object.entries(roomEdit.monsters).map[key,value])
   console.table(mobValues);
   const deleteMonster = (key) => {
     let temp = { ...roomEdit };
