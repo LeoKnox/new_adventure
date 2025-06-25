@@ -25,7 +25,10 @@ export default RoomMonsters = ({ room, roomEdit, setRoomEdit }) => {
       const result = [...prevMob];
       result[key] = e.target.value;
       return result})} value={value[0].split(":")[0]}/></label>
-          <label>Mob Y<input type="number" value={value[0].split(":")[1]}/></label>
+          <label>Mob Y<input type="number" onChange={(e) => setMobValues((prevMob) => {
+      const result = [...prevMob];
+      result[key] = e.target.value;
+      return result})}  value={value[0].split(":")[1]}/></label>
           <label>Mob type<input type="number" value={value} /></label>
           <button onClick={()=>deleteMonster(key)}>X</button>
         </p>
