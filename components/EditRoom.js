@@ -2,7 +2,8 @@ import {useState} from "react"
 
 export default RoomMonsters = ({ room, roomEdit, setRoomEdit }) => {
   console.log("room");
-  const [mobValues, setMobValues] = useState(roomEdit.monsters)
+  const [mobValues, setMobValues] = useState(Object.entries([roomEdit.monsters]))
+  console.table(mobValues);
   const deleteMonster = (key) => {
     let temp = { ...roomEdit };
     let tempMobs = { ...temp.monsters };
@@ -26,6 +27,7 @@ export default RoomMonsters = ({ room, roomEdit, setRoomEdit }) => {
           <button onClick={()=>deleteMonster(key)}>X</button>
         </p>
       ))}
+      {JSON.stringify(mobValues)}
     </>
   );
 };
