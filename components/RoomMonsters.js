@@ -12,10 +12,9 @@ export default RoomMonsters = ({ room, roomEdit, setRoomEdit }) => {
     <>
       <p>room monsters</p>
       <button onClick={() => deleteMonster()}>update</button>
-      {JSON.stringify(roomEdit)}
       {Object.entries(roomEdit["monsters"]).map(([key, value]) => (
         <p>
-          {key.split(":")[0]}*{key.split(":")[1]}*{value}
+          <label>Mob X<input value={key.split(":")[0]}/></label>*{key.split(":")[1]}*{value}
         </p>
       ))}
     </>
