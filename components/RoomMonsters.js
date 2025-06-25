@@ -1,6 +1,7 @@
+import {useState} from "react"
+
 export default RoomMonsters = ({ room, roomEdit, setRoomEdit }) => {
   console.log("room");
-  console.table(roomEdit);
   const deleteMonster = () => {
     let temp = { ...roomEdit };
     let tempMobs = { ...temp.monsters };
@@ -17,6 +18,7 @@ export default RoomMonsters = ({ room, roomEdit, setRoomEdit }) => {
           <label>Mob X<input type="number" value={key.split(":")[0]}/></label>
           <label>Mob Y<input type="number" value={key.split(":")[1]}/></label>
           <label>Mob type<input type="number" value={value} /></label>
+          <button onClick={()=>deleteMonster(value)}>X</button>
         </p>
       ))}
     </>
