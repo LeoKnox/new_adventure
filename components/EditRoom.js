@@ -20,55 +20,7 @@ export default EditRoom = ({
     setRooms(rooms);
     setIsEdit(false);
   };
-  const deleteMob = (index) => {
-    console.log("delete mob");
-    console.log(index);
-    let temp = roomEdit;
-    console.log(temp);
-    delete temp.monsters[index];
-    console.log(temp);
-    setRoomEdit(temp);
-  };
 
-  const splitXY = useCallback(
-    (key, index) => {
-      console.log("split xy");
-      console.log(index);
-      let [x, y] = key.split(":");
-      return (
-        <>
-          <label>
-            monster x:
-            <input type="number" value={x} />
-          </label>
-          <label>
-            monster y:
-            <input type="number" value={y} />
-          </label>
-          <button
-            onClick={() => {
-              deleteMob(key);
-            }}
-          >
-            X
-          </button>
-        </>
-      );
-    },
-    [roomEdit, deleteMob]
-  );
-  const listMobs = useCallback(() => {
-    let temp = [];
-    Object.keys(roomEdit.monsters).map((key, index) =>
-      temp.push(
-        <p className="mobInput">
-          {splitXY(key, index)}:{key}
-        </p>
-      )
-    );
-    console.log(temp);
-    return temp;
-  }, [roomEdit, deleteMob]);
   return (
     <>
       <button>{newId}</button>
@@ -114,11 +66,6 @@ export default EditRoom = ({
         />
       </p>
       <RoomMonsters roomEdit={roomEdit} setRoomEdit={setRoomEdit} />
-      {/*Object.keys(roomEdit.monsters).map((key, index) => (
-        <p className="mobInput">
-          {splitXY(key, index)}:{key}
-        </p>
-      ))*/}
       <p>
         <label>
           New Mob X
