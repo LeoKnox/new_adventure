@@ -14,9 +14,9 @@ export default RoomMonsters = ({ room, roomEdit, setRoomEdit }) => {
       <button onClick={() => deleteMonster()}>update</button>
       {Object.entries(roomEdit["monsters"]).map(([key, value]) => (
         <p>
-          <label>Mob X<input value={key.split(":")[0]}/></label>
-          <label>Mob Y<input value={key.split(":")[1]}/></label>
-          <label>Mob type<input value={value} /></label>
+          <label>Mob X<input type="number" value={key.split(":")[0]}/></label>
+          <label>Mob Y<input type="number" value={key.split(":")[1]}/></label>
+          <label>Mob type<input type="number" value={value} /></label>
         </p>
       ))}
     </>
