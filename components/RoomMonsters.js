@@ -1,6 +1,6 @@
 import {useState} from "react"
 
-export default RoomMonsters = ({ room, roomEdit, setRoomEdit }) => {
+export default RoomMonsters = ({ room, editMobs, roomEdit, setRoomEdit }) => {
   console.log("room");
   const [mobValues, setMobValues] = useState(Object.entries(roomEdit.monsters))
   console.table(mobValues);
