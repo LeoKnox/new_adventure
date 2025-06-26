@@ -69,7 +69,11 @@ export default EditRoom = ({
           onChange={(e) => setRoomEdit({ ...roomEdit, y: e.target.value })}
         />
       </p>
-      <RoomMonsters roomEdit={roomEdit} setRoomEdit={setRoomEdit} />
+      <RoomMonsters
+        editMobs={editMobs}
+        roomEdit={roomEdit}
+        setRoomEdit={setRoomEdit}
+      />
       <p>
         <label>
           New Mob X
