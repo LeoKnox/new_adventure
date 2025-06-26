@@ -23,6 +23,18 @@ export default EditRoom = ({
   const editMobs = (key, value) => {
     console.log("edit mobs");
     console.log(key + "&" + value);
+    setRoomEdit({
+      id: 2,
+      name: "entry",
+      width: 7,
+      height: 8,
+      x: 6,
+      y: 6,
+      monsters: {
+        [`2:3`]: 1,
+        [`3:4`]: 1,
+      },
+    });
   };
 
   return (
