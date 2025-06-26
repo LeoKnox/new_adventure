@@ -20,8 +20,9 @@ export default EditRoom = ({
     setRooms(rooms);
     setIsEdit(false);
   };
-  const editMobs = () => {
+  const editMobs = (key, value) => {
     console.log("edit mobs");
+    console.log(key + "&" + value);
   };
 
   return (
