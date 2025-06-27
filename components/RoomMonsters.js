@@ -12,9 +12,9 @@ export default RoomMonsters = ({ room, editMobs, roomEdit, setRoomEdit }) => {
     temp.monsters = tempMobs;
     setRoomEdit(temp);
   };
-  const addMob=()=> {
+  const addMob=(newMob)=> {
     console.log("add mob");
-    
+    console.log(newMob);
   }
   return (
     <>
@@ -51,7 +51,7 @@ export default RoomMonsters = ({ room, editMobs, roomEdit, setRoomEdit }) => {
             onChange={(e) => setNewMob({ ...newMob, y: e.target.value })}
           />
         </label>
-        <button onClick={() => addMob(roomEdit,newMob)}>create mob</button>
+        <button onClick={() => addMob(newMob)}>create mob</button>
       </p>
     </>
   );
