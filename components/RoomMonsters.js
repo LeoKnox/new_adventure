@@ -15,6 +15,10 @@ export default RoomMonsters = ({ room, editMobs, roomEdit, setRoomEdit }) => {
   const addMob=(newMob)=> {
     console.log("add mob");
     console.log(newMob);
+    let temp = { ...roomEdit };
+    let tempMobs = { ...temp.monsters };
+    tempMobs[`${newMob.y}"{newMob.x}`] = 1;
+    setRoomEdit(temp);
   }
   return (
     <>
