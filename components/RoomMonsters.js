@@ -3,6 +3,7 @@ import {useState} from "react"
 export default RoomMonsters = ({ room, editMobs, roomEdit, setRoomEdit }) => {
   console.log("room");
   const [mobValues, setMobValues] = useState(Object.entries(roomEdit.monsters))
+  const [newMob, setNewMob] = useState({ x: 0, y: 0 });
   console.table(mobValues);
   const deleteMonster = (key) => {
     let temp = { ...roomEdit };
@@ -31,6 +32,27 @@ export default RoomMonsters = ({ room, editMobs, roomEdit, setRoomEdit }) => {
         </p>
       ))}
       {JSON.stringify(mobValues)}
+      <p>
+        <label>
+          New Mob X
+          <input
+            type="number"
+            className="mobInput"
+            value={newMob.x}
+            onChange={(e) => setNewMob({ ...newMob, y: e.target.value })}
+          />
+        </label>
+        <label>
+          New Mob Y
+          <input
+            type="number"
+            className="mobInput"
+            value={newMob.y}
+            onChange={(e) => setNewMob({ ...newMob, x: e.target.value })}
+          />
+        </label>
+        <button onClick={() => addMob(roomEdit,newMob)}>create mob</button>
+      </p>
     </>
   );
 };
