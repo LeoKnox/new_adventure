@@ -86,27 +86,7 @@ export default EditRoom = ({
         roomEdit={roomEdit}
         setRoomEdit={setRoomEdit}
       />
-      <p>
-        <label>
-          New Mob X
-          <input
-            type="number"
-            className="mobInput"
-            value={newMob.x}
-            onChange={(e) => setNewMob({ ...newMob, y: e.target.value })}
-          />
-        </label>
-        <label>
-          New Mob Y
-          <input
-            type="number"
-            className="mobInput"
-            value={newMob.y}
-            onChange={(e) => setNewMob({ ...newMob, x: e.target.value })}
-          />
-        </label>
-        <button onClick={() => editFunc(roomEdit, newMob)}>create</button>
-      </p>
+
       <button onClick={() => submitRoom()}>Submit</button>
       <button onClick={() => setIsEdit(false)}>Back</button>
     </>
