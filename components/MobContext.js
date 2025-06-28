@@ -1,14 +1,17 @@
-const CountContext = createContext();
+import { createContext, useContext, useState } from "react";
 
-        export const CountProvider = ({ children }) => {
-          const [count, setCount] = useState(0);
-          const incrementCount = () => setCount(prevCount => prevCount + 1);
+const MobContext = createContext();
 
-          return (
-            <CountContext.Provider value={{ count, incrementCount }}>
-              {children}
-            </CountContext.Provider>
-          );
-        };
+export const mobProvider = ({ children }) => {
+  const [newMob, setNewMob] = useState({`3:4`:1});
+  const setMob = () => setNewMob({`4:5`:1})
+  //const incrementCount = () => setCount((prevCount) => prevCount + 1);
 
-        export const useCount = () => useContext(CountContext);
+  return (
+    <MobContext.Provider value={{ newMob, setMob }}>
+      {children}
+    </MobContext.Provider>
+  );
+};
+
+export const useMob = () => useContext(CountContext);
