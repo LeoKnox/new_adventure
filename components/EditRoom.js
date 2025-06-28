@@ -1,4 +1,5 @@
 import { useState, useCallback } from "react";
+import { MobProvider } from "./MobContext.js";
 import RoomMonsters from "./RoomMonsters.js";
 import { singleRoom, changeRoom, allRooms } from "./dungeonData.js";
 
@@ -12,7 +13,7 @@ export default EditRoom = ({
 }) => {
   console.log("edit room");
   const [roomEdit, setRoomEdit] = useState(singleRoom(newId));
-  const [newMob, setNewMob] = useState({ x: 0, y: 0 });
+
   const submitRoom = () => {
     console.log("submit room");
     let temp = rooms.findIndex((room) => room.id === newId);
@@ -20,6 +21,7 @@ export default EditRoom = ({
     setRooms(rooms);
     setIsEdit(false);
   };
+
   const editMobs = (key, value) => {
     console.log("edit mobs");
     console.log(key + "&" + value);
