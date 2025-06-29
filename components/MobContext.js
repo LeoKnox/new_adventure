@@ -14,4 +14,4 @@ export const mobProvider = ({ children }) => {
   );
 };
 
-export const useMob = () => useContext(MobContext);
+export const setMob = () => useContext(MobContext);
