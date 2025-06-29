@@ -4,7 +4,7 @@ const MobContext = createContext();
 
 export const mobProvider = ({ children }) => {
   const [newMob, setNewMob] = useState({ [`3:4`]: 1 });
-  const setMob = () => setNewMob({ [`4:5`]: 1 });
+  const setMob = () => setConMob({ [`4:5`]: 1 });
   //const incrementCount = () => setCount((prevCount) => prevCount + 1);
 
   return (
@@ -14,4 +14,4 @@ export const mobProvider = ({ children }) => {
   );
 };
 
-export const setMob = () => useContext(MobContext);
+export const setConMob = () => useContext(MobContext);
