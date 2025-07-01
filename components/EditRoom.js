@@ -90,9 +90,7 @@ export default EditRoom = ({
           setRoomEdit={setRoomEdit}
         />
       </mobProvider>
-      <aMonsterContext>
-        <RoomMonsters />
-      </aMonsterContext>
+      <aMonsterContext>{RoomMonsters()}</aMonsterContext>
       <button onClick={() => submitRoom()}>Submit</button>
       <button onClick={() => setIsEdit(false)}>Back</button>
     </>
