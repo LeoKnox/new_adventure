@@ -83,14 +83,14 @@ export default EditRoom = ({
           onChange={(e) => setRoomEdit({ ...roomEdit, y: e.target.value })}
         />
       </p>
-      <mobProvider>
+      <mobProvider></mobProvider>
+      <aMonsterContext>
         <RoomMonsters
           editMobs={editMobs}
           roomEdit={roomEdit}
           setRoomEdit={setRoomEdit}
         />
-      </mobProvider>
-      <aMonsterContext>{RoomMonsters()}</aMonsterContext>
+      </aMonsterContext>
       <button onClick={() => submitRoom()}>Submit</button>
       <button onClick={() => setIsEdit(false)}>Back</button>
     </>
