@@ -84,7 +84,7 @@ export default EditRoom = ({
         />
       </p>
       <mobProvider></mobProvider>
-      <aMonsterContext>
+      <aMonsterContext test={roomEdit.monsters}>
         <RoomMonsters
           editMobs={editMobs}
           roomEdit={roomEdit}
