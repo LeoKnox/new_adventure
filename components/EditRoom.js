@@ -1,4 +1,4 @@
-import { useState, useCallback } from "react";
+import { createContext, useContext, useState, useCallback } from "react";
 import { mobProvider } from "./MobContext.js";
 import RoomMonsters from "./RoomMonsters.js";
 import { singleRoom, changeRoom, allRooms } from "./dungeonData.js";
@@ -13,7 +13,7 @@ export default EditRoom = ({
 }) => {
   console.log("edit room");
   const [roomEdit, setRoomEdit] = useState(singleRoom(newId));
-
+  const aMonsterContext = createContext("red");
   const submitRoom = () => {
     console.log("submit room");
     let temp = rooms.findIndex((room) => room.id === newId);
@@ -90,7 +90,7 @@ export default EditRoom = ({
           setRoomEdit={setRoomEdit}
         />
       </mobProvider>
-
+      <aMonsterContext>{RoomMonsters}</aMonsterContext>
       <button onClick={() => submitRoom()}>Submit</button>
       <button onClick={() => setIsEdit(false)}>Back</button>
     </>
