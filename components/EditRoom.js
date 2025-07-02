@@ -13,7 +13,8 @@ export default EditRoom = ({
 }) => {
   console.log("edit room");
   const [roomEdit, setRoomEdit] = useState(singleRoom(newId));
-  const aMonsterContext = createContext("red");
+  const [testMob, setTestMob] = useState("mob text");
+
   const submitRoom = () => {
     console.log("submit room");
     let temp = rooms.findIndex((room) => room.id === newId);
