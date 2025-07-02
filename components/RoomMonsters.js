@@ -73,7 +73,7 @@ const testData = useContext(aMonsterContext)
             onChange={(e) => setNewMob({ ...newMob, y: e.target.value })}
           />
         </label>
-        {testData}
+        {aMonsterContext}
         <button onClick={() => addMob(newMob)}>create mob<aMonsterContext/></button>
       </p>
     </>
