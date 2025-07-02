@@ -73,7 +73,7 @@ export default RoomMonsters = ({ room, editMobs, roomEdit, setRoomEdit, test }) 
             onChange={(e) => setNewMob({ ...newMob, y: e.target.value })}
           />
         </label>
-        {testData}
+        
         <button onClick={() => addMob(newMob)}>create mob<aMonsterContext/></button>
       </p>
     </>
