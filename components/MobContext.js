@@ -6,10 +6,16 @@ export const useMob = () => {
   return useContext(MobContext);
 };
 
-export const updateMob = () => {
+export const updateMob = ({ children }) => {
   const [doors, setDoors] = useState(0);
 
   const increaseDoors = () => {
     setDoors(doors + 1);
   };
+
+  return (
+    <MobContext.Provider value={{ doors, incDoors: increaseDoors }}>
+      {children}
+    </MobContext.Provider>
+  );
 };
