@@ -6,7 +6,7 @@ export default RoomMonsters = ({ room, editMobs, roomEdit, setRoomEdit }) => {
   const [mobValues, setMobValues] = useState(Object.entries(roomEdit.monsters));
   const [newMob, setNewMob] = useState({ x: 0, y: 0 });
   //const { newMob, setMob } = setConMob();
-const testData = useContext(aMonsterContext)
+const testData = useContext(test)
   console.table(mobValues);
   const deleteMonster = (key) => {
     let temp = { ...roomEdit };
@@ -73,7 +73,7 @@ const testData = useContext(aMonsterContext)
             onChange={(e) => setNewMob({ ...newMob, y: e.target.value })}
           />
         </label>
-        {aMonsterContext}
+        {testData}
         <button onClick={() => addMob(newMob)}>create mob<aMonsterContext/></button>
       </p>
     </>
