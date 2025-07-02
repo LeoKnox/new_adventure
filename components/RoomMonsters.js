@@ -1,7 +1,7 @@
 import { createContext, useContext, useState } from "react";
 import { setConMob } from "./MobContext.js";
 
-export default RoomMonsters = ({ room, editMobs, roomEdit, setRoomEdit }) => {
+export default RoomMonsters = ({ room, editMobs, roomEdit, setRoomEdit, test }) => {
   console.log("room");
   const [mobValues, setMobValues] = useState(Object.entries(roomEdit.monsters));
   const [newMob, setNewMob] = useState({ x: 0, y: 0 });
