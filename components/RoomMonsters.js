@@ -1,11 +1,11 @@
 import { createContext, useContext, useState } from "react";
-import { usMob } from "./MobContext.js";
+import { useMob } from "./MobContext.js";
 
 export default RoomMonsters = ({ room, editMobs, roomEdit, setRoomEdit, test }) => {
   console.log("room");
   const [mobValues, setMobValues] = useState(Object.entries(roomEdit.monsters));
   const [newMob, setNewMob] = useState({ x: 0, y: 0 });
-  const { doors, incDoors } = useTheme();
+  const { doors, incDoors } = useMob();
   console.table(mobValues);
   const deleteMonster = (key) => {
     let temp = { ...roomEdit };
