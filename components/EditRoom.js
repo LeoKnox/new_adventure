@@ -1,5 +1,5 @@
 import { createContext, useContext, useState, useCallback } from "react";
-import { updateMob } from "./MobContext.js";
+import { MobContext } from "./MobContext.js";
 import RoomMonsters from "./RoomMonsters.js";
 import { singleRoom, changeRoom, allRooms } from "./dungeonData.js";
 
@@ -84,13 +84,13 @@ export default EditRoom = ({
           onChange={(e) => setRoomEdit({ ...roomEdit, y: e.target.value })}
         />
       </p>
-      <updateMob test={roomEdit.monsters}>
+      <MobContext test={roomEdit.monsters}>
         <RoomMonsters
           editMobs={editMobs}
           roomEdit={roomEdit}
           setRoomEdit={setRoomEdit}
         />
-      </updateMob>
+      </MobContext>
       <button onClick={() => submitRoom()}>Submit</button>
       <button onClick={() => setIsEdit(false)}>Back</button>
     </>
