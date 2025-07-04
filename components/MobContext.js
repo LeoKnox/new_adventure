@@ -7,7 +7,7 @@ export const useMob = () => {
 };
 
 export const updateMob = ({ children }) => {
-  const [doors, setDoors] = useState(0);
+  const [doors, setDoors] = useState(1);
 
   const increaseDoors = () => {
     setDoors(doors + 1);
