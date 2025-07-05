@@ -12,7 +12,7 @@ export default EditRoom = ({
   removeMob,
 }) => {
   console.log("edit room");
-  console.table(MobContext);
+  console.table(MobCreateContext);
   const [roomEdit, setRoomEdit] = useState(singleRoom(newId));
   const [testMob, setTestMob] = useState("mob text");
 
