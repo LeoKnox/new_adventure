@@ -18,6 +18,7 @@ export const MobContext = ({ children }) => {
   return (
     <MobCreateContext.Provider value={{ doors, incDoors: increaseDoors }}>
       {children}
+      <p>t</p>
     </MobCreateContext.Provider>
   );
 };
