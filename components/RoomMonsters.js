@@ -73,7 +73,7 @@ export default RoomMonsters = ({ room, editMobs, roomEdit, setRoomEdit, test }) 
           />
         </label>
         {doors}
-        <button onClick={() => incDoors}>create mob<aMonsterContext/></button>
+        <button onClick={incDoors}>create mob<aMonsterContext/></button>
       </p>
     </>
   );
