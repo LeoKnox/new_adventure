@@ -7,6 +7,8 @@ export const useMob = () => {
 };
 
 export const updateMob = ({ children }) => {
+  console.log("mob context");
+  console.log({ children });
   const [doors, setDoors] = useState(1);
 
   const increaseDoors = () => {
@@ -14,8 +16,8 @@ export const updateMob = ({ children }) => {
   };
 
   return (
-    <MobContext value={{ doors, incDoors: increaseDoors }}>
+    <MobContext.Provider value={{ doors, incDoors: increaseDoors }}>
       {children}
-    </MobContext>
+    </MobContext.Provider>
   );
 };
