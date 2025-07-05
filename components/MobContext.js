@@ -3,7 +3,7 @@ import { createContext, useContext, useState } from "react";
 export const MobCreateContext = createContext();
 
 export const useMob = () => {
-  return useContext(MobContext);
+  return useContext(MobCreateContext);
 };
 
 export const MobContext = ({ children }) => {
