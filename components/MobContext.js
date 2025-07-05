@@ -6,7 +6,7 @@ export const useMob = () => {
   return useContext(MobContext);
 };
 
-export const updateMob = ({ children }) => {
+export const MobContext = ({ children }) => {
   console.log("mob context");
   console.log({ children });
   const [doors, setDoors] = useState(1);
