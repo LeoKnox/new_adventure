@@ -1,11 +1,11 @@
 import { createContext, useContext, useState } from "react";
-import { updateMob } from "./MobContext.js";
+import { useMob } from "./MobContext.js";
 
 export default RoomMonsters = ({ room, editMobs, roomEdit, setRoomEdit, test }) => {
   console.log("room");
   const [mobValues, setMobValues] = useState(Object.entries(roomEdit.monsters));
   const [newMob, setNewMob] = useState({ x: 0, y: 0 });
-  const { doors, incDoors } = updateMob();
+  const { doors, incDoors } = useMob();
   console.table(mobValues);
   const deleteMonster = (key) => {
     let temp = { ...roomEdit };
@@ -72,8 +72,8 @@ export default RoomMonsters = ({ room, editMobs, roomEdit, setRoomEdit, test }) 
             onChange={(e) => setNewMob({ ...newMob, y: e.target.value })}
           />
         </label>
-        
-        <button onClick={() => addMob(newMob)}>create mob<aMonsterContext/></button>
+        {doors}
+        <button onClick={() => incDoors}>create mob<aMonsterContext/></button>
       </p>
     </>
   );
