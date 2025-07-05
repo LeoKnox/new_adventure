@@ -1,6 +1,6 @@
 import { createContext, useContext, useState } from "react";
 
-export const MobContext = createContext();
+export const MobCreateContext = createContext();
 
 export const useMob = () => {
   return useContext(MobContext);
