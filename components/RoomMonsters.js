@@ -68,7 +68,7 @@ export default RoomMonsters = ({ room, editMobs, roomEdit, setRoomEdit, test }) 
           <input
             type="number"
             className="mobInput"
-            value={newMob.y}
+            value={doors}
             onChange={(e) => setNewMob({ ...newMob, y: e.target.value })}
           />
         </label>
