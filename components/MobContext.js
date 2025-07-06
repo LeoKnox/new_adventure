@@ -9,7 +9,7 @@ export const useMob = () => {
 export const MobContext = ({ children }) => {
   console.log("mob context");
   console.log({ children });
-  const [doors, setDoors] = useState({x:0,y:0});
+  const [doors, setDoors] = useState([0, 0]);
 
   const increaseDoors = () => {
     setDoors(doors + 1);
