@@ -60,7 +60,7 @@ export default RoomMonsters = ({ room, editMobs, roomEdit, setRoomEdit, test }) 
             type="number"
             className="mobInput"
             value={doors[0]}
-            onChange={(e) => incDoors((e.target.value))}
+            onChange={(e) => incDoors((e.target.value),0)}
           />
         </label>
         <label>
@@ -69,7 +69,7 @@ export default RoomMonsters = ({ room, editMobs, roomEdit, setRoomEdit, test }) 
             type="number"
             className="mobInput"
             value={doors[1]}
-            onChange={(e) => incDoors((e.target.value))}
+            onChange={(e) => incDoors((e.target.value),1)}
           />
         </label>
         {doors}
