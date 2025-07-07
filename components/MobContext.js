@@ -11,7 +11,7 @@ export const MobContext = ({ children }) => {
   console.log({ children });
   const [doors, setDoors] = useState([0, 0]);
 
-  const increaseDoors = (doorValue) => {
+  const increaseDoors = (doorValue, doorLoc) => {
     console.log("inc door");
 
     setDoors(doorValue + 1);
