@@ -14,6 +14,9 @@ export default RoomMonsters = ({ room, editMobs, roomEdit, setRoomEdit, test }) 
     temp.monsters = tempMobs;
     setRoomEdit(temp);
   };
+  const addContextMob = () => {
+  console.log("add context mob");
+  }
   const addMob = (newMob) => {
     console.log("add mob");
     console.log(newMob);
@@ -73,7 +76,7 @@ export default RoomMonsters = ({ room, editMobs, roomEdit, setRoomEdit, test }) 
           />
         </label>
         {doors}
-        <button onClick={incDoors}>create mob<aMonsterContext/></button>
+        <button onClick={addContextMob}>create mob<aMonsterContext/></button>
       </p>
     </>
   );
