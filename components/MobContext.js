@@ -14,7 +14,7 @@ export const MobContext = ({ children }) => {
   const increaseDoors = (doorValue, doorLoc) => {
     console.log("inc door");
     temp = doors;
-    temp[doorLoc] = doorValue;
+    temp[doorLoc] = +doorValue;
     console.log(temp);
     setDoors(temp);
   };
