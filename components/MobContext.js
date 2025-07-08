@@ -8,21 +8,17 @@ export const useMob = () => {
 
 export const MobContext = ({ children }) => {
   console.log("mob context");
-  console.log({ children });
   const [doors, setDoors] = useState([0, 0]);
 
   const increaseDoors = (doorValue, doorLoc) => {
     console.log("inc door");
-    temp = [...doors];
     temp[doorLoc] = +doorValue;
-    console.log(temp);
     setDoors(temp);
   };
 
   return (
     <MobCreateContext.Provider value={{ doors, incDoors: increaseDoors }}>
       {children}
-      <p>t</p>
     </MobCreateContext.Provider>
   );
 };
