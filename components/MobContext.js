@@ -15,6 +15,7 @@ export const MobContext = ({ children }) => {
     console.log("inc door");
     temp = doors;
     temp[doorLoc] = doorValue;
+    console.log(temp);
     setDoors(temp);
   };
 
