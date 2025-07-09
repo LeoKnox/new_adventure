@@ -1,7 +1,13 @@
 import { createContext, useContext, useState } from "react";
 import { useMob } from "./MobContext.js";
 
-export default RoomMonsters = ({ room, editMobs, roomEdit, setRoomEdit, test }) => {
+export default RoomMonsters = ({
+  room,
+  editMobs,
+  roomEdit,
+  setRoomEdit,
+  test,
+}) => {
   console.log("room");
   const [mobValues, setMobValues] = useState(Object.entries(roomEdit.monsters));
   const [newMob, setNewMob] = useState({ x: 0, y: 0 });
@@ -21,8 +27,8 @@ export default RoomMonsters = ({ room, editMobs, roomEdit, setRoomEdit, test }) 
     let tempMobs = { ...temp.monsters };
     tempMobs[`${doors[1]}:${doors[0]}`] = 1;
     console.log(tempMobs);
-    setRoomEdit(temp);
-  }
+    setRoomEdit({ [`3:3`]: 1 });
+  };
   const addMob = (newMob) => {
     console.log("add mob");
     let temp = { ...roomEdit };
@@ -68,7 +74,7 @@ export default RoomMonsters = ({ room, editMobs, roomEdit, setRoomEdit, test }) 
             type="number"
             className="mobInput"
             value={doors[0]}
-            onChange={(e) => incDoors((e.target.value),0)}
+            onChange={(e) => incDoors(e.target.value, 0)}
           />
         </label>
         <label>
@@ -77,11 +83,14 @@ export default RoomMonsters = ({ room, editMobs, roomEdit, setRoomEdit, test }) 
             type="number"
             className="mobInput"
             value={doors[1]}
-            onChange={(e) => incDoors((e.target.value),1)}
+            onChange={(e) => incDoors(e.target.value, 1)}
           />
         </label>
         {doors}
-        <button onClick={addContextMob}>create mob<aMonsterContext/></button>
+        <button onClick={addContextMob}>
+          create mob
+          <aMonsterContext />
+        </button>
       </p>
     </>
   );
