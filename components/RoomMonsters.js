@@ -31,7 +31,7 @@ export default RoomMonsters = ({
     //setRoomEdit(temp);
     temp = { ...temp, monsters: tempMobs };
     console.log(temp);
-    incDoors(`1,1`, 2);
+    incDoors("1,1", 2);
 
     console.log(roomEdit);
   };
