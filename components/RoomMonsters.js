@@ -23,13 +23,14 @@ export default RoomMonsters = ({
   const addContextMob = () => {
     console.log("add context mob");
     let temp = { ...roomEdit };
-    console.log(temp);
+    //console.log(temp);
     let tempMobs = { ...temp.monsters };
     //tempMobs[`${doors[1]}:${doors[0]}`] = 1;
     tempMobs = { [`1:1`]: 2 };
-    console.log(tempMobs);
+    //console.log(tempMobs);
     //setRoomEdit(temp);
     temp.monsters = tempMobs;
+    console.log(temp);
     setRoomEdit(temp);
 
     console.log(roomEdit);
