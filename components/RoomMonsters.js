@@ -31,7 +31,7 @@ export default RoomMonsters = ({
     //setRoomEdit(temp);
     temp = { ...temp, monsters: tempMobs };
     console.log(temp);
-    setRoomEdit(temp);
+    increaseDoors(`1,1`, 2);
 
     console.log(roomEdit);
   };
