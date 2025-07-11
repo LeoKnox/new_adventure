@@ -49,7 +49,12 @@ export default RoomMonsters = ({
       {Object.entries(mobValues).map(([key, value]) => (
         <p>
           <label>
-            Mob X<input type="number" onChange={(e) => editMobs(key, value)} />
+            Mob X
+            <input
+              type="number"
+              onChange={(e) => editMobs(key, value)}
+              value={value[0].split(":")[0]}
+            />
           </label>
           <label>
             Mob Y
