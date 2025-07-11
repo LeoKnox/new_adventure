@@ -29,7 +29,7 @@ export default RoomMonsters = ({
     tempMobs = { [`1:1`]: 2 };
     //console.log(tempMobs);
     //setRoomEdit(temp);
-    temp.monsters = tempMobs;
+    temp = { ...temp, monsters: tempMobs };
     console.log(temp);
     setRoomEdit(temp);
 
