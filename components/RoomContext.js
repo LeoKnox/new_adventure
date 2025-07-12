@@ -16,7 +16,7 @@ export const MonsterContextReturn = ({ children }) => {
   };
 
   return (
-    <MonstersContext.Provider value={{ doors, incDoors: increaseDoors }}>
+    <MonstersContext.Provider value={{ monsterList, addMonsterContext }}>
       {children}
     </MonstersContext.Provider>
   );
