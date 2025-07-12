@@ -26,7 +26,7 @@ export default RoomMonsters = ({
     let tempMobs = { ...temp.monsters };
     tempMobs = { [`1:1`]: 2 };
     temp = { ...temp, monsters: tempMobs };
-    incDoors(2, "1:1");
+    setRoomEdit(temp);
   };
   const addMob = (newMob) => {
     console.log("add mob");
@@ -91,7 +91,7 @@ export default RoomMonsters = ({
           />
         </label>
         {doors}
-        <button onClick={() => addContextMob()}>create mob</button>
+        <button onClick={addContextMob}>create mob</button>
       </p>
     </>
   );
