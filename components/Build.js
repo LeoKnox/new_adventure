@@ -52,16 +52,14 @@ export default Build = () => {
     <>
       <p onClick={() => setIsEdit(!isEdit)}>build a dungeon</p>
       {isEdit ? (
-        <MonsterContextReturn>
-          <EditRoom
-            newId={newId}
-            setIsEdit={setIsEdit}
-            setRooms={setRooms}
-            editFunc={editFunc}
-            rooms={rooms}
-            removeMob={removeMob}
-          />
-        </MonsterContextReturn>
+        <EditRoom
+          newId={newId}
+          setIsEdit={setIsEdit}
+          setRooms={setRooms}
+          editFunc={editFunc}
+          rooms={rooms}
+          removeMob={removeMob}
+        />
       ) : (
         <>
           <AllRooms rooms={rooms} removeRoom={removeRoom} loadEdit={loadEdit} />
