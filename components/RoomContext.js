@@ -16,7 +16,7 @@ export const MonsterContextReturn = ({ children }) => {
   };
 
   return (
-    <MonstersContext.Provider value={{ monsterList, addMonsterContext }}>
+    <MonstersContext.Provider value={{ monstersList, addMonsterContext }}>
       {children}
     </MonstersContext.Provider>
   );
