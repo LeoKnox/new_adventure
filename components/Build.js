@@ -1,6 +1,7 @@
 import { useState, useEffect } from "react";
 import { allRooms, addRoom, changeRoom, singleRoom } from "./dungeonData.js";
 import AllRooms from "./AllRooms.js";
+import { MonsterContextReturn } from "./RoomContext.js";
 import { deleteRoom } from "./dungeonData.js";
 import NewRoom from "./NewRoom.js";
 import EditRoom from "./EditRoom.js";
@@ -51,14 +52,16 @@ export default Build = () => {
     <>
       <p onClick={() => setIsEdit(!isEdit)}>build a dungeon</p>
       {isEdit ? (
-        <EditRoom
-          newId={newId}
-          setIsEdit={setIsEdit}
-          setRooms={setRooms}
-          editFunc={editFunc}
-          rooms={rooms}
-          removeMob={removeMob}
-        />
+        <MonsterContextReturn>
+          <EditRoom
+            newId={newId}
+            setIsEdit={setIsEdit}
+            setRooms={setRooms}
+            editFunc={editFunc}
+            rooms={rooms}
+            removeMob={removeMob}
+          />
+        </MonsterContextReturn>
       ) : (
         <>
           <AllRooms rooms={rooms} removeRoom={removeRoom} loadEdit={loadEdit} />
