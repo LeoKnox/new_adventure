@@ -94,7 +94,7 @@ export default RoomMonsters = ({
         {doors}
         <button onClick={addContextMob}>create mob</button>
       </p>
-      <button>{addMonsterContext({`3:3`:0})}</button>
+      <button>{addMonsterContext("red")}</button>
     </>
   );
 };
