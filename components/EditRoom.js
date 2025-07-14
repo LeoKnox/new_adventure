@@ -86,7 +86,7 @@ export default EditRoom = ({
           onChange={(e) => setRoomEdit({ ...roomEdit, y: e.target.value })}
         />
       </p>
-      <MonsterContextReturn test="green">
+      <MonsterContextReturn test={["green"]}>
         <MobContext test={roomEdit.monsters}>
           <RoomMonsters
             editMobs={editMobs}
