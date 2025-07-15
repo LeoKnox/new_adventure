@@ -15,6 +15,11 @@ export default RoomMonsters = ({
   const [newMob, setNewMob] = useState({ x: 0, y: 0 });
   const { doors, incDoors } = useMob();
   console.table(mobValues);
+  const extDelete = (temp) => {
+    {
+      deleteMonsterDD;
+    }
+  };
   const deleteMonster = (key) => {
     let temp = { ...roomEdit };
     let tempMobs = { ...temp.monsters };
@@ -70,7 +75,7 @@ export default RoomMonsters = ({
             <input type="number" value={value[1]} />
           </label>
           <button onClick={() => deleteMonster(key)}>X</button>
-          <button onClick={() => deleteMonsterDD(1, { setRoomEdit })}>y</button>
+          <button onClick={() => extDelete(1)}>y</button>
         </p>
       ))}
       {JSON.stringify(mobValues)}
