@@ -1,6 +1,7 @@
 import { createContext, useContext, useState } from "react";
 import { useMob } from "./MobContext.js";
 import { addMonsterContext } from "./RoomContext.js";
+import { deleteMonsterDD } from "./dungeonData.js";
 
 export default RoomMonsters = ({
   room,
@@ -69,6 +70,7 @@ export default RoomMonsters = ({
             <input type="number" value={value[1]} />
           </label>
           <button onClick={() => deleteMonster(key)}>X</button>
+          <button onClick={deleteMonsterDD}>y</button>
         </p>
       ))}
       {JSON.stringify(mobValues)}
