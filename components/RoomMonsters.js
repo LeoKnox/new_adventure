@@ -1,7 +1,7 @@
-import { createContext, useContext, useState } from "react";
+import { useState } from "react";
 import { useMob } from "./MobContext.js";
 import { addMonsterContext } from "./RoomContext.js";
-import { deleteMonsterDD } from "./dungeonData.js";
+import { deleteMonsterDD, singleRoom } from "./dungeonData.js";
 
 export default RoomMonsters = ({
   room,
@@ -19,6 +19,7 @@ export default RoomMonsters = ({
     {
       deleteMonsterDD();
     }
+    setRoomEdit(singleRoom());
   };
   const deleteMonster = (key) => {
     let temp = { ...roomEdit };
