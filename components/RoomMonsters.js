@@ -70,7 +70,7 @@ export default RoomMonsters = ({
             <input type="number" value={value[1]} />
           </label>
           <button onClick={() => deleteMonster(key)}>X</button>
-          <button onClick={deleteMonsterDD}>y</button>
+          <button onClick={() => deleteMonsterDD(1, setRoomEdit)}>y</button>
         </p>
       ))}
       {JSON.stringify(mobValues)}
