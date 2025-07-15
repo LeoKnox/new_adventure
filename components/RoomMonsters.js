@@ -17,7 +17,7 @@ export default RoomMonsters = ({
   console.table(mobValues);
   const extDelete = (temp) => {
     {
-      deleteMonsterDD;
+      deleteMonsterDD();
     }
   };
   const deleteMonster = (key) => {
