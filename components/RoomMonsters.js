@@ -19,7 +19,7 @@ export default RoomMonsters = ({
     {
       deleteMonsterDD();
     }
-    setMobValues(Object.entries(singleRoom().monsters));
+    setMobValues(Object.entries(roomEdit.monsters));
   };
   const deleteMonster = (key) => {
     let temp = { ...roomEdit };
