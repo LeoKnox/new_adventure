@@ -27,11 +27,9 @@ let dungeonData = [
   },
 ];
 
-export const deleteMonsterDD = (monseterId, setRoomEdit) => {
+export const deleteMonsterDD = (monseterId) => {
   console.log("delete monster");
   delete dungeonData[1].monsters[`1:4`];
-  setRoomEdit(dungeonData);
-  console.log(dungeonData);
 };
 
 export const allRooms = () => {
