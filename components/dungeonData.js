@@ -21,11 +21,15 @@ let dungeonData = [
     x: 6,
     y: 6,
     monsters: {
-      [`1:4`]: 1
+      [`1:4`]: 1,
       [`1:5`]: 1,
     },
   },
 ];
+
+export const deleteMonster = (monseterId) => {
+  console.log("delete monster");
+}
 
 export const allRooms = () => {
   return dungeonData;
