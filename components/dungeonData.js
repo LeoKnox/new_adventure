@@ -29,6 +29,7 @@ let dungeonData = [
 
 export const deleteMonsterDD = (monsterId, roomId) => {
   console.log("delete monster");
+  console.log(`${monsterId}-${roomId}`);
   //delete dungeonData[1].monsters[`1:4`];
   delete dungeonData[roomId].monsters[monsterId];
 };
