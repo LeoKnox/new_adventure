@@ -1,7 +1,7 @@
 import { useState } from "react";
 import { useMob } from "./MobContext.js";
 import { addMonsterContext } from "./RoomContext.js";
-import { deleteMonsterDD, singleRoom } from "./dungeonData.js";
+import { deleteMonsterDD, addMonsterDD, singleRoom } from "./dungeonData.js";
 
 export default RoomMonsters = ({
   room,
@@ -100,7 +100,7 @@ export default RoomMonsters = ({
           />
         </label>
         {doors}
-        <button onClick={addContextMob}>create mob</button>
+        <button onClick={addMonsterDD({ [`3:3`]: 1 })}>create mob</button>
       </p>
     </>
   );
