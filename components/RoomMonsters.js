@@ -21,26 +21,17 @@ export default RoomMonsters = ({
     }
     setMobValues(Object.entries(roomEdit.monsters));
   };
+  const extAdd = (newMobId, newMobValue) => {
+    {
+      addMonsterDD(newMobId, newMobValue);
+    }
+    setMobValues(Object.entries(roomEdit.monsters));
+  };
   const deleteMonster = (key) => {
     let temp = { ...roomEdit };
     let tempMobs = { ...temp.monsters };
     delete tempMobs[key];
     temp.monsters = tempMobs;
-    setRoomEdit(temp);
-  };
-  const addContextMob = () => {
-    console.log("add context mob");
-    let temp = { ...roomEdit };
-    let tempMobs = { ...temp.monsters };
-    tempMobs = { [`1:1`]: 2 };
-    temp = { ...temp, monsters: tempMobs };
-    setRoomEdit(temp);
-  };
-  const addMob = (newMob) => {
-    console.log("add mob");
-    let temp = { ...roomEdit };
-    let tempMobs = { ...temp.monsters };
-    tempMobs[`${newMob.y}"{newMob.x}`] = 1;
     setRoomEdit(temp);
   };
   return (
@@ -100,7 +91,7 @@ export default RoomMonsters = ({
           />
         </label>
         {doors}
-        <button onClick={() => addMonsterDD({ [`3:3`]: 1 })}>create mob</button>
+        <button onClick={() => extAdd([`3:3`], 1)}>create mob</button>
       </p>
     </>
   );
