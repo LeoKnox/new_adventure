@@ -1,107 +1,67 @@
-import { useState } from "react";
-import { useMob } from "./MobContext.js";
-import { addMonsterContext } from "./RoomContext.js";
-import { deleteMonsterDD, addMonsterDD, singleRoom } from "./dungeonData.js";
+import { DemonSVG } from "./svgData";
 
-export default RoomMonsters = ({
-  room,
-  editMobs,
-  roomEdit,
-  setRoomEdit,
-  test,
-}) => {
-  console.log("room");
-  const [mobValues, setMobValues] = useState(Object.entries(roomEdit.monsters));
-  const [newMob, setNewMob] = useState({ x: 0, y: 0 });
-  const { doors, incDoors } = useMob();
-  console.table(mobValues);
-  const extDelete = (temp) => {
-    {
-      deleteMonsterDD();
-    }
-    setMobValues(Object.entries(roomEdit.monsters));
-  };
-  const deleteMonster = (key) => {
-    let temp = { ...roomEdit };
-    let tempMobs = { ...temp.monsters };
-    delete tempMobs[key];
-    temp.monsters = tempMobs;
-    setRoomEdit(temp);
-  };
-  const addContextMob = () => {
-    console.log("add context mob");
-    let temp = { ...roomEdit };
-    let tempMobs = { ...temp.monsters };
-    tempMobs = { [`1:1`]: 2 };
-    temp = { ...temp, monsters: tempMobs };
-    setRoomEdit(temp);
-  };
-  const addMob = (newMob) => {
-    console.log("add mob");
-    let temp = { ...roomEdit };
-    let tempMobs = { ...temp.monsters };
-    tempMobs[`${newMob.y}"{newMob.x}`] = 1;
-    setRoomEdit(temp);
-  };
-  return (
-    <>
-      <p>room monsters</p>
-      <button onClick={() => deleteMonster()}>update</button>
-      {Object.entries(mobValues).map(([key, value]) => (
-        <p>
-          <label>
-            Mob X
-            <input
-              type="number"
-              onChange={(e) => editMobs(key, value)}
-              value={value[0].split(":")[0]}
-            />
-          </label>
-          <label>
-            Mob Y
-            <input
-              type="number"
-              onChange={(e) =>
-                setMobValues((prevMob) => {
-                  const result = [...prevMob];
-                  result[key] = e.target.value;
-                  return result;
-                })
-              }
-              value={value[0].split(":")[1]}
-            />
-          </label>
-          <label>
-            Mob type
-            <input type="number" value={value[1]} />
-          </label>
-          <button onClick={() => deleteMonster(key)}>X</button>
-          <button onClick={() => extDelete(1)}>y</button>
-        </p>
-      ))}
-      {JSON.stringify(mobValues)}
-      <p>
-        <label>
-          New Mob X
-          <input
-            type="number"
-            className="mobInput"
-            value={doors[0]}
-            onChange={(e) => incDoors(e.target.value, 0)}
-          />
-        </label>
-        <label>
-          New Mob Y
-          <input
-            type="number"
-            className="mobInput"
-            value={doors[1]}
-            onChange={(e) => incDoors(e.target.value, 1)}
-          />
-        </label>
-        {doors}
-        <button onClick={() => addMonsterDD([`3:3`], 1)}>create mob</button>
-      </p>
-    </>
-  );
+let dungeonData = [
+  {
+    id: 1,
+    name: "entry",
+    width: 9,
+    height: 5,
+    x: 5,
+    y: 5,
+    monsters: {
+      [`2:4`]: 1,
+      [`3:5`]: 1,
+    },
+  },
+  {
+    id: 2,
+    name: "entry",
+    width: 7,
+    height: 8,
+    x: 6,
+    y: 6,
+    monsters: {
+      [`1:4`]: 1,
+      [`1:5`]: 1,
+    },
+  },
+];
+
+export const deleteMonsterDD = (monseterId, roomId) => {
+  console.log("delete monster");
+  delete dungeonData[roomId].monsters[monsterId];
+};
+
+export const addMonsterDD = (newMonsterID, newMonsterValue) => {
+  console.log("add monster");
+  dungeonData[1].monsters[newMonsterID] = newMonsterValue;
+  console.log(dungeonData[1]);
+};
+
+export const allRooms = () => {
+  return dungeonData;
+};
+
+export const addRoom = (name, width, height, x, y) => {
+  newId = dungeonData.length
+    ? dungeonData[dungeonData.length - 1].id + 1
+    : (newId = 1);
+  dungeonData = [
+    ...dungeonData,
+    { id: newId, name: name, width: width, height: height, x: x, y: y },
+  ];
+  return dungeonData;
+};
+
+export const changeRoom = (newData = "chiiro") => {
+  dungeonData = dungeonData.map((room) => (room.id == 1 ? newData : room));
+  return dungeonData;
+};
+
+export const deleteRoom = (id = 1) => {
+  dungeonData = dungeonData.filter((room) => room.id != id);
+  return dungeonData;
+};
+export const singleRoom = (id = 1) => {
+  return dungeonData.find((room) => room.id == id);
 };
