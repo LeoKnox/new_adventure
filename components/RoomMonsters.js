@@ -4,7 +4,7 @@ import { addMonsterContext } from "./RoomContext.js";
 import { deleteMonsterDD, addMonsterDD, singleRoom } from "./dungeonData.js";
 
 export default RoomMonsters = ({
-  room,
+  roomId,
   editMobs,
   roomEdit,
   setRoomEdit,
@@ -17,7 +17,7 @@ export default RoomMonsters = ({
   console.table(mobValues);
   const extDelete = (key) => {
     {
-      deleteMonsterDD(key);
+      deleteMonsterDD(key, roomId);
     }
     setMobValues(Object.entries(roomEdit.monsters));
   };
