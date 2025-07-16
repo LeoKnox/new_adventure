@@ -32,9 +32,11 @@ export const deleteMonsterDD = (monseterId) => {
   delete dungeonData[1].monsters[`1:4`];
 };
 
-export const addMonsterDD = () => {
-  console.log("add monster")
-}
+export const addMonsterDD = (newMonsterID, newMonsterValue) => {
+  console.log("add monster");
+  dungeonData[1].monsters[newMonsterID] = newMonsterValue;
+  console.log(dungeonData[1]);
+};
 
 export const allRooms = () => {
   return dungeonData;
