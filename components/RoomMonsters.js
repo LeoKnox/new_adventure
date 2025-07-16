@@ -15,7 +15,7 @@ export default RoomMonsters = ({
   const [newMob, setNewMob] = useState({ x: 0, y: 0 });
   const { doors, incDoors } = useMob();
   console.table(mobValues);
-  const extDelete = (temp) => {
+  const extDelete = (key) => {
     {
       deleteMonsterDD(key);
     }
