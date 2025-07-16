@@ -100,7 +100,7 @@ export default RoomMonsters = ({
           />
         </label>
         {doors}
-        <button onClick={addMonsterDD({ [`3:3`]: 1 })}>create mob</button>
+        <button onClick={() => addMonsterDD({ [`3:3`]: 1 })}>create mob</button>
       </p>
     </>
   );
