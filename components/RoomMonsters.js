@@ -23,7 +23,7 @@ export default RoomMonsters = ({
   };
   const extAdd = (newMobId, newMobValue) => {
     {
-      addMonsterDD(newMobId, newMobValue);
+      addMonsterDD(roomId, newMobId, newMobValue);
     }
     setMobValues(Object.entries(roomEdit.monsters));
   };
