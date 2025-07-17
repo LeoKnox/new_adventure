@@ -35,9 +35,9 @@ export const deleteMonsterDD = (monsterId, roomId) => {
   console.log(dungeonData);
 };
 
-export const addMonsterDD = (newMonsterID, newMonsterValue) => {
+export const addMonsterDD = (roomId, newMonsterID, newMonsterValue) => {
   console.log("add monster");
-  dungeonData[1].monsters[newMonsterID] = newMonsterValue;
+  dungeonData[roomId - 1].monsters[newMonsterID] = newMonsterValue;
   console.log(dungeonData[1]);
 };
 
