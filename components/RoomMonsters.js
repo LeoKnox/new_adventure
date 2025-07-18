@@ -14,7 +14,6 @@ export default RoomMonsters = ({
   const [mobValues, setMobValues] = useState(Object.entries(roomEdit.monsters));
   const [newMob, setNewMob] = useState({ x: 0, y: 0 });
   const { doors, incDoors } = useMob();
-  console.table(mobValues);
   const extDelete = (value) => {
     {
       deleteMonsterDD(value, roomId);
@@ -22,6 +21,8 @@ export default RoomMonsters = ({
     setMobValues(Object.entries(roomEdit.monsters));
   };
   const extAdd = (newMobId, newMobValue) => {
+    console.log("ext add");
+    console.log(newMobValue);
     {
       addMonsterDD(roomId, doors, newMobValue);
     }
