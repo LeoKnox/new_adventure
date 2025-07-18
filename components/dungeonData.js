@@ -40,7 +40,8 @@ export const addMonsterDD = (roomId, newMonsterID, newMonsterValue) => {
   console.log(roomId);
   console.log(newMonsterID);
   console.log(newMonsterValue);
-  dungeonData[roomId - 1].monsters[newMonsterID] = newMonsterValue;
+  dungeonData[roomId - 1].monsters[`${newMonsterID[1]}:${newMonsterID[0]}`] =
+    newMonsterValue;
   console.log(dungeonData[1]);
 };
 
