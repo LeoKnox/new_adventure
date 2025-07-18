@@ -1,7 +1,12 @@
 import { useState } from "react";
 import { useMob } from "./MobContext.js";
 import { addMonsterContext } from "./RoomContext.js";
-import { deleteMonsterDD, addMonsterDD, singleRoom } from "./dungeonData.js";
+import {
+  deleteMonsterDD,
+  addMonsterDD,
+  editMonsterDD,
+  singleRoom,
+} from "./dungeonData.js";
 
 export default RoomMonsters = ({
   roomId,
@@ -27,6 +32,9 @@ export default RoomMonsters = ({
       addMonsterDD(roomId, doors, newMobValue);
     }
     setMobValues(Object.entries(roomEdit.monsters));
+  };
+  const extEdit = () => {
+    console.log("ext edit");
   };
   const deleteMonster = (key) => {
     let temp = { ...roomEdit };
@@ -67,8 +75,8 @@ export default RoomMonsters = ({
             Mob type
             <input type="number" value={value[1]} />
           </label>
-          <button onClick={() => deleteMonster(key)}>X</button>
-          <button onClick={() => extDelete(value[0])}>y{value}</button>
+          <button onClick={() => extDelete(value[0])}>X</button>
+          <button onClick={() => extEdit()}>Edit</button>
         </p>
       ))}
       {JSON.stringify(mobValues)}
