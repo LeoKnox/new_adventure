@@ -39,8 +39,10 @@ export const addMonsterDD = (roomId, newMonsterID, newMonsterValue) => {
     newMonsterValue;
 };
 
-export const editMonsterDD = () => {
+export const editMonsterDD = (value) => {
   console.log("edit Monster");
+  let newId = `${value[0].split(":")[1]}:${value[0].split(":")[0]}`;
+  console.log(newId);
 };
 
 export const allRooms = () => {
