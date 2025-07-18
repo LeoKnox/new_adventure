@@ -39,6 +39,10 @@ export const addMonsterDD = (roomId, newMonsterID, newMonsterValue) => {
     newMonsterValue;
 };
 
+export const editMonsterDD = () => {
+  cosnole.log("edit Monster");
+};
+
 export const allRooms = () => {
   return dungeonData;
 };
