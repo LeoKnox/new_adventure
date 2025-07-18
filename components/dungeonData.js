@@ -40,7 +40,7 @@ export const addMonsterDD = (roomId, newMonsterID, newMonsterValue) => {
 };
 
 export const editMonsterDD = () => {
-  cosnole.log("edit Monster");
+  console.log("edit Monster");
 };
 
 export const allRooms = () => {
