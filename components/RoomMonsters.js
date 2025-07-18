@@ -36,7 +36,7 @@ export default RoomMonsters = ({
   const extEdit = (value) => {
     console.log("ext edit");
     console.log(value);
-    editMonsterDD();
+    editMonsterDD(value);
   };
   const deleteMonster = (key) => {
     let temp = { ...roomEdit };
