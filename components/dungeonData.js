@@ -43,11 +43,10 @@ export const editMonsterDD = (value) => {
   console.log("edit Monster");
   let newId = `${value[0].split(":")[1]}:${value[0].split(":")[0]}`;
   let temp = { ...dungeonData[1] };
-  console.log(newId);
   let tempMob = { ...temp.monsters };
   tempMob[newId] = 0;
-  console.log(tempMob);
   temp.monsters = tempMob;
+  console.log(temp);
   dungeonData = temp;
 };
 
