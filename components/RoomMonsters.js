@@ -35,11 +35,10 @@ export default RoomMonsters = ({
   };
   const extEdit = (value) => {
     console.log("ext edit");
-    console.log(value);
     editMonsterDD(value);
     console.log("new edit");
     console.log(singleRoom(1));
-    setRoomEdit(singleRoom(1));
+    setMobValues(singleRoom(1).monsters);
   };
   const deleteMonster = (key) => {
     let temp = { ...roomEdit };
