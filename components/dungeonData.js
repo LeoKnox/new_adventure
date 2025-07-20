@@ -1,110 +1,80 @@
-import { useState } from "react";
-import { useMob } from "./MobContext.js";
-import { addMonsterContext } from "./RoomContext.js";
-import {
-  deleteMonsterDD,
-  addMonsterDD,
-  editMonsterDD,
-  singleRoom,
-} from "./dungeonData.js";
+import { DemonSVG } from "./svgData";
 
-export default RoomMonsters = ({
-  roomId,
-  editMobs,
-  roomEdit,
-  setRoomEdit,
-  test,
-}) => {
-  console.log("room");
-  const [mobValues, setMobValues] = useState(Object.entries(roomEdit.monsters));
-  const [newMob, setNewMob] = useState({ x: 0, y: 0 });
-  const { doors, incDoors } = useMob();
-  const extDelete = (value) => {
-    {
-      deleteMonsterDD(value, roomId);
-    }
-    setMobValues(Object.entries(roomEdit.monsters));
-  };
-  const extAdd = (newMobId, newMobValue) => {
-    console.log("ext add");
-    console.log(newMobValue);
-    {
-      addMonsterDD(roomId, doors, newMobValue);
-    }
-    setMobValues(Object.entries(roomEdit.monsters));
-  };
-  const extEdit = (value) => {
-    console.log("ext edit");
-    console.log(value);
-    editMonsterDD(value);
-    setRoomEdit(Object.entries(roomEdit.monsters));
-  };
-  const deleteMonster = (key) => {
-    let temp = { ...roomEdit };
-    let tempMobs = { ...temp.monsters };
-    delete tempMobs[key];
-    temp.monsters = tempMobs;
-    setRoomEdit(temp);
-  };
-  return (
-    <>
-      <p>room monsters</p>
-      <button onClick={() => deleteMonster()}>update</button>
-      {Object.entries(mobValues).map(([key, value]) => (
-        <p>
-          <label>
-            Mob X
-            <input
-              type="number"
-              onChange={(e) => editMobs(key, value)}
-              value={value[0].split(":")[0]}
-            />
-          </label>
-          <label>
-            Mob Y
-            <input
-              type="number"
-              onChange={(e) =>
-                setMobValues((prevMob) => {
-                  const result = [...prevMob];
-                  result[key] = e.target.value;
-                  return result;
-                })
-              }
-              value={value[0].split(":")[1]}
-            />
-          </label>
-          <label>
-            Mob type
-            <input type="number" value={value[1]} />
-          </label>
-          <button onClick={() => extDelete(value[0])}>X</button>
-          <button onClick={() => extEdit(value)}>Edit</button>
-        </p>
-      ))}
-      {JSON.stringify(mobValues)}
-      <p>
-        <label>
-          New Mob X
-          <input
-            type="number"
-            className="mobInput"
-            value={doors[0]}
-            onChange={(e) => incDoors(e.target.value, 0)}
-          />
-        </label>
-        <label>
-          New Mob Y
-          <input
-            type="number"
-            className="mobInput"
-            value={doors[1]}
-            onChange={(e) => incDoors(e.target.value, 1)}
-          />
-        </label>
-        {doors}
-        <button onClick={() => extAdd([`3:3`], 1)}>create mob</button>
-      </p>
-    </>
-  );
+let dungeonData = [
+  {
+    id: 1,
+    name: "entry",
+    width: 9,
+    height: 5,
+    x: 5,
+    y: 5,
+    monsters: {
+      [`2:4`]: 1,
+      [`3:5`]: 1,
+    },
+  },
+  {
+    id: 2,
+    name: "entry",
+    width: 7,
+    height: 8,
+    x: 6,
+    y: 6,
+    monsters: {
+      [`1:4`]: 1,
+      [`1:5`]: 1,
+    },
+  },
+];
+
+export const deleteMonsterDD = (monsterId, roomId) => {
+  console.log("delete monster");
+  delete dungeonData[roomId - 1].monsters[monsterId];
+  console.log(dungeonData);
+};
+
+export const addMonsterDD = (roomId, newMonsterID, newMonsterValue) => {
+  console.log("add monster");
+  dungeonData[roomId - 1].monsters[`${newMonsterID[1]}:${newMonsterID[0]}`] =
+    newMonsterValue;
+};
+
+export const editMonsterDD = (value) => {
+  console.log("edit Monster");
+  let newId = `${value[0].split(":")[1]}:${value[0].split(":")[0]}`;
+  let temp = { ...dungeonData[1] };
+  console.log(newId);
+  let tempMob = { ...temp.monsters };
+  tempMob[newId] = 0;
+  console.log(tempMob);
+  temp.monsters = tempMob;
+  dungeonData = temp;
+};
+
+export const allRooms = () => {
+  return dungeonData;
+};
+
+export const addRoom = (name, width, height, x, y) => {
+  newId = dungeonData.length
+    ? dungeonData[dungeonData.length - 1].id + 1
+    : (newId = 1);
+  dungeonData = [
+    ...dungeonData,
+    { id: newId, name: name, width: width, height: height, x: x, y: y },
+  ];
+  return dungeonData;
+};
+
+export const changeRoom = (newData = "chiiro") => {
+  dungeonData = dungeonData.map((room) => (room.id == 1 ? newData : room));
+  return dungeonData;
+};
+
+export const deleteRoom = (id = 1) => {
+  dungeonData = dungeonData.filter((room) => room.id != id);
+  return dungeonData;
+};
+export const singleRoom = (id = 1) => {
+  return dungeonData.find((room) => room.id == id);
 };
