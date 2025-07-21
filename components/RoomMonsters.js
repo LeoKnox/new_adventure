@@ -25,9 +25,8 @@ export default RoomMonsters = ({
     }
     setMobValues(Object.entries(roomEdit.monsters));
   };
-  const extAdd = (newMobId, newMobValue) => {
+  const extAdd = (newMobValue) => {
     console.log("ext add");
-    console.log(newMobValue);
     {
       addMonsterDD(roomId, doors, newMobValue);
     }
