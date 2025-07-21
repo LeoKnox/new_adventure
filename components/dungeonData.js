@@ -41,7 +41,7 @@ export const addMonsterDD = (roomId, newMonsterID, newMonsterValue) => {
 
 export const editMonsterDD = (value, key) => {
   console.log("edit Monster");
-
+  console.log(value);
   let newId = `${key[0].split(":")[1]}:${key[0].split(":")[0]}`;
   console.log(newId);
   let temp = { ...dungeonData[1] };
