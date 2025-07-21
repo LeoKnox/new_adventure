@@ -32,12 +32,12 @@ export default RoomMonsters = ({
     }
     setMobValues(Object.entries(roomEdit.monsters));
   };
-  const extEdit = (value) => {
+  const extEdit = (value, key) => {
     let temp = { ...roomEdit };
     let tempMobs = { ...temp.monsters };
     tempMobs[value] = 0;
     temp.monsters = tempMobs;
-    editMonsterDD(0);
+    editMonsterDD(0, key);
     setMobValues(Object.entries(roomEdit.monsters));
   };
   const deleteMonster = (key) => {
@@ -80,7 +80,7 @@ export default RoomMonsters = ({
             <input type="number" value={value[1]} />
           </label>
           <button onClick={() => extDelete(value[0])}>X</button>
-          <button onClick={() => extEdit(value)}>Edit</button>
+          <button onClick={() => extEdit(value, key)}>Edit</button>
         </p>
       ))}
       {JSON.stringify(mobValues)}
@@ -104,7 +104,7 @@ export default RoomMonsters = ({
           />
         </label>
         {doors}
-        <button onClick={() => extAdd([`3:3`], 1)}>create mob</button>
+        <button onClick={() => extAdd([`3:3`], 0)}>create mob</button>
       </p>
     </>
   );
