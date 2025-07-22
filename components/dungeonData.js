@@ -46,7 +46,7 @@ export const editMonsterDD = (value) => {
   let temp = { ...dungeonData[1] };
   let tempMob = { ...temp.monsters };
   tempMob[newId] = 0;
-  dungeonData[1] = tempMob;
+  dungeonData[1].monsters = tempMob;
   console.log(temp);
   //dungeonData = temp;
 };
