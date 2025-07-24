@@ -32,7 +32,7 @@ export default RoomMonsters = ({
     }
     setMobValues(Object.entries(roomEdit.monsters));
   };
-  const extEdit = (value, key) => {
+  const extEdit = (value, key, roomId) => {
     console.log("ext edit");
     console.log(value);
     let temp = { ...roomEdit };
