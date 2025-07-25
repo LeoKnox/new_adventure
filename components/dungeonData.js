@@ -42,11 +42,11 @@ export const addMonsterDD = (roomId, newMonsterID, newMonsterValue) => {
 export const editMonsterDD = (value, key, roomId) => {
   console.log("edit Monster");
   let newId = `${value[0].split(":")[0]}:${value[0].split(":")[1]}`;
-  console.log(key + ":" + value);
+  console.log(key + ":" + value + "::" + roomId);
   let temp = { ...dungeonData[1] };
   let tempMob = { ...temp.monsters };
   //console.log(dungeonData[roomId - 1].monsters[key]);
-  delete dungeonData[key].monsters[value];
+  delete dungeonData[key[0]].monsters[value];
   tempMob[newId] = value[1];
   dungeonData[1].monsters = tempMob;
 };
