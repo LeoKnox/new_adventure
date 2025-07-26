@@ -83,7 +83,7 @@ export default RoomMonsters = ({
           </label>
           <button onClick={() => extDelete(value[0])}>X</button>
           <button onClick={() => extEdit(value, mobValues[key][0])}>
-            Edit {singleRoom(key).monsters[0]}
+            Edit {singleRoom(1).monsters}
           </button>
         </p>
       ))}
