@@ -53,7 +53,7 @@ export default RoomMonsters = ({
     <>
       <p>room monsters</p>
       <button onClick={() => deleteMonster()}>update</button>
-      {Object.entries(roomEdit.monsters).map(([key, value]) => (
+      {Object.entries(mobValues).map(([key, value]) => (
         <p>
           <label>
             Mob X
@@ -67,6 +67,7 @@ export default RoomMonsters = ({
             Mob Y
             <input
               type="number"
+              id={value[0]}
               onChange={(e) =>
                 setMobValues((prevMob) => {
                   const result = [...prevMob];
@@ -83,7 +84,7 @@ export default RoomMonsters = ({
           </label>
           <button onClick={() => extDelete(value[0])}>X</button>
           <button onClick={() => extEdit(value, mobValues[key][0])}>
-            Edit {value} {roomEdit.monsters}
+            Edit {value}
           </button>
         </p>
       ))}
