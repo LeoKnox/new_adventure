@@ -19,6 +19,7 @@ export default RoomMonsters = ({
   const [mobValues, setMobValues] = useState(Object.entries(roomEdit.monsters));
   const [newMob, setNewMob] = useState({ x: 0, y: 0 });
   const { doors, incDoors } = useMob();
+  console.log({`room edit ${roomEdit}`});
   const extDelete = (value) => {
     {
       deleteMonsterDD(value, roomId);
@@ -67,7 +68,6 @@ export default RoomMonsters = ({
             Mob Y
             <input
               type="number"
-              
               onChange={(e) =>
                 setMobValues((prevMob) => {
                   const result = [...prevMob];
@@ -83,7 +83,7 @@ export default RoomMonsters = ({
             <input type="number" value={value[1]} />
           </label>
           <button onClick={() => extDelete(value[0])}>X</button>
-          <button id={roomEdit[key][0]} onClick={() => extEdit(value, mobValues[key][0])}>
+          <button id={key} onClick={() => extEdit(value, mobValues[key][0])}>
             Edit {value}
           </button>
         </p>
