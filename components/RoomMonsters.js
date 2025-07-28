@@ -67,7 +67,7 @@ export default RoomMonsters = ({
             Mob Y
             <input
               type="number"
-              id={value[0]}
+              id={mobValues[key][0]}
               onChange={(e) =>
                 setMobValues((prevMob) => {
                   const result = [...prevMob];
