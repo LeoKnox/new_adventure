@@ -88,7 +88,7 @@ export default RoomMonsters = ({
             id={roomEdit.monsters}
             onClick={() => extEdit(value, mobValues[key][0])}
           >
-            Edit {singleRoom()[key][0]}
+            Edit {singleRoom()[1].monsters[key][0]}
           </button>
         </p>
       ))}
