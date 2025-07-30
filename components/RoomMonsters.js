@@ -55,7 +55,7 @@ export default RoomMonsters = ({
     <>
       <p>room monsters</p>
       <button onClick={() => deleteMonster()}>update</button>
-      {Object.entries(mobValues).map(([key, value]) => (
+      {Object.keys(singleRoom(1)).map(([key, value]) => (
         <p>
           <label>
             Mob X
