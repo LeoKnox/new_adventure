@@ -1,83 +1,71 @@
-import { DemonSVG } from "./svgData";
+import { useState, useEffect } from "react";
+import { allRooms, addRoom, changeRoom, singleRoom } from "./dungeonData.js";
+import AllRooms from "./AllRooms.js";
+import { MonsterContextReturn } from "./RoomContext.js";
+import { deleteRoom } from "./dungeonData.js";
+import NewRoom from "./NewRoom.js";
+import EditRoom from "./EditRoom.js";
 
-let dungeonData = [
-  {
-    id: 1,
-    name: "entry",
-    width: 9,
-    height: 5,
-    x: 5,
-    y: 5,
-    monsters: {
-      [`2:4`]: 1,
-      [`3:5`]: 1,
-    },
-  },
-  {
-    id: 2,
-    name: "entry",
-    width: 7,
-    height: 8,
-    x: 6,
-    y: 6,
-    monsters: {
-      [`1:4`]: 1,
-      [`1:5`]: 1,
-    },
-  },
-];
-
-export const deleteMonsterDD = (monsterId, roomId) => {
-  console.log("delete monster");
-  delete dungeonData[roomId - 1].monsters[monsterId];
-  console.log(dungeonData);
-};
-
-export const addMonsterDD = (roomId, newMonsterID, newMonsterValue) => {
-  console.log("add monster");
-  dungeonData[roomId - 1].monsters[`${newMonsterID[1]}:${newMonsterID[0]}`] =
-    newMonsterValue;
-};
-
-export const editMonsterDD = (value, key, roomId, testId = `1:4`) => {
-  console.log("edit Monster");
-  let newId = `${value[0].split(":")[0]}:${value[0].split(":")[1]}`;
-  //console.log(key + ":" + value + "::" + roomId);
-  //console.log(dungeonData[roomId - 1].monsters[key]);
-  let temp = { ...dungeonData[1] };
-  let tempMob = { ...temp.monsters };
-  console.log(key);
-  delete tempMob[testId];
-
-  //delete dungeonData[roomId - 1].monsters[key];
-  //tempMob[newId] = value[1];
-  dungeonData[1].monsters = tempMob;
-};
-
-export const allRooms = () => {
-  return dungeonData;
-};
-
-export const addRoom = (name, width, height, x, y) => {
-  newId = dungeonData.length
-    ? dungeonData[dungeonData.length - 1].id + 1
-    : (newId = 1);
-  dungeonData = [
-    ...dungeonData,
-    { id: newId, name: name, width: width, height: height, x: x, y: y },
-  ];
-  return dungeonData;
-};
-
-export const changeRoom = (newData = "chiiro") => {
-  dungeonData = dungeonData.map((room) => (room.id == 1 ? newData : room));
-  return dungeonData;
-};
-
-export const deleteRoom = (id = 1) => {
-  dungeonData = dungeonData.filter((room) => room.id != id);
-  return dungeonData;
-};
-export const singleRoom = (id = 1) => {
-  return dungeonData.find((room) => room.id == id);
+export default Build = () => {
+  console.log("build.js");
+  //console.log(singleRoom(1).monsters);
+  const [isEdit, setIsEdit] = useState(false);
+  const [newId, setNewId] = useState(1);
+  const [rooms, setRooms] = useState(allRooms());
+  const [roomMob, setRoomMob] = useState({
+    [`1:4`]: 1,
+    [`1:5`]: 1,
+  });
+  const editFunc = (roomEdit, newMob) => {
+    console.log("edit func");
+    console.log(newMob);
+    roomEdit.monsters[`${newMob.x}:${newMob.y}`] = 1;
+    setRooms(roomEdit);
+  };
+  const loadEdit = (roomId = 1) => {
+    let temp = singleRoom(roomId);
+    setNewId(roomId);
+    setIsEdit(!isEdit);
+  };
+  const removeRoom = (deleteId) => {
+    console.log(deleteRoom(1));
+    let temp = deleteRoom(deleteId);
+    setRooms(temp);
+  };
+  const submitRoom = (name, width, height, x, y) => {
+    console.log("submit room");
+    cosnole.log(name);
+    console.log(name + ":" + x + ":" + y);
+    let temp = addRoom(name, width, height, x, y);
+    setRooms(temp);
+  };
+  const removeMob = (key) => {
+    console.log("remove mob");
+    console.log(newId);
+    let temp = rooms[newId];
+    console.log(temp);
+    let temptwo = temp.monsters;
+    delete temptwo[key];
+    setRooms(temp);
+  };
+  return (
+    <>
+      <p onClick={() => setIsEdit(!isEdit)}>build a dungeon</p>
+      {isEdit ? (
+        <EditRoom
+          newId={newId}
+          setIsEdit={setIsEdit}
+          setRooms={setRooms}
+          editFunc={editFunc}
+          rooms={rooms}
+          removeMob={removeMob}
+        />
+      ) : (
+        <>
+          <AllRooms rooms={rooms} removeRoom={removeRoom} loadEdit={loadEdit} />
+          <NewRoom submitRoom={submitRoom} />
+        </>
+      )}
+    </>
+  );
 };
