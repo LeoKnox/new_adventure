@@ -41,7 +41,7 @@ export default RoomMonsters = ({
     let tempMobs = { ...temp.monsters };
     tempMobs[value] = 0;
     temp.monsters = tempMobs;
-    editMonsterDD(value, key, roomId);
+    editMonsterDD(value, key, roomId, mobValues);
     setMobValues(Object.entries(roomEdit.monsters));
   };
   const deleteMonster = (key) => {
@@ -115,11 +115,6 @@ export default RoomMonsters = ({
         {doors}
         <button onClick={() => extAdd([`3:3`], 0)}>create mob</button>
       </p>
-      {Object.keys(singleRoom(1).monsters).map((key, value) => (
-        <p>
-          {key}:{value}
-        </p>
-      ))}
     </>
   );
 };
