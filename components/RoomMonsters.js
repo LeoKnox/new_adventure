@@ -20,7 +20,7 @@ export default RoomMonsters = ({
   const [newMob, setNewMob] = useState({ x: 0, y: 0 });
   const { doors, incDoors } = useMob();
   console.log("room edit");
-  console.log(singleRoom());
+  console.log(roomEdit);
   const extDelete = (value) => {
     {
       deleteMonsterDD(value, roomId);
