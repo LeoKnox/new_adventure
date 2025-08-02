@@ -114,7 +114,11 @@ export default RoomMonsters = ({
         </label>
         <label>
           New Mob
-          <select id="mobSelect" name="mobSelect">
+          <select
+            id="mobSelect"
+            name="mobSelect"
+            onChange={() => setMobSelect(1)}
+          >
             <option value={`1`}>1</option>
           </select>
         </label>
