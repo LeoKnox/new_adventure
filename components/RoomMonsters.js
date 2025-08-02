@@ -119,7 +119,7 @@ export default RoomMonsters = ({
             id="mobSelect"
             name="mobSelect"
             value={mobSelect}
-            onChange={() => setMobSelect(2)}
+            onChange={() => setMobSelect(event.target.value)}
           >
             <option value={`1`}>1</option>
             <option value={`2`}>2</option>
