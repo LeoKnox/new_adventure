@@ -126,9 +126,7 @@ export default RoomMonsters = ({
           </select>
         </label>
         {doors}
-        <button onClick={() => extAdd([`3:3`], { mobSelect })}>
-          create mob
-        </button>
+        <button onClick={() => extAdd([`3:3`], mobSelect)}>create mob</button>
       </p>
     </>
   );
