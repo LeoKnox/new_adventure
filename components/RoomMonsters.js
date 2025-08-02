@@ -112,6 +112,9 @@ export default RoomMonsters = ({
             onChange={(e) => incDoors(e.target.value, 1)}
           />
         </label>
+        <label>
+          New Mob
+          </label>
         {doors}
         <button onClick={() => extAdd([`3:3`], 0)}>create mob</button>
       </p>
