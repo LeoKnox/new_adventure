@@ -114,7 +114,10 @@ export default RoomMonsters = ({
         </label>
         <label>
           New Mob
-          </label>
+          <select id="mobSelect" name="mobSelect">
+            <option value={`1`}>1</option>
+          </select>
+        </label>
         {doors}
         <button onClick={() => extAdd([`3:3`], 0)}>create mob</button>
       </p>
