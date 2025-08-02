@@ -120,6 +120,7 @@ export default RoomMonsters = ({
             value="0"
             onChange={() => setMobSelect(1)}
           >
+            <option value={`0`}>0</option>
             <option value={`1`}>1</option>
           </select>
         </label>
