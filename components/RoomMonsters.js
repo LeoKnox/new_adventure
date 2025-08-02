@@ -117,6 +117,7 @@ export default RoomMonsters = ({
           <select
             id="mobSelect"
             name="mobSelect"
+            defaultValue="0"
             onChange={() => setMobSelect(1)}
           >
             <option value={`1`}>1</option>
