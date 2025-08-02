@@ -18,6 +18,7 @@ export default RoomMonsters = ({
   console.log("room");
   const [mobValues, setMobValues] = useState(Object.entries(roomEdit.monsters));
   const [newMob, setNewMob] = useState({ x: 0, y: 0 });
+  const [mobSelect, setMobSelect] = useState(0);
   const { doors, incDoors } = useMob();
   console.log("room edit");
   console.log(roomEdit);
@@ -117,10 +118,9 @@ export default RoomMonsters = ({
           <select
             id="mobSelect"
             name="mobSelect"
-            value="0"
+            value={mobSelect}
             onChange={() => setMobSelect(1)}
           >
-            <option value={`0`}>0</option>
             <option value={`1`}>1</option>
           </select>
         </label>
