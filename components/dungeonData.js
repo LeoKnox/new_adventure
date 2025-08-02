@@ -40,6 +40,7 @@ export const addMonsterDD = (
   mobSelect
 ) => {
   console.log("add monster");
+  console.log(mobSelect);
   dungeonData[roomId - 1].monsters[`${newMonsterID[1]}:${newMonsterID[0]}`] =
     mobSelect;
 };
