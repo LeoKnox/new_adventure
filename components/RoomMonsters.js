@@ -42,7 +42,7 @@ export default RoomMonsters = ({
     let tempMobs = { ...temp.monsters };
     tempMobs[value] = 0;
     temp.monsters = tempMobs;
-    let newMV = Object.assign({}, ...mobValues);
+    let newMV = roomEdit.monsters;
     editMonsterDD(value, key, roomId, newMV);
     setMobValues(Object.entries(roomEdit.monsters));
   };
