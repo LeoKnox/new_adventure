@@ -63,7 +63,7 @@ export const editMonsterDD = (
 
   //delete dungeonData[roomId - 1].monsters[key];
   //tempMob[newId] = value[1];
-  dungeonData[1].monsters = mobValues.monsters;
+  dungeonData[1].monsters = mobValues;
 };
 
 export const allRooms = () => {
