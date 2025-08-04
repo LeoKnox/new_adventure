@@ -52,7 +52,7 @@ export const editMonsterDD = (value, key, roomId, mobValues) => {
   //console.log(dungeonData[roomId - 1].monsters[key]);
   let temp = { ...dungeonData[1] };
   let tempMob = { ...temp.monsters };
-  console.log(mobValues.monsters);
+  console.log(mobValues);
   delete tempMob[newId];
 
   //delete dungeonData[roomId - 1].monsters[key];
