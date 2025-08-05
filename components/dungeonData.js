@@ -54,7 +54,7 @@ export const editMonsterDD = (value, key, roomId, newMV, mobValues) => {
   console.log(mobValues.map((t) => (tempObj[`${t[0]}`] = t[1])));
   console.log(tempObj);
   delete tempMob[newId];
-  dungeonData[1].monsters = mobValues;
+  dungeonData[1].monsters = tempObj;
 };
 
 export const allRooms = () => {
