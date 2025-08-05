@@ -51,7 +51,7 @@ export const editMonsterDD = (value, key, roomId, newMV, mobValues) => {
   let temp = { ...dungeonData[1] };
   let tempMob = { ...temp.monsters };
   console.log(mobValues.map((t) => console.log(t)));
-  console.log(mobValues.map((t) => Object.assign({}, t)));
+  console.log(mobValues.map((t) => `{${t[0]}:${t[1]}`};
   delete tempMob[newId];
   dungeonData[1].monsters = mobValues;
 };
