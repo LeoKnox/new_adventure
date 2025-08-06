@@ -63,7 +63,13 @@ export default RoomMonsters = ({
             Mob X
             <input
               type="number"
-              onChange={(e) => editMobs(key, value)}
+              onChange={(e) =>
+                setMobValues((prevMob) => {
+                  const result = [...prevMob];
+                  result[key] = e.target.value;
+                  return result;
+                })
+              }
               value={value[0].split(":")[0]}
             />
           </label>
