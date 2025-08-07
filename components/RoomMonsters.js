@@ -60,7 +60,7 @@ export default RoomMonsters = ({
     let temp = tempMv[key][0].split(":");
     tempMv[temp] = 3;
     //tempMv[key][0] = 3;
-    console.log(tempMv[key][0]);
+    console.log(tempMv);
   };
   return (
     <>
