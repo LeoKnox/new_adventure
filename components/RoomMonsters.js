@@ -58,7 +58,7 @@ export default RoomMonsters = ({
     let tempMv = { ...mobValues };
     let temp = tempMv[key][0];
     delete tempMv[key];
-    let x = [temp, 3];
+    let x = [temp, value];
     tempMv[key] = x;
     setMobValues(tempMv);
   };
