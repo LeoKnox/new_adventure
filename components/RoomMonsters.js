@@ -56,9 +56,13 @@ export default RoomMonsters = ({
   const changeMob = (value, key, name) => {
     console.log("change mob");
     let tempMv = { ...mobValues };
-    let temp = tempMv[key][0];
-    /*
-    delete tempMv[key];*/
+    let temp = tempMv[key][0].split(":");
+    if (name == "x") {
+      delete tempMv[key];
+      temp[1] = name;
+    }
+
+    console.log(temp);
     if (name == "type") {
       let x = [temp, value];
       tempMv[key] = x;
@@ -75,7 +79,8 @@ export default RoomMonsters = ({
             Mob X
             <input
               type="number"
-              onChange={(e) => changeMob(e.target.value, key, 0)}
+              name="x"
+              onChange={(e) => changeMob(e.target.value, key, e.target.x)}
               value={value[0].split(":")[0]}
             />
           </label>
