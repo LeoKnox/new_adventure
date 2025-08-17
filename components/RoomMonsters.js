@@ -53,8 +53,9 @@ export default RoomMonsters = ({
     temp.monsters = tempMobs;
     setRoomEdit(temp);
   };
-  const changeMob = (value, key, name) => {
+  const changeMob = (x, key, name) => {
     console.log("change mob");
+    console.log(x);
     let tempMv = { ...mobValues };
     let temp = tempMv[key][0].split(":");
     if (name == "x") {
@@ -66,7 +67,7 @@ export default RoomMonsters = ({
     console.log(key);
     if (name == "type") {
       let x = [temp, value];
-      console.log(`${key} value ${value} name ${name}`);
+      console.log(`${key} value ${x} name ${name}`);
       tempMv[temp] = value;
       setMobValues(tempMv);
     }
@@ -105,7 +106,9 @@ export default RoomMonsters = ({
             <input
               type="number"
               name="type"
-              onChange={(e) => changeMob(e.target.value, value, e.target.name)}
+              onChange={(e) =>
+                changeMob(e.target.value, (x = value), e.target.name)
+              }
               value={value[1]}
             />
           </label>
