@@ -70,6 +70,7 @@ export default RoomMonsters = ({
       console.log(` value ${x} name ${name}`);
       console.log(tempMv[value[0]]);
       tempMv[value[0]] = x;
+      console.log(tempMv);
       setMobValues(tempMv);
     }
   };
