@@ -108,7 +108,9 @@ export default RoomMonsters = ({
             <input
               type="number"
               name="type"
-              onChange={(e) => changeMob(e.target.value, value, e.target.name)}
+              onChange={(e) =>
+                changeMob(e.target.value, value, (name = e.target.name))
+              }
               value={value[1]}
             />
           </label>
