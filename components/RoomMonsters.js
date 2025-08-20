@@ -57,7 +57,7 @@ export default RoomMonsters = ({
     console.log("change mob");
     console.log(`key ${key} - value ${value} - name ${name}`);
     //let tempMv = { ...mobValues };
-    let tempMv = mobValues[key];
+    let tempMv = mobValues[key - 1];
     let temp = value[0].split(":");
     if (name == "x") {
       console.log("X");
