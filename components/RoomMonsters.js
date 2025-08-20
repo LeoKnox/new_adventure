@@ -69,7 +69,7 @@ export default RoomMonsters = ({
     if (name == "type") {
       console.log("type");
       let x = [temp, value];
-      tempMv[key][value[0]] = x;
+      tempMv[value[0]] = x;
       console.log(tempMv);
       setMobValues(tempMv);
     }
