@@ -74,8 +74,8 @@ export default RoomMonsters = ({
       console.log(newVal);
       console.log(key);
       let x = [temp, newVal];
-      mobValues[key - 1] = x;
-      console.log(tempMv);
+      mobValues[value] = x;
+      console.log(mobValues);
       //setMobValues(tempMv);
     }
   };
@@ -166,4 +166,3 @@ export default RoomMonsters = ({
     </>
   );
 };
-
