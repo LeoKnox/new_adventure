@@ -71,7 +71,7 @@ export default RoomMonsters = ({
     //console.log(key);
     if (name == "type") {
       console.log("type");
-      console.log(value);
+      console.log(newVal);
       console.log(key);
       let x = [temp, newVal];
       mobValues[key - 1] = x;
@@ -166,3 +166,4 @@ export default RoomMonsters = ({
     </>
   );
 };
+
