@@ -74,7 +74,7 @@ export default RoomMonsters = ({
       console.log(mobValues[key]);
 
       let x = [temp, newVal];
-      mobValues[key][`1:4`] = x;
+      mobValues[key].push(x);
       console.log(mobValues);
       //setMobValues(tempMv);
     }
