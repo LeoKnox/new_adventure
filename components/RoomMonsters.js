@@ -87,7 +87,7 @@ export default RoomMonsters = ({
               type="number"
               name="x"
               onChange={(e) =>
-                changeMob(e.target.value, key, value, e.target.x)
+                changeMob(e.target.value, key, value, e.target.name)
               }
               value={value[0].split(":")[0]}
             />
