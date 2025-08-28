@@ -69,6 +69,7 @@ export default RoomMonsters = ({
     if (name == "y") {
       console.log("Y");
       temp[1] = newVal;
+      console.log(newVal);
       delete tempMv[key];
       tempMv[key] = [`${temp[0]}:${temp[1]}`, value[1]];
       console.log(tempMv);
@@ -102,7 +103,7 @@ export default RoomMonsters = ({
             Mob Y
             <input
               type="number"
-              name="x"
+              name="y"
               onChange={(e) =>
                 changeMob(e.target.value, key, value, e.target.name)
               }
