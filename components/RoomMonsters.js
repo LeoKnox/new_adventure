@@ -63,7 +63,7 @@ export default RoomMonsters = ({
     let temp = value[0].split(":");
     if (name == "x") {
       console.log("X");
-      temp[0] = value[1] + 1 + "";
+      temp[0] = parseInt(value[1]) + 1;
       delete tempMv[key];
       tempMv[key] = [`${temp[0]}:${temp[1]}`, newVal];
       console.log(tempMv);
