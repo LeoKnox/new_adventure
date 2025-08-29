@@ -48,8 +48,8 @@ export const addMonsterDD = (
 export const editMonsterDD = (mobValues) => {
   console.log("edit Monster");
   let temp = [...dungeonData];
-  dungeonData.monsters = temp;
-  console.log(dungeonData)
+  dungeonData.monsters = mobValues;
+  console.log(dungeonData);
 };
 
 export const allRooms = () => {
