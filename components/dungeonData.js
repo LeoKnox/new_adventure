@@ -47,8 +47,9 @@ export const addMonsterDD = (
 
 export const editMonsterDD = (mobValues) => {
   console.log("edit Monster");
-  let temp = [...dungeonData];
-  dungeonData.monsters = mobValues;
+  let temp = mobValues.map((value) => ({ [value[0]]: value[1] }));
+  console.log(temp);
+  dungeonData.monsters = temp;
   console.log(dungeonData);
 };
 
