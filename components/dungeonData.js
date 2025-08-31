@@ -47,7 +47,8 @@ export const editMonsterDD = (mobValues) => {
   console.log("edit Monster");
   let temp = Object.fromEntries(mobValues);
   console.log(temp);
-  return (dungeonData.monsters = temp);
+  return temp;
+  dungeonData.monsters = temp;
   console.log(dungeonData);
 };
 
