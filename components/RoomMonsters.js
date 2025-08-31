@@ -37,8 +37,9 @@ export default RoomMonsters = ({
   };
   const extEdit = () => {
     console.log("ext edit");
-    editMonsterDD(mobValues);
-    setMobValues(Object.entries(roomEdit.monsters));
+    let temp = editMonsterDD(mobValues);
+    console.log(roomEdit.monsters);
+    setMobValues(temp);
   };
   const deleteMonster = (key) => {
     let temp = { ...roomEdit };
@@ -112,7 +113,7 @@ export default RoomMonsters = ({
             />
           </label>
           <button onClick={() => extDelete(value[0])}>X</button>
-          <button id={roomEdit.monsters} onClick={() => extEdit()}>
+          <button id={roomEdit.monsters} onClick={extEdit}>
             Update {value[0]} {key}
           </button>
         </p>
