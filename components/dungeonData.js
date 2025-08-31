@@ -45,11 +45,9 @@ export const addMonsterDD = (
 
 export const editMonsterDD = (mobValues) => {
   console.log("edit Monster");
-  let temp = Object.fromEntries(mobValues);
+  let temp = [Object.fromEntries(mobValues)];
   console.log(temp);
   return temp;
-  dungeonData.monsters = temp;
-  console.log(dungeonData);
 };
 
 export const allRooms = () => {
