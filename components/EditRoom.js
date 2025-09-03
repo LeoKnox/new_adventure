@@ -2,7 +2,7 @@ import { createContext, useContext, useState, useCallback } from "react";
 import { MobContext } from "./MobContext.js";
 import { MonsterContextReturn } from "./RoomContext.js";
 import RoomMonsters from "./RoomMonsters.js";
-import { singleRoom, changeRoom, allRooms } from "./dungeonData.js";
+import { singleRoom, allRooms } from "./dungeonData.js";
 
 export default EditRoom = ({
   newId = 1,
@@ -42,6 +42,11 @@ export default EditRoom = ({
     });
   };
 
+  const changeRoom = (name, value) => {
+    console.log("change room");
+    console.log(name + " : " + value);
+  };
+
   return (
     <>
       <button>{newId}</button>
@@ -50,8 +55,9 @@ export default EditRoom = ({
         Name:
         <input
           type="text"
+          name="name"
           value={roomEdit.name}
-          onChange={(e) => setRoomEdit({ ...roomEdit, name: e.target.value })}
+          onChange={(e) => changeRoom(e.target.value, e.target.name)}
         />
       </p>
       <p>
@@ -92,6 +98,7 @@ export default EditRoom = ({
             editMobs={editMobs}
             roomEdit={roomEdit}
             setRoomEdit={setRoomEdit}
+            roomId={newId}
           />
         </MobContext>
       </MonsterContextReturn>
