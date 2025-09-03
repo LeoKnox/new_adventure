@@ -60,7 +60,7 @@ export default EditRoom = ({
           type="text"
           name="name"
           value={roomEdit.name}
-          onChange={(e) => changeRoom(e.target.value, e.target.name)}
+          onChange={(e) => changeRoom(e.target.name, e.target.value)}
         />
       </p>
       <p>
