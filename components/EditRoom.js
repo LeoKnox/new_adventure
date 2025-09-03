@@ -2,7 +2,7 @@ import { createContext, useContext, useState, useCallback } from "react";
 import { MobContext } from "./MobContext.js";
 import { MonsterContextReturn } from "./RoomContext.js";
 import RoomMonsters from "./RoomMonsters.js";
-import { singleRoom, allRooms } from "./dungeonData.js";
+import { singleRoom, changeRoomDD, allRooms } from "./dungeonData.js";
 
 export default EditRoom = ({
   newId = 1,
@@ -45,6 +45,8 @@ export default EditRoom = ({
   const changeRoom = (name, value) => {
     console.log("change room");
     console.log(name + " : " + value);
+    changeRoomDD(name, value);
+    setRoomEdit(singleRoom(newId));
   };
 
   return (
