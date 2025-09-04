@@ -46,8 +46,9 @@ export default EditRoom = ({
     console.log("change room");
     console.log(name + " : " + value);
     //changeRoomDD(name, value);
-    console.log(singleRoom(newId));
+
     setRoomEdit(changeRoomDD(name, value));
+    console.log(singleRoom(newId));
     //setRoomEdit(singleRoom(newId));
   };
 
