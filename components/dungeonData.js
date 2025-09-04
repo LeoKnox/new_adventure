@@ -28,7 +28,10 @@ let dungeonData = [
 ];
 
 export const changeRoomDD = (name, value) => {
+  console.log(name + ":" + value);
+  console.log(dungeonData);
   dungeonData[1][name] = value;
+  console.log(dungeonData);
 };
 
 export const deleteMonsterDD = (monsterId, roomId) => {
