@@ -71,8 +71,9 @@ export default EditRoom = ({
         Width:
         <input
           type="number"
+          name="width"
           value={roomEdit.width}
-          onChange={(e) => setRoomEdit({ ...roomEdit, width: e.target.value })}
+          onChange={(e) => changeRoom(e.target.name, e.target.value)}
         />
       </p>
       <p>
