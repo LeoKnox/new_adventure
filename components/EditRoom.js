@@ -80,24 +80,27 @@ export default EditRoom = ({
         Height:
         <input
           type="number"
+          name="height"
           value={roomEdit.height}
-          onChange={(e) => setRoomEdit({ ...roomEdit, height: e.target.value })}
+          onChange={(e) => changeRoom(e.target.name, e.target.value)}
         />
       </p>
       <p>
         X:
         <input
           type="number"
+          name="x"
           value={roomEdit.x}
-          onChange={(e) => setRoomEdit({ ...roomEdit, x: e.target.value })}
+          onChange={(e) => changeRoom(e.target.name, e.target.value)}
         />
       </p>
       <p>
         Y:
         <input
           type="number"
+          name="y"
           value={roomEdit.y}
-          onChange={(e) => setRoomEdit({ ...roomEdit, y: e.target.value })}
+          onChange={(e) => changeRoom(e.target.name, e.target.value)}
         />
       </p>
       <MonsterContextReturn monstersList={["green"]}>
