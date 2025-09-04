@@ -8,20 +8,10 @@ import {
   singleRoom,
 } from "./dungeonData.js";
 
-export default RoomMonsters = ({
-  roomId,
-  editMobs,
-  roomEdit,
-  setRoomEdit,
-  test,
-}) => {
-  console.log("room");
+export default RoomMonsters = ({ roomId, roomEdit, setRoomEdit, test }) => {
   const [mobValues, setMobValues] = useState(Object.entries(roomEdit.monsters));
-  const [newMob, setNewMob] = useState({ x: 0, y: 0 });
   const [mobSelect, setMobSelect] = useState(2);
   const { doors, incDoors } = useMob();
-  console.log("room edit");
-  console.log(roomEdit);
   const extDelete = (value) => {
     {
       deleteMonsterDD(value, roomId);
@@ -38,8 +28,6 @@ export default RoomMonsters = ({
   const extEdit = () => {
     console.log("ext edit");
     editMonsterDD(mobValues, roomId);
-    //let temp = editMonsterDD(mobValues);
-    console.log(roomEdit.monsters);
     setMobValues(Object.entries(roomEdit.monsters));
   };
   const deleteMonster = (key) => {
@@ -113,9 +101,6 @@ export default RoomMonsters = ({
             />
           </label>
           <button onClick={() => extDelete(value[0])}>X</button>
-          <button id={roomEdit.monsters} onClick={extEdit}>
-            Update {value[0]} {key}
-          </button>
         </p>
       ))}
       {JSON.stringify(mobValues)}
