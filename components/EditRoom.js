@@ -95,7 +95,7 @@ export default EditRoom = ({
           />
         </MobContext>
       </MonsterContextReturn>
-      <button onClick={() => submitRoom()}>Submit</button>
+      <button onClick={() => changeRoomDD(roomEdit)}>Submit</button>
       <button onClick={() => setIsEdit(false)}>Back</button>
     </>
   );
