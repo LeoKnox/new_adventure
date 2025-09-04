@@ -1,78 +1,113 @@
-import { DemonSVG } from "./svgData";
+import { createContext, useContext, useState, useCallback } from "react";
+import { MobContext } from "./MobContext.js";
+import { MonsterContextReturn } from "./RoomContext.js";
+import RoomMonsters from "./RoomMonsters.js";
+import { singleRoom, changeRoomDD, allRooms } from "./dungeonData.js";
 
-let dungeonData = [
-  {
-    id: 1,
-    name: "entry",
-    width: 9,
-    height: 5,
-    x: 5,
-    y: 5,
-    monsters: {
-      [`2:4`]: 1,
-      [`3:5`]: 1,
-    },
-  },
-  {
-    id: 2,
-    name: "entry",
-    width: 7,
-    height: 8,
-    x: 6,
-    y: 6,
-    monsters: {
-      [`1:4`]: 1,
-      [`1:5`]: 1,
-    },
-  },
-];
+export default EditRoom = ({
+  newId = 1,
+  setIsEdit,
+  rooms,
+  setRooms,
+  editFunc,
+  removeMob,
+}) => {
+  console.log("edit room");
+  console.table(MobContext);
+  const [roomEdit, setRoomEdit] = useState(singleRoom(newId));
+  const [testMob, setTestMob] = useState("mob text");
 
-export const changeRoomDD = (name, value) => {
-  console.log(name + ":" + value);
-  dungeonData[1][name] = value;
-};
+  const submitRoom = () => {
+    console.log("submit room");
+    let temp = rooms.findIndex((room) => room.id === newId);
+    temp >= 0 && (rooms[temp] = roomEdit);
+    setRooms(rooms);
+    setIsEdit(false);
+  };
 
-export const deleteMonsterDD = (monsterId, roomId) => {
-  console.log("delete monster");
-  delete dungeonData[roomId - 1].monsters[monsterId];
-};
+  const editMobs = (key, value) => {
+    console.log("edit mobs");
+    console.log(key + "&" + value);
+    setRoomEdit({
+      id: 2,
+      name: "entry",
+      width: 7,
+      height: 8,
+      x: 6,
+      y: 6,
+      monsters: {
+        [`2:3`]: 1,
+        [`3:4`]: 1,
+      },
+    });
+  };
 
-export const addMonsterDD = (roomId, newMonsterID, mobSelect) => {
-  console.log("add monster");
-  dungeonData[roomId - 1].monsters[`${newMonsterID[1]}:${newMonsterID[0]}`] =
-    mobSelect;
-};
+  const changeRoom = (name, value) => {
+    console.log("change room");
+    console.log(name + " : " + value);
+    //changeRoomDD(name, value);
+    console.log(singleRoom(newId));
+    setRoomEdit(changeRoomDD(name, value));
+    //setRoomEdit(singleRoom(newId));
+  };
 
-export const editMonsterDD = (mobValues, roomId) => {
-  console.log("edit Monster");
-  let temp = Object.fromEntries(mobValues);
-  dungeonData[roomId - 1].monsters = temp;
-};
-
-export const allRooms = () => {
-  return dungeonData;
-};
-
-export const addRoom = (name, width, height, x, y) => {
-  newId = dungeonData.length
-    ? dungeonData[dungeonData.length - 1].id + 1
-    : (newId = 1);
-  dungeonData = [
-    ...dungeonData,
-    { id: newId, name: name, width: width, height: height, x: x, y: y },
-  ];
-  return dungeonData;
-};
-
-export const changeRoom = (newData = "chiiro") => {
-  dungeonData = dungeonData.map((room) => (room.id == 1 ? newData : room));
-  return dungeonData;
-};
-
-export const deleteRoom = (id = 1) => {
-  dungeonData = dungeonData.filter((room) => room.id != id);
-  return dungeonData;
-};
-export const singleRoom = (id = 1) => {
-  return dungeonData.find((room) => room.id == id);
+  return (
+    <>
+      <button>{newId}</button>
+      <p>{singleRoom(newId).name}</p>
+      <p>
+        Name:
+        <input
+          type="text"
+          name="name"
+          value={roomEdit.name}
+          onChange={(e) => changeRoom(e.target.name, e.target.value)}
+        />
+      </p>
+      <p>
+        Width:
+        <input
+          type="number"
+          value={roomEdit.width}
+          onChange={(e) => setRoomEdit({ ...roomEdit, width: e.target.value })}
+        />
+      </p>
+      <p>
+        Height:
+        <input
+          type="number"
+          value={roomEdit.height}
+          onChange={(e) => setRoomEdit({ ...roomEdit, height: e.target.value })}
+        />
+      </p>
+      <p>
+        X:
+        <input
+          type="number"
+          value={roomEdit.x}
+          onChange={(e) => setRoomEdit({ ...roomEdit, x: e.target.value })}
+        />
+      </p>
+      <p>
+        Y:
+        <input
+          type="number"
+          value={roomEdit.y}
+          onChange={(e) => setRoomEdit({ ...roomEdit, y: e.target.value })}
+        />
+      </p>
+      <MonsterContextReturn monstersList={["green"]}>
+        <MobContext test={roomEdit.monsters}>
+          <RoomMonsters
+            editMobs={editMobs}
+            roomEdit={roomEdit}
+            setRoomEdit={setRoomEdit}
+            roomId={newId}
+          />
+        </MobContext>
+      </MonsterContextReturn>
+      <button onClick={() => submitRoom()}>Submit</button>
+      <button onClick={() => setIsEdit(false)}>Back</button>
+    </>
+  );
 };
