@@ -29,6 +29,7 @@ let dungeonData = [
 
 export const changeRoomDD = (newRoom) => {
   console.log("change room");
+  dungeonData.map((u, v) => (dungeonData[u] = newRoom[u]));
 };
 
 export const deleteMonsterDD = (monsterId, roomId) => {
