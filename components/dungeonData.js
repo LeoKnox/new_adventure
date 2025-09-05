@@ -29,7 +29,7 @@ let dungeonData = [
 
 export const changeRoomDD = (newRoom) => {
   console.log("change room");
-  dungeonData.map((u, v) => (dungeonData[u] = newRoom[u]));
+  dungeonData = dungeonData.map((room) => (room.id == 1 ? newRoom : room));
   console.log(dungeonData);
 };
 
