@@ -31,7 +31,7 @@ export default EditRoom = ({
     //changeRoomDD(name, value);
     let temp = { ...roomEdit };
     temp[name] = value;
-    setRoomEdit(temp.newId);
+    setRoomEdit(temp);
     setRooms(allRooms());
     //setRoomEdit(changeRoomDD(name, value));
     console.log(singleRoom(newId));
@@ -96,7 +96,7 @@ export default EditRoom = ({
           />
         </MobContext>
       </MonsterContextReturn>
-      <button onClick={() => changeRoomDD(roomEdit)}>Submit</button>
+      <button onClick={() => changeRoomDD(roomEdit, newId)}>Submit</button>
       <button onClick={() => setIsEdit(false)}>Back</button>
     </>
   );
