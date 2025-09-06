@@ -28,14 +28,10 @@ export default EditRoom = ({
   const changeRoom = (name, value) => {
     console.log("change room");
     console.log(name + " : " + value);
-    //changeRoomDD(name, value);
     let temp = { ...roomEdit };
     temp[name] = value;
     setRoomEdit(temp);
     setRooms(allRooms());
-    //setRoomEdit(changeRoomDD(name, value));
-    console.log(singleRoom(newId));
-    //setRoomEdit(singleRoom(newId));
   };
 
   return (
