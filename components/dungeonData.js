@@ -28,7 +28,7 @@ let dungeonData = [
 ];
 
 export const changeRoomDD = (newRoom) => {
-  console.log("change room");
+  console.log("change room dd");
   console.log(newRoom);
   dungeonData = newRoom;
   console.log(dungeonData);
@@ -52,6 +52,8 @@ export const editMonsterDD = (mobValues, roomId) => {
 };
 
 export const allRooms = () => {
+  console.log("all rooms");
+  console.log(dungeonData);
   return dungeonData;
 };
 
