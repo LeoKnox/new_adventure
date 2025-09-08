@@ -17,7 +17,8 @@ export const playerPos = { [`3:1`]: charFunc[singleCharacter(1).icon] };
 export const { monsters: mobPos } = singleRoom(1);
 
 const mobDirection = (key, charChange) => {
-  console.log(key);
+  console.log("mob direction");
+  console.log(charChange[0]);
   let tempKeys = key.split(":");
   let newY = 0;
   let newX = 0;
