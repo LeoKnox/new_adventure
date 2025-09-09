@@ -17,16 +17,17 @@ export default EditRoom = ({
   const [roomEdit, setRoomEdit] = useState(singleRoom(newId));
   const [testMob, setTestMob] = useState("mob text");
 
-  const submitRoom = (roomEdit, newId) => {
+  const submitRoom = (roomEdit) => {
     console.log("submit room");
     console.log(roomEdit);
-    changeRoomDD(roomEdit);
+    changeRoomDD(roomEdit, newId);
     setIsEdit(false);
   };
 
   const changeRoom = (name, value) => {
     console.log("change room");
-    let temp = [...roomEdit];
+    let temp = { ...roomEdit };
+    console.log(temp);
     temp[name] = value;
     setRoomEdit(temp);
     changeRoomDD(temp, newId);
@@ -91,7 +92,7 @@ export default EditRoom = ({
           />
         </MobContext>
       </MonsterContextReturn>
-      <button onClick={() => submitRoom(roomEdit, newId)}>Submit</button>
+      <button onClick={() => submitRoom(roomEdit)}>Submit</button>
       <button onClick={() => setIsEdit(false)}>Back</button>
     </>
   );
