@@ -60,7 +60,7 @@ export default RoomMonsters = ({ roomId, roomEdit, setRoomEdit, test }) => {
       tempMv[key] = x;
       setMobValues(tempMv);
     }
-    roomEdit.monsters = tempMv;
+    roomEdit.monsters = mobValues;
   };
   return (
     <>
