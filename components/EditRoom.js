@@ -26,7 +26,7 @@ export default EditRoom = ({
 
   const changeRoom = (name, value) => {
     console.log("change room");
-    let temp = { ...roomEdit };
+    let temp = [...roomEdit];
     temp[name] = value;
     setRoomEdit(temp);
     changeRoomDD(temp, newId);
