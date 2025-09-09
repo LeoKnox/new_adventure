@@ -19,6 +19,7 @@ export default EditRoom = ({
 
   const submitRoom = (roomEdit, newId) => {
     console.log("submit room");
+    console.log(roomEdit);
     changeRoomDD(roomEdit);
     setIsEdit(false);
   };
