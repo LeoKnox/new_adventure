@@ -30,6 +30,7 @@ let dungeonData = [
 export const changeRoomDD = (newRoom, newId) => {
   console.log("change room dd");
   console.log(newId);
+  console.log(newRoom);
   dungeonData[newId - 1] = newRoom;
   console.log(dungeonData);
 };
