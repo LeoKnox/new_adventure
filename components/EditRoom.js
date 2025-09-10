@@ -30,7 +30,7 @@ export default EditRoom = ({
     console.log(temp);
     temp[name] = value;
     setRoomEdit(temp);
-    changeRoomDD(temp, newId);
+    //changeRoomDD(temp, newId);
     setRooms(allRooms());
   };
 
