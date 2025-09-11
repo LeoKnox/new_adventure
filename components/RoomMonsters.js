@@ -65,7 +65,7 @@ export default RoomMonsters = ({ roomId, roomEdit, setRoomEdit, test }) => {
     temp.monsters = tempMv;
     console.log(temp);
     setRoomEdit(temp);
-    //roomEdit.monsters = mobValues;
+    roomEdit.monsters = mobValues;
   };
   return (
     <>
