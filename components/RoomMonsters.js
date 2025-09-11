@@ -39,14 +39,15 @@ export default RoomMonsters = ({ roomId, roomEdit, setRoomEdit, test }) => {
   };
   const changeMob = (newVal, key, value, name) => {
     console.log("change mob");
-    console.log(roomEdit);
+
     let tempMv = [...mobValues];
     let temp = value[0].split(":");
+    console.log(tempMv);
     if (name == "x") {
       console.log("X");
       temp[0] = newVal;
       delete tempMv[key];
-      tempMv[key].monsters = [`${temp[0]}:${temp[1]}`, value[1]];
+      tempMv[key] = [`${temp[0]}:${temp[1]}`, value[1]];
       setMobValues(tempMv);
     }
     if (name == "y") {
