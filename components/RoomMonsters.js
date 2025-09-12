@@ -53,7 +53,7 @@ export default RoomMonsters = ({ roomId, roomEdit, setRoomEdit, test }) => {
     if (name == "y") {
       console.log("Y");
       temp[1] = newVal;
-      tempMv[key] = [`${temp[0]}:${temp[1]}`, value[1]];
+      tempMv[key - 1] = [`${temp[0]}:${temp[1]}`, value[1]];
       setMobValues(tempMv);
     }
     if (name == "type") {
