@@ -17,12 +17,15 @@ export default EditRoom = ({
   const [currentRoom, setCurrentRoom] = useState(singleRoom(newId));
   const { id, name, x, y, height, width, monsters } = currentRoom;
   const changeValue = () => {
+    console.log("change value");
     let temp = currentRoom;
     temp["name"] = "red";
+    console.log(temp);
     setCurrentRoom(temp);
   };
   return (
     <>
+      {name}
       <p>
         <label>
           Name:{" "}
