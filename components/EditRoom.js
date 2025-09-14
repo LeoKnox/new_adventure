@@ -18,8 +18,10 @@ export default EditRoom = ({
   const { id, name, x, y, length, width, monsters } = currentRoom;
   return (
     <>
-      {name}
-      <button onClick={() => setCurrentRoom({ name: "red" })}>click</button>
+      <label>
+        Name: <input type="text" value={name} />
+      </label>
+      <button onClick={() => setCurrentRoom({ name: "red" })}>update</button>
     </>
   );
 };
