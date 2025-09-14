@@ -13,6 +13,7 @@ export default EditRoom = ({
   removeMob,
 }) => {
   console.log("edit room");
-
-  return <></>;
+  console.log(rooms);
+  const [currentRoom, setCurrentRoom] = useState(singleRoom(newId));
+  return <>{currentRoom}</>;
 };
