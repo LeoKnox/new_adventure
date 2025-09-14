@@ -12,10 +12,7 @@ export default Build = () => {
   const [isEdit, setIsEdit] = useState(false);
   const [newId, setNewId] = useState(1);
   const [rooms, setRooms] = useState(allRooms());
-  const [roomMob, setRoomMob] = useState({
-    [`1:4`]: 1,
-    [`1:5`]: 1,
-  });
+
   const editFunc = (roomEdit, newMob) => {
     console.log("edit func");
     console.log(newMob);
