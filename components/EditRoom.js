@@ -20,7 +20,7 @@ export default EditRoom = ({
     console.log("change value");
     console.log(e.target.value);
     let temp = currentRoom;
-    temp["name"] = "red";
+    temp["name"] = e.target.value;
     console.log(temp);
     setCurrentRoom(temp);
   };
