@@ -16,5 +16,10 @@ export default EditRoom = ({
   console.log(rooms);
   const [currentRoom, setCurrentRoom] = useState(singleRoom(newId));
   const { id, name, x, y, length, width, monsters } = currentRoom;
-  return <>{name}</>;
+  return (
+    <>
+      {name}
+      <button onClick={() => setCurrentRoom({ name: "red" })}>click</button>
+    </>
+  );
 };
