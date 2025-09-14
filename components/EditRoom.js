@@ -15,5 +15,6 @@ export default EditRoom = ({
   console.log("edit room");
   console.log(rooms);
   const [currentRoom, setCurrentRoom] = useState(singleRoom(newId));
-  return <>{currentRoom}</>;
+  const { id, name, x, y, length, width, monsters } = currentRoom;
+  return <>{name}</>;
 };
