@@ -18,10 +18,8 @@ export default EditRoom = ({
   const { id, name, x, y, height, width, monsters } = currentRoom;
   const changeValue = (e) => {
     console.log("change value");
-    console.log(e.target.value);
     let temp = currentRoom;
     temp[e.target.name] = e.target.value;
-    console.log(temp);
     setCurrentRoom({ ...temp });
   };
   return (
@@ -40,22 +38,46 @@ export default EditRoom = ({
       </p>
       <p>
         <label>
-          X: <input type="text" value={x} />
+          X:{" "}
+          <input
+            type="number"
+            name="x"
+            onChange={(e) => changeValue(e)}
+            value={x}
+          />
         </label>
       </p>
       <p>
         <label>
-          Y: <input type="text" value={y} />
+          Y:{" "}
+          <input
+            type="number"
+            name="y"
+            onChange={(e) => changeValue(e)}
+            value={y}
+          />
         </label>
       </p>
       <p>
         <label>
-          Width: <input type="text" value={width} />
+          Width:{" "}
+          <input
+            type="number"
+            name="width"
+            onChange={(e) => changeValue(e)}
+            value={width}
+          />
         </label>
       </p>
       <p>
         <label>
-          Height: <input type="text" value={height} />
+          Height:{" "}
+          <input
+            type="number"
+            name="height"
+            onChange={(e) => changeValue(e)}
+            value={height}
+          />
         </label>
       </p>
       <button onClick={() => setCurrentRoom({ name: "red" })}>update</button>
