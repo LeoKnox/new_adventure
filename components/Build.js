@@ -32,7 +32,7 @@ export default Build = () => {
   const submitRoom = (newRoom) => {
     console.log("submit room");
     //let temp = addRoom(name, width, height, x, y);
-    setRooms({...newRoom});
+    setRooms({ ...newRoom });
   };
   const removeMob = (key) => {
     console.log("remove mob");
@@ -53,6 +53,7 @@ export default Build = () => {
           setRooms={setRooms}
           editFunc={editFunc}
           rooms={rooms}
+          submitRoom={submitRoom}
           removeMob={removeMob}
         />
       ) : (
