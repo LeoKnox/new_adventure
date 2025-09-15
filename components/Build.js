@@ -33,7 +33,7 @@ export default Build = () => {
     console.log("submit room");
     console.log(newRoom);
     console.log(rooms);
-    let temp = { ...rooms };
+    let temp = rooms;
     temp[1] = newRoom;
     console.log(temp);
 
