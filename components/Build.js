@@ -32,8 +32,10 @@ export default Build = () => {
   const submitRoom = (newRoom) => {
     console.log("submit room");
     console.log(newRoom);
+    let temp = { ...allRooms };
+    temp[1] = newRoom;
     //let temp = addRoom(name, width, height, x, y);
-    setRooms({ ...newRoom });
+    setRooms({ ...temp });
   };
   const removeMob = (key) => {
     console.log("remove mob");
