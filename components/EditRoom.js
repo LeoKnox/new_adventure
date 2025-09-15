@@ -18,9 +18,7 @@ export default EditRoom = ({
   const { id, name, x, y, height, width, monsters } = currentRoom;
   const changeValue = (e) => {
     console.log("change value");
-    let temp = currentRoom;
-    temp[e.target.name] = e.target.value;
-    setCurrentRoom({ ...temp });
+    setCurrentRoom({ ...currentRoom, [e.target.name]: [e.target.value] });
   };
   return (
     <>
