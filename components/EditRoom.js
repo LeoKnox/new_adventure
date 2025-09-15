@@ -13,7 +13,6 @@ export default EditRoom = ({
   removeMob,
 }) => {
   console.log("edit room");
-  console.log(rooms);
   const [currentRoom, setCurrentRoom] = useState(singleRoom(newId));
   const { id, name, x, y, height, width, monsters } = currentRoom;
   const changeValue = (e) => {
@@ -78,7 +77,7 @@ export default EditRoom = ({
           />
         </label>
       </p>
-      <button onClick={() => setCurrentRoom({ name: "red" })}>update</button>
+      <button onClick={() => submitRoom(currentRoom)}>update</button>
       <button onClick={() => setIsEdit(false)}>Back</button>
     </>
   );
