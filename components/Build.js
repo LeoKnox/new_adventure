@@ -31,6 +31,7 @@ export default Build = () => {
   };
   const submitRoom = (newRoom) => {
     console.log("submit room");
+    console.log(newRoom);
     //let temp = addRoom(name, width, height, x, y);
     setRooms({ ...newRoom });
   };
