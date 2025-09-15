@@ -20,7 +20,7 @@ export default EditRoom = ({
     console.log("change value");
     console.log(e.target.value);
     let temp = currentRoom;
-    temp["name"] = e.target.value;
+    temp[e.target.name] = e.target.value;
     console.log(temp);
     setCurrentRoom({ ...temp });
   };
@@ -30,7 +30,12 @@ export default EditRoom = ({
       <p>
         <label>
           Name:{" "}
-          <input type="text" onChange={(e) => changeValue(e)} value={name} />
+          <input
+            type="text"
+            name="name"
+            onChange={(e) => changeValue(e)}
+            value={name}
+          />
         </label>
       </p>
       <p>
