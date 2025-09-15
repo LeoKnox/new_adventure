@@ -22,7 +22,7 @@ export default EditRoom = ({
     let temp = currentRoom;
     temp["name"] = e.target.value;
     console.log(temp);
-    setCurrentRoom(temp);
+    setCurrentRoom({ ...temp });
   };
   return (
     <>
