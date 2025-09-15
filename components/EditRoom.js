@@ -81,6 +81,7 @@ export default EditRoom = ({
         </label>
       </p>
       <button onClick={() => setCurrentRoom({ name: "red" })}>update</button>
+      <button onClick={() => setIsEdit(false)}>Back</button>
     </>
   );
 };
