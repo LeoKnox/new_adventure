@@ -34,6 +34,7 @@ export default Build = () => {
     console.log(newRoom);
     let temp = { ...allRooms };
     temp[1] = newRoom;
+    console.log(rooms);
     //let temp = addRoom(name, width, height, x, y);
     setRooms({ ...temp });
   };
