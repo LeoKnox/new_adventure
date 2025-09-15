@@ -10,6 +10,7 @@ export default EditRoom = ({
   rooms,
   setRooms,
   editFunc,
+  submitRoom,
   removeMob,
 }) => {
   console.log("edit room");
