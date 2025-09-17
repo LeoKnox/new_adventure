@@ -20,7 +20,12 @@ export default RoomMonsters = ({ monsters, mId }) => {
         <>
           <p>
             X:
-            <input type="number" value={monster.split(":")[1]} />
+            <input
+              type="number"
+              id={key}
+              name="x"
+              value={monster.split(":")[1]}
+            />
           </p>
           <p>
             Y: <input type="number" value={monster.split(":")[0]} />
