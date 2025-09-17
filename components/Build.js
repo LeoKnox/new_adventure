@@ -34,6 +34,7 @@ export default Build = () => {
     let temp = rooms;
     temp[1] = newRoom;
     setRooms(temp);
+    setIsEdit(!isEdit);
   };
   const removeMob = (key) => {
     console.log("remove mob");
