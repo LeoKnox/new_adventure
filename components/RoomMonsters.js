@@ -18,7 +18,7 @@ export default RoomMonsters = ({ monsters, mId }) => {
       {JSON.stringify(monsters)}
       {Object.keys(monsters).map((monster) => (
         <p>
-          {monster}:{monsters[monster]}
+          {monster.split(":")[0]}:{monsters[monster]}
         </p>
       ))}
     </>
