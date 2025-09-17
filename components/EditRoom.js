@@ -4,7 +4,7 @@ import { MonsterContextReturn } from "./RoomContext.js";
 import RoomMonsters from "./RoomMonsters.js";
 import { singleRoom, changeRoomDD, allRooms } from "./dungeonData.js";
 
-export default EditRoom = ({ newId = 1, setIsEdit, editFunc, submitRoom }) => {
+export default EditRoom = ({ newId = 1, setIsEdit, submitRoom }) => {
   console.log("edit room");
   const [currentRoom, setCurrentRoom] = useState(singleRoom(newId));
   const { id, name, x, y, height, width, monsters } = currentRoom;
@@ -70,6 +70,7 @@ export default EditRoom = ({ newId = 1, setIsEdit, editFunc, submitRoom }) => {
           />
         </label>
       </p>
+      <RoomMonsters />
       <button onClick={() => submitRoom(currentRoom)}>update</button>
       <button onClick={() => setIsEdit(false)}>Back</button>
     </>
