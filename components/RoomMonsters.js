@@ -16,6 +16,9 @@ export default RoomMonsters = ({ monsters }) => {
     <>
       <p>room monsters</p>
       {JSON.stringify(monsters)}
+      {Object.keys(monsters).map((monster) => (
+        <p>{monster}</p>
+      ))}
     </>
   );
 };
