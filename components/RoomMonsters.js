@@ -18,7 +18,11 @@ export default RoomMonsters = ({ monsters, mId }) => {
       {JSON.stringify(monsters)}
       {Object.keys(monsters).map((monster) => (
         <p>
-          {monster.split(":")[0]}:{monsters[monster]}
+          X:
+          <input type="number" value={monster.split(":")[1]} />
+          Y: <input type="number" value={monster.split(":")[0]} />
+          <input type="number" value={monsters[monster]} />
+          {monsters[monster]}
         </p>
       ))}
     </>
