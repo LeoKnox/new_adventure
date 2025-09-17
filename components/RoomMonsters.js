@@ -8,13 +8,14 @@ import {
   singleRoom,
 } from "./dungeonData.js";
 
-export default RoomMonsters = () => {
+export default RoomMonsters = (monsters) => {
   //const [mobValues, setMobValues] = useState(Object.entries(roomEdit.monsters));
   //const [mobSelect, setMobSelect] = useState(2);
   //const { doors, incDoors } = useMob();
   return (
     <>
       <p>room monsters</p>
+      {JSON.stringify(monsters)}
     </>
   );
 };
