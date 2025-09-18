@@ -1,85 +1,62 @@
-import { useContext, useState, useCallback } from "react";
-import { MobContext } from "./MobContext.js";
-import { MonsterContextReturn } from "./RoomContext.js";
-import RoomMonsters from "./RoomMonsters.js";
-import { singleRoom, changeRoomDD, allRooms } from "./dungeonData.js";
+import { useState } from "react";
+import { useMob } from "./MobContext.js";
+import { addMonsterContext } from "./RoomContext.js";
+import {
+  deleteMonsterDD,
+  addMonsterDD,
+  editMonsterDD,
+  singleRoom,
+} from "./dungeonData.js";
 
-export default EditRoom = ({ newId = 1, setIsEdit, submitRoom }) => {
-  console.log("edit room");
-  const [currentRoom, setCurrentRoom] = useState(singleRoom(newId));
-  const [tempMonsters, setTempMonsters] = useState(currentRoom.monsters);
-  const { id, name, x, y, height, width, monsters } = currentRoom;
-  const changeValue = (e) => {
-    console.log("change value");
-    setCurrentRoom({ ...currentRoom, [e.target.name]: [e.target.value] });
-  };
-  const changeMob = (id, value, name, newValue) => {
-    console.log("change mob");
-    let temp = tempMonsters;
-    name == "monsterValue" || (temp[id] = newValue);
-    console.log(temp);
-  };
+export default RoomMonsters = ({ monsters, mId, changeMob }) => {
+  //const [mobValues, setMobValues] = useState(Object.entries(roomEdit.monsters));
+  //const [mobSelect, setMobSelect] = useState(2);
+  //const { doors, incDoors } = useMob();
   return (
     <>
-      {name}
-      <p>
-        <label>
-          Name:{" "}
-          <input
-            type="text"
-            name="name"
-            onChange={(e) => changeValue(e)}
-            value={name}
-          />
-        </label>
-      </p>
-      <p>
-        <label>
-          X:{" "}
-          <input
-            type="number"
-            name="x"
-            onChange={(e) => changeValue(e)}
-            value={x}
-          />
-        </label>
-      </p>
-      <p>
-        <label>
-          Y:{" "}
-          <input
-            type="number"
-            name="y"
-            onChange={(e) => changeValue(e)}
-            value={y}
-          />
-        </label>
-      </p>
-      <p>
-        <label>
-          Width:{" "}
-          <input
-            type="number"
-            name="width"
-            onChange={(e) => changeValue(e)}
-            value={width}
-          />
-        </label>
-      </p>
-      <p>
-        <label>
-          Height:{" "}
-          <input
-            type="number"
-            name="height"
-            onChange={(e) => changeValue(e)}
-            value={height}
-          />
-        </label>
-      </p>
-      <RoomMonsters monsters={tempMonsters} changeMob={changeMob} />
-      <button onClick={() => submitRoom(currentRoom)}>update</button>
-      <button onClick={() => setIsEdit(false)}>Back</button>
+      <p>room monsters</p>
+      {JSON.stringify(monsters)}
+      {Object.keys(monsters).map((monster) => (
+        <>
+          <p>
+            X:
+            <input
+              type="number"
+              id={monster}
+              name="x"
+              onChange={(e) =>
+                changeMob(
+                  monster,
+                  monsters[monster],
+                  e.target.name,
+                  e.target.value
+                )
+              }
+              value={monster.split(":")[1]}
+            />
+          </p>
+          <p>
+            Y: <input type="number" value={monster.split(":")[0]} />
+          </p>
+          <p>
+            Monster:{" "}
+            <input
+              type="number"
+              name="monsterValue"
+              onChange={(e) =>
+                changeMob(
+                  monster,
+                  monsters[monster],
+                  e.target.name,
+                  e.target.value
+                )
+              }
+              value={monsters[monster]}
+            />
+            {monsters[monster]}
+          </p>
+        </>
+      ))}
     </>
   );
 };
