@@ -8,7 +8,7 @@ import {
   singleRoom,
 } from "./dungeonData.js";
 
-export default RoomMonsters = ({ monsters, mId }) => {
+export default RoomMonsters = ({ monsters, mId, changeMob }) => {
   //const [mobValues, setMobValues] = useState(Object.entries(roomEdit.monsters));
   //const [mobSelect, setMobSelect] = useState(2);
   //const { doors, incDoors } = useMob();
@@ -22,8 +22,9 @@ export default RoomMonsters = ({ monsters, mId }) => {
             X:
             <input
               type="number"
-              id={key}
+              id={monster}
               name="x"
+              onChange={changeMob((key = monster), monsters[monster])}
               value={monster.split(":")[1]}
             />
           </p>
