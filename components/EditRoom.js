@@ -13,9 +13,11 @@ export default EditRoom = ({ newId = 1, setIsEdit, submitRoom }) => {
     console.log("change value");
     setCurrentRoom({ ...currentRoom, [e.target.name]: [e.target.value] });
   };
-  const changeMob = (id, name) => {
+  const changeMob = (id, value, name, newValue) => {
     console.log("change mob");
-    console.log(id + ":" + name);
+    let temp = tempMonsters;
+    temp[id] = 3;
+    console.log(temp);
   };
   return (
     <>
