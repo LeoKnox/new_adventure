@@ -7,10 +7,15 @@ import { singleRoom, changeRoomDD, allRooms } from "./dungeonData.js";
 export default EditRoom = ({ newId = 1, setIsEdit, submitRoom }) => {
   console.log("edit room");
   const [currentRoom, setCurrentRoom] = useState(singleRoom(newId));
+  const [tempMonsters, setTempMonsters] = useState(currentRoom.monsters);
   const { id, name, x, y, height, width, monsters } = currentRoom;
   const changeValue = (e) => {
     console.log("change value");
     setCurrentRoom({ ...currentRoom, [e.target.name]: [e.target.value] });
+  };
+  const changeMob = (id, name) => {
+    console.log("change mob");
+    console.log(id + ":" + name);
   };
   return (
     <>
@@ -70,7 +75,7 @@ export default EditRoom = ({ newId = 1, setIsEdit, submitRoom }) => {
           />
         </label>
       </p>
-      <RoomMonsters monsters={currentRoom.monsters} />
+      <RoomMonsters monsters={tempMonsters} changeMob={changeMob} />
       <button onClick={() => submitRoom(currentRoom)}>update</button>
       <button onClick={() => setIsEdit(false)}>Back</button>
     </>
