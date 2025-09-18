@@ -25,7 +25,12 @@ export default RoomMonsters = ({ monsters, mId, changeMob }) => {
               id={monster}
               name="x"
               onChange={(e) =>
-                changeMob(monster, monsters[monster], e.target.name)
+                changeMob(
+                  monster,
+                  monsters[monster],
+                  e.target.name,
+                  e.target.value
+                )
               }
               value={monster.split(":")[1]}
             />
