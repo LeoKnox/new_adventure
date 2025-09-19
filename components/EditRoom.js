@@ -15,9 +15,12 @@ export default EditRoom = ({ newId = 1, setIsEdit, submitRoom }) => {
   };
   const changeMob = (id, value, name, newValue) => {
     console.log("change mob");
-    let temp = tempMonsters;
-    temp[id] = 3;
+    let temp = { ...tempMonsters };
+    if (name == "monsterValue") {
+      temp[id] = 9;
+    }
     console.log(temp);
+    setTempMonsters(temp);
   };
   return (
     <>
