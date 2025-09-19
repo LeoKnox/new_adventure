@@ -20,8 +20,9 @@ export default EditRoom = ({ newId = 1, setIsEdit, submitRoom }) => {
       temp[id] = newValue;
     }
     if (name == "x") {
-      let newId = "4:4";
-      temp[newId] = 99;
+      let newId = id.split(":");
+      console.log(newId);
+      //temp[newId] = 99;
     }
     console.log(temp);
     setTempMonsters(temp);
