@@ -19,6 +19,10 @@ export default EditRoom = ({ newId = 1, setIsEdit, submitRoom }) => {
     if (name == "monsterValue") {
       temp[id] = newValue;
     }
+    if (name == "x") {
+      let newId = "4:4";
+      temp[newId] = 99;
+    }
     console.log(temp);
     setTempMonsters(temp);
   };
