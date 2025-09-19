@@ -21,6 +21,8 @@ export default EditRoom = ({ newId = 1, setIsEdit, submitRoom }) => {
     }
     if (name == "x") {
       let newId = id.split(":");
+      newId[1] = newValue;
+      newId = newId.join(":");
       console.log(newId);
       //temp[newId] = 99;
     }
