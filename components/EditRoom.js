@@ -25,7 +25,8 @@ export default EditRoom = ({ newId = 1, setIsEdit, submitRoom }) => {
       newId = newId.join(":");
       console.log(newId);
       temp[newId] = 99;
-      setCurrentRoom([id], ...tempMonsters);
+      delete tempMonsters[id];
+      setCurrentRoom(tempMonsters);
     }
     console.log(temp);
     setTempMonsters(temp);
