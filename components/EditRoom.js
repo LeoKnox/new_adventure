@@ -25,6 +25,7 @@ export default EditRoom = ({ newId = 1, setIsEdit, submitRoom }) => {
       newId = newId.join(":");
       console.log(newId);
       temp[newId] = 99;
+      setCurrentRoom(id, ...currentRoom);
     }
     console.log(temp);
     setTempMonsters(temp);
