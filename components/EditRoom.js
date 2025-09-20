@@ -23,7 +23,7 @@ export default EditRoom = ({ newId = 1, setIsEdit, submitRoom }) => {
       let newId = id.split(":");
       newId[1] = newValue;
       newId = newId.join(":");
-      console.log(newId);
+      console.log(id);
       temp[newId] = 99;
       delete tempMonsters[id];
       setCurrentRoom(tempMonsters);
