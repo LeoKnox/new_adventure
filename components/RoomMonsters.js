@@ -15,7 +15,8 @@ export default RoomMonsters = ({ monsters, mId, changeMob }) => {
   const createMonster = (e) => {
     console.log("create room");
     e.preventDefault();
-    console.log(e.target.name);
+    const formData = new FormData(event.target);
+    console.log(JSON.stringify(formData));
   };
   return (
     <>
