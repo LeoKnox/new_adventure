@@ -14,6 +14,7 @@ export default RoomMonsters = ({ monsters, mId, changeMob }) => {
   //const { doors, incDoors } = useMob();
   const createMonster = (e) => {
     console.log("create room");
+    e.preventDefault();
     console.log(e.target.name);
   };
   return (
