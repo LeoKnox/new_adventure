@@ -12,6 +12,10 @@ export default RoomMonsters = ({ monsters, mId, changeMob }) => {
   //const [mobValues, setMobValues] = useState(Object.entries(roomEdit.monsters));
   //const [mobSelect, setMobSelect] = useState(2);
   //const { doors, incDoors } = useMob();
+  const createRoom = (e) => {
+    console.log("create room");
+    console.log(e.target.name);
+  };
   return (
     <>
       <p>room monsters</p>
@@ -72,15 +76,17 @@ export default RoomMonsters = ({ monsters, mId, changeMob }) => {
         </>
       ))}
       <p>new room</p>
-      <p>
-        <label>X</label>
-        <input type="number" name="X" placeholder="0" />
-        <label>Y</label>
-        <input type="number" name="Y" placeholder="0" />
-        <label>Monster</label>
-        <input type="number" name="monster" placeholder="1" />
-      </p>
-      <button>Create</button>
+      <form onSubmit={(e) => createRoom(e)}>
+        <p>
+          <label>X</label>
+          <input type="number" name="X" placeholder="0" />
+          <label>Y</label>
+          <input type="number" name="Y" placeholder="0" />
+          <label>Monster</label>
+          <input type="number" name="monster" placeholder="1" />
+        </p>
+        <button type="submit">Create</button>
+      </form>
     </>
   );
 };
