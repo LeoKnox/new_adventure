@@ -71,6 +71,16 @@ export default RoomMonsters = ({ monsters, mId, changeMob }) => {
           </p>
         </>
       ))}
+      <p>new room</p>
+      <p>
+        <label>X</label>
+        <input type="number" name="X" />
+        <label>Y</label>
+        <input type="number" name="Y" />
+        <label>Monster</label>
+        <input type="number" name="monster" />
+      </p>
+      <button>Create</button>
     </>
   );
 };
