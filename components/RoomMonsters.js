@@ -84,9 +84,9 @@ export default RoomMonsters = ({ monsters, mId, changeMob }) => {
           <label>X</label>
           <input type="number" name="X" value={newMob.x} />
           <label>Y</label>
-          <input type="number" name="Y" placeholder="0" />
+          <input type="number" name="Y" value={newMob.y} />
           <label>Monster</label>
-          <input type="number" name="monster" placeholder="1" />
+          <input type="number" name="monster" value={newMob.mob} />
         </p>
         <button type="submit">Create</button>
       </form>
