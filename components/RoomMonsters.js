@@ -21,6 +21,7 @@ export default RoomMonsters = ({ monsters, mId, changeMob }) => {
   };
   const updateMob = (e) => {
     let temp = { ...newMob };
+    console.log(temp);
     temp[e.target.name] = e.target.value;
     setNewMob(temp);
   };
