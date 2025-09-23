@@ -92,14 +92,14 @@ export default RoomMonsters = ({ monsters, mId, changeMob }) => {
           <label>X</label>
           <input
             type="number"
-            name="X"
+            name="x"
             value={newMob.x}
             onChange={(e) => updateMob(e)}
           />
           <label>Y</label>
-          <input type="number" name="Y" value={newMob.y} />
+          <input type="number" name="y" value={newMob.y} />
           <label>Monster</label>
-          <input type="number" name="monster" value={newMob.mob} />
+          <input type="number" name="mob" value={newMob.mob} />
         </p>
         <button type="submit">Create</button>
       </form>
