@@ -19,6 +19,11 @@ export default RoomMonsters = ({ monsters, mId, changeMob }) => {
     const formData = e.target.name.x;
     console.log(formData);
   };
+  const updateMob = (e) => {
+    let temp = { ...newMob };
+    temp[e.target.name] = e.target.value;
+    setNewMob(temp);
+  };
   return (
     <>
       <p>room monsters</p>
@@ -82,7 +87,12 @@ export default RoomMonsters = ({ monsters, mId, changeMob }) => {
       <form onSubmit={createMonster}>
         <p>
           <label>X</label>
-          <input type="number" name="X" value={newMob.x} />
+          <input
+            type="number"
+            name="X"
+            value={newMob.x}
+            onChange={(e) => updateMob(e)}
+          />
           <label>Y</label>
           <input type="number" name="Y" value={newMob.y} />
           <label>Monster</label>
