@@ -8,7 +8,12 @@ import {
   singleRoom,
 } from "./dungeonData.js";
 
-export default RoomMonsters = ({ monsters, mId, changeMob }) => {
+export default RoomMonsters = ({
+  monsters,
+  setTempMonsters,
+  mId,
+  changeMob,
+}) => {
   //const [mobValues, setMobValues] = useState(Object.entries(roomEdit.monsters));
   //const [mobSelect, setMobSelect] = useState(2);
   //const { doors, incDoors } = useMob();
@@ -17,7 +22,7 @@ export default RoomMonsters = ({ monsters, mId, changeMob }) => {
     console.log("create room");
     e.preventDefault();
     let temp = `${newMob.x}:${newMob.y}`;
-    console.log({ [temp]: newMob.mob });
+    setTempMonsters({ [temp]: newMob.mob });
   };
   const updateMob = (e) => {
     let temp = { ...newMob };
