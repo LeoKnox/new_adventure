@@ -93,8 +93,14 @@ export default EditRoom = ({ newId = 1, setIsEdit, submitRoom }) => {
           />
         </label>
       </p>
-      <RoomMonsters monsters={tempMonsters} setTempMonseters={setTempMonsters} changeMob={changeMob} />
-      <button onClick={() => submitRoom(currentRoom)}>update</button>
+      <RoomMonsters
+        monsters={tempMonsters}
+        setTempMonsters={setTempMonsters}
+        changeMob={changeMob}
+      />
+      <button onClick={() => submitRoom({ ...currentRoom, monsters })}>
+        update
+      </button>
       <button onClick={() => setIsEdit(false)}>Back</button>
     </>
   );
