@@ -16,7 +16,7 @@ export default RoomMonsters = ({ monsters, mId, changeMob }) => {
   const createMonster = (e) => {
     console.log("create room");
     e.preventDefault();
-    let temp = `${newMob.x}:${newMob.y}:`;
+    let temp = `${newMob.x}:${newMob.y}`;
     console.log({ [temp]: newMob.mob });
   };
   const updateMob = (e) => {
