@@ -85,7 +85,7 @@ export default RoomMonsters = ({
               }
               value={monsters[monster]}
             />
-            {monsters[monster]}
+            <button>X</button>
           </p>
         </>
       ))}
