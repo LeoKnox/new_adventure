@@ -29,9 +29,9 @@ export default Build = () => {
     let temp = deleteRoom(deleteId);
     setRooms(temp);
   };
-  const submitRoom = (newRoom) => {
+  const submitRoom = (newRoom, monsters) => {
     console.log("submit room");
-    let temp = rooms;
+    let temp = { ...rooms, monsters: { monsters } };
     temp[1] = newRoom;
     setRooms(temp);
     setIsEdit(!isEdit);
