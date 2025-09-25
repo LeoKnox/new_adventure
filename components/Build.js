@@ -31,19 +31,15 @@ export default Build = () => {
   };
   const submitRoom = (newRoom, monsters) => {
     console.log("submit room");
-    console.log(monsters);
     let temp = rooms;
     temp[1] = newRoom;
     temp[1].monsters = monsters;
-    console.log(temp);
     setRooms(temp);
     setIsEdit(!isEdit);
   };
   const removeMob = (key) => {
     console.log("remove mob");
-    console.log(newId);
     let temp = rooms[newId];
-    console.log(temp);
     let temptwo = temp.monsters;
     delete temptwo[key];
     setRooms(temp);
