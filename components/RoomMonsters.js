@@ -88,7 +88,7 @@ export default RoomMonsters = ({
               }
               value={monsters[monster]}
             />
-            <button name="delete" onClick={() => delteMob()}>
+            <button name="delete" onClick={() => deleteMob()}>
               X
             </button>
           </p>
@@ -114,3 +114,4 @@ export default RoomMonsters = ({
     </>
   );
 };
+
