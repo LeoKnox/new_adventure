@@ -25,8 +25,9 @@ export default RoomMonsters = ({
   };
   const deleteMob = () => {
     console.log("delete mob");
-    let temp = { ...tempMonsters };
-    tempMonsters.delete(`1:4`);
+    let temp = { ...monsters };
+    monsters.delete(`1:4`);
+    setTempMonsters(temp);
   };
   const updateMob = (e) => {
     let temp = { ...newMob };
@@ -114,4 +115,3 @@ export default RoomMonsters = ({
     </>
   );
 };
-
