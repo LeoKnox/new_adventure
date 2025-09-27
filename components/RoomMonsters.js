@@ -23,10 +23,10 @@ export default RoomMonsters = ({
     monsters = { ...monsters, [temp]: newMob.mob };
     setTempMonsters(monsters);
   };
-  const deleteMob = () => {
+  const deleteMob = (monster) => {
     console.log("delete mob");
     let temp = { ...monsters };
-    delete monsters[`1:4`];
+    delete monsters[monster];
     setNewMob(temp);
   };
   const updateMob = (e) => {
@@ -89,7 +89,7 @@ export default RoomMonsters = ({
               }
               value={monsters[monster]}
             />
-            <button name="delete" onClick={() => deleteMob()}>
+            <button name="delete" onClick={() => deleteMob(monster)}>
               X
             </button>
           </p>
