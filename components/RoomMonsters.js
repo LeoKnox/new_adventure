@@ -26,7 +26,7 @@ export default RoomMonsters = ({
   const deleteMob = () => {
     console.log("delete mob");
     let temp = { ...monsters };
-    monsters.delete(`1:4`);
+    delete monsters[`1:4`];
     setTempMonsters(temp);
   };
   const updateMob = (e) => {
