@@ -29,11 +29,12 @@ export default Build = () => {
     let temp = deleteRoom(deleteId);
     setRooms(temp);
   };
-  const submitRoom = (newRoom, monsters) => {
+  const submitRoom = (newRoom) => {
     console.log("submit room");
-    let temp = rooms;
-    temp[1] = newRoom;
+    let temp = { ...rooms, newRoom };
+    //temp[1] = newRoom;
     console.log(newRoom);
+    console.log(temp);
     //temp[1].monsters = monsters;
     setRooms(temp);
     //setIsEdit(!isEdit);
@@ -53,7 +54,7 @@ export default Build = () => {
       ) : (
         <>
           <AllRooms rooms={rooms} removeRoom={removeRoom} loadEdit={loadEdit} />
-          <NewRoom submitRoom={submitRoom} rooms={rooms}/>
+          <NewRoom submitRoom={submitRoom} rooms={rooms} />
         </>
       )}
     </>
