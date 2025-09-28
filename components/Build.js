@@ -33,6 +33,7 @@ export default Build = () => {
     console.log("submit room");
     let temp = rooms;
     temp[1] = newRoom;
+    console.log(newRoom);
     //temp[1].monsters = monsters;
     setRooms(temp);
     //setIsEdit(!isEdit);
