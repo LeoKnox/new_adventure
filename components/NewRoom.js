@@ -2,7 +2,7 @@ import { useState } from "react";
 //import { addRoom } from "./dungeonData.js";
 
 export default NewRoom = ({ submitRoom }) => {
-  const [name, setName] = useState("");
+  const [name, setName] = useState("empty");
   const [width, setWidth] = useState(0);
   const [height, setHeight] = useState(0);
   const [x, setX] = useState(0);
@@ -29,7 +29,6 @@ export default NewRoom = ({ submitRoom }) => {
         <input
           type="text"
           name="name"
-          placeHolder="empty"
           value={name}
           onChange={(e) => setName(e.target.value)}
         />
