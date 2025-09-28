@@ -53,7 +53,7 @@ export default Build = () => {
       ) : (
         <>
           <AllRooms rooms={rooms} removeRoom={removeRoom} loadEdit={loadEdit} />
-          <NewRoom submitRoom={(submitRoom, {})} />
+          <NewRoom submitRoom={submitRoom} rooms={rooms}/>
         </>
       )}
     </>
