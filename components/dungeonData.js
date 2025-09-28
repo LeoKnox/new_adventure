@@ -80,6 +80,6 @@ export const deleteRoom = (id = 1) => {
   console.log(id);
   return dungeonData;
 };
-export const singleRoom = (id = 1) => {
+export const singleRoom = (id) => {
   return dungeonData.find((room) => room.id == id);
 };
