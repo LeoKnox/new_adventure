@@ -30,8 +30,9 @@ export default Build = () => {
     setRooms(temp);
   };
   const submitRoom = (newRoom) => {
-    console.log("submit room");
-    let temp = { ...rooms, newRoom };
+    console.log("submit rooms");
+    let temp = rooms;
+    temp.push(newRoom);
     //temp[1] = newRoom;
     console.log(newRoom);
     console.log(temp);
