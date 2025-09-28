@@ -22,6 +22,7 @@ export default NewRoom = ({ submitRoom }) => {
         <input
           type="text"
           name="name"
+          placeHolder="white"
           value={name}
           onChange={(e) => setName(e.target.value)}
         />
