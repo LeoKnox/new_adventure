@@ -7,6 +7,13 @@ export default NewRoom = ({ submitRoom }) => {
   const [height, setHeight] = useState(0);
   const [x, setX] = useState(0);
   const [y, setY] = useState(0);
+  const [roomData, setRoomData] = useState({
+    name: "empty",
+    width: 0,
+    height: 0,
+    x: 0,
+    y: 0,
+  });
   const submit = () => {
     submitRoom(name, width, height, x, y);
     setName("");
@@ -22,7 +29,7 @@ export default NewRoom = ({ submitRoom }) => {
         <input
           type="text"
           name="name"
-          placeHolder="white"
+          placeHolder="empty"
           value={name}
           onChange={(e) => setName(e.target.value)}
         />
