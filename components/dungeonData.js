@@ -66,7 +66,7 @@ export const addRoom = (name, width, height, x, y) => {
     ...dungeonData,
     { id: newId, name: name, width: width, height: height, x: x, y: y },
   ];
-  return dungeonData;
+  //return dungeonData;
 };
 
 export const changeRoom = (newData = "chiiro") => {
