@@ -66,10 +66,14 @@ export const addRoom = (name, width, height, x, y) => {
     ...dungeonData,
     { id: newId, name: name, width: width, height: height, x: x, y: y },
   ];*/
-  dungeonData = [
-    ...dungeonData,
-    { id: newId, name: name, width: width, height: height, x: x, y: y },
-  ];
+  dungeonData.push({
+    id: 3,
+    name: name,
+    width: width,
+    height: height,
+    x: x,
+    y: y,
+  });
   //return dungeonData;
 };
 
