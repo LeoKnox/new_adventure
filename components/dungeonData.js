@@ -1,64 +1,94 @@
-import { useState, useEffect } from "react";
-import { allRooms, addRoom, changeRoom, singleRoom } from "./dungeonData.js";
-import AllRooms from "./AllRooms.js";
-import { MonsterContextReturn } from "./RoomContext.js";
-import { deleteRoom } from "./dungeonData.js";
-import NewRoom from "./NewRoom.js";
-import EditRoom from "./EditRoom.js";
+import { DemonSVG } from "./svgData";
 
-export default Build = () => {
-  console.log("build.js");
-  //console.log(singleRoom(1).monsters);
-  const [isEdit, setIsEdit] = useState(false);
-  const [newId, setNewId] = useState(1);
-  const [rooms, setRooms] = useState(allRooms());
+let dungeonData = [
+  {
+    id: 1,
+    name: "entry",
+    width: 9,
+    height: 5,
+    x: 5,
+    y: 5,
+    monsters: {
+      [`2:4`]: 1,
+      [`3:5`]: 1,
+    },
+  },
+  {
+    id: 2,
+    name: "entry",
+    width: 7,
+    height: 8,
+    x: 6,
+    y: 6,
+    monsters: {
+      [`1:4`]: 1,
+      [`1:5`]: 1,
+    },
+  },
+];
 
-  const editFunc = (roomEdit, newMob) => {
-    console.log("edit func");
-    console.log(newMob);
-    roomEdit.monsters[`${newMob.x}:${newMob.y}`] = 1;
-    setRooms(roomEdit);
-  };
-  const loadEdit = (roomId = 1) => {
-    let temp = singleRoom(roomId);
-    setNewId(roomId);
-    setIsEdit(!isEdit);
-  };
-  const removeRoom = (deleteId) => {
-    console.log(deleteRoom(1));
-    let temp = deleteRoom(deleteId);
-    setRooms(temp);
-  };
-  const submitRoom = (newRoom) => {
-    console.log("submit rooms");
-    let temp = rooms;
-    temp.push(newRoom);
-    //temp[1] = newRoom;
-    console.log(newRoom);
-    console.log(temp);
-    //temp[1].monsters = monsters;
-    addRoom(temp);
-    setRooms(allRooms());
-    //setIsEdit(!isEdit);
-  };
-  const removeMob = (key) => {
-    console.log("remove mob");
-    let temp = rooms[newId];
-    let temptwo = temp.monsters;
-    delete temptwo[key];
-    setRooms(temp);
-  };
-  return (
-    <>
-      <p onClick={() => setIsEdit(!isEdit)}>build a dungeon</p>
-      {isEdit ? (
-        <EditRoom newId={newId} setIsEdit={setIsEdit} submitRoom={submitRoom} />
-      ) : (
-        <>
-          <AllRooms rooms={rooms} removeRoom={removeRoom} loadEdit={loadEdit} />
-          <NewRoom submitRoom={submitRoom} rooms={rooms} />
-        </>
-      )}
-    </>
-  );
+export const changeRoomDD = (newRoom, newId) => {
+  console.log("change room dd");
+  console.log(newId);
+  console.log(newRoom);
+  dungeonData[newId - 1] = newRoom;
+  console.log(dungeonData);
+};
+
+export const deleteMonsterDD = (monsterId, roomId) => {
+  console.log("delete monster");
+  delete dungeonData[roomId - 1].monsters[monsterId];
+};
+
+export const addMonsterDD = (roomId, newMonsterID, mobSelect) => {
+  console.log("add monster");
+  dungeonData[roomId - 1].monsters[`${newMonsterID[1]}:${newMonsterID[0]}`] =
+    mobSelect;
+};
+
+export const editMonsterDD = (mobValues, roomId) => {
+  console.log("edit Monster");
+  let temp = Object.fromEntries(mobValues);
+  dungeonData[roomId - 1].monsters = temp;
+};
+
+export const allRooms = () => {
+  console.log("all rooms");
+  console.log(dungeonData);
+  return dungeonData;
+};
+
+export const addRoom = (name, width, height, x, y) => {
+  /*newId = dungeonData.length
+    ? dungeonData[dungeonData.length - 1].id + 1
+    : (newId = 1);
+  dungeonData = [
+    ...dungeonData,
+    { id: newId, name: name, width: width, height: height, x: x, y: y },
+  ];*/
+  dungeonData.push({
+    id: 3,
+    name: name,
+    width: width,
+    height: height,
+    x: x,
+    y: y,
+  });
+  console.log(dungeonData);
+  //return dungeonData;
+};
+
+export const changeRoom = (newData = "chiiro") => {
+  dungeonData = dungeonData.map((room) => (room.id == 1 ? newData : room));
+  return dungeonData;
+};
+
+export const deleteRoom = (id = 1) => {
+  console.log("delete room");
+  dungeonData = dungeonData.filter((room) => room.id != id);
+  console.log(id);
+  return dungeonData;
+};
+export const singleRoom = (id) => {
+  return dungeonData.find((room) => room.id == id);
 };
