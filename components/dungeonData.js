@@ -74,6 +74,7 @@ export const addRoom = (name, width, height, x, y) => {
     x: x,
     y: y,
   });
+  console.log(dungeonData);
   //return dungeonData;
 };
 
