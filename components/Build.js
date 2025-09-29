@@ -37,7 +37,7 @@ export default Build = () => {
     console.log(newRoom);
     console.log(temp);
     //temp[1].monsters = monsters;
-    addRoom({ temp });
+    //addRoom(temp);
     setRooms(allRooms());
     //setIsEdit(!isEdit);
   };
