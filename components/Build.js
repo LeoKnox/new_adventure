@@ -31,15 +31,9 @@ export default Build = () => {
   };
   const submitRoom = (newRoom) => {
     console.log("submit rooms");
-    let temp = rooms;
-    //temp.push(newRoom);
     addRoom(newRoom);
-    //temp[1] = newRoom;
-    console.log(newRoom);
-    //temp[1].monsters = monsters;
-    //addRoom(temp);
     setRooms(allRooms());
-    //setIsEdit(!isEdit);
+    console.log(rooms);
   };
   const removeMob = (key) => {
     console.log("remove mob");
