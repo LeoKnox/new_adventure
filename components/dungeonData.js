@@ -36,7 +36,7 @@ export const addRoom = (newRoom) => {
     ...dungeonData,
     { id: newId, name: name, width: width, height: height, x: x, y: y },
   ];*/
-  dungeonData.push({ ...newRoom, id: 3, monsters: {} });
+  dungeonData.push({ ...newRoom, id: 3 });
   console.log(dungeonData);
   //return dungeonData;
 };
