@@ -29,8 +29,8 @@ export default Build = () => {
     let temp = deleteRoom(deleteId);
     setRooms(temp);
   };
-  const submitRoom = (newRoom) => {
-    console.log("submit rooms");
+  const submitRoom = ({ newRoom }) => {
+    console.log("submit room");
     let temp = rooms;
     //temp.push(newRoom);
     addRoom(newRoom);
