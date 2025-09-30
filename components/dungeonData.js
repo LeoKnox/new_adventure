@@ -27,6 +27,19 @@ let dungeonData = [
   },
 ];
 
+export const addRoom = (newRoom) => {
+  /*newId = dungeonData.length
+    ? dungeonData[dungeonData.length - 1].id + 1
+    : (newId = 1);
+  dungeonData = [
+    ...dungeonData,
+    { id: newId, name: name, width: width, height: height, x: x, y: y },
+  ];*/
+  dungeonData.push(newRoom);
+  console.log(dungeonData);
+  //return dungeonData;
+};
+
 export const changeRoomDD = (newRoom, newId) => {
   console.log("change room dd");
   console.log(newId);
@@ -56,26 +69,6 @@ export const allRooms = () => {
   console.log("all rooms");
   console.log(dungeonData);
   return dungeonData;
-};
-
-export const addRoom = (name, width, height, x, y) => {
-  /*newId = dungeonData.length
-    ? dungeonData[dungeonData.length - 1].id + 1
-    : (newId = 1);
-  dungeonData = [
-    ...dungeonData,
-    { id: newId, name: name, width: width, height: height, x: x, y: y },
-  ];*/
-  dungeonData.push({
-    id: 3,
-    name: name,
-    width: width,
-    height: height,
-    x: x,
-    y: y,
-  });
-  console.log(dungeonData);
-  //return dungeonData;
 };
 
 export const changeRoom = (newData = "chiiro") => {
