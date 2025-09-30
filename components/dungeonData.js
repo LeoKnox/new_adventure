@@ -28,6 +28,7 @@ let dungeonData = [
 ];
 
 export const addRoom = (newRoom) => {
+  console.log("add room");
   /*newId = dungeonData.length
     ? dungeonData[dungeonData.length - 1].id + 1
     : (newId = 1);
@@ -35,7 +36,7 @@ export const addRoom = (newRoom) => {
     ...dungeonData,
     { id: newId, name: name, width: width, height: height, x: x, y: y },
   ];*/
-  dungeonData.push(newRoom);
+  dungeonData.push({ ...newRoom, id: 3, monsters: {} });
   console.log(dungeonData);
   //return dungeonData;
 };
