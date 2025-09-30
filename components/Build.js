@@ -32,10 +32,10 @@ export default Build = () => {
   const submitRoom = (newRoom) => {
     console.log("submit rooms");
     let temp = rooms;
-    temp.push(newRoom);
+    //temp.push(newRoom);
+    addRoom(newRoom);
     //temp[1] = newRoom;
     console.log(newRoom);
-    console.log(temp);
     //temp[1].monsters = monsters;
     //addRoom(temp);
     setRooms(allRooms());
