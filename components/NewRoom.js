@@ -1,7 +1,7 @@
 import { useState } from "react";
-//import { addRoom } from "./dungeonData.js";
+import { addRoom, allRooms } from "./dungeonData.js";
 
-export default NewRoom = ({ submitRoom }) => {
+export default NewRoom = ({ submitRoom, setRoom }) => {
   const [name, setName] = useState("empty");
   const [width, setWidth] = useState(0);
   const [height, setHeight] = useState(0);
@@ -16,6 +16,7 @@ export default NewRoom = ({ submitRoom }) => {
   });
   const submit = () => {
     addRoom({ name, width, height, x, y, monsters: {} });
+    setRoom(allRooms);
     setName("empty");
     setWidth(0);
     setHeight(0);
