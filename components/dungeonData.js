@@ -81,7 +81,7 @@ export const deleteRoom = (id = 1) => {
   console.log("delete room");
   dungeonData = dungeonData.filter((room) => room.id != id);
   console.log(id);
-  return dungeonData;
+  return { ...dungeonData };
 };
 export const singleRoom = (id) => {
   return dungeonData.find((room) => room.id == id);
