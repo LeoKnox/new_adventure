@@ -1,77 +1,88 @@
-import { useState } from "react";
-import { addRoom, allRooms } from "./dungeonData.js";
+import { DemonSVG } from "./svgData";
 
-export default NewRoom = ({ submitRoom, setRoom }) => {
-  const [name, setName] = useState("empty");
-  const [width, setWidth] = useState(0);
-  const [height, setHeight] = useState(0);
-  const [x, setX] = useState(0);
-  const [y, setY] = useState(0);
-  const [roomData, setRoomData] = useState({
-    name: "empty",
-    width: 0,
-    height: 0,
-    x: 0,
-    y: 0,
-  });
-  const submit = () => {
-    let temp = { id: 3, name, width, height, x, y, monsters: {} };
-    addRoom(temp);
-    setRoom(...allRooms());
-    setName("empty");
-    setWidth(0);
-    setHeight(0);
-    setX(0);
-    setY(0);
-  };
-  return (
-    <div>
-      <td>
-        Name:
-        <input
-          type="text"
-          name="name"
-          value={name}
-          onChange={(e) => setName(e.target.value)}
-        />
-      </td>
-      <td>
-        Width:
-        <input
-          type="number"
-          name="width"
-          value={width}
-          onChange={(e) => setWidth(e.target.value)}
-        />
-      </td>
-      <td>
-        Height:
-        <input
-          type="number"
-          name="height"
-          value={height}
-          onChange={(e) => setHeight(e.target.value)}
-        />
-      </td>
-      <td>
-        X:
-        <input
-          type="number"
-          name="x"
-          value={x}
-          onChange={(e) => setX(e.target.value)}
-        />
-      </td>
-      <td>
-        Y:
-        <input
-          type="number"
-          name="y"
-          value={y}
-          onChange={(e) => setY(e.target.value)}
-        />
-      </td>
-      <button onClick={submit}>submit</button>
-    </div>
-  );
+let dungeonData = [
+  {
+    id: 1,
+    name: "entry",
+    width: 9,
+    height: 5,
+    x: 5,
+    y: 5,
+    monsters: {
+      [`2:4`]: 1,
+      [`3:5`]: 1,
+    },
+  },
+  {
+    id: 2,
+    name: "entry",
+    width: 7,
+    height: 8,
+    x: 6,
+    y: 6,
+    monsters: {
+      [`1:4`]: 1,
+      [`1:5`]: 1,
+    },
+  },
+];
+
+export const addRoom = (newRoom) => {
+  console.log("add room");
+  /*newId = dungeonData.length
+    ? dungeonData[dungeonData.length - 1].id + 1
+    : (newId = 1);
+  dungeonData = [
+    ...dungeonData,
+    { id: newId, name: name, width: width, height: height, x: x, y: y },
+  ];*/
+  dungeonData.push({ ...newRoom, id: 3 });
+  console.log(dungeonData);
+  //return dungeonData;
+};
+
+export const changeRoomDD = (newRoom, newId) => {
+  console.log("change room dd");
+  console.log(newId);
+  console.log(newRoom);
+  dungeonData[newId - 1] = newRoom;
+  console.log(dungeonData);
+};
+
+export const deleteMonsterDD = (monsterId, roomId) => {
+  console.log("delete monster");
+  delete dungeonData[roomId - 1].monsters[monsterId];
+};
+
+export const addMonsterDD = (roomId, newMonsterID, mobSelect) => {
+  console.log("add monster");
+  dungeonData[roomId - 1].monsters[`${newMonsterID[1]}:${newMonsterID[0]}`] =
+    mobSelect;
+};
+
+export const editMonsterDD = (mobValues, roomId) => {
+  console.log("edit Monster");
+  let temp = Object.fromEntries(mobValues);
+  dungeonData[roomId - 1].monsters = temp;
+};
+
+export const allRooms = () => {
+  console.log("all rooms");
+  console.log(dungeonData);
+  return dungeonData;
+};
+
+export const changeRoom = (newData = "chiiro") => {
+  dungeonData = dungeonData.map((room) => (room.id == 1 ? newData : room));
+  return dungeonData;
+};
+
+export const deleteRoom = (id = 1) => {
+  console.log("delete room");
+  dungeonData = dungeonData.filter((room) => room.id != id);
+  console.log(id);
+  return { ...dungeonData };
+};
+export const singleRoom = (id) => {
+  return dungeonData.find((room) => room.id == id);
 };
