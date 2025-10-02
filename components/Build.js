@@ -31,7 +31,7 @@ export default Build = () => {
   };
   const submitRoom = (newRoom) => {
     console.log("submit rooms");
-    addRoom(newRoom);
+    //addRoom(newRoom);
     setRooms(allRooms());
     console.log(rooms);
   };
@@ -50,7 +50,7 @@ export default Build = () => {
       ) : (
         <>
           <AllRooms rooms={rooms} removeRoom={removeRoom} loadEdit={loadEdit} />
-          <NewRoom setRoom={setRooms} submitRoom={submitRoom} rooms={rooms} />
+          <NewRoom setRooms={setRooms} submitRoom={submitRoom} rooms={rooms} />
         </>
       )}
     </>
