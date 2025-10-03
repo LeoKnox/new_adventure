@@ -1,58 +1,77 @@
-import { useState, useEffect } from "react";
-import { allRooms, addRoom, changeRoom, singleRoom } from "./dungeonData.js";
-import AllRooms from "./AllRooms.js";
-import { MonsterContextReturn } from "./RoomContext.js";
-import { deleteRoom } from "./dungeonData.js";
-import NewRoom from "./NewRoom.js";
-import EditRoom from "./EditRoom.js";
+import { useState } from "react";
+import { addRoom, allRooms } from "./dungeonData.js";
 
-export default Build = () => {
-  console.log("build.js");
-  //console.log(singleRoom(1).monsters);
-  const [isEdit, setIsEdit] = useState(false);
-  const [newId, setNewId] = useState(1);
-  const [rooms, setRooms] = useState(allRooms());
-
-  const editFunc = (roomEdit, newMob) => {
-    console.log("edit func");
-    console.log(newMob);
-    roomEdit.monsters[`${newMob.x}:${newMob.y}`] = 1;
-    setRooms(roomEdit);
-  };
-  const loadEdit = (roomId = 1) => {
-    let temp = singleRoom(roomId);
-    setNewId(roomId);
-    setIsEdit(!isEdit);
-  };
-  const removeRoom = (deleteId) => {
-    console.log(deleteRoom(1));
-    let temp = deleteRoom(deleteId);
-    setRooms(temp);
-  };
-  const submitRoom = (newRoom) => {
-    console.log("submit rooms");
-    //addRoom(newRoom);
-    setRooms(allRooms());
-    console.log(rooms);
-  };
-  const removeMob = (key) => {
-    console.log("remove mob");
-    let temp = rooms[newId];
-    let temptwo = temp.monsters;
-    delete temptwo[key];
-    setRooms(temp);
+export default NewRoom = ({ submitRoom, setRooms }) => {
+  const [name, setName] = useState("empty");
+  const [width, setWidth] = useState(0);
+  const [height, setHeight] = useState(0);
+  const [x, setX] = useState(0);
+  const [y, setY] = useState(0);
+  const [roomData, setRoomData] = useState({
+    name: "empty",
+    width: 0,
+    height: 0,
+    x: 0,
+    y: 0,
+  });
+  const submit = () => {
+    let temp = { id: 3, name, width, height, x, y, monsters: {} };
+    //addRoom({ id: 3, name, width, height, x, y, monsters: {} });
+    setRooms(...allRooms());
+    setName("empty");
+    setWidth(0);
+    setHeight(0);
+    setX(0);
+    setY(0);
   };
   return (
-    <>
-      <p onClick={() => setIsEdit(!isEdit)}>build a dungeon</p>
-      {isEdit ? (
-        <EditRoom newId={newId} setIsEdit={setIsEdit} submitRoom={submitRoom} />
-      ) : (
-        <>
-          <AllRooms rooms={rooms} removeRoom={removeRoom} loadEdit={loadEdit} />
-          <NewRoom setRooms={setRooms} submitRoom={submitRoom} rooms={rooms} />
-        </>
-      )}
-    </>
+    <div>
+      <td>
+        Name:
+        <input
+          type="text"
+          name="name"
+          value={name}
+          onChange={(e) => setName(e.target.value)}
+        />
+      </td>
+      <td>
+        Width:
+        <input
+          type="number"
+          name="width"
+          value={width}
+          onChange={(e) => setWidth(e.target.value)}
+        />
+      </td>
+      <td>
+        Height:
+        <input
+          type="number"
+          name="height"
+          value={height}
+          onChange={(e) => setHeight(e.target.value)}
+        />
+      </td>
+      <td>
+        X:
+        <input
+          type="number"
+          name="x"
+          value={x}
+          onChange={(e) => setX(e.target.value)}
+        />
+      </td>
+      <td>
+        Y:
+        <input
+          type="number"
+          name="y"
+          value={y}
+          onChange={(e) => setY(e.target.value)}
+        />
+      </td>
+      <button onClick={submit}>submit</button>
+    </div>
   );
 };
