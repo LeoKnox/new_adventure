@@ -36,7 +36,8 @@ export const addRoom = (newRoom) => {
     ...dungeonData,
     { id: newId, name: name, width: width, height: height, x: x, y: y },
   ];*/
-  dungeonData.push({ ...newRoom, id: 3 });
+  let temp = { ...newRoom, id: 3 };
+  dungeonData.push(temp);
   console.log(dungeonData);
   //return dungeonData;
 };
@@ -81,7 +82,7 @@ export const deleteRoom = (id = 1) => {
   console.log("delete room");
   dungeonData = dungeonData.filter((room) => room.id != id);
   console.log(id);
-  return { ...dungeonData };
+  return dungeonData;
 };
 export const singleRoom = (id) => {
   return dungeonData.find((room) => room.id == id);
