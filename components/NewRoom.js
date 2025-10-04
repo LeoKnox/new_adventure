@@ -18,7 +18,7 @@ export default NewRoom = ({ rooms, submitRoom, setRooms }) => {
     //let temp = (...rooms, {id: 3, name, width, height, x, y, monsters: {}});
     addRoom({ id: 3, name, width, height, x, y, monsters: {} });
 
-    setRooms(allRooms);
+    setRooms(allRooms());
     //setRooms(temp);
     submitRoom();
     setName("empty");
