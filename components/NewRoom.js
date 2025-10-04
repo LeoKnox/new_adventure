@@ -1,7 +1,7 @@
 import { useState } from "react";
 import { addRoom, allRooms } from "./dungeonData.js";
 
-export default NewRoom = ({ submitRoom, setRooms }) => {
+export default NewRoom = ({ rooms, submitRoom, setRooms }) => {
   const [name, setName] = useState("empty");
   const [width, setWidth] = useState(0);
   const [height, setHeight] = useState(0);
@@ -15,9 +15,9 @@ export default NewRoom = ({ submitRoom, setRooms }) => {
     y: 0,
   });
   const submit = () => {
-    let temp = { id: 3, name, width, height, x, y, monsters: {} };
+    let temp = ({...rooms, {id: 3, name, width, height, x, y, monsters: {}}});
     //addRoom({ id: 3, name, width, height, x, y, monsters: {} });
-    setRooms({ ...allRooms(), temp });
+    setRooms(temp);
     setName("empty");
     setWidth(0);
     setHeight(0);
