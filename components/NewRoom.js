@@ -15,9 +15,10 @@ export default NewRoom = ({ rooms, submitRoom, setRooms }) => {
     y: 0,
   });
   const submit = () => {
-    let temp = ({...rooms, {id: 3, name, width, height, x, y, monsters: {}}});
-    //addRoom({ id: 3, name, width, height, x, y, monsters: {} });
-    setRooms(temp);
+    //let temp = (...rooms, {id: 3, name, width, height, x, y, monsters: {}});
+    addRoom({ id: 3, name, width, height, x, y, monsters: {} });
+    //setRooms(temp);
+    submitRoom();
     setName("empty");
     setWidth(0);
     setHeight(0);
