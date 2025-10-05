@@ -39,7 +39,6 @@ export const addRoom = (newRoom) => {
   let temp = { ...newRoom, id: 3 };
   dungeonData.push(temp);
   console.log(dungeonData);
-  //return dungeonData;
 };
 
 export const changeRoomDD = (newRoom, newId) => {
@@ -81,7 +80,6 @@ export const changeRoom = (newData = "chiiro") => {
 export const deleteRoom = (id = 1) => {
   console.log("delete room");
   dungeonData = dungeonData.filter((room) => room.id != id);
-  console.log(id);
   return dungeonData;
 };
 export const singleRoom = (id) => {
