@@ -25,7 +25,7 @@ export default Build = () => {
     setIsEdit(!isEdit);
   };
   const removeRoom = (deleteId) => {
-    console.log("delete room");
+    console.log("remove room");
     deleteRoom(deleteId);
     setRooms(allRooms());
   };
