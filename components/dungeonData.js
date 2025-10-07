@@ -79,10 +79,10 @@ export const changeRoom = (newData = "chiiro") => {
 
 export const deleteRoom = (id = 1) => {
   console.log("delete room");
+  console.log(id);
   console.log(dungeonData);
-  let temp = dungeonData.slice(id - 1, 1);
+  let temp = dungeonData.slice(id, 1);
   dungeonData = temp;
-  console.log(dungeonData);
   //dungeonData = dungeonData.filter((room) => room.id != id);
 };
 export const singleRoom = (id) => {
