@@ -68,7 +68,7 @@ export const editMonsterDD = (mobValues, roomId) => {
 
 export const allRooms = () => {
   console.log("all rooms");
-  console.log(dungeonData);
+  //console.log(dungeonData);
   return dungeonData;
 };
 
@@ -79,8 +79,9 @@ export const changeRoom = (newData = "chiiro") => {
 
 export const deleteRoom = (id = 1) => {
   console.log("delete room");
-  console.log(dungeonData[id]);
-  let dungeonData = dungeonData.slice(id, 1);
+  console.log(dungeonData);
+  let temp = dungeonData.slice(id, 1);
+  dungeonData = temp;
   console.log(dungeonData);
   //dungeonData = dungeonData.filter((room) => room.id != id);
 };
