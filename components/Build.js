@@ -26,6 +26,7 @@ export default Build = () => {
   };
   const removeRoom = (deleteId) => {
     console.log("remove room");
+    console.log(allRooms());
     deleteRoom(deleteId);
     setRooms(allRooms());
   };
