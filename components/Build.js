@@ -26,7 +26,8 @@ export default Build = () => {
   };
   const removeRoom = (deleteId) => {
     console.log("remove room");
-    deleteRoom(1);
+    console.log(deleteId);
+    deleteRoom(deleteId);
     setRooms(allRooms());
   };
   const submitRoom = (newRoom) => {
