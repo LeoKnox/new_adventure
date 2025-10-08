@@ -82,6 +82,7 @@ export const deleteRoom = (id = 1) => {
   console.log(id);
   console.log(dungeonData);
   let temp = dungeonData.slice(id, 1).concat(dungeonData.slice(id + 1));
+  console.log(temp);
   dungeonData = temp;
   //dungeonData = dungeonData.filter((room) => room.id != id);
 };
