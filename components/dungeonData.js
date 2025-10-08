@@ -112,7 +112,12 @@ export default RoomMonsters = ({
             onChange={(e) => updateMob(e)}
           />
           <label>Monster</label>
-          <input type="number" name="mob" value={newMob.mob} />
+          <input
+            type="number"
+            name="mob"
+            value={newMob.mob}
+            onChange={(e) => updateMob(e)}
+          />
         </p>
         <button type="submit">Create</button>
       </form>
