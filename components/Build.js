@@ -26,6 +26,9 @@ export default Build = () => {
   };
   const loadMap = (roomId = 1) => {
     console.log("load map");
+    setIsEdit(
+      <EditRoom newId={newId} setIsEdit={setIsEdit} submitRoom={submitRoom} />
+    );
   };
   const removeRoom = (deleteId) => {
     console.log("remove room");
@@ -44,11 +47,12 @@ export default Build = () => {
     delete temptwo[key];
     setRooms(temp);
   };
+  //<EditRoom newId={newId} setIsEdit={setIsEdit} submitRoom={submitRoom} />
   return (
     <>
       <p>build a dungeon</p>
       {isEdit ? (
-        <EditRoom newId={newId} setIsEdit={setIsEdit} submitRoom={submitRoom} />
+        { isEdit }
       ) : (
         <>
           <AllRooms
