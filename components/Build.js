@@ -47,14 +47,16 @@ export default Build = () => {
     delete temptwo[key];
     setRooms(temp);
   };
-  setIsEdit(        <EditRoom newId={newId} setIsEdit={setIsEdit} submitRoom={submitRoom} />
-);
+  const tempPage = (
+    <EditRoom newId={newId} setIsEdit={setIsEdit} submitRoom={submitRoom} />
+  );
   //<EditRoom newId={newId} setIsEdit={setIsEdit} submitRoom={submitRoom} />
   return (
     <>
       <p>build a dungeon</p>
       {isEdit ? (
-{isEdit}      ) : (
+        { tempPage }
+      ) : (
         <>
           <AllRooms
             rooms={rooms}
