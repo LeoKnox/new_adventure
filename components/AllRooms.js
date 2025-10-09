@@ -25,6 +25,9 @@ export default AllRooms = ({ rooms, removeRoom, loadEdit }) => {
             <td>
               <button onClick={() => loadEdit(room.id)}>Edit</button>
             </td>
+            <td>
+              <button onClick={() => loadMap(room.id)}>Map</button>
+            </td>
           </tr>
         ))}
       </table>
