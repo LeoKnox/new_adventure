@@ -24,6 +24,9 @@ export default Build = () => {
     setNewId(roomId);
     setIsEdit(!isEdit);
   };
+  const loadMap = (roomId = 1) => {
+    console.log("load map");
+  };
   const removeRoom = (deleteId) => {
     console.log("remove room");
     console.log(deleteId);
@@ -48,7 +51,12 @@ export default Build = () => {
         <EditRoom newId={newId} setIsEdit={setIsEdit} submitRoom={submitRoom} />
       ) : (
         <>
-          <AllRooms rooms={rooms} removeRoom={removeRoom} loadEdit={loadEdit} />
+          <AllRooms
+            rooms={rooms}
+            removeRoom={removeRoom}
+            loadEdit={loadEdit}
+            loadMap={loadMap}
+          />
           <NewRoom
             rooms={rooms}
             setRooms={setRooms}
