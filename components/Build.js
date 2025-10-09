@@ -55,7 +55,7 @@ export default Build = () => {
     <>
       <p>build a dungeon</p>
       {isEdit ? (
-        { tempPage }
+        <EditRoom newId={newId} setIsEdit={setIsEdit} submitRoom={submitRoom} />
       ) : (
         <>
           <AllRooms
@@ -70,6 +70,7 @@ export default Build = () => {
             submitRoom={submitRoom}
             rooms={rooms}
           />
+          {tempPage()}
         </>
       )}
     </>
