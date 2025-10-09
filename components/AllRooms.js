@@ -1,4 +1,4 @@
-export default AllRooms = ({ rooms, removeRoom, loadEdit }) => {
+export default AllRooms = ({ rooms, removeRoom, loadEdit, loadMap }) => {
   return (
     <div>
       <table>
