@@ -53,7 +53,13 @@ export default Build = () => {
     <EditRoom newId={newId} setIsEdit={setIsEdit} submitRoom={submitRoom} />
   );
   const roomsObj = {
-    a: <EditRoom newId={newId} setIsEdit={setIsEdit} submitRoom={submitRoom} />,
+    a: (
+      <EditRoom
+        newId={newId}
+        setLoadComponent={setLoadComponent}
+        submitRoom={submitRoom}
+      />
+    ),
     b: (
       <>
         <AllRooms
