@@ -10,6 +10,7 @@ export default Build = () => {
   console.log("build.js");
 
   const [isEdit, setIsEdit] = useState(false);
+  const [loadComponent, setLoadComponent] = useState("b");
   const [newId, setNewId] = useState(1);
   const [rooms, setRooms] = useState(allRooms());
 
@@ -52,30 +53,28 @@ export default Build = () => {
   );
   const roomsObj = {
     a: <EditRoom newId={newId} setIsEdit={setIsEdit} submitRoom={submitRoom} />,
+    b: (
+      <>
+        <AllRooms
+          rooms={rooms}
+          removeRoom={removeRoom}
+          loadEdit={loadEdit}
+          loadMap={loadMap}
+        />
+        <NewRoom
+          rooms={rooms}
+          setRooms={setRooms}
+          submitRoom={submitRoom}
+          rooms={rooms}
+        />
+      </>
+    ),
   };
   //<EditRoom newId={newId} setIsEdit={setIsEdit} submitRoom={submitRoom} />
   return (
     <>
       <p>build a dungeon</p>
-      {roomsObj["a"]}
-      {isEdit ? (
-        <EditRoom newId={newId} setIsEdit={setIsEdit} submitRoom={submitRoom} />
-      ) : (
-        <>
-          <AllRooms
-            rooms={rooms}
-            removeRoom={removeRoom}
-            loadEdit={loadEdit}
-            loadMap={loadMap}
-          />
-          <NewRoom
-            rooms={rooms}
-            setRooms={setRooms}
-            submitRoom={submitRoom}
-            rooms={rooms}
-          />
-        </>
-      )}
+      {roomsObj[loadComponent]}
     </>
   );
 };
