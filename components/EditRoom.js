@@ -4,7 +4,7 @@ import { MonsterContextReturn } from "./RoomContext.js";
 import RoomMonsters from "./RoomMonsters.js";
 import { singleRoom, changeRoomDD, allRooms } from "./dungeonData.js";
 
-export default EditRoom = ({ newId = 1, setIsEdit, submitRoom }) => {
+export default EditRoom = ({ newId = 1, setLoadComponent, submitRoom }) => {
   console.log("edit room");
   const [currentRoom, setCurrentRoom] = useState(singleRoom(newId));
   const [tempMonsters, setTempMonsters] = useState(currentRoom.monsters);
@@ -13,6 +13,7 @@ export default EditRoom = ({ newId = 1, setIsEdit, submitRoom }) => {
     console.log("change value");
     setCurrentRoom({ ...currentRoom, [e.target.name]: [e.target.value] });
   };
+
   const changeMob = (id, value, name, newValue) => {
     console.log("change mob");
     let temp = { ...tempMonsters };
@@ -101,7 +102,7 @@ export default EditRoom = ({ newId = 1, setIsEdit, submitRoom }) => {
       <button onClick={() => submitRoom(currentRoom, tempMonsters)}>
         update
       </button>
-      <button onClick={() => setIsEdit(false)}>Back</button>
+      <button onClick={() => setLoadComponent("b")}>Back</button>
     </>
   );
 };
