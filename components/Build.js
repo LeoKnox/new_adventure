@@ -23,7 +23,8 @@ export default Build = () => {
   const loadEdit = (roomId = 1) => {
     let temp = singleRoom(roomId);
     setNewId(roomId);
-    setIsEdit(!isEdit);
+    setLoadComponent("a");
+    //setIsEdit(!isEdit);
   };
   const loadMap = (roomId = 1) => {
     console.log("load map");
@@ -59,7 +60,6 @@ export default Build = () => {
           rooms={rooms}
           removeRoom={removeRoom}
           loadEdit={loadEdit}
-          setLoadComponent={setLoadComponent}
           loadMap={loadMap}
         />
         <NewRoom
