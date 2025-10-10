@@ -50,10 +50,14 @@ export default Build = () => {
   const tempPage = (
     <EditRoom newId={newId} setIsEdit={setIsEdit} submitRoom={submitRoom} />
   );
+  const roomsObj = {
+    a: <EditRoom newId={newId} setIsEdit={setIsEdit} submitRoom={submitRoom} />,
+  };
   //<EditRoom newId={newId} setIsEdit={setIsEdit} submitRoom={submitRoom} />
   return (
     <>
       <p>build a dungeon</p>
+      {roomsObj["a"]}
       {isEdit ? (
         <EditRoom newId={newId} setIsEdit={setIsEdit} submitRoom={submitRoom} />
       ) : (
@@ -70,7 +74,6 @@ export default Build = () => {
             submitRoom={submitRoom}
             rooms={rooms}
           />
-          {tempPage()}
         </>
       )}
     </>
