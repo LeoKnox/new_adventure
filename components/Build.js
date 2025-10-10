@@ -59,6 +59,7 @@ export default Build = () => {
           rooms={rooms}
           removeRoom={removeRoom}
           loadEdit={loadEdit}
+          setLoadComponent={setLoadComponent}
           loadMap={loadMap}
         />
         <NewRoom
