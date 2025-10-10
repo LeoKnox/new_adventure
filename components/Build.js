@@ -5,6 +5,7 @@ import { MonsterContextReturn } from "./RoomContext.js";
 import { deleteRoom } from "./dungeonData.js";
 import NewRoom from "./NewRoom.js";
 import EditRoom from "./EditRoom.js";
+import CreateRoom from "./CreateRoom.js";
 
 export default Build = () => {
   console.log("build.js");
@@ -76,6 +77,7 @@ export default Build = () => {
         />
       </>
     ),
+    map: <createMap />,
   };
   //<EditRoom newId={newId} setIsEdit={setIsEdit} submitRoom={submitRoom} />
   return (
