@@ -20,10 +20,10 @@ export default Build = () => {
     roomEdit.monsters[`${newMob.x}:${newMob.y}`] = 1;
     setRooms(roomEdit);
   };
-  const loadEdit = (roomId = 1) => {
+  const loadEdit = (roomId = 1, editValue) => {
     let temp = singleRoom(roomId);
     setNewId(roomId);
-    setLoadComponent("a");
+    setLoadComponent(editValue);
     //setIsEdit(!isEdit);
   };
   const loadMap = (roomId = 1) => {
