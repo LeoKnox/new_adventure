@@ -1,7 +1,7 @@
 export default AllRooms = ({
   rooms,
   removeRoom,
-  setLoadComponent,
+
   loadEdit,
   loadMap,
 }) => {
@@ -29,10 +29,14 @@ export default AllRooms = ({
               </button>
             </td>
             <td>
-              <button onClick={() => loadEdit(room.id)}>Edit</button>
+              <button onClick={() => loadEdit(room.id, (editValue = "a"))}>
+                Edit
+              </button>
             </td>
             <td>
-              <button onClick={() => loadMap(room.id)}>Map</button>
+              <button onClick={() => loadEdit(room.id, (editValue = "map"))}>
+                Map
+              </button>
             </td>
           </tr>
         ))}
