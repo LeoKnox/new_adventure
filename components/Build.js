@@ -83,7 +83,7 @@ export default Build = () => {
   return (
     <>
       <p>build a dungeon</p>
-      {roomsObj["map"]}
+      {roomsObj[loadComponent]}
     </>
   );
 };
