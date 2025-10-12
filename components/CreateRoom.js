@@ -1,13 +1,13 @@
 export default CreateRoom = () => {
   const height = 2;
   const width = 2;
-  const tempList = (Array.from({ length: 2 }), () => <p>"i"</p>);
+  const tempList = Array(2);
   console.log("create room new");
   console.log(tempList);
   return (
     <>
       <h1>create room map</h1>
-      {(Array.from(length: 2), () => <p>"i"</p>)}
+      {tempList}
     </>
   );
 };
