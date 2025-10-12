@@ -5,7 +5,7 @@ export default CreateRoom = () => {
   return (
     <>
       <h1>create room map</h1>
-      <table>{(Array.from({ length: 2 }), () => <p>i</p>)}</table>
+      <table>{(Array.from({ length: 2 }), () => <p>"i"</p>)}</table>
     </>
   );
 };
