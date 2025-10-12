@@ -77,6 +77,59 @@ export default Build = () => {
         />
       </>
     ),
+    map: (<createMap />),
+  };
+  //<EditRoom newId={newId} setIsEdit={setIsEdit} submitRoom={submitRoom} />
+  return (
+    <>
+      <p>build a dungeon</p>
+      {roomsObj[loadComponent]}
+    </>
+  );
+};
+    console.log("remove room");
+    console.log(deleteId);
+    deleteRoom(deleteId);
+    setRooms(allRooms());
+  };
+  const submitRoom = (newRoom) => {
+    console.log("submit rooms");
+    let temp = allRooms();
+  };
+  const removeMob = (key) => {
+    console.log("remove mob");
+    let temp = rooms[newId];
+    let temptwo = temp.monsters;
+    delete temptwo[key];
+    setRooms(temp);
+  };
+  const tempPage = (
+    <EditRoom newId={newId} setIsEdit={setIsEdit} submitRoom={submitRoom} />
+  );
+  const roomsObj = {
+    a: (
+      <EditRoom
+        newId={newId}
+        setLoadComponent={setLoadComponent}
+        submitRoom={submitRoom}
+      />
+    ),
+    b: (
+      <>
+        <AllRooms
+          rooms={rooms}
+          removeRoom={removeRoom}
+          loadEdit={loadEdit}
+          loadMap={loadMap}
+        />
+        <NewRoom
+          rooms={rooms}
+          setRooms={setRooms}
+          submitRoom={submitRoom}
+          rooms={rooms}
+        />
+      </>
+    ),
     map: <createMap />,
   };
   //<EditRoom newId={newId} setIsEdit={setIsEdit} submitRoom={submitRoom} />
