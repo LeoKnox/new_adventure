@@ -1,7 +1,9 @@
 export default CreateRoom = () => {
   const height = 2;
   const width = 2;
-  const tempList = Array.from({ length: 2 });
+  const tempList = Array.from({ length: 2 }, (v) => {
+    <p>"v"</p>;
+  });
   console.log("create room new");
   console.log(tempList);
   return (
