@@ -2,9 +2,10 @@ export default CreateRoom = () => {
   const height = 2;
   const width = 2;
   const tempList = Array.from({ length: 2 }, (v, i) => {
-    return Array.from({ length: 3 }, () => {
-      return <p>i</p>;
+    const tempRow = Array.from({ length: 3 }, () => {
+      return <td>i</td>;
     });
+    return <tr>{tempRow}</tr>;
   });
   console.log("create room new");
   console.log(tempList);
