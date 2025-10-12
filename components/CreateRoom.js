@@ -3,10 +3,11 @@ export default CreateRoom = () => {
   const width = 2;
   const tempList = (Array.from({ length: 2 }), () => <p>"i"</p>);
   console.log("create room new");
+  console.log(tempList);
   return (
     <>
       <h1>create room map</h1>
-      <table>{tempList}</table>
+      {tempList}
     </>
   );
 };
