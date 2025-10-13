@@ -1,9 +1,9 @@
 import { useState } from "react";
 
 export default CreateRoom = () => {
-  const height = 2;
+  const [height, setHeight] = useState(2);
   const width = 2;
-  const arrow = <button>></button>;
+  const arrow = <button onClick={() => setHeight(height + 1)}>></button>;
   const [tempList, setTempList] = useState(
     Array.from({ length: 2 }, (v, i) => {
       const tempRow = Array.from({ length: 3 }, (w, j) => {
@@ -21,7 +21,7 @@ export default CreateRoom = () => {
   console.log(tempList);
   return (
     <>
-      <h1>create room map</h1>
+      <h1>create room map {height}</h1>
       {[...tempList]}
     </>
   );
