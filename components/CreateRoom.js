@@ -29,7 +29,7 @@ export default CreateRoom = () => {
   return (
     <>
       <h1>create room map {height}</h1>
-      {[...tempList]}
+      {tempList}
     </>
   );
 };
