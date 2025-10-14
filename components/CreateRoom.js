@@ -1,10 +1,10 @@
-import { useState } from "react";
+import { useState, useEffect } from "react";
 
 export default CreateRoom = () => {
   const [height, setHeight] = useState(2);
   const width = 2;
   const arrow = <button onClick={() => resetRoom()}>></button>;
-  const [tempList, setTempList] = useState(
+  useEffect(() => {
     Array.from({ length: 2 }, (v, i) => {
       const tempRow = Array.from({ length: 3 }, (w, j) => {
         return <td>i</td>;
@@ -15,12 +15,12 @@ export default CreateRoom = () => {
           <td>{arrow}</td>
         </tr>
       );
-    })
-  );
-  const resetRoom = () => {
-    console.log("reset room");
-    setHeight(height + 1);
-  };
+    });
+    const resetRoom = () => {
+      console.log("reset room");
+      setHeight(height + 1);
+    };
+  });
   console.log("create room new");
   console.log(tempList);
   return (
