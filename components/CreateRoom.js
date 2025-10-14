@@ -2,13 +2,14 @@ import { useState, useEffect } from "react";
 
 export default CreateRoom = () => {
   const [height, setHeight] = useState(2);
+  const [tempList, setTempList] = []
   const width = 2;
   const arrow = <button onClick={() => resetRoom()}>></button>;
   useEffect(() => {
-    Array.from({ length: 2 }, (v, i) => {
+    setTempList(Array.from({ length: 2 }, (v, i) => {
       const tempRow = Array.from({ length: 3 }, (w, j) => {
         return <td>i</td>;
-      });
+      }));
       return (
         <tr>
           {tempRow}
