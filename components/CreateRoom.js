@@ -6,7 +6,7 @@ export default CreateRoom = () => {
   const width = 2;
   const arrow = <button onClick={() => resetRoom()}>></button>;
   useEffect(() => {
-    let temp = Array.from({ length: 2 }, (v, i) => {
+    let temp = Array.from({ length: height }, (v, i) => {
       const tempRow = Array.from({ length: 3 }, (w, j) => {
         return <td>i</td>;
       });
