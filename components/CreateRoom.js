@@ -22,13 +22,13 @@ export default CreateRoom = () => {
 
   const resetRoom = () => {
     console.log("reset room");
-    setHeight(width + 1);
+    setWidth(width + 1);
   };
   console.log("create room new");
   console.log(tempList);
   return (
     <>
-      <h1>create room map {height}</h1>
+      <h1>create room map {width}</h1>
       {tempList}
     </>
   );
