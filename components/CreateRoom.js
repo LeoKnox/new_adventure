@@ -3,11 +3,11 @@ import { useState, useEffect } from "react";
 export default CreateRoom = () => {
   const [height, setHeight] = useState(2);
   const [tempList, setTempList] = useState([]);
-  const width = 2;
+  const [width, setWidth] = useState(2);
   const arrow = <button onClick={() => resetRoom()}>></button>;
   useEffect(() => {
     let temp = Array.from({ length: height }, (v, i) => {
-      const tempRow = Array.from({ length: 3 }, (w, j) => {
+      const tempRow = Array.from({ length: width }, (w, j) => {
         return <td>i</td>;
       });
       return (
@@ -22,7 +22,7 @@ export default CreateRoom = () => {
 
   const resetRoom = () => {
     console.log("reset room");
-    setHeight(height + 1);
+    setHeight(width + 1);
   };
   console.log("create room new");
   console.log(tempList);
