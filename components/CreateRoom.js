@@ -18,7 +18,7 @@ export default CreateRoom = () => {
       );
     });
     setTempList(temp);
-  }, [height]);
+  }, [height, width]);
 
   const resetRoom = () => {
     console.log("reset room");
