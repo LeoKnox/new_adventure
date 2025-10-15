@@ -37,8 +37,8 @@ export default CreateRoom = () => {
   const resetRoom = () => {
     console.log("reset room");
     setWidth(width + 1);
-    setTempList(
-      Array.from({ length: height }, (v, i) => {
+    let temp = [
+      ...Array.from({ length: height }, (v, i) => {
         const tempRow = Array.from({ length: width }, (w, j) => {
           return <td>i</td>;
         });
@@ -48,8 +48,9 @@ export default CreateRoom = () => {
             <td>{arrow}</td>
           </tr>
         );
-      })
-    );
+      }),
+    ];
+    setTempList(temp);
   };
   console.log("create room new");
   console.log(tempList);
