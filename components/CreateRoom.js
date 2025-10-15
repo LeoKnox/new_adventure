@@ -37,6 +37,19 @@ export default CreateRoom = () => {
   const resetRoom = () => {
     console.log("reset room");
     setWidth(width + 1);
+    setTempList(
+      Array.from({ length: height }, (v, i) => {
+        const tempRow = Array.from({ length: width }, (w, j) => {
+          return <td>i</td>;
+        });
+        return (
+          <tr>
+            {tempRow}
+            <td>{arrow}</td>
+          </tr>
+        );
+      })
+    );
   };
   console.log("create room new");
   console.log(tempList);
