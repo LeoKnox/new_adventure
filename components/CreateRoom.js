@@ -39,7 +39,7 @@ export default CreateRoom = () => {
     setWidth(width + 1);
     let temp = [
       ...Array.from({ length: height }, (v, i) => {
-        const tempRow = Array.from({ length: width }, (w, j) => {
+        const tempRow = Array.from({ length: width + 1 }, (w, j) => {
           return <td>i</td>;
         });
         return (
