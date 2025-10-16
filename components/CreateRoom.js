@@ -51,6 +51,7 @@ export default CreateRoom = () => {
         );
       }),
     ];
+    console.log("w" + width);
     setTempList(temp);
   };
   console.log("create room new");
