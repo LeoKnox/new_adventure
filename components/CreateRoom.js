@@ -2,7 +2,7 @@ import { useState, useEffect } from "react";
 
 export default CreateRoom = () => {
   const [height, setHeight] = useState(2);
-  const [width, setWidth] = useState(2);
+  const [width, setWidth] = useState(3);
   const arrow = <button onClick={() => resetRoom()}>></button>;
 
   const [tempList, setTempList] = useState(
