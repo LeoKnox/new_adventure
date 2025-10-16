@@ -36,6 +36,7 @@ export default CreateRoom = () => {
 
   const resetRoom = () => {
     console.log("reset room");
+    console.log(width);
     setWidth(width + 1);
     let temp = [
       ...Array.from({ length: height }, (v, i) => {
