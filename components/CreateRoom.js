@@ -2,7 +2,7 @@ import { useState, useEffect } from "react";
 
 export default CreateRoom = () => {
   const [height, setHeight] = useState(2);
-  const [width, setWidth] = useState({ width: 3 });
+  const [width, setWidth] = useState(3);
   const arrow = <button onClick={() => resetRoom()}>></button>;
 
   const [tempList, setTempList] = useState(
@@ -37,28 +37,27 @@ export default CreateRoom = () => {
   const resetRoom = () => {
     console.log("reset room");
     console.log(width);
-    setWidth({ width: width.width + 1 });
-    let temp = [
-      ...Array.from({ length: height }, (v, i) => {
-        const tempRow = Array.from({ length: width.width + 1 }, (w, j) => {
-          return <td>i</td>;
-        });
-        return (
-          <tr>
-            {tempRow}
-            <td>{arrow}</td>
-          </tr>
-        );
-      }),
-    ];
-    console.log("w");
+    setWidth(width + 1);
+    let temp = Array.from({ length: height }, (v, i) => {
+      const tempRow = Array.from({ length: width + 1 }, (w, j) => {
+        return <td>i</td>;
+      });
+      return (
+        <tr>
+          {tempRow}
+          <td>{arrow}</td>
+        </tr>
+      );
+    });
+
+    console.log("w" + width);
     setTempList(temp);
   };
   console.log("create room new");
   console.log(tempList);
   return (
     <>
-      <h1>create room map {width.width}</h1>
+      <h1>create room map {width}</h1>
       {tempList}
     </>
   );
