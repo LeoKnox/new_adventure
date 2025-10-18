@@ -59,7 +59,7 @@ export default CreateRoom = () => {
   return (
     <>
       <h1>create room map {width}</h1>
-      {tempList}
+      {[...tempList]}
     </>
   );
 };
