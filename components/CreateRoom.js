@@ -1,14 +1,14 @@
 import { useState, useEffect } from "react";
 
 export default CreateRoom = () => {
-  const [height, setHeight] = useState([2]);
+  const [height, setHeight] = useState(2);
   const [width, setWidth] = useState(3);
   const arrow = <button onClick={() => resetRoom()}>></button>;
 
   const [tempList, setTempList] = useState(
     Array.from({ length: height }, (v, i) => {
       const tempRow = Array.from({ length: width }, (w, j) => {
-        return <td>-iiii-</td>;
+        return <td>-i-</td>;
       });
       return (
         <tr>
@@ -40,7 +40,7 @@ export default CreateRoom = () => {
     setWidth(width + 1);
     let temp = Array.from({ length: height }, (v, i) => {
       const tempRow = Array.from({ length: width }, (w, j) => {
-        return <td>i</td>;
+        return <td>+i+</td>;
       });
       return (
         <tr>
@@ -59,7 +59,7 @@ export default CreateRoom = () => {
   return (
     <>
       <h1>create room map {width}</h1>
-      {[...tempList]}
+      {tempList}
     </>
   );
 };
