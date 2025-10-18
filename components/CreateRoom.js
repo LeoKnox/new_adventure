@@ -42,10 +42,15 @@ export default CreateRoom = () => {
       const tempRow = Array.from({ length: width }, (w, j) => {
         return <td>i</td>;
       });
-      return { tempList };
+      return (
+        <tr>
+          {tempRow}
+          <td>{arrow}</td>
+        </tr>
+      );
     });
 
-    console.log("w" + width);
+    console.log(temp);
     setTempList(temp);
   };
   console.log("create room new");
