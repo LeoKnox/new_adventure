@@ -22,7 +22,7 @@ export default CreateRoom = () => {
 
   const test = (e) => {
     console.log("test");
-    console.log(e.target.name);
+    console.log(e.target.value);
   };
 
   useEffect(() => {
@@ -30,7 +30,7 @@ export default CreateRoom = () => {
       const tempRow = Array.from({ length: width }, (w, j) => {
         return (
           <>
-            <td name="test" onClick={test}>
+            <td value="test" onClick={test}>
               i {i} {j}
             </td>
           </>
