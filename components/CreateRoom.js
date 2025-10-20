@@ -30,8 +30,10 @@ export default CreateRoom = () => {
       const tempRow = Array.from({ length: width }, (w, j) => {
         return (
           <>
-            <td value="test" onClick={test}>
-              i {i} {j}
+            <td>
+              <button value="test" onClick={test}>
+                i {i} {j}
+              </button>
             </td>
           </>
         );
