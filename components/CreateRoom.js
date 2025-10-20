@@ -22,7 +22,7 @@ export default CreateRoom = () => {
 
   const test = (e) => {
     console.log("test");
-    console.log(e.target.value);
+    console.log(JSON.stringify(e.target.value[0]));
   };
 
   useEffect(() => {
@@ -31,7 +31,7 @@ export default CreateRoom = () => {
         return (
           <>
             <td>
-              <button value="test" onClick={test}>
+              <button value={[{ j }, { i }]} onClick={test}>
                 i {i} {j}
               </button>
             </td>
