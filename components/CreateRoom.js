@@ -26,7 +26,6 @@ export default CreateRoom = () => {
         return (
           <>
             <td>i</td>
-            <td>{downArrow}</td>
           </>
         );
       });
@@ -38,6 +37,7 @@ export default CreateRoom = () => {
       );
     });
     setTempList(temp);
+    <td>{downArrow}</td>;
   }, [height, width]);
 
   /*const resetRoom = () => {
