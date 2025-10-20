@@ -3,7 +3,7 @@ import { useState, useEffect } from "react";
 export default CreateRoom = () => {
   const [height, setHeight] = useState(2);
   const [width, setWidth] = useState(3);
-  const arrow = <button onClick={() => resetRoom()}>></button>;
+  const arrow = <button onClick={() => setWidth(width + 1)}>></button>;
 
   const [tempList, setTempList] = useState(
     Array.from({ length: height }, (v, i) => {
@@ -19,7 +19,7 @@ export default CreateRoom = () => {
     })
   );
 
-  /*useEffect(() => {
+  useEffect(() => {
     let temp = Array.from({ length: height }, (v, i) => {
       const tempRow = Array.from({ length: width }, (w, j) => {
         return <td>i</td>;
@@ -32,9 +32,9 @@ export default CreateRoom = () => {
       );
     });
     setTempList(temp);
-  }, [height, width]);*/
+  }, [height, width]);
 
-  const resetRoom = () => {
+  /*const resetRoom = () => {
     console.log("reset room");
     console.log(width);
     let tempWidth = width + 1;
@@ -54,7 +54,7 @@ export default CreateRoom = () => {
     console.log("contine reset");
     console.log(width);
     setTempList(temp);
-  };
+  };*/
   console.log("create room new");
   console.log(tempList);
   return (
