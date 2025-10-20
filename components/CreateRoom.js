@@ -20,7 +20,7 @@ export default CreateRoom = () => {
     })
   );
 
-  const test = (test) => {
+  const test = (e) => {
     console.log("test");
     console.log(e.target.name);
   };
@@ -30,7 +30,7 @@ export default CreateRoom = () => {
       const tempRow = Array.from({ length: width }, (w, j) => {
         return (
           <>
-            <td name="test" onClick={(e) => test(e.target.name)}>
+            <td name="test" onClick={test}>
               i {i} {j}
             </td>
           </>
