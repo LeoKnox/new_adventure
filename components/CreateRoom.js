@@ -43,6 +43,7 @@ export default CreateRoom = () => {
       const tempRow = Array.from({ length: width + 1 }, (w, j) => {
         return <td>+i+</td>;
       });
+      setTempList(temp);
       return (
         <tr>
           {tempRow}
@@ -53,7 +54,7 @@ export default CreateRoom = () => {
 
     console.log(temp);
     console.log(width);
-    setTempList(temp);
+    //setTempList(temp);
   };
   console.log("create room new");
   console.log(tempList);
