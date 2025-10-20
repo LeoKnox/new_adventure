@@ -25,7 +25,7 @@ export default CreateRoom = () => {
       const tempRow = Array.from({ length: width }, (w, j) => {
         return (
           <>
-            <td id=[{i},{j}]>
+            <td name={[{ j }, { i }]}>
               i {i} {j}
             </td>
           </>
