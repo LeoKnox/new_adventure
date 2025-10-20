@@ -3,7 +3,8 @@ import { useState, useEffect } from "react";
 export default CreateRoom = () => {
   const [height, setHeight] = useState(2);
   const [width, setWidth] = useState(3);
-  const arrow = <button onClick={() => setWidth(width + 1)}>></button>;
+  const arrow = <button onClick={() => setWidth(width + 1)}>→</button>;
+  const downArrow = <button onClick={() => setWidth(height + 1)}>↓</button>;
 
   const [tempList, setTempList] = useState(
     Array.from({ length: height }, (v, i) => {
