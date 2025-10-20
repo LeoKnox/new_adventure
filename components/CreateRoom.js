@@ -23,7 +23,12 @@ export default CreateRoom = () => {
   useEffect(() => {
     let temp = Array.from({ length: height }, (v, i) => {
       const tempRow = Array.from({ length: width }, (w, j) => {
-        return <td>i</td>;
+        return (
+          <>
+            <td>i</td>
+            <td>{downArrow}</td>
+          </>
+        );
       });
       return (
         <tr>
@@ -31,7 +36,6 @@ export default CreateRoom = () => {
           <td>{arrow}</td>
         </tr>
       );
-      return <td>{downArrow}</td>;
     });
     setTempList(temp);
   }, [height, width]);
