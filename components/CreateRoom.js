@@ -20,12 +20,16 @@ export default CreateRoom = () => {
     })
   );
 
+  const test = ({ e }) => {
+    console.log(e.target.name);
+  };
+
   useEffect(() => {
     let temp = Array.from({ length: height }, (v, i) => {
       const tempRow = Array.from({ length: width }, (w, j) => {
         return (
           <>
-            <td name={[{ j }, { i }]}>
+            <td name={[{ j }, { i }]} onClick={(e) => test(e)}>
               i {i} {j}
             </td>
           </>
