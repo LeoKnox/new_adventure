@@ -20,7 +20,8 @@ export default CreateRoom = () => {
     })
   );
 
-  const test = ({ e }) => {
+  const test = (e) => {
+    console.log("test");
     console.log(e.target.name);
   };
 
