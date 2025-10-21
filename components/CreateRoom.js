@@ -10,7 +10,7 @@ export default CreateRoom = () => {
 
   const test = (e) => {
     console.log("test");
-    console.log(e.target.value);
+    console.log(e.target.value[0]);
   };
 
   useEffect(() => {
