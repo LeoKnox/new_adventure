@@ -6,19 +6,7 @@ export default CreateRoom = () => {
   const arrow = <button onClick={() => setWidth(width + 1)}>→</button>;
   const downArrow = <button onClick={() => setHeight(height + 1)}>↓</button>;
 
-  const [tempList, setTempList] = useState(
-    Array.from({ length: height }, (v, i) => {
-      const tempRow = Array.from({ length: width }, (w, j) => {
-        return <td>-i-</td>;
-      });
-      return (
-        <tr>
-          {tempRow}
-          <td>{arrow}</td>
-        </tr>
-      );
-    })
-  );
+  const [tempList, setTempList] = useState();
 
   const test = (e) => {
     console.log("test");
