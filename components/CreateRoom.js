@@ -8,8 +8,8 @@ export default CreateRoom = () => {
 
   const [tempList, setTempList] = useState();
 
-  const test = (e) => {
-    console.log("test");
+  const addItem = (e) => {
+    console.log("add item");
     console.log(e.target.value[0]);
   };
 
@@ -19,8 +19,8 @@ export default CreateRoom = () => {
         return (
           <>
             <td>
-              <button value={[j, i]} onClick={test}>
-                i {i} {j}
+              <button value={[j, i]} onClick={addItem}>
+                i
               </button>
             </td>
           </>
