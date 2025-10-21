@@ -10,7 +10,7 @@ export default CreateRoom = () => {
 
   const test = (e) => {
     console.log("test");
-    console.log(e.target.value[0]);
+    console.log(e.target.value);
   };
 
   useEffect(() => {
@@ -19,7 +19,7 @@ export default CreateRoom = () => {
         return (
           <>
             <td>
-              <button value={[{ j }, { i }]} onClick={test}>
+              <button value={[j, i]} onClick={test}>
                 i {i} {j}
               </button>
             </td>
