@@ -10,7 +10,7 @@ export default CreateRoom = () => {
 
   const test = (e) => {
     console.log("test");
-    console.log(JSON.stringify(e.target.value[0]));
+    console.log(e.target.value[0]);
   };
 
   useEffect(() => {
