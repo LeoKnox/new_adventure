@@ -23,7 +23,13 @@ export default CreateRoom = () => {
           <>
             <td>
               <button value={[j, i]} onClick={addItem}>
-                {show ? <Level /> : "j"}
+                {show ? (
+                  <>
+                    <p>test</p>
+                  </>
+                ) : (
+                  "j"
+                )}
               </button>
             </td>
           </>
