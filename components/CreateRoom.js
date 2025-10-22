@@ -1,4 +1,5 @@
 import { useState, useEffect } from "react";
+import { Level } from "./Level.js";
 
 export default CreateRoom = () => {
   const [height, setHeight] = useState(2);
@@ -22,7 +23,7 @@ export default CreateRoom = () => {
           <>
             <td>
               <button value={[j, i]} onClick={addItem}>
-                {show ? "x" : "j"}
+                {show ? <Level /> : "j"}
               </button>
             </td>
           </>
