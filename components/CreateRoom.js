@@ -19,7 +19,9 @@ export default CreateRoom = () => {
   const dropDown = () => {
     return (
       <>
-        <p>test</p>
+        <select>
+          <option>monster</option>
+        </select>
       </>
     );
   };
