@@ -12,7 +12,7 @@ export default CreateRoom = () => {
   const addItem = (e) => {
     console.log("add item");
     console.log(e.target.value[0]);
-    setShow(false);
+    setShow(true);
   };
 
   useEffect(() => {
@@ -22,7 +22,7 @@ export default CreateRoom = () => {
           <>
             <td>
               <button value={[j, i]} onClick={addItem}>
-                {show ? "i" : "j"}
+                {show ? "x" : "j"}
               </button>
             </td>
           </>
