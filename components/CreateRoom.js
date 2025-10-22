@@ -31,7 +31,7 @@ export default CreateRoom = () => {
           <>
             <td>
               <button value={[j, i]} onClick={addItem}>
-                {show ? { dropDown } : "j"}
+                {show ? dropDown() : "j"}
               </button>
             </td>
           </>
