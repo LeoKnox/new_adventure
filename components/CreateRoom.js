@@ -3,6 +3,7 @@ import { useState, useEffect } from "react";
 export default CreateRoom = () => {
   const [height, setHeight] = useState(2);
   const [width, setWidth] = useState(3);
+  const [show, setShow] = useState(false);
   const arrow = <button onClick={() => setWidth(width + 1)}>→</button>;
   const downArrow = <button onClick={() => setHeight(height + 1)}>↓</button>;
 
@@ -20,7 +21,7 @@ export default CreateRoom = () => {
           <>
             <td>
               <button value={[j, i]} onClick={addItem}>
-                i
+                {show ? "i" : "j"}
               </button>
             </td>
           </>
