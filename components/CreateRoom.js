@@ -12,6 +12,7 @@ export default CreateRoom = () => {
   const addItem = (e) => {
     console.log("add item");
     console.log(e.target.value[0]);
+    setShow(false);
   };
 
   useEffect(() => {
@@ -36,7 +37,7 @@ export default CreateRoom = () => {
     });
     temp.push(<tr>{downArrow}</tr>);
     setTempList(temp);
-  }, [height, width]);
+  }, [height, width, show]);
 
   /*const resetRoom = () => {
     console.log("reset room");
