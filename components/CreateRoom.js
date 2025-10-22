@@ -16,6 +16,14 @@ export default CreateRoom = () => {
     setShow(true);
   };
 
+  const dropDown = () => {
+    return (
+      <>
+        <p>test</p>
+      </>
+    );
+  };
+
   useEffect(() => {
     let temp = Array.from({ length: height }, (v, i) => {
       const tempRow = Array.from({ length: width }, (w, j) => {
@@ -23,13 +31,7 @@ export default CreateRoom = () => {
           <>
             <td>
               <button value={[j, i]} onClick={addItem}>
-                {show ? (
-                  <>
-                    <p>test</p>
-                  </>
-                ) : (
-                  "j"
-                )}
+                {show ? { dropDown } : "j"}
               </button>
             </td>
           </>
