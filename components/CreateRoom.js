@@ -45,9 +45,15 @@ export default CreateRoom = () => {
           <td>{arrow}</td>
         </tr>
       );
-      temp.push(<tr>{downArrow}</tr>);
     });
-
+    temp.push(
+      <tr>
+        Array.from ({length: height}, (x, k) => {
+        return({downArrow})
+  }
+        )
+      </tr>
+    );
     setTempList(temp);
   }, [height, width, show]);
 
