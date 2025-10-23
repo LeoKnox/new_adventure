@@ -15,7 +15,9 @@ export default CreateRoom = () => {
     console.log(e.target.value[0]);
     setShow(true);
   };
-
+  const test = () => {
+    console.log("red");
+  };
   const dropDown = () => {
     return (
       <>
@@ -32,7 +34,7 @@ export default CreateRoom = () => {
         return (
           <>
             <td>
-              <button value={[j, i]} onClick={addItem}>
+              <button value={[j, i]} onClick={addItem} onMouseDown={test}>
                 {show ? dropDown() : "j"}
               </button>
             </td>
@@ -46,17 +48,7 @@ export default CreateRoom = () => {
         </tr>
       );
     });
-    temp.push(<tr>Array.from({ length: width }, (w, j) => {
-      return (
-        
-          <td>
-            <button value={[j, i]} onClick={addItem}>
-              {show ? dropDown() : "j"}
-            </button>
-          </td>
-        
-      )
-    })</tr>);
+    temp.push(<tr>{downArrow}</tr>);
     setTempList(temp);
   }, [height, width, show]);
 
