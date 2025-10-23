@@ -45,8 +45,9 @@ export default CreateRoom = () => {
           <td>{arrow}</td>
         </tr>
       );
+      temp.push(<tr>{downArrow}</tr>);
     });
-    temp.push(<tr>{downArrow}</tr>);
+
     setTempList(temp);
   }, [height, width, show]);
 
