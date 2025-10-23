@@ -46,14 +46,17 @@ export default CreateRoom = () => {
         </tr>
       );
     });
-    temp.push(
-      <tr>
-        Array.from ({length: height}, (x, k) => {
-        return({downArrow})
-  }
-        )
-      </tr>
-    );
+    temp.push(<tr>Array.from({ length: width }, (w, j) => {
+      return (
+        
+          <td>
+            <button value={[j, i]} onClick={addItem}>
+              {show ? dropDown() : "j"}
+            </button>
+          </td>
+        
+      )
+    })</tr>);
     setTempList(temp);
   }, [height, width, show]);
 
