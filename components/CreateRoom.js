@@ -5,6 +5,7 @@ export default CreateRoom = () => {
   const [height, setHeight] = useState(2);
   const [width, setWidth] = useState(3);
   const [show, setShow] = useState(false);
+  const [roomDrag, setRoomDrag] = useState(false);
   const arrow = <button onClick={() => setWidth(width + 1)}>→</button>;
   const downArrow = <button onClick={() => setHeight(height + 1)}>↓</button>;
 
@@ -15,8 +16,13 @@ export default CreateRoom = () => {
     console.log(e.target.value[0]);
     setShow(true);
   };
-  const test = () => {
+  const onDown = () => {
     console.log("red");
+    onMove();
+    //setShow(false);
+  };
+  const onMove = () => {
+    console.log("move");
   };
   const dropDown = () => {
     return (
@@ -34,7 +40,7 @@ export default CreateRoom = () => {
         return (
           <>
             <td>
-              <button value={[j, i]} onClick={addItem} onMouseDown={test}>
+              <button value={[j, i]} onClick={addItem} onMouseDown={onDown}>
                 {show ? dropDown() : "j"}
               </button>
             </td>
