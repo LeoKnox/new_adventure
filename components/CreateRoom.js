@@ -39,7 +39,7 @@ export default CreateRoom = () => {
       const tempRow = Array.from({ length: width }, (w, j) => {
         return (
           <>
-            <td>
+            <td style={{ width: "40px" }}>
               <button value={[j, i]} onClick={addItem} onMouseDown={onDown}>
                 {show ? dropDown() : "j"}
               </button>
