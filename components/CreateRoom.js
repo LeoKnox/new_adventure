@@ -22,7 +22,7 @@ export default CreateRoom = () => {
   };
   const onDown = (e) => {
     console.log("red");
-    onMove(e);
+    //onMove(e);
     //setShow(false);
   };
   const onMove = (e) => {
@@ -44,7 +44,12 @@ export default CreateRoom = () => {
         return (
           <>
             <td style={{ width: "40px" }}>
-              <button value={[j, i]} onClick={addItem} onMouseDown={onDown}>
+              <button
+                value={[j, i]}
+                onClick={addItem}
+                onMouseMove={onMove}
+                onMouseDown={onDown}
+              >
                 {show ? dropDown() : "j"}
               </button>
             </td>
