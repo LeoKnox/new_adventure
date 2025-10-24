@@ -7,7 +7,11 @@ export default CreateRoom = () => {
   const [show, setShow] = useState(false);
   const [roomDrag, setRoomDrag] = useState(false);
   const arrow = <button onClick={() => setWidth(width + 1)}>→</button>;
-  const downArrow = <button onClick={() => setHeight(height + 1)}>↓</button>;
+  const downArrow = (
+    <button onClick={() => setHeight(height + 1)} style={{ width: width * 40 }}>
+      ↓
+    </button>
+  );
 
   const [tempList, setTempList] = useState();
 
@@ -54,7 +58,7 @@ export default CreateRoom = () => {
         </tr>
       );
     });
-    temp.push(<tr style={{ width: "400px" }}>{downArrow}</tr>);
+    temp.push(<tr>{downArrow}</tr>);
     setTempList(temp);
   }, [height, width, show]);
 
