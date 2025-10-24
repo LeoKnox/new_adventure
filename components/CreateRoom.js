@@ -16,9 +16,9 @@ export default CreateRoom = () => {
     console.log(e.target.value[0]);
     setShow(true);
   };
-  const onDown = () => {
+  const onDown = (e) => {
     console.log("red");
-    onMove();
+    onMove(e);
     //setShow(false);
   };
   const onMove = (e) => {
