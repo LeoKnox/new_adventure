@@ -27,7 +27,7 @@ export default CreateRoom = () => {
     //setShow(false);
   };
   const onMove = (e) => {
-    setDrag && console.log("move" + e.clientX);
+    setDrag || console.log("move" + e.clientX);
   };
   const dropDown = () => {
     return (
