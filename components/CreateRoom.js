@@ -23,11 +23,13 @@ export default CreateRoom = () => {
   };
   const onDown = (e) => {
     console.log("red");
-    setDrag(false);
+    setDrag(true);
     //setShow(false);
   };
   const onMove = (e) => {
-    setDrag || console.log("move" + e.clientX);
+    if (setDrag) {
+      console.log("move" + e.clientX);
+    }
   };
   const dropDown = () => {
     return (
