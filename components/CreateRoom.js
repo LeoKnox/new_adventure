@@ -23,7 +23,7 @@ export default CreateRoom = () => {
   };
   const onDown = (e) => {
     console.log("red");
-    setDrag(true);
+    setDrag(false);
     //setShow(false);
   };
   const onMove = (e) => {
