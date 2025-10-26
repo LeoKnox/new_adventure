@@ -24,7 +24,6 @@ export default CreateRoom = () => {
   const onDown = (e) => {
     console.log("red");
     setDrag(true);
-    onMove(e);
     //setShow(false);
   };
   const onMove = (e) => {
@@ -54,7 +53,7 @@ export default CreateRoom = () => {
               <button
                 value={[j, i]}
                 onClick={addItem}
-                //onMouseMove={onMove}
+                onMouseMove={onMove}
                 onMouseDown={onDown}
                 onMouseup={onUp}
               >
