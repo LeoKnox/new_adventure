@@ -32,6 +32,9 @@ export default CreateRoom = () => {
       console.log("move" + e.clientX);
     }
   };
+  const onUp = (e) => {
+    setDrag(false);
+  };
   const dropDown = () => {
     return (
       <>
@@ -53,7 +56,7 @@ export default CreateRoom = () => {
                 onClick={addItem}
                 //onMouseMove={onMove}
                 onMouseDown={onDown}
-                onMouseup={setDrag(false)}
+                onMouseup={onUp}
               >
                 {show ? dropDown() : "j"}
               </button>
