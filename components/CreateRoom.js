@@ -4,7 +4,7 @@ import { Level } from "./Level.js";
 export default CreateRoom = () => {
   const [height, setHeight] = useState(2);
   const [width, setWidth] = useState(3);
-  const [drag, setDrag] = useState(false);
+  const [drag, setDrag] = useState(true);
   const [show, setShow] = useState(false);
   const [roomDrag, setRoomDrag] = useState(false);
   const arrow = <button onClick={() => setWidth(width + 1)}>→</button>;
@@ -23,7 +23,7 @@ export default CreateRoom = () => {
   };
   const onDown = (e) => {
     console.log("red");
-    setDrag(true);
+    setDrag(false);
     //setShow(false);
   };
   const onMove = (e) => {
@@ -52,7 +52,7 @@ export default CreateRoom = () => {
                 onClick={addItem}
                 onMouseMove={onMove}
                 onMouseDown={onDown}
-                onMouseup={setDrag(false)}
+                onMouseup={setDrag(true)}
               >
                 {show ? dropDown() : "j"}
               </button>
