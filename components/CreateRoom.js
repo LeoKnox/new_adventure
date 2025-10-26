@@ -53,9 +53,9 @@ export default CreateRoom = () => {
               <button
                 value={[j, i]}
                 //onClick={addItem}
-                onMouseMove={onMove}
-                onMouseDown={onDown}
-                onMouseup={onUp}
+                onMouseMove={(e) => onMove(e)}
+                onMouseDown={(e) => onDown(e)}
+                onMouseup={(e) => onUp(e)}
               >
                 {show ? dropDown() : "j"}
               </button>
