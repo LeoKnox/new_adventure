@@ -52,7 +52,7 @@ export default CreateRoom = () => {
             <td style={{ width: "40px" }}>
               <button
                 value={[j, i]}
-                onClick={addItem}
+                //onClick={addItem}
                 onMouseMove={onMove}
                 onMouseDown={onDown}
                 onMouseup={onUp}
