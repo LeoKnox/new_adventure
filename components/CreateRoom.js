@@ -4,7 +4,7 @@ import { Level } from "./Level.js";
 
 export default CreateRoom = (newId) => {
   const [height, setHeight] = useState(singleRoom(newId).height);
-  const [width, setWidth] = useState(singleRoom().width);
+  const [width, setWidth] = useState(singleRoom(newId).width);
   const [drag, setDrag] = useState(false);
   const [show, setShow] = useState(false);
   const [roomDrag, setRoomDrag] = useState(false);
