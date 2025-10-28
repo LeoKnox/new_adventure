@@ -3,7 +3,7 @@ import { singleRoom } from "./dungeonData.js";
 import { Level } from "./Level.js";
 
 export default CreateRoom = () => {
-  const [height, setHeight] = useState(singleRoom()[height]);
+  const [height, setHeight] = useState([...singleRoom().height]);
   const [width, setWidth] = useState(singleRoom().width);
   const [drag, setDrag] = useState(false);
   const [show, setShow] = useState(false);
