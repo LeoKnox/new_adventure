@@ -16,9 +16,9 @@ export default CreateRoom = ({ newId, setLoadComponent, submitRoom }) => {
   );
 
   const [tempList, setTempList] = useState();
-  const submitRoom = () => {
-    let temp = {...singleRoom()}
-    console.log({ temp, height: height });
+  const submitButton = () => {
+    let temp = singleRoom();
+    console.log(temp);
   };
   const addItem = (e) => {
     console.log("add item");
@@ -57,9 +57,9 @@ export default CreateRoom = ({ newId, setLoadComponent, submitRoom }) => {
               <button
                 value={[j, i]}
                 //onClick={addItem}
-                onMouseMove={onMove}
-                onMouseDown={onDown}
-                onMouseup={onUp}
+                //onMouseMove={onMove}
+                //onMouseDown={onDown}
+                //onMouseup={onUp}
               >
                 {show ? dropDown() : "j"}
               </button>
@@ -75,7 +75,7 @@ export default CreateRoom = ({ newId, setLoadComponent, submitRoom }) => {
       );
     });
     temp.push(<p>{downArrow}</p>);
-    temp.push(<button onClick={sumbitRoom}>submit</button>);
+    temp.push(<button onClick={submitButton}>submit</button>);
     setTempList(temp);
   }, [height, width, show]);
 
