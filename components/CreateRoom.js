@@ -1,5 +1,5 @@
 import { useState, useEffect } from "react";
-import { addRoom, singleRoom } from "./dungeonData.js";
+import { changeRoomDD, singleRoom } from "./dungeonData.js";
 import { Level } from "./Level.js";
 
 export default CreateRoom = ({ newId, setLoadComponent, submitRoom }) => {
@@ -18,7 +18,7 @@ export default CreateRoom = ({ newId, setLoadComponent, submitRoom }) => {
   const [tempList, setTempList] = useState();
   const submitButton = () => {
     let temp = { ...singleRoom(newId), ["height"]: height, ["width"]: width };
-    addRoom(temp);
+    changeRoomDD(temp, newId);
     console.log(temp);
   };
   const addItem = (e) => {
