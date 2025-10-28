@@ -17,7 +17,7 @@ export default CreateRoom = ({ newId, setLoadComponent, submitRoom }) => {
 
   const [tempList, setTempList] = useState();
   const submitButton = () => {
-    let temp = { ...singleRoom(newId), ["height"]: height };
+    let temp = { ...singleRoom(newId), ["height"]: height, ["width"]: width };
     console.log(temp);
   };
   const addItem = (e) => {
