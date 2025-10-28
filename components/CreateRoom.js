@@ -71,7 +71,8 @@ export default CreateRoom = ({ newId, setLoadComponent, submitRoom }) => {
         </tr>
       );
     });
-    temp.push(<>{downArrow}</>);
+    temp.push(<p>{downArrow}</p>);
+    temp.push(<button>submit</button>);
     setTempList(temp);
   }, [height, width, show]);
 
