@@ -16,7 +16,9 @@ export default CreateRoom = ({ newId, setLoadComponent, submitRoom }) => {
   );
 
   const [tempList, setTempList] = useState();
-
+const submitRoom = () => {
+  console.log({...singleRoom(), height:height})
+}
   const addItem = (e) => {
     console.log("add item");
     console.log(e.target.value[0]);
@@ -72,7 +74,7 @@ export default CreateRoom = ({ newId, setLoadComponent, submitRoom }) => {
       );
     });
     temp.push(<p>{downArrow}</p>);
-    temp.push(<button>submit</button>);
+    temp.push(<button onClick={sumbitRoom}>submit</button>);
     setTempList(temp);
   }, [height, width, show]);
 
