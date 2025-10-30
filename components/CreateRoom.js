@@ -57,6 +57,96 @@ export default CreateRoom = ({ newId, setLoadComponent, submitRoom }) => {
     let temp = Array.from({ length: height }, (v, i) => {
       const tempRow = Array.from({ length: width }, (w, j) => {
         return (
+          <div
+            style={{
+              position: "absolute",
+              top: "0",
+              left: "0",
+              width: "80%",
+              height: "80%",
+            }}
+          >
+            <td style={{ width: "40px" }}>
+              <button
+                value={[j, i]}
+                //onClick={addItem}
+                //onMouseMove={onMove}
+                //onMouseDown={onDown}
+                //onMouseup={onUp}
+              >
+                {show ? dropDown() : "j"}
+              </button>
+            </td>
+          </div>
+        );
+      });
+      return (
+        <tr>
+          <td>{leftarrow}</td>
+          {tempRow}
+          <td>{arrow}</td>
+        </tr>
+      );
+    });
+    temp.unshift(<p>{upArrow}</p>);
+    temp.push(<p>{downArrow}</p>);
+    temp.push(<button onClick={submitButton}>submit</button>);
+    setTempList(temp);
+  }, [height, width, show]);
+
+  /*const resetRoom = () => {
+    console.log("reset room");
+    console.log(width);
+    let tempWidth = width + 1;
+    setWidth(tempWidth);
+    let temp = Array.from({ length: height }, (v, i) => {
+      const tempRow = Array.from({ length: width + 1 }, (w, j) => {
+        return <td>+i+</td>;
+      });
+      return (
+        <tr>
+          {tempRow}
+          <td>{arrow}</td>
+        </tr>
+      );
+    });
+
+    console.log("contine reset");
+    console.log(width);
+    setTempList(temp);
+  };*/
+  console.log("create room new");
+  console.log(tempList);
+  return (
+    <>
+      <h1>create room map {width}</h1>
+      {tempList}
+    </>
+  );
+};
+  };
+  const onMove = (e) => {
+    if (setDrag) {
+      console.log("move" + e.clientX);
+    }
+  };
+  const onUp = (e) => {
+    setDrag(false);
+  };
+  const dropDown = () => {
+    return (
+      <>
+        <select>
+          <option>monster</option>
+        </select>
+      </>
+    );
+  };
+
+  useEffect(() => {
+    let temp = Array.from({ length: height }, (v, i) => {
+      const tempRow = Array.from({ length: width }, (w, j) => {
+        return (
           <>
             <td style={{ width: "40px" }}>
               <button
