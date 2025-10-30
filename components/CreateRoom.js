@@ -8,6 +8,8 @@ export default CreateRoom = ({ newId, setLoadComponent, submitRoom }) => {
   const [drag, setDrag] = useState(false);
   const [show, setShow] = useState(false);
   const [roomDrag, setRoomDrag] = useState(false);
+  const leftarrow = <button onClick={() => setWidth(width - 1)}>→</button>;
+
   const arrow = <button onClick={() => setWidth(width + 1)}>→</button>;
   const downArrow = (
     <button onClick={() => setHeight(height + 1)} style={{ width: width * 40 }}>
@@ -70,6 +72,7 @@ export default CreateRoom = ({ newId, setLoadComponent, submitRoom }) => {
       });
       return (
         <tr>
+          <td>{leftarrow}</td>
           {tempRow}
           <td>{arrow}</td>
         </tr>
