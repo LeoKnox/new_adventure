@@ -11,6 +11,11 @@ export default CreateRoom = ({ newId, setLoadComponent, submitRoom }) => {
   const leftarrow = <button onClick={() => setWidth(width - 1)}>←</button>;
 
   const arrow = <button onClick={() => setWidth(width + 1)}>→</button>;
+  const upArrow = (
+    <button onClick={() => setHeight(height + 1)} style={{ width: width * 40 }}>
+      ↑
+    </button>
+  );
   const downArrow = (
     <button onClick={() => setHeight(height + 1)} style={{ width: width * 40 }}>
       ↓
@@ -78,6 +83,7 @@ export default CreateRoom = ({ newId, setLoadComponent, submitRoom }) => {
         </tr>
       );
     });
+    temp.unshift(<p>{upArrow}</p>);
     temp.push(<p>{downArrow}</p>);
     temp.push(<button onClick={submitButton}>submit</button>);
     setTempList(temp);
