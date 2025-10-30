@@ -17,7 +17,6 @@ export default Build = () => {
 
   const editFunc = (roomEdit, newMob) => {
     console.log("edit func");
-    console.log(newMob);
     roomEdit.monsters[`${newMob.x}:${newMob.y}`] = 1;
     setRooms(roomEdit);
   };
@@ -35,7 +34,6 @@ export default Build = () => {
   };
   const removeRoom = (deleteId) => {
     console.log("remove room");
-    console.log(deleteId);
     deleteRoom(deleteId);
     setRooms(allRooms());
   };
@@ -77,7 +75,13 @@ export default Build = () => {
         />
       </>
     ),
-    map: <CreateRoom />,
+    map: (
+      <CreateRoom
+        newId={newId}
+        setLoadComponent={setLoadComponent}
+        submitRoom={submitRoom}
+      />
+    ),
   };
   //<EditRoom newId={newId} setIsEdit={setIsEdit} submitRoom={submitRoom} />
   return (
