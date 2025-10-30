@@ -8,7 +8,7 @@ export default CreateRoom = ({ newId, setLoadComponent, submitRoom }) => {
   const [drag, setDrag] = useState(false);
   const [show, setShow] = useState(false);
   const [roomDrag, setRoomDrag] = useState(false);
-  const leftarrow = <button onClick={() => setWidth(width - 1)}>→</button>;
+  const leftarrow = <button onClick={() => setWidth(width - 1)}>←</button>;
 
   const arrow = <button onClick={() => setWidth(width + 1)}>→</button>;
   const downArrow = (
