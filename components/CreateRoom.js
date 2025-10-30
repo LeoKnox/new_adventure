@@ -73,7 +73,15 @@ export default CreateRoom = ({ newId, setLoadComponent, submitRoom }) => {
         );
       });
       return (
-        <tr>
+        <tr
+          style={{
+            position: "absolute",
+            top: "0",
+            left: "0",
+            width: "80%",
+            height: "80%",
+          }}
+        >
           <td>{leftarrow}</td>
           {tempRow}
           <td>{arrow}</td>
