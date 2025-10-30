@@ -12,7 +12,7 @@ export default CreateRoom = ({ newId, setLoadComponent, submitRoom }) => {
 
   const arrow = <button onClick={() => setWidth(width + 1)}>→</button>;
   const upArrow = (
-    <button onClick={() => setHeight(height + 1)} style={{ width: width * 40 }}>
+    <button onClick={() => setHeight(height - 1)} style={{ width: width * 40 }}>
       ↑
     </button>
   );
