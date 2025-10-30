@@ -110,17 +110,19 @@ export default CreateRoom = ({ newId, setLoadComponent, submitRoom }) => {
   console.log("create room new");
   console.log(tempList);
   return (
-    <div
-      style={{
-        position: "absolute",
-        top: "0",
-        left: "0",
-        width: "80%",
-        height: "80%",
-      }}
-    >
+    <div>
       <h1>create room map {width}</h1>
-      {tempList}
+      <div
+        style={{
+          position: "relative",
+          top: "0",
+          left: "0",
+          width: "80%",
+          height: "80%",
+        }}
+      >
+        {tempList}
+      </div>
     </div>
   );
 };
