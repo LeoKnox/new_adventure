@@ -26,15 +26,12 @@ export default CreateRoom = ({ newId, setLoadComponent, submitRoom }) => {
   const submitButton = () => {
     let temp = { ...singleRoom(newId), ["height"]: height, ["width"]: width };
     changeRoomDD(temp, newId);
-    console.log(temp);
   };
   const addItem = (e) => {
     console.log("add item");
-    console.log(e.target.value[0]);
     setShow(false);
   };
   const onDown = (e) => {
-    console.log("red");
     setDrag(true);
     //setShow(false);
   };
