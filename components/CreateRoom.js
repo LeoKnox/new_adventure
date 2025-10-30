@@ -125,7 +125,7 @@ export default CreateRoom = ({ newId, setLoadComponent, submitRoom }) => {
       </div>
       <div
         style={{
-          position: "relative",
+          position: "absolute",
           top: "0",
           left: "0",
           width: "80%",
