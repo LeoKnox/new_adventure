@@ -122,32 +122,31 @@ export default CreateRoom = ({ newId, setLoadComponent, submitRoom }) => {
         }}
       >
         {tempList}
-        <div
-          style={{
-            position: "absolute",
-            top: "0",
-            left: "0",
-            width: "80%",
-            height: "80%",
-            display: "flex",
-          }}
-        >
-          <tr>
-            <td>*</td>
-            <td>*</td>
-            <td>*</td>
-          </tr>
-          <tr>
-            <td>*</td>
-            <td>*</td>
-            <td>*</td>
-          </tr>
-          <tr>
-            <td>*</td>
-            <td>*</td>
-            <td>*</td>
-          </tr>
-        </div>
+      </div>
+      <div
+        style={{
+          position: "absolute",
+          top: "0",
+          left: "0",
+          width: "80%",
+          height: "80%",
+        }}
+      >
+        <tr>
+          <td>*</td>
+          <td>*</td>
+          <td>*</td>
+        </tr>
+        <tr>
+          <td>*</td>
+          <td>*</td>
+          <td>*</td>
+        </tr>
+        <tr>
+          <td>*</td>
+          <td>*</td>
+          <td>*</td>
+        </tr>
       </div>
     </div>
   );
