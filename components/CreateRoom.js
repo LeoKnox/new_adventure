@@ -114,7 +114,7 @@ export default CreateRoom = ({ newId, setLoadComponent, submitRoom }) => {
       <h1>create room map {width}</h1>
       <div
         style={{
-          position: "relative",
+          position: "absolute",
           top: "0",
           left: "0",
           width: "80%",
@@ -132,23 +132,21 @@ export default CreateRoom = ({ newId, setLoadComponent, submitRoom }) => {
           height: "80%",
         }}
       >
-        <div style={{ position: "absolute" }}>
-          <tr>
-            <td>*</td>
-            <td>*</td>
-            <td>*</td>
-          </tr>
-          <tr>
-            <td>*</td>
-            <td>*</td>
-            <td>*</td>
-          </tr>
-          <tr>
-            <td>*</td>
-            <td>*</td>
-            <td>*</td>
-          </tr>
-        </div>
+        <tr>
+          <td>*</td>
+          <td>*</td>
+          <td>*</td>
+        </tr>
+        <tr>
+          <td>*</td>
+          <td>*</td>
+          <td>*</td>
+        </tr>
+        <tr>
+          <td>*</td>
+          <td>*</td>
+          <td>*</td>
+        </tr>
       </div>
     </div>
   );
