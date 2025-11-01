@@ -125,28 +125,30 @@ export default CreateRoom = ({ newId, setLoadComponent, submitRoom }) => {
       </div>
       <div
         style={{
-          position: "absolute",
+          position: "relative",
           top: "0",
           left: "0",
           width: "80%",
           height: "80%",
         }}
       >
-        <tr>
-          <td>*</td>
-          <td>*</td>
-          <td>*</td>
-        </tr>
-        <tr>
-          <td>*</td>
-          <td>*</td>
-          <td>*</td>
-        </tr>
-        <tr>
-          <td>*</td>
-          <td>*</td>
-          <td>*</td>
-        </tr>
+        <div style={{ position: "absolute" }}>
+          <tr>
+            <td>*</td>
+            <td>*</td>
+            <td>*</td>
+          </tr>
+          <tr>
+            <td>*</td>
+            <td>*</td>
+            <td>*</td>
+          </tr>
+          <tr>
+            <td>*</td>
+            <td>*</td>
+            <td>*</td>
+          </tr>
+        </div>
       </div>
     </div>
   );
