@@ -57,7 +57,7 @@ export default CreateRoom = ({ newId, setLoadComponent, submitRoom }) => {
     let temp = Array.from({ length: height }, (v, i) => {
       const tempRow = Array.from({ length: width }, (w, j) => {
         return (
-          <div style={{ position: "absolute" }}>
+          <div style={{ position: "" }}>
             <td style={{ width: "40px" }}>
               <button
                 value={[j, i]}
@@ -125,7 +125,7 @@ export default CreateRoom = ({ newId, setLoadComponent, submitRoom }) => {
       </div>
       <div
         style={{
-          position: "relative",
+          position: "absolute",
           top: "0",
           left: "0",
           width: "80%",
