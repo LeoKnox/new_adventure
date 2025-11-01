@@ -122,8 +122,7 @@ export default CreateRoom = ({ newId, setLoadComponent, submitRoom }) => {
         }}
       >
         {tempList}
-      </div>
-      <div
+        <div
         style={{
           position: "absolute",
           top: "0",
@@ -148,6 +147,8 @@ export default CreateRoom = ({ newId, setLoadComponent, submitRoom }) => {
           <td>*</td>
         </tr>
       </div>
+      </div>
+      
     </div>
   );
 };
