@@ -74,7 +74,6 @@ export default CreateRoom = ({ newId, setLoadComponent, submitRoom }) => {
         <tr>
           <td>{leftarrow}</td>
           {tempRow}
-          <td>{arrow}</td>
         </tr>
       );
     });
@@ -110,7 +109,7 @@ export default CreateRoom = ({ newId, setLoadComponent, submitRoom }) => {
   return (
     <div>
       <h1>create room map {width}</h1>
-      {upArrow}
+      <td>{arrow}</td>
       <div
         style={{
           position: "relative",
@@ -121,6 +120,7 @@ export default CreateRoom = ({ newId, setLoadComponent, submitRoom }) => {
         }}
       >
         {tempList}
+        {arrow}
         <div
           style={{
             position: "absolute",
