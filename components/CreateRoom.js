@@ -57,7 +57,7 @@ export default CreateRoom = ({ newId, setLoadComponent, submitRoom }) => {
     let temp = Array.from({ length: height }, (v, i) => {
       const tempRow = Array.from({ length: width }, (w, j) => {
         return (
-          <div style={{ position: "" }}>
+          <div>
             <td style={{ width: "40px" }}>
               <button
                 value={[j, i]}
