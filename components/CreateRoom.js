@@ -57,19 +57,17 @@ export default CreateRoom = ({ newId, setLoadComponent, submitRoom }) => {
     let temp = Array.from({ length: height }, (v, i) => {
       const tempRow = Array.from({ length: width }, (w, j) => {
         return (
-          <div>
-            <td style={{ width: "40px" }}>
-              <button
-                value={[j, i]}
-                //onClick={addItem}
-                //onMouseMove={onMove}
-                //onMouseDown={onDown}
-                //onMouseup={onUp}
-              >
-                {show ? dropDown() : "j"}
-              </button>
-            </td>
-          </div>
+          <td style={{ width: "40px" }}>
+            <button
+              value={[j, i]}
+              //onClick={addItem}
+              //onMouseMove={onMove}
+              //onMouseDown={onDown}
+              //onMouseup={onUp}
+            >
+              {show ? dropDown() : "j"}
+            </button>
+          </td>
         );
       });
       return (
