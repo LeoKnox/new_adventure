@@ -70,12 +70,7 @@ export default CreateRoom = ({ newId, setLoadComponent, submitRoom }) => {
           </td>
         );
       });
-      return (
-        <tr>
-          <td>{leftarrow}</td>
-          {tempRow}
-        </tr>
-      );
+      return <tr>{tempRow}</tr>;
     });
     //temp.unshift(<p>{upArrow}</p>);
     temp.push(<p>{downArrow}</p>);
@@ -119,6 +114,7 @@ export default CreateRoom = ({ newId, setLoadComponent, submitRoom }) => {
           height: "80%",
         }}
       >
+        <td>{leftarrow}</td>
         {tempList}
         {arrow}
         <div
