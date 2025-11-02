@@ -78,7 +78,7 @@ export default CreateRoom = ({ newId, setLoadComponent, submitRoom }) => {
         </tr>
       );
     });
-    temp.unshift(<p>{upArrow}</p>);
+    //temp.unshift(<p>{upArrow}</p>);
     temp.push(<p>{downArrow}</p>);
     temp.push(<button onClick={submitButton}>submit</button>);
     setTempList(temp);
@@ -119,6 +119,7 @@ export default CreateRoom = ({ newId, setLoadComponent, submitRoom }) => {
           height: "80%",
         }}
       >
+        {upArrow}
         {tempList}
         <div
           style={{
