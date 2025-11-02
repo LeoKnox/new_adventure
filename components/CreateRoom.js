@@ -131,9 +131,9 @@ export default CreateRoom = ({ newId, setLoadComponent, submitRoom }) => {
           }}
         >
           <tr>
-            <td>*</td>
-            <td>*</td>
-            <td>*</td>
+            <td style={{ width: "40px" }}>*</td>
+            <td style={{ width: "40px" }}>*</td>
+            <td style={{ width: "40px" }}>*</td>
           </tr>
           <tr>
             <td>*</td>
