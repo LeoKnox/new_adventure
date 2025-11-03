@@ -115,7 +115,18 @@ export default CreateRoom = ({ newId, setLoadComponent, submitRoom }) => {
         }}
       >
         {leftarrow}
-        <div style={{ display: "inline" }}>
+      </div>
+
+      <div style={{ display: "inline" }}>
+        <div
+          style={{
+            position: "absolute",
+            top: "0",
+            left: "0",
+            width: "80%",
+            height: "80%",
+          }}
+        >
           {tempList}
           <div
             style={{
