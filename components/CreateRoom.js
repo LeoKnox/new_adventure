@@ -114,8 +114,8 @@ export default CreateRoom = ({ newId, setLoadComponent, submitRoom }) => {
           height: "80%",
         }}
       >
+        {leftarrow}
         <div style={{ display: "inline" }}>
-          {leftarrow}
           {tempList}
           <div
             style={{
