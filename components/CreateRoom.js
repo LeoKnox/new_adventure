@@ -114,7 +114,7 @@ export default CreateRoom = ({ newId, setLoadComponent, submitRoom }) => {
           height: "80%",
         }}
       >
-        
+        {leftarrow}
         <div style={{ display: "inline" }}>
           {tempList}
           <div
@@ -142,7 +142,6 @@ export default CreateRoom = ({ newId, setLoadComponent, submitRoom }) => {
               <td>*</td>
             </tr>
           </div>
-          {leftarrow}
         </div>
         <div
           style={{
@@ -152,23 +151,7 @@ export default CreateRoom = ({ newId, setLoadComponent, submitRoom }) => {
             width: "80%",
             height: "80%",
           }}
-        >
-          <tr>
-            <td style={{ width: "40px" }}>*</td>
-            <td style={{ width: "40px" }}>*</td>
-            <td style={{ width: "40px" }}>*</td>
-          </tr>
-          <tr>
-            <td>*</td>
-            <td>*</td>
-            <td>*</td>
-          </tr>
-          <tr>
-            <td>*</td>
-            <td>*</td>
-            <td>*</td>
-          </tr>
-        </div>
+        ></div>
       </div>
     </div>
   );
