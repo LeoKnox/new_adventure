@@ -117,7 +117,7 @@ export default CreateRoom = ({ newId, setLoadComponent, submitRoom }) => {
         {leftarrow}
       </div>
 
-      <div style={{ display: "inline" }}>
+      <div>
         <div
           style={{
             position: "relative",
@@ -125,6 +125,7 @@ export default CreateRoom = ({ newId, setLoadComponent, submitRoom }) => {
             left: "0",
             width: "80%",
             height: "80%",
+            display: "inline",
           }}
         >
           <div
