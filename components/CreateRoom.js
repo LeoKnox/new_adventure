@@ -104,7 +104,7 @@ export default CreateRoom = ({ newId, setLoadComponent, submitRoom }) => {
   return (
     <div>
       <h1>create room map {width}</h1>
-      <td>{arrow}</td>
+
       <div
         style={{
           position: "relative",
@@ -166,6 +166,7 @@ export default CreateRoom = ({ newId, setLoadComponent, submitRoom }) => {
           </div>
         </div>
       </div>
+      {arrow}
     </div>
   );
 };
