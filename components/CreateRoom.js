@@ -142,7 +142,6 @@ export default CreateRoom = ({ newId, setLoadComponent, submitRoom }) => {
               <td>*</td>
             </tr>
           </div>
-          {arrow}
         </div>
         <div
           style={{
