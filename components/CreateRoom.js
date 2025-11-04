@@ -73,7 +73,6 @@ export default CreateRoom = ({ newId, setLoadComponent, submitRoom }) => {
       return <tr>{tempRow}</tr>;
     });
     //temp.unshift(<p>{upArrow}</p>);
-    temp.push(<p>{downArrow}</p>);
 
     setTempList(temp);
   }, [height, width, show]);
@@ -168,7 +167,10 @@ export default CreateRoom = ({ newId, setLoadComponent, submitRoom }) => {
           </div>
         </div>
       </div>
-      <button onClick={submitButton}>submit</button>
+      <div style={{ position: "relative" }}>
+        <p>{downArrow}</p>
+        <button onClick={submitButton}>submit</button>
+      </div>
     </div>
   );
 };
