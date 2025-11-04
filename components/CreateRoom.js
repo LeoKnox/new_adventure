@@ -130,8 +130,8 @@ export default CreateRoom = ({ newId, setLoadComponent, submitRoom }) => {
           <div
             style={{
               position: "absolute",
-              top: "0",
-              left: "0",
+              top: "0"0,
+              left: "",
               width: "80%",
               height: "80%",
             }}
@@ -167,10 +167,10 @@ export default CreateRoom = ({ newId, setLoadComponent, submitRoom }) => {
           </div>
         </div>
       </div>
-      <div style={{ position: "sticky" }}>
+      <tr>
         <p>{downArrow}</p>
         <button onClick={submitButton}>submit</button>
-      </div>
+      </tr>
     </div>
   );
 };
