@@ -112,6 +112,7 @@ export default CreateRoom = ({ newId, setLoadComponent, submitRoom }) => {
           left: "0",
           width: "80%",
           height: "80%",
+          display: "inline",
         }}
       >
         {leftarrow}
@@ -125,7 +126,6 @@ export default CreateRoom = ({ newId, setLoadComponent, submitRoom }) => {
             left: "0",
             width: "80%",
             height: "80%",
-            display: "inline",
           }}
         >
           <div
@@ -138,8 +138,9 @@ export default CreateRoom = ({ newId, setLoadComponent, submitRoom }) => {
             }}
           >
             {tempList}
+            {arrow}
           </div>
-          {arrow}
+
           <div
             style={{
               position: "absolute",
