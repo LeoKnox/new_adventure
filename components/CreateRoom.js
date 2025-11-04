@@ -74,7 +74,7 @@ export default CreateRoom = ({ newId, setLoadComponent, submitRoom }) => {
     });
     //temp.unshift(<p>{upArrow}</p>);
     temp.push(<p>{downArrow}</p>);
-    temp.push(<button onClick={submitButton}>submit</button>);
+
     setTempList(temp);
   }, [height, width, show]);
 
@@ -168,6 +168,7 @@ export default CreateRoom = ({ newId, setLoadComponent, submitRoom }) => {
           </div>
         </div>
       </div>
+      <button onClick={submitButton}>submit</button>
     </div>
   );
 };
