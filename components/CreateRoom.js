@@ -139,6 +139,7 @@ export default CreateRoom = ({ newId, setLoadComponent, submitRoom }) => {
           >
             {tempList}
           </div>
+          {arrow}
           <div
             style={{
               position: "absolute",
@@ -166,7 +167,6 @@ export default CreateRoom = ({ newId, setLoadComponent, submitRoom }) => {
           </div>
         </div>
       </div>
-      {arrow}
     </div>
   );
 };
