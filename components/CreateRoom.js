@@ -104,7 +104,7 @@ export default CreateRoom = ({ newId, setLoadComponent, submitRoom }) => {
     <>
       <div>
         <h1>create room map {width}</h1>
-
+        <div style={{ position: "relative" }}>{upArrow}</div>
         <div
           style={{
             position: "relative",
@@ -115,7 +115,6 @@ export default CreateRoom = ({ newId, setLoadComponent, submitRoom }) => {
             display: "inline-block",
           }}
         >
-          {leftarrow}
           <div
             style={{
               position: "absolute",
