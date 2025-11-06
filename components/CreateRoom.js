@@ -112,7 +112,7 @@ export default CreateRoom = ({ newId, setLoadComponent, submitRoom }) => {
             left: "0",
             width: "80%",
             height: "80%",
-            display: "inline",
+            display: "inline-block",
           }}
         >
           <div
