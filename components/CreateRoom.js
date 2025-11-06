@@ -127,7 +127,6 @@ export default CreateRoom = ({ newId, setLoadComponent, submitRoom }) => {
             }}
           >
             {tempList}
-            {arrow}
           </div>
 
           <div
@@ -155,6 +154,7 @@ export default CreateRoom = ({ newId, setLoadComponent, submitRoom }) => {
               <td>*</td>
             </tr>
           </div>
+          {arrow}
         </div>
       </div>
       <tr>
