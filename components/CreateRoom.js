@@ -115,6 +115,7 @@ export default CreateRoom = ({ newId, setLoadComponent, submitRoom }) => {
             display: "inline-block",
           }}
         >
+          {leftarrow}
           <div
             style={{
               position: "absolute",
