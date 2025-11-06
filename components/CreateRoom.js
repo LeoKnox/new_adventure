@@ -157,6 +157,7 @@ export default CreateRoom = ({ newId, setLoadComponent, submitRoom }) => {
           {arrow}
         </div>
       </div>
+      <br />
       <tr>
         <p>{downArrow}</p>
         <button onClick={submitButton}>submit</button>
