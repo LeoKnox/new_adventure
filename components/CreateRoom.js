@@ -120,51 +120,41 @@ export default CreateRoom = ({ newId, setLoadComponent, submitRoom }) => {
       <div>
         <div
           style={{
-            //position: "relative",
+            position: "absolute",
             top: "0",
             left: "0",
             width: "80%",
             height: "80%",
           }}
         >
-          <div
-            style={{
-              position: "absolute",
-              top: "0",
-              left: "0",
-              width: "80%",
-              height: "80%",
-            }}
-          >
-            {tempList}
-            {arrow}
-          </div>
+          {tempList}
+          {arrow}
+        </div>
 
-          <div
-            style={{
-              position: "absolute",
-              top: "0",
-              left: "0",
-              width: "80%",
-              height: "80%",
-            }}
-          >
-            <tr>
-              <td style={{ width: "40px" }}>*</td>
-              <td style={{ width: "40px" }}>*</td>
-              <td style={{ width: "40px" }}>*</td>
-            </tr>
-            <tr>
-              <td>*</td>
-              <td>*</td>
-              <td>*</td>
-            </tr>
-            <tr>
-              <td>*</td>
-              <td>*</td>
-              <td>*</td>
-            </tr>
-          </div>
+        <div
+          style={{
+            position: "absolute",
+            top: "0",
+            left: "0",
+            width: "80%",
+            height: "80%",
+          }}
+        >
+          <tr>
+            <td style={{ width: "40px" }}>*</td>
+            <td style={{ width: "40px" }}>*</td>
+            <td style={{ width: "40px" }}>*</td>
+          </tr>
+          <tr>
+            <td>*</td>
+            <td>*</td>
+            <td>*</td>
+          </tr>
+          <tr>
+            <td>*</td>
+            <td>*</td>
+            <td>*</td>
+          </tr>
         </div>
       </div>
       <tr>
