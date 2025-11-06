@@ -153,6 +153,7 @@ export default CreateRoom = ({ newId, setLoadComponent, submitRoom }) => {
             </tr>
           </div>
         </div>
+        <div style={{ position: "relative" }}>{downArrow}</div>
       </div>
     </>
   );
