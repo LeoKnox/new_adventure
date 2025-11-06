@@ -115,54 +115,45 @@ export default CreateRoom = ({ newId, setLoadComponent, submitRoom }) => {
             display: "inline",
           }}
         >
-          {leftarrow}
+          <div
+            style={{
+              position: "absolute",
+              top: "0",
+              left: "0",
+              width: "80%",
+              height: "80%",
+            }}
+          >
+            {tempList}
+          </div>
 
-          <div>
-            <div
-              style={{
-                position: "absolute",
-                top: "0",
-                left: "0",
-                width: "80%",
-                height: "80%",
-              }}
-            >
-              {tempList}
-            </div>
-
-            <div
-              style={{
-                position: "absolute",
-                top: "0",
-                left: "0",
-                width: "80%",
-                height: "80%",
-              }}
-            >
-              <tr>
-                <td style={{ width: "40px" }}>*</td>
-                <td style={{ width: "40px" }}>*</td>
-                <td style={{ width: "40px" }}>*</td>
-              </tr>
-              <tr>
-                <td>*</td>
-                <td>*</td>
-                <td>*</td>
-              </tr>
-              <tr>
-                <td>*</td>
-                <td>*</td>
-                <td>*</td>
-              </tr>
-            </div>
-            {arrow}
+          <div
+            style={{
+              position: "absolute",
+              top: "0",
+              left: "0",
+              width: "80%",
+              height: "80%",
+            }}
+          >
+            <tr>
+              <td style={{ width: "40px" }}>*</td>
+              <td style={{ width: "40px" }}>*</td>
+              <td style={{ width: "40px" }}>*</td>
+            </tr>
+            <tr>
+              <td>*</td>
+              <td>*</td>
+              <td>*</td>
+            </tr>
+            <tr>
+              <td>*</td>
+              <td>*</td>
+              <td>*</td>
+            </tr>
           </div>
         </div>
       </div>
-      <p style={{ display: "block" }}>
-        {downArrow}
-        <button onClick={submitButton}>submit</button>
-      </p>
     </>
   );
 };
