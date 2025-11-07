@@ -104,56 +104,58 @@ export default CreateRoom = ({ newId, setLoadComponent, submitRoom }) => {
     <>
       <div>
         <h1>create room map {width}</h1>
-        <div style={{ position: "relative" }}>{upArrow}</div>
-        <div
-          style={{
-            position: "relative",
-            top: "0",
-            left: "0",
-            width: "80%",
-            height: "80%",
-            display: "inline-block",
-          }}
-        >
+        <div style={{ position: "relative" }}>
+          {upArrow}
           <div
             style={{
-              position: "absolute",
+              position: "relative",
               top: "0",
               left: "0",
               width: "80%",
               height: "80%",
+              display: "inline-block",
             }}
           >
-            {tempList}
-          </div>
+            <div
+              style={{
+                position: "absolute",
+                top: "0",
+                left: "0",
+                width: "80%",
+                height: "80%",
+              }}
+            >
+              {tempList}
+            </div>
 
-          <div
-            style={{
-              position: "absolute",
-              top: "0",
-              left: "0",
-              width: "80%",
-              height: "80%",
-            }}
-          >
-            <tr>
-              <td style={{ width: "40px" }}>*</td>
-              <td style={{ width: "40px" }}>*</td>
-              <td style={{ width: "40px" }}>*</td>
-            </tr>
-            <tr>
-              <td>*</td>
-              <td>*</td>
-              <td>*</td>
-            </tr>
-            <tr>
-              <td>*</td>
-              <td>*</td>
-              <td>*</td>
-            </tr>
+            <div
+              style={{
+                position: "absolute",
+                top: "0",
+                left: "0",
+                width: "80%",
+                height: "80%",
+              }}
+            >
+              <tr>
+                <td style={{ width: "40px" }}>*</td>
+                <td style={{ width: "40px" }}>*</td>
+                <td style={{ width: "40px" }}>*</td>
+              </tr>
+              <tr>
+                <td>*</td>
+                <td>*</td>
+                <td>*</td>
+              </tr>
+              <tr>
+                <td>*</td>
+                <td>*</td>
+                <td>*</td>
+              </tr>
+            </div>
           </div>
+          <div style={{ position: "static" }}>{downArrow}</div>
         </div>
-        <div style={{ position: "static" }}>{downArrow}</div>
       </div>
     </>
   );
