@@ -121,7 +121,8 @@ export default CreateRoom = ({ newId, setLoadComponent, submitRoom }) => {
 
             <div
               style={{
-                gridColumn: "3/4",
+                position: "absolute",
+                gridColumn: "2/3",
               }}
             >
               <tr>
