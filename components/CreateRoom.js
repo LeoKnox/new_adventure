@@ -104,7 +104,9 @@ export default CreateRoom = ({ newId, setLoadComponent, submitRoom }) => {
     <>
       <div>
         <h1>create room map {width}</h1>
-        <div style={{ gridTemplateColumns: "1fr/1fr/1fr" }}>
+        <div
+          style={{ gridTemplateColumns: "1fr/1fr/1fr", position: "absolute" }}
+        >
           <div style={{ gridColumn: "1/4" }}>{upArrow}</div>
           <div
             style={{
@@ -114,6 +116,7 @@ export default CreateRoom = ({ newId, setLoadComponent, submitRoom }) => {
             <div
               style={{
                 gridColumn: "2/3",
+                position: "absolute",
               }}
             >
               {tempList}
@@ -121,7 +124,7 @@ export default CreateRoom = ({ newId, setLoadComponent, submitRoom }) => {
 
             <div
               style={{
-                position: "absolute",
+                position: "relative",
                 gridColumn: "2/3",
               }}
             >
