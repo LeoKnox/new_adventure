@@ -113,11 +113,7 @@ export default CreateRoom = ({ newId, setLoadComponent, submitRoom }) => {
           >
             <div
               style={{
-                position: "absolute",
-                top: "0",
-                left: "0",
-                width: "80%",
-                height: "80%",
+                gridColumn: "2/3",
               }}
             >
               {tempList}
@@ -125,11 +121,7 @@ export default CreateRoom = ({ newId, setLoadComponent, submitRoom }) => {
 
             <div
               style={{
-                position: "absolute",
-                top: "0",
-                left: "0",
-                width: "80%",
-                height: "80%",
+                gridColumn: "3/4",
               }}
             >
               <tr>
