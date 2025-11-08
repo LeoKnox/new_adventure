@@ -108,7 +108,7 @@ export default CreateRoom = ({ newId, setLoadComponent, submitRoom }) => {
           style={{
             gridTemplateColumns: "1fr/1fr/1fr",
             gridTemplateRows: "1fr/1fr/1fr",
-            position: "absolute",
+            //position: "absolute",
           }}
         >
           <div style={{ gridColumn: "1/4", gridRow: "1/1" }}>{upArrow}</div>
@@ -121,7 +121,7 @@ export default CreateRoom = ({ newId, setLoadComponent, submitRoom }) => {
             <div
               style={{
                 gridColumn: "2/3",
-                position: "absolute",
+                //position: "absolute",
                 gridRow: "2/3",
               }}
             >
@@ -130,7 +130,7 @@ export default CreateRoom = ({ newId, setLoadComponent, submitRoom }) => {
 
             <div
               style={{
-                position: "relative",
+                //position: "relative",
                 gridColumn: "2/3",
                 gridRow: "2/3",
               }}
@@ -153,7 +153,10 @@ export default CreateRoom = ({ newId, setLoadComponent, submitRoom }) => {
             </div>
           </div>
           <div
-            style={{ gridColumn: "1/4", gridRow: "3/4", position: "relative" }}
+            style={{
+              gridColumn: "1/4",
+              gridRow: "3/4" /*position: "absolute"*/,
+            }}
           >
             {downArrow}
           </div>
