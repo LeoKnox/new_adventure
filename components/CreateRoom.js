@@ -152,7 +152,11 @@ export default CreateRoom = ({ newId, setLoadComponent, submitRoom }) => {
               </tr>
             </div>
           </div>
-          <div style={{ gridColumn: "1/4", gridRow: "3/4" }}>{downArrow}</div>
+          <div
+            style={{ gridColumn: "1/4", gridRow: "3/4", position: "relative" }}
+          >
+            {downArrow}
+          </div>
         </div>
       </div>
     </>
