@@ -106,6 +106,7 @@ export default CreateRoom = ({ newId, setLoadComponent, submitRoom }) => {
         <h1>create room map {width}</h1>
         <div
           style={{
+            display: "grid",
             gridTemplateColumns: "1fr/1fr/1fr",
             gridTemplateRows: "1fr/1fr/1fr",
             //position: "absolute",
