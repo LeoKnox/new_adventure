@@ -112,8 +112,8 @@ export default CreateRoom = ({ newId, setLoadComponent, submitRoom }) => {
             //position: "absolute",
           }}
         >
-          <div style={{ gridColumn: "1/2" }}>{tempList}</div>
-          <div style={{ gridColumn: "1/2" }}>
+          <div style={{ gridColumn: "1/2", gridRow: "1/2" }}>{tempList}</div>
+          <div style={{ gridColumn: "1/2", gridRow: "1/2" }}>
             <tr>
               <td>*</td>
               <td>*</td>
