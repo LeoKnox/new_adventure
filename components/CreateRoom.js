@@ -108,7 +108,7 @@ export default CreateRoom = ({ newId, setLoadComponent, submitRoom }) => {
           style={{
             display: "grid",
             //gridTemplateColumns: "15%, 60%, 15%",
-            //gridTemplateRows: "1fr/1fr/1fr",
+            gridTemplateRows: "auto",
             //position: "absolute",
           }}
         >
