@@ -112,6 +112,7 @@ export default CreateRoom = ({ newId, setLoadComponent, submitRoom }) => {
             //position: "absolute",
           }}
         >
+          <div style={{ gridColumn: "1/2", gridRow: "1/2" }}>*</div>
           <div style={{ width: "10%", gridcolumn: "2/3", gridRow: "1/2" }}>
             {upArrow}
           </div>
@@ -119,6 +120,8 @@ export default CreateRoom = ({ newId, setLoadComponent, submitRoom }) => {
           <div style={{ gridColumn: "3/4", gridRow: "2/3" }}>{arrow}</div>
           <div style={{ gridColumn: "2/3", gridRow: "2/3" }}>{tempList}</div>
           <div style={{ gridcolumn: "2/3", gridRow: "3/4" }}>{downArrow}</div>
+          <div style={{ gridColumn: "1/2", gridRow: "3/4" }}>*</div>
+
           <div style={{ gridColumn: "2/3", gridRow: "2/3" }}>
             <tr>
               <td>*</td>
