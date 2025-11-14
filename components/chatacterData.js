@@ -47,6 +47,10 @@ export const singleCharacter = (id = 1) => {
   return temp;
 };
 
+export const addWeapon = () => {
+  console.log("add weapon")
+}
+
 export const addInventory = (
   characterId = 1,
   type = "armor",
