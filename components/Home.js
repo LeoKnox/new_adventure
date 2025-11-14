@@ -4,7 +4,7 @@ import Characters from "./Characters.js";
 import Play from "./Play.js";
 
 export default Home = () => {
-  const [page, setPage] = useState(<Play />);
+  const [page, setPage] = useState(<Characters />);
   const [characterId, setCharacterId] = useState(0);
   const changeId = (newId) => {
     setCharacterId(newId);
@@ -19,7 +19,8 @@ export default Home = () => {
       <button className="buttons" onClick={() => setPage(<Play />)}>
         Play
       </button>
-      <button className="buttons"
+      <button
+        className="buttons"
         onClick={() =>
           setPage(
             <Characters
@@ -32,7 +33,9 @@ export default Home = () => {
       >
         Characters
       </button>
-      <button className="buttons" onClick={() => setPage(<Build />)}>Build</button>
+      <button className="buttons" onClick={() => setPage(<Build />)}>
+        Build
+      </button>
       {page}
     </div>
   );
