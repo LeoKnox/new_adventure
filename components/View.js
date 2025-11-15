@@ -27,7 +27,7 @@ export default View = ({ characterId }) => {
       <p>Lvl: {character.lvl}</p>
       <p>Atk: {character.atk}</p>
       <p>Def: {character.def}</p>
-      <AddWeapon updateInventory={addWeapon} />
+      <AddWeapon updateInventory={() => addWeapon(0)} />
       <DisplayWeapon characterWeapon={character.weapon} />
       <AddArmor updateInventory={updateInventory} />
       <DisplayArmor characterArmor={character.armor} />
