@@ -53,7 +53,7 @@ export const addWeapon = (awId = 0, newWeapon = "Seax") => {
     ...characterData[1].weapon,
     [characterData[1].weapon.length]: newWeapon,
   };
-  console.log(temp);
+  console.log(characterData[1].weapon.length);
   console.log("+");
   characterData[awId].weapon = temp;
   console.log(characterData);
