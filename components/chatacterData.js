@@ -49,7 +49,7 @@ export const singleCharacter = (id = 1) => {
 
 export const addWeapon = (awId = 0, newWeapon = "Seax") => {
   console.log("add weapon");
-  let temp = { ...characterData[1].weapon, newWeapon };
+  let temp = { ...characterData[1].weapon, 1: newWeapon };
   console.log(temp);
   console.log("+");
   characterData[awId].weapon = temp;
