@@ -12,10 +12,11 @@ export default View = ({ characterId }) => {
     setCharacter(singleCharacter(characterId));
   };
   useEffect(() => {
+    console.log("view use effect");
     let temp = {};
     temp = singleCharacter(characterId);
     setCharacter(temp);
-  }, []);
+  }, [addWeapon]);
 
   return (
     <>
@@ -27,7 +28,7 @@ export default View = ({ characterId }) => {
       <p>Lvl: {character.lvl}</p>
       <p>Atk: {character.atk}</p>
       <p>Def: {character.def}</p>
-      <AddWeapon updateInventory={() => addWeapon(0)} />
+      <AddWeapon updateInventory={() => addWeapon(characterId - 1)} />
       <DisplayWeapon characterWeapon={character.weapon} />
       <AddArmor updateInventory={updateInventory} />
       <DisplayArmor characterArmor={character.armor} />
