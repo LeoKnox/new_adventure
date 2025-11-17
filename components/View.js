@@ -11,15 +11,16 @@ export default View = ({ characterId }) => {
     addInventory(characterId, type, item);
     setCharacter(singleCharacter(characterId));
   };
+  const viewAddWeapon = () => {
+    addWeapon(characterId - 1, "mace");
+  };
+
   useEffect(() => {
     console.log("view use effect");
     let temp = {};
     temp = singleCharacter(characterId);
     setCharacter(temp);
-  }, [addWeapon]);
-  const viewAddWeapon = () => {
-    addWeapon(characterId - 1, "mace");
-  };
+  }, [viewAddWeapon]);
 
   return (
     <>
