@@ -1,68 +1,42 @@
-let characterData = [
-  {
-    id: 1,
-    name: "ao",
-    icon: 0,
-    lvl: 1,
-    atk: 10,
-    def: 10,
-    weapon: ["spear"],
-    armor: [],
-  },
-  {
-    id: 2,
-    name: "aka",
-    icon: 0,
-    lvl: 1,
-    atk: 12,
-    def: 9,
-    weapon: ["sword"],
-    armor: [],
-  },
-];
+import { useState, useEffect } from "react";
+import { singleCharacter, addWeapon, addInventory } from "./characterData.js";
+import AddArmor from "./AddArmor.js";
+import AddWeapon from "./AddWeapon.js";
+import DisplayArmor from "./DisplayArmor.js";
+import DisplayWeapon from "./DisplayWeapon.js";
 
-export const addCharacter = (newCharacter) => {
-  newCharacter.weapon = [];
-  newCharacter.armor = [];
-  if (characterData.length == 0) {
-    characterData = newCharacter;
-  } else {
-    newCharacter.id = characterData[characterData.length - 1].id + 1;
-    let temp = [...characterData, newCharacter];
-    characterData = temp;
-  }
-};
+export default View = ({ characterId }) => {
+  const [character, setCharacter] = useState({});
+  const updateInventory = (type = "armor", item = "leather") => {
+    addInventory(characterId, type, item);
+    setCharacter(singleCharacter(characterId));
+  };
+  const viewAddWeapon = () => {
+    addWeapon(characterId - 1, "mace");
+    console.log(singleCharacter(characterId));
+  };
 
-export const allCharacters = () => {
-  return characterData;
-};
+  useEffect(() => {
+    console.log("view use effect");
+    let temp = {};
+    temp = singleCharacter(characterId);
+    setCharacter(temp);
+  }, [viewAddWeapon]);
 
-export const deleteCharacter = (deleteId) => {
-  let temp = characterData.filter((character) => character.id != deleteId);
-  characterData = temp;
-};
-
-export const singleCharacter = (id = 1) => {
-  let temp = characterData.find((character) => character.id == id);
-  return temp;
-};
-
-export const addWeapon = (awId = 0, newWeapon = "Seax") => {
-  console.log("add weapon");
-  let temp = characterData[awId].weapon;
-  temp.push(newWeapon);
-  characterData = [...characterData[awId].weapon, temp];
-  console.log(characterData);
-};
-
-export const addInventory = (
-  characterId = 1,
-  type = "armor",
-  item = "scale"
-) => {
-  let temp = characterData.find((character) => character.id == characterId);
-  temp = { ...temp, [type]: [...temp[type], item] };
-  characterData = characterData.map((character) =>
-    character.id == characterId ? temp : character
+  return (
+    <>
+      <h3>Character</h3>
+      <h3>id: {characterId}</h3>
+      <p>Name: {character.name}</p>
+      <p>Icon: {character.icon}</p>
+      <p>{character.weapon}</p>
+      <p>Lvl: {character.lvl}</p>
+      <p>Atk: {character.atk}</p>
+      <p>Def: {character.def}</p>
+      <AddWeapon updateInventory={viewAddWeapon} />
+      <DisplayWeapon characterWeapon={character.weapon} />
+      <AddArmor updateInventory={updateInventory} />
+      <DisplayArmor characterArmor={character.armor} />
+    </>
   );
 };
