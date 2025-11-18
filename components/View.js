@@ -13,6 +13,8 @@ export default View = ({ characterId }) => {
   };
   const viewAddWeapon = () => {
     addWeapon(characterId - 1, "mace");
+    setCharacter(singleCharacter(characterId));
+    console.log(singleCharacter(characterId));
   };
 
   useEffect(() => {
@@ -20,7 +22,7 @@ export default View = ({ characterId }) => {
     let temp = {};
     temp = singleCharacter(characterId);
     setCharacter(temp);
-  }, [viewAddWeapon]);
+  }, []);
 
   return (
     <>
