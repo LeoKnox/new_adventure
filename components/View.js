@@ -9,12 +9,14 @@ export default View = ({ characterId }) => {
   const [character, setCharacter] = useState({});
   const updateInventory = (type = "armor", item = "leather") => {
     addInventory(characterId, type, item);
+
     setCharacter(singleCharacter(characterId));
   };
   const viewAddWeapon = () => {
     addWeapon(characterId - 1, "mace");
-    setCharacter(singleCharacter(characterId));
+    //setCharacter(singleCharacter(characterId));
     console.log(singleCharacter(characterId));
+    console.log("nn");
   };
 
   useEffect(() => {
@@ -22,7 +24,7 @@ export default View = ({ characterId }) => {
     let temp = {};
     temp = singleCharacter(characterId);
     setCharacter(temp);
-  }, []);
+  }, [viewAddWeapon]);
 
   return (
     <>
@@ -41,3 +43,4 @@ export default View = ({ characterId }) => {
     </>
   );
 };
+
