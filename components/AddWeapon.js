@@ -2,6 +2,7 @@ import { useState } from "react";
 
 export default AddWeapon = ({
   updateInventory,
+  setWeaponToAdd,
   characterWeapons,
 }) => {
   const [listWeapon, setListWeapon] = useState("kama");
@@ -13,7 +14,7 @@ export default AddWeapon = ({
     <div>
       <p>Add {listWeapon}</p>
       <br />
-      <select onChange={(e) => setListWeapon(e.target.value)}>
+      <select onChange={(e) => setWeaponToAdd(e.target.value)}>
         <option>kama</option>
         <option>sai</option>
       </select>
