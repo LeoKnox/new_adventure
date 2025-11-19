@@ -7,16 +7,15 @@ import DisplayWeapon from "./DisplayWeapon.js";
 
 export default View = ({ characterId }) => {
   const [character, setCharacter] = useState({});
+  const [weaponToAdd, setWeaponToAdd] = "Pickaxe";
   const updateInventory = (type = "armor", item = "leather") => {
     addInventory(characterId, type, item);
 
     setCharacter(singleCharacter(characterId));
   };
   const viewAddWeapon = () => {
-    addWeapon(characterId - 1, "mace");
+    addWeapon(characterId - 1, weaponToAdd);
     setCharacter({ ...singleCharacter(characterId) });
-    console.log(singleCharacter(characterId));
-    console.log("nn");
   };
 
   useEffect(() => {
