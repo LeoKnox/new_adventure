@@ -5,10 +5,10 @@ export default DisplayWeapon = ({ characterWeapon }) => {
   return (
     <div>
       <ul>
-        {characterWeapon?.map((weapon) => (
+        {characterWeapon?.map((weapon, id) => (
           <li>
-            {weapon}
-            <button onClick={deleteWeapon}>delete</button>
+             {weapon}
+            <button id={id} onClick={deleteWeapon}>delete</button>
           </li>
         ))}
       </ul>
