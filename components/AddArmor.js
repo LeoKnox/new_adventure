@@ -2,6 +2,7 @@ import { useState } from "react";
 
 export default AddArmor = ({ updateInventory }) => {
   const [newArmor, setNewArmor] = useState("Leather");
+  const availableArmor = ["leather", "chain", "plate"];
   const addArmor = () => {
     updateInventory("armor", newArmor);
   };
@@ -9,8 +10,9 @@ export default AddArmor = ({ updateInventory }) => {
     <>
       {newArmor}
       <select onChange={(e) => setNewArmor(e.target.value)}>
-        <option>Leather</option>
-        <option>Chainmail</option>
+        {availableArmor.map((i) => (
+          <option>{i}</option>
+        ))}
       </select>
       <br />
       <button onClick={addArmor}>Add </button>
