@@ -52,8 +52,6 @@ export const addWeapon = (awId = 0, newWeapon = "Seax") => {
   let temp = characterData[awId].weapon;
   temp.push(newWeapon);
   characterData[awId].weapon = temp;
-  console.log(characterData);
-  console.log("uu");
 };
 
 export const addInventory = (
