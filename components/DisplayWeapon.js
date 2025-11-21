@@ -12,7 +12,7 @@ export default DisplayWeapon = ({ characterWeapon }) => {
         {characterWeapon?.map((weapon, id) => (
           <li>
             {weapon}
-            <button id={id} onClick={deleteWeapon}>
+            <button id={id} onClick={(e) => deleteWeapon(e)}>
               delete
             </button>
           </li>
