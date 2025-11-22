@@ -66,4 +66,4 @@ export const addInventory = (
   );
 };
 
-export const deleteWeapon = console.log("delete weapon");
+export const deleteWeapon = (delId) => console.log("delete weapon");
