@@ -4,7 +4,8 @@ export default DisplayWeapon = ({ characterWeapon }) => {
   const deleteWeapon = (e) => {
     console.log("delete weapon");
     console.log(e.target.id);
-    //deleteWeapon(e.target.id);
+    let temp = e.target.id;
+    //deleteWeapon(temp);
   };
   return (
     <div>
