@@ -73,4 +73,5 @@ export const deleteWeapon = (delId, charId = 1) => {
     (character) => character.id != delId
   );
   characterData[charId].weapon = temp;
+  console.log(characterData);
 };
