@@ -69,9 +69,6 @@ export const addInventory = (
 export const deleteWeapon = (delId, charId = 1) => {
   console.log("delete weapon");
   console.log(delId);
-  let temp = characterData[charId].weapon.filter(
-    (character) => character.id != delId
-  );
-  characterData[charId].weapon = temp;
+  delete characterData[charId - 1].weapon[delId];
   console.log(characterData);
 };
