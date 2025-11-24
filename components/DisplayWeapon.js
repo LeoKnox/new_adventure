@@ -1,10 +1,10 @@
 import { deleteWeapon } from "./characterData.js";
 
 export default DisplayWeapon = ({ characterWeapon }) => {
-  const deleteWeapon = (xId) => {
+  const deleteWeapon = (e) => {
     console.log("delete weapon");
-    console.log(xId);
-    let temp = xId;
+    //console.log(e.target.id);
+    let temp = e.target.id;
     deleteWeapon(temp);
   };
   return (
@@ -13,7 +13,7 @@ export default DisplayWeapon = ({ characterWeapon }) => {
         {characterWeapon?.map((weapon, id) => (
           <li>
             {weapon}
-            <button id={id} onClick={(e) => deleteWeapon(e.target.id)}>
+            <button id={id} onClick={(e) => deleteWeapon(e)}>
               delete
             </button>
           </li>
