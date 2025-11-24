@@ -13,7 +13,9 @@ export default DisplayWeapon = ({ characterWeapon }) => {
         {characterWeapon?.map((weapon, id) => (
           <li>
             {weapon}
-            <button onClick={() => deleteWeaponPage(id)}>delete</button>
+            <button id={id} onClick={(e) => deleteWeaponPage(e.target.id)}>
+              delete
+            </button>
           </li>
         ))}
       </ul>
