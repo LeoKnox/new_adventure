@@ -3,7 +3,10 @@ export default DisplayArmor = ({ characterArmor }) => {
     <>
       <ul>
         {characterArmor?.map((armor) => (
-          <li>{armor}</li>
+          <li>
+            {armor}
+            <button>delete</button>
+          </li>
         ))}
       </ul>
     </>
