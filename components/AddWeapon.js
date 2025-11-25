@@ -5,8 +5,9 @@ export default AddWeapon = ({
   setWeaponToAdd,
   characterWeapons,
 }) => {
-  const [listWeapon, setListWeapon] = useState("kama");
   availableWeapons = ["saber", "cutless"];
+  const [listWeapon, setListWeapon] = useState(availableWeapons[0]);
+
   // will set state to first on weapon list
   const addNewWeapon = () => {
     updateInventory("weapon", listWeapon);
