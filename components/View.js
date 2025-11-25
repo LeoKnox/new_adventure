@@ -26,6 +26,7 @@ export default View = ({ characterId }) => {
   const viewDeleteWeapon = (viewId) => {
     console.log("view delete weapon");
     deleteWeapon(viewId, characterId);
+    setCharacter({ ...singleCharacter(characterId) });
   };
 
   useEffect(() => {
@@ -49,7 +50,10 @@ export default View = ({ characterId }) => {
         updateInventory={viewAddWeapon}
         setWeaponToAdd={setWeaponToAdd}
       />
-      <DisplayWeapon characterWeapon={character.weapon} />
+      <DisplayWeapon
+        viewDeleteWeapon={viewDeleteWeapon}
+        characterWeapon={character.weapon}
+      />
       <AddArmor updateInventory={updateInventory} />
       <DisplayArmor characterArmor={character.armor} />
     </>
