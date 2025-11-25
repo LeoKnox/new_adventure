@@ -1,5 +1,10 @@
 import { useState, useEffect } from "react";
-import { singleCharacter, addWeapon, addInventory } from "./characterData.js";
+import {
+  singleCharacter,
+  addWeapon,
+  deleteWeapon,
+  addInventory,
+} from "./characterData.js";
 import AddArmor from "./AddArmor.js";
 import AddWeapon from "./AddWeapon.js";
 import DisplayArmor from "./DisplayArmor.js";
@@ -16,6 +21,11 @@ export default View = ({ characterId }) => {
   const viewAddWeapon = () => {
     addWeapon(characterId - 1, weaponToAdd);
     setCharacter({ ...singleCharacter(characterId) });
+  };
+
+  const viewDeleteWeapon = (viewId) => {
+    console.log("view delete weapon");
+    deleteWeapon(viewId, characterId);
   };
 
   useEffect(() => {
