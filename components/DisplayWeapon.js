@@ -1,9 +1,9 @@
 import { deleteWeapon } from "./characterData.js";
 
-export default DisplayWeapon = ({ characterWeapon }) => {
+export default DisplayWeapon = ({ viewDeleteWeapon, characterWeapon }) => {
   const deleteWeaponPage = (id) => {
     console.log("delete weapon");
-    deleteWeapon(id);
+    viewDeleteWeapon(id);
   };
   return (
     <div>
