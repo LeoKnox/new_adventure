@@ -1,11 +1,11 @@
-export default DisplayArmor = ({ characterArmor }) => {
+export default DisplayArmor = ({ characterArmor, deleteItem }) => {
   return (
     <>
       <ul>
         {characterArmor?.map((armor) => (
           <li>
             {armor}
-            <button>delete</button>
+            <button onClick={deleteItem(1, "armor")}>delete</button>
           </li>
         ))}
       </ul>
