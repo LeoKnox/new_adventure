@@ -73,8 +73,8 @@ export const deleteWeapon = (delId, charId = 1) => {
   console.log(characterData);
 };
 
-export const deleteItem = (delId, charId, reference) => {
+export const deleteItem = (delId, charId = 1, reference) => {
   console.log("delete Item");
-  console.log(reference);
+  //console.log(delId + ":" + charID + ":" + reference);
   //delete characterData[charId - 1].weapon[delId];
 };
