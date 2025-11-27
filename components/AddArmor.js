@@ -4,7 +4,7 @@ export default AddArmor = ({ updateInventory }) => {
   const [newArmor, setNewArmor] = useState("Leather");
   const availableArmor = ["leather", "chain", "plate"];
   const addArmor = () => {
-    updateInventory("armor", newArmor);
+    updateInventory((reference = "armor"), newArmor);
   };
   return (
     <>
