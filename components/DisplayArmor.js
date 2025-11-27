@@ -1,8 +1,4 @@
-export default DisplayArmor = ({ characterArmor, deleteItem }) => {
-  const delArmor = (delId) => {
-    console.log("del armor");
-    deleteItem(delId, 1, (reference = "armor"));
-  };
+export default DisplayArmor = ({ characterArmor, delArmor }) => {
   return (
     <>
       <ul>
