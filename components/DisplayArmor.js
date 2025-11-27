@@ -1,15 +1,15 @@
 export default DisplayArmor = ({ characterArmor, deleteItem }) => {
-  const delArmor = () => {
+  const delArmor = (delId) => {
     console.log("del armor");
-    deleteItem(1, 1, (reference = "armor"));
+    deleteItem(delId, 1, (reference = "armor"));
   };
   return (
     <>
       <ul>
-        {characterArmor?.map((armor) => (
+        {characterArmor?.map((armor, armorId) => (
           <li>
             {armor}
-            <button onClick={delArmor}>delete</button>
+            <button onClick={() => delArmor(armorId)}>delete</button>
           </li>
         ))}
       </ul>
