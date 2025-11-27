@@ -31,7 +31,7 @@ export default View = ({ characterId }) => {
   };
   const delArmor = (delId) => {
     console.log("del armor");
-    deleteItem(delId, characterId, (reference = "armor"));
+    deleteItem(delId, characterId-1, (reference = "armor"));
   };
   useEffect(() => {
     console.log("view use effect");
