@@ -1,7 +1,7 @@
 export default DisplayArmor = ({ characterArmor, deleteItem }) => {
   const delArmor = () => {
     console.log("del armor");
-    deleteItem(1, (reference = "armor"));
+    deleteItem(1, 1, (reference = "armor"));
   };
   return (
     <>
