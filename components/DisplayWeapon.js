@@ -10,6 +10,7 @@ export default DisplayWeapon = ({ viewDeleteWeapon, characterWeapon }) => {
       <ul>
         {characterWeapon?.map((weapon, id) => (
           <li>
+            <form>
             {weapon}
             <input
               type="radio"
@@ -20,6 +21,7 @@ export default DisplayWeapon = ({ viewDeleteWeapon, characterWeapon }) => {
             <button id={id} onClick={(e) => deleteWeaponPage(e.target.id)}>
               delete
             </button>
+            </form>
           </li>
         ))}
       </ul>
