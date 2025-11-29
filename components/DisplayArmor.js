@@ -4,7 +4,7 @@ export default DisplayArmor = ({ characterArmor, delArmor }) => {
       <ul>
         {characterArmor?.map((armor, armorId) => (
           <div>
-            <input type="radio" id="armor" name="currentArmor" value={armor} />
+            <input type="radio" name="currentArmor" value={armor}></input>
 
             <button onClick={() => delArmor(armorId)}>delete</button>
           </div>
