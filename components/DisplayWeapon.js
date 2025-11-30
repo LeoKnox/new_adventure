@@ -12,12 +12,6 @@ export default DisplayWeapon = ({ viewDeleteWeapon, characterWeapon }) => {
           <li>
             <form>
               {weapon}
-              <input
-                type="radio"
-                name="currentArmor"
-                value="armor"
-                onChange={() => console.log("Value changed!")}
-              >
               <button id={id} onClick={(e) => deleteWeaponPage(e.target.id)}>
                 delete
               </button>
