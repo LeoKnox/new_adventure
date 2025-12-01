@@ -4,7 +4,7 @@ export default DisplayArmor = ({ characterArmor, delArmor }) => {
       <ul>
         {characterArmor?.map((armor, armorId) => (
           <div>
-            {armor}
+            <button>{armor}</button>
             <button onClick={() => delArmor(armorId)}>delete</button>
           </div>
         ))}
