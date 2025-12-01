@@ -4,7 +4,9 @@ export default DisplayArmor = ({ characterArmor, delArmor }) => {
       <ul>
         {characterArmor?.map((armor, armorId) => (
           <div>
-            <button>{armor}</button>
+            <button style={{ background: armorId == 1 ? "blue" : "red" }}>
+              {armor}
+            </button>
             <button onClick={() => delArmor(armorId)}>delete</button>
           </div>
         ))}
