@@ -1,5 +1,6 @@
+import { getSelected } from "./characterData.js";
 export default DisplayArmor = ({ characterArmor, delArmor }) => {
-  let selectedArmor = 1;
+  let selectedArmor = getSelected("selectedArmor");
   return (
     <>
       <ul>
