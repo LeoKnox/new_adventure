@@ -8,6 +8,7 @@ let characterData = [
     def: 10,
     weapon: ["spear"],
     armor: [],
+    selectedArmor: 0,
   },
   {
     id: 2,
@@ -18,6 +19,7 @@ let characterData = [
     def: 9,
     weapon: ["sword"],
     armor: [],
+    selectedArmor: 1,
   },
 ];
 
@@ -77,4 +79,10 @@ export const deleteItem = (delId, charId = 1, reference) => {
   console.log("delete Item");
   characterData[charId][reference].splice(delId, 1);
   console.log(characterData);
+};
+
+export const getSelected = (selectedItem = "selectedArmor") => {
+  console.log("get selected");
+  console.log(characterData[1][selectedItem]);
+  return 1;
 };
