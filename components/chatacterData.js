@@ -86,3 +86,7 @@ export const getSelected = (selectedItem = "selectedArmor") => {
   console.log(characterData[1][selectedItem]);
   return 1;
 };
+
+export const selectItem = () => {
+  console.log("select item");
+};
