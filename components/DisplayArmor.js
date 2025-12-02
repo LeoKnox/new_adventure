@@ -1,6 +1,9 @@
 import { getSelected } from "./characterData.js";
 export default DisplayArmor = ({ characterArmor, delArmor }) => {
   let selectedArmor = getSelected("selectedArmor");
+  const selectActiveArmor = () => {
+    console.log("select active armor");
+  };
   return (
     <>
       <ul>
@@ -8,6 +11,7 @@ export default DisplayArmor = ({ characterArmor, delArmor }) => {
           <div>
             <button
               style={{ background: armorId == selectedArmor ? "blue" : "red" }}
+              onClick={selectActiveArmor}
             >
               {armor}
             </button>
