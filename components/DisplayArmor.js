@@ -1,4 +1,4 @@
-import { getSelected } from "./characterData.js";
+import { getSelected, selectItem } from "./characterData.js";
 export default DisplayArmor = ({ characterArmor, delArmor }) => {
   let selectedArmor = getSelected("selectedArmor");
   const selectActiveArmor = () => {
