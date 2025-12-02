@@ -3,6 +3,7 @@ export default DisplayArmor = ({ characterArmor, delArmor }) => {
   let selectedArmor = getSelected("selectedArmor");
   const selectActiveArmor = () => {
     console.log("select active armor");
+    selectItem("armor", itemId, CharacterId);
   };
   return (
     <>
