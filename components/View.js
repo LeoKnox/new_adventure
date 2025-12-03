@@ -5,6 +5,7 @@ import {
   deleteWeapon,
   addInventory,
   deleteItem,
+  selectItem,
 } from "./characterData.js";
 import AddArmor from "./AddArmor.js";
 import AddWeapon from "./AddWeapon.js";
@@ -36,7 +37,7 @@ export default View = ({ characterId }) => {
   };
   const selectActiveArmor = (itemId) => {
     console.log("select active armor");
-    selectItem("armor", itemId, CharacterId);
+    selectItem("armor", itemId, characterId);
   };
   useEffect(() => {
     console.log("view use effect");
