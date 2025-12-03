@@ -1,10 +1,11 @@
 import { getSelected, selectItem } from "./characterData.js";
-export default DisplayArmor = ({ characterArmor, delArmor }) => {
+export default DisplayArmor = ({
+  selectActiveArmor,
+  characterArmor,
+  delArmor,
+}) => {
   let selectedArmor = getSelected("selectedArmor");
-  const selectActiveArmor = (itemId) => {
-    console.log("select active armor");
-    selectItem("armor", itemId, CharacterId);
-  };
+
   return (
     <>
       <ul>
@@ -16,7 +17,7 @@ export default DisplayArmor = ({ characterArmor, delArmor }) => {
             >
               {armor}
             </button>
-            <button onClick={() => delArmor(armorId)}>delete</button>
+            <button onClick={() => selectActiveArmor(armorId)}>delete</button>
           </div>
         ))}
       </ul>
