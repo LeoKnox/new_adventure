@@ -31,7 +31,12 @@ export default View = ({ characterId }) => {
   };
   const delArmor = (delId) => {
     console.log("del armor");
-    deleteItem(delId, characterId-1, (reference = "armor"));
+    deleteItem(delId, characterId - 1, (reference = "armor"));
+    setCharacter({ ...singleCharacter(characterId) });
+  };
+  const selectActiveArmor = (itemId) => {
+    console.log("select active armor");
+    selectItem("armor", itemId, CharacterId);
   };
   useEffect(() => {
     console.log("view use effect");
@@ -59,7 +64,11 @@ export default View = ({ characterId }) => {
         characterWeapon={character.weapon}
       />
       <AddArmor updateInventory={updateInventory} />
-      <DisplayArmor delArmor={delArmor} characterArmor={character.armor} />
+      <DisplayArmor
+        selectActiveArmor={selectActiveArmor}
+        delArmor={delArmor}
+        characterArmor={character.armor}
+      />
     </>
   );
 };
