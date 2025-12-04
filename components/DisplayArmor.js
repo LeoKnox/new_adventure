@@ -3,27 +3,26 @@ export default DisplayArmor = ({
   selectActiveArmor,
   characterArmor,
   delArmor,
+  charId
 }) => {
-  let selectedArmor = getSelected("selectedArmor");
+  let selectedArmor = getSelected("selectedArmor", charId);
   console.log(characterArmor);
   return (
     <>
       <ul>
-        {
-          !!characterArmor?.map((armor, armorId) => (
-            <div>
-              <button
-                style={{
-                  background: armorId == selectedArmor ? "blue" : "red",
-                }}
-                onClick={() => selectActiveArmor(armorId)}
-              >
-                {armor}
-              </button>
-              <button onClick={() => selectActiveArmor(armorId)}>delete</button>
-            </div>
-          ))
-        }
+        {characterArmor?.map((armor, armorId) => (
+          <div>
+            <button
+              style={{
+                background: armorId == selectedArmor ? "blue" : "red",
+              }}
+              onClick={() => selectActiveArmor(armorId)}
+            >
+              {armor}
+            </button>
+            <button onClick={() => selectActiveArmor(armorId)}>delete</button>
+          </div>
+        ))}
       </ul>
     </>
   );
