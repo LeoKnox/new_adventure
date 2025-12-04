@@ -83,12 +83,13 @@ export const deleteItem = (delId, charId = 1, reference) => {
 
 export const getSelected = (selectedItem = "selectedArmor") => {
   console.log("get selected");
-  console.log(characterData[1]["selectedArmor"]);
+  console.log(characterData);
   return characterData[1]["selectedArmor"];
 };
 
 export const selectItem = (item = "selectedArmor", characterId = 1, itemId) => {
   console.log("select item");
-  //console.log(characterData[characterId]);
+  console.log(characterData);
   characterData[characterId][item] = characterId;
 };
+
