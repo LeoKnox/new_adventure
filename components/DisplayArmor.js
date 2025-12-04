@@ -5,7 +5,7 @@ export default DisplayArmor = ({
   delArmor,
 }) => {
   let selectedArmor = getSelected("selectedArmor");
-
+  console.log(characterArmor);
   return (
     <>
       <ul>
