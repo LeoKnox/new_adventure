@@ -64,11 +64,12 @@ export default View = ({ characterId }) => {
         viewDeleteWeapon={viewDeleteWeapon}
         characterWeapon={character.weapon}
       />
-      <AddArmor updateInventory={updateInventory} charId={charId} />
+      <AddArmor updateInventory={updateInventory} />
       <DisplayArmor
         selectActiveArmor={selectActiveArmor}
         delArmor={delArmor}
         characterArmor={character.armor}
+        charId={characterId}
       />
     </>
   );
