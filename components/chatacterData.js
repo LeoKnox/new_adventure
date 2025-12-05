@@ -89,6 +89,6 @@ export const getSelected = (selectedItem = "selectedArmor", charId) => {
 
 export const selectItem = (item = "selectedArmor", characterId = 1, itemId) => {
   console.log("select item");
-  console.log(characterId[characterId - 1][item]);
+  console.log(characterId[characterId][item]);
   characterData[characterId - 1][item] = itemId;
 };
