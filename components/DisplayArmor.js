@@ -3,7 +3,7 @@ export default DisplayArmor = ({
   selectActiveArmor,
   characterArmor,
   delArmor,
-  charId
+  charId,
 }) => {
   let selectedArmor = getSelected("selectedArmor", charId);
   console.log(characterArmor);
@@ -20,7 +20,7 @@ export default DisplayArmor = ({
             >
               {armor}
             </button>
-            <button onClick={() => selectActiveArmor(armorId)}>delete</button>
+            <button onClick={() => selectActiveArmor(charId)}>delete</button>
           </div>
         ))}
       </ul>
