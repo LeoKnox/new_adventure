@@ -8,7 +8,7 @@ let characterData = [
     def: 10,
     weapon: ["spear"],
     armor: [],
-    selectedArmor: 0,
+    selectedArmor: null,
   },
   {
     id: 2,
@@ -19,7 +19,7 @@ let characterData = [
     def: 9,
     weapon: ["sword"],
     armor: [],
-    selectedArmor: 1,
+    selectedArmor: null,
   },
 ];
 
