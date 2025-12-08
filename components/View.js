@@ -37,7 +37,7 @@ export default View = ({ characterId }) => {
   };
   const selectActiveArmor = (itemId) => {
     console.log("select active armor");
-    selectItem("armor", itemId, characterId);
+    selectItem(itemId, "selectedArmor", characterId);
     setCharacter({ ...singleCharacter(characterId) });
   };
   useEffect(() => {
