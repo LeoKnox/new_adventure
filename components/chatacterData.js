@@ -77,18 +77,16 @@ export const deleteWeapon = (delId, charId = 1) => {
 
 export const deleteItem = (delId, charId = 1, reference) => {
   console.log("delete Item");
-  characterData[charId][reference].splice(delId, 1);
+  characterData[charId - 1][reference].splice(delId, 1);
   console.log(characterData);
 };
 
 export const getSelected = (selectedItem = "selectedArmor", charId) => {
   console.log("get selected");
-  console.log(charId);
   return characterData[charId - 1]["selectedArmor"];
 };
 
 export const selectItem = (itemId, item = "selectedArmor", characterId = 1) => {
   console.log("select item");
-  console.log(characterId);
   characterData[characterId - 1][item] = itemId;
 };
