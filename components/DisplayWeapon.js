@@ -16,7 +16,10 @@ export default DisplayWeapon = ({
           <li>
             <form>
               {weapon}
-              <button id={weaponId} onClick={() => delWeapon(weaponId)}>
+              <button
+                id={weaponId}
+                onClick={() => delWeapon(weaponId, "weapon")}
+              >
                 delete
               </button>
             </form>
