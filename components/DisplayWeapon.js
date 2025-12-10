@@ -8,11 +8,11 @@ export default DisplayWeapon = ({ viewDeleteWeapon, characterWeapon }) => {
   return (
     <div>
       <ul>
-        {characterWeapon?.map((weapon, id) => (
+        {characterWeapon?.map((weapon, weaponId) => (
           <li>
             <form>
               {weapon}
-              <button id={id} onClick={(e) => deleteWeaponPage(e.target.id)}>
+              <button id={weaponId} onClick={(e) => deleteWeaponPage(e.target.id)}>
                 delete
               </button>
             </form>
