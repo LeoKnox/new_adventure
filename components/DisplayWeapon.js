@@ -1,6 +1,11 @@
 import { deleteWeapon } from "./characterData.js";
 
-export default DisplayWeapon = ({ viewDeleteWeapon, characterWeapon }) => {
+export default DisplayWeapon = ({
+  characterId,
+  delWeapon,
+  viewDeleteWeapon,
+  characterWeapon,
+}) => {
   const deleteWeaponPage = (id) => {
     console.log("delete weapon");
     viewDeleteWeapon(id);
@@ -12,7 +17,11 @@ export default DisplayWeapon = ({ viewDeleteWeapon, characterWeapon }) => {
           <li>
             <form>
               {weapon}
-              <button id={weaponId} onClick={(e) => deleteWeaponPage(e.target.id)}>
+              <button
+                id={weaponId}
+                onClick={() => delWeapon(weaonId)}
+                //onClick={(e) => deleteWeaponPage(e.target.id)}
+              >
                 delete
               </button>
             </form>
