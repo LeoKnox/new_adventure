@@ -30,12 +30,6 @@ export default View = ({ characterId }) => {
     deleteItem(viewId, characterId, itemDelete);
     setCharacter({ ...singleCharacter(characterId) });
   };
-  const delViewItem = (delId) => {
-    console.log("del view item");
-    console.log(delId);
-    deleteItem(delId, characterId, (reference = "armor"));
-    setCharacter({ ...singleCharacter(characterId) });
-  };
   const selectActiveArmor = (itemId) => {
     console.log("select active armor");
     selectItem(itemId, "selectedArmor", characterId);
