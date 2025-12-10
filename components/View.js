@@ -30,8 +30,8 @@ export default View = ({ characterId }) => {
     deleteWeapon(viewId, characterId);
     setCharacter({ ...singleCharacter(characterId) });
   };
-  const delArmor = (delId) => {
-    console.log("del armor");
+  const delViewItem = (delId) => {
+    console.log("del view item");
     console.log(delId);
     deleteItem(delId, characterId, (reference = "armor"));
     setCharacter({ ...singleCharacter(characterId) });
@@ -69,7 +69,7 @@ export default View = ({ characterId }) => {
       <AddArmor updateInventory={updateInventory} />
       <DisplayArmor
         selectActiveArmor={selectActiveArmor}
-        delArmor={delArmor}
+        delArmor={delViewItem}
         characterArmor={character.armor}
         charId={characterId}
       />
