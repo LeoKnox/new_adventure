@@ -64,7 +64,7 @@ export default View = ({ characterId }) => {
       />
       <DisplayWeapon
         characterId={characterId}
-        delWeapon={viewDelteItem}
+        delWeapon={viewDeleteItem}
         viewDeleteWeapon={viewDeleteWeapon}
         characterWeapon={character.weapon}
       />
