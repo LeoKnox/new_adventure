@@ -20,7 +20,6 @@ export default DisplayWeapon = ({
               <button
                 id={weaponId}
                 onClick={() => delWeapon(weaponId)}
-                //onClick={(e) => deleteWeaponPage(e.target.id)}
               >
                 delete
               </button>
