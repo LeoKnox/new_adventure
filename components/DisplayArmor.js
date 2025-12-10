@@ -20,7 +20,7 @@ export default DisplayArmor = ({
             >
               {armor}
             </button>
-            <button onClick={() => delArmor(armorId)}>delete</button>
+            <button onClick={() => delArmor(armorId, "armor")}>delete</button>
           </div>
         ))}
       </ul>
