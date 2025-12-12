@@ -2,7 +2,6 @@ import { useState, useEffect } from "react";
 import {
   singleCharacter,
   addWeapon,
-  deleteWeapon,
   addInventory,
   deleteItem,
   selectItem,
@@ -16,7 +15,7 @@ export default View = ({ characterId }) => {
   const [character, setCharacter] = useState({});
   const [weaponToAdd, setWeaponToAdd] = useState("kama");
   const updateInventory = (type = "armor", item = "leather") => {
-    addInventory(characterId, type, item);
+    addInventory(characterId, type, weaponToAdd);
 
     setCharacter(singleCharacter(characterId));
   };
@@ -59,6 +58,7 @@ export default View = ({ characterId }) => {
       <DisplayWeapon
         delWeapon={viewDeleteItem}
         characterWeapon={character.weapon}
+        updateInventory={updateInventory}
       />
       <AddArmor updateInventory={updateInventory} />
       <DisplayArmor
