@@ -2,6 +2,7 @@ import { useState } from "react";
 
 export default AddWeapon = ({ updateInventory, setWeaponToAdd }) => {
   availableWeapons = ["saber", "cutless"];
+  const [localWeapon, setLocalWeapon] = useState(availableWeapons[0])
   setWeaponToAdd(availableWeapons[0]);
   const addNewWeapon = () => {
     updateInventory("weapon");
