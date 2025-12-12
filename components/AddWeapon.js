@@ -3,7 +3,6 @@ import { useState } from "react";
 export default AddWeapon = ({ updateInventory, setWeaponToAdd }) => {
   availableWeapons = ["saber", "cutless"];
   setWeaponToAdd(availableWeapons[0]);
-  // will set state to first on weapon list
   const addNewWeapon = () => {
     updateInventory("weapon");
   };
