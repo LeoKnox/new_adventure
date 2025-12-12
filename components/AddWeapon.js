@@ -6,7 +6,7 @@ export default AddWeapon = ({ updateInventory, setWeaponToAdd }) => {
 
   // will set state to first on weapon list
   const addNewWeapon = () => {
-    updateInventory("weapon", listWeapon);
+    updateInventory("weapon");
   };
   return (
     <div>
