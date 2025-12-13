@@ -7,6 +7,8 @@ export default AddWeapon = ({ updateInventory, setWeaponToAdd, charId }) => {
   setWeaponToAdd(availableWeapons[0]);
   const addNewWeapon = () => {
     //updateInventory("weapon");
+    console.log("add new weapon");
+    console.log(localWeapon);
     updateInventory("weapon", localWeapon);
   };
   return (
