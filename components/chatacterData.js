@@ -63,11 +63,9 @@ export const addInventory = (
   type = "armor",
   item = "scale"
 ) => {
-  let temp = characterData.find((character) => character.id == characterId);
-  temp = { ...temp, [type]: [...temp[type], item] };
-  characterData = characterData.map((character) =>
-    character.id == characterId ? temp : character
-  );
+  let temp = characterData[characterId - 1][type];
+  temp.push(item);
+  characterData[characterId][type] = temp;
 };
 
 export const deleteWeapon = (delId, charId = 1) => {
