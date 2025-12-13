@@ -52,7 +52,7 @@ export default View = ({ characterId }) => {
       <p>Atk: {character.atk}</p>
       <p>Def: {character.def}</p>
       <AddWeapon
-        updateIventory={updateInventory}
+        updateInventory={updateInventory}
         setWeaponToAdd={setWeaponToAdd}
         charId={characterId}
       />
