@@ -1,13 +1,13 @@
 import { useState } from "react";
 import { addInventory } from "./characterData.js";
 
-export default AddWeapon = ({ setWeaponToAdd, charId }) => {
+export default AddWeapon = ({ updateInventory, setWeaponToAdd, charId }) => {
   availableWeapons = ["saber", "cutless"];
   const [localWeapon, setLocalWeapon] = useState(availableWeapons[0]);
   setWeaponToAdd(availableWeapons[0]);
   const addNewWeapon = () => {
     //updateInventory("weapon");
-    addInventory(charId, "weapon", localWeapon);
+    updateInventory("weapon", localWeapon);
   };
   return (
     <div>
