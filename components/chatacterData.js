@@ -82,9 +82,9 @@ export const deleteWeapon = (delId, charId = 1) => {
 
 export const deleteItem = (delId = 0, charId = 1, reference = "armor") => {
   console.log("delete Item");
-  delete characterData[charId - 1][reference][delId];
+  //delete characterData[charId - 1][reference][delId];
   console.log(delId, charId, reference);
-  //characterData[charId - 1][reference].splice(delId, 1);
+  characterData[charId - 1][reference].splice(delId, 1);
   //console.log(characterData);
 };
 
