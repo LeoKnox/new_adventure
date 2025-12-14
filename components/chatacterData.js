@@ -73,13 +73,6 @@ export const addInventory = (
   );
 };
 
-export const deleteWeapon = (delId, charId = 1) => {
-  console.log("delete weapon");
-  console.log(delId);
-  delete characterData[charId - 1].weapon[delId];
-  console.log(characterData);
-};
-
 export const deleteItem = (delId = 0, charId = 1, reference = "armor") => {
   console.log("delete Item");
   //delete characterData[charId - 1][reference][delId];
