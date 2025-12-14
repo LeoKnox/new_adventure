@@ -9,7 +9,7 @@ export default AddWeapon = ({ updateInventory, setWeaponToAdd, charId }) => {
     //updateInventory("weapon");
     console.log("add new weapon");
     console.log(localWeapon);
-    updateInventory("weapon", localWeapon);
+    updateInventory("weapon", localWeapon, localWeapon);
   };
   return (
     <div>
