@@ -1,4 +1,4 @@
-import { deleteWeapon } from "./characterData.js";
+import { getSelected } from "./characterData.js";
 
 export default DisplayWeapon = ({
   delWeapon,
@@ -6,19 +6,22 @@ export default DisplayWeapon = ({
   characterWeapon,
 }) => {
   const selectActiveWeapon = () => {
-    console.log("active weapon")
-  }
+    console.log("active weapon");
+    getSelected("selectedWeapon", charId)
+  };
   return (
     <div>
       <ul>
         {characterWeapon?.map((weapon, weaponId) => (
           <li>
             <form>
-              <button style={{
-                background: armorId == selectedArmor ? "blue" : "red",
-              }}
-              onClick={() => selectActiveWeapon(weaponId)}>
-              {weapon}
+              <button
+                style={{
+                  background: armorId == selectedArmor ? "blue" : "red",
+                }}
+                onClick={() => selectActiveWeapon(weaponId)}
+              >
+                {weapon}
               </button>
               <button
                 id={weaponId}
