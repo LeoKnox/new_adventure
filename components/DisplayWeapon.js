@@ -2,7 +2,7 @@ import { getSelected } from "./characterData.js";
 
 export default DisplayWeapon = ({
   delWeapon,
-  viewDeleteWeapon,
+  charId,
   characterWeapon,
   setSelectedArmor,
 }) => {
