@@ -5,9 +5,10 @@ export default DisplayWeapon = ({
   viewDeleteWeapon,
   characterWeapon,
 }) => {
+  let selectedWeapon = getSelected("selectedArmor", charId);
   const selectActiveWeapon = () => {
     console.log("active weapon");
-    getSelected("selectedWeapon", charId)
+    getSelected("selectedWeapon", charId);
   };
   return (
     <div>
@@ -17,7 +18,7 @@ export default DisplayWeapon = ({
             <form>
               <button
                 style={{
-                  background: armorId == selectedArmor ? "blue" : "red",
+                  background: weaponId == selectedWeapon ? "blue" : "red",
                 }}
                 onClick={() => selectActiveWeapon(weaponId)}
               >
