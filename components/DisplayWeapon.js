@@ -4,6 +4,7 @@ export default DisplayWeapon = ({
   delWeapon,
   viewDeleteWeapon,
   characterWeapon,
+  setSelectedArmor,
 }) => {
   let selectedWeapon = getSelected("selectedArmor", charId);
   const selectActiveWeapon = () => {
