@@ -16,7 +16,7 @@ export default DisplayArmor = ({
               style={{
                 background: armorId == selectedArmor ? "blue" : "red",
               }}
-              onClick={() => selectActiveArmor(armorId)}
+              onClick={() => selectActiveArmor(armorId, "selectedArmor")}
             >
               {armor}
             </button>
