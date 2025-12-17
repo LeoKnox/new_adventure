@@ -8,10 +8,6 @@ export default DisplayWeapon = ({
   setSelectedArmor,
 }) => {
   let selectedWeapon = getSelected("selectedArmor", charId);
-  const selectActiveWeapon = () => {
-    console.log("active weapon");
-    getSelected("selectedWeapon", charId);
-  };
   return (
     <div>
       <ul>
