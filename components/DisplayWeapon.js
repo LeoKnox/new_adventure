@@ -8,7 +8,6 @@ export default DisplayWeapon = ({
   setSelectedArmor,
 }) => {
   let selectedWeapon = getSelected("selectedArmor", charId);
-  const [newWeapon, setNewWeapon] = useState("pike");
   const selectActiveWeapon = () => {
     console.log("active weapon");
     getSelected("selectedWeapon", charId);
@@ -23,7 +22,7 @@ export default DisplayWeapon = ({
                 style={{
                   background: weaponId == selectedWeapon ? "blue" : "red",
                 }}
-                onClick={() => selectActiveWeapon(weaponId)}
+                onClick={() => selectActiveArmor(armorId, "selectedWeapon")}
               >
                 {weapon}
               </button>
