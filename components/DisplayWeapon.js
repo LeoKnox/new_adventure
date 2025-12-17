@@ -1,3 +1,4 @@
+import { useState } from "react";
 import { getSelected } from "./characterData.js";
 
 export default DisplayWeapon = ({
@@ -7,6 +8,7 @@ export default DisplayWeapon = ({
   setSelectedArmor,
 }) => {
   let selectedWeapon = getSelected("selectedArmor", charId);
+  const [newWeapon, setNewWeapon] = useState("pike");
   const selectActiveWeapon = () => {
     console.log("active weapon");
     getSelected("selectedWeapon", charId);
