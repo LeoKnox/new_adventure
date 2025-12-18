@@ -5,6 +5,7 @@ import {
   addInventory,
   deleteItem,
   selectItem,
+  retreiveWeapon,
 } from "./characterData.js";
 import AddArmor from "./AddArmor.js";
 import AddWeapon from "./AddWeapon.js";
@@ -13,6 +14,7 @@ import DisplayWeapon from "./DisplayWeapon.js";
 
 export default View = ({ characterId }) => {
   const [character, setCharacter] = useState({});
+  const [retreivedWeapons, setRetreivedWeapons] = useState(retreiveWeapons());
   const [weaponToAdd, setWeaponToAdd] = useState("kama");
   const updateInventory = (type = "armor", item = "leather") => {
     addInventory(characterId, type, item);
@@ -54,7 +56,7 @@ export default View = ({ characterId }) => {
       />
       <DisplayWeapon
         delWeapon={viewDeleteItem}
-        characterWeapon={character.weapon}
+        characterWeapon={retreivedWeapons}
         charId={characterId}
         selectActiveArmor={selectActiveArmor}
       />
