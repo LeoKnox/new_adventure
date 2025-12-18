@@ -19,10 +19,6 @@ export default View = ({ characterId }) => {
 
     setCharacter(singleCharacter(characterId));
   };
-  const viewAddWeapon = () => {
-    addWeapon(characterId - 1, weaponToAdd);
-    setCharacter({ ...singleCharacter(characterId) });
-  };
 
   const viewDeleteItem = (viewId, itemDelete) => {
     console.log("view delete weapon");
