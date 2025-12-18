@@ -1,5 +1,6 @@
 import { useState } from "react";
 import { getSelected } from "./characterData.js";
+import { retreiveWeapons } from "./characterData.js";
 
 export default DisplayWeapon = ({
   delWeapon,
@@ -8,10 +9,11 @@ export default DisplayWeapon = ({
   selectActiveArmor,
 }) => {
   let selectedWeapon = getSelected("selectedWeapon", charId);
+  const [allWeapons, setAllWeapons] = useState(retreiveWeapons);
   return (
     <div>
       <ul>
-        {characterWeapon?.map((weapon, weaponId) => (
+        {allWeapons?.map((weapon, weaponId) => (
           <li>
             <form>
               <button
