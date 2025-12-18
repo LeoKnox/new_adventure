@@ -5,7 +5,7 @@ import {
   addInventory,
   deleteItem,
   selectItem,
-  retreiveWeapon,
+  retreiveWeapons,
 } from "./characterData.js";
 import AddArmor from "./AddArmor.js";
 import AddWeapon from "./AddWeapon.js";
