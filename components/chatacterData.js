@@ -92,3 +92,8 @@ export const selectItem = (itemId, item = "selectedArmor", characterId = 1) => {
   console.log("select item");
   characterData[characterId - 1][item] = itemId;
 };
+
+export const retreiveWeapons = (charId) => {
+  console.log("retreive weapons");
+  return (characterData["1"]["weapon"])
+}
