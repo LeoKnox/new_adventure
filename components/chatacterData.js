@@ -26,6 +26,10 @@ let characterData = [
   },
 ];
 
+export const multiItems = () => {
+  console.log("multi items");
+};
+
 export const addCharacter = (newCharacter) => {
   newCharacter.weapon = [];
   newCharacter.armor = [];
