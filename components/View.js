@@ -28,7 +28,7 @@ let characterData = [
 
 export const multiItems = () => {
   console.log("multi items");
-  console.log(characterData[0]["items"]["bag"]);
+  console.log(characterData[0]["items"]);
 };
 
 export const addCharacter = (newCharacter) => {
