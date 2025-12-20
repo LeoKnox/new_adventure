@@ -20,6 +20,7 @@ let characterData = [
     def: 9,
     weapon: ["sword"],
     armor: [],
+    items: { bag: [] },
     selectedArmor: null,
     selectedWeapon: null,
   },
@@ -95,5 +96,5 @@ export const selectItem = (itemId, item = "selectedArmor", characterId = 1) => {
 
 export const retreiveWeapons = (charId) => {
   console.log("retreive weapons");
-  return (characterData["1"]["weapon"])
-}
+  return characterData["1"]["weapon"];
+};
