@@ -20,7 +20,7 @@ let characterData = [
     def: 9,
     weapon: ["sword"],
     armor: [],
-    items: { bag: [] },
+    items: { bag: ["coffee"] },
     selectedArmor: null,
     selectedWeapon: null,
   },
@@ -28,6 +28,7 @@ let characterData = [
 
 export const multiItems = () => {
   console.log("multi items");
+  console.log(characterData["items"]["bag"]);
 };
 
 export const addCharacter = (newCharacter) => {
