@@ -29,7 +29,7 @@ let characterData = [
 export const multiItems = (itemPath = [1, "items", "bag"]) => {
   console.log("multi items");
 
-  let temp = itemPath.reduce((currentLevel, key) => {
+  itemPath.forEach((currentLevel, key) => {
     // Check if currentLevel is null, undefined, or the key doesn't exist
     console.log(
       currentLevel && typeof currentLevel === "object" && key in currentLevel
