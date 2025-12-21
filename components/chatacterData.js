@@ -26,9 +26,10 @@ let characterData = [
   },
 ];
 
-export const multiItems = (itemPath=["items","bag"]) => {
+export const multiItems = (itemPath = ["items"]["bag"]) => {
   console.log("multi items");
-  console.log(characterData[1][...itemPath]);
+
+  console.log(characterData[1][itemPath]);
 };
 
 export const addCharacter = (newCharacter) => {
