@@ -29,16 +29,14 @@ let characterData = [
 export const multiItems = (itemPath = [1, "items", "bag"]) => {
   console.log("multi items");
 
-  console.log(
-    {itemPath.reduce((currentLevel, key) => {
-      // Check if currentLevel is null, undefined, or the key doesn't exist
-      return currentLevel &&
-        typeof currentLevel === "object" &&
-        key in currentLevel
+  itemPath.reduce((currentLevel, key) => {
+    // Check if currentLevel is null, undefined, or the key doesn't exist
+    console.log(
+      currentLevel && typeof currentLevel === "object" && key in currentLevel
         ? currentLevel[key]
-        : undefined;
-    }, characterData[1])}
-  );
+        : undefined
+    );
+  }, characterData);
 };
 
 export const addCharacter = (newCharacter) => {
