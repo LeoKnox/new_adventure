@@ -26,10 +26,21 @@ let characterData = [
   },
 ];
 
-export const multiItems = (itemPath = ["items"]["bag"]) => {
+export const multiItems = (itemPath = ["items", "bag"]) => {
   console.log("multi items");
 
-  console.log(characterData[1][itemPath]);
+  console.log(
+    characterData[1][
+      itemPath.reduce((currentLevel, key) => {
+        // Check if currentLevel is null, undefined, or the key doesn't exist
+        return currentLevel &&
+          typeof currentLevel === "object" &&
+          key in currentLevel
+          ? currentLevel[key]
+          : undefined;
+      }, characterData[1])
+    ]
+  );
 };
 
 export const addCharacter = (newCharacter) => {
