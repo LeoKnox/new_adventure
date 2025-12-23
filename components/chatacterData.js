@@ -29,8 +29,7 @@ let characterData = [
 export const multiItems = (itemPath = [1, "items", "bag"]) => {
   console.log("multi items");
   let temp = [1, "items", "bag"];
-  console.log("cl" + currentLevel);
-  let x = temp.reduce((key) => currentLevel[key], characterData);
+  let x = temp.reduce((key) => characterData[key], characterData);
   console.log(x);
 };
 
