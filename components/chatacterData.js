@@ -33,7 +33,7 @@ export const multiItems = (itemPath = [1, "items", "bag"]) => {
     // Check if currentLevel is null, undefined, or the key doesn't exist
     console.log("cl" + currentLevel);
     let temp = "";
-    console.log(itemPath.reduce((key) => currentLevel[key], temp));
+    let x = itemPath.reduce((key) => currentLevel[key], temp);
   }, characterData);
 };
 
