@@ -14,6 +14,7 @@ import DisplayWeapon from "./DisplayWeapon.js";
 
 export default View = ({ characterId }) => {
   const [character, setCharacter] = useState({});
+  const [currentBag, setCurrentBag] = useState([characterId]);
   const [retreivedWeapons, setRetreivedWeapons] = useState(retreiveWeapons());
   const [weaponToAdd, setWeaponToAdd] = useState("kama");
   const updateInventory = (type = "armor", item = "leather") => {
@@ -25,6 +26,8 @@ export default View = ({ characterId }) => {
     console.log("select bag");
     console.log(e.target.checked);
     console.log(e.target.value);
+    setCurrentBag(...currentBag, e.target.value);
+    console.log(currentBag);
   };
   const viewDeleteItem = (viewId, itemDelete) => {
     console.log("view delete weapon");
