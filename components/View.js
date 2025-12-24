@@ -23,6 +23,7 @@ export default View = ({ characterId }) => {
   };
   const selectBag = (e) => {
     console.log("select bag");
+    console.log(e.target.isChecked);
     console.log(e.target.value);
   };
   const viewDeleteItem = (viewId, itemDelete) => {
