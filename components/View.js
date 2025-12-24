@@ -51,8 +51,8 @@ export default View = ({ characterId }) => {
       <p>Def: {character.def}</p>
       <button onClick={multiItems}>items</button>
       <p>
-        <input type="checkbox" name="subscribe" value="yes" />
-        Subscribe to newsletter
+        <input type="checkbox" name="item" value="bag" />
+        Bag
       </p>
       <AddWeapon
         updateInventory={updateInventory}
