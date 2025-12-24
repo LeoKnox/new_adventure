@@ -57,6 +57,7 @@ export default View = ({ characterId }) => {
       <p>Atk: {character.atk}</p>
       <p>Def: {character.def}</p>
       <button onClick={multiItems}>items</button>
+      {currentBag}
       <p style={{ display: "inlineBlock" }}>
         <label style={{ display: "flex", flexDirection: "column" }}>
           <input type="checkbox" name="item" value="bag" onChange={selectBag} />
