@@ -21,7 +21,9 @@ export default View = ({ characterId }) => {
 
     setCharacter(singleCharacter(characterId));
   };
-
+  const selectBag = () => {
+    console.log("select bag");
+  };
   const viewDeleteItem = (viewId, itemDelete) => {
     console.log("view delete weapon");
     deleteItem(viewId, characterId, itemDelete);
@@ -52,7 +54,7 @@ export default View = ({ characterId }) => {
       <button onClick={multiItems}>items</button>
       <p style={{ display: "inlineBlock" }}>
         <label style={{ display: "flex", flexDirection: "column" }}>
-          <input type="checkbox" name="item" value="bag" />
+          <input type="checkbox" name="item" value="bag" onChange={selectBag} />
           Bag
         </label>
         <label style={{ display: "flex", flexDirection: "column" }}>
