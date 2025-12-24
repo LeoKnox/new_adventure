@@ -50,13 +50,15 @@ export default View = ({ characterId }) => {
       <p>Atk: {character.atk}</p>
       <p>Def: {character.def}</p>
       <button onClick={multiItems}>items</button>
-      <p style={{ display: "flex", flexDirection: "column" }}>
-        <input type="checkbox" name="item" value="bag" />
-        Bag
-      </p>
-      <p style={{ display: "flex", flexDirection: "column" }}>
-        <input type="checkbox" name="item" value="bag" />
-        Pack
+      <p>
+        <label style={{ display: "flex", flexDirection: "column" }}>
+          <input type="checkbox" name="item" value="bag" />
+          Bag
+        </label>
+        <label style={{ display: "flex", flexDirection: "column" }}>
+          <input type="checkbox" name="item" value="bag" />
+          Pack
+        </label>
       </p>
       <AddWeapon
         updateInventory={updateInventory}
