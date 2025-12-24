@@ -54,6 +54,10 @@ export default View = ({ characterId }) => {
         <input type="checkbox" name="item" value="bag" />
         Bag
       </p>
+      <p style={{ display: "flex", flexDirection: "column" }}>
+        <input type="checkbox" name="item" value="bag" />
+        Pack
+      </p>
       <AddWeapon
         updateInventory={updateInventory}
         setWeaponToAdd={setWeaponToAdd}
