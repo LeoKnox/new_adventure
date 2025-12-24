@@ -21,8 +21,9 @@ export default View = ({ characterId }) => {
 
     setCharacter(singleCharacter(characterId));
   };
-  const selectBag = () => {
+  const selectBag = (e) => {
     console.log("select bag");
+    console.log(e.target.value);
   };
   const viewDeleteItem = (viewId, itemDelete) => {
     console.log("view delete weapon");
