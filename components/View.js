@@ -26,7 +26,7 @@ export default View = ({ characterId }) => {
     console.log("select bag");
     console.log(e.target.checked);
     console.log(e.target.value);
-    setCurrentBag(...currentBag, e.target.value);
+    setCurrentBag([...currentBag, e.target.value]);
     console.log(currentBag);
   };
   const viewDeleteItem = (viewId, itemDelete) => {
