@@ -64,10 +64,9 @@ export default View = ({ characterId }) => {
             <input
               type="checkbox"
               name="item"
-              value="bag"
+              value={current}
               onChange={selectBag}
             />
-            {current}
           </label>
           <label style={{ display: "flex", flexDirection: "column" }}>
             <input type="checkbox" name="item" value="bag" />
