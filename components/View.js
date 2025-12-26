@@ -64,13 +64,13 @@ export default View = ({ characterId }) => {
       <p style={{ display: "inlineBlock" }}>
         <label style={{ display: "flex", flexDirection: "column" }}>
           <input type="checkbox" name="item" value="bag" onChange={selectBag} />
+          bag
         </label>
         <label style={{ display: "flex", flexDirection: "column" }}>
           <input type="checkbox" name="item" value="bag" />
           Pack
         </label>
       </p>
-      ;
       <AddWeapon
         updateInventory={updateInventory}
         setWeaponToAdd={setWeaponToAdd}
