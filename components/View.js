@@ -58,16 +58,23 @@ export default View = ({ characterId }) => {
       <p>Def: {character.def}</p>
       <button onClick={multiItems}>items</button>
       {currentBag}
-      <p style={{ display: "inlineBlock" }}>
-        <label style={{ display: "flex", flexDirection: "column" }}>
-          <input type="checkbox" name="item" value="bag" onChange={selectBag} />
-          Bag
-        </label>
-        <label style={{ display: "flex", flexDirection: "column" }}>
-          <input type="checkbox" name="item" value="bag" />
-          Pack
-        </label>
-      </p>
+      {currentBag.map((current) => {
+        <p style={{ display: "inlineBlock" }}>
+          <label style={{ display: "flex", flexDirection: "column" }}>
+            <input
+              type="checkbox"
+              name="item"
+              value="bag"
+              onChange={selectBag}
+            />
+            {current}
+          </label>
+          <label style={{ display: "flex", flexDirection: "column" }}>
+            <input type="checkbox" name="item" value="bag" />
+            Pack
+          </label>
+        </p>;
+      })}
       <AddWeapon
         updateInventory={updateInventory}
         setWeaponToAdd={setWeaponToAdd}
