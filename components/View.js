@@ -58,9 +58,9 @@ export default View = ({ characterId }) => {
       <p>Def: {character.def}</p>
       <button onClick={multiItems}>items</button>
       {currentBag}
-      {currentBag.map((current) => {
-        <p>e {current}</p>;
-      })}
+      {currentBag.map((current) => (
+        <p>e {current}</p>
+      ))}
       <p style={{ display: "inlineBlock" }}>
         <label style={{ display: "flex", flexDirection: "column" }}>
           <input type="checkbox" name="item" value="bag" onChange={selectBag} />
