@@ -64,7 +64,7 @@ export default View = ({ characterId }) => {
             <input
               type="checkbox"
               name="item"
-              value={current}
+              value={multiItems(current)}
               onChange={selectBag}
             />
           </label>
