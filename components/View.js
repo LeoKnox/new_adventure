@@ -23,7 +23,7 @@ export default View = ({ characterId }) => {
     setCharacter(singleCharacter(characterId));
   };
   console.log("view");
-  console.log(multiItems[2]);
+  console.log(multiItems([2]));
   const selectBag = (e) => {
     console.log("select bag");
     console.log(e.target.checked);
@@ -69,7 +69,7 @@ export default View = ({ characterId }) => {
               value={current}
               onChange={selectBag}
             />
-            {multiItems(current)}:{current}
+            {multiItems([current])}:{current}
           </label>
         </p>
       ))}
