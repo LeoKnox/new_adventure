@@ -58,6 +58,67 @@ export default View = ({ characterId }) => {
       <p>Lvl: {character.lvl}</p>
       <p>Atk: {character.atk}</p>
       <p>Def: {character.def}</p>
+      <button onClick={multiItems([2])}>items</button>
+      {currentBag}
+      {currentBag.map((current) => (
+        <p style={{ display: "inlineBlock" }}>
+          <label style={{ display: "flex", flexDirection: "column" }}>
+            <input
+              type="checkbox"
+              name="item"
+              value={current}
+              onChange={selectBag}
+            />
+            {multiItems([current])}:{current}
+          </label>
+        </p>
+      ))}
+
+      <AddWeapon
+        updateInventory={updateInventory}
+        setWeaponToAdd={setWeaponToAdd}
+        charId={characterId}
+      />
+      <DisplayWeapon
+        delWeapon={viewDeleteItem}
+        characterWeapon={retreivedWeapons}
+        charId={characterId}
+        selectActiveArmor={selectActiveArmor}
+      />
+      <AddArmor updateInventory={updateInventory} />
+      <DisplayArmor
+        selectActiveArmor={selectActiveArmor}
+        delArmor={viewDeleteItem}
+        characterArmor={character.armor}
+        charId={characterId}
+      />
+    </>
+  );
+};
+    setCharacter({ ...singleCharacter(characterId) });
+  };
+  const selectActiveArmor = (itemId, selectedItem = "selectedArmor") => {
+    console.log("select active armor");
+    selectItem(itemId, selectedItem, characterId);
+    setCharacter({ ...singleCharacter(characterId) });
+  };
+  useEffect(() => {
+    console.log("view use effect");
+    let temp = {};
+    temp = singleCharacter(characterId);
+    setCharacter(temp);
+  }, []);
+
+  return (
+    <>
+      <h3>Character</h3>
+      <h3>id: {characterId}</h3>
+      <p>Name: {character.name}</p>
+      <p>Icon: {character.icon}</p>
+      <p>{character.weapon}</p>
+      <p>Lvl: {character.lvl}</p>
+      <p>Atk: {character.atk}</p>
+      <p>Def: {character.def}</p>
       <button onClick={multiItems}>items</button>
       {currentBag}
       {currentBag.map((current) => (
