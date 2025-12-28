@@ -69,7 +69,7 @@ export default View = ({ characterId }) => {
               value={current}
               onChange={selectBag}
             />
-            {multiItems[current]}
+            {multiItems[current]}:{current}
           </label>
         </p>
       ))}
