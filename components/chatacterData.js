@@ -28,12 +28,12 @@ let characterData = [
 
 export const multiItems = (itemPath = [1, "items", "bag"]) => {
   console.log("multi items");
-  let temp = itemPath;
+  let temp = [1, "items", "bag"];
   //let temp = [...itemPath];
   let path = "";
   console.log(temp);
   let x = temp.reduce((data, key) => data[key], characterData);
-  let y = temp.reduce((data, key) => (path += data[key]), characterData);
+  let y = temp.reduce((data, key) => (path += key), characterData);
   console.log(path);
   console.log("x");
   return x;
