@@ -23,7 +23,7 @@ export default View = ({ characterId }) => {
     setCharacter(singleCharacter(characterId));
   };
   console.log("view");
-  console.log(multiItems([2, "items"]));
+  console.log(multiItems([1, "items"]));
   const selectBag = (e) => {
     console.log("select bag");
     console.log(e.target.checked);
