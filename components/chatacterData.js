@@ -43,7 +43,7 @@ export const multiItems = (itemPath = [1, "items", "bag"]) => {
   console.log(y);
   console.log(characterData[a][b][c]);
   console.log("x");
-  return x;
+  return Object.keys(x);
 };
 
 export const addCharacter = (newCharacter) => {
