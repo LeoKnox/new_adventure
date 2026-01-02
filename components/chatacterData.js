@@ -20,7 +20,7 @@ let characterData = [
     def: 9,
     weapon: ["sword"],
     armor: [],
-    items: { bag: ["coffee"] },
+    items: { bag: ["coffee"], pack: ["ocha"] },
     selectedArmor: null,
     selectedWeapon: null,
   },
@@ -29,11 +29,11 @@ let characterData = [
 export const multiItems = (itemPath = [1, "items", "bag"]) => {
   console.log("multi items");
   console.log("itemPath[0]");
-  //let temp = [1, "items", "bag"];
-  let temp = [...itemPath];
+  let temp = [1, "items"];
+  //let temp = [...itemPath];
   let path = "";
   console.log(temp);
-  let x = temp.reduce((data, key) => data[key], "");
+  let x = temp.reduce((data, key) => data[key], characterData);
 
   //let x = itemPath.reduce((data, key) => data[key], characterData);
   let y = temp.reduce((data, key) => (path += key), characterData);
