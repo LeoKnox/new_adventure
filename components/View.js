@@ -14,7 +14,7 @@ import DisplayWeapon from "./DisplayWeapon.js";
 
 export default View = ({ characterId }) => {
   const [character, setCharacter] = useState({});
-  const [currentBag, setCurrentBag] = useState([characterId-1, "items"]);
+  const [currentBag, setCurrentBag] = useState([characterId - 1, "items"]);
   const [retreivedWeapons, setRetreivedWeapons] = useState(retreiveWeapons());
   const [weaponToAdd, setWeaponToAdd] = useState("kama");
   const updateInventory = (type = "armor", item = "leather") => {
@@ -23,7 +23,7 @@ export default View = ({ characterId }) => {
     setCharacter(singleCharacter(characterId));
   };
   console.log("view");
-  console.log(multiItems([1, "items"]));
+  //console.log(multiItems([1, "items"]));
   const selectBag = (e) => {
     console.log("select bag");
     console.log(e.target.checked);
@@ -71,7 +71,7 @@ export default View = ({ characterId }) => {
               value={current}
               onChange={(e) => selectBag(e)}
             />
-            {multiItems([current])}:{current}
+            {multiItems(current)}:{current}
           </label>
         </p>
       ))}
