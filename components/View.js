@@ -60,7 +60,7 @@ export default View = ({ characterId }) => {
       <p>Lvl: {character.lvl}</p>
       <p>Atk: {character.atk}</p>
       <p>Def: {character.def}</p>
-      <button onClick={multiItems([2])}>items</button>
+      <button /*nClick={multiItems([2])}*/>items</button>
       {currentBag}
       {currentBag.map((current) => (
         <p style={{ display: "inlineBlock" }}>
