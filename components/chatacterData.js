@@ -44,7 +44,7 @@ export const multiItems = (itemPath = [1, "items", "bag"]) => {
   let a = 1;
   let b = "items";
   let c = "bag";
-  console.log(y);
+  console.log(path);
   //console.log(characterData[a][b][c]);
   console.log(x);
   return Object.keys(x);
