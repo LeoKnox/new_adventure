@@ -34,7 +34,7 @@ export const multiItems = (itemPath = [1, "items", "bag"]) => {
   //let temp = [...itemPath];
   let path = [];
   console.log(Object.keys(characterData[1]["items"]));
-  let y = temp.reduce(
+  let y = temp.forEach(
     (data, key) =>
       console.log("+" + key + data + Object.keys(characterData[data])),
     //(data, key) => console.log(Object.keys(characterData[data])),
