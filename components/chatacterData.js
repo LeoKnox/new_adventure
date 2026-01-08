@@ -37,7 +37,7 @@ export const multiItems = (itemPath = [1, "items", "bag"]) => {
   let y = itemPath.reduce((currentObj, key) => {
     // Check if the currentObj is valid and has the next key
     currentObj && currentObj[key] !== "undefined"
-      ? console.log("+" + "a")
+      ? console.log("+" + characterData[key])
       : console.log("+" + "b");
     //? currentObj[key]
     //: undefined;
