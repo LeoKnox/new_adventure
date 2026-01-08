@@ -34,6 +34,9 @@ export const multiItems = (itemPath = [1, "items", "bag"]) => {
   //let temp = [...itemPath];
   let path = "";
   console.log(Object.keys(characterData[1]["items"]));
+  itemPath.forEach((data, key) => {
+    console.log(data + "::" + key);
+  });
   let y = itemPath.reduce((currentObj, key) => {
     // Check if the currentObj is valid and has the next key
     currentObj && currentObj[key] !== "undefined"
