@@ -34,12 +34,18 @@ export const multiItems = (itemPath = [1, "items", "bag"]) => {
   //let temp = [...itemPath];
   let path = "";
   console.log(Object.keys(characterData[1]["items"]));
-  let y = temp.forEach(
+  let y = itemPath.reduce((currentObj, key) => {
+    // Check if the currentObj is valid and has the next key
+    return currentObj && currentObj[key] !== undefined
+      ? currentObj[key]
+      : undefined;
+  }, characterData);
+  /*let y = temp.forEach(
     (data, key) => (path += [data]),
     //console.log("+" + key + data + Object.keys(characterData[data])),
     //(data, key) => console.log(Object.keys(characterData[data])),
     temp
-  );
+  );*/
   /*let x = temp.reduce(
     (data, key) => path.push(Object.keys(characterData[data])),
     temp
