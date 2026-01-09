@@ -31,6 +31,7 @@ export const multiItems = (itemPath = [1, "items", "bag"]) => {
   //console.log(itemPath);
   console.log(characterData[1]["items"]);
   let temp = [1, "items", "bag"];
+  let newtemp = "";
   //let temp = [...itemPath];
   let path = "";
   console.log(Object.keys(characterData[1]["items"]));
@@ -42,7 +43,7 @@ export const multiItems = (itemPath = [1, "items", "bag"]) => {
     currentObj && currentObj[key] !== "undefined"
       ? //? console.log("+" + Object.keys(currentObj))
         //: console.log("+" + "b");
-        currentObj[key]
+        (newtemp = currentObj[key])
       : undefined;
   }, characterData);
   /*let y = temp.forEach(
@@ -56,7 +57,7 @@ export const multiItems = (itemPath = [1, "items", "bag"]) => {
     temp
   );*/
   console.log("y");
-  console.log(y);
+  console.log(newtemp);
   //let x = itemPath.reduce((data, key) => data[key], characterData);
 
   let a = 1;
