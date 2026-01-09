@@ -43,7 +43,7 @@ export const multiItems = (itemPath = [1, "items", "bag"]) => {
     currentObj && currentObj[key] !== "undefined"
       ? //? console.log("+" + Object.keys(currentObj))
         //: console.log("+" + "b");
-        console.log("--" + characterData[currentObj])
+        console.log("--" + currentObj)
       : undefined;
   }, characterData);
   /*let y = temp.forEach(
