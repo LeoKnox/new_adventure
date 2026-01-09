@@ -36,6 +36,7 @@ export const multiItems = (itemPath = [1, "items", "bag"]) => {
   let path = "";
   itemPath.forEach((data, key) => {
     console.log(data + key);
+    console.log(itemPath[data]);
   });
 };
 
