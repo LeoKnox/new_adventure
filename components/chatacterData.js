@@ -40,10 +40,10 @@ export const multiItems = (itemPath = [1, "items", "bag"]) => {
   let y = temp.reduce((currentObj, key) => {
     // Check if the currentObj is valid and has the next key
     currentObj && currentObj[key] !== "undefined"
-      ? console.log("+" + Object.keys(currentObj))
-      : console.log("+" + "b");
-    //? currentObj[key]
-    //: undefined;
+      ? //? console.log("+" + Object.keys(currentObj))
+        //: console.log("+" + "b");
+        currentObj[key]
+      : undefined;
   }, characterData);
   /*let y = temp.forEach(
     (data, key) => (path += [data]),
