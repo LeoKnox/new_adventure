@@ -29,15 +29,16 @@ let characterData = [
 export const multiItems = (itemPath = [1, "items", "bag"]) => {
   console.log("multi items");
   //console.log(itemPath);
-  console.log(characterData[1]["items"]);
+  //console.log(characterData[1]["items"]);
   let temp = [1, "items", "bag"];
-  let newtemp = "";
-  //let temp = [...itemPath];
-  let path = "";
-  itemPath.forEach((data, key) => {
-    console.log(data + key);
-    console.log(itemPath[data]);
-  });
+  let newtemp = [];
+  temp.reduce((data, key) => {
+    // Check if the currentObj is valid and has the next key
+    return data && data[key] !== undefined
+      ? newTemp.push(data[key])
+      : undefined;
+  }, temp);
+  console.log(newTemp);
 };
 
 export const addCharacter = (newCharacter) => {
