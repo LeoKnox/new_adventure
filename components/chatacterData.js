@@ -34,40 +34,9 @@ export const multiItems = (itemPath = [1, "items", "bag"]) => {
   let newtemp = "";
   //let temp = [...itemPath];
   let path = "";
-  console.log(Object.keys(characterData[1]["items"]));
-  temp.forEach((data, key) => {
-    console.log(data + "::" + key);
+  itemPath.forEach((data, key) => {
+    console.log(data);
   });
-  let y = temp.reduce((currentObj, key) => {
-    // Check if the currentObj is valid and has the next key
-    currentObj && currentObj[key] !== "undefined"
-      ? //? console.log("+" + Object.keys(currentObj))
-        //: console.log("+" + "b");
-        console.log("--" + Object.keys(currentObj))
-      : undefined;
-  }, characterData);
-  /*let y = temp.forEach(
-    (data, key) => (path += [data]),
-    //console.log("+" + key + data + Object.keys(characterData[data])),
-    //(data, key) => console.log(Object.keys(characterData[data])),
-    temp
-  );*/
-  /*let x = temp.reduce(
-    (data, key) => path.push(Object.keys(characterData[data])),
-    temp
-  );*/
-  console.log("y");
-  console.log(y);
-  //let x = itemPath.reduce((data, key) => data[key], characterData);
-
-  let a = 1;
-  let b = "items";
-  let c = "bag";
-  //console.log(path);
-  //console.log(characterData[a][b][c]);
-  //console.log(x);
-  return y;
-  //return x;
 };
 
 export const addCharacter = (newCharacter) => {
