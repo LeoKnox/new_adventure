@@ -28,12 +28,13 @@ let characterData = [
 
 export const multiItems = (itemPath = [1, "items", "bag"]) => {
   console.log("multi items");
-  let temp = [1, "items", "bag"];
-  console.log([itemPath]);
+  let temp = [1, "items"];
+  //console.log([itemPath]);
   let newtemp = temp.reduce((data, key) => {
-    return data !== undefined ? Object.keys(data[key]) : undefined;
+    return data !== undefined ? data[key] : undefined;
   }, characterData);
   console.log(newtemp);
+  return newtemp;
 };
 
 export const addCharacter = (newCharacter) => {
