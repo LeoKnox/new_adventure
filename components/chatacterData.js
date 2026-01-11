@@ -28,9 +28,10 @@ let characterData = [
 
 export const multiItems = (itemPath = [1, "items", "bag"]) => {
   console.log("multi items");
-  let temp = [1, "items"];
+  //let temp = [1, "items"];
+
   //console.log([itemPath]);
-  let newtemp = temp.reduce((data, key) => {
+  let newtemp = itemPath.reduce((data, key) => {
     return data !== undefined ? data[key] : undefined;
   }, characterData);
   console.log(newtemp);
