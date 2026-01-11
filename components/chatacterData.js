@@ -32,9 +32,9 @@ export const multiItems = (itemPath = [1, "items", "bag"]) => {
   //console.log(characterData[1]["items"]);
   let temp = [1, "items", "bag"];
   let newtemp = [];
-  temp.reduce((data, key) => {
+  newtemp = temp.reduce((data, key) => {
     // Check if the currentObj is valid and has the next key
-    return data !== undefined ? newtemp.push(data[key]) : undefined;
+    return data !== undefined ? data[key] : undefined;
   }, characterData);
   console.log(newtemp);
 };
