@@ -15,7 +15,7 @@ import DisplayWeapon from "./DisplayWeapon.js";
 export default View = ({ characterId }) => {
   const [character, setCharacter] = useState({});
   const [currentBag, setCurrentBag] = useState([
-    characterId - 1,
+    
     "items",
     "bag",
   ]);
