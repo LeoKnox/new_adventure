@@ -29,7 +29,7 @@ let characterData = [
 const testtest = (data) => {
   console.log("test test");
   console.log(data);
-  console.log(Object.keys(characterData[data]));
+  console.log(Object.keys(characterData[1][data]));
 };
 
 export const multiItems = (characterId, itemPath = [1, "items", "bag"]) => {
