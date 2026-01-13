@@ -34,7 +34,7 @@ const testtest = (data) => {
 
 export const multiItems = (characterId, itemPath = [1, "items", "bag"]) => {
   console.log("multi items");
-  let temp = [1, "items", "bag"];
+  let temp = ["items", "bag"];
   console.log([itemPath]);
   let newtemp2 = temp.reduce((data, key) => {
     return data !== undefined ? testtest(data) : "undefined";
