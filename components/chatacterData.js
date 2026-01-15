@@ -42,6 +42,7 @@ export const multiItems = (characterId, itemPath = [1, "items", "bag"]) => {
   console.log("x");
   //let temp = [itemPath];
   //console.log(temp);
+  console.log(characterData[1]["items"] + ":");
   let newtemp = temp.reduce((data, key) => {
     return key ? characterData[characterId][key] : "undefined1";
   }, characterData[characterId]);
