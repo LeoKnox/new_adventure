@@ -48,7 +48,7 @@ export const multiItems = (characterId, itemPath = [1, "items", "bag"]) => {
     return key !== undefined
       ? Object.keys(characterData[characterId - 1][key])
       : "undefined1";
-  }, characterData[characterId]);
+  }, characterData[characterId - 1]);
   console.log(newtemp);
   return newtemp;
 };
