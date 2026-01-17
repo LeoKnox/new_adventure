@@ -32,22 +32,17 @@ const testtest = (data) => {
   console.log(Object.keys(characterData[1][data]));
 };
 
-export const multiItems = (itemPath = [1, "items", "bag"]) => {
+export const multiItems = (characterId = 1, itemPath = [1, "items", "bag"]) => {
   console.log("multi items");
   //let temp = ["items", "bag"];
-  //let temp2 = [1, "items"];
-  console.log([itemPath]);
-  console.log(characterId - 1);
-  let newtemp2 = temp.reduce((data, key) => {
-    return key ? console.log("1" + key) : console.log("2" + key);
+  let temp = [itemPath];
+  let newtempx = temp.reduce((data, key) => {
+    return key !== undefined ? console.log(data + ":" + key) : "undefined1";
   }, characterData[characterId]);
-  console.log("x");
-  //let temp = [itemPath];
-  //console.log(temp);
-  console.log(Object.keys(characterData[1]["items"]) + ":");
-  let newtemp = temp2.reduce((data, key) => {
+  console.log("DDD");
+  let newtemp = temp.reduce((data, key) => {
     return key !== undefined ? data[key] : "undefined1";
-  }, characterData);
+  }, characterData[characterId]);
   console.log(newtemp);
   return newtemp;
 };
