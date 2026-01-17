@@ -35,6 +35,7 @@ const testtest = (data) => {
 export const multiItems = (characterId, itemPath = [1, "items", "bag"]) => {
   console.log("multi items");
   let temp = ["items", "bag"];
+  let temp2 = [1, "items"];
   console.log([itemPath]);
   console.log(characterId - 1);
   let newtemp2 = temp.reduce((data, key) => {
@@ -44,11 +45,11 @@ export const multiItems = (characterId, itemPath = [1, "items", "bag"]) => {
   //let temp = [itemPath];
   //console.log(temp);
   console.log(Object.keys(characterData[1]["items"]) + ":");
-  let newtemp = temp.reduce((data, key) => {
-    return data !== undefined
+  let newtemp = temp2.reduce((data, key) => {
+    return key !== undefined
       ? Object.keys(characterData[characterId - 1][key])
       : "undefined1";
-  }, characterData[characterId - 1]);
+  }, characterData);
   console.log(newtemp);
   return newtemp;
 };
