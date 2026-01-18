@@ -34,17 +34,17 @@ const testtest = (data) => {
 
 export const multiItems = (characterId = 1, itemPath = [1, "items", "bag"]) => {
   console.log("multi items");
-  let temp = ["items", "bags"];
+  let temp = [1, "items", "bags"];
   //let temp = [itemPath];
-  let newtempx = temp.reduce((data, key) => {
+  /*let newtempx = temp.reduce((data, key) => {
     return data && data[key] !== undefined
       ? console.log(JSON.stringify(data[key]) + ":" + key)
       : "undefined1";
-  }, characterData[characterId]);
+  }, characterData[characterId]);*/
   console.log("DDD");
   let newtemp = temp.reduce((data, key) => {
     return data?.[key];
-  }, characterData[characterId]);
+  }, characterData);
   console.log(newtemp);
   return newtemp;
 };
