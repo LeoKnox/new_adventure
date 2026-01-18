@@ -35,7 +35,9 @@ const testtest = (data) => {
 export const multiItems = (characterId = 1, itemPath = [1, "items", "bag"]) => {
   console.log("multi items");
   let temp = ["items", "bags"];
-  let y = "items";
+  let y = [1, "items", "bags"];
+  let z = [...y];
+  console.log(characterData[z]);
   //let temp = [itemPath];
   let newtempx = temp.reduce((data, key) => {
     return data ? console.log(data + ":" + key) : "undefined1";
