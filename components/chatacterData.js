@@ -39,7 +39,7 @@ export const multiItems = (characterId = 1, itemPath = [1, "items", "bag"]) => {
   //let temp = [itemPath];
   let newtempx = temp.reduce((data, key) => {
     return data
-      ? console.log(JSON.stringify(data[`${y}`]) + ":" + key)
+      ? console.log(JSON.stringify(data[y]) + ":" + key)
       : "undefined1";
   }, characterData[characterId]);
   console.log("DDD");
