@@ -42,9 +42,10 @@ export const multiItems = (itemPath = [1, "items", "bag"], characterId = 1) => {
   /*let newtempx = temp.reduce((data, key) => {
     return key ? console.log(Object.keys(characterData[key])) : "undefined1";
   }, characterData[characterId]);*/
+  temp.forEach((data) => console.log("data: " + data));
   console.log("DDD");
   let newtemp = temp.reduce((data, key) => {
-    return characterData[characterId][key];
+    return data?.[key];
   }, characterData[characterId]);
   console.log(newtemp);
   return newtemp;
