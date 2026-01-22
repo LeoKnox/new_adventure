@@ -47,6 +47,9 @@ export const multiItems = (itemPath = [1, "items", "bag"], characterId = 1) => {
   let newtemp = y.reduce((data, key) => {
     return characterData[data];
   }, characterData);
+  newtemp = y.reduce((prev, curr) => {
+    return prev && prev[curr] !== undefined ? prev[curr] : undefined;
+  }, characterData);
   console.log(newtemp);
   return newtemp;
 };
