@@ -35,7 +35,7 @@ const testtest = (data) => {
 export const multiItems = (itemPath = [1, "items", "bag"], characterId = 1) => {
   console.log("multi items");
   //let temp = ["items", "bags"];
-  let y = [1, "items", "bags"];
+  let y = ["1", "items", "bags"];
   let z = [...y];
   console.log(itemPath);
   let temp = [itemPath];
