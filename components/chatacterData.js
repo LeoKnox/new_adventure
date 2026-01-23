@@ -42,7 +42,15 @@ export const multiItems = (itemPath = [1, "items"], characterId = 1) => {
   /*let newtempx = temp.reduce((data, key) => {
     return key ? console.log(Object.keys(characterData[key])) : "undefined1";
   }, characterData[characterId]);*/
-  y = temp.forEach((data, v) => (v = data));
+  for (y != undefined) {
+    if (y && typeof y === "object") {
+      y = y[key];
+    } else {
+      return undefined;
+    }
+  }
+
+  return current;
   console.log(y);
   console.log("DDD");
   let newtemp = temp.reduce((data, key) => {
