@@ -36,13 +36,14 @@ export const multiItems = (itemPath = [1, "items"], characterId = 1) => {
   console.log("multi items");
   //let temp = ["items", "bags"];
   let y = ["items", "bags"];
-  console.log(y);
-  console.log(itemPath);
+  //console.log(y);
+  //console.log(itemPath);
   let temp = [itemPath];
   /*let newtempx = temp.reduce((data, key) => {
     return key ? console.log(Object.keys(characterData[key])) : "undefined1";
   }, characterData[characterId]);*/
-  temp.forEach((data) => console.log("data: " + data));
+  y = temp.forEach((data, v) => (v = data));
+  console.log(y);
   console.log("DDD");
   let newtemp = temp.reduce((data, key) => {
     return characterData[data];
