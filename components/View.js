@@ -64,8 +64,8 @@ export default View = ({ characterId }) => {
       {currentBag}
       {currentBag.map((value, key) => (
         <ul>
-          **key{key}:{currentBag.slice(0, key + 1)}:
-          {JSON.stringify(multiItems(currentBag.slice(0, key + 1)))}
+          **key{key}:{[currentBag.slice(0, key + 1)]}:
+          {JSON.stringify(multiItems([currentBag.slice(0, key + 1)]))}
         </ul>
       ))}
       {currentBag.map((current) => (
