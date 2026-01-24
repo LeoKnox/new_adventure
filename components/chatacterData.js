@@ -62,11 +62,11 @@ export default View = ({ characterId }) => {
       <p>Def: {character.def}</p>
       <button /*nClick={multiItems([2])}*/>items</button>
       {currentBag}
-      {currentBag.forEach(key, value) => {
+      {currentBag.map((key, value) => (
         <ul>
           ** {value} key {key}
         </ul>
-      }}
+      ))}
       {currentBag.map((current) => (
         // find way to send partial array
         <p style={{ display: "inlineBlock" }}>
