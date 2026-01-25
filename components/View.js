@@ -65,7 +65,7 @@ export default View = ({ characterId }) => {
       {currentBag.map((value, key) => (
         <ul>
           **{currentBag.slice(0, key + 1)}:
-          {[...multiItems(currentBag.slice(0, key + 1))]}
+          {Object.keys(multiItems(currentBag.slice(0, key + 1)))}
         </ul>
       ))}
       {currentBag.map((current) => (
