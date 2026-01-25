@@ -14,7 +14,7 @@ import DisplayWeapon from "./DisplayWeapon.js";
 
 export default View = ({ characterId }) => {
   const [character, setCharacter] = useState({});
-  const [currentBag, setCurrentBag] = useState([1, "items"]);
+  const [currentBag, setCurrentBag] = useState([1, "items", "bag"]);
   const [retreivedWeapons, setRetreivedWeapons] = useState(retreiveWeapons());
   const [weaponToAdd, setWeaponToAdd] = useState("kama");
   const updateInventory = (type = "armor", item = "leather") => {
@@ -63,10 +63,7 @@ export default View = ({ characterId }) => {
       <button /*nClick={multiItems([2])}*/>items</button>
       {currentBag}
       {currentBag.map((value, key) => (
-        <ul>
-          **key{key}:{[currentBag.slice(0, key + 1)]}:
-          {JSON.stringify(multiItems([currentBag.slice(0, key + 1)]))}
-        </ul>
+        <ul>**{currentBag.slice(0, key + 1)}:</ul>
       ))}
       {currentBag.map((current) => (
         // find way to send partial array
