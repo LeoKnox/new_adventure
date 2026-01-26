@@ -63,7 +63,7 @@ export default View = ({ characterId }) => {
       <button /*nClick={multiItems([2])}*/>items</button>
       {currentBag}
       {currentBag.map((value, key) => (
-        <ul>**{currentBag.slice(0, key + 1)}:</ul>
+        <ul>**{Array.isArray(currentBag.slice(0, key + 1))}:</ul>
       ))}
       {currentBag.map((current) => (
         // find way to send partial array
