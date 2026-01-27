@@ -34,6 +34,7 @@ const testtest = (data) => {
 
 export const multiItems = (itemPath = [1, "items"], characterId = 1) => {
   console.log("multi items");
+  console.log(Array.isArray(itemPath));
   //let temp = [1, "items"];
   let y = ["items", "bags"];
   //console.log(y);
