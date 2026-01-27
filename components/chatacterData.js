@@ -32,7 +32,7 @@ const testtest = (data) => {
   console.log(Object.keys(characterData[1][data]));
 };
 
-export const multiItems = ([itemPath] = [1, "items"], characterId = 1) => {
+export const multiItems = ([...itemPath], characterId = 1) => {
   console.log("multi items");
   //let temp = [1, "items"];
   let y = ["items", "bags"];
