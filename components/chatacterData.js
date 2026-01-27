@@ -39,9 +39,9 @@ export const multiItems = (itemPath = [1, "items"], characterId = 1) => {
   //console.log(y);
   //console.log(itemPath);
   let temp = [itemPath];
-  console.log(Array.isArray(temp));
+  console.log(Array.isArray(itemPath));
 
-  console.log(temp);
+  console.log(itemPath[0]);
   /*let newtempx = temp.reduce((data, key) => {
     return key ? console.log(Object.keys(characterData[key])) : "undefined1";
   }, characterData[characterId]);*/
@@ -52,7 +52,7 @@ export const multiItems = (itemPath = [1, "items"], characterId = 1) => {
   let newtemp = temp.reduce((data, key) => {
     return characterData[data];
   }, characterData);
-  newtemp = itemPath.reduce((prev, curr) => prev?.[curr], characterData);
+  newtemp = temp.reduce((prev, curr) => prev?.[curr], characterData);
   console.log(newtemp);
   if (newtemp != undefined) {
     return newtemp;
