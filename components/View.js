@@ -65,7 +65,7 @@ export default View = ({ characterId }) => {
       {currentBag.map((value, key) => (
         <ul>
           **{"" + Array.isArray(currentBag.slice(0, key + 1))}:
-          {currentBag.slice(0, key + 1)}
+          {currentBag.slice(0, key + 1)[0]}
         </ul>
       ))}
       {currentBag.map((current) => (
