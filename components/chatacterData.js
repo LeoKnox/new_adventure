@@ -34,12 +34,13 @@ const testtest = (data) => {
 
 export const multiItems = (itemPath = [1, "items"], characterId = 1) => {
   console.log("multi items");
-  console.log(Array.isArray(itemPath));
   //let temp = [1, "items"];
   let y = ["items", "bags"];
   //console.log(y);
   //console.log(itemPath);
   let temp = [itemPath];
+  console.log(Array.isArray(temp));
+
   console.log(temp);
   /*let newtempx = temp.reduce((data, key) => {
     return key ? console.log(Object.keys(characterData[key])) : "undefined1";
