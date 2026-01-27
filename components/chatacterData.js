@@ -32,16 +32,16 @@ const testtest = (data) => {
   console.log(Object.keys(characterData[1][data]));
 };
 
-export const multiItems = (itemPath = [1, "items"], characterId = 1) => {
+export const multiItems = ([itemPath] = [1, "items"], characterId = 1) => {
   console.log("multi items");
   //let temp = [1, "items"];
   let y = ["items", "bags"];
   //console.log(y);
   //console.log(itemPath);
-  let temp = [itemPath];
+  let temp = itemPath;
   console.log(Array.isArray(itemPath));
 
-  console.log(itemPath[0]);
+  console.log(itemPath);
   /*let newtempx = temp.reduce((data, key) => {
     return key ? console.log(Object.keys(characterData[key])) : "undefined1";
   }, characterData[characterId]);*/
