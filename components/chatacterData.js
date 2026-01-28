@@ -45,14 +45,14 @@ export const multiItems = (itemPath, characterId = 1) => {
   /*let newtempx = temp.reduce((data, key) => {
     return key ? console.log(Object.keys(characterData[key])) : "undefined1";
   }, characterData[characterId]);*/
-  y = temp.reduce((prev, curr) => prev?.[curr], characterData);
+  //y = temp.reduce((prev, curr) => prev?.[curr], characterData);
 
   //return current;
   console.log("DDD");
   let newtemp = temp.reduce((data, key) => {
     return characterData[data];
   }, characterData);
-  //newtemp = temp.reduce((prev, curr) => prev?.[curr], characterData);
+  newtemp = y.reduce((prev, curr) => prev?.[curr], characterData);
   console.log(newtemp);
   return newtemp;
 };
