@@ -67,7 +67,9 @@ export default View = ({ characterId }) => {
       {currentBag.map((value, key) => (
         <ul>
           **{"" + Array.isArray(currentBag.slice(0, key + 1))}:
-          {[...selectBag(currentBag.slice(0, key + 1))]}
+          {Array.isArray(selectBag(currentBag.slice(0, key + 1)))
+            ? selectBag(currentBag.slice(0, key + 1))
+            : "red"}
         </ul>
       ))}
 
