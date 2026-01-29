@@ -24,13 +24,12 @@ export default View = ({ characterId }) => {
   };
   console.log("view");
   //console.log(multiItems([1, "items"]));
-  const selectBag = (e) => {
+  const selectBag = (temp) => {
     console.log("select bag");
-    console.log(e.target.checked);
-    console.log(e.target.value);
-    let temp = [...currentBag, e.target.value];
+
+    //let temp = [...currentBag, e.target.value];
     console.log(temp);
-    setCurrentBag(temp);
+    return multiItems(temp);
     console.log(currentBag);
   };
   const viewDeleteItem = (viewId, itemDelete) => {
@@ -65,10 +64,11 @@ export default View = ({ characterId }) => {
       {currentBag.map((value, key) => (
         <ul>
           **{"" + Array.isArray(currentBag.slice(0, key + 1))}:
-          {currentBag.slice(0, key + 1)[0]}
+          {selectBag(currentBag.slice(0, key + 1))}
         </ul>
       ))}
-      {currentBag.map((current) => (
+
+      {/*currentBag.map((current) => (
         // find way to send partial array
         <p style={{ display: "inlineBlock" }}>
           <label style={{ display: "flex", flexDirection: "column" }}>
@@ -81,7 +81,7 @@ export default View = ({ characterId }) => {
             {JSON.stringify(multiItems(current))}:{current}
           </label>
         </p>
-      ))}
+      ))*/}
 
       <AddWeapon
         updateInventory={updateInventory}
