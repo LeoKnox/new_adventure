@@ -36,24 +36,18 @@ export const multiItems = (itemPath, characterId = 1) => {
   console.log("multi items");
   //let temp = [1, "items"];
   let y = [1, "items", "bags"];
-  //console.log(y);
-  //console.log(itemPath);
+
   let temp = [itemPath];
   console.log(Array.isArray(itemPath));
 
   console.log(itemPath);
-  /*let newtempx = temp.reduce((data, key) => {
-    return key ? console.log(Object.keys(characterData[key])) : "undefined1";
-  }, characterData[characterId]);*/
-  //y = temp.reduce((prev, curr) => prev?.[curr], characterData);
 
-  //return current;
   console.log("DDD");
   let newtemp = temp.reduce((data, key) => {
     return characterData[data];
   }, characterData);
 
-  newtemp = y.reduce((prev, curr) => prev?.[curr], characterData);
+  newtemp = itemPath.reduce((prev, curr) => prev?.[curr], characterData);
   console.log(newtemp);
   return newtemp;
 };
