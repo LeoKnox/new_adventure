@@ -29,8 +29,11 @@ export default View = ({ characterId }) => {
 
     //let temp = [...currentBag, e.target.value];
     console.log(temp);
-    return multiItems(temp);
-    console.log(currentBag);
+    let retTemp = multiItems(temp);
+    console.log(retTemp);
+    console.log(retTemp);
+    //console.log(currentBag);
+    return retTemp;
   };
   const viewDeleteItem = (viewId, itemDelete) => {
     console.log("view delete weapon");
