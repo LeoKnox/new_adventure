@@ -35,7 +35,7 @@ const testtest = (data) => {
 export const multiItems = (itemPath, characterId = 1) => {
   console.log("multi items");
   //let temp = [1, "items"];
-  let y = ["items", "bags"];
+  let y = [1, "items", "bags"];
   //console.log(y);
   //console.log(itemPath);
   let temp = [itemPath];
@@ -52,6 +52,7 @@ export const multiItems = (itemPath, characterId = 1) => {
   let newtemp = temp.reduce((data, key) => {
     return characterData[data];
   }, characterData);
+
   newtemp = y.reduce((prev, curr) => prev?.[curr], characterData);
   console.log(newtemp);
   return newtemp;
