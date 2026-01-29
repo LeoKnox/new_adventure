@@ -69,9 +69,7 @@ export default View = ({ characterId }) => {
           **{"" + Array.isArray(currentBag.slice(0, key + 1))}:
           {Array.isArray(selectBag(currentBag.slice(0, key + 1)))
             ? selectBag(currentBag.slice(0, key + 1))
-            : console.log(
-                "t" + JSON.stringify(selectBag(currentBag.slice(0, key + 1)))
-              )}
+            : console.log("t" + typeof selectBag(currentBag.slice(0, key + 1)))}
         </ul>
       ))}
 
