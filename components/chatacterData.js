@@ -26,12 +26,6 @@ let characterData = [
   },
 ];
 
-const testtest = (data) => {
-  console.log("test test");
-  console.log(data);
-  console.log(Object.keys(characterData[1][data]));
-};
-
 export const multiItems = (itemPath, characterId = 1) => {
   console.log("multi items");
   let temp = [itemPath];
