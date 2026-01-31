@@ -70,7 +70,12 @@ export default View = ({ characterId }) => {
           {Array.isArray(selectBag(currentBag.slice(0, key + 1)))
             ? selectBag(currentBag.slice(0, key + 1))
             : Object.keys(selectBag(currentBag.slice(0, key + 1))).map(
-                (check) => <input type="checkbox" value={check} />
+                (check) => (
+                  <>
+                    <input type="checkbox" name={check} />
+                    <label>{check}</label>
+                  </>
+                )
               )}
         </ul>
       ))}
