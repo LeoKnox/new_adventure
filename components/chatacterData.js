@@ -34,21 +34,11 @@ const testtest = (data) => {
 
 export const multiItems = (itemPath, characterId = 1) => {
   console.log("multi items");
-  //let temp = [1, "items"];
-  let y = [1, "items", "bags"];
-
   let temp = [itemPath];
-  console.log(Array.isArray(itemPath));
-
-  console.log(itemPath);
-
-  console.log("DDD");
   let newtemp = temp.reduce((data, key) => {
     return characterData[data];
   }, characterData);
-
   newtemp = itemPath.reduce((prev, curr) => prev?.[curr], characterData);
-  console.log(newtemp);
   return newtemp;
 };
 
