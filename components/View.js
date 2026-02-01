@@ -14,7 +14,7 @@ import DisplayWeapon from "./DisplayWeapon.js";
 
 export default View = ({ characterId }) => {
   const [character, setCharacter] = useState({});
-  const [currentBag, setCurrentBag] = useState([1, "items", "bag"]);
+  const [currentBag, setCurrentBag] = useState([1, "items"]);
   const [retreivedWeapons, setRetreivedWeapons] = useState(retreiveWeapons());
   const [weaponToAdd, setWeaponToAdd] = useState("kama");
   const updateInventory = (type = "armor", item = "leather") => {
@@ -66,7 +66,9 @@ export default View = ({ characterId }) => {
             : Object.keys(selectBag(currentBag.slice(0, key + 1))).map(
                 (check) => (
                   <>
-                    <button>{check}</button>
+                    <button onClick={setCurrentBag([...currentBag, check])}>
+                      {check}
+                    </button>
                   </>
                 )
               )}
