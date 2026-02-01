@@ -14,7 +14,7 @@ import DisplayWeapon from "./DisplayWeapon.js";
 
 export default View = ({ characterId }) => {
   const [character, setCharacter] = useState({});
-  const [currentBag, setCurrentBag] = useState(["items", "bag"]);
+  const [currentBag, setCurrentBag] = useState([1, "items", "bag"]);
   const [retreivedWeapons, setRetreivedWeapons] = useState(retreiveWeapons());
   const [weaponToAdd, setWeaponToAdd] = useState("kama");
   const updateInventory = (type = "armor", item = "leather") => {
@@ -66,7 +66,7 @@ export default View = ({ characterId }) => {
             : Object.keys(selectBag(currentBag.slice(0, key + 1))).map(
                 (check) => (
                   <>
-                    <input type="checkbox" name={check} />
+                    <input type="radio" name={check} />
                     <label>{check}</label>
                   </>
                 )
