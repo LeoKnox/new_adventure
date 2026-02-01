@@ -28,10 +28,10 @@ let characterData = [
 
 export const multiItems = (itemPath, characterId = 1) => {
   console.log("multi items");
-  let temp = [itemPath];
+  let temp = [itemPath[characterId]];
   let newtemp = temp.reduce((data, key) => {
     return characterData[data];
-  }, characterData[characterId]);
+  }, characterData);
   newtemp = itemPath.reduce((prev, curr) => prev?.[curr], characterData);
   return newtemp;
 };
