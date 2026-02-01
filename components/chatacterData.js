@@ -31,7 +31,7 @@ export const multiItems = (itemPath, characterId = 1) => {
   let temp = [itemPath];
   let newtemp = temp.reduce((data, key) => {
     return characterData[data];
-  }, characterData);
+  }, characterData[characterId]);
   newtemp = itemPath.reduce((prev, curr) => prev?.[curr], characterData);
   return newtemp;
 };
