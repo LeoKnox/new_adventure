@@ -66,8 +66,7 @@ export default View = ({ characterId }) => {
             : Object.keys(selectBag(currentBag.slice(0, key + 1))).map(
                 (check) => (
                   <>
-                    <input type="radio" name={check} />
-                    <label>{check}</label>
+                    <button>{check}</button>
                   </>
                 )
               )}
