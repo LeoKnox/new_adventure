@@ -14,7 +14,7 @@ import DisplayWeapon from "./DisplayWeapon.js";
 
 export default View = ({ characterId }) => {
   const [character, setCharacter] = useState({});
-  const [currentBag, setCurrentBag] = useState([1]);
+  const [currentBag, setCurrentBag] = useState(["items"]);
   const [retreivedWeapons, setRetreivedWeapons] = useState(retreiveWeapons());
   const [weaponToAdd, setWeaponToAdd] = useState("kama");
   const updateInventory = (type = "armor", item = "leather") => {
@@ -26,7 +26,7 @@ export default View = ({ characterId }) => {
   const selectBag = (temp) => {
     console.log("select bag");
     console.log(temp);
-    let retTemp = multiItems(temp);
+    let retTemp = multiItems(temp, characterId);
     return retTemp;
   };
   const viewDeleteItem = (viewId, itemDelete) => {
@@ -59,11 +59,11 @@ export default View = ({ characterId }) => {
       <p>Lvl: {character.lvl}</p>
       <p>Atk: {character.atk}</p>
       <p>Def: {character.def}</p>
-      <button /*nClick={multiItems([2])}*/>items</button>
+      <button>items</button>
       {currentBag}
       {currentBag.map((value, key) => (
         <ul>
-          **{"" + Array.isArray(currentBag.slice(0, key + 1))}:
+          {value}:
           {Array.isArray(selectBag(currentBag.slice(0, key + 1)))
             ? selectBag(currentBag.slice(0, key + 1))
             : Object.keys(selectBag(currentBag.slice(0, key + 1))).map(
