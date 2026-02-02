@@ -30,6 +30,7 @@ export const multiItems = (itemPath, characterId = 1) => {
   console.log("multi items");
   console.log(itemPath);
   let temp = [itemPath.shift(characterId)];
+  console.log(temp);
   let newtemp = temp.reduce((data, key) => {
     return characterData[data];
   }, characterData);
