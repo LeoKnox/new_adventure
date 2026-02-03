@@ -72,7 +72,9 @@ export default View = ({ characterId }) => {
             : Object.keys(selectBag(currentBag.slice(0, key + 1))).map(
                 (check) => (
                   <>
-                    <button onClick={() => addBag(check, key)}>{check}</button>
+                    <button onClick={() => addBag(check, key + 1)}>
+                      {check}
+                    </button>
                   </>
                 )
               )}
