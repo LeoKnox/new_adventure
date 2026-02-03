@@ -29,7 +29,8 @@ let characterData = [
 export const multiItems = (itemPath, characterId = 1) => {
   console.log("multi items");
   console.log(itemPath);
-  let temp = [itemPath.unshift(characterId - 1)];
+  //let temp = [itemPath.unshift(characterId - 1)];
+  let temp = [characterId - 1, ...itemPath];
   console.log(temp);
   let newtemp = temp.reduce((data, key) => {
     return characterData[data];
