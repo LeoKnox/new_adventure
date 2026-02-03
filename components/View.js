@@ -23,9 +23,9 @@ export default View = ({ characterId }) => {
     setCharacter(singleCharacter(characterId));
   };
   console.log("view");
-  const selectBag = (temp) => {
+  const selectBag = (temp, key) => {
     console.log("select bag");
-    console.log(temp.length + ":");
+    console.log(temp.length + ":" + key);
     let retTemp = [];
     temp.length > currentBag.length
       ? (retRemp = temp)
@@ -72,7 +72,7 @@ export default View = ({ characterId }) => {
             : Object.keys(selectBag(currentBag.slice(0, key + 1))).map(
                 (check) => (
                   <>
-                    <button onClick={() => addBag(check)}>{check}</button>
+                    <button onClick={() => addBag(check, key)}>{check}</button>
                   </>
                 )
               )}
