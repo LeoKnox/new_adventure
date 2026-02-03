@@ -23,9 +23,10 @@ export default View = ({ characterId }) => {
     setCharacter(singleCharacter(characterId));
   };
   console.log("view");
-  const selectBag = (temp) => {
+  const selectBag = (temp, key) => {
     console.log("select bag");
-    console.log(temp);
+    console.log(temp.length);
+    console.log(key);
     let retTemp = multiItems(temp, characterId);
     return retTemp;
   };
@@ -63,13 +64,13 @@ export default View = ({ characterId }) => {
       {currentBag}
       {currentBag.map((value, key) => (
         <ul>
-          {value}:
+          {key}:
           {Array.isArray(selectBag(currentBag.slice(0, key + 1)))
             ? selectBag(currentBag.slice(0, key + 1))
             : Object.keys(selectBag(currentBag.slice(0, key + 1))).map(
                 (check) => (
                   <>
-                    <button onClick={() => addBag(check)}>{check}</button>
+                    <button onClick={() => addBag(check, key)}>{check}</button>
                   </>
                 )
               )}
