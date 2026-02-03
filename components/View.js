@@ -25,7 +25,8 @@ export default View = ({ characterId }) => {
   console.log("view");
   const selectBag = (temp, key) => {
     console.log("select bag");
-    console.log(temp.length + ":" + key);
+    console.log(key);
+
     let retTemp = [];
     temp.length > currentBag.length
       ? (retRemp = temp)
