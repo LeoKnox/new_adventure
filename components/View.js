@@ -28,9 +28,7 @@ export default View = ({ characterId }) => {
     console.log(temp);
 
     let retTemp = [];
-    temp.length > currentBag.length
-      ? (retRemp = temp)
-      : (retTemp = multiItems([characterId, ...temp], characterId));
+    retTemp = multiItems([characterId, ...temp], characterId);
     return retTemp;
   };
   const viewDeleteItem = (viewId, itemDelete) => {
