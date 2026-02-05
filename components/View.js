@@ -28,7 +28,7 @@ export default View = ({ characterId }) => {
     console.log(temp);
 
     let retTemp = [];
-    retTemp = multiItems([characterId, ...temp], characterId);
+    retTemp = multiItems(temp, characterId);
     return retTemp;
   };
   const viewDeleteItem = (viewId, itemDelete) => {
