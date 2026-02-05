@@ -66,16 +66,18 @@ export default View = ({ characterId }) => {
       {currentBag.map((value, key) => (
         <ul>
           {key}:
-          {Array.isArray(selectBag(currentBag.slice(0, key + 1)))
-            ? selectBag(currentBag.slice(0, key + 1))
-            : Object.keys(selectBag(currentBag.slice(0, key + 1))).map(
-                (check) => (
-                  <>
-                    {key}
-                    <button onClick={() => addBag(check, key)}>{check}</button>
-                  </>
-                )
-              )}
+          {Array.isArray(selectBag(currentBag.slice(0, key + 1))) ? (
+            <b>{selectBag(currentBag.slice(0, key + 1))}</b>
+          ) : (
+            Object.keys(selectBag(currentBag.slice(0, key + 1))).map(
+              (check) => (
+                <>
+                  {key}
+                  <button onClick={() => addBag(check, key)}>{check}</button>
+                </>
+              )
+            )
+          )}
         </ul>
       ))}
 
