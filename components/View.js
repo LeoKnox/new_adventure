@@ -30,6 +30,7 @@ export default View = ({ characterId }) => {
     console.log("key" + akey);
     let retTemp = [];
     retTemp = multiItems(temp, characterId);
+    setCurrentBag(temp);
     return retTemp;
   };
   const viewDeleteItem = (viewId, itemDelete) => {
