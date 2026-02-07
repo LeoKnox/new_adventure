@@ -23,12 +23,12 @@ export default View = ({ characterId }) => {
     setCharacter(singleCharacter(characterId));
   };
   console.log("view");
-  const selectBag = (temp, e) => {
+  const selectBag = (e) => {
     console.log("select bag");
-    console.log(e.target.name);
+    console.log(e.target.value);
     let retTemp = [];
-    retTemp = multiItems(temp, characterId);
-    temp ?? setCurrentBag(temp);
+    /*retTemp = multiItems(temp, characterId);
+    temp ?? setCurrentBag(temp);*/
     return retTemp;
   };
   const viewDeleteItem = (viewId, itemDelete) => {
@@ -73,7 +73,7 @@ export default View = ({ characterId }) => {
               (check) => (
                 <>
                   {key}
-                  <button name="lol" onClick={(e) => addBag(e, check)}>
+                  <button value="lol" onClick={(e) => addBag(e)}>
                     {check}
                   </button>
                 </>
