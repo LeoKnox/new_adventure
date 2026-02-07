@@ -73,7 +73,7 @@ export default View = ({ characterId }) => {
               (check) => (
                 <>
                   {key}
-                  <button value="lol" onClick={(e) => addBag(e)}>
+                  <button value="lol" onClick={addBag}>
                     {check}
                   </button>
                 </>
