@@ -25,7 +25,7 @@ export default View = ({ characterId }) => {
   console.log("view");
   const selectBag = (temp, key) => {
     console.log("select bag");
-    console.log(key);
+    console.log(typeof key);
     let retTemp = [];
     retTemp = multiItems(temp, characterId);
     temp ?? setCurrentBag(temp);
