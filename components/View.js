@@ -25,9 +25,7 @@ export default View = ({ characterId }) => {
   console.log("view");
   const selectBag = (temp, key) => {
     console.log("select bag");
-    console.log(temp);
-    let akey = key;
-    console.log("key" + akey);
+    console.log(key);
     let retTemp = [];
     retTemp = multiItems(temp, characterId);
     temp ?? setCurrentBag(temp);
@@ -75,7 +73,11 @@ export default View = ({ characterId }) => {
               (check) => (
                 <>
                   {key}
-                  <button onClick={() => addBag(check, ":")}>{check}</button>
+                  <button
+                    onClick={() => addBag(check, currentBag.slice(0, key + 1))}
+                  >
+                    {check}
+                  </button>
                 </>
               )
             )
