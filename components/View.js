@@ -23,12 +23,11 @@ export default View = ({ characterId }) => {
     setCharacter(singleCharacter(characterId));
   };
   console.log("view");
-  const selectBag = (e) => {
+  const selectBag = (temp) => {
     console.log("select bag");
-    console.log(e.target?.value);
     let retTemp = [];
-    /*retTemp = multiItems(temp, characterId);
-    temp ?? setCurrentBag(temp);*/
+    retTemp = multiItems(temp, characterId);
+    temp ?? setCurrentBag(temp);
     return retTemp;
   };
   const viewDeleteItem = (viewId, itemDelete) => {
