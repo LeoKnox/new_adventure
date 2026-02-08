@@ -37,7 +37,6 @@ export default View = ({ characterId }) => {
   };
   const addBag = (check, key) => {
     console.log("add bag");
-    console.log(key);
     setCurrentBag([...currentBag.slice(0, key + 1), check]);
   };
   const selectActiveArmor = (itemId, selectedItem = "selectedArmor") => {
