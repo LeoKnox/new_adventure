@@ -36,7 +36,9 @@ export default View = ({ characterId }) => {
     deleteItem(viewId, characterId, itemDelete);
     setCharacter({ ...singleCharacter(characterId) });
   };
-  const addBag = (check) => {
+  const addBag = (check, key) => {
+    console.log("add bag");
+    console.log(key);
     setCurrentBag([...currentBag, check]);
   };
   const selectActiveArmor = (itemId, selectedItem = "selectedArmor") => {
@@ -73,7 +75,7 @@ export default View = ({ characterId }) => {
               (check) => (
                 <>
                   {key}
-                  <button value="lol" onClick={selectBag}>
+                  <button value="lol" onClick={() => addBag(check, key)}>
                     {check}
                   </button>
                 </>
