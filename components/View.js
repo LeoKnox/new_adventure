@@ -25,7 +25,7 @@ export default View = ({ characterId }) => {
   console.log("view");
   const selectBag = (e) => {
     console.log("select bag");
-    console.log(e.target.value);
+    console.log(e.target?.value);
     let retTemp = [];
     /*retTemp = multiItems(temp, characterId);
     temp ?? setCurrentBag(temp);*/
@@ -73,7 +73,7 @@ export default View = ({ characterId }) => {
               (check) => (
                 <>
                   {key}
-                  <button value="lol" onClick={addBag}>
+                  <button value="lol" onClick={selectBag}>
                     {check}
                   </button>
                 </>
