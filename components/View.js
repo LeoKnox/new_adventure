@@ -47,7 +47,7 @@ export default View = ({ characterId }) => {
   };
   const createBag = (e) => {
     console.log("create bag");
-    addMultiItems(characterId, e.target.value);
+    addMultiItems(characterId - 1, e.target.value);
   };
   useEffect(() => {
     console.log("view use effect");
