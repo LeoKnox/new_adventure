@@ -20,7 +20,7 @@ let characterData = [
     def: 9,
     weapon: ["sword"],
     armor: [],
-    items: { bag: Array(3).push("coffee"), pack: ["ocha"] },
+    items: { bag: (Array(3)[0] = "coffee"), pack: ["ocha"] },
     selectedArmor: null,
     selectedWeapon: null,
   },
