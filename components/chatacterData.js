@@ -37,6 +37,11 @@ export const multiItems = (itemPath, characterId = 1) => {
   return newtemp;
 };
 
+export const addMultiItems = () => {
+  console.log("add multi items");
+  characterData[1]["items"]["newBag"] = Array(4).fill("*");
+};
+
 export const addCharacter = (newCharacter) => {
   newCharacter.weapon = [];
   newCharacter.armor = [];
