@@ -44,6 +44,9 @@ export default View = ({ characterId }) => {
     selectItem(itemId, selectedItem, characterId);
     setCharacter({ ...singleCharacter(characterId) });
   };
+  const createBag = () => {
+    console.log("create bag");
+  };
   useEffect(() => {
     console.log("view use effect");
     let temp = {};
@@ -61,8 +64,8 @@ export default View = ({ characterId }) => {
       <p>Lvl: {character.lvl}</p>
       <p>Atk: {character.atk}</p>
       <p>Def: {character.def}</p>
-      <button>items</button>
-      {currentBag}
+      <button onClick={createBag}>{currentBag} add new(4)</button>
+
       {currentBag.map((value, key) => (
         <ul>
           {key}:
@@ -76,7 +79,6 @@ export default View = ({ characterId }) => {
                   <button value="lol" onClick={() => addBag(check, key)}>
                     {check}
                   </button>
-                  <button>create new bag(4)</button>
                 </>
               )
             )
