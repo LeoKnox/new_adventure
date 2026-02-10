@@ -6,6 +6,7 @@ import {
   selectItem,
   retreiveWeapons,
   multiItems,
+  addMultiItems,
 } from "./characterData.js";
 import AddArmor from "./AddArmor.js";
 import AddWeapon from "./AddWeapon.js";
@@ -46,6 +47,7 @@ export default View = ({ characterId }) => {
   };
   const createBag = () => {
     console.log("create bag");
+    addMultiItems();
   };
   useEffect(() => {
     console.log("view use effect");
