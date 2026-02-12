@@ -71,7 +71,9 @@ export default View = ({ characterId }) => {
       <button value="grab bag" onClick={createBag}>
         {currentBag} add new(4)
       </button>
-      <button onClick={addToBag}>add chocolate to bag</button>
+      <button onClick={() => addToBag(currentBag, characterId)}>
+        add chocolate to bag
+      </button>
       {currentBag.map((value, key) => (
         <ul>
           {key}:
@@ -82,7 +84,7 @@ export default View = ({ characterId }) => {
               (check) => (
                 <>
                   {key}
-                  <button value="lol" onClick={() => addBag(currentBag, key)}>
+                  <button value="lol" onClick={() => addBag(check, key)}>
                     {check}
                   </button>
                 </>
