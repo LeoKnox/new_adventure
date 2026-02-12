@@ -70,7 +70,7 @@ export default View = ({ characterId }) => {
       <button value="grab bag" onClick={createBag}>
         {currentBag} add new(4)
       </button>
-
+      <button>add chocolate to bag</button>
       {currentBag.map((value, key) => (
         <ul>
           {key}:
