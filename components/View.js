@@ -7,6 +7,7 @@ import {
   retreiveWeapons,
   multiItems,
   addMultiItems,
+  addToBag,
 } from "./characterData.js";
 import AddArmor from "./AddArmor.js";
 import AddWeapon from "./AddWeapon.js";
@@ -70,7 +71,7 @@ export default View = ({ characterId }) => {
       <button value="grab bag" onClick={createBag}>
         {currentBag} add new(4)
       </button>
-      <button>add chocolate to bag</button>
+      <button onClick={addToBag}>add chocolate to bag</button>
       {currentBag.map((value, key) => (
         <ul>
           {key}:
