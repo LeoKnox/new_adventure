@@ -29,10 +29,8 @@ let characterData = [
 export const addToBag = (itemPath, characterId = 1) => {
   console.log("multi items");
   let temp = [itemPath.unshift(characterId - 1)];
-  let newtemp = temp.reduce((data, key) => {
-    return characterData[data];
-  }, characterData);
-  newtemp = itemPath.reduce((prev, curr) => prev?.[curr], characterData);
+  let newtemp = itemPath.reduce((prev, curr) => prev?.[curr], characterData);
+  newtemp[0] = "coffee";
   return newtemp;
 };
 
