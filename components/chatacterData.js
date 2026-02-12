@@ -33,8 +33,9 @@ export const addToBag = (itemPath, characterId = 1) => {
     (prev, curr) => prev?.[curr],
     characterData[characterId]
   );
-  newtemp[0] = "coffee";
   console.log(newtemp);
+  newtemp[0] = "coffee";
+
   return newtemp;
 };
 
