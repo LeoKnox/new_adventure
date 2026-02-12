@@ -26,19 +26,27 @@ let characterData = [
   },
 ];
 
-export const multiItems = (itemPath, characterId = 1) => {
+export const addToBag = (itemPath, characterId = 1) => {
   console.log("multi items");
   let temp = [itemPath.unshift(characterId - 1)];
   let newtemp = temp.reduce((data, key) => {
     return characterData[data];
   }, characterData);
-  console.log(characterData[characterId]);
   newtemp = itemPath.reduce((prev, curr) => prev?.[curr], characterData);
+  return newtemp;
+};
+
+export const multiItems = (itemPath, characterId = 1) => {
+  console.log("multi items");
+  let temp = [itemPath.unshift(characterId - 1)];
+  let newtemp = itemPath.reduce((prev, curr) => prev?.[curr], characterData);
   return newtemp;
 };
 
 export const addMultiItems = (characterId = 1, keyBag = "key bag") => {
   console.log("add multi items");
+  console.log(characterId);
+  console.log(keyBag);
   characterData[characterId]["items"][keyBag] = Array(4).fill("*");
 };
 
