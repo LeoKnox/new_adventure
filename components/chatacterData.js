@@ -29,7 +29,10 @@ let characterData = [
 export const addToBag = (itemPath, characterId = 1) => {
   console.log("add to bag");
   console.log(itemPath);
-  let newtemp = itemPath.reduce((prev, curr) => prev?.[curr], characterData);
+  let newtemp = itemPath.reduce(
+    (prev, curr) => prev?.[curr],
+    characterData[characterId]
+  );
   newtemp[0] = "coffee";
   console.log(newtemp);
   return newtemp;
