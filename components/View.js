@@ -51,7 +51,7 @@ export default View = ({ characterId }) => {
     addMultiItems(currentBag, characterId - 1, e.target.value);
     setCharacter({ ...singleCharacter(characterId) });
   };
-  const fillBag = (check, key) => {
+  const fillBag = (e) => {
     console.log("add bag");
     addToBag(characterId - 1, e.target.value);
     setCurrentBag([...currentBag.slice(0, key + 1), check]);
@@ -76,7 +76,7 @@ export default View = ({ characterId }) => {
       <button value="grab bag" onClick={createBag}>
         {currentBag} add new(4)
       </button>
-      <button onClick={() => fillBag()}>add chocolate to bag</button>
+      <button onClick={fillBag}>add chocolate to bag</button>
       {currentBag.map((value, key) => (
         <ul>
           {key}:
