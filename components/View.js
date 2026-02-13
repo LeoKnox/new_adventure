@@ -76,9 +76,7 @@ export default View = ({ characterId }) => {
       <button value="grab bag" onClick={createBag}>
         {currentBag} add new(4)
       </button>
-      <button onClick={() => fillBag(currentBag, characterId)}>
-        add chocolate to bag
-      </button>
+      <button onClick={() => fillBag()}>add chocolate to bag</button>
       {currentBag.map((value, key) => (
         <ul>
           {key}:
