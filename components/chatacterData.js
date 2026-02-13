@@ -28,7 +28,9 @@ let characterData = [
 
 export const addToBag = (itemPath, characterId = 1) => {
   console.log("add to bag");
-  console.log(itemPath);
+
+  let temp = [characterId - 1, ...itemPath];
+  console.log(temp);
   let newtemp = itemPath.reduce(
     (prev, curr) => prev?.[curr],
     characterData[characterId]
