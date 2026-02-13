@@ -53,7 +53,7 @@ export default View = ({ characterId }) => {
   };
   const fillBag = (e) => {
     console.log("add bag");
-    addToBag(characterId - 1, e.target.value);
+    addToBag(currentBag, characterId - 1, e.target.value);
     setCurrentBag([...currentBag.slice(0, key + 1), check]);
   };
   useEffect(() => {
