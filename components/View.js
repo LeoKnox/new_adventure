@@ -51,10 +51,10 @@ export default View = ({ characterId }) => {
     addMultiItems(currentBag, characterId - 1, e.target.value);
     setCharacter({ ...singleCharacter(characterId) });
   };
-  const fillBag = (e) => {
+  const fillBag = (e, key) => {
     console.log("add bag");
     addToBag(currentBag, characterId - 1, e.target.value);
-    setCurrentBag([...currentBag.slice(0, key + 1), check]);
+    setCurrentBag({ ...singleCharacter(characterId) });
   };
   useEffect(() => {
     console.log("view use effect");
