@@ -54,9 +54,9 @@ export default View = ({ characterId }) => {
   const fillBag = (e, key) => {
     console.log("fill bag");
     addToBag(currentBag, characterId - 1, e.target.value);
-    console.log({ ...singleCharacter(characterId) });
+    console.log(singleCharacter(characterId));
 
-    setCurrentBag({ ...singleCharacter(characterId) });
+    setCurrentBag(singleCharacter(characterId));
   };
   useEffect(() => {
     console.log("view use effect");
