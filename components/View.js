@@ -57,14 +57,14 @@ export default View = ({ characterId }) => {
     console.log("temp");
     console.log(temp);
 
-    setCurrentBag(currentBag);
+    //setCurrentBag(currentBag);
   };
   useEffect(() => {
     console.log("view use effect");
     let temp = {};
     temp = singleCharacter(characterId);
     setCharacter(temp);
-  }, []);
+  }, [addToBag]);
 
   return (
     <>
