@@ -48,12 +48,12 @@ export default View = ({ characterId }) => {
   };
   const createBag = (e) => {
     console.log("create bag");
-    addMultiItems(characterId - 1, e.target.value);
+    addMultiItems(currentBag, characterId - 1, e.target.value);
     setCharacter({ ...singleCharacter(characterId) });
   };
   const fillBag = (e, key) => {
     console.log("fill bag");
-    addToBag(currentBag, characterId - 1, e.target.value);
+    addToBag(currentBag, characterId - 1);
     console.log("temp");
     //console.log(temp);
 
