@@ -26,11 +26,11 @@ let characterData = [
   },
 ];
 
-export const addToBag = (itemPath, characterId = 1) => {
+export const addToBag = (itemPath, characterId = 1, value) => {
   console.log("add to bag");
   console.log(itemPath + ":" + characterId);
   let temp = [characterId, ...itemPath];
-  console.log(temp);
+  console.log(value);
   let newtemp = temp.reduce((prev, curr) => prev?.[curr], characterData);
   console.log(newtemp);
   newtemp[0] = "coffee";
