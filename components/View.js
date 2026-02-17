@@ -85,8 +85,9 @@ export default View = ({ characterId }) => {
           {key}:
           {Array.isArray(selectBag(currentBag.slice(0, key + 1))) ? (
             <b>
-              {selectBag(currentBag.slice(0, key + 1))}
-              <button>x</button>
+              {selectBag(currentBag.slice(0, key + 1)).map((x) => (
+                <button>{x}</button>
+              ))}
             </b>
           ) : (
             Object.keys(selectBag(currentBag.slice(0, key + 1))).map(
