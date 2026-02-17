@@ -19,7 +19,7 @@ export default View = ({ characterId }) => {
   const [currentBag, setCurrentBag] = useState(["items"]);
   const [retreivedWeapons, setRetreivedWeapons] = useState(retreiveWeapons());
   const [weaponToAdd, setWeaponToAdd] = useState("kama");
-  const [inventoryMenu, setInventoryMenu] = useState(true)
+  const [inventoryMenu, setInventoryMenu] = useState(true);
   const updateInventory = (type = "armor", item = "leather") => {
     addInventory(characterId, type, item);
 
@@ -92,9 +92,9 @@ export default View = ({ characterId }) => {
                   <label>{x}</label>
                 ) : (
                   <button onClick={inventoryItem}>{x}</button>
-                  {inventoryMenu && {x}}
                 )
               )}
+              {inventoryMenu && "h"}
             </b>
           ) : (
             Object.keys(selectBag(currentBag.slice(0, key + 1))).map(
