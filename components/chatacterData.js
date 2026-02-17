@@ -8,6 +8,7 @@ let characterData = [
     def: 10,
     weapon: ["spear"],
     armor: [],
+    items: {},
     selectedArmor: null,
     selectedWeapon: null,
   },
@@ -92,9 +93,6 @@ export const addInventory = (
   type = "armor",
   item = "scale"
 ) => {
-  /*let temp = characterData[characterId - 1][type];
-  temp.push(item);
-  characterData[characterId][type] = temp;*/
   let temp = characterData.find((character) => character.id == characterId);
   temp = { ...temp, [type]: [...temp[type], item] };
   characterData = characterData.map((character) =>
@@ -104,10 +102,7 @@ export const addInventory = (
 
 export const deleteItem = (delId = 0, charId = 1, reference = "armor") => {
   console.log("delete Item");
-  //delete characterData[charId - 1][reference][delId];
-  console.log(delId, charId, reference);
   characterData[charId - 1][reference].splice(delId, 1);
-  //console.log(characterData);
 };
 
 export const getSelected = (selectedItem = "selectedArmor", charId) => {
