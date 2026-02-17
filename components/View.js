@@ -92,7 +92,7 @@ export default View = ({ characterId }) => {
                   <label>{x}</label>
                 ) : (
                   <button onClick={inventoryItem}>{x}</button>
-                  {inventoryMenu && (<p>delete</p>)}
+                  {inventoryMenu && {x}}
                 )
               )}
             </b>
