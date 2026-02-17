@@ -54,8 +54,6 @@ export default View = ({ characterId }) => {
   const fillBag = (e, key) => {
     console.log("fill bag");
     addToBag(currentBag, characterId - 1);
-    console.log("temp");
-    //console.log(temp);
 
     setCharacter({ ...singleCharacter(characterId) });
   };
