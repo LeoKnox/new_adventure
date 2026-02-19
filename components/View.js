@@ -101,6 +101,7 @@ export default View = ({ characterId }) => {
                     {x}
                     {inventoryMenu && (
                       <select onChange={useBagItem}>
+                        <option></option>
                         <option>Delete</option>
                       </select>
                     )}
