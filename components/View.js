@@ -94,7 +94,11 @@ export default View = ({ characterId }) => {
                 ) : (
                   <button onClick={inventoryItem}>
                     {x}
-                    {inventoryMenu && <p>"h"</p>}
+                    {inventoryMenu && (
+                      <select>
+                        <option>Delete</option>
+                      </select>
+                    )}
                   </button>
                 )
               )}
