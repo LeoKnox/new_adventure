@@ -119,3 +119,11 @@ export const retreiveWeapons = (charId) => {
   console.log("retreive weapons");
   return characterData["1"]["weapon"];
 };
+
+const findInBag = () => {
+  console.log("find in bag");
+};
+
+export const deleteFromBag = () => {
+  console.log("delete from bag");
+};
