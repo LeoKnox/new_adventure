@@ -63,6 +63,10 @@ export default View = ({ characterId }) => {
     console.log("inventory item");
     setInventoryMenu(!inventoryMenu);
   };
+  const useBagItem = () => {
+    console.log("use bag item");
+    deleteFromBag();
+  };
   useEffect(() => {
     console.log("view use effect");
     let temp = {};
@@ -97,7 +101,7 @@ export default View = ({ characterId }) => {
                     {x}
                     {inventoryMenu && (
                       <select>
-                        <option>Delete</option>
+                        <option onClick={useBagItem}>Delete</option>
                       </select>
                     )}
                   </button>
