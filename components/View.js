@@ -100,7 +100,7 @@ export default View = ({ characterId }) => {
                   <button onClick={inventoryItem}>
                     {x}
                     {inventoryMenu && (
-                      <select onChange={useBagItem}>
+                      <select onChange={console.log("red")}>
                         <option></option>
                         <option>Delete</option>
                       </select>
