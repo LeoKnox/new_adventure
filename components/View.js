@@ -91,10 +91,12 @@ export default View = ({ characterId }) => {
                 x == "empty" ? (
                   <label>{x}</label>
                 ) : (
-                  <button onClick={inventoryItem}>{x}</button>
+                  <button onClick={inventoryItem}>
+                    {x}
+                    {inventoryMenu && <p>"h"</p>}
+                  </button>
                 )
               )}
-              {inventoryMenu && <p>"h"</p>}
             </b>
           ) : (
             Object.keys(selectBag(currentBag.slice(0, key + 1))).map(
