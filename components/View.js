@@ -8,6 +8,7 @@ import {
   multiItems,
   addMultiItems,
   addToBag,
+  deleteFromBag,
 } from "./characterData.js";
 import AddArmor from "./AddArmor.js";
 import AddWeapon from "./AddWeapon.js";
