@@ -60,7 +60,7 @@ export default View = ({ characterId }) => {
   };
   const inventoryItem = () => {
     console.log("inventory item");
-    setInventoryMenu(true);
+    setInventoryMenu(!inventoryMenu);
   };
   useEffect(() => {
     console.log("view use effect");
