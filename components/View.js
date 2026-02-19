@@ -19,7 +19,7 @@ export default View = ({ characterId }) => {
   const [currentBag, setCurrentBag] = useState(["items"]);
   const [retreivedWeapons, setRetreivedWeapons] = useState(retreiveWeapons());
   const [weaponToAdd, setWeaponToAdd] = useState("kama");
-  const [inventoryMenu, setInventoryMenu] = useState(true);
+  const [inventoryMenu, setInventoryMenu] = useState(false);
   const updateInventory = (type = "armor", item = "leather") => {
     addInventory(characterId, type, item);
 
@@ -60,7 +60,7 @@ export default View = ({ characterId }) => {
   };
   const inventoryItem = () => {
     console.log("inventory item");
-    setInventoryMenu(false);
+    setInventoryMenu(true);
   };
   useEffect(() => {
     console.log("view use effect");
