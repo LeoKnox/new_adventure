@@ -126,4 +126,5 @@ const findInBag = () => {
 
 export const deleteFromBag = () => {
   console.log("delete from bag");
+  findInBag();
 };
