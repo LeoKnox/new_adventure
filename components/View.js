@@ -65,7 +65,7 @@ export default View = ({ characterId }) => {
   };
   const useBagItem = (e) => {
     console.log("use bag item");
-    console.log(e.target.name);
+    console.log(e.target.id);
     deleteFromBag();
   };
   useEffect(() => {
@@ -103,7 +103,7 @@ export default View = ({ characterId }) => {
                     {inventoryMenu && (
                       <select onChange={useBagItem}>
                         <option>0</option>
-                        <option name="delete" value={y}>
+                        <option id="delete" value={y}>
                           Delete
                         </option>
                       </select>
