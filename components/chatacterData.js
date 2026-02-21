@@ -120,8 +120,10 @@ export const retreiveWeapons = (charId) => {
   return characterData["1"]["weapon"];
 };
 
-const findInBag = () => {
+const findInBag = (itemPath = [1, "items", "bag"]) => {
   console.log("find in bag");
+  let newtemp = itemPath.reduce((prev, curr) => prev?.[curr], characterData);
+  console.log(newtemp);
 };
 
 export const deleteFromBag = () => {
