@@ -120,7 +120,7 @@ export const retreiveWeapons = (charId) => {
   return characterData["1"]["weapon"];
 };
 
-const findInBag = (itemPath = [1, "items", "bag"]) => {
+const findInBag = (itemPath = [1, "items", "pack"]) => {
   console.log("find in bag");
   let newtemp = itemPath.reduce((prev, curr) => prev?.[curr], characterData);
   console.log(newtemp);
