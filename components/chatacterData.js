@@ -128,7 +128,7 @@ export const deleteFromBag = (id = 0, itemPath = [1, "items", "pack"]) => {
   console.log("delete from bag");
   let newtemp = itemPath.reduce((prev, curr) => prev?.[curr], characterData);
   newtemp = itemPath.reduce((prev, curr) => {
-    console.log("prev" + JSON.stringify(prev));
+    console.table(prev);
     console.log("cur" + JSON.stringify(curr));
     const key = curr[prev];
     console.log(key + "key");
