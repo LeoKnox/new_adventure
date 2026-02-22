@@ -132,8 +132,9 @@ export const deleteFromBag = (id = 0, itemPath = [1, "items", "pack"]) => {
   newtemp = itemPath.reduce((prev, curr) => {
     const key = curr[prev];
     if (!prev[key]) {
-      prev[id] = "quit";
+      prev[curr][id] = "quit";
     }
+    console.log("prev: " + prev);
     prev[key].push(currentItem);
     return prev;
   }, characterData);
