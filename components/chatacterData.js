@@ -114,7 +114,7 @@ export const selectItem = (itemId, item = "selectedArmor", characterId = 1) => {
 };
 
 export const retreiveWeapons = (charId) => {
-  console.log("retreive weapons");
+  //console.log("retreive weapons");
   return characterData["1"]["weapon"];
 };
 
@@ -128,8 +128,8 @@ export const deleteFromBag = (id = 0, itemPath = [1, "items", "pack"]) => {
   console.log("delete from bag");
   let newtemp = itemPath.reduce((prev, curr) => prev?.[curr], characterData);
   newtemp = itemPath.reduce((prev, curr) => {
-    console.log("prev" + prev);
-    console.log("cur" + curr);
+    console.log("prev" + JSON.stringify(prev));
+    console.log("cur" + JSON.stringify(curr));
     const key = curr[prev];
     if (!prev[key]) {
       prev[curr][id] = "quit";
