@@ -126,7 +126,9 @@ const findInBag = (itemPath = [1, "items", "pack"]) => {
   console.log(newtemp);
 };
 
-export const deleteFromBag = () => {
+export const deleteFromBag = (id=0) => {
   console.log("delete from bag");
+  let newtemp = itemPath.reduce((prev, curr) => prev?.[curr], characterData);
+  newtemp[id] = "clear";
   findInBag();
 };
