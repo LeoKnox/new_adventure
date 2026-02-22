@@ -67,6 +67,7 @@ export default View = ({ characterId }) => {
     console.log("use bag item");
     console.log(":" + e.target.id);
     deleteFromBag();
+    setCharacter({ ...singleCharacter(characterId) });
   };
   useEffect(() => {
     console.log("view use effect");
