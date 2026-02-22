@@ -40,7 +40,7 @@ export const addToBag = (itemPath, characterId = 1, value) => {
 };
 
 export const multiItems = (itemPath, characterId = 1) => {
-  console.log("multi items");
+  //console.log("multi items");
   let temp = [itemPath.unshift(characterId - 1)];
   let newtemp = itemPath.reduce((prev, curr) => prev?.[curr], characterData);
   return newtemp;
@@ -48,8 +48,6 @@ export const multiItems = (itemPath, characterId = 1) => {
 
 export const addMultiItems = (characterId = 1, keyBag = "key bag") => {
   console.log("add multi items");
-  console.log(characterId);
-  console.log(keyBag);
   characterData[characterId]["items"][keyBag] = Array(4).fill("*");
 };
 
@@ -106,7 +104,7 @@ export const deleteItem = (delId = 0, charId = 1, reference = "armor") => {
 };
 
 export const getSelected = (selectedItem = "selectedArmor", charId) => {
-  console.log("get selected");
+  //console.log("get selected");
   return characterData[charId - 1][selectedItem];
 };
 
@@ -130,6 +128,8 @@ export const deleteFromBag = (id = 0, itemPath = [1, "items", "pack"]) => {
   console.log("delete from bag");
   let newtemp = itemPath.reduce((prev, curr) => prev?.[curr], characterData);
   newtemp = itemPath.reduce((prev, curr) => {
+    console.log("prev" + prev);
+    console.log("cur" + curr);
     const key = curr[prev];
     if (!prev[key]) {
       prev[curr][id] = "quit";
