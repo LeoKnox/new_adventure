@@ -136,7 +136,7 @@ export const deleteFromBag = (id = 0, itemPath = [1, "items", "pack"]) => {
       prev[curr][id] = "quit";
     }
     console.log("prev: " + JSON.stringify(key));
-    prev[key].push(currentItem);
+    prev[curr].push(currentItem);
     return prev;
   }, characterData);
   itemPath.reduce((prev, curr) => prev?.[curr], characterData);
