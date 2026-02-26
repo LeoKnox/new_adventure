@@ -129,7 +129,7 @@ export const deleteFromBag = (id = 0, itemPath = [1, "items", "pack"]) => {
     console.log("curr" + curr);
     console.log(prev[curr]);
     pos = prev[curr];
-    curr == itemPath.length ? (prev[curr] = "empty") : null;
+    curr == itemPath.length ? console.log("empty") : null;
     console.log(JSON.stringify(characterData));
     return pos;
   }, characterData);
