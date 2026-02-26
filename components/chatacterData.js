@@ -126,7 +126,7 @@ export const deleteFromBag = (id = 0, itemPath = [1, "items", "pack"]) => {
   let pos = [];
   newtemp = itemPath.reduce((prev, curr, i) => {
     console.log("prev" + prev + "::" + i);
-    console.log("curr" + curr);
+    console.log("curr" + curr + ":" + itemPath.length);
     console.log(prev[curr]);
     pos = prev[curr];
     i == itemPath.length ? console.log("empty") : null;
