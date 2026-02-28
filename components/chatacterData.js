@@ -133,7 +133,8 @@ export const deleteFromBag = (id = 0, itemPath = [1, "items", "pack"]) => {
     return pos;
   }, characterData);
   characterData[1] = pos;
-  console.log(pos);
+  console.log(characterData);
+  console.log("character data");
   //itemPath.reduce((prev, curr) => prev?.[curr], characterData);
   findInBag();
 };
