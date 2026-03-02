@@ -130,7 +130,7 @@ export const deleteFromBag = (id = 0, itemPath = [1, "items", "pack"]) => {
     pos[curr] = prev;
     i == itemPath.length - 1
       ? (prev[curr] = "deleted " + JSON.stringify(pos))
-      : (characterData[1] = pos);
+      : (characterData[1] = [...pos]);
     //console.log("pos" + JSON.stringify(characterData));
     return pos;
   }, characterData);
