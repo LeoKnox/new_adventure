@@ -120,11 +120,11 @@ const findInBag = (itemPath = [1, "items", "pack"]) => {
   console.log(newtemp);
 };
 
-export const deleteFromBag = (id = 0, itemPath = [1, "item", "pack"]) => {
+export const deleteFromBag = (id = 0, itemPath = [1, "items", "pack"]) => {
   console.log("delete from bag");
   let pos = [...characterData];
   let newtemp = itemPath.reduce((prev, curr, i) => {
-    console.log(`new temp ${prev} : ${curr} :: ${i}`);
+    console.log(`new temp ${JSON.stringify(prev)} : ${curr} :: ${i}`);
     return prev[curr];
   }, characterData);
   characterData = [...newtemp];
