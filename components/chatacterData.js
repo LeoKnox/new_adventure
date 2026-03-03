@@ -120,7 +120,7 @@ const findInBag = (itemPath = [1, "items", "pack"]) => {
   console.log(newtemp);
 };
 
-export const deleteFromBag = (id = 0, itemPath = [1, "items", "pack"]) => {
+export const deleteFromBag = (id = 0, itemPath = [1, "item", "pack"]) => {
   console.log("delete from bag");
   let pos = [...characterData];
   let newtemp = itemPath.reduce((prev, curr, i) => {
