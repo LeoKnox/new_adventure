@@ -128,7 +128,9 @@ export const deleteFromBag = (id = 0, itemPath = [1, "items", "pack"]) => {
     //console.log("curr" + curr + ":" + itemPath.length);
     //console.log(pos[curr]);
     pos[curr] = prev;
-    i == itemPath.length - 1 ? (pos = prev[curr]) : (characterData = [...pos]);
+    i == itemPath.length - 1
+      ? (pos = prev[curr])
+      : (characterData = [...pos[curr]]);
     console.log("pos" + characterData);
     return pos;
   }, characterData);
