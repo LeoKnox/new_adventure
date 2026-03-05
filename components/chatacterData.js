@@ -134,13 +134,13 @@ export const deleteFromBag = (id = 0, itemPath = [1, "items", "pack"]) => {
 
   if (itemPath.length === 1) {
     const { [first]: deleted, ...remaining } = characterData;
-    return remaining;
+    pos = remaining;
   }
 
-  return {
+  /*return {
     ...characterData,
     [first]: removeNestedKey(characterData[first], rest),
-  };
+  };*/
 
   //console.log("character data");
   //itemPath.reduce((prev, curr) => prev?.[curr], characterData);
