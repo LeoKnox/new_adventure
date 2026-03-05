@@ -136,7 +136,7 @@ export const deleteFromBag = (id = 0, itemPath = [1, "items", "pack"]) => {
     const { [first]: deleted, ...remaining } = characterData;
     pos = remaining;
   }
-
+  console.log("POS" + JSON.stringify(pos));
   /*return {
     ...characterData,
     [first]: removeNestedKey(characterData[first], rest),
