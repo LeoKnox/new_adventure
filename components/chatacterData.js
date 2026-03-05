@@ -128,9 +128,9 @@ export const deleteFromBag = (id = 0, itemPath = [1, "items", "pack"]) => {
     return prev[curr];
   }, characterData);*/
   const [first, ...rest] = itemPath;
-  if (itemPath.length === 0) return obj;
+  if (itemPath.length === 0) return "deleted";
   if (itemPath.length === 1) {
-    const [{ first.push("deleted"), ...remaining }] = obj;
+    const [{ first, ...remaining }] = obj;
     return remaining;
   }
   //characterData = [...newtemp];
