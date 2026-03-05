@@ -131,7 +131,8 @@ export const deleteFromBag = (id = 0, itemPath = [1, "items", "pack"]) => {
   if (itemPath.length === 0) return characterData;
   if (itemPath.length === 1) {
     const [{ first, ...remaining }] = characterData;
-    return remaining;
+    pos = remaining;
+    return pos;
   }
   console.log({
     ...characterData,
