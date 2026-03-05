@@ -127,20 +127,21 @@ export const deleteFromBag = (id = 0, itemPath = [1, "items", "pack"]) => {
     console.log(`new temp ${JSON.stringify(prev)} : ${curr} :: ${i}`);
     return prev[curr];
   }, characterData);*/
-  const [first, ...rest] = itemPath;
+
   if (itemPath.length === 0) return characterData;
+
+  const [first, ...rest] = itemPath;
+
   if (itemPath.length === 1) {
-    const [{ first, ...remaining }] = characterData;
-    pos = remaining;
-    return pos;
+    const { [first]: deleted, ...remaining } = characterData;
+    return remaining;
   }
-  console.log({
+
+  return {
     ...characterData,
-    [first]: deleteFromBag(characterData[first], rest),
-  });
-  console.log("rest");
-  console.log(first + ":" + rest);
-  console.log(JSON.stringify(itemPath));
+    [first]: removeNestedKey(characterData[first], rest),
+  };
+
   //console.log("character data");
   //itemPath.reduce((prev, curr) => prev?.[curr], characterData);
   findInBag();
