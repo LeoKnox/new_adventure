@@ -133,7 +133,7 @@ export const deleteFromBag = (id = 0, itemPath = [1, "items", "pack"]) => {
   const [first, ...rest] = itemPath;
 
   if (itemPath.length === 1) {
-    const { [first]: deleted, ...remaining } = characterData;
+    const { [first]: deleted, ...remaining } = pos;
     console.log("REMAINING" + remaining);
     pos = remaining;
   }
