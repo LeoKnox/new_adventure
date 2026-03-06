@@ -133,7 +133,7 @@ export const deleteFromBag = (id = 0, itemPath = [1, "items", "pack"]) => {
     }
     return prev[curr];
   }, characterData);
-
+  characterData = newtemp;
   /*return {
     ...characterData,
     [first]: removeNestedKey(characterData[first], rest),
