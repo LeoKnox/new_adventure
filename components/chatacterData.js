@@ -120,7 +120,7 @@ const findInBag = (itemPath = [1, "items", "pack"]) => {
   console.log(newtemp);
 };
 
-export const deleteFromBag = (id = 0, itemPath = [1, "items", "pack"]) => {
+export const deleteFromBag2 = (id = 0, itemPath = [1, "items", "pack"]) => {
   console.log("delete from bag");
   let pos = [...characterData];
   let newtemp = itemPath.reduce((prev, curr, i) => {
@@ -142,4 +142,24 @@ export const deleteFromBag = (id = 0, itemPath = [1, "items", "pack"]) => {
   //console.log("character data");
   //itemPath.reduce((prev, curr) => prev?.[curr], characterData);
   findInBag();
+};
+export const deleteFromBag = (itemPath = [1, "items", "pack"]) => {
+  const [currentKey, ...remainingPath] = itemPath;
+
+    // Base case: we've reached the final key
+    if (remainingPath.length === 0) {
+      return {
+        ...characterData,
+        currentKey[0]= "value"
+      };
+    }
+
+    // Recursive step: clone current level and move deeper
+    return {
+      ...characterData,
+      [currentKey]: updateNested(characterData[currentKey], remainingPath, value)
+    };
+  
+
+  return deleteFromBag(prevState, path, newValue);
 };
