@@ -128,9 +128,9 @@ export const deleteFromBag = (id = 0, itemPath = [1, "items", "pack"]) => {
     pos = prev[curr];
     if (i == itemPath.length - 1) {
       console.log("last" + prev[curr]);
-      prev[curr] = "deletec";
+      pos = "deletec";
     }
-    return prev[curr];
+    return pos;
   }, characterData);
   characterData = newtemp;
   console.log("nt" + JSON.stringify(newtemp));
