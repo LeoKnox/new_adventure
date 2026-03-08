@@ -132,7 +132,7 @@ export const deleteFromBag = (id = 0, itemPath = [1, "items", "pack"]) => {
     }
     return pos;
   }, characterData);
-  characterData = newtemp;
+  characterData[curr] = pos;
   console.log("nt" + JSON.stringify(newtemp));
   /*return {
     ...characterData,
