@@ -146,20 +146,23 @@ export const deleteFromBag2 = (id = 0, itemPath = [1, "items", "pack"]) => {
 export const deleteFromBag = (itemPath = [1, "items", "pack"]) => {
   const [currentKey, ...remainingPath] = itemPath;
 
-    // Base case: we've reached the final key
-    if (remainingPath.length === 0) {
-      return {
-        ...characterData,
-        currentKey[0]= "value"
-      };
-    }
-
-    // Recursive step: clone current level and move deeper
+  // Base case: we've reached the final key
+  if (remainingPath.length === 0) {
     return {
       ...characterData,
-      [currentKey]: updateNested(characterData[currentKey], remainingPath, value)
+      currentKey: ["value"],
     };
-  
+  }
+
+  // Recursive step: clone current level and move deeper
+  return {
+    ...characterData,
+    [currentKey]: deleteFromBag(
+      characterData[currentKey],
+      remainingPath,
+      value
+    ),
+  };
 
   return deleteFromBag(prevState, path, newValue);
 };
