@@ -149,6 +149,7 @@ export const deleteFromBag = (itemPath = [1, "items", "pack"]) => {
   // Base case: we've reached the final key
   if (remainingPath.length === 0) {
     console.log("FINAL");
+    console.log(currentKey);
     return {
       ...characterData,
       currentKey: ["value"],
