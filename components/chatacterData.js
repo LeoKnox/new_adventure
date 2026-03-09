@@ -143,17 +143,15 @@ export const deleteFromBag2 = (id = 0, itemPath = [1, "items", "pack"]) => {
   //itemPath.reduce((prev, curr) => prev?.[curr], characterData);
   findInBag();
 };
-export const deleteFromBag = (itemPath = [1, "items", "pack"]) => {
+export const deleteFromBag = (itemPath = [1, "items", "bag"]) => {
   const [currentKey, ...remainingPath] = itemPath;
 
   // Base case: we've reached the final key
   if (remainingPath.length === 0) {
     console.log("FINAL");
     console.log(currentKey);
-    return {
-      ...characterData,
-      currentKey: ["value"],
-    };
+    characterData = { ...characterData, currentKey: ["value"] };
+    return false;
   }
 
   // Recursive step: clone current level and move deeper
