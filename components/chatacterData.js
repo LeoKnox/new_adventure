@@ -148,12 +148,12 @@ export const deleteFromBag = (itemPath = [1, "items", "bag"]) => {
 
   // Base case: we've reached the final key
   if (remainingPath.length === 0) {
-    return {
+    console.log({
       ...characterData,
       [currentKey]: characterData[currentKey].filter(
         (_, index) => index !== indexToRemove
       ),
-    };
+    });
   }
 
   // Recursive step: clone current level and move deeper
