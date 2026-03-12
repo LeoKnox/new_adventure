@@ -152,7 +152,7 @@ export const deleteFromBag = (itemPath = [1, "items", "bag"]) => {
     return {
       ...characterData,
       [currentKey]: characterData[currentKey].map((item, index) =>
-        index === "bag" ? console.log(item[0]) : item
+        index === 2 ? console.log("item") : item
       ),
     };
   }
