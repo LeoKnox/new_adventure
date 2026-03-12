@@ -145,7 +145,7 @@ export const deleteFromBag2 = (id = 0, itemPath = [1, "items", "pack"]) => {
 };
 export const deleteFromBag = (itemPath = [1, "items", "bag"]) => {
   const [currentKey, ...remainingPath] = itemPath;
-
+  console.table(characterData);
   // Base case: we've reached the final key
   if (remainingPath.length === 0) {
     return {
@@ -160,6 +160,4 @@ export const deleteFromBag = (itemPath = [1, "items", "bag"]) => {
     ...characterData,
     [currentKey]: deleteFromBag(remainingPath),
   };
-
-  //return deleteFromBag(prevState, path, newValue);
 };
