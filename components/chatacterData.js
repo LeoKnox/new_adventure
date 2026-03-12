@@ -150,8 +150,9 @@ export const deleteFromBag = (itemPath = [1, "items", "bag"]) => {
   if (remainingPath.length === 0) {
     console.log("FINAL");
     return {
+      ...characterData,
       [currentKey]: characterData[currentKey].map((item, index) =>
-        index === targetIndex ? { ...item, health: 100 } : item
+        index === "bag" ? item[0] : item
       ),
     };
   }
