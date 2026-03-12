@@ -148,12 +148,10 @@ export const deleteFromBag = (itemPath = [1, "items", "bag", 1]) => {
 
   // Base case: we've reached the final key
   if (remainingPath.length === 0) {
-    console.log("FINAL");
     return {
       ...characterData,
-      [currentKey]: characterData[currentKey].map((item, index) =>
-        index ? console.log(index) : item
-      ),
+      // We pass the existing array to the update function to get a new version
+      [currentKey]: deleteFromBag(characterData[currentKey]),
     };
   }
 
