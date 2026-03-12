@@ -143,7 +143,7 @@ export const deleteFromBag2 = (id = 0, itemPath = [1, "items", "pack"]) => {
   //itemPath.reduce((prev, curr) => prev?.[curr], characterData);
   findInBag();
 };
-export const deleteFromBag = (itemPath = [1, "items", "bag", 1]) => {
+export const deleteFromBag = (itemPath = [1, "items", "bag"]) => {
   const [currentKey, ...remainingPath] = itemPath;
 
   // Base case: we've reached the final key
