@@ -143,7 +143,7 @@ export const deleteFromBag2 = (id = 0, itemPath = [1, "items", "pack"]) => {
   //itemPath.reduce((prev, curr) => prev?.[curr], characterData);
   findInBag();
 };
-export const deleteFromBag = (itemPath = [1, "items", "bag"]) => {
+export const deleteFromBag = (itemPath = [1, "items", "bag", 1]) => {
   const [currentKey, ...remainingPath] = itemPath;
 
   // Base case: we've reached the final key
@@ -152,7 +152,7 @@ export const deleteFromBag = (itemPath = [1, "items", "bag"]) => {
     return {
       ...characterData,
       [currentKey]: characterData[currentKey].map((item, index) =>
-        index === 2 ? console.log("item") : item
+        index === 3 ? console.log("item") : item
       ),
     };
   }
