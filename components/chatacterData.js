@@ -151,7 +151,7 @@ export const deleteFromBag = (itemPath = [1, "items", "bag"]) => {
     return {
       ...characterData,
       // We pass the existing array to the update function to get a new version
-      [currentKey]: deleteFromBag(characterData[currentKey]),
+      [currentKey]: "deleteFromBag(characterData[currentKey])",
     };
   }
 
