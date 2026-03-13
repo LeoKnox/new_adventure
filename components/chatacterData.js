@@ -157,6 +157,7 @@ export const deleteFromBag = (itemPath = [1, "items", "bag"]) => {
   }
 
   // Recursive step: clone current level and move deeper
+  console.log("Step");
   return {
     ...characterData,
     [currentKey]: deleteFromBag(remainingPath),
