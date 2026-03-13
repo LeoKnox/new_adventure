@@ -148,7 +148,7 @@ export const deleteFromBag = (itemPath = [1, "items", "bag"]) => {
   console.log(JSON.stringify(characterData));
   // Base case: we've reached the final key
   if (remainingPath.length === 0) {
-    chatacterData = { ...characterData, [currentKey]: [1, "items", "bag"] };
+    console.log({ ...characterData, [currentKey]: [1, "items", "bag"] });
     return {
       ...characterData,
       // We pass the existing array to the update function to get a new version
