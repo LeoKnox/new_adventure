@@ -148,7 +148,7 @@ export const deleteFromBag = (itemPath = [1, "items", "bag"]) => {
   console.log(JSON.stringify(characterData));
   // Base case: we've reached the final key
   if (remainingPath.length === 0) {
-    console.log(...characterData, [currentKey]);
+    chatacterData = { ...characterData, [currentKey]: [1, "items", "bag"] };
     return {
       ...characterData,
       // We pass the existing array to the update function to get a new version
@@ -158,6 +158,7 @@ export const deleteFromBag = (itemPath = [1, "items", "bag"]) => {
 
   // Recursive step: clone current level and move deeper
   console.log("Step");
+  console.log(remainingPath);
   return {
     ...characterData,
     [currentKey]: deleteFromBag(remainingPath),
