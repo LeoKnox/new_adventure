@@ -148,23 +148,12 @@ export const deleteFromBag = (
   targetIndex = 1,
   newItem = "newItem"
 ) => {
-  return characterData.map((char) => {
-    // 1. Find the character by ID
-    if (char.id !== itemPath[0]) return char;
-
-    // 2. Found the char! Now we drill down to "items"
-    const category = itemPath[1]; // "items"
-    const subCategory = itemPath[2]; // "bag"
-
-    return {
-      ...char,
-      [category]: {
-        ...char[category],
-        // 3. Update the specific array within "items"
-        [subCategory]: char[category][subCategory].map((item, i) =>
-          i === targetIndex ? newItem : item
-        ),
-      },
-    };
-  });
+  const updateBag = (id, subKey, itemIndex, val) => {
+    setCharacters(prev => prev.map(c => 
+      c.id === id 
+        ? { ...c, items: { ...c.items, [subKey]: c.items[subKey].map((it, i) => i === itemIndex ? val : it) } }
+        : c
+    ));
+  };
+  console.log(updateBag)
 };
