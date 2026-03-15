@@ -148,7 +148,7 @@ export const deleteFromBag = (
   targetIndex = 1,
   newItem = "newItem"
 ) => {
-  return prevCharacters.map(char => {
+  return prevCharacters.map((char) => {
     // 1. Find the character by ID
     if (char.id !== path[0]) return char;
 
@@ -161,12 +161,11 @@ export const deleteFromBag = (
       [category]: {
         ...char[category],
         // 3. Update the specific array within "items"
-        [subCategory]: char[category][subCategory].map((item, i) => 
+        [subCategory]: char[category][subCategory].map((item, i) =>
           i === targetIndex ? newItem : item
-        )
-      }
+        ),
+      },
     };
-  )
+  });
   console.log("updates");
-  
 };
