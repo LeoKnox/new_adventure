@@ -148,13 +148,13 @@ export const deleteFromBag = (
   targetIndex = 1,
   newItem = "newItem"
 ) => {
-  return prevCharacters.map((char) => {
+  return characterData.map((char) => {
     // 1. Find the character by ID
-    if (char.id !== path[0]) return char;
+    if (char.id !== itemPath[0]) return char;
 
     // 2. Found the char! Now we drill down to "items"
-    const category = path[1]; // "items"
-    const subCategory = path[2]; // "bag"
+    const category = itemPath[1]; // "items"
+    const subCategory = itemPath[2]; // "bag"
 
     return {
       ...char,
