@@ -149,7 +149,7 @@ export const deleteFromBag = (
   newItem = "newItem"
 ) => {
   const updateBag = (id, subKey, itemIndex, val) => {
-    return setCharacters.reduce((prev) =>
+    return deleteFromBag((prev) =>
       prev.map((c) =>
         c.id === id
           ? {
