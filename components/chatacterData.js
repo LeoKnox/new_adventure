@@ -149,7 +149,7 @@ export const deleteFromBag = (
   newItem = "newItem"
 ) => {
   const updateBag = (id, subKey, itemIndex, val) => {
-    return deleteFromBag((prev) =>
+    deleteFromBag((prev) =>
       prev.map((c) =>
         c.id === id
           ? {
@@ -166,5 +166,5 @@ export const deleteFromBag = (
     );
   };
   console.log("updates");
-  console.log(updateBag);
+  console.log(updateBag());
 };
