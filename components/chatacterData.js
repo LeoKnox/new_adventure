@@ -143,31 +143,28 @@ export const deleteFromBag2 = (id = 0, itemPath = [1, "items", "pack"]) => {
   //itemPath.reduce((prev, curr) => prev?.[curr], characterData);
   findInBag();
 };
-export const deleteFromBag = (itemPath = [1, "items", "bag"]) => {
-  const [currentKey, ...remainingPath] = itemPath;
-  console.log(JSON.stringify(characterData));
-  // Base case: we've reached the final key
-  if (remainingPath.length === 0) {
-    currentBag.reduce(if (typeof obj === 'object' && obj !== null) {
-      const newObj = {};
-      for (const key in obj) {
-        if (key === targetKey) {
-          // Found it! Replace the value
-          newObj[key] = newValue;
-        } else {
-          // Not it, keep searching deeper
-          newObj[key] = findAndReplace(obj[key], targetKey, newValue);
-        }
-      }
-      return newObj;
-    })
-  }
+export const deleteFromBag = (
+  itemPath = [1, "items", "bag"],
+  targetIndex = 1,
+  newItem = "newItem"
+) => {
+  return characterData.map((char) => {
+    // 1. Find the character by ID
+    if (char.id !== itemPath[0]) return char;
 
-  // Recursive step: clone current level and move deeper
-  console.log("Step");
-  console.log(remainingPath);
-  return {
-    ...characterData,
-    [currentKey]: deleteFromBag(remainingPath),
-  };
+    // 2. Found the char! Now we drill down to "items"
+    const category = itemPath[1]; // "items"
+    const subCategory = itemPath[2]; // "bag"
+
+    return {
+      ...char,
+      [category]: {
+        ...char[category],
+        // 3. Update the specific array within "items"
+        [subCategory]: char[category][subCategory].map((item, i) =>
+          i === targetIndex ? newItem : item
+        ),
+      },
+    };
+  });
 };
