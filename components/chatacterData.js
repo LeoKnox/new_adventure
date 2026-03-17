@@ -153,7 +153,7 @@ export const deleteFromBag = (
   let item = {};
   let newcd = itemPath.reduce((index) => {
     console.log("I" + index);
-    item = index;
+    item = characterData[index];
   });
   console.log(newcd);
   console.log(characterData);
