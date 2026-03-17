@@ -151,6 +151,6 @@ export const deleteFromBag = (
   console.log("change");
   let newcd = characterData[1]["items"]["bag"];
   newcd[1] = "orange";
-  console.log(newcd);
+  console.log(characterData);
   //console.log(index);
 };
