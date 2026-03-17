@@ -149,7 +149,8 @@ export const deleteFromBag = (
   newItem = "newItem"
 ) => {
   console.log("change");
-  let [newcd, index] = { ...characterData[1]["items"] };
+  let newcd = characterData[1]["items"]["bag"];
+  newcd[1] = "orange";
   console.log(newcd);
-  console.log(index);
+  //console.log(index);
 };
