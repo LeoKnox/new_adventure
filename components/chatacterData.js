@@ -156,10 +156,10 @@ export const deleteFromBag = (
     console.log("I " + index);
     console.log("o ");
     console.log(item);
-    return item[index];
+    item = item[index];
     console.log("i" + console.table(item));
     console.log("---->" + t + 1);
-    //return item;
+    return item;
   });
   console.log(newcd);
   console.log("_+");
