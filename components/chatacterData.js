@@ -151,12 +151,14 @@ export const deleteFromBag = (
   console.log("change");
   //let newcd = characterData[1]["items"]["bag"];
   let item = { ...characterData[1] };
+  let t = 1;
   let newcd = itemPath.reduce((index) => {
     console.log("I " + index);
     console.log("o ");
     console.log(item);
     item = item[index];
     console.log("i" + console.table(item));
+    console.log("---->" + t + 1);
     //return item;
   });
   console.log(newcd);
