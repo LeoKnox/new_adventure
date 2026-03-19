@@ -160,6 +160,7 @@ export const deleteFromBag = (
     //return item;
   });
   console.log(newcd);
+  console.log("_+");
   console.log(item);
   //console.log(index);
 };
