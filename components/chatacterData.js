@@ -144,15 +144,15 @@ export const deleteFromBag2 = (id = 0, itemPath = [1, "items", "pack"]) => {
   findInBag();
 };
 export const deleteFromBag = (
-  itemPath = ["items", "bag", ""],
+  itemPath = [1, "items", "bag"],
   targetIndex = 1,
   newItem = "newItem"
 ) => {
   console.log("change");
   //let newcd = characterData[1]["items"]["bag"];
-  let item = { ...characterData[1] };
+  //let item = { ...characterData[1] };
   let t = 1;
-  let newcd = itemPath.reduce((index) => {
+  let newcd = itemPath.reduce((item, index) => {
     console.log("I " + index);
     console.log("o ");
     console.log(item);
