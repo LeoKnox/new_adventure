@@ -153,14 +153,17 @@ export const deleteFromBag = (
   //let item = { ...characterData[1] };
   let t = 1;
   let item = [...characterData];
-  let newcd = itemPath.map((index) => {
+  let newcd = itemPath.map((index, step) => {
     console.log("I " + index);
     console.log("o ");
     console.log(item);
     item = item[index];
     console.log("i" + console.table(item));
     console.log("---->" + t + 1);
-    return item;
+    if (step == 2) {
+      console.log("i win!");
+    }
+    //return item;
   });
   console.log(newcd);
   console.log("_+");
