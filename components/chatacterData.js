@@ -161,7 +161,7 @@ export const deleteFromBag = (
     console.log("i" + console.table(item));
     console.log("---->" + t + 1);
     if (step == 2) {
-      console.log("i win!");
+      return item;
     }
     //return item;
   });
