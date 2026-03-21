@@ -152,7 +152,8 @@ export const deleteFromBag = (
   //let newcd = characterData[1]["items"]["bag"];
   //let item = { ...characterData[1] };
   let t = 1;
-  let newcd = itemPath.map((item, index) => {
+  let item = characterData;
+  let newcd = itemPath.map((index) => {
     console.log("I " + index);
     console.log("o ");
     console.log(item);
@@ -164,6 +165,6 @@ export const deleteFromBag = (
   console.log(newcd);
   console.log("_+");
   //item[1] = "red";
-  //console.log(item);
+  console.log(item);
   //console.log(index);
 };
