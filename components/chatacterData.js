@@ -160,7 +160,7 @@ export const deleteFromBag = (
     item ??= item[index];
     console.log("i" + console.table(item));
     console.log("---->" + item[index]);
-    step == 2 ? (item[index][0] = "del") : index;
+    step == 2 ? (item[index] = "del") : index;
     return index;
     //return item;
   });
