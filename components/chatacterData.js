@@ -158,7 +158,7 @@ export const deleteFromBag = (
     console.log("o ");
     console.log(item);
     item ??= [...item[index]];
-    console.log("i" + console.table(item));
+    console.log("i" + console.table(item[index]));
     console.log("---->" + item[index]);
     step == 2 ? (item[index] = "del") : index;
     return index;
