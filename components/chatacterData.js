@@ -156,8 +156,8 @@ export const deleteFromBag = (
   let newcd = itemPath.map((index, step) => {
     console.log("I " + index);
     console.log("o ");
-    console.log(item);
-    item ??= [...item[index]];
+    console.log(item[index]);
+    item ??= item[index];
     console.log("i" + console.table(index));
     console.log("---->" + JSON.stringify(item));
     //index == "bag" ? (item[index] = "del") : index;
