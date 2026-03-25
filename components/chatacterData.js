@@ -3,7 +3,7 @@ let characterData = [
     id: 1,
     name: "ao",
     icon: 0,
-    lvl: 1,
+    lvl: 1,reriw12873@fabaos.com
     atk: 10,
     def: 10,
     weapon: ["spear"],
