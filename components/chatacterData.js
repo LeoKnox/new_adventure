@@ -150,7 +150,7 @@ export const deleteFromBag = (
 ) => {
   console.log("change");
   let item = [...characterData];
-  let newcd = itemPath.map((index, step) => {
+  let newcd = itemPath.reduce((index, step) => {
     console.log("I " + index);
     console.log("o ");
     console.log(item[index]);
