@@ -148,19 +148,21 @@ export const deleteFromBag = (
   targetIndex = 1,
   newItem = "newItem"
 ) => {
-  console.log("change");
-  let item = [...characterData];
-  let newcd = itemPath.reduce((index, step) => {
-    console.log("I " + index);
-    console.log("o ");
-    console.log(item[index]);
-    item ??= item[index];
-    console.log("i" + console.table(index));
-    console.log("---->" + JSON.stringify(item));
-    index == "bag" ? (item[index][0] = "gone") : (item = item[index]);
-    return item[index] || index;
-  });
-  console.log(newcd);
-  console.log("_+");
-  console.log(item);
+  const root = Array.isArray(characterData)
+    ? [...characterData]
+    : { ...characterData };
+
+  // 2. Traverse to the parent of the target
+  const parent = itemPath.reduce((currentLevel, key) => {
+    return currentLevel[key];
+  }, root);
+
+  // 3. Modify the specific index/property
+  if (Array.isArray(parent)) {
+    parent[targetIndex] = newItem;
+  } else {
+    parent["someProperty"] = newItem;
+  }
+  console.log("ROOOOT" + root);
+  return root;
 };
