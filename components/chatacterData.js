@@ -158,7 +158,7 @@ export const deleteFromBag = (
     console.log("i" + console.table(index));
     console.log("---->" + JSON.stringify(item));
     index == "bag" ? (item[index][0] = "gone") : (item = item[index]);
-    return item[index] ?? index;
+    return item[index] || index;
   });
   console.log(newcd);
   console.log("_+");
