@@ -149,9 +149,6 @@ export const deleteFromBag = (
   newItem = "newItem"
 ) => {
   console.log("change");
-  //let newcd = characterData[1]["items"]["bag"];
-  //let item = { ...characterData[1] };
-  let t = 1;
   let item = [...characterData];
   let newcd = itemPath.map((index, step) => {
     console.log("I " + index);
@@ -160,13 +157,10 @@ export const deleteFromBag = (
     item ??= item[index];
     console.log("i" + console.table(index));
     console.log("---->" + JSON.stringify(item));
-    //index == "bag" ? (item[index] = "del") : index;
     index == "bag" ? (item[index][0] = "gone") : (item = item[index]);
     return item;
   });
   console.log(newcd);
   console.log("_+");
-  //item[1] = "red";
   console.log(item);
-  //console.log(index);
 };
