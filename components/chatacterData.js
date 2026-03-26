@@ -3,7 +3,7 @@ let characterData = [
     id: 1,
     name: "ao",
     icon: 0,
-    lvl: 1,reriw12873@fabaos.com
+    lvl: 1,
     atk: 10,
     def: 10,
     weapon: ["spear"],
@@ -161,8 +161,10 @@ export const deleteFromBag = (
     console.log("i" + console.table(index));
     console.log("---->" + JSON.stringify(item));
     //index == "bag" ? (item[index] = "del") : index;
-    index == "bag" ? console.log(JSON.stringify(item) + "<000") : index;
-    return item[index];
+    index == "bag"
+      ? console.log(JSON.stringify(item) + "<000")
+      : (item = item[index]);
+    return item;
   });
   console.log(newcd);
   console.log("_+");
