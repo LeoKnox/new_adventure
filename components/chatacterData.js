@@ -146,7 +146,8 @@ export const deleteFromBag2 = (id = 0, itemPath = [1, "items", "pack"]) => {
 export const deleteFromBag = (
   itemPath = [1, "items"],
   targetIndex = 0,
-  newItem = "newItem"
+  newItem = "newItem",
+  newBag = "pouch"
 ) => {
   const root = Array.isArray(characterData)
     ? [...characterData]
@@ -161,7 +162,7 @@ export const deleteFromBag = (
   if (Array.isArray(parent)) {
     parent[targetIndex] = newItem;
   } else {
-    parent["someProperty"] = newItem;
+    parent[newBag] = newItem;
   }
   console.log("ROOOOT" + JSON.stringify(root));
   return root;
