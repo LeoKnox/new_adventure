@@ -97,16 +97,14 @@ export default View = ({ characterId }) => {
             <b>
               {selectBag(currentBag.slice(0, key + 1)).map((x, y) =>
                 x == "empty" ? (
-                  <label>
-                    {x}+{value}
-                  </label>
+                  <label>{x}</label>
                 ) : (
                   <button onClick={inventoryItem}>
                     {x}
                     {inventoryMenu && (
                       <select id="elete" onChange={useBagItem}>
                         <option>0</option>
-                        <option value={y}>Delete</option>
+                        <option value={y}>Delete={value}</option>
                       </select>
                     )}
                   </button>
