@@ -28,7 +28,7 @@ export default View = ({ characterId }) => {
   };
   console.log("view");
   const selectBag = (temp) => {
-    console.log("select bag");
+    //console.log("select bag");
     let retTemp = [];
     retTemp = multiItems(temp, characterId);
     temp ?? setCurrentBag(temp);
@@ -97,7 +97,9 @@ export default View = ({ characterId }) => {
             <b>
               {selectBag(currentBag.slice(0, key + 1)).map((x, y) =>
                 x == "empty" ? (
-                  <label>{x}</label>
+                  <label>
+                    {x}+{value}
+                  </label>
                 ) : (
                   <button onClick={inventoryItem}>
                     {x}
