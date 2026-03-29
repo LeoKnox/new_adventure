@@ -92,14 +92,12 @@ export default View = ({ characterId }) => {
       <button onClick={fillBag}>add chocolate to bag</button>
       {currentBag.map((value, key) => (
         <ul>
-          {key}:
+          {key}:{currentBag.slice(0, key + 1)}
           {Array.isArray(selectBag(currentBag.slice(0, key + 1))) ? (
             <b>
-              {selectBag(currentBag.slice(0, key + 1)).map((x, y, end) =>
+              {selectBag(currentBag.slice(0, key + 1)).map((x, y) =>
                 x == "empty" ? (
-                  <label>
-                    {x}+{(end = Array.from(value))}
-                  </label>
+                  <label>{x}</label>
                 ) : (
                   <button onClick={inventoryItem}>
                     {x}
