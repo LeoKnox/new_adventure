@@ -105,7 +105,7 @@ export default View = ({ characterId }) => {
                     {x}
                     {inventoryMenu && (
                       <select id="elete" onChange={useBagItem}>
-                        <option>0</option>
+                        <option>0{(end = Array.from(value))}</option>
                         <option value={y}>Delete={value}</option>
                       </select>
                     )}
