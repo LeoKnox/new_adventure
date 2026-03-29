@@ -97,7 +97,6 @@ export default View = ({ characterId }) => {
             <b>
               {selectBag(currentBag.slice(0, key + 1)).map((x, y, end) =>
                 x == "empty" ? (
-                  {let grep= "red"}
                   <label>
                     {x}+{(end = Array.from(value))}
                   </label>
@@ -106,7 +105,7 @@ export default View = ({ characterId }) => {
                     {x}
                     {inventoryMenu && (
                       <select id="elete" onChange={useBagItem}>
-                        <option>0{(end = Array.from(value))}</option>
+                        <option>0{currentBag.slice(0, key + 1)}</option>
                         <option value={y}>Delete={value}</option>
                       </select>
                     )}
