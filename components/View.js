@@ -97,6 +97,7 @@ export default View = ({ characterId }) => {
             <b>
               {selectBag(currentBag.slice(0, key + 1)).map((x, y, end) =>
                 x == "empty" ? (
+                  {let grep= "red"}
                   <label>
                     {x}+{(end = Array.from(value))}
                   </label>
