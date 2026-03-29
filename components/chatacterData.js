@@ -126,6 +126,10 @@ export const deleteFromBag = (
   newItem = "newItem",
   newBag = { name: "pouch", size: 2 }
 ) => {
+  console.log("++++");
+  console.log(itemPath);
+  console.log(targetIndex);
+  console.log(newItem);
   const root = Array.isArray(characterData)
     ? [...characterData]
     : { ...characterData };
