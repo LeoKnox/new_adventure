@@ -120,29 +120,7 @@ const findInBag = (itemPath = [1, "items", "pack"]) => {
   console.log(newtemp);
 };
 
-export const deleteFromBag2 = (id = 0, itemPath = [1, "items", "pack"]) => {
-  console.log("delete from bag");
-  let pos = [...characterData];
-  let newtemp = itemPath.reduce((prev, curr, i) => {
-    console.log(`new temp ${JSON.stringify(prev)} : ${curr} :: ${i}`);
-    pos = prev[curr];
-    if (i == itemPath.length - 1) {
-      console.log("last" + prev[curr]);
-      pos = "deletec";
-    }
-    return pos;
-  }, characterData);
-  characterData = pos;
-  console.log("nt" + JSON.stringify(newtemp));
-  /*return {
-    ...characterData,
-    [first]: removeNestedKey(characterData[first], rest),
-  };*/
 
-  //console.log("character data");
-  //itemPath.reduce((prev, curr) => prev?.[curr], characterData);
-  findInBag();
-};
 export const deleteFromBag = (
   itemPath = [1, "items"],
   targetIndex = 0,
@@ -152,18 +130,13 @@ export const deleteFromBag = (
   const root = Array.isArray(characterData)
     ? [...characterData]
     : { ...characterData };
-
-  // 2. Traverse to the parent of the target
   const parent = itemPath.reduce((currentLevel, key) => {
     return currentLevel[key];
   }, root);
-
-  // 3. Modify the specific index/property
   if (Array.isArray(parent)) {
     parent[targetIndex] = newItem;
   } else {
-    parent[newBag.name] = Array(newBag.size).fill("empty");
+    parent[newBag.name] = Array(newBag.size).fill("");
   }
-  console.log("ROOOOT" + JSON.stringify(root));
   return root;
 };
