@@ -143,5 +143,6 @@ export const deleteFromBag = (
   }
   console.log("****" + JSON.stringify(root));
   characterData[1] = root;
+  console.log(characterData);
   return root;
 };
