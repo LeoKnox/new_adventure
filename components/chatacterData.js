@@ -142,5 +142,6 @@ export const deleteFromBag = (
     parent[newBag.name] = Array(newBag.size).fill("");
   }
   console.log("****" + JSON.stringify(root));
+  characterData[1] = root;
   return root;
 };
