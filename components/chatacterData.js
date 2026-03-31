@@ -137,7 +137,7 @@ export const deleteFromBag = (
     return currentLevel[key];
   }, root);
   if (Array.isArray(parent)) {
-    console.log("Parent" + JSON.stringify(parent));
+    console.log("Parent" + parent[root]);
     parent[root] = newItem;
   } else {
     parent[newBag.name] = Array(newBag.size).fill("");
