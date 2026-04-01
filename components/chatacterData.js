@@ -138,7 +138,7 @@ export const deleteFromBag = (
   }, root);
   if (Array.isArray(parent)) {
     console.log("Parent" + parent[root]);
-    parent[root] = newItem;
+    parent[root][targetIndex] = newItem;
   } else {
     parent[newBag.name] = Array(newBag.size).fill("");
   }
