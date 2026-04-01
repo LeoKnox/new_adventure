@@ -135,7 +135,7 @@ export const deleteFromBag = (
   }
 
   const lastKey = itemPath[itemPath.length - 1];
-
+  console.log(JSON.stringify(current));
   if (Array.isArray(current[lastKey])) {
     current[lastKey][targetIndex] = newItem;
   } else {
