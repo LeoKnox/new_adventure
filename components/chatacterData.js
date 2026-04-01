@@ -130,9 +130,7 @@ export const deleteFromBag = (
   console.log(itemPath);
   console.log(targetIndex);
   console.log(newItem);
-  const root = Array.isArray(characterData)
-    ? [...characterData]
-    : { ...characterData };
+  const root = { ...characterData };
   const parent = itemPath.reduce((currentLevel, key) => {
     return currentLevel[key];
   }, root);
