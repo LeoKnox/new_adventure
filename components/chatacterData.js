@@ -127,20 +127,12 @@ export const deleteFromBag = (
   newBag = { name: "pouch", size: 2 }
 ) => {
   console.log("++++");
-  const root = [...characterData];
 
-  let current = root;
+  let current = characterData;
   for (let i = 0; i < itemPath.length - 1; i++) {
     current = current[itemPath[i]];
   }
-
-  const lastKey = itemPath[itemPath.length - 1];
-  console.log(JSON.stringify(current));
-  if (Array.isArray(current[lastKey])) {
-    current[lastKey][targetIndex] = newItem;
-  } else {
-    current[lastKey] = newItem;
-  }
+  current[itemPath[itemPath.length - 1]] = newItem;
   characterData = root;
   console.log(root);
   return root;
