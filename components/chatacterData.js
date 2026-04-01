@@ -127,21 +127,21 @@ export const deleteFromBag = (
   newBag = { name: "pouch", size: 2 }
 ) => {
   console.log("++++");
-  console.log(itemPath);
-  console.log(targetIndex);
-  console.log(newItem);
-  const root = { ...characterData };
-  const parent = itemPath.reduce((currentLevel, key) => {
-    return currentLevel[key];
-  }, root);
-  if (Array.isArray(parent)) {
-    console.log("Parent" + parent[root]);
-    parent[root][targetIndex] = newItem;
-  } else {
-    parent[newBag.name] = Array(newBag.size).fill("");
+  const root = [...characterData];
+
+  let current = root;
+  for (let i = 0; i < itemPath.length - 1; i++) {
+    current = current[itemPath[i]];
   }
-  console.log("****" + JSON.stringify(root));
-  //characterData[1] = root;
-  console.log(characterData);
+
+  const lastKey = itemPath[itemPath.length - 1];
+
+  if (Array.isArray(current[lastKey])) {
+    current[lastKey][targetIndex] = newItem;
+  } else {
+    current[lastKey] = newItem;
+  }
+  characterData = root;
+  console.log(root);
   return root;
 };
