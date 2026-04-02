@@ -152,7 +152,7 @@ export const deleteFromBag = (
 
     return newChar;
   });
-
+  console.log(updatedData);
   characterData = updatedData;
   return updatedData;
 };
