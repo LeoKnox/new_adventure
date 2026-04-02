@@ -128,7 +128,7 @@ export const deleteFromBag = (
 ) => {
   console.log("++++");
   const updatedData = characterData.map((char) => {
-    if (char.id !== characterId) return char;
+    if (char.id !== 1) return char;
     let newChar = { ...char };
     let current = newChar;
 
