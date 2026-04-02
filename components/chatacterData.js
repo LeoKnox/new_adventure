@@ -131,6 +131,6 @@ export const deleteFromBag = (
     characterData[item] = Array.isArray(current[item])
       ? [...current[item]]
       : { ...current[item] };
-    console.log("+" + item);
+    console.log("+" + characterData[item]);
   }
 };
