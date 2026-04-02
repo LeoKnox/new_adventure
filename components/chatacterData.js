@@ -121,7 +121,7 @@ const findInBag = (itemPath = [1, "items", "pack"]) => {
 };
 
 export const deleteFromBag = (
-  itemPath = [1, "items"],
+  itemPath = [1, "items", "bag"],
   targetIndex = 0,
   newItem = "newItem",
   newBag = { name: "pouch", size: 2 }
