@@ -126,33 +126,11 @@ export const deleteFromBag = (
   newItem = "newItem",
   newBag = { name: "pouch", size: 2 }
 ) => {
-  console.log("++++");
-  const updatedData = characterData.map((char) => {
-    if (char.id !== 2) return char;
-    let newChar = { ...char };
-    let current = newChar;
-
-    for (let i = 0; i < itemPath.length - 1; i++) {
-      const key = itemPath[i];
-      current[key] = Array.isArray(current[key])
-        ? [...current[key]]
-        : { ...current[key] };
-      current = current[key];
-    }
-
-    const lastKey = itemPath[itemPath.length - 1];
-
-    if (Array.isArray(current[lastKey])) {
-      const newArray = [...current[lastKey]];
-      newArray[targetIndex] = newItem;
-      current[lastKey] = newArray;
-    } else {
-      current[lastKey] = newItem;
-    }
-
-    return newChar;
-  });
-  console.log(updatedData);
-  characterData = updatedData;
-  return updatedData;
+  console.log(">>>>>>>>");
+  for (const key of itemPath) {
+    characterData[key] = Array.isArray(current[key])
+      ? [...current[key]]
+      : { ...current[key] };
+    console.log("+" + key);
+  }
 };
