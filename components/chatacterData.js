@@ -127,10 +127,7 @@ export const deleteFromBag = (
   newBag = { name: "pouch", size: 2 }
 ) => {
   console.log(">>>>>>>>");
-  for (let i = 0; i < itemPath.length; i) {
-    console.log("+");
-    characterData[item] = Array.isArray(current[item])
-      ? [...current[item]]
-      : { ...current[item] };
-  }
+  itemPath.map((item, index) => {
+    console.log("+" + item);
+  });
 };
