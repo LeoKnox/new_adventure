@@ -127,6 +127,7 @@ export const deleteFromBag = (
   newBag = { name: "pouch", size: 2 }
 ) => {
   console.log(">>>>>>>>");
+  console.log(itemPath);
   itemPath.map((item, index) => {
     console.log("+" + item);
   });
