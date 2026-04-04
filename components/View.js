@@ -66,7 +66,7 @@ export default View = ({ characterId }) => {
   const useBagItem = (e) => {
     console.log("use bag item");
     console.log(":" + e.target.id);
-    deleteFromBag(currentBag.slice(0, e.target.id), 0, "midori");
+    deleteFromBag(currentBag.slice(0, e.target.id + 1), 0, "midori");
     setCharacter({ ...singleCharacter(characterId) });
   };
   useEffect(() => {
@@ -103,10 +103,9 @@ export default View = ({ characterId }) => {
                   </label>
                 ) : (
                   <button onClick={inventoryItem}>
-                    {x}
-                    {currentBag.slice(0, key + 1)}
+                    {x}:{currentBag.slice(0, key + 1)}
                     {inventoryMenu && (
-                      <select id="elete" onChange={useBagItem}>
+                      <select id="delete" onChange={useBagItem}>
                         <option>0</option>
                         <option value={y}>Delete={y}</option>
                       </select>
