@@ -17,7 +17,7 @@ import DisplayWeapon from "./DisplayWeapon.js";
 
 export default View = ({ characterId }) => {
   const [character, setCharacter] = useState({});
-  const [currentBag, setCurrentBag] = useState(["items"]);
+  const [currentBag, setCurrentBag] = useState([1,"items"]);
   const [retreivedWeapons, setRetreivedWeapons] = useState(retreiveWeapons());
   const [weaponToAdd, setWeaponToAdd] = useState("kama");
   const [inventoryMenu, setInventoryMenu] = useState(false);
