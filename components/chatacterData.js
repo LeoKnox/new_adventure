@@ -130,8 +130,8 @@ export const deleteFromBag = (
   itemPath.unshift(1);
   console.log(itemPath);
   newBag = { ...characterData };
-  itemPath.map((item, index) => {
-    Array.isArray(item)
+  itemPath.reduce((item, index) => {
+    return Array.isArray(item)
       ? (newBag = [...newBag[item]])
       : (newBag = { ...newBag[item] });
   });
