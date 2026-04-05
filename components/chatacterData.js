@@ -133,7 +133,7 @@ export const deleteFromBag = (
   itemPath.reduce((item, index) => {
     return Array.isArray(item)
       ? (newBag = [...newBag[item]])
-      : (newBag = { ...newBag[item] });
+      : (newBag = { ...newBag });
   });
   console.log("DDDD");
   console.log(newBag);
