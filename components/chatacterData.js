@@ -132,10 +132,10 @@ export const deleteFromBag = (
   newBag = { ...characterData };
   itemPath.reduce((item, index) => {
     return Array.isArray(item)
-      ? (newBag[1] = "neko")
+      ? newBag.push("neko")
       : (newBag = { ...newBag[item] });
   });
   console.log("DDDD");
   console.log(newBag);
-  newBag[1] = "kin";
+  //newBag[1] = "kin";
 };
