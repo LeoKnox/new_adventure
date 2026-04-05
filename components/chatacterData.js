@@ -137,4 +137,5 @@ export const deleteFromBag = (
   });
   console.log("DDDD");
   console.log(newBag);
+  newBag[1] = "kin";
 };
