@@ -131,7 +131,9 @@ export const deleteFromBag = (
   console.log(itemPath);
   let newBagX = { ...characterData };
   newBagX = itemPath.reduce((item, index) => {
-    return Array.isArray(item) ? "neko" : (newBagX = { ...newBagX[item] });
+    return Array.isArray(item)
+      ? (newBagX[1] = "neko")
+      : (newBagX = { ...newBagX[item] });
   });
   console.log("DDDD");
   console.log(newBagX);
