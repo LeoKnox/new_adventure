@@ -129,9 +129,9 @@ export const deleteFromBag = (
   console.log(">>>>>>>>");
   itemPath.unshift(1);
   console.log(itemPath);
-  newBag = { ...characterData };
+  let newBagX = { ...characterData };
   newBagX = itemPath.reduce((item, index) => {
-    return Array.isArray(item) ? "neko" : (newBag = { ...newBag[item] });
+    return Array.isArray(item) ? "neko" : (newBagX = { ...newBagX[item] });
   });
   console.log("DDDD");
   console.log(newBagX);
