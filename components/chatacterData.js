@@ -134,6 +134,7 @@ export const deleteFromBag = (
     console.log(data);
     console.log(pathIndex);
     if (pathIndex === itemPath.length - 1) {
+      console.log("end");
       const list = [...data[key]];
       list[targetIndex] = newItem;
       return { ...data, [key]: list };
