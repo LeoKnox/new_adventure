@@ -121,7 +121,7 @@ const findInBag = (itemPath = [1, "items", "pack"]) => {
 };
 
 export const deleteFromBag = (
-  itemPath = [1, "items", "bag"],
+  itemPath = ["items", "bag"],
   targetIndex = 0,
   newItem = "newItem",
   newBag = { name: "pouch", size: 2 }
@@ -132,7 +132,7 @@ export const deleteFromBag = (
   let newBagX = { ...characterData };
   newBagX = itemPath.reduce((item, index) => {
     return Array.isArray(item)
-      ? (newBagX[1] = "neko")
+      ? (newBagX[targetIndex] = newItem)
       : (newBagX = { ...newBagX[item] });
   });
   console.log("DDDD");
