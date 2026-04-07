@@ -140,6 +140,7 @@ export const deleteFromBag = (
       console.log(list);
       return { ...data, [key]: list };
     }
+    console.log(data);
 
     return {
       ...(data[key] = updateNested(data[key], pathIndex + 1)),
