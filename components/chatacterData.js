@@ -128,6 +128,7 @@ export const deleteFromBag = (
 ) => {
   console.log(">>>>>>>>");
   itemPath.unshift(1);
+  console.log(itemPath);
   const updateNested = (data, pathIndex) => {
     const key = itemPath[pathIndex];
     console.log(data);
