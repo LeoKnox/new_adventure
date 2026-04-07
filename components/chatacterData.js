@@ -128,14 +128,20 @@ export const deleteFromBag = (
 ) => {
   console.log(">>>>>>>>");
   itemPath.unshift(1);
-  console.log(itemPath);
-  let newBagX = { ...characterData };
-  newBagX = itemPath.reduce((item, index) => {
-    return Array.isArray(item)
-      ? (newBagX[targetIndex] = newItem)
-      : (newBagX = { ...newBagX[item] });
-  });
-  console.log("DDDD");
-  console.log(newBagX);
-  //newBag[1] = "kin";
+  const updateNested = (data, pathIndex) => {
+    const key = itemPath[pathIndex];
+
+    if (pathIndex === itemPath.length - 1) {
+      const list = [...data[key]];
+      list[targetIndex] = newItem;
+      return { ...data, [key]: list };
+    }
+
+    return {
+      ...data,
+      [key]: updateNested(data[key], pathIndex + 1),
+    };
+  };
+
+  return updateNested(characterData, 0);
 };
