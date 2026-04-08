@@ -137,7 +137,7 @@ export const deleteFromBag = (
       console.log("end");
       const list = [...data[key]];
       list[targetIndex] = newItem;
-      console.log(list);
+      console.log(data);
       return { ...data, [key]: list };
     }
     console.log(data);
