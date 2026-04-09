@@ -128,23 +128,26 @@ export const deleteFromBag = (
 ) => {
   console.log(">>>>>>>>");
   itemPath.unshift(1);
-  const update = (currentLevel, pathIndex) => {
-    const key = path[pathIndex];
+  const update = (levelData, pathIndex) => {
+    const key = itemPath[pathIndex];
 
-    if (pathIndex === path.length - 1) {
+    if (pathIndex === itemPath.length - 1) {
+      const updatedArray = [...levelData[key]];
+      updatedArray[targetIndex] = newItem;
+
       return {
-        ...currentLevel,
-        [key]: currentLevel[key].map((item, index) =>
-          index === targetIndex ? newItem : item
-        ),
+        ...levelData,
+        [key]: updatedArray,
       };
     }
 
     return {
-      ...currentLevel,
-      [key]: update(currentLevel[key], pathIndex + 1),
+      ...levelData,
+      [key]: update(levelData[key], pathIndex + 1),
     };
   };
+
+  return update(currentData, 0);
 
   return update(data, 0);
 };
