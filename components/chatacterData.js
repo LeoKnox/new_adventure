@@ -137,10 +137,11 @@ export const deleteFromBag = (
 
       return { ...data, [key]: list };
     }
-
+    const list = Array.isArray(data) ? [...currentTarget] : ["red", "blue"];
+    list[targetIndex] = newItem;
     return {
-      Array.isArray(data) ? (...data,
-      [key]: updateNested(data[key], pathIndex + 1)) : console.log("D")
+      ...data,
+      [key]: updateNested(data[key], pathIndex + 1),
     };
   };
 
