@@ -144,5 +144,5 @@ export const deleteFromBag = (
     };
   };
 
-  return updateNested(characterData, 0);
+  console.log(updateNested(characterData, 0));
 };
