@@ -128,26 +128,21 @@ export const deleteFromBag = (
 ) => {
   console.log(">>>>>>>>");
   itemPath.unshift(1);
-  const update = (levelData, pathIndex) => {
+  const updateNested = (data, pathIndex) => {
     const key = itemPath[pathIndex];
 
     if (pathIndex === itemPath.length - 1) {
-      const updatedArray = [...levelData[key]];
-      updatedArray[targetIndex] = newItem;
+      const list = [...data[key]];
+      list[targetIndex] = newItem;
 
-      return {
-        ...levelData,
-        [key]: updatedArray,
-      };
+      return { ...data, [key]: list };
     }
 
     return {
-      ...levelData,
-      [key]: update(levelData[key], pathIndex + 1),
+      ...data,
+      [key]: updateNested(data[key], pathIndex + 1),
     };
   };
 
-  return update(currentData, 0);
-
-  return update(data, 0);
+  return updateNested(characterData, 0);
 };
