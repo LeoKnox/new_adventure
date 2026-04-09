@@ -131,17 +131,17 @@ export const deleteFromBag = (
   console.log(itemPath);
   const updateNested = (data, pathIndex) => {
     const key = itemPath[pathIndex];
-    console.log(data);
-    console.log(pathIndex);
+    //console.log(data);
+    //console.log(pathIndex);
     if (pathIndex === itemPath.length - 1) {
       console.log("end");
       const list = [...data[key]];
       list[targetIndex] = newItem;
       console.log(data);
-      characterData[1] = data;
+      characterData = data;
       return { ...data, [key]: list };
     }
-    console.log(data);
+    //console.log(data);
 
     return {
       ...(data[key] = updateNested(data[key], pathIndex + 1)),
