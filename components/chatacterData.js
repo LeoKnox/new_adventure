@@ -133,14 +133,14 @@ export const deleteFromBag = (
 
     if (pathIndex === itemPath.length - 1) {
       const list = [...data[key]];
-      list[targetIndex] = newBag;
+      list[targetIndex] = newItem;
 
       return { ...data, [key]: list };
     }
 
     return {
-      ...data,
-      [key]: updateNested(data[key], pathIndex + 1),
+      Array.isArray(data) ? (...data,
+      [key]: updateNested(data[key], pathIndex + 1)) : console.log("D")
     };
   };
 
