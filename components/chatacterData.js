@@ -132,7 +132,7 @@ export const deleteFromBag = (
     const key = itemPath[pathIndex];
 
     if (pathIndex === itemPath.length - 1) {
-      const list = Array.isArray(data) ? [...data[key]] : { ...data[key] };
+      const list = !Array.isArray(data) ? [...data[key]] : { ...data[key] };
       list[targetIndex] = newItem;
 
       return { ...data, [key]: list };
