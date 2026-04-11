@@ -145,6 +145,6 @@ export const deleteFromBag = (
     };
   };
 
-  characterData[charId] = updateNested(characterData[charId], 0);
+  characterData[charId - 1] = updateNested(characterData[charId - 1], 0);
   console.log(characterData);
 };
