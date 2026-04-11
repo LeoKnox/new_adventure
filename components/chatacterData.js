@@ -124,7 +124,7 @@ export const deleteFromBag = (
   itemPath = ["items", "bag"],
   targetIndex = 0,
   newItem = "newItem",
-  newBag = { name: "pouch", size: 2 }
+  charId = 1
 ) => {
   console.log(">>>>>>>>");
   //itemPath.unshift(1);
@@ -134,7 +134,7 @@ export const deleteFromBag = (
 
     if (pathIndex === itemPath.length - 1) {
       const list = Array.isArray(data) ? [...data[key]] : { ...data[key] };
-      list[targetIndex] = newBag;
+      list[targetIndex] = newItem;
 
       return { ...data, [key]: list };
     }
@@ -145,6 +145,6 @@ export const deleteFromBag = (
     };
   };
 
-  characterData[1] = updateNested(characterData[1], 0);
+  characterData[charId] = updateNested(characterData[charId], 0);
   console.log(characterData);
 };
