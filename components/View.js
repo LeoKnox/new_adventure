@@ -66,7 +66,12 @@ export default View = ({ characterId }) => {
   const useBagItem = (e) => {
     console.log("use bag item");
     console.log(":" + e.target.id);
-    deleteFromBag(currentBag.slice(0, e.target.id + 1), 0, "midori");
+    deleteFromBag(
+      currentBag.slice(0, e.target.id + 1),
+      0,
+      "midori",
+      e.target.id
+    );
     setCharacter({ ...singleCharacter(characterId) });
   };
   useEffect(() => {
