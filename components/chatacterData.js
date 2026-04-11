@@ -129,11 +129,11 @@ export const deleteFromBag = (
   console.log(">>>>>>>>");
   //itemPath.unshift(1);
   const updateNested = (data, pathIndex) => {
-    //itemPath.pop();
+    itemPath.pop();
     const key = itemPath[pathIndex];
 
     if (pathIndex === itemPath.length - 1) {
-      const list = !Array.isArray(data) ? [...data[key]] : { ...data[key] };
+      const list = !Array.isArray(data) ? [...data[key]] : ["items", "bag"];
       list[targetIndex] = newItem;
 
       return { ...data, [key]: list };
