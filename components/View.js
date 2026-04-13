@@ -90,7 +90,9 @@ export default View = ({ characterId }) => {
       <p>Icon: {character.icon}</p>
       <p>{character.weapon}</p>
       <p>Lvl: {character.lvl}</p>
-      <p>Atk: {character.atk}</p>
+      <p>
+        Atk: {character.atk}:{calculateAtk()}
+      </p>
       <p>Def: {character.def}</p>
       <button value="grab bag" onClick={createBag}>
         {currentBag} add new(4)
