@@ -29,7 +29,10 @@ let characterData = [
 
 export const calculateAtk = () => {
   console.log("calculate atk");
-  return characterData[characterId - 1].atk+characterData[characterId - 1].selectedWeapon.length();
+  return (
+    characterData[characterId - 1].atk +
+    characterData[characterId - 1].selectedWeapon.length()
+  );
 };
 
 export const addToBag = (itemPath, characterId = 1, value) => {
