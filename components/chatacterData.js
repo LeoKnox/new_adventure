@@ -27,6 +27,11 @@ let characterData = [
   },
 ];
 
+export const calculateAtk = () => {
+  console.log("calculate atk")
+  return characterData[characterId-1].atk
+}
+
 export const addToBag = (itemPath, characterId = 1, value) => {
   console.log("add to bag");
   let temp = [characterId, ...itemPath];
