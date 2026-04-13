@@ -27,11 +27,11 @@ let characterData = [
   },
 ];
 
-export const calculateAtk = () => {
+export const calculateAtk = (characterId = 2) => {
   console.log("calculate atk");
   return (
     characterData[characterId - 1].atk +
-    characterData[characterId - 1].selectedWeapon.length()
+    characterData[characterId - 1].selectedWeapon.length
   );
 };
 
