@@ -2,6 +2,7 @@ import { useState, useEffect } from "react";
 import {
   singleCharacter,
   addInventory,
+  calculateAtk,
   deleteItem,
   selectItem,
   retreiveWeapons,
@@ -26,7 +27,7 @@ export default View = ({ characterId }) => {
 
     setCharacter(singleCharacter(characterId));
   };
-  console.log("view");
+
   const selectBag = (temp) => {
     //console.log("select bag");
     let retTemp = [];
