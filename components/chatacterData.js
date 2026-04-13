@@ -126,10 +126,7 @@ export const deleteFromBag = (
   newItem = "newItem",
   charId = 1
 ) => {
-  console.log(">>>>>>>>");
-  //itemPath.unshift(1);
   const updateNested = (data, pathIndex) => {
-    //itemPath.pop();
     const key = itemPath[pathIndex];
 
     if (pathIndex === itemPath.length - 1) {
@@ -146,5 +143,4 @@ export const deleteFromBag = (
   };
 
   characterData[charId - 1] = updateNested(characterData[charId - 1], 0);
-  console.log(characterData);
 };
