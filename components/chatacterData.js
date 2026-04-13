@@ -23,7 +23,7 @@ let characterData = [
     armor: [],
     items: { bag: Array(3).fill("empty"), pack: ["ocha"] },
     selectedArmor: null,
-    selectedWeapon: null,
+    selectedWeapon: "null",
   },
 ];
 
