@@ -8,11 +8,11 @@ export default Build = () => {
       style={{
         position: "absolute",
         width: "100%",
-        height: `100px`,
+        height: `${roomCoords[1]}px`,
         backgroundColor: "red",
       }}
     >
-      red
+      red{roomCoords[1]}
     </div>
   );
 };
