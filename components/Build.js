@@ -6,8 +6,9 @@ export default Build = () => {
   return (
     <div
       style={{
+        position: "absolute",
         width: "100%",
-        height: `${roomCoords[1]*50}px`,
+        height: `100px`,
         backgroundColor: "red",
       }}
     >
