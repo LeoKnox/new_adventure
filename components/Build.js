@@ -9,27 +9,28 @@ export default Build = () => {
   const [doors, setDoors] = useState([1, 2]);
   return (
     <>
-    <div
-      style={{
-        position: "absolute",
-        width: `${roomCoords[0] * tileSize}px`,
-        height: `${roomCoords[1] * tileSize}px`,
-        left: `${pagePosition[0]}px`,
-        top: `${pagePosition[1]}px`,
+      <div
+        style={{
+          position: "absolute",
+          width: `${roomCoords[0] * tileSize}px`,
+          height: `${roomCoords[1] * tileSize}px`,
+          left: `${pagePosition[0]}px`,
+          top: `${pagePosition[1]}px`,
 
-        backgroundColor: "red",
-      }}
-    ></div>
-    <div
-      style={{
-        position: "absolute",
-        width: `${tileSize}px`,
-        height: `${tileSize}px`,
-        left: `${pagePosition[0]+roomCoords[0] * tileSize}px`,
-        top: `${pagePosition[1]+roomCoords[1] * tileSize}px`,
+          backgroundColor: "red",
+        }}
+      ></div>
+      <div
+        style={{
+          position: "absolute",
+          width: `${tileSize}px`,
+          height: `${tileSize}px`,
+          left: `${pagePosition[0] + roomCoords[0] * tileSize}px`,
+          top: `${roomCoords[1] * tileSize}px`,
 
-        backgroundColor: "brown",
-      }}
-    ></div></>
+          backgroundColor: "brown",
+        }}
+      ></div>
+    </>
   );
 };
