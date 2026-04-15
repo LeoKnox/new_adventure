@@ -6,6 +6,7 @@ export default Build = () => {
   const pagePosition = [40, 160];
   const [tileSize, setTilesize] = useState(40);
   const [roomCoords, setRoomCoords] = useState([3, 4]);
+  const [doors, setDoors] = useState([]);
   return (
     <div
       style={{
