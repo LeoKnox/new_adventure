@@ -14,8 +14,8 @@ export default Build = () => {
           position: "absolute",
           width: `${roomCoords[0] * tileSize}px`,
           height: `${roomCoords[1] * tileSize}px`,
-          left: `${pagePosition[1]}px`,
-          top: `${pagePosition[0]}px`,
+          left: `${pagePosition[0]}px`,
+          top: `${pagePosition[1]}px`,
 
           backgroundColor: "red",
         }}
@@ -26,7 +26,7 @@ export default Build = () => {
           width: `${tileSize}px`,
           height: `${tileSize}px`,
           left: `${pagePosition[0] + roomCoords[0] * tileSize}px`,
-          top: `${pagePosition[0] + roomCoords[1] * tileSize}px`,
+          top: `${doors[1] + roomCoords[1] * tileSize}px`,
 
           backgroundColor: "brown",
         }}
