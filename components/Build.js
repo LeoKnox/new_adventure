@@ -28,7 +28,7 @@ export default Build = () => {
           width: `${tileSize}px`,
           height: `${tileSize}px`,
           left: `${pagePosition[0] + roomCoords[0] * tileSize}px`,
-          top: `${doors[1] + roomCoords[1] * tileSize}px`,
+          top: `${doors[1]* tileSize + roomCoords[1] * tileSize}px`,
 
           backgroundColor: "brown",
         }}
