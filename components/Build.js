@@ -19,14 +19,16 @@ export default Build = () => {
 
           backgroundColor: "red",
         }}
-      ></div>
+      >
+        {doors[1]}:{roomCoords[1]}:{pagePosition[1]}
+      </div>
       <div
         style={{
           position: "absolute",
           width: `${tileSize}px`,
           height: `${tileSize}px`,
           left: `${pagePosition[0] + roomCoords[0] * tileSize}px`,
-          top: `${doors[1] + pagePosition[1]+roomCoords[1] * tileSize}px`,
+          top: `${doors[1] + pagePosition[1] +roomCoords[1] * tileSize}px`,
 
           backgroundColor: "brown",
         }}
