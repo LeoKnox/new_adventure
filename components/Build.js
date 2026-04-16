@@ -6,7 +6,7 @@ export default Build = () => {
   const pagePosition = [40, 160];
   const [tileSize, setTilesize] = useState(40);
   const [roomCoords, setRoomCoords] = useState([3, 4]);
-  const [doors, setDoors] = useState([1, 2]);
+  const [doors, setDoors] = useState([3, 2]);
   return (
     <>
       <div
@@ -27,8 +27,8 @@ export default Build = () => {
           position: "absolute",
           width: `${tileSize}px`,
           height: `${tileSize}px`,
-          left: `${pagePosition[0] + roomCoords[0] * tileSize}px`,
-          top: `${doors[1]* tileSize + roomCoords[1] * tileSize}px`,
+          left: `${pagePosition[0] + doors[0] * tileSize}px`,
+          top: `${doors[1] * tileSize + roomCoords[1] * tileSize}px`,
 
           backgroundColor: "brown",
         }}
