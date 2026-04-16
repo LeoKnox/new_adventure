@@ -14,8 +14,8 @@ export default Build = () => {
           position: "absolute",
           width: `${roomCoords[0] * tileSize}px`,
           height: `${roomCoords[1] * tileSize}px`,
-          left: `${pagePosition[0]}px`,
-          top: `${pagePosition[1]}px`,
+          left: `${pagePosition[1]}px`,
+          top: `${pagePosition[0]}px`,
 
           backgroundColor: "red",
         }}
