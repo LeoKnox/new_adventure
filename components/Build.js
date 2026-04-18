@@ -4,12 +4,18 @@ import { useState, useEffect } from "react";
 export default Build = () => {
   console.log("build.js");
   const pagePosition = [40, 160];
-  const [room, setRoom] = useState({ roomCoords: [3, 4], doors: [3, 4] });
+  const [room, setRoom] = useState({ roomCoords: [3, 4], doors: [3, 2] });
   const [tileSize, setTilesize] = useState(40);
   const [roomCoords, setRoomCoords] = useState([3, 4]);
   const [doors, setDoors] = useState([3, 2]);
   return (
     <>
+      <div>
+        <input type="radio" id="40" name="tileSize" value="40" checked />
+        <label>40</label>
+        <input type="radio" id="30" name="tileSize" value="30" />
+        <label>30</label>
+      </div>
       <div
         style={{
           position: "absolute",
