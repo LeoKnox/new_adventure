@@ -4,7 +4,7 @@ import { useState, useEffect } from "react";
 export default Build = () => {
   console.log("build.js");
   const pagePosition = [40, 160];
-  const [room, setRoom] = useState({roomCoords: [3,4]})
+  const [room, setRoom] = useState({ roomCoords: [3, 4], doors: [3, 4] });
   const [tileSize, setTilesize] = useState(40);
   const [roomCoords, setRoomCoords] = useState([3, 4]);
   const [doors, setDoors] = useState([3, 2]);
@@ -28,8 +28,8 @@ export default Build = () => {
           position: "absolute",
           width: `${tileSize}px`,
           height: `${tileSize}px`,
-          left: `${pagePosition[0] + doors[0] * tileSize}px`,
-          top: `${doors[1] * tileSize + room.roomCoords[1] * tileSize}px`,
+          left: `${pagePosition[0] + room.doors[0] * tileSize}px`,
+          top: `${room.doors[1] * tileSize + room.roomCoords[1] * tileSize}px`,
 
           backgroundColor: "brown",
         }}
