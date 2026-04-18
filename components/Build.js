@@ -1,5 +1,5 @@
 import { useState, useEffect } from "react";
-//import myImage from "./Lava_Background.webp";
+import myImage from "./Lava_Background.jpg";
 
 export default Build = () => {
   console.log("build.js");
@@ -10,7 +10,7 @@ export default Build = () => {
   const [doors, setDoors] = useState([3, 2]);
   return (
     <>
-      <div style={{ display:"flex" }}>
+      <div style={{ display: "flex" }}>
         <input type="radio" id="40" name="tileSize" value="40" checked />
         <label>40</label>
         <input type="radio" id="30" name="tileSize" value="30" />
