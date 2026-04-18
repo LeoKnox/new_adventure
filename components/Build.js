@@ -10,7 +10,7 @@ export default Build = () => {
   const [doors, setDoors] = useState([3, 2]);
   return (
     <>
-      <div>
+      <div style={{ display:"flex" }}>
         <input type="radio" id="40" name="tileSize" value="40" checked />
         <label>40</label>
         <input type="radio" id="30" name="tileSize" value="30" />
