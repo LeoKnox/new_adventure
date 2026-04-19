@@ -10,7 +10,14 @@ export default Build = () => {
   return (
     <>
       <div style={{ display: "flex" }}>
-        <input type="radio" id="40" name="tileSize" value="40" checked />
+        <input
+          onChange={() => setTilesize(40)}
+          type="radio"
+          id="40"
+          name="tileSize"
+          value="40"
+          checked
+        />
         <label>40</label>
         <input
           onChange={() => setTilesize(30)}
