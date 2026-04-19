@@ -4,7 +4,7 @@ import myImage from "./Lava_Background.jpg";
 export default Build = () => {
   console.log("build.js");
   const pagePosition = [40, 160];
-  const [room, setRoom] = useState({ roomCoords: [3, 4], doors: [2 , 4] });
+  const [room, setRoom] = useState({ roomCoords: [3, 3], doors: [2, 5] });
   const [tileSize, setTilesize] = useState(40);
   const [roomCoords, setRoomCoords] = useState([3, 4]);
   const [doors, setDoors] = useState([3, 2]);
