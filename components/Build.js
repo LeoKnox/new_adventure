@@ -16,7 +16,7 @@ export default Build = () => {
           id="40"
           name="tileSize"
           value="40"
-          checked
+          checked={tileSize == 40}
         />
         <label>40</label>
         <input
@@ -25,6 +25,7 @@ export default Build = () => {
           id="30"
           name="tileSize"
           value="30"
+          checked={tileSize == 30}
         />
         <label>30</label>
       </div>
