@@ -2,9 +2,10 @@ import { useState, useEffect } from "react";
 
 export default Build = () => {
   console.log("build.js");
-  const pagePosition = [40, 160];
-  const [room, setRoom] = useState({ roomCoords: [2, 3], doors: [2, 5] });
   const [tileSize, setTilesize] = useState(40);
+  const pagePosition = [{ tileSize }, 160];
+  const [room, setRoom] = useState({ roomCoords: [2, 3], doors: [2, 5] });
+
   const [roomCoords, setRoomCoords] = useState([3, 4]);
   const [doors, setDoors] = useState([3, 2]);
   return (
