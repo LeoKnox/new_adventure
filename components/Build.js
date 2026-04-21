@@ -9,7 +9,7 @@ export default Build = () => {
   const [doors, setDoors] = useState([3, 2]);
   return (
     <>
-      <div style={{ display: "flex" }}>
+      <div name="top" style={{ display: "flex" }}>
         <input
           onChange={() => setTilesize(40)}
           type="radio"
@@ -30,7 +30,8 @@ export default Build = () => {
         <label>30</label>
       </div>
       <div
-        style={{ display: "flex", width: "400px", backgroundColor: "darkgray" }}
+        name="middle"
+        style={{ display: "flex", width: "400px", height:"400px",backgroundColor: "darkgray" }}
       >
         <div
           style={{
@@ -60,9 +61,12 @@ export default Build = () => {
             backgroundColor: "brown",
             display: "flex",
           }}
-        ></div><br/>
+        ></div>
+
       </div>
-      <div style={{ display: "flex" }}>width:{room.roomCoords[0]}</div>
+      <div name="bottom" style={{ display: "flex" }}>
+        width:{room.roomCoords[0]}
+      </div>
     </>
   );
 };
