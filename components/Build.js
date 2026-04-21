@@ -29,7 +29,9 @@ export default Build = () => {
         />
         <label>30</label>
       </div>
-      <div style={{ display:"flex", width: "400px", backgroundColor: "darkgray" }}>
+      <div
+        style={{ width: "400px", backgroundColor: "darkgray" }}
+      >
         <div
           style={{
             position: "absolute",
@@ -38,7 +40,7 @@ export default Build = () => {
             height: `${room.roomCoords[1] * tileSize}px`,
             left: `${200 - pagePosition[0]}px`,
             top: `${pagePosition[1]}px`,
-
+            display: "flex", 
             backgroundColor: "red",
           }}
         >
@@ -53,7 +55,7 @@ export default Build = () => {
             top: `${
               pagePosition[1] + room.roomCoords[1] * tileSize + tileSize
             }px`,
-            backgroundColor: "brown",
+            backgroundColor: "brown",display: "flex", 
           }}
         ></div>
       </div>
