@@ -34,18 +34,20 @@ export default Build = () => {
         style={{
           width: "400px",
           height: "400px",
+          justifyContent: "center",
+          alignItems: "center",
           backgroundColor: "darkgray",
         }}
       >
         <div
           style={{
-            position: "absolute",
+            //position: "relative",
 
             border: `${tileSize}px solid black`,
             width: `${room.roomCoords[0] * tileSize}px`,
             height: `${room.roomCoords[1] * tileSize}px`,
-            left: `${200 - pagePosition[0]}px`,
-            top: `${pagePosition[1]}px`,
+            //left: `${200 - pagePosition[0]}px`,
+            //top: `${pagePosition[1]}px`,
             display: "flex",
             backgroundColor: "red",
           }}
