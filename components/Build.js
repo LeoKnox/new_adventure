@@ -31,7 +31,11 @@ export default Build = () => {
       </div>
       <div
         name="middle"
-        style={{ display: "flex", width: "400px", height:"400px",backgroundColor: "darkgray" }}
+        style={{
+          width: "400px",
+          height: "400px",
+          backgroundColor: "darkgray",
+        }}
       >
         <div
           style={{
@@ -62,7 +66,6 @@ export default Build = () => {
             display: "flex",
           }}
         ></div>
-
       </div>
       <div name="bottom" style={{ display: "flex" }}>
         width:{room.roomCoords[0]}
