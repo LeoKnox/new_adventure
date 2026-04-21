@@ -9,28 +9,27 @@ export default Build = () => {
   const [doors, setDoors] = useState([3, 2]);
   return (
     <>
-      
-        <div style={{ display: "flex" }}>
-          <input
-            onChange={() => setTilesize(40)}
-            type="radio"
-            id="40"
-            name="tileSize"
-            value="40"
-            checked={tileSize == 40}
-          />
-          <label>40</label>
-          <input
-            onChange={() => setTilesize(30)}
-            type="radio"
-            id="30"
-            name="tileSize"
-            value="30"
-            checked={tileSize == 30}
-          />
-          <label>30</label>
-        </div>
-        <div style={{ width: "400px", backgroundColor: "gray" }}>
+      <div style={{ display: "flex" }}>
+        <input
+          onChange={() => setTilesize(40)}
+          type="radio"
+          id="40"
+          name="tileSize"
+          value="40"
+          checked={tileSize == 40}
+        />
+        <label>40</label>
+        <input
+          onChange={() => setTilesize(30)}
+          type="radio"
+          id="30"
+          name="tileSize"
+          value="30"
+          checked={tileSize == 30}
+        />
+        <label>30</label>
+      </div>
+      <div style={{ width: "400px", backgroundColor: "darkgray" }}>
         <div
           style={{
             position: "absolute",
@@ -58,6 +57,7 @@ export default Build = () => {
           }}
         ></div>
       </div>
+      <div style={{ display: "flex" }}>width:{room.roomCoords[1]}</div>
     </>
   );
 };
