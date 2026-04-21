@@ -57,7 +57,7 @@ export default Build = () => {
           }}
         ></div>
       </div>
-      <div style={{ display: "flex" }}>width:{room.roomCoords[1]}</div>
+      <div style={{ display: "flex", marginTop:"auto" }}>width:{room.roomCoords[0]}</div>
     </>
   );
 };
