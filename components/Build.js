@@ -29,18 +29,17 @@ export default Build = () => {
         />
         <label>30</label>
       </div>
-      <div
-        style={{ width: "400px", backgroundColor: "darkgray" }}
-      >
+      <div style={{ width: "400px", backgroundColor: "darkgray" }}>
         <div
           style={{
             position: "absolute",
+            flex: "auto",
             border: `${tileSize}px solid black`,
             width: `${room.roomCoords[0] * tileSize}px`,
             height: `${room.roomCoords[1] * tileSize}px`,
             left: `${200 - pagePosition[0]}px`,
             top: `${pagePosition[1]}px`,
-            display: "flex", 
+            display: "flex",
             backgroundColor: "red",
           }}
         >
@@ -49,13 +48,15 @@ export default Build = () => {
         <div
           style={{
             position: "absolute",
+            flex: "auto",
             width: `${tileSize}px`,
             height: `${tileSize}px`,
             left: `${200 - pagePosition[0] + room.doors[0] * tileSize}px`,
             top: `${
               pagePosition[1] + room.roomCoords[1] * tileSize + tileSize
             }px`,
-            backgroundColor: "brown",display: "flex", 
+            backgroundColor: "brown",
+            display: "flex",
           }}
         ></div>
       </div>
