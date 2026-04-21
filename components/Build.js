@@ -29,11 +29,13 @@ export default Build = () => {
         />
         <label>30</label>
       </div>
-      <div style={{ display:"flex",width: "400px", backgroundColor: "darkgray" }}>
+      <div
+        style={{ display: "flex", width: "400px", backgroundColor: "darkgray" }}
+      >
         <div
           style={{
             position: "absolute",
-            flex: "auto",
+
             border: `${tileSize}px solid black`,
             width: `${room.roomCoords[0] * tileSize}px`,
             height: `${room.roomCoords[1] * tileSize}px`,
@@ -48,7 +50,7 @@ export default Build = () => {
         <div
           style={{
             position: "absolute",
-            flex: "auto",
+
             width: `${tileSize}px`,
             height: `${tileSize}px`,
             left: `${200 - pagePosition[0] + room.doors[0] * tileSize}px`,
@@ -58,11 +60,9 @@ export default Build = () => {
             backgroundColor: "brown",
             display: "flex",
           }}
-        ></div>
+        ></div><br/>
       </div>
-      <div style={{ display: "flex", flexDirection: "column" }}>
-        width:{room.roomCoords[0]}
-      </div>
+      <div style={{ display: "flex" }}>width:{room.roomCoords[0]}</div>
     </>
   );
 };
