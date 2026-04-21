@@ -29,7 +29,7 @@ export default Build = () => {
         />
         <label>30</label>
       </div>
-      <div style={{ width: "400px", backgroundColor: "darkgray" }}>
+      <div style={{ display:"flex",width: "400px", backgroundColor: "darkgray" }}>
         <div
           style={{
             position: "absolute",
