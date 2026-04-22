@@ -34,12 +34,14 @@ export default Build = () => {
         style={{
           width: "400px",
           height: "400px",
+          display: "flex",
           justifyContent: "center",
           alignItems: "center",
           backgroundColor: "darkgray",
         }}
       >
         <div
+          name="room"
           style={{
             //position: "relative",
 
@@ -56,7 +58,7 @@ export default Build = () => {
         </div>
         <div
           style={{
-            position: "absolute",
+            //position: "absolute",
 
             width: `${tileSize}px`,
             height: `${tileSize}px`,
