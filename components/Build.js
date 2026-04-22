@@ -43,7 +43,7 @@ export default Build = () => {
         <div
           name="room"
           style={{
-            //position: "relative",
+            position: "relative",
 
             border: `${tileSize}px solid black`,
             width: `${room.roomCoords[0] * tileSize}px`,
@@ -55,8 +55,7 @@ export default Build = () => {
           }}
         >
           {doors[1]}:{roomCoords[1]}:{pagePosition[1]}
-        </div>
-        <div
+          <div
           name="door"
           style={{
             position: "absolute",
@@ -72,6 +71,8 @@ export default Build = () => {
             display: "flex",
           }}
         ></div>
+        </div>
+        
       </div>
       <div name="bottom" style={{ display: "flex" }}>
         width:{room.roomCoords[0]}
