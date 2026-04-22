@@ -48,7 +48,7 @@ export default Build = () => {
             height: `${room.roomCoords[1] * tileSize}px`,
             //left: `${200 - pagePosition[0]}px`,
             //top: `${pagePosition[1]}px`,
-            display: "flex",
+            //display: "flex",
             backgroundColor: "red",
           }}
         >
