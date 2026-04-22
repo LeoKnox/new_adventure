@@ -56,23 +56,20 @@ export default Build = () => {
         >
           {doors[1]}:{roomCoords[1]}:{pagePosition[1]}
           <div
-          name="door"
-          style={{
-            position: "absolute",
+            name="door"
+            style={{
+              position: "absolute",
 
-            width: `${tileSize}px`,
-            height: `${tileSize}px`,
-            left: `${room.doors[0] * tileSize}px`,
-            //left: `${200 - pagePosition[0] + room.doors[0] * tileSize}px`,
-            top: `${
-              pagePosition[1] + room.roomCoords[1] * tileSize + tileSize
-            }px`,
-            backgroundColor: "brown",
-            display: "flex",
-          }}
-        ></div>
+              width: `${tileSize}px`,
+              height: `${tileSize}px`,
+              left: `${room.doors[0] * tileSize}px`,
+              //left: `${200 - pagePosition[0] + room.doors[0] * tileSize}px`,
+              top: `${(room.roomCoords[1] * tileSize) + (tileSize)}px`,
+              backgroundColor: "brown",
+              display: "flex",
+            }}
+          ></div>
         </div>
-        
       </div>
       <div name="bottom" style={{ display: "flex" }}>
         width:{room.roomCoords[0]}
