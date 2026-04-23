@@ -6,7 +6,6 @@ export default Build = () => {
   const [room, setRoom] = useState({ roomCoords: [2, 3], doors: [1, 0] });
   const [tileSize, setTilesize] = useState(40);
   const [roomCoords, setRoomCoords] = useState([3, 4]);
-  const [doors, setDoors] = useState([3, 2]);
   return (
     <>
       <div name="top" style={{ display: "flex" }}>
@@ -44,26 +43,20 @@ export default Build = () => {
           name="room"
           style={{
             position: "relative",
-
             border: `${tileSize}px solid black`,
             width: `${room.roomCoords[0] * tileSize}px`,
             height: `${room.roomCoords[1] * tileSize}px`,
-            //left: `${200 - pagePosition[0]}px`,
-            //top: `${pagePosition[1]}px`,
-            //display: "flex",
             backgroundColor: "red",
           }}
         >
-          {doors[1]}:{roomCoords[1]}:{pagePosition[1]}
+          {roomCoords[1]}:{pagePosition[1]}
           <div
             name="door"
             style={{
               position: "absolute",
-
               width: `${tileSize}px`,
               height: `${tileSize}px`,
               left: `${(room.doors[0] - 1) * tileSize}px`,
-              //left: `${200 - pagePosition[0] + room.doors[0] * tileSize}px`,
               top: `${(room.doors[1] - 1) * tileSize}px`,
               backgroundColor: "brown",
               display: "flex",
