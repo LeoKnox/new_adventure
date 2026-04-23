@@ -2,10 +2,8 @@ import { useState, useEffect } from "react";
 
 export default Build = () => {
   console.log("build.js");
-  const pagePosition = [40, 160];
   const [room, setRoom] = useState({ roomCoords: [2, 3], doors: [1, 0] });
   const [tileSize, setTilesize] = useState(40);
-  const [roomCoords, setRoomCoords] = useState([3, 4]);
   return (
     <>
       <div name="top" style={{ display: "flex" }}>
@@ -49,7 +47,7 @@ export default Build = () => {
             backgroundColor: "red",
           }}
         >
-          {roomCoords[1]}:{pagePosition[1]}
+          
           <div
             name="door"
             style={{
