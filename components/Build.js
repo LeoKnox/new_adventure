@@ -64,7 +64,7 @@ export default Build = () => {
               height: `${tileSize}px`,
               left: `${(room.doors[0] - 1) * tileSize}px`,
               //left: `${200 - pagePosition[0] + room.doors[0] * tileSize}px`,
-              top: `${(room.roomCoords[1] - 1) * tileSize + tileSize}px`,
+              top: `${(room.doors[1] - 1) * tileSize}px`,
               backgroundColor: "brown",
               display: "flex",
             }}
