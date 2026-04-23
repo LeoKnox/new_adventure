@@ -63,7 +63,12 @@ export default Build = () => {
       </div>
       <div
         name="bottom"
-        style={{ width: "400px", display: "flex", justifyContent: "space-around" }}
+        style={{
+          width: "400px",
+          color: "lightblue",
+          display: "flex",
+          justifyContent: "space-around",
+        }}
       >
         <label>width:{room.roomCoords[0]}</label>
         <label>height:{room.roomCoords[1]}</label>
