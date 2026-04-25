@@ -70,7 +70,18 @@ export default Build = () => {
           justifyContent: "space-around",
         }}
       >
-        <label>width:{room.roomCoords[0]}</label>
+        <label>
+          width:
+          <input
+            type="range"
+            id="width"
+            name="width"
+            min="0"
+            max="11"
+            value={room.roomCoords[0]}
+          />
+          {room.roomCoords[0]}
+        </label>
         <label>height:{room.roomCoords[1]}</label>
       </div>
     </>
