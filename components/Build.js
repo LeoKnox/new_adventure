@@ -79,9 +79,8 @@ export default Build = () => {
             min="0"
             max="11"
             value={room.roomCoords[0]}
-            onChange=((e) => setRoom({...room, roomCoords[0] = {e.target.value}}))
           />
-          {room.roomCoords[0]}
+          <input type="text" value={room.roomCoords[0]} />
         </label>
         <label>height:{room.roomCoords[1]}</label>
       </div>
