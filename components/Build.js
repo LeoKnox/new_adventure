@@ -5,9 +5,9 @@ export default Build = () => {
   const [room, setRoom] = useState({ roomCoords: [2, 3], doors: [1, 0] });
   const [tileSize, setTilesize] = useState(40);
 
-  const editRoom = (value = [2, 0], param = "doors") => {
+  const editRoom = (value = 5, param = "roomCoords") => {
     console.log("edit room");
-    let newRoom = { ...room, [param]: value };
+    let newRoom = { ...room, [param[0]]: value };
     setRoom(newRoom);
     console.log(newRoom);
   };
