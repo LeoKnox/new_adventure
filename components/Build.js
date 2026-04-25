@@ -79,7 +79,7 @@ export default Build = () => {
             min="0"
             max="11"
             value={room.roomCoords[0]}
-            onChange=(setRoom({...room, roomCoords[0] = value}))
+            onChange=((e) => setRoom({...room, roomCoords[0] = {e.target.value}}))
           />
           {room.roomCoords[0]}
         </label>
