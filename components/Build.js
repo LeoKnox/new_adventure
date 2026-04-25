@@ -4,6 +4,12 @@ export default Build = () => {
   console.log("build.js");
   const [room, setRoom] = useState({ roomCoords: [2, 3], doors: [1, 0] });
   const [tileSize, setTilesize] = useState(40);
+
+  const editRoom = (value = 1, param = "doors") => {
+    console.log("edit room");
+    let newRoom = { ...room, [param]: value };
+    console.log(newRoom);
+  };
   return (
     <>
       <div name="top" style={{ display: "flex" }}>
@@ -79,6 +85,7 @@ export default Build = () => {
             min="0"
             max="11"
             value={room.roomCoords[0]}
+            onChange={editRoom()}
           />
           <input type="text" value={room.roomCoords[0]} />
         </label>
