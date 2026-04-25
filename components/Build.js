@@ -79,6 +79,7 @@ export default Build = () => {
             min="0"
             max="11"
             value={room.roomCoords[0]}
+            onChange=({...room, roomCoords[0] = value})
           />
           {room.roomCoords[0]}
         </label>
