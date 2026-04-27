@@ -15,7 +15,7 @@ export default Build = () => {
     console.log(value);
     let temp = room[param];
     temp[0] = value;
-    let newRoom = { ...room, [param]: temp };
+    let newRoom = { ...room, [param]: value };
     setRoom(newRoom);
     console.log(newRoom);
   };
