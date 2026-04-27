@@ -11,10 +11,6 @@ export default Build = () => {
 
   const editRoom = (value = 5, param = "roomCoords") => {
     console.log("edit room");
-    console.log(param);
-    console.log(value);
-    let temp = room[param];
-    temp[0] = value;
     let newRoom = { ...room, [param]: value };
     setRoom(newRoom);
     console.log(newRoom);
@@ -96,7 +92,7 @@ export default Build = () => {
             value={room.width}
             onChange={(e) => editRoom(e.target.value, e.target.name)}
           />
-          <input type="text" value={room.roomCoords[0]} />
+          <input type="text" value={room.width} />
         </label>
         <label>height:{room.roomCoords[1]}</label>
       </div>
