@@ -8,7 +8,7 @@ export default Build = () => {
   const editRoom = (value = 5, param = "roomCoords") => {
     console.log("edit room");
     let temp = room[param];
-    temp[1] = value;
+    temp[0] = value;
     let newRoom = { ...room, [param]: temp };
     setRoom(newRoom);
     console.log(newRoom);
@@ -88,7 +88,7 @@ export default Build = () => {
             min="0"
             max="11"
             value={room.roomCoords[0]}
-            onChange={() => editRoom()}
+            onChange={(e) => editRoom(e.target.value)}
           />
           <input type="text" value={room.roomCoords[0]} />
         </label>
