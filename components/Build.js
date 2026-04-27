@@ -2,7 +2,11 @@ import { useState, useEffect } from "react";
 
 export default Build = () => {
   console.log("build.js");
-  const [room, setRoom] = useState({ roomCoords: [2, 3], doors: [1, 0] });
+  const [room, setRoom] = useState({
+    roomCoords: [2, 3],
+    width: 2,
+    doors: [1, 0],
+  });
   const [tileSize, setTilesize] = useState(40);
 
   const editRoom = (value = 5, param = "roomCoords") => {
@@ -51,7 +55,7 @@ export default Build = () => {
           style={{
             position: "relative",
             border: `${tileSize}px solid black`,
-            width: `${room.roomCoords[0] * tileSize}px`,
+            width: `${room.width * tileSize}px`,
             height: `${room.roomCoords[1] * tileSize}px`,
             backgroundColor: "red",
           }}
@@ -87,8 +91,8 @@ export default Build = () => {
             name="width"
             min="0"
             max="11"
-            value={room.roomCoords[0]}
-            onChange={(e) => editRoom(e.target.value)}
+            value={room.width}
+            onChange={(e) => editRoom(e.target.value, e.target.name)}
           />
           <input type="text" value={room.roomCoords[0]} />
         </label>
