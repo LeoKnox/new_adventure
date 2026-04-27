@@ -7,7 +7,9 @@ export default Build = () => {
 
   const editRoom = (value = 5, param = "roomCoords") => {
     console.log("edit room");
-    let newRoom = { ...room, [param[0]]: value };
+    let temp = room[param];
+    temp[1] = value;
+    let newRoom = { ...room, [param]: temp };
     setRoom(newRoom);
     console.log(newRoom);
   };
