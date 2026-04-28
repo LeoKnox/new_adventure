@@ -55,7 +55,7 @@ export default Build = () => {
             position: "relative",
             border: `${tileSize}px solid black`,
             width: `${room.width * tileSize}px`,
-            height: `${room.roomCoords[1] * tileSize}px`,
+            height: `${room.length * tileSize}px`,
             backgroundColor: "red",
           }}
         >
