@@ -5,6 +5,7 @@ export default Build = () => {
   const [room, setRoom] = useState({
     roomCoords: [2, 3],
     width: 2,
+    length: 3,
     doors: [1, 0],
   });
   const [tileSize, setTilesize] = useState(40);
@@ -94,7 +95,19 @@ export default Build = () => {
           />
           <input type="text" value={room.width} />
         </label>
-        <label>height:{room.roomCoords[1]}</label>
+        <label>
+          height:
+          <input
+            type="range"
+            id="length"
+            name="length"
+            min="0"
+            max="11"
+            value={room.length}
+            onChange={(e) => editRoom(e.target.value, e.target.name)}
+          />
+          <input type="text" value={room.length} />
+        </label>
       </div>
     </>
   );
