@@ -61,18 +61,20 @@ export default Build = () => {
             backgroundColor: "red",
           }}
         >
-          <div
-            name="door"
-            style={{
-              position: "absolute",
-              width: `${tileSize}px`,
-              height: `${tileSize}px`,
-              left: `${(room.doors[0] - 1) * tileSize}px`,
-              top: `${(room.doors[1] - 1) * tileSize}px`,
-              backgroundColor: "brown",
-              display: "flex",
-            }}
-          ></div>
+          {room.doors.map((doorId) => (
+            <div
+              name="door"
+              style={{
+                position: "absolute",
+                width: `${tileSize}px`,
+                height: `${tileSize}px`,
+                left: `${(doorJoin(doorId)[0] - 1) * tileSize}px`,
+                top: `${(doorJoin(doorId)[1] - 1) * tileSize}px`,
+                backgroundColor: "brown",
+                display: "flex",
+              }}
+            ></div>
+          ))}
         </div>
       </div>
       <div
