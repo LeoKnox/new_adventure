@@ -1,4 +1,5 @@
 import { useState, useEffect } from "react";
+import { doorJoin } from "./dungeonData.js";
 
 export default Build = () => {
   console.log("build.js");
@@ -38,7 +39,7 @@ export default Build = () => {
         />
         <label>30</label>
       </div>
-      <button>Add Door</button>
+      <button>Add Door{doorJoin(1)}</button>
       <div
         name="middle"
         style={{
