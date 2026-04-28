@@ -68,8 +68,9 @@ export default Build = () => {
                 position: "absolute",
                 width: `${tileSize}px`,
                 height: `${tileSize}px`,
-                left: `${(doorJoin(doorId)[0] - 1) * tileSize}px`,
-                top: `${(doorJoin(doorId)[1] - 1) * tileSize}px`,
+                inset:`${(doorJoin(doorId)[0] - 1) * tileSize}px,auto,auto,${(doorJoin(doorId)[1] - 1) * tileSize}px`,
+                //left: `${(doorJoin(doorId)[0] - 1) * tileSize}px`,
+                //top: `${(doorJoin(doorId)[1] - 1) * tileSize}px`,
                 backgroundColor: "brown",
                 display: "flex",
               }}
