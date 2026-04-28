@@ -38,6 +38,7 @@ export default Build = () => {
         />
         <label>30</label>
       </div>
+      <button>Add Door</button>
       <div
         name="middle"
         style={{
