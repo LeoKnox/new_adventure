@@ -79,7 +79,9 @@ export default Build = () => {
           ))}
         </div>
       </div>
-      <div><label>{doorJoin()}</label></div>
+      <div style={{flexGrow:"1"}}>
+        <label>{doorJoin()}</label>
+      </div>
 
       <div
         name="bottom"
