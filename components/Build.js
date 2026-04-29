@@ -59,6 +59,7 @@ export default Build = () => {
             width: `${room.width * tileSize}px`,
             height: `${room.length * tileSize}px`,
             backgroundColor: "red",
+            display: "flex",
           }}
         >
           {room.doors.map((doorId) => (
@@ -76,10 +77,9 @@ export default Build = () => {
               }}
             ></div>
           ))}
-          
         </div>
       </div>
-        <p>{doorJoin()}</p>
+      <p>{doorJoin()}</p>
 
       <div
         name="bottom"
