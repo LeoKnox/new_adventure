@@ -79,7 +79,7 @@ export default Build = () => {
           ))}
         </div>
       </div>
-      <p>{doorJoin()}</p>
+      <div><label>{doorJoin()}</label></div>
 
       <div
         name="bottom"
