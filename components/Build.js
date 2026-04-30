@@ -79,8 +79,8 @@ export default Build = () => {
           ))}
         </div>
       </div>
-      <div style={{flexGrow:"1"}}>
-        <label>{doorJoin()}</label>
+      <div style={{ flexGrow: "1" }}>
+        <label>{[...doorJoin().separate(":")]}</label>
       </div>
 
       <div
