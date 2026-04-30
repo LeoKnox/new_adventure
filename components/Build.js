@@ -80,7 +80,7 @@ export default Build = () => {
         </div>
       </div>
       <div style={{ flexGrow: "1" }}>
-        <label>{[...doorJoin().separate(":")]}</label>
+        <label>{doorJoin().map((pos) => <label>pos</label)}</label>
       </div>
 
       <div
