@@ -78,10 +78,11 @@ export default Build = () => {
             ></div>
           ))}
         </div>
-      </div>
-      <div style={{ }}>
+            <div style={{ }}>
         {doorJoin().map((pos, i) => <label>{pos} : {i}</label)}
       </div>
+      </div>
+      
 
       <div
         name="bottom"
